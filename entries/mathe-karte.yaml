@@ -36,7 +36,7 @@ topics:
 keywords: [Prozentrechnung, Rabatt, Zinsen, Binom, Termumformung, Algebra, Stochastik, Zufall, Würfel]
 creator: { name: "Ralf D. Müller", url: "https://github.com/raifdmueller" }
 source: https://github.com/lernapps/mathe-karte
-commit: b1edabce78947704c1f21c6a42ba530f0dd3c338
+commit: 1f907fe7c8df06b73ff3874ac08970da8f2706d6
 fitness:
   account: false
   install: false
