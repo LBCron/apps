@@ -6,9 +6,10 @@ export default {
   email: "lernapps@beimir.net",
   thanksEmail: "Danke-lernapps@beimir.net",
   feedbackEmail: "Feedback-lernapps@beimir.net",
-  // Building an app with the tooling (lernapps/tooling): its guide for assistants, the skill that is the quick path,
-  // and the command that starts an app. The page /build/ and llms.txt show them; test/entry-point.e2e.test.mjs
-  // runs the command from the built page. Listing a published app: the skill lernapps-listing, the way /enter/ and
+  // Building an app with the tooling (lernapps/tooling, the npm package @lernapps/tooling): its guide for assistants,
+  // the skill that is the quick path, and the command that starts an app (`init`: the plan template and the skills,
+  // from the registry). The page /build/ and llms.txt show them; test/entry-point.e2e.test.mjs runs the command from
+  // the built page. Listing a published app: the skill lernapps-listing, the way /enter/ and
   // llms.txt promote; `skills` is the command that installs both skills.
   tooling: {
     home: "/tooling/",
@@ -17,7 +18,7 @@ export default {
     skillRaw: "https://raw.githubusercontent.com/lernapps/tooling/main/skills/process/lernapps-app/SKILL.md",
     // the skill's platform rules: what every app keeps to, however it is built; /build/ gives them to free builders
     platformRules: "https://github.com/lernapps/tooling/blob/main/skills/tooling/lernapps-cli/references/platform-rules.md",
-    create: "npx --yes github:lernapps/tooling#main create --archetype <archetype>",
+    init: "npx --yes @lernapps/tooling init <name>",
     listing: "https://github.com/lernapps/tooling/blob/main/skills/process/lernapps-listing/SKILL.md",
     listingRaw: "https://raw.githubusercontent.com/lernapps/tooling/main/skills/process/lernapps-listing/SKILL.md",
     skills: "npx skills add lernapps/tooling",

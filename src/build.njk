@@ -34,10 +34,10 @@ eleventyComputed:
     <h2 id="start" class="panel-title">{{ B.start.headline }}</h2>
     <p class="m-0 text-slate-700">{{ B.start.body }}</p>
     <div class="mt-3">
-      {{ c.copyField("bauen-auftrag", B.start.label, B.start.prompt(site.tooling.llms, site.tooling.create), B.start.copy, B.start.copied, true) }}
+      {{ c.copyField("bauen-auftrag", B.start.label, B.start.prompt(site.tooling.llms, site.tooling.init), B.start.copy, B.start.copied, true) }}
     </div>
     <p class="m-0 mt-3 text-slate-700">{{ B.start.command }}</p>
-    <pre class="m-0 mt-1 p-3 rounded bg-slate-100 text-sm overflow-x-auto"><code>{{ site.tooling.create }}</code></pre>
+    <pre class="m-0 mt-1 p-3 rounded bg-slate-100 text-sm overflow-x-auto"><code>{{ site.tooling.init }}</code></pre>
     <p class="m-0 mt-3 text-slate-700">{{ B.start.skill }} <a href="{{ site.tooling.skill }}" class="text-blue-700 underline underline-offset-2">lernapps-app</a>.</p>
   </section>
 

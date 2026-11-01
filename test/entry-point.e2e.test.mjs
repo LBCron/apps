@@ -2,10 +2,12 @@
 // (list it) and /apps/llms.txt, built from this repo.
 //   - every link on them resolves: links into this site against the build, every other link on the web (test/links.mjs:
 //     our own hosts strict, an outside host's passing 5xx or 429 retried, then only a note);
-//   - the command /apps/build/ gives to start an app, taken from the built page, run in a folder with nothing but the
-//     confirmed plan (the plan template of the same tooling) for every archetype of the tooling it names, gives an app that passes `lernapps check`, the check of its git hooks and CI.
-//     The archetypes' installs and checks run at the same time, each in its own folder and on its own preview port.
-// Needs the network (github.com, codeload.github.com, the npm registry, lernapps.net). Behind a proxy, Node's fetch
+//   - the command /apps/build/ gives to start an app (`npx --yes @lernapps/tooling init <name>`), taken from the built
+//     page, run in an empty folder writes the plan template; with the plan confirmed (its archetype set, in the phase
+//     code), `lernapps create` gives, for every archetype of the tooling, an app that passes `lernapps check`, the check
+//     of its git hooks and CI. The archetypes' installs and checks run at the same time, each in its own folder and on
+//     its own preview port.
+// Needs the network (the npm registry, github.com, lernapps.net). Behind a proxy, Node's fetch
 // uses it with NODE_USE_ENV_PROXY=1.
 import { spawn } from "node:child_process";
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
@@ -161,10 +163,10 @@ async function freePorts(count) {
   return ports;
 }
 
-/** The command to start an app, as the built page /apps/build/ shows it: the one `<code>` that runs `npx … create`. */
+/** The command to start an app, as the built page /apps/build/ shows it: the one `<code>` that runs `npx … init`. */
 function startCommand() {
   const commands = new Set(
-    [...page.matchAll(/<code\b[^>]*>([\s\S]*?)<\/code>/g)].map((m) => decode(m[1]).trim()).filter((c) => /^npx .* create /.test(c)),
+    [...page.matchAll(/<code\b[^>]*>([\s\S]*?)<\/code>/g)].map((m) => decode(m[1]).trim()).filter((c) => /^npx .* init /.test(c)),
   );
   assert.equal(commands.size, 1, `one command to start an app on the page, found: ${[...commands].join(" | ")}`);
   return [...commands][0];
@@ -177,51 +179,41 @@ describe("the command /apps/build/ gives to start an app", () => {
     assert.ok(prompt.includes(command), `the prompt to copy contains ${command}:\n${prompt}`);
   });
 
-  test("run in a folder with the confirmed plan, gives an app that passes lernapps check, for every archetype", { timeout: 20 * 60_000 }, async () => {
+  test("run in an empty folder writes the plan; then it gives an app that passes lernapps check, for every archetype", { timeout: 20 * 60_000 }, async () => {
     const command = startCommand();
     const words = command.split(/\s+/);
     assert.equal(words[0], "npx");
-    // The archetypes of the tooling the command runs: its package.json at the same ref, on GitHub.
-    const spec = words.find((word) => word.startsWith("github:"));
-    const [, project, ref] = /^github:([^#]+)#(.+)$/.exec(spec ?? "") ?? [];
-    assert.ok(project, `the command installs the tooling from GitHub: ${command}`);
-    const manifest = await fetch(`https://raw.githubusercontent.com/${project}/${ref}/package.json`).then((r) => r.json());
-    const archetypes = manifest.appTemplates.archetypes;
-    assert.ok(archetypes.length > 0);
-    // The command creates the app from the plan the creator confirmed: the plan template of the same ref, kept where
-    // it says ("Path: `<path>`", formerly "Keep it at <path>."), worked through Explore and Plan (here: its archetype
-    // set, in the phase code).
-    const template = await fetch(`https://raw.githubusercontent.com/${project}/${ref}/guidance/plan-template.md`).then((r) => r.text());
-    const path = /Path: `(\.vibe\/[^`]+\.md)`|Keep it at (\.vibe\/.+?\.md)\./.exec(template);
-    const keep = (path?.[1] ?? path?.[2])?.replace("<short name>", "first-version");
-    assert.ok(keep, "the plan template says where to keep it");
+    const spec = words.find((word) => word.startsWith("@lernapps/"));
+    assert.ok(spec, `the command installs the tooling from the npm registry: ${command}`);
 
-    // Each archetype in its own folder. The command first, one archetype after the other: npx installs the tooling
-    // into one shared folder of its cache (~/.npm/_npx/<hash>), and two installs into it at the same time leave a
-    // half-installed tree to one of them (CI saw playwright-core missing). Then, at the same time, what takes long:
-    // git init, npm install (separate folders; npm's cache is safe for that), and `lernapps check`, each on its own
-    // preview port (the tooling's Playwright configuration takes LERNAPPS_PREVIEW_PORT) with a share of the cores
-    // for its Playwright workers.
+    // The command first in a folder, one archetype after the other: npx installs the tooling into one shared folder of
+    // its cache (~/.npm/_npx/<hash>), and two installs into it at the same time leave a half-installed tree to one of
+    // them (CI saw playwright-core missing). The archetypes are those of the runtime package it installs.
     const apps = [];
-    for (const archetype of archetypes) {
-      const app = join(temp, `app-${archetype}`);
-      mkdirSync(dirname(join(app, keep)), { recursive: true });
-      const plan = template.replace(/^archetype: null$/m, `archetype: ${archetype}`).replace(/^phase: explore$/m, "phase: code");
-      writeFileSync(join(app, keep), plan);
-      // Optional arguments ([<dir>]) are left out: the app is written into the current folder.
-      const args = words
-        .slice(1)
-        .filter((word) => !/^\[.*\]$/.test(word))
-        .map((word) => (word === "<archetype>" ? archetype : word));
-      assert.ok(!args.some((word) => word.includes("<")), `no placeholder left but the archetype: ${command}`);
+    let archetypes;
+    for (let index = 0; index === 0 || index < archetypes.length; index++) {
+      const app = join(temp, `app-${index}`);
+      mkdirSync(app, { recursive: true });
+      const args = words.slice(1).map((word) => (word === "<name>" ? "first-version" : word));
+      assert.ok(!args.some((word) => word.includes("<")), `no placeholder left but the name: ${command}`);
       await ok("npx", args, app);
+      const plan = join(app, ".vibe/plans/01-first-version.md");
+      const template = readFileSync(plan, "utf8");
+      assert.match(template, /^archetype: null$/m, "init wrote the plan template, not yet worked through");
+      archetypes ??= JSON.parse(readFileSync(join(app, "node_modules/@lernapps/app-templates/package.json"), "utf8")).lernapps.archetypes;
+      assert.ok(archetypes.length > 0);
+      const archetype = archetypes[index];
+      // the plan as the creator confirmed it: its archetype set, in the phase code; then the skills of the archetype
+      writeFileSync(plan, template.replace(/^archetype: null$/m, `archetype: ${archetype}`).replace(/^phase: explore$/m, "phase: code"));
+      await ok("npx", ["--no", "--", "lernapps", "skills", "--archetype", archetype], app);
       apps.push({ archetype, app });
     }
     const ports = await freePorts(apps.length);
     const workers = String(Math.max(1, Math.floor((availableParallelism() * 0.75) / apps.length)));
     await Promise.all(apps.map(async ({ archetype, app }, index) => {
       const env = { ...process.env, LERNAPPS_PREVIEW_PORT: String(ports[index]), LERNAPPS_PLAYWRIGHT_WORKERS: workers };
-      // What the plan says next: git init, npm install (installs the hooks), then the check of hooks and CI.
+      // What the plan says next: create the app in the folder, git init, npm install (installs the hooks), then the check of hooks and CI.
+      await ok("npx", ["--no", "--", "lernapps", "create", "--archetype", archetype], app, env);
       await ok("git", ["init", "--quiet", "--initial-branch=main"], app, env);
       await ok("npm", ["install", "--no-audit", "--no-fund"], app, env);
       const checked = await ok("npx", ["--no", "--", "lernapps", "check"], app, env);

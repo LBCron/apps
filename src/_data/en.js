@@ -172,10 +172,10 @@ const en = {
       body: "You need an AI assistant that may run commands on your computer. Copy this task and give it to the assistant.",
       label: "Task for your assistant",
       prompt: (llms, command) =>
-        `Build a learning app for lernapps.net with me. First read ${llms} and follow the quick path. Ask me what the app should teach, and write the plan with me. Only when I have confirmed the plan, create the app like this: ${command}`,
+        `Build a learning app for lernapps.net with me. First read ${llms} and follow the quick path: start the app in a new, empty folder with ${command} (for <name> a short name without spaces). Then ask me what the app should teach, and write the plan with me. Only when I have confirmed the plan, create the app as the plan says.`,
       copy: "Copy task",
       copied: "Copied",
-      command: "With this command, your assistant creates the app. It downloads the tool for it by itself.",
+      command: "With this command, your assistant starts the app: it writes the plan and puts the skills in place. It downloads the tool for it from the npm registry by itself.",
       skill: "The quick path for assistants is the skill",
     },
     which: {

@@ -182,10 +182,10 @@ const de = {
       body: "Du brauchst einen KI-Assistenten, der auf deinem Rechner Befehle ausführen darf. Kopier diesen Auftrag und gib ihn ihm.",
       label: "Auftrag für deinen Assistenten",
       prompt: (llms, command) =>
-        `Bau mit mir eine Lern-App für lernapps.net. Lies zuerst ${llms} und folge dem Schnellweg. Frag mich, was die App lehren soll, und schreib mit mir den Plan. Erst wenn ich den Plan bestätigt habe, leg die App so an: ${command}`,
+        `Bau mit mir eine Lern-App für lernapps.net. Lies zuerst ${llms} und folge dem Schnellweg: Starte die App in einem neuen, leeren Ordner mit ${command} (für <name> ein kurzer Name ohne Leerzeichen). Frag mich dann, was die App lehren soll, und schreib mit mir den Plan. Erst wenn ich den Plan bestätigt habe, legst du die App an, wie der Plan es sagt.`,
       copy: "Auftrag kopieren",
       copied: "Kopiert",
-      command: "Mit diesem Befehl legt dein Assistent die App an. Das Werkzeug dafür lädt er selbst.",
+      command: "Mit diesem Befehl startet dein Assistent die App: Er schreibt den Plan und legt die Skills ab. Das Werkzeug dafür lädt er selbst aus der npm-Registry.",
       skill: "Der Schnellweg für Assistenten ist der Skill",
     },
     which: {
