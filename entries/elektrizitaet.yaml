@@ -62,7 +62,7 @@ creator:
   name: Oliver
   url: https://github.com/mrsimpson
 source: https://github.com/lernapps/elektrizitaet
-commit: af3d66e582a23e848bba157dc0b525166e3aa0c9
+commit: f63104aea8abe872cb5a7ea7a30afd9180093253
 fitness:
   account: false
   install: false
