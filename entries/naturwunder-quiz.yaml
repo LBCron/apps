@@ -39,7 +39,7 @@ creator:
   name: Oliver
   url: https://github.com/mrsimpson
 source: https://github.com/lernapps/naturwunder-quiz
-commit: 022eebc2029f64c629a860e0f6f6cd70df189c39
+commit: cc5c00fcef083774954c1d6bac4e51dd75853778
 fitness:
   account: false
   install: false
