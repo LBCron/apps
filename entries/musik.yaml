@@ -30,7 +30,7 @@ topics:
 keywords: [Noten lesen, Rhythmus klatschen, Tonleiter, Intervalle, Klaviatur, Instrumente, Takt, Dur und Moll]
 creator: { name: "Oliver Jägle" }
 source: https://github.com/lernapps/musik
-commit: c5a3bb896291e25baf361eb6dfac09d368cdbc95
+commit: 280c640da919305aec17111a6c2af1422181457b
 fitness:
   account: false
   install: false
