@@ -30,7 +30,7 @@ topics:
   - { title: { de: "Reaktionsgleichungen", en: "Reaction equations" }, path: reaktionen/reaktionsgleichungen/ }
 keywords: [Atome, Periodensystem, Stoffe, Formeln]
 source: https://github.com/lernapps/anorganische-chemie
-commit: 40c5e0e87fc717dd04c2a962e1b4a815751e0997
+commit: c1c6599fc96227164fdc457f4ea816ed8c1df640
 fitness:
   account: false
   install: false
