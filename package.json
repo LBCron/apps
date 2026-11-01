@@ -15,7 +15,7 @@
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "3.1.7",
-    "@lernapps/site": "github:lernapps/lernapps.github.io#8c3182a3c7228111cea3a0b67f471bf3987f787f",
+    "@lernapps/site": "github:lernapps/lernapps.github.io#b446f76e169dbde9abbde500243525d07b5d729e",
     "@lernapps/tooling": "github:lernapps/tooling#e6814d492d956c77fc5d62510643fd393e0a4d83",
     "@unocss/cli": "66.11.0",
     "@unocss/preset-typography": "66.11.0",

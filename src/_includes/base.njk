@@ -1,6 +1,6 @@
 {#-
   Layout of every page: the shared header and footer of all lernapps.net sites (@lernapps/site, from
-  lernapps.github.io), light content for reading and the projector.
+  lernapps.github.io), content for reading and the projector, in the light and, with the system's dark mode, in the dark scheme (data-la-theme="auto", apps.css).
   Front matter: title, description; optional: scripts (files in /assets/).
   Links to the home site (/, /privacy/, /docs/…) are root-relative on purpose: same origin, other repo.
   The usage counter of the platform sites (/lernapps-count.js, served by the home site, see "Usage counter" in its
@@ -9,7 +9,7 @@
 -#}
 {%- import "components.njk" as c with context -%}
 <!doctype html>
-<html lang="{{ lang }}">
+<html lang="{{ lang }}" data-la-theme="auto">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
