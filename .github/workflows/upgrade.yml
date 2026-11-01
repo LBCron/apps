@@ -2,7 +2,7 @@ name: Upgrade
 
 # Moves the listed apps to the pins of the lernapps tooling (issue lernapps/tooling#163): every day, and by hand
 # (Actions → Upgrade → Run workflow, for one `source`, e.g. https://github.com/mrsimpson/mental-math, or for every
-# entry). For each app it runs `npx github:lernapps/tooling#main update` on the app's `main`, as the apps' owners do by
+# entry). For each app it runs `npx --yes @lernapps/tooling@latest update` on the app's `main`, as the apps' owners do by
 # hand. When that changes something, the app gets a pull request `lernapps/update`: the app's own workflow runs
 # `lernapps check` on it. This workflow waits for that check and merges the pull request when it is green (no
 # auto-merge: it merges at once where main requires no check). A red or missing check leaves the pull request open for
@@ -84,7 +84,7 @@ jobs:
           mkdir -p out
           git clone --quiet --branch main "$SOURCE" app
           cd app
-          if npx --yes github:lernapps/tooling#main update > ../out/update.log 2>&1; then status=changed; else status=update-failed; fi
+          if npx --yes @lernapps/tooling@latest update > ../out/update.log 2>&1; then status=changed; else status=update-failed; fi
           cat ../out/update.log
           git add -A
           if [ "$status" = changed ] && git diff --cached --quiet; then status=uptodate; fi
