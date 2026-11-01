@@ -42,7 +42,7 @@ creator:
   name: Oliver
   url: https://github.com/mrsimpson
 source: https://github.com/mrsimpson/kniffel-trainer
-commit: 9bd831e17d0b5df01f1ddbe2acf71c77b463728f
+commit: 7c9e3ae2ae2bb44a0e16b8b16b0787f738d5f270
 fitness:
   account: false
   install: false
