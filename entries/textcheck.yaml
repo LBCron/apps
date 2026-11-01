@@ -10,7 +10,7 @@ url: https://mrsimpson.github.io/textcheck/
 keywords: [Lesen, Textverständnis, Fehlersuche, Korrekturlesen, Lesekompetenz, genau lesen]
 creator: { name: Oliver }
 source: https://github.com/mrsimpson/textcheck
-commit: e677b1ed7325f02736fc036fb29abd08ed283b85
+commit: ff14598f1844c8d7ccb3414eccdf6eba53e941c2
 fitness:
   account: false
   install: false
