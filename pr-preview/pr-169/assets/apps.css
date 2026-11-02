@@ -66,13 +66,12 @@ textarea.field { resize: vertical; font-size: .875rem; }
   .flow-step[data-who="team"] { --flow: #34d399; --flow-bg: #064e3b; --flow-fg: #a7f3d0; }
 }
 
-/* Who brings what (build.njk, build.give): the colour says who, as in the listing steps. */
-.give { background: #f1f5f9; color: #1e293b; }
-.give[data-who="you"] { background: #dbeafe; color: #1e3a8a; }
-.give[data-who="ki"] { background: #ede9fe; color: #4c1d95; }
-.give[data-who="la"] { background: #d1fae5; color: #065f46; }
+/* Who brings what (build.njk, build.give): the colour of the label says who, as in the listing steps. */
+.give[data-who="you"] strong { color: #1d4ed8; }
+.give[data-who="ki"] strong { color: #6d28d9; }
+.give[data-who="la"] strong { color: #047857; }
 @media (prefers-color-scheme: dark) {
-  .give[data-who="you"] { background: #172554; color: #bfdbfe; }
-  .give[data-who="ki"] { background: #2e1065; color: #ddd6fe; }
-  .give[data-who="la"] { background: #064e3b; color: #a7f3d0; }
+  .give[data-who="you"] strong { color: #93c5fd; }
+  .give[data-who="ki"] strong { color: #c4b5fd; }
+  .give[data-who="la"] strong { color: #6ee7b7; }
 }
