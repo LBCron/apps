@@ -1,0 +1,327 @@
+{
+  "$id": "https://lernapps.net/apps/schemas/entry.v1.schema.json",
+  "title": "lernapps.net app entry",
+  "description": "One app on https://lernapps.net/apps/. File: entries/<id>.yaml in https://github.com/lernapps/apps",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "properties": {
+            "de": {
+              "type": "string",
+              "minLength": 1,
+              "description": "German"
+            },
+            "en": {
+              "description": "English",
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "de"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Name of the app, or a map by language { de, en }"
+    },
+    "subject": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "properties": {
+            "de": {
+              "type": "string",
+              "minLength": 1,
+              "description": "German"
+            },
+            "en": {
+              "description": "English",
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "de"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "Subject, in German (or a map by language), e.g. Mathematik"
+    },
+    "grades": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 13
+      },
+      "description": "Grades the app fits, e.g. [5, 6]"
+    },
+    "summary": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "properties": {
+            "de": {
+              "type": "string",
+              "minLength": 1,
+              "description": "German"
+            },
+            "en": {
+              "description": "English",
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "de"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "2–3 sentences in plain German (or a map by language): what do learners do?"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Link to the app at the creator's own address, where the listing check opens it"
+    },
+    "topics": {
+      "description": "Single topics with a deep link into the app",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "de": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "German"
+                  },
+                  "en": {
+                    "description": "English",
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "de"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Topic, in German (or a map by language)"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Path of the topic, relative to url"
+          }
+        },
+        "required": [
+          "title",
+          "path"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "keywords": {
+      "description": "More words people search for",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1
+          },
+          {
+            "type": "object",
+            "properties": {
+              "de": {
+                "type": "string",
+                "minLength": 1,
+                "description": "German"
+              },
+              "en": {
+                "description": "English",
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "de"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "creator": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Name thanks are addressed to"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false,
+      "description": "Who built the app"
+    },
+    "source": {
+      "type": "string",
+      "pattern": "^https:\\/\\/github\\.com\\/[A-Za-z0-9-]+\\/[A-Za-z0-9._-]+$",
+      "description": "Source code: the app's repository on GitHub, https://github.com/<owner>/<repo>. lernapps.net builds its copy of the app from it"
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$",
+      "description": "The full id of the commit of source that lernapps.net builds and serves at https://lernapps.net/apps/start/<id>/. A new commit is an update of the app"
+    },
+    "limits": {
+      "description": "Only when the app deviates from a rule of the platform because its idea needs it: WCAG 2.1 AA or usable at 360 px wide. Say in plain German what the app does not offer, and why, e.g. \"Nicht mit Screenreader bedienbar; auf dem Handy nicht sinnvoll, weil eine Tastatur nötig ist.\" Shown to teachers and parents on the app's page in the catalog. With it, lernapps check reports the findings of these rules as warnings instead of errors. Leave it out when the app meets the rules.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "properties": {
+            "de": {
+              "type": "string",
+              "minLength": 1,
+              "description": "German"
+            },
+            "en": {
+              "description": "English",
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "de"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "fitness": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "type": "boolean",
+          "const": false,
+          "description": "Nobody needs an account (required)"
+        },
+        "install": {
+          "type": "boolean",
+          "const": false,
+          "description": "Runs in the browser, no installation (required)"
+        },
+        "storage": {
+          "type": "string",
+          "enum": [
+            "none",
+            "device"
+          ],
+          "description": "What the app stores: none, or only on the device (apps storing on a server are not listed)"
+        },
+        "thirdParty": {
+          "type": "string",
+          "enum": [
+            "none",
+            "on-click"
+          ],
+          "description": "Requests to third-party servers: none, or only after a click (others are not listed)"
+        },
+        "thirdPartyNote": {
+          "description": "For on-click: which servers, and when",
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "object",
+              "properties": {
+                "de": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "German"
+                },
+                "en": {
+                  "description": "English",
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "de"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "checked": {
+          "type": "boolean",
+          "description": "Set by lernapps.net once the fitness was checked automatically"
+        }
+      },
+      "required": [
+        "account",
+        "install",
+        "storage",
+        "thirdParty",
+        "checked"
+      ],
+      "additionalProperties": false,
+      "description": "Signal of fitness for use (platform design D5 ch-fitness-signal)"
+    }
+  },
+  "required": [
+    "title",
+    "subject",
+    "grades",
+    "summary",
+    "url",
+    "creator",
+    "source",
+    "commit",
+    "fitness"
+  ],
+  "additionalProperties": false
+}
