@@ -23,16 +23,16 @@ concurrency:
 
 jobs:
   changes:
-    uses: lernapps/tooling/.github/workflows/changes.yml@7418758de8418c5333ac175ae00cac9abc2ff09b # main
+    uses: lernapps/tooling/.github/workflows/changes.yml@cc6e8c12e1ce8ed83cc457f3156fd9795f303137 # main
     with:
-      tooling-ref: 7418758de8418c5333ac175ae00cac9abc2ff09b # the commit of @lernapps/tooling in package.json, and TOOLING_REF of the pre-push hook
+      tooling-ref: cc6e8c12e1ce8ed83cc457f3156fd9795f303137 # the commit of @lernapps/tooling in package.json, and TOOLING_REF of the pre-push hook
 
   build: # builds and checks the site
     needs: changes
     if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: lernapps/tooling/actions/site-check@7418758de8418c5333ac175ae00cac9abc2ff09b # main
+      - uses: lernapps/tooling/actions/site-check@cc6e8c12e1ce8ed83cc457f3156fd9795f303137 # main
 
   # The end-to-end tests (npm test): the listing validation on fixture entries against a fixture app, and the
   # creator's entry point (its links resolve, its command to start an app gives an app that passes lernapps check).
@@ -61,7 +61,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lernapps/tooling/actions/site-deploy@7418758de8418c5333ac175ae00cac9abc2ff09b # main
+      - uses: lernapps/tooling/actions/site-deploy@cc6e8c12e1ce8ed83cc457f3156fd9795f303137 # main
         with:
           keep: start/ # the copies of the listed apps (publish.yml)
 
