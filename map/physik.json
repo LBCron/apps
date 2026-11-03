@@ -214,7 +214,15 @@
           "iCan": "Ich kann einen einfachen Stromkreis aus Batterie, Lampe und Kabeln aufbauen und erklären, warum er geschlossen sein muss.",
           "gradeBand": "5-6",
           "requires": [],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/stromkreis/einfacher-stromkreis/"
+              ]
+            }
+          ]
         },
         {
           "id": "leiter-nichtleiter",
@@ -223,7 +231,15 @@
           "requires": [
             "einfacher-stromkreis"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/stromkreis/leiter-nichtleiter/"
+              ]
+            }
+          ]
         },
         {
           "id": "spannungsquellen",
@@ -241,7 +257,15 @@
           "requires": [
             "einfacher-stromkreis"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/schaltungen/schalter-schaltzeichen/"
+              ]
+            }
+          ]
         },
         {
           "id": "schaltzeichen",
@@ -250,7 +274,15 @@
           "requires": [
             "schalter"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/schaltungen/schalter-schaltzeichen/"
+              ]
+            }
+          ]
         },
         {
           "id": "reihenschaltung",
@@ -259,7 +291,15 @@
           "requires": [
             "schaltzeichen"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/schaltungen/reihenschaltung/"
+              ]
+            }
+          ]
         },
         {
           "id": "parallelschaltung",
@@ -268,7 +308,15 @@
           "requires": [
             "schaltzeichen"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/schaltungen/parallelschaltung/"
+              ]
+            }
+          ]
         },
         {
           "id": "waermewirkung-strom",
@@ -277,7 +325,15 @@
           "requires": [
             "einfacher-stromkreis"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/alltag/wirkungen/"
+              ]
+            }
+          ]
         },
         {
           "id": "lichtwirkung-strom",
@@ -286,7 +342,15 @@
           "requires": [
             "einfacher-stromkreis"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/alltag/wirkungen/"
+              ]
+            }
+          ]
         },
         {
           "id": "magnetwirkung-strom",
@@ -296,7 +360,15 @@
             "einfacher-stromkreis",
             "permanentmagnete"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/alltag/wirkungen/"
+              ]
+            }
+          ]
         },
         {
           "id": "gefahren-des-stroms",
@@ -305,7 +377,15 @@
           "requires": [
             "einfacher-stromkreis"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/alltag/sicherheit/"
+              ]
+            }
+          ]
         },
         {
           "id": "sicher-mit-strom-umgehen",
@@ -314,7 +394,15 @@
           "requires": [
             "gefahren-des-stroms"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/alltag/sicherheit/"
+              ]
+            }
+          ]
         },
         {
           "id": "elektrische-ladung",
@@ -341,7 +429,15 @@
           "requires": [
             "einfacher-stromkreis"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/groessen/stromstaerke/"
+              ]
+            }
+          ]
         },
         {
           "id": "strom-als-ladungstransport",
@@ -361,7 +457,15 @@
             "stromstaerke",
             "schaltzeichen"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/groessen/stromstaerke/"
+              ]
+            }
+          ]
         },
         {
           "id": "spannung",
@@ -370,7 +474,15 @@
           "requires": [
             "einfacher-stromkreis"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/groessen/spannung/"
+              ]
+            }
+          ]
         },
         {
           "id": "spannung-messen",
@@ -380,7 +492,15 @@
             "spannung",
             "schaltzeichen"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/groessen/spannung/"
+              ]
+            }
+          ]
         },
         {
           "id": "widerstand",
@@ -391,7 +511,15 @@
             "spannung",
             "leiter-nichtleiter"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/groessen/widerstand/"
+              ]
+            }
+          ]
         },
         {
           "id": "widerstand-einflussgroessen",
@@ -400,7 +528,15 @@
           "requires": [
             "widerstand"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/groessen/widerstand/"
+              ]
+            }
+          ]
         },
         {
           "id": "ohmsches-gesetz",
@@ -411,7 +547,15 @@
             "spannung-messen",
             "widerstand"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/groessen/ohmsches-gesetz/"
+              ]
+            }
+          ]
         },
         {
           "id": "ohmsches-gesetz-rechnen",
@@ -420,7 +564,15 @@
           "requires": [
             "ohmsches-gesetz"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/groessen/ohmsches-gesetz/"
+              ]
+            }
+          ]
         },
         {
           "id": "reihenschaltung-groessen",
@@ -430,7 +582,15 @@
             "reihenschaltung",
             "ohmsches-gesetz-rechnen"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/schaltungen-messen/reihenschaltung/"
+              ]
+            }
+          ]
         },
         {
           "id": "parallelschaltung-groessen",
@@ -440,7 +600,15 @@
             "parallelschaltung",
             "ohmsches-gesetz-rechnen"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "elektrizitaet",
+              "url": "https://lernapps.net/elektrizitaet/",
+              "pages": [
+                "https://lernapps.net/elektrizitaet/schaltungen-messen/parallelschaltung/"
+              ]
+            }
+          ]
         },
         {
           "id": "gesamtwiderstand",
