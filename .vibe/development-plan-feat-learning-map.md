@@ -492,7 +492,21 @@ Ids say the step; tasks of one step run in order, steps as in the Plan's strateg
 - The map shows Mathematik with the Lehrplan Hessen, and at least one explainer on v2 is on it.
 
 ### Tasks
-- [ ] *To be added when this phase becomes active*
+- [x] C1 Merge in order: lernapps/app-templates#128 and lernapps/tooling#250 (by the owner), lernapps/docs#92, lernapps/apps#171
+  (rebased on #169; the map line of the start page moved under the results; the test of the links in llms.txt can only pass
+  after the merge, since it links the contract on main).
+- [x] C2 Release fix: since #250 the published tooling named app-templates by commit, and lernapps/practice refuses that
+  (lernapps/practice#52). lernapps/tooling#256 pins app-templates 0.3.0 (= cf943e1) with a test; tooling 0.5.2. Renovate had
+  already moved the commit pin (#248), so lernapps/tooling#255 was closed. A second, older fault surfaced: the practice build
+  kept the template's override of the runtime (EOVERRIDE); fixed in lernapps/practice#53. The submission of #52 is online.
+- [x] C3 Apps on the released versions (`lernapps update`: app-templates ^0.3.0, tooling ^0.5.2, actions v0.5.2, skills), checked
+  against the online map (no errors; hints one-competency-per-page and prerequisites-linked are content work for later), merged:
+  elektrizitaet#19, anorganische-chemie#15, musik#17, mathe-arithmetik#1, mathe-algebra#1, mathe-stochastik#1,
+  chemie-reaktionen#1.
+- [ ] C4 New apps online (GitHub Pages of mathe-arithmetik, mathe-algebra, mathe-stochastik, chemie-reaktionen) and listed in the
+  catalog (lernapps-listing).
+- [ ] C5 Later: content hints (split pages with two competencies; recap pages or links for prerequisites); test run 4 with the
+  map online; lernapps/app-templates#130.
 
 ### Completed
 *None yet*
