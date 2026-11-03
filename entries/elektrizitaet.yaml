@@ -14,33 +14,6 @@ summary:
     practise with a circuit in which you can see the current flow, build circuits and measure. The app is available in
     German and English.
 url: https://lernapps.net/elektrizitaet/
-topics:
-  - title: { de: "Der einfache Stromkreis", en: "The simple circuit" }
-    path: stromkreis/einfacher-stromkreis/
-  - title: { de: "Leiter und Nichtleiter", en: "Conductors and insulators" }
-    path: stromkreis/leiter-nichtleiter/
-  - title: { de: "Schalter und Schaltzeichen", en: "Switches and circuit symbols" }
-    path: schaltungen/schalter-schaltzeichen/
-  - title: { de: "Reihenschaltung", en: "Series circuit" }
-    path: schaltungen/reihenschaltung/
-  - title: { de: "Parallelschaltung", en: "Parallel circuit" }
-    path: schaltungen/parallelschaltung/
-  - title: { de: "Die Stromstärke", en: "Current" }
-    path: groessen/stromstaerke/
-  - title: { de: "Die Spannung", en: "Voltage" }
-    path: groessen/spannung/
-  - title: { de: "Der Widerstand", en: "Resistance" }
-    path: groessen/widerstand/
-  - title: { de: "Das ohmsche Gesetz", en: "Ohm's law" }
-    path: groessen/ohmsches-gesetz/
-  - title: { de: "Reihenschaltung mit Messgeräten", en: "Series circuit with meters" }
-    path: schaltungen-messen/reihenschaltung/
-  - title: { de: "Parallelschaltung mit Messgeräten", en: "Parallel circuit with meters" }
-    path: schaltungen-messen/parallelschaltung/
-  - title: { de: "Wirkungen des elektrischen Stroms", en: "Effects of electric current" }
-    path: alltag/wirkungen/
-  - title: { de: "Sicher mit Strom umgehen", en: "Handling electricity safely" }
-    path: alltag/sicherheit/
 keywords:
   - { de: Stromkreis, en: circuit }
   - { de: Leiter, en: conductor }
@@ -62,7 +35,7 @@ creator:
   name: Oliver
   url: https://github.com/mrsimpson
 source: https://github.com/lernapps/elektrizitaet
-commit: f63104aea8abe872cb5a7ea7a30afd9180093253
+commit: 3ab9c94ed2e158623067c2e9775d61edd3478a41
 fitness:
   account: false
   install: false

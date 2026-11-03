@@ -7,30 +7,10 @@ summary: >-
   kleine Stücke. Alle Klänge entstehen im Browser und klingen wie ein Klavier. Das Mikrofon ist freiwillig, und jede
   Übung geht auch ohne.
 url: https://lernapps.net/musik/
-topics:
-  - { title: "Laut und leise", path: hoeren/laut-leise/ }
-  - { title: "Schnell und langsam", path: hoeren/schnell-langsam/ }
-  - { title: "Klangfarbe und Instrumentenfamilien", path: hoeren/klangfarbe/ }
-  - { title: "Hoch und tief", path: tonhoehe/hoch-tief/ }
-  - { title: "Die Klaviatur", path: tonhoehe/klaviatur/ }
-  - { title: "Meine Stimme hat eine Tonhöhe", path: tonhoehe/stimme/ }
-  - { title: "Grundschlag und Takt", path: rhythmus/grundschlag-takt/ }
-  - { title: "Notenwerte und Pausen", path: rhythmus/notenwerte/ }
-  - { title: "Rhythmen klatschen", path: rhythmus/klatschen/ }
-  - { title: "Notenlinien und Violinschlüssel", path: noten/linien/ }
-  - { title: "Noten benennen", path: noten/benennen/ }
-  - { title: "Rhythmus und Melodie lesen", path: noten/lesen/ }
-  - { title: "Ganzton, Halbton und die Dur-Tonleiter", path: tonleitern/dur-bauen/ }
-  - { title: "Dur und Moll hören", path: tonleitern/dur-moll/ }
-  - { title: "Intervalle", path: tonleitern/intervalle/ }
-  - { title: "Tonfolgen nachsingen", path: tonleitern/nachsingen/ }
-  - { title: "Ein Lied begleiten", path: erfinden/begleiten/ }
-  - { title: "Einen eigenen Rhythmus erfinden", path: erfinden/rhythmus-erfinden/ }
-  - { title: "Eine eigene Melodie erfinden und singen", path: erfinden/melodie-erfinden/ }
 keywords: [Noten lesen, Rhythmus klatschen, Tonleiter, Intervalle, Klaviatur, Instrumente, Takt, Dur und Moll]
 creator: { name: "Oliver Jägle" }
 source: https://github.com/lernapps/musik
-commit: 280c640da919305aec17111a6c2af1422181457b
+commit: 8ac0c7bdb37ce7002f1b5eb669a33aeb0ea3d6ff
 fitness:
   account: false
   install: false
