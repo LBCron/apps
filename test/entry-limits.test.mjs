@@ -8,7 +8,7 @@ import nunjucks from "nunjucks";
 import { Entry } from "../schemas/entry.js";
 import de from "../src/_data/de.js";
 
-const entry = load(readFileSync(new URL("../entries/mathe-karte.yaml", import.meta.url), "utf8"));
+const entry = load(readFileSync(new URL("../entries/mathe-arithmetik.yaml", import.meta.url), "utf8"));
 const LIMITS = "Nicht mit Screenreader bedienbar; auf dem Handy nicht sinnvoll, weil eine Tastatur nötig ist.";
 
 /** The fitness panel of the app's page (components.njk, macro fitness). */

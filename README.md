@@ -128,7 +128,7 @@ SITE_PATH_PREFIX=/apps/pr-preview/pr-1/ SITE_PREVIEW=1 npm run build   # as a pr
 npm run build && npm run check   # schema in sync, output checked
 npm run schema                   # after changing schemas/entry.js
 npm test                         # end-to-end tests: listing validation, review, creator's entry point (network)
-npm run --silent listing -- entries/mathe-karte.yaml   # check an entry against its deployed app
+npm run --silent listing -- entries/mathe-arithmetik.yaml   # check an entry against its deployed app
 ```
 
 `npm ci` sets the git hooks in `.githooks/` (the `prepare` script). Both are quiet and log to

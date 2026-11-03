@@ -90,7 +90,7 @@ The state of a curriculum ("places 42 of 85") is computed, never written down.
 
 ## 3. An explainer: format 2 (lernapps/app-templates)
 
-`explainer.v2.schema.json`. Format 1 stays valid for apps that do not move (mathe-karte, KD-07): they are not on the
+`explainer.v2.schema.json`. Format 1 stays valid for apps that do not move (KD-07): they are not on the
 map. An app is on format 2 when its `app.yaml` says so.
 
 `src/app.yaml`:
