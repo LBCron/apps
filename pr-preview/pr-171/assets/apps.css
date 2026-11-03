@@ -149,3 +149,13 @@ textarea.field { resize: vertical; font-size: .875rem; }
   .map-loop::after { border-top-color: #93c5fd; }
   .map-appbar { border-color: #475569; }
 }
+
+/* Who brings what (build.njk, build.give): the colour of the label says who, as in the listing steps. */
+.give[data-who="you"] strong { color: #1d4ed8; }
+.give[data-who="ki"] strong { color: #6d28d9; }
+.give[data-who="la"] strong { color: #047857; }
+@media (prefers-color-scheme: dark) {
+  .give[data-who="you"] strong { color: #93c5fd; }
+  .give[data-who="ki"] strong { color: #c4b5fd; }
+  .give[data-who="la"] strong { color: #6ee7b7; }
+}

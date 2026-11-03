@@ -5,7 +5,7 @@
     "en": "Chemistry"
   },
   "source": {
-    "title": "KMK-Bildungsstandards Chemie, Mittlerer Schulabschluss (Beschluss vom 16.12.2004 i.d.F. vom 13.06.2024)",
+    "title": "KMK-Bildungsstandards Chemie, Mittlerer Schulabschluss (Beschluss vom 16.12.2004 i.d.F. vom 13.06.2024); Strang- und Baustein-Zuschnitt nach den verbindlichen inhaltlichen Aspekten, ergänzt um Inhalte der Kerncurricula Hessen, Bayern und Nordrhein-Westfalen",
     "url": "https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2024/2024_06_13-WeBiS_Chemie_MSA.pdf"
   },
   "strands": [
@@ -34,7 +34,7 @@
         },
         {
           "id": "aggregatzustaende-beschreiben",
-          "iCan": "Ich kann beschreiben, ob ein Stoff fest, flüssig oder gasförmig ist.",
+          "iCan": "Ich kann die drei Aggregatzustände und ihre Übergänge (schmelzen, erstarren, verdampfen, kondensieren, sublimieren) benennen und beschreiben.",
           "gradeBand": "7-8",
           "requires": [],
           "practisedBy": []
@@ -85,11 +85,31 @@
           "practisedBy": []
         },
         {
+          "id": "gasnachweise",
+          "iCan": "Ich kann Sauerstoff, Wasserstoff und Kohlenstoffdioxid mit Glimmspan-, Knallgas- und Kalkwasserprobe nachweisen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "stoffeigenschaften-beschreiben",
+            "sicherheit-beim-experimentieren"
+          ],
+          "practisedBy": []
+        },
+        {
           "id": "ph-wert-deuten",
-          "iCan": "Ich kann mit dem pH-Wert eine Lösung als sauer, neutral oder alkalisch einordnen.",
+          "iCan": "Ich kann mit Indikatoren und dem pH-Wert eine Lösung als sauer, neutral oder alkalisch einordnen.",
           "gradeBand": "9-10",
           "requires": [
-            "loeslichkeit"
+            "stoffeigenschaften-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ionen-in-sauren-und-alkalischen-loesungen",
+          "iCan": "Ich kann erklären, dass saure Lösungen Oxonium-Ionen und alkalische Lösungen Hydroxid-Ionen enthalten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "ph-wert-deuten",
+            "atome-ionen-und-molekuele-unterscheiden"
           ],
           "practisedBy": []
         },
@@ -146,6 +166,16 @@
           "practisedBy": []
         },
         {
+          "id": "daltonsches-atommodell",
+          "iCan": "Ich kann mit dem Atommodell nach Dalton erklären, was Atome sind und wie sie sich bei einer Reaktion neu gruppieren.",
+          "gradeBand": "7-8",
+          "requires": [
+            "teilchenmodell",
+            "elemente-und-verbindungen"
+          ],
+          "practisedBy": []
+        },
+        {
           "id": "symbole-der-elemente",
           "iCan": "Ich kann Elemente mit ihrem Symbol benennen und schreiben.",
           "gradeBand": "7-8",
@@ -159,7 +189,8 @@
           "iCan": "Ich kann die Formel einer Verbindung lesen und schreiben und sagen, welche Atome in welcher Anzahl enthalten sind.",
           "gradeBand": "7-8",
           "requires": [
-            "symbole-der-elemente"
+            "symbole-der-elemente",
+            "daltonsches-atommodell"
           ],
           "practisedBy": []
         },
@@ -168,23 +199,53 @@
           "iCan": "Ich kann sagen, aus welchen Teilchen ein Atom besteht: Protonen, Neutronen und Elektronen.",
           "gradeBand": "7-8",
           "requires": [
-            "teilchenmodell"
+            "daltonsches-atommodell"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "atome-ionen-und-molekuele-unterscheiden",
+          "iCan": "Ich kann Atome, Ionen und Moleküle unterscheiden und an Beispielen zeigen, aus welchen Teilchen ein Stoff besteht.",
+          "gradeBand": "7-8",
+          "requires": [
+            "atombau-bausteine",
+            "formeln-von-verbindungen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "periodensystem-lesen",
+          "iCan": "Ich kann ein Element im Periodensystem finden und Ordnungszahl, Symbol, Periode und Gruppe ablesen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "symbole-der-elemente"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "metalle-und-nichtmetalle",
+          "iCan": "Ich kann Metalle, Nichtmetalle und Grenzfälle an ihren Eigenschaften und ihrem Platz im Periodensystem erkennen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "periodensystem-lesen",
+            "stoffeigenschaften-beschreiben"
           ],
           "practisedBy": []
         },
         {
           "id": "ordnungszahl-und-massenzahl",
           "iCan": "Ich kann mit Ordnungszahl und Massenzahl die Zahl der Protonen, Neutronen und Elektronen eines Atoms bestimmen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
-            "atombau-bausteine"
+            "atombau-bausteine",
+            "periodensystem-lesen"
           ],
           "practisedBy": []
         },
         {
           "id": "schalenmodell",
           "iCan": "Ich kann die Elektronen eines Atoms im Schalenmodell auf die Schalen verteilen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "ordnungszahl-und-massenzahl"
           ],
@@ -200,28 +261,9 @@
           "practisedBy": []
         },
         {
-          "id": "reaktionen-mit-atommodell-vorhersagen",
-          "iCan": "Ich kann mit der Zahl der Außenelektronen vorhersagen, wie ein Atom reagiert.",
-          "gradeBand": "9-10",
-          "requires": [
-            "atommodell-mit-energiestufen"
-          ],
-          "practisedBy": []
-        },
-        {
-          "id": "periodensystem-lesen",
-          "iCan": "Ich kann ein Element im Periodensystem finden und Ordnungszahl, Symbol, Periode und Gruppe ablesen.",
-          "gradeBand": "7-8",
-          "requires": [
-            "symbole-der-elemente",
-            "ordnungszahl-und-massenzahl"
-          ],
-          "practisedBy": []
-        },
-        {
           "id": "hauptgruppen",
           "iCan": "Ich kann die acht Hauptgruppen nennen und sagen, wie viele Außenelektronen ihre Atome haben.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "periodensystem-lesen",
             "schalenmodell"
@@ -229,12 +271,11 @@
           "practisedBy": []
         },
         {
-          "id": "metalle-und-nichtmetalle",
-          "iCan": "Ich kann Metalle, Nichtmetalle und Grenzfälle an ihren Eigenschaften und ihrem Platz im Periodensystem erkennen.",
-          "gradeBand": "7-8",
+          "id": "reaktionen-mit-atommodell-vorhersagen",
+          "iCan": "Ich kann mit der Zahl der Außenelektronen vorhersagen, wie ein Atom reagiert.",
+          "gradeBand": "9-10",
           "requires": [
-            "periodensystem-lesen",
-            "stoffeigenschaften-beschreiben"
+            "atommodell-mit-energiestufen"
           ],
           "practisedBy": []
         },
@@ -267,26 +308,37 @@
           "practisedBy": []
         },
         {
-          "id": "ionengitter",
-          "iCan": "Ich kann den Aufbau eines Ionengitters beschreiben und seine Eigenschaften wie Sprödigkeit und Schmelztemperatur erklären.",
-          "gradeBand": "9-10",
+          "id": "ionenbindung",
+          "iCan": "Ich kann die Ionenbindung beschreiben und sagen, welche Stoffe so gebunden sind.",
+          "gradeBand": "7-8",
           "requires": [
-            "ionen-bilden"
+            "atome-ionen-und-molekuele-unterscheiden",
+            "metalle-und-nichtmetalle"
           ],
           "practisedBy": []
         },
         {
-          "id": "ionenbindung",
-          "iCan": "Ich kann die Ionenbindung beschreiben und sagen, welche Stoffe so gebunden sind.",
-          "gradeBand": "9-10",
+          "id": "ionengitter",
+          "iCan": "Ich kann den Aufbau eines Ionengitters beschreiben und seine Eigenschaften wie Sprödigkeit und Schmelztemperatur erklären.",
+          "gradeBand": "7-8",
           "requires": [
-            "ionen-bilden"
+            "ionenbindung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "metallbindung",
+          "iCan": "Ich kann die Metallbindung beschreiben und damit Eigenschaften von Metallen erklären.",
+          "gradeBand": "7-8",
+          "requires": [
+            "metalle-und-nichtmetalle",
+            "atome-ionen-und-molekuele-unterscheiden"
           ],
           "practisedBy": []
         },
         {
           "id": "elektronenpaarbindung",
-          "iCan": "Ich kann die Elektronenpaarbindung beschreiben und sie mit Lewis-Formeln darstellen.",
+          "iCan": "Ich kann die Elektronenpaarbindung beschreiben und erklären, warum Nichtmetall-Atome Elektronenpaare teilen.",
           "gradeBand": "9-10",
           "requires": [
             "reaktionen-mit-atommodell-vorhersagen"
@@ -294,12 +346,11 @@
           "practisedBy": []
         },
         {
-          "id": "metallbindung",
-          "iCan": "Ich kann die Metallbindung beschreiben und damit Eigenschaften von Metallen erklären.",
+          "id": "lewis-formeln",
+          "iCan": "Ich kann Lewis-Formeln einfacher Moleküle zeichnen und lesen.",
           "gradeBand": "9-10",
           "requires": [
-            "metalle-und-nichtmetalle",
-            "atommodell-mit-energiestufen"
+            "elektronenpaarbindung"
           ],
           "practisedBy": []
         },
@@ -319,7 +370,7 @@
           "iCan": "Ich kann die räumliche Struktur einfacher Moleküle beschreiben, etwa von Wasser oder Methan.",
           "gradeBand": "9-10",
           "requires": [
-            "elektronenpaarbindung"
+            "lewis-formeln"
           ],
           "practisedBy": []
         },
@@ -347,6 +398,44 @@
           "gradeBand": "9-10",
           "requires": [
             "bindungstypen-vergleichen",
+            "wechselwirkungen-zwischen-teilchen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kohlenwasserstoffe-alkane",
+          "iCan": "Ich kann Alkane mit Molekülformel und Strukturformel darstellen und ihre homologe Reihe benennen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "lewis-formeln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "funktionelle-gruppen-und-stoffklassen",
+          "iCan": "Ich kann organische Stoffe an ihrer funktionellen Gruppe einer Stoffklasse zuordnen, etwa Alkanole.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kohlenwasserstoffe-alkane"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "eigenschaften-organischer-stoffe",
+          "iCan": "Ich kann Siedetemperatur und Löslichkeit organischer Stoffe mit ihrer Molekülstruktur und den Wechselwirkungen zwischen den Molekülen erklären.",
+          "gradeBand": "9-10",
+          "requires": [
+            "funktionelle-gruppen-und-stoffklassen",
+            "wechselwirkungen-zwischen-teilchen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kunststoffe",
+          "iCan": "Ich kann Eigenschaften und Verwendung von Kunststoffen mit ihrem Bau aus Makromolekülen begründen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kohlenwasserstoffe-alkane",
             "wechselwirkungen-zwischen-teilchen"
           ],
           "practisedBy": []
@@ -409,13 +498,34 @@
           "practisedBy": []
         },
         {
+          "id": "verbrennung",
+          "iCan": "Ich kann eine Verbrennung als Reaktion mit Sauerstoff beschreiben und sagen, was zum Brennen nötig ist.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kennzeichen-chemischer-reaktionen",
+            "elemente-und-verbindungen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "umkehrbarkeit-chemischer-reaktionen",
+          "iCan": "Ich kann an einem Beispiel zeigen, dass eine chemische Reaktion umkehrbar sein kann, etwa Zerlegung und Synthese von Wasser.",
+          "gradeBand": "9-10",
+          "requires": [
+            "synthese-und-analyse",
+            "wortgleichung"
+          ],
+          "practisedBy": []
+        },
+        {
           "id": "reaktionsgleichung-aufstellen",
           "iCan": "Ich kann eine einfache Reaktionsgleichung aufstellen, bei der auf beiden Seiten gleich viele Atome stehen.",
           "gradeBand": "7-8",
           "requires": [
             "wortgleichung",
             "formeln-von-verbindungen",
-            "massenerhaltung"
+            "massenerhaltung",
+            "daltonsches-atommodell"
           ],
           "practisedBy": []
         },
@@ -440,11 +550,32 @@
           "practisedBy": []
         },
         {
+          "id": "konzentration-von-loesungen",
+          "iCan": "Ich kann die Konzentration einer Lösung berechnen und eine Lösung mit bestimmter Konzentration herstellen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "stoffmenge-und-molare-masse",
+            "loeslichkeit"
+          ],
+          "practisedBy": []
+        },
+        {
           "id": "oxidation-und-reduktion",
           "iCan": "Ich kann Oxidation und Reduktion als Aufnahme und Abgabe von Sauerstoff beschreiben.",
           "gradeBand": "7-8",
           "requires": [
-            "reaktionsgleichung-aufstellen"
+            "reaktionsgleichung-aufstellen",
+            "verbrennung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "edle-und-unedle-metalle",
+          "iCan": "Ich kann Metalle nach ihrer Reaktionsfähigkeit mit Sauerstoff in edle und unedle Metalle ordnen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "oxidation-und-reduktion",
+            "metalle-und-nichtmetalle"
           ],
           "practisedBy": []
         },
@@ -459,13 +590,22 @@
           "practisedBy": []
         },
         {
+          "id": "elektrolyse",
+          "iCan": "Ich kann die Elektrolyse einer Salzlösung oder Salzschmelze als erzwungene Redoxreaktion beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "redoxreaktion-als-elektronenuebergang",
+            "elektrische-leitfaehigkeit"
+          ],
+          "practisedBy": []
+        },
+        {
           "id": "saeure-base-reaktion",
           "iCan": "Ich kann eine Säure-Base-Reaktion als Übertragung von Protonen beschreiben.",
           "gradeBand": "9-10",
           "requires": [
-            "ph-wert-deuten",
-            "reaktionsgleichung-aufstellen",
-            "ionen-bilden"
+            "ionen-in-sauren-und-alkalischen-loesungen",
+            "reaktionsgleichung-aufstellen"
           ],
           "practisedBy": []
         },
@@ -544,6 +684,24 @@
           "practisedBy": []
         },
         {
+          "id": "energieschema-lesen",
+          "iCan": "Ich kann ein Energieschema einer Reaktion lesen und zeichnen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "exotherm-und-endotherm"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aktivierungsenergie",
+          "iCan": "Ich kann an einem Energieschema die Aktivierungsenergie zeigen und erklären, warum manche Reaktionen erst nach einem Anstoß ablaufen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "energieschema-lesen"
+          ],
+          "practisedBy": []
+        },
+        {
           "id": "energieaustausch-mit-der-umgebung",
           "iCan": "Ich kann beschreiben, wie ein Reaktionssystem Energie mit seiner Umgebung austauscht.",
           "gradeBand": "9-10",
@@ -554,30 +712,32 @@
           "practisedBy": []
         },
         {
-          "id": "energieschema-lesen",
-          "iCan": "Ich kann ein Energieschema einer Reaktion lesen und zeichnen.",
-          "gradeBand": "9-10",
-          "requires": [
-            "energieaustausch-mit-der-umgebung"
-          ],
-          "practisedBy": []
-        },
-        {
-          "id": "aktivierungsenergie",
-          "iCan": "Ich kann an einem Energieschema die Aktivierungsenergie zeigen und erklären, warum manche Reaktionen erst nach einem Anstoß ablaufen.",
-          "gradeBand": "9-10",
-          "requires": [
-            "energieschema-lesen"
-          ],
-          "practisedBy": []
-        },
-        {
           "id": "katalysator",
           "iCan": "Ich kann erklären, wie ein Katalysator die Aktivierungsenergie senkt und eine Reaktion beschleunigt.",
           "gradeBand": "9-10",
           "requires": [
             "aktivierungsenergie",
             "temperatur-und-reaktionsgeschwindigkeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "energie-beim-loesen-von-salzen",
+          "iCan": "Ich kann erklären, warum sich eine Lösung beim Lösen eines Salzes erwärmt oder abkühlt.",
+          "gradeBand": "9-10",
+          "requires": [
+            "salze-loesen",
+            "exotherm-und-endotherm"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "galvanisches-element",
+          "iCan": "Ich kann erklären, wie in einer Batterie oder einem galvanischen Element chemische Energie in elektrische Energie umgewandelt wird.",
+          "gradeBand": "9-10",
+          "requires": [
+            "redoxreaktion-als-elektronenuebergang",
+            "energieumwandlung-bei-reaktionen"
           ],
           "practisedBy": []
         }
