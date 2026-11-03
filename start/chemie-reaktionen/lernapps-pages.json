@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "strand": "chemie/chemische-reaktion",
+  "pages": [
+    {
+      "path": "vorwissen/stoffeigenschaften/",
+      "title": {
+        "de": "Stoffeigenschaften – kurz wiederholt",
+        "en": "Properties of substances – a short recap"
+      },
+      "recap": "chemie/stoffeigenschaften-beschreiben"
+    },
+    {
+      "path": "vorwissen/aggregatzustaende/",
+      "title": {
+        "de": "Aggregatzustände – kurz wiederholt",
+        "en": "States of matter – a short recap"
+      },
+      "recap": "chemie/aggregatzustaende-beschreiben"
+    },
+    {
+      "path": "vorwissen/teilchenmodell/",
+      "title": {
+        "de": "Teilchenmodell – kurz wiederholt",
+        "en": "Particle model – a short recap"
+      },
+      "recap": "chemie/teilchenmodell"
+    },
+    {
+      "path": "vorwissen/formeln/",
+      "title": {
+        "de": "Symbole und Formeln – kurz wiederholt",
+        "en": "Symbols and formulas – a short recap"
+      },
+      "recap": "chemie/formeln-von-verbindungen"
+    },
+    {
+      "path": "reaktionen/reaktionen/",
+      "title": {
+        "de": "Chemische Reaktionen",
+        "en": "Chemical reactions"
+      },
+      "competencies": [
+        "kennzeichen-chemischer-reaktionen",
+        "reaktion-oder-zustandsaenderung"
+      ]
+    },
+    {
+      "path": "reaktionen/reaktionsgleichungen/",
+      "title": {
+        "de": "Reaktionsgleichungen",
+        "en": "Reaction equations"
+      },
+      "competencies": [
+        "reaktionsgleichung-aufstellen",
+        "massenerhaltung"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="binom-svg" viewBox="0 0 320 390" role="img" aria-label="(x + 4)(x − 4) = x² − 16. Gleiche Teile, gleiche Fläche"><style>
+svg { --page-text: #1a1a1a; --page-muted: #4a4a4a; --page-background: #ffffff; --page-surface: #f4f5f7; --page-border: #8a8f98; --page-accent: #1d4ed8; --page-on-accent: #ffffff; --page-right: #14532d; --page-right-background: #dcfce7; --page-wrong: #7f1d1d; --page-wrong-background: #fee2e2; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+@media (prefers-color-scheme: dark) { svg { --page-text: #ececec; --page-muted: #b8bcc4; --page-background: #121316; --page-surface: #1d1f24; --page-border: #7d838d; --page-accent: #8ab4ff; --page-on-accent: #0b1020; --page-right: #bbf7d0; --page-right-background: #143522; --page-wrong: #fecaca; --page-wrong-background: #3f1515; } }
+.binom-term {
+  white-space: nowrap;
+}
+.binom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  max-width: 26rem;
+}
+.binom-wahl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0 0 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--page-border);
+  border-radius: 0.375rem;
+}
+.binom-zahl {
+  font: inherit;
+  padding: 0.4rem 0.5rem;
+  border: 2px solid var(--page-border);
+  border-radius: 0.375rem;
+  background: var(--page-background);
+  color: var(--page-text);
+}
+.binom-knoepfe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.binom-knoepfe button {
+  font: inherit;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--page-accent);
+  border-radius: 0.375rem;
+  background: var(--page-accent);
+  color: var(--page-on-accent);
+  cursor: pointer;
+}
+.binom-knoepfe .binom-zweit {
+  background: var(--page-background);
+  color: var(--page-accent);
+}
+.binom-form input:focus-visible,
+.binom-knoepfe button:focus-visible,
+.binom-tipp summary:focus-visible {
+  outline: 3px solid var(--page-text);
+  outline-offset: 2px;
+}
+.binom-tipp {
+  margin: 0.75rem 0 0;
+}
+.binom-weg {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-left: 4px solid var(--page-accent);
+  background: var(--page-surface);
+}
+.binom-svg {
+  display: block;
+  width: 100%;
+  max-width: 26rem;
+  height: auto;
+  margin: 0.5rem 0;
+  font-family: inherit;
+}
+.binom-a {
+  fill: #dbeafe;
+  stroke: #1d4ed8;
+}
+.binom-ab {
+  fill: #fef3c7;
+  stroke: #b45309;
+}
+.binom-b {
+  fill: #dcfce7;
+  stroke: #166534;
+}
+.binom-minus {
+  fill: #fee2e2;
+  stroke: #b91c1c;
+}
+.binom-leer {
+  fill: #ffffff;
+  stroke: #6b7280;
+}
+.binom-luecke {
+  fill: none;
+  stroke: var(--page-muted);
+}
+.binom-linie {
+  stroke: var(--page-muted);
+}
+.binom-ton-normal {
+  fill: var(--page-text);
+}
+.binom-ton-leise {
+  fill: var(--page-muted);
+}
+.binom-ton-innen {
+  fill: #1a1a1a;
+}
+.binom-ton-minus {
+  fill: var(--page-wrong);
+}
+.binom-ton-plus {
+  fill: var(--page-right);
+}
+.binom-term {
+  white-space: nowrap;
+}
+.binom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  max-width: 26rem;
+}
+.binom-form input {
+  font: inherit;
+  padding: 0.4rem 0.5rem;
+  border: 2px solid var(--page-border);
+  border-radius: 0.375rem;
+  background: var(--page-background);
+  color: var(--page-text);
+}
+.binom-hinweis {
+  color: var(--page-muted);
+  font-size: 0.9375rem;
+}
+.binom-hinweis:empty {
+  display: none;
+}
+.binom-knoepfe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.binom-knoepfe button {
+  font: inherit;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--page-accent);
+  border-radius: 0.375rem;
+  background: var(--page-accent);
+  color: var(--page-on-accent);
+  cursor: pointer;
+}
+.binom-knoepfe .binom-zweit {
+  background: var(--page-background);
+  color: var(--page-accent);
+}
+.binom-form input:focus-visible,
+.binom-knoepfe button:focus-visible,
+.binom-tipp summary:focus-visible {
+  outline: 3px solid var(--page-text);
+  outline-offset: 2px;
+}
+.binom-tipp {
+  margin: 0.75rem 0 0;
+}
+.binom-weg {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-left: 4px solid var(--page-accent);
+  background: var(--page-surface);
+}
+</style><rect x="95" y="26" width="130" height="71.5" class="binom-a" stroke-width="1.5"></rect><rect x="95" y="97.5" width="71.5" height="58.5" class="binom-ab" stroke-width="1.5"></rect><rect x="166.5" y="97.5" width="58.5" height="58.5" class="binom-luecke" stroke-dasharray="4 3" stroke-width="1.5"></rect><text x="231" y="131.8" font-size="14" text-anchor="start" font-weight="700" class="binom-ton-minus">− 16</text><text x="160" y="18" font-size="14" text-anchor="middle" font-weight="700" class="binom-ton-normal">x</text><text x="89" y="66.8" font-size="14" text-anchor="end" font-weight="700" class="binom-ton-normal">x − 4</text><text x="89" y="131.8" font-size="14" text-anchor="end" font-weight="700" class="binom-ton-normal">4</text><text x="130.8" y="174" font-size="14" text-anchor="middle" font-weight="700" class="binom-ton-normal">x − 4</text><text x="160" y="198" font-size="13" text-anchor="middle" class="binom-ton-leise">x² ohne die Ecke 4²</text><rect x="76" y="240" width="130" height="71.5" class="binom-a" stroke-width="1.5"></rect><rect x="206" y="240" width="58.5" height="71.5" class="binom-ab" stroke-width="1.5"></rect><text x="141" y="232" font-size="14" text-anchor="middle" font-weight="700" class="binom-ton-normal">x</text><text x="235.3" y="232" font-size="14" text-anchor="middle" font-weight="700" class="binom-ton-normal">4</text><text x="70" y="280.8" font-size="14" text-anchor="end" font-weight="700" class="binom-ton-normal">x − 4</text><text x="160" y="333.5" font-size="13" text-anchor="middle" class="binom-ton-leise">umgelegt: (x + 4)(x − 4)</text><text x="160" y="361.5" font-size="16" text-anchor="middle" font-weight="700" class="binom-ton-normal">(x + 4)(x − 4) = x² − 16</text><text x="160" y="381.5" font-size="12" text-anchor="middle" class="binom-ton-leise">Gleiche Teile, gleiche Fläche</text></svg>

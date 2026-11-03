@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="module" crossorigin src="../../assets/index-CJdA3AnL.js"></script>
+    <link rel="modulepreload" crossorigin href="../../assets/tasks-DADUYy52-D5IfZDbd.js">
+    <link rel="stylesheet" crossorigin href="../../assets/index-CBoc-F0e.css">
+    <title>Baumdiagramm – Mathe: Stochastik – Wahrscheinlichkeit</title>
+    <meta name="description" content="Ein Baumdiagramm zu einem mehrstufigen Zufallsversuch zeichnen, mit den Wahrscheinlichkeiten an den Zweigen, mit und ohne Zurücklegen." />
+    <meta name="lernapps-archetype" content="explainer" />
+    <link rel="alternate" hreflang="de" href="../../zufall/baumdiagramm/" />
+    <script type="module" crossorigin src="../../assets/islands-CFDIJD6X.js"></script>
+  </head>
+  <body>
+    <nav class="explainer-breadcrumbs" aria-label="Du bist hier"><ol><li><a href="../../">Start</a></li><li aria-current="page">Baumdiagramm</li></ol></nav>
+<main class="explainer" id="inhalt-der-seite">
+<div class="explainer-title-row">
+<h1>Baumdiagramm</h1>
+<div class="explainer-tutor explainer-tutor-page">
+<details class="explainer-tutor-off">
+<summary>Mit einem KI-Tutor lernen</summary>
+<p>Ein KI-Tutor erklärt dir diese Seite und hilft dir bei den Übungen. Wähl deinen Assistenten:</p>
+<p class="explainer-tutor-actions"><span class="explainer-tutor-way" hidden><select class="explainer-tutor-select" aria-label="Assistent"><option value="Claude">Claude</option><option value="ChatGPT">ChatGPT</option><option value="Mistral Vibe" data-hint="Mistral Vibe lädt keine Webseiten, wenn der Link aus einem Knopf kommt. Darum kopieren wir den Satz mit dem Link für dich. Ein Klick auf „Mit Mistral Vibe lernen“ öffnet Mistral Vibe mit einer kurzen Nachricht. Füg danach den kopierten Satz ein (Strg+V, am Mac ⌘+V) und schick ihn ab.">Mistral Vibe</option><option value="copy">Ein anderer: Text kopieren</option></select> <button type="button" class="explainer-tutor-on">Einschalten</button></span> <span class="explainer-tutor-plain"><a class="explainer-tutor-provider" href="https://claude.ai/new" rel="noopener" target="_blank">Mit Claude öffnen</a> <a class="explainer-tutor-provider" href="https://chatgpt.com/" rel="noopener" target="_blank">Mit ChatGPT öffnen</a> <a class="explainer-tutor-provider" href="https://chat.mistral.ai/chat" rel="noopener" target="_blank">Mit Mistral Vibe öffnen</a></span></p>
+<p class="explainer-tutor-hint" role="status" aria-live="polite" hidden></p>
+<p class="explainer-tutor-note">Du nutzt dein eigenes Konto beim Anbieter. Der Assistent ist kein Angebot von lernapps.net: lernapps liefert nur Inhalte und Übungen. Die Wahl gilt für alle Seiten, nur auf diesem Gerät.</p>
+<p><a class="explainer-tutor-guide" href="../../zufall/baumdiagramm/tutor/">Ansehen, was dein Tutor zu dieser Seite bekommt</a></p>
+</details>
+<p class="explainer-tutor-bar" hidden><button type="button" class="explainer-tutor-go"></button></p>
+<p class="explainer-tutor-status" role="status" aria-live="polite"></p>
+<script type="application/json" class="explainer-tutor-prompt">{"start":"Lade ⟦base⟧zufall/baumdiagramm/tutor/⟦query⟧ und sei mein Tutor.","base":"⟦base⟧","query":"⟦query⟧","root":"../../","storage":"mathe-stochastik","page":{"id":"baumdiagramm","title":"Baumdiagramm","exercises":[{"id":"baum-ergaenzen","section":"uebung","numbered":true},{"id":"baumdiagramm-nenner","section":"uebung","numbered":true}],"sections":["warum","regel","beispiel","bild","video","uebung"]},"tutor":"zufall/baumdiagramm/tutor/","markdown":"zufall/baumdiagramm/tutor/index.md","ways":[{"name":"Claude","url":"https://claude.ai/new?q={prompt}"},{"name":"ChatGPT","url":"https://chatgpt.com/?q={prompt}"},{"name":"Mistral Vibe","url":"https://chat.mistral.ai/chat?q={prompt}","paste":true}],"placeholder":"Ich brauche Hilfe bei einer Lern-Einheit. Ich schreibe Dir gleich, worum es geht.","go":"Mit {name} lernen","done":"✓ Kopiert – jetzt in {name} einfügen","copy":"Text kopieren","copied":"Der Prompt ist kopiert. Füg ihn in den Chat deines KI-Assistenten ein.","failed":"Kopieren ging nicht. Versuch es noch einmal."}</script>
+</div>
+</div>
+
+<nav class="explainer-toc" aria-label="Auf dieser Seite"><p class="explainer-toc-title">Auf dieser Seite</p><ol><li><a href="#warum">Warum?</a></li><li><a href="#regel">Regel</a></li><li><a href="#beispiel">Beispiel</a></li><li><a href="#bild">Bild</a></li><li><a href="#video">Video dazu</a></li><li><a href="#uebung">Übung</a></li></ol></nav>
+<section class="explainer-section">
+<h2 id="warum">Warum?</h2>
+<div class="block-text"><p>Sobald du zweimal ziehst, wirfst oder würfelst, wird es unübersichtlich: Was kann beim ersten Mal passieren, was danach? Das Baumdiagramm ordnet alle Möglichkeiten Stufe für Stufe. Mit einem sauberen Baum lösen sich die Pfadregeln fast von allein – ohne Baum verliert man schnell einen Fall.</p></div>
+</section>
+<section class="explainer-section">
+<h2 id="regel">Regel</h2>
+<dl class="explainer-definition"><dt><dfn id="begriff-mehrstufiger-zufallsversuch"><a href="../../glossar/#mehrstufiger-zufallsversuch">mehrstufiger Zufallsversuch</a></dfn></dt><dd><p>Ein Zufallsversuch aus mehreren Zügen (Stufen), zum Beispiel zweimal aus einer Urne ziehen oder dreimal eine Münze werfen.</p></dd></dl>
+<div class="block-text"><p>Für jede Stufe zeichnest du <strong>Zweige</strong> zu allen möglichen Ergebnissen.</p></div>
+<div class="block-text"><ul>
+<li>An jeden Zweig schreibst du seine <strong>Wahrscheinlichkeit</strong> (Laplace: günstig durch möglich).</li>
+<li>Die Zweige an einem Knoten ergeben zusammen immer <strong>1</strong>.</li>
+<li>Reihenfolge beim Zeichnen: erst alle Zweige, dann die Kugeln, dann die Brüche.</li>
+<li><strong>Ohne Zurücklegen</strong> ändern sich ab der zweiten Stufe Zähler und Nenner (mehr dazu unter
+<a href="../../zufall/ohne-zuruecklegen/">Ohne Zurücklegen</a>).</li>
+</ul></div>
+<div class="block-formula"><math display="block" class="tml-display" style="display:block math;"><mrow><mi>P</mi><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mtext>Zweig 1</mtext><mo fence="true" form="postfix" stretchy="false">)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mtext>Zweig 2</mtext><mo fence="true" form="postfix" stretchy="false">)</mo></mrow><mo>+</mo><mtext>…</mtext><mo>=</mo><mn>1</mn></mrow></math></div>
+<dl class="explainer-definition"><dt><dfn id="begriff-pfad"><a href="../../glossar/#pfad">Pfad</a></dfn></dt><dd><p>Ein Weg im Baumdiagramm vom Start bis zu einem Ende.</p></dd></dl>
+</section>
+<section class="explainer-section">
+<h2 id="beispiel">Beispiel</h2>
+<div class="explainer-box explainer-example">
+<h3 class="explainer-box-title">Zweimal ziehen ohne Zurücklegen</h3>
+<div class="block-text"><p>In einer Urne liegen 3 rote und 2 blaue Kugeln. Du ziehst zweimal <strong>ohne Zurücklegen</strong>. Das Bild unten zeigt den fertigen Baum.</p></div>
+<div class="block-text"><ol>
+<li><strong>1. Stufe:</strong> 5 Kugeln. <math><mrow><mi>P</mi><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mtext>rot</mtext><mo fence="true" form="postfix" stretchy="false">)</mo></mrow><mo>=</mo><mfrac><mn>3</mn><mn>5</mn></mfrac></mrow></math>, <math><mrow><mi>P</mi><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mtext>blau</mtext><mo fence="true" form="postfix" stretchy="false">)</mo></mrow><mo>=</mo><mfrac><mn>2</mn><mn>5</mn></mfrac></mrow></math>. Zusammen 1.</li>
+<li><strong>2. Stufe nach rot:</strong> nur noch 4 Kugeln, davon 2 rote. <math><mrow><mi>P</mi><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mtext>rot</mtext><mo fence="true" form="postfix" stretchy="false">)</mo></mrow><mo>=</mo><mfrac><mn>2</mn><mn>4</mn></mfrac></mrow></math>,
+<math><mrow><mi>P</mi><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mtext>blau</mtext><mo fence="true" form="postfix" stretchy="false">)</mo></mrow><mo>=</mo><mfrac><mn>2</mn><mn>4</mn></mfrac></mrow></math>.</li>
+<li><strong>2. Stufe nach blau:</strong> 4 Kugeln, 3 rote, 1 blaue. <math><mrow><mi>P</mi><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mtext>rot</mtext><mo fence="true" form="postfix" stretchy="false">)</mo></mrow><mo>=</mo><mfrac><mn>3</mn><mn>4</mn></mfrac></mrow></math>,
+<math><mrow><mi>P</mi><mrow><mo fence="true" form="prefix" stretchy="false">(</mo><mtext>blau</mtext><mo fence="true" form="postfix" stretchy="false">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow></math>.</li>
+<li>Unter den Enden stehen schon die Pfadwahrscheinlichkeiten (siehe
+<a href="../../zufall/pfadregel-1/">1. Pfadregel</a>). Ihre Summe ist 1 – ein guter Test für jeden Baum.</li>
+</ol></div>
+</div>
+</section>
+<section class="explainer-section">
+<h2 id="bild">Bild</h2>
+<figure class="block-figure"><img src="../../images/zufall-baumdiagramm.svg" alt="Baumdiagramm zur Urne mit 3 roten und 2 blauen Kugeln, zweimal ohne Zurücklegen" loading="lazy" decoding="async"><figcaption><p>Ein Baumdiagramm zur Urne mit 3 roten (R) und 2 blauen (B) Kugeln, zweimal ohne Zurücklegen. Vom Start
+gehen zwei Zweige aus: rot mit 3/5 und blau mit 2/5. Nach rot folgen rot mit 2/4 und blau mit 2/4, nach blau
+folgen rot mit 3/4 und blau mit 1/4. Unter den vier Enden stehen die Pfadwahrscheinlichkeiten:
+rot-rot 3/10, rot-blau 3/10, blau-rot 3/10, blau-blau 1/10. Zusammen ergeben sie 1.</p> <span class="block-credit">Quelle: Eigene Darstellung der Mathe-Karte. Lizenz: MIT.</span></figcaption></figure>
+</section>
+<section class="explainer-section">
+<h2 id="video">Video dazu</h2>
+<figure class="explainer-video" data-youtube="mBknBnww5fA" data-storage="mathe-stochastik"><figcaption><a class="explainer-video-link" href="https://www.youtube.com/watch?v=mBknBnww5fA" rel="noopener">Baumdiagramm | mehrstufiger Zufallsversuch | Wahrscheinlichkeit | Stochastik</a> <span class="explainer-video-channel">Lehrerschmidt · YouTube</span></figcaption><p class="explainer-video-note">Beim Abspielen gehen Daten an YouTube/Google, darunter deine IP-Adresse.</p><p class="explainer-video-controls" hidden><button type="button" class="explainer-video-play">Video abspielen</button> <label class="explainer-video-always"><input type="checkbox"> Videos immer direkt laden</label></p></figure>
+<div class="block-text"><ul>
+<li>Noch eine Erklärung: <a href="https://de.serlo.org/mathe/156048/mehrstufige-zufallsexperimente" rel="noopener">Mehrstufige Zufallsexperimente</a> bei serlo.org</li>
+</ul></div>
+</section>
+<section class="explainer-section">
+<h2 id="uebung">Übung</h2>
+<div class="explainer-component" id="baum-ergaenzen" data-component="ZufallBaumLuecken" data-exercise data-seeds="[1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,41,42,43,44,45,46,48,49,51,52,53,54,55,56,57,59,60,61,62,63,64,65,66,67,68,69,72,73,74,75]" data-checked>
+<p class="explainer-task-controls" hidden><span class="explainer-task-number" tabindex="-1" data-template="Aufgabe Nr. {n}">Aufgabe Nr. 1</span> <button type="button" class="explainer-new-task" aria-label="Neue Aufgabe" title="Neue Aufgabe"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 3v6h-6"/></svg></button></p>
+<form class="explainer-component-form" novalidate><div class="explainer-island" hidden><div class="question"><p>Du wirfst eine Münze zweimal. Im Baumdiagramm fehlen 3 Zweigwahrscheinlichkeiten (a, b, c). Trag sie ein.</p><div class="zufall-bild" data-v-3d0c2db3><svg viewBox="0 0 320 204" width="320" height="204" role="img" aria-label="Baumdiagramm mit fehlenden Zweigwahrscheinlichkeiten" data-v-3d0c2db3><title data-v-3d0c2db3>Baumdiagramm mit fehlenden Zweigwahrscheinlichkeiten</title><circle cx="160" cy="22" r="6" class="zb-wurzel" data-v-3d0c2db3></circle><g fill="none" data-v-3d0c2db3><!--[--><path d="M160 28 C 160 55, 79 55, 79 82" class="zb-zweig" data-v-3d0c2db3></path><path d="M79 106 C 79 130, 41.5 130, 41.5 154" class="zb-zweig" data-v-3d0c2db3></path><path d="M79 106 C 79 130, 116.5 130, 116.5 154" class="zb-zweig" data-v-3d0c2db3></path><path d="M160 28 C 160 55, 241 55, 241 82" class="zb-zweig" data-v-3d0c2db3></path><path d="M241 106 C 241 130, 203.5 130, 203.5 154" class="zb-zweig" data-v-3d0c2db3></path><path d="M241 106 C 241 130, 278.5 130, 278.5 154" class="zb-zweig" data-v-3d0c2db3></path><!--]--></g><!--[--><g transform="translate(79 94)" data-v-3d0c2db3><circle r="12" fill="#eceff1" class="zb-knoten" data-v-3d0c2db3></circle><text y="4" text-anchor="middle" font-weight="700" font-size="13" fill="#1a1a1a" data-v-3d0c2db3>K</text><title data-v-3d0c2db3>Kopf</title></g><g transform="translate(41.5 166)" data-v-3d0c2db3><circle r="12" fill="#eceff1" class="zb-knoten" data-v-3d0c2db3></circle><text y="4" text-anchor="middle" font-weight="700" font-size="13" fill="#1a1a1a" data-v-3d0c2db3>K</text><title data-v-3d0c2db3>Kopf</title></g><g transform="translate(116.5 166)" data-v-3d0c2db3><circle r="12" fill="#eceff1" class="zb-knoten" data-v-3d0c2db3></circle><text y="4" text-anchor="middle" font-weight="700" font-size="13" fill="#1a1a1a" data-v-3d0c2db3>Z</text><title data-v-3d0c2db3>Zahl</title></g><g transform="translate(241 94)" data-v-3d0c2db3><circle r="12" fill="#eceff1" class="zb-knoten" data-v-3d0c2db3></circle><text y="4" text-anchor="middle" font-weight="700" font-size="13" fill="#1a1a1a" data-v-3d0c2db3>Z</text><title data-v-3d0c2db3>Zahl</title></g><g transform="translate(203.5 166)" data-v-3d0c2db3><circle r="12" fill="#eceff1" class="zb-knoten" data-v-3d0c2db3></circle><text y="4" text-anchor="middle" font-weight="700" font-size="13" fill="#1a1a1a" data-v-3d0c2db3>K</text><title data-v-3d0c2db3>Kopf</title></g><g transform="translate(278.5 166)" data-v-3d0c2db3><circle r="12" fill="#eceff1" class="zb-knoten" data-v-3d0c2db3></circle><text y="4" text-anchor="middle" font-weight="700" font-size="13" fill="#1a1a1a" data-v-3d0c2db3>Z</text><title data-v-3d0c2db3>Zahl</title></g><!--]--><g class="zb-labels" font-size="13" text-anchor="middle" data-v-3d0c2db3><!--[--><!--[--><text x="79" y="76" class="" data-v-3d0c2db3>1/2 <title data-v-3d0c2db3>P(Kopf) = 1/2</title></text><!----><!--]--><!--[--><text x="41.5" y="148" class="zb-fehlt" data-v-3d0c2db3>? <title data-v-3d0c2db3>Zweig a: fehlt</title></text><text x="41.5" y="134" class="zb-fehlt" font-weight="700" data-v-3d0c2db3>a</text><!--]--><!--[--><text x="116.5" y="148" class="" data-v-3d0c2db3>1/2 <title data-v-3d0c2db3>P(Zahl) = 1/2</title></text><!----><!--]--><!--[--><text x="241" y="76" class="zb-fehlt" data-v-3d0c2db3>? <title data-v-3d0c2db3>Zweig b: fehlt</title></text><text x="241" y="62" class="zb-fehlt" font-weight="700" data-v-3d0c2db3>b</text><!--]--><!--[--><text x="203.5" y="148" class="" data-v-3d0c2db3>1/2 <title data-v-3d0c2db3>P(Kopf) = 1/2</title></text><!----><!--]--><!--[--><text x="278.5" y="148" class="zb-fehlt" data-v-3d0c2db3>? <title data-v-3d0c2db3>Zweig c: fehlt</title></text><text x="278.5" y="134" class="zb-fehlt" font-weight="700" data-v-3d0c2db3>c</text><!--]--><!--]--></g><!--[--><g class="" data-v-3d0c2db3><rect x="5" y="152" width="73" height="28" rx="6" class="zb-treffer" data-v-3d0c2db3></rect><!----></g><g class="" data-v-3d0c2db3><rect x="80" y="152" width="73" height="28" rx="6" class="zb-treffer" data-v-3d0c2db3></rect><!----></g><g class="" data-v-3d0c2db3><rect x="167" y="152" width="73" height="28" rx="6" class="zb-treffer" data-v-3d0c2db3></rect><!----></g><g class="" data-v-3d0c2db3><rect x="242" y="152" width="73" height="28" rx="6" class="zb-treffer" data-v-3d0c2db3></rect><!----></g><!--]--><text x="4" y="198" font-size="13" class="zb-text" data-v-3d0c2db3>K = Kopf · Z = Zahl</text></svg></div><div class="zufall-antwort" data-v-35a6d0ff><!--[--><p class="question-number" data-v-35a6d0ff><label for="v-0-a" data-v-35a6d0ff>a) 2. Wurf: Kopf (nach Kopf) =</label>   <input id="v-0-a" value="" type="text" inputmode="text" autocomplete="off" spellcheck="false" data-v-35a6d0ff></p><p class="question-number" data-v-35a6d0ff><label for="v-0-b" data-v-35a6d0ff>b) 1. Wurf: Zahl =</label>   <input id="v-0-b" value="" type="text" inputmode="text" autocomplete="off" spellcheck="false" data-v-35a6d0ff></p><p class="question-number" data-v-35a6d0ff><label for="v-0-c" data-v-35a6d0ff>c) 2. Wurf: Zahl (nach Zahl) =</label>   <input id="v-0-c" value="" type="text" inputmode="text" autocomplete="off" spellcheck="false" data-v-35a6d0ff></p><!--]--><p class="question-hint" data-v-35a6d0ff>Bruch, Dezimalzahl oder Prozent, z. B. 1/6, 0,17 oder 17 %. Ein Term wie 3/6*2/5 geht auch.</p><!----><!----></div></div></div><p class="question-actions" hidden><button type="submit" class="question-check" disabled>Prüfen</button></p></form>
+<div class="explainer-nojs"><div class="explainer-described"><p class="explainer-task-number">Aufgabe Nr. 1</p><div class="explainer-task"><p>Du wirfst eine Münze zweimal. Im Baumdiagramm fehlen 3 Zweigwahrscheinlichkeiten (a, b, c). Trag sie ein. Das Bild zeigt den Baum; an den fehlenden Zweigen steht „?“ und ihr Buchstabe.</p>
+<ul>
+<li>a) 2. Wurf: Kopf (nach Kopf) = …</li>
+<li>b) 1. Wurf: Zahl = …</li>
+<li>c) 2. Wurf: Zahl (nach Zahl) = …</li>
+</ul></div><details class="explainer-solution"><summary>Lösung</summary><p>a) 2. Wurf: Kopf (nach Kopf): 1 von 2 → 1/2</p>
+<p>b) 1. Wurf: Zahl: 1 von 2 → 1/2</p>
+<p>c) 2. Wurf: Zahl (nach Zahl): 1 von 2 → 1/2</p></details></div></div>
+<p class="question-feedback" data-right="Richtig!" data-wrong="Leider nicht richtig."></p>
+<script type="application/json" class="explainer-component-props">{}</script>
+</div>
+<div class="explainer-exercise explainer-generated" id="baumdiagramm-nenner">
+<p class="explainer-exercise-label">Übung</p>
+<div class="explainer-live" hidden></div>
+<p class="explainer-worked-intro">Drei Beispielaufgaben, jede mit ihrer Lösung:</p>
+<ol class="explainer-worked"><li class="explainer-worked-task"><p class="explainer-task-number">Aufgabe Nr. 1</p><p class="explainer-task">In einer Urne liegen 4 rote und 5 blaue Kugeln. Du ziehst zweimal ohne Zurücklegen. Welcher Nenner steht an den Zweigen der zweiten Stufe?</p><details class="explainer-hint"><summary>Tipp</summary><p>Wie viele Kugeln liegen noch in der Urne, nachdem du eine gezogen hast?</p></details><details class="explainer-solution"><summary>Lösung</summary><ol class="explainer-steps"><li>Am Anfang liegen 4 + 5 Kugeln in der Urne.</li><li>Nach dem ersten Zug fehlt eine Kugel: Der Nenner der zweiten Stufe ist 8.</li></ol><p><strong>Richtige Antwort:</strong> 8</p></details></li>
+<li class="explainer-worked-task"><p class="explainer-task-number">Aufgabe Nr. 2</p><p class="explainer-task">In einer Urne liegen 2 rote und 2 blaue Kugeln. Du ziehst zweimal ohne Zurücklegen. Welcher Nenner steht an den Zweigen der zweiten Stufe?</p><details class="explainer-hint"><summary>Tipp</summary><p>Wie viele Kugeln liegen noch in der Urne, nachdem du eine gezogen hast?</p></details><details class="explainer-solution"><summary>Lösung</summary><ol class="explainer-steps"><li>Am Anfang liegen 2 + 2 Kugeln in der Urne.</li><li>Nach dem ersten Zug fehlt eine Kugel: Der Nenner der zweiten Stufe ist 3.</li></ol><p><strong>Richtige Antwort:</strong> 3</p></details></li>
+<li class="explainer-worked-task"><p class="explainer-task-number">Aufgabe Nr. 3</p><p class="explainer-task">In einer Urne liegen 3 rote und 5 blaue Kugeln. Du ziehst zweimal ohne Zurücklegen. Welcher Nenner steht an den Zweigen der zweiten Stufe?</p><details class="explainer-hint"><summary>Tipp</summary><p>Wie viele Kugeln liegen noch in der Urne, nachdem du eine gezogen hast?</p></details><details class="explainer-solution"><summary>Lösung</summary><ol class="explainer-steps"><li>Am Anfang liegen 3 + 5 Kugeln in der Urne.</li><li>Nach dem ersten Zug fehlt eine Kugel: Der Nenner der zweiten Stufe ist 7.</li></ol><p><strong>Richtige Antwort:</strong> 7</p></details></li></ol>
+<script type="application/json" class="explainer-exercise-data">{"kind":"generated","lang":"de","spec":{"type":"generated","id":"baumdiagramm-nenner","given":{"r":{"int":[2,6]},"b":{"int":[2,5]}},"task":{"text":"In einer Urne liegen {{r}} rote und {{b}} blaue Kugeln. Du ziehst zweimal ohne Zurücklegen. Welcher Nenner steht an den Zweigen der zweiten Stufe?"},"answer":{"value":"r + b - 1","compare":{"number":{"format":"integer"}}},"mistakes":[{"value":"r + b","message":"Das ist der Nenner der ersten Stufe. Ohne Zurücklegen fehlt beim zweiten Zug eine Kugel."},{"value":"r + b - 2","message":"Es fehlt nur die eine Kugel, die du beim ersten Zug gezogen hast: Der Nenner wird um 1 kleiner."}],"hint":"Wie viele Kugeln liegen noch in der Urne, nachdem du eine gezogen hast?","steps":["Am Anfang liegen {{r}} + {{b}} Kugeln in der Urne.","Nach dem ersten Zug fehlt eine Kugel: Der Nenner der zweiten Stufe ist {{answer}}."]},"templates":{"de":{"task":"In einer Urne liegen ⟦r⟧ rote und ⟦b⟧ blaue Kugeln. Du ziehst zweimal ohne Zurücklegen. Welcher Nenner steht an den Zweigen der zweiten Stufe?","steps":["Am Anfang liegen ⟦r⟧ + ⟦b⟧ Kugeln in der Urne.","Nach dem ersten Zug fehlt eine Kugel: Der Nenner der zweiten Stufe ist ⟦answer⟧."],"hint":"Wie viele Kugeln liegen noch in der Urne, nachdem du eine gezogen hast?","messages":["Das ist der Nenner der ersten Stufe. Ohne Zurücklegen fehlt beim zweiten Zug eine Kugel.","Es fehlt nur die eine Kugel, die du beim ersten Zug gezogen hast: Der Nenner wird um 1 kleiner."]}},"data":{},"seeds":[1,2,3,5,6,7,8,9,14,17,19,21,22,27,30,34,41,47,49,87],"texts":{"newTask":"Neue Aufgabe","practice":"Übe selbst, mit immer neuen Aufgaben:","hint":"Tipp","solution":"Lösung","taskNumber":"Aufgabe Nr. {n}"}}</script>
+</div>
+</section>
+</main>
+<nav class="explainer-pager" aria-label="Weiterblättern"><a rel="prev" href="../../zufall/laplace/">Zurück: Laplace-Formel</a><a rel="next" href="../../zufall/pfadregel-1/">Weiter: 1. Pfadregel</a></nav>
+<footer class="page-footer"><p>Eine Erklär-App auf lernapps.net · <a href="https://lernapps.net/imprint/">Impressum</a> · <a href="https://lernapps.net/privacy/">Datenschutz</a></p></footer>
+  </body>
+</html>

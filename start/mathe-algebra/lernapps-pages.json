@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "strand": "mathematik/algebra",
+  "pages": [
+    {
+      "path": "binom/klammern-multiplizieren/",
+      "title": "Zwei Klammern multiplizieren",
+      "competencies": [
+        "klammern-binome"
+      ]
+    },
+    {
+      "path": "binom/erste-binomische/",
+      "title": "Erste binomische Formel",
+      "competencies": [
+        "klammern-binome"
+      ]
+    },
+    {
+      "path": "binom/zweite-binomische/",
+      "title": "Zweite binomische Formel",
+      "competencies": [
+        "klammern-binome"
+      ]
+    },
+    {
+      "path": "binom/dritte-binomische/",
+      "title": "Dritte binomische Formel",
+      "competencies": [
+        "klammern-binome"
+      ]
+    },
+    {
+      "path": "binom/binome-rueckwaerts/",
+      "title": "Binome rückwärts",
+      "competencies": [
+        "klammern-binome"
+      ]
+    },
+    {
+      "path": "binom/geschickt-rechnen/",
+      "title": "Geschickt rechnen",
+      "competencies": [
+        "klammern-binome"
+      ]
+    }
+  ]
+}

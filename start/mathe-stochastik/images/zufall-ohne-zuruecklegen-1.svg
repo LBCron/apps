@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 254 108" width="254" height="108" role="img" aria-label="Urne vorher mit 6 Kugeln und nachher mit 5 Kugeln; dazwischen die gezogene Kugel"><style>
+svg { --page-text: #1a1a1a; --page-muted: #4a4a4a; --page-background: #ffffff; --page-surface: #f4f5f7; --page-border: #8a8f98; --page-accent: #1d4ed8; --page-on-accent: #ffffff; --page-right: #14532d; --page-right-background: #dcfce7; --page-wrong: #7f1d1d; --page-wrong-background: #fee2e2; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+@media (prefers-color-scheme: dark) { svg { --page-text: #ececec; --page-muted: #b8bcc4; --page-background: #121316; --page-surface: #1d1f24; --page-border: #7d838d; --page-accent: #8ab4ff; --page-on-accent: #0b1020; --page-right: #bbf7d0; --page-right-background: #143522; --page-wrong: #fecaca; --page-wrong-background: #3f1515; } }
+.zufall-weg {
+  margin: 0.75rem 0 0;
+}
+.zufall-antwort label {
+  font-weight: 600;
+}
+.zufall-bild svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.zb-wurzel {
+  fill: var(--page-muted);
+}
+.zb-zweig {
+  stroke: var(--page-border);
+  stroke-width: 2;
+}
+.zb-betont {
+  stroke: #ff8f00;
+  stroke-width: 4;
+}
+.zb-knoten {
+  stroke: #455a64;
+}
+.zb-labels text,
+.zb-text {
+  fill: var(--page-text);
+}
+.zb-labels text {
+  stroke: var(--page-background);
+  stroke-width: 4;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+.zb-labels .zb-fehlt {
+  fill: #b45309;
+  font-weight: 700;
+}
+@media (prefers-color-scheme: dark) {
+  .zb-labels .zb-fehlt {
+    fill: #fbbf24;
+  }
+}
+.zb-treffer {
+  fill: transparent;
+}
+.zb-waehlbar {
+  cursor: pointer;
+}
+.zb-waehlbar[aria-pressed="true"] .zb-treffer {
+  stroke: var(--page-accent);
+  stroke-width: 2;
+}
+.zb-waehlbar:focus-visible {
+  outline: 3px solid var(--page-text);
+}
+.zufall-bild svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.zg-text {
+  fill: var(--page-text);
+}
+.zufall-bild svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.zm-rand {
+  stroke: #455a64;
+  stroke-width: 1.5;
+}
+.zm-betont {
+  stroke: #ff8f00;
+  stroke-width: 4;
+}
+.zm-markiert {
+  stroke: #1d4ed8;
+  stroke-width: 3;
+}
+.zm-haken {
+  fill: #1d4ed8;
+  stroke: #fff;
+  stroke-width: 1.5;
+}
+.zm-zeiger {
+  fill: var(--page-text);
+}
+.zm-knopf {
+  cursor: pointer;
+}
+.zm-knopf:focus-visible {
+  outline: 3px solid var(--page-text);
+}
+.zm-stand {
+  margin: 0.25rem 0 0;
+  color: var(--page-muted);
+}
+.zufall-bild svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.zu-text {
+  fill: var(--page-text);
+}
+.zu-urne {
+  fill: var(--page-surface);
+  stroke: var(--page-border);
+}
+.zu-linie {
+  stroke: var(--page-border);
+}
+.zu-kugel {
+  stroke: rgba(0, 0, 0, 0.35);
+  stroke-width: 1.5;
+}
+.zu-titel {
+  margin: 1rem 0 0.25rem;
+  font-weight: 700;
+}
+</style><title>Urne vor und nach dem ersten Zug</title><g><text x="2" y="13" font-size="12" font-weight="600" class="zu-text">Vorher:</text><text x="2" y="27" font-size="12" class="zu-text">6 Kugeln</text><path d="M2 34 L2 98 Q2 104 8 104 L88 104 Q94 104 94 98 L94 34" class="zu-urne" stroke-width="2"></path><circle cx="22" cy="85" r="12" fill="#c62828" class="zu-kugel"></circle><circle cx="50" cy="85" r="12" fill="#c62828" class="zu-kugel"></circle><circle cx="78" cy="85" r="12" fill="#c62828" class="zu-kugel"></circle><circle cx="22" cy="57" r="12" fill="#1565c0" class="zu-kugel"></circle><circle cx="50" cy="57" r="12" fill="#1565c0" class="zu-kugel"></circle><circle cx="78" cy="57" r="12" fill="#f9a825" class="zu-kugel"></circle></g><g><text x="160" y="13" font-size="12" font-weight="600" class="zu-text">Nachher:</text><text x="160" y="27" font-size="12" class="zu-text">5 Kugeln</text><path d="M160 34 L160 98 Q160 104 166 104 L246 104 Q252 104 252 98 L252 34" class="zu-urne" stroke-width="2"></path><circle cx="180" cy="85" r="12" fill="#c62828" class="zu-kugel"></circle><circle cx="208" cy="85" r="12" fill="#c62828" class="zu-kugel"></circle><circle cx="236" cy="85" r="12" fill="#1565c0" class="zu-kugel"></circle><circle cx="180" cy="57" r="12" fill="#1565c0" class="zu-kugel"></circle><circle cx="208" cy="57" r="12" fill="#f9a825" class="zu-kugel"></circle></g><path d="M98 58 L156 58" class="zu-linie" stroke-width="2"></path><circle cx="127" cy="58" r="12" fill="#c62828" stroke="#ff8f00" stroke-width="4"></circle><text x="127" y="88" text-anchor="middle" font-size="12" class="zu-text"> gezogen </text></svg>

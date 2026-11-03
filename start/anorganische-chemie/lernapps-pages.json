@@ -1,0 +1,93 @@
+{
+  "format": 1,
+  "strand": "chemie/stoffe-und-teilchen",
+  "pages": [
+    {
+      "path": "stoffe/reinstoffe-gemische/",
+      "title": {
+        "de": "Reinstoffe und Gemische",
+        "en": "Pure substances and mixtures"
+      },
+      "competencies": [
+        "reinstoffe-und-gemische"
+      ]
+    },
+    {
+      "path": "stoffe/stoffeigenschaften/",
+      "title": {
+        "de": "Stoffeigenschaften",
+        "en": "Properties of substances"
+      },
+      "competencies": [
+        "stoffeigenschaften-beschreiben",
+        "aggregatzustaende-beschreiben",
+        "schmelz-und-siedetemperatur",
+        "stoffe-erkennen-und-verwenden"
+      ]
+    },
+    {
+      "path": "teilchen/teilchenmodell/",
+      "title": {
+        "de": "Teilchenmodell",
+        "en": "Particle model"
+      },
+      "competencies": [
+        "teilchenmodell",
+        "aggregatzustaende-mit-teilchenmodell"
+      ]
+    },
+    {
+      "path": "teilchen/atombau/",
+      "title": {
+        "de": "Atombau",
+        "en": "Atomic structure"
+      },
+      "competencies": [
+        "atombau-bausteine",
+        "ordnungszahl-und-massenzahl"
+      ]
+    },
+    {
+      "path": "periodensystem/periodensystem-lesen/",
+      "title": {
+        "de": "Periodensystem lesen",
+        "en": "Reading the periodic table"
+      },
+      "competencies": [
+        "periodensystem-lesen"
+      ]
+    },
+    {
+      "path": "periodensystem/hauptgruppen/",
+      "title": {
+        "de": "Die acht Hauptgruppen",
+        "en": "The eight main groups"
+      },
+      "competencies": [
+        "hauptgruppen",
+        "schalenmodell"
+      ]
+    },
+    {
+      "path": "periodensystem/metalle-nichtmetalle/",
+      "title": {
+        "de": "Metalle und Nichtmetalle",
+        "en": "Metals and non-metals"
+      },
+      "competencies": [
+        "metalle-und-nichtmetalle"
+      ]
+    },
+    {
+      "path": "formeln/symbole-formeln/",
+      "title": {
+        "de": "Symbole und Formeln",
+        "en": "Symbols and formulas"
+      },
+      "competencies": [
+        "symbole-der-elemente",
+        "formeln-von-verbindungen"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "format": 1,
+  "strand": "mathematik/arithmetik",
+  "pages": [
+    {
+      "path": "prozent/grundbegriffe/",
+      "title": "Grundwert, Prozentwert und Prozentsatz erkennen",
+      "competencies": [
+        "prozent-grundbegriffe"
+      ]
+    },
+    {
+      "path": "prozent/prozentsatz/",
+      "title": "Prozentsatz berechnen",
+      "competencies": [
+        "prozent-prozentsatz"
+      ]
+    },
+    {
+      "path": "prozent/prozentwert/",
+      "title": "Prozentwert berechnen",
+      "competencies": [
+        "prozent-prozentwert"
+      ]
+    },
+    {
+      "path": "prozent/grundwert/",
+      "title": "Grundwert berechnen",
+      "competencies": [
+        "prozent-grundwert"
+      ]
+    },
+    {
+      "path": "prozent/veraenderung/",
+      "title": "Prozentuale Zunahme und Abnahme",
+      "competencies": [
+        "prozent-veraenderung"
+      ]
+    },
+    {
+      "path": "prozent/vergleich/",
+      "title": "Zwei Werte vergleichen",
+      "competencies": [
+        "prozent-vergleich"
+      ]
+    },
+    {
+      "path": "prozent/sachaufgaben/",
+      "title": "Sachaufgaben übersetzen",
+      "competencies": [
+        "prozent-sachaufgaben"
+      ]
+    }
+  ]
+}

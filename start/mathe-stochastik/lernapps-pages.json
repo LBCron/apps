@@ -1,0 +1,62 @@
+{
+  "format": 1,
+  "strand": "mathematik/stochastik",
+  "pages": [
+    {
+      "path": "zufall/laplace/",
+      "title": "Laplace-Formel",
+      "competencies": [
+        "zufall-laplace"
+      ]
+    },
+    {
+      "path": "zufall/baumdiagramm/",
+      "title": "Baumdiagramm",
+      "competencies": [
+        "zufall-baumdiagramm"
+      ]
+    },
+    {
+      "path": "zufall/pfadregel-1/",
+      "title": "1. Pfadregel",
+      "competencies": [
+        "zufall-pfadregel-1"
+      ]
+    },
+    {
+      "path": "zufall/gegenereignis/",
+      "title": "Gegenereignis",
+      "competencies": [
+        "zufall-gegenereignis"
+      ]
+    },
+    {
+      "path": "zufall/ohne-zuruecklegen/",
+      "title": "Ohne Zurücklegen",
+      "competencies": [
+        "zufall-ohne-zuruecklegen"
+      ]
+    },
+    {
+      "path": "zufall/pfadregel-2/",
+      "title": "2. Pfadregel",
+      "competencies": [
+        "zufall-pfadregel-2"
+      ]
+    },
+    {
+      "path": "zufall/ergebnisformen/",
+      "title": "Produkt, Summe, Potenz",
+      "competencies": [
+        "zufall-ergebnisform"
+      ]
+    },
+    {
+      "path": "zufall/pfade-uebersetzen/",
+      "title": "In Pfade übersetzen",
+      "competencies": [
+        "zufall-ereignis-uebersetzen"
+      ]
+    }
+  ]
+}
