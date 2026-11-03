@@ -1,0 +1,588 @@
+{
+  "id": "chemie",
+  "name": {
+    "de": "Chemie",
+    "en": "Chemistry"
+  },
+  "source": {
+    "title": "KMK-Bildungsstandards Chemie, Mittlerer Schulabschluss (Beschluss vom 16.12.2004 i.d.F. vom 13.06.2024)",
+    "url": "https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2024/2024_06_13-WeBiS_Chemie_MSA.pdf"
+  },
+  "strands": [
+    {
+      "id": "stoffe-und-teilchen",
+      "name": {
+        "de": "Aufbau und Eigenschaften von Stoffen und Teilchen",
+        "en": "Structure and properties of substances and particles"
+      },
+      "competencies": [
+        {
+          "id": "sicherheit-beim-experimentieren",
+          "iCan": "Ich kann beim Experimentieren die Sicherheitsregeln einhalten und Gefahrenzeichen deuten.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "stoffeigenschaften-beschreiben",
+          "iCan": "Ich kann Stoffe an ihren Eigenschaften wie Farbe, Geruch, Härte und Dichte beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "sicherheit-beim-experimentieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aggregatzustaende-beschreiben",
+          "iCan": "Ich kann beschreiben, ob ein Stoff fest, flüssig oder gasförmig ist.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "schmelz-und-siedetemperatur",
+          "iCan": "Ich kann Schmelz- und Siedetemperatur eines Stoffes aus einer Tabelle oder Messreihe ablesen und deuten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "aggregatzustaende-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aggregatzustand-bei-aeusseren-bedingungen",
+          "iCan": "Ich kann vorhersagen, in welchem Aggregatzustand ein Stoff bei einer bestimmten Temperatur und einem bestimmten Druck vorliegt.",
+          "gradeBand": "7-8",
+          "requires": [
+            "schmelz-und-siedetemperatur"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stoffe-erkennen-und-verwenden",
+          "iCan": "Ich kann einen Stoff an seinen Eigenschaften erkennen und aus ihnen auf seine Verwendung schließen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "stoffeigenschaften-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "elektrische-leitfaehigkeit",
+          "iCan": "Ich kann mit einem Versuch prüfen, ob ein Stoff oder eine Lösung Strom leitet.",
+          "gradeBand": "7-8",
+          "requires": [
+            "stoffeigenschaften-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "loeslichkeit",
+          "iCan": "Ich kann untersuchen und angeben, wie gut sich ein Stoff in Wasser löst.",
+          "gradeBand": "7-8",
+          "requires": [
+            "stoffeigenschaften-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ph-wert-deuten",
+          "iCan": "Ich kann mit dem pH-Wert eine Lösung als sauer, neutral oder alkalisch einordnen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "loeslichkeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "reinstoffe-und-gemische",
+          "iCan": "Ich kann Reinstoffe und Gemische unterscheiden.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "gemische-trennen",
+          "iCan": "Ich kann ein Stoffgemisch mit einem passenden Verfahren trennen, etwa durch Filtrieren, Eindampfen oder Destillieren.",
+          "gradeBand": "7-8",
+          "requires": [
+            "reinstoffe-und-gemische",
+            "stoffeigenschaften-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "elemente-und-verbindungen",
+          "iCan": "Ich kann Elemente und Verbindungen als Reinstoffe unterscheiden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "reinstoffe-und-gemische"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "teilchenmodell",
+          "iCan": "Ich kann das Teilchenmodell beschreiben und sagen, was es erklärt und was nicht.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "aggregatzustaende-mit-teilchenmodell",
+          "iCan": "Ich kann mit dem Teilchenmodell erklären, warum Stoffe fest, flüssig oder gasförmig sind und wie sie ineinander übergehen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "teilchenmodell",
+            "aggregatzustaende-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "denkmodelle-und-sachmodelle",
+          "iCan": "Ich kann ein Denkmodell und ein Sachmodell unterscheiden und sagen, wofür ein Modell taugt und wo es an Grenzen stößt.",
+          "gradeBand": "7-8",
+          "requires": [
+            "teilchenmodell"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "symbole-der-elemente",
+          "iCan": "Ich kann Elemente mit ihrem Symbol benennen und schreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "elemente-und-verbindungen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "formeln-von-verbindungen",
+          "iCan": "Ich kann die Formel einer Verbindung lesen und schreiben und sagen, welche Atome in welcher Anzahl enthalten sind.",
+          "gradeBand": "7-8",
+          "requires": [
+            "symbole-der-elemente"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "atombau-bausteine",
+          "iCan": "Ich kann sagen, aus welchen Teilchen ein Atom besteht: Protonen, Neutronen und Elektronen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "teilchenmodell"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ordnungszahl-und-massenzahl",
+          "iCan": "Ich kann mit Ordnungszahl und Massenzahl die Zahl der Protonen, Neutronen und Elektronen eines Atoms bestimmen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "atombau-bausteine"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schalenmodell",
+          "iCan": "Ich kann die Elektronen eines Atoms im Schalenmodell auf die Schalen verteilen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "ordnungszahl-und-massenzahl"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "atommodell-mit-energiestufen",
+          "iCan": "Ich kann Elektronen in einem Atommodell mit Energiestufen und Außenelektronen beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "schalenmodell"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "reaktionen-mit-atommodell-vorhersagen",
+          "iCan": "Ich kann mit der Zahl der Außenelektronen vorhersagen, wie ein Atom reagiert.",
+          "gradeBand": "9-10",
+          "requires": [
+            "atommodell-mit-energiestufen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "periodensystem-lesen",
+          "iCan": "Ich kann ein Element im Periodensystem finden und Ordnungszahl, Symbol, Periode und Gruppe ablesen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "symbole-der-elemente",
+            "ordnungszahl-und-massenzahl"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "hauptgruppen",
+          "iCan": "Ich kann die acht Hauptgruppen nennen und sagen, wie viele Außenelektronen ihre Atome haben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "periodensystem-lesen",
+            "schalenmodell"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "metalle-und-nichtmetalle",
+          "iCan": "Ich kann Metalle, Nichtmetalle und Grenzfälle an ihren Eigenschaften und ihrem Platz im Periodensystem erkennen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "periodensystem-lesen",
+            "stoffeigenschaften-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "periodensystem-und-atombau",
+          "iCan": "Ich kann den Platz eines Elements im Periodensystem mit dem Bau seiner Atome begründen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "hauptgruppen",
+            "atommodell-mit-energiestufen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "eigenschaften-im-periodensystem",
+          "iCan": "Ich kann Eigenschaften von Elementen innerhalb einer Gruppe oder Periode vergleichen und Trends erklären.",
+          "gradeBand": "9-10",
+          "requires": [
+            "periodensystem-und-atombau"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ionen-bilden",
+          "iCan": "Ich kann beschreiben, wie aus Atomen durch Abgeben oder Aufnehmen von Elektronen Ionen entstehen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "reaktionen-mit-atommodell-vorhersagen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ionengitter",
+          "iCan": "Ich kann den Aufbau eines Ionengitters beschreiben und seine Eigenschaften wie Sprödigkeit und Schmelztemperatur erklären.",
+          "gradeBand": "9-10",
+          "requires": [
+            "ionen-bilden"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ionenbindung",
+          "iCan": "Ich kann die Ionenbindung beschreiben und sagen, welche Stoffe so gebunden sind.",
+          "gradeBand": "9-10",
+          "requires": [
+            "ionen-bilden"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "elektronenpaarbindung",
+          "iCan": "Ich kann die Elektronenpaarbindung beschreiben und sie mit Lewis-Formeln darstellen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "reaktionen-mit-atommodell-vorhersagen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "metallbindung",
+          "iCan": "Ich kann die Metallbindung beschreiben und damit Eigenschaften von Metallen erklären.",
+          "gradeBand": "9-10",
+          "requires": [
+            "metalle-und-nichtmetalle",
+            "atommodell-mit-energiestufen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bindungstypen-vergleichen",
+          "iCan": "Ich kann Stoffe nach ihrer Bindung (Ionenbindung, Elektronenpaarbindung, Metallbindung) ordnen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "ionenbindung",
+            "elektronenpaarbindung",
+            "metallbindung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "raeumliche-struktur-von-molekuelen",
+          "iCan": "Ich kann die räumliche Struktur einfacher Moleküle beschreiben, etwa von Wasser oder Methan.",
+          "gradeBand": "9-10",
+          "requires": [
+            "elektronenpaarbindung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "partialladungen-und-dipole",
+          "iCan": "Ich kann erklären, wie Partialladungen entstehen, und erkennen, ob ein Molekül ein Dipol ist.",
+          "gradeBand": "9-10",
+          "requires": [
+            "raeumliche-struktur-von-molekuelen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wechselwirkungen-zwischen-teilchen",
+          "iCan": "Ich kann Wechselwirkungen zwischen Teilchen wie Wasserstoffbrücken nennen und mit ihnen Stoffeigenschaften erklären.",
+          "gradeBand": "9-10",
+          "requires": [
+            "partialladungen-und-dipole"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "struktur-und-eigenschaften-verbinden",
+          "iCan": "Ich kann aus dem Bau der Teilchen und ihrer Bindung auf die Eigenschaften eines Stoffes schließen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "bindungstypen-vergleichen",
+            "wechselwirkungen-zwischen-teilchen"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "chemische-reaktion",
+      "name": {
+        "de": "Chemische Reaktion",
+        "en": "Chemical reaction"
+      },
+      "competencies": [
+        {
+          "id": "kennzeichen-chemischer-reaktionen",
+          "iCan": "Ich kann an Beobachtungen erkennen, dass eine chemische Reaktion abgelaufen ist.",
+          "gradeBand": "7-8",
+          "requires": [
+            "stoffeigenschaften-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "reaktion-oder-zustandsaenderung",
+          "iCan": "Ich kann eine chemische Reaktion von einer Zustandsänderung unterscheiden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kennzeichen-chemischer-reaktionen",
+            "aggregatzustaende-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "synthese-und-analyse",
+          "iCan": "Ich kann Synthese und Analyse unterscheiden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kennzeichen-chemischer-reaktionen",
+            "elemente-und-verbindungen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "massenerhaltung",
+          "iCan": "Ich kann mit einem Versuch zeigen und erklären, dass bei einer Reaktion die Gesamtmasse gleich bleibt.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kennzeichen-chemischer-reaktionen",
+            "teilchenmodell"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wortgleichung",
+          "iCan": "Ich kann eine Reaktion als Wortgleichung aufschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kennzeichen-chemischer-reaktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "reaktionsgleichung-aufstellen",
+          "iCan": "Ich kann eine einfache Reaktionsgleichung aufstellen, bei der auf beiden Seiten gleich viele Atome stehen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "wortgleichung",
+            "formeln-von-verbindungen",
+            "massenerhaltung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stoffmenge-und-molare-masse",
+          "iCan": "Ich kann die Stoffmenge und die molare Masse eines Stoffes nutzen, um Teilchenzahl und Masse ineinander umzurechnen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "formeln-von-verbindungen",
+            "massenerhaltung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stoechiometrische-berechnung",
+          "iCan": "Ich kann mit einer Reaktionsgleichung berechnen, wie viel Masse eines Stoffes mit einer bestimmten Masse eines anderen reagiert.",
+          "gradeBand": "9-10",
+          "requires": [
+            "stoffmenge-und-molare-masse",
+            "reaktionsgleichung-aufstellen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "oxidation-und-reduktion",
+          "iCan": "Ich kann Oxidation und Reduktion als Aufnahme und Abgabe von Sauerstoff beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "reaktionsgleichung-aufstellen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "redoxreaktion-als-elektronenuebergang",
+          "iCan": "Ich kann eine Redoxreaktion als Übertragung von Elektronen zwischen Teilchen beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "oxidation-und-reduktion",
+            "ionen-bilden"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "saeure-base-reaktion",
+          "iCan": "Ich kann eine Säure-Base-Reaktion als Übertragung von Protonen beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "ph-wert-deuten",
+            "reaktionsgleichung-aufstellen",
+            "ionen-bilden"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "neutralisation",
+          "iCan": "Ich kann eine Neutralisation mit einer Reaktionsgleichung beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "saeure-base-reaktion"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "salze-loesen",
+          "iCan": "Ich kann das Lösen eines Salzes in Wasser als Vorgang mit Ionen beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "ionengitter",
+            "partialladungen-und-dipole",
+            "loeslichkeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "temperatur-und-reaktionsgeschwindigkeit",
+          "iCan": "Ich kann erklären, wie eine Änderung der Temperatur die Geschwindigkeit einer Reaktion beeinflusst.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kennzeichen-chemischer-reaktionen",
+            "teilchenmodell"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "energie",
+      "name": {
+        "de": "Energie",
+        "en": "Energy"
+      },
+      "competencies": [
+        {
+          "id": "energieformen-unterscheiden",
+          "iCan": "Ich kann chemische, elektrische, thermische und Strahlungsenergie unterscheiden.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "energieumwandlung-bei-reaktionen",
+          "iCan": "Ich kann beschreiben, welche Energieformen bei einer Reaktion ineinander umgewandelt werden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "energieformen-unterscheiden",
+            "kennzeichen-chemischer-reaktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "exotherm-und-endotherm",
+          "iCan": "Ich kann exotherme und endotherme Reaktionen an Messwerten und Beobachtungen unterscheiden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "energieumwandlung-bei-reaktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "energieerhaltung",
+          "iCan": "Ich kann erklären, dass bei einer Reaktion Energie weder entsteht noch verschwindet.",
+          "gradeBand": "7-8",
+          "requires": [
+            "energieumwandlung-bei-reaktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "energieaustausch-mit-der-umgebung",
+          "iCan": "Ich kann beschreiben, wie ein Reaktionssystem Energie mit seiner Umgebung austauscht.",
+          "gradeBand": "9-10",
+          "requires": [
+            "exotherm-und-endotherm",
+            "energieerhaltung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "energieschema-lesen",
+          "iCan": "Ich kann ein Energieschema einer Reaktion lesen und zeichnen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "energieaustausch-mit-der-umgebung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aktivierungsenergie",
+          "iCan": "Ich kann an einem Energieschema die Aktivierungsenergie zeigen und erklären, warum manche Reaktionen erst nach einem Anstoß ablaufen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "energieschema-lesen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "katalysator",
+          "iCan": "Ich kann erklären, wie ein Katalysator die Aktivierungsenergie senkt und eine Reaktion beschleunigt.",
+          "gradeBand": "9-10",
+          "requires": [
+            "aktivierungsenergie",
+            "temperatur-und-reaktionsgeschwindigkeit"
+          ],
+          "practisedBy": []
+        }
+      ]
+    }
+  ],
+  "curricula": []
+}

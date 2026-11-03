@@ -1,0 +1,1513 @@
+{
+  "id": "mathematik",
+  "name": {
+    "de": "Mathematik",
+    "en": "Mathematics"
+  },
+  "source": {
+    "title": "KMK-Bildungsstandards Mathematik, ESA und MSA (2022)",
+    "url": "https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2022/2022_06_23-Bista-ESA-MSA-Mathe.pdf"
+  },
+  "strands": [
+    {
+      "id": "arithmetik",
+      "name": {
+        "de": "Arithmetik",
+        "en": "Arithmetic"
+      },
+      "competencies": [
+        {
+          "id": "natuerliche-zahlen",
+          "iCan": "Ich kann natürliche Zahlen im Stellenwertsystem lesen, schreiben und darstellen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "zahlen-vergleichen-ordnen",
+          "iCan": "Ich kann Zahlen vergleichen und der Größe nach ordnen, auch Brüche, negative Zahlen und Wurzeln.",
+          "gradeBand": "5-6",
+          "requires": [
+            "natuerliche-zahlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "runden",
+          "iCan": "Ich kann Zahlen und Größen sinnvoll runden und die Genauigkeit zur Aufgabe passend wählen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "natuerliche-zahlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "teilbarkeit",
+          "iCan": "Ich kann Teiler und Vielfache bestimmen, Teilbarkeitsregeln anwenden und ggT und kgV berechnen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "grundrechenarten-rechengesetze"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zahldarstellungen",
+          "iCan": "Ich kann Zahlen am Zahlenstrahl, in Diagrammen und in verschiedenen Schreibweisen darstellen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "natuerliche-zahlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "brueche-begriff",
+          "iCan": "Ich kann Brüche als Teil eines Ganzen deuten, darstellen sowie kürzen und erweitern.",
+          "gradeBand": "5-6",
+          "requires": [
+            "natuerliche-zahlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dezimalbrueche",
+          "iCan": "Ich kann Brüche in Dezimalbrüche umwandeln und erklären, ob sie abbrechen oder sich wiederholen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "brueche-begriff"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rationale-zahlen",
+          "iCan": "Ich kann mit negativen Zahlen, Gegenzahlen und Beträgen umgehen und sie an Beispielen wie Temperatur erklären.",
+          "gradeBand": "7-8",
+          "requires": [
+            "natuerliche-zahlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "reelle-zahlen",
+          "iCan": "Ich kann Quadratwurzeln erklären, erkenne irrationale Zahlen und nutze die Zahl Pi am Kreis.",
+          "gradeBand": "9-10",
+          "requires": [
+            "rationale-zahlen",
+            "potenzen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "grundrechenarten-rechengesetze",
+          "iCan": "Ich kann die vier Grundrechenarten sicher ausführen und Rechengesetze für vorteilhaftes Rechnen nutzen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "natuerliche-zahlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bruchrechnung-grundaufgaben",
+          "iCan": "Ich kann mit Brüchen und Dezimalbrüchen rechnen und Bruchteil, Ganzes und Anteil bestimmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "brueche-begriff",
+            "teilbarkeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rechnen-rational-reell",
+          "iCan": "Ich kann mit negativen Zahlen und Wurzeln rechnen und dabei Vorzeichen- und Klammerregeln beachten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "rationale-zahlen",
+            "bruchrechnung-grundaufgaben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "prozentrechnung",
+          "iCan": "Ich kann Prozentangaben verstehen und in Alltagssituationen sachgerecht nutzen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "brueche-begriff"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "prozent-grundbegriffe",
+          "iCan": "Ich kann Prozent als Hundertstel deuten und in einer Aufgabe Grundwert, Prozentwert und Prozentsatz erkennen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "brueche-begriff"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "prozent-prozentwert",
+          "iCan": "Ich kann den Prozentwert aus Grundwert und Prozentsatz berechnen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "prozent-grundbegriffe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "prozent-prozentsatz",
+          "iCan": "Ich kann den Prozentsatz aus Prozentwert und Grundwert berechnen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "prozent-grundbegriffe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "prozent-grundwert",
+          "iCan": "Ich kann den Grundwert aus Prozentwert und Prozentsatz berechnen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "prozent-grundbegriffe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "prozent-veraenderung",
+          "iCan": "Ich kann neue und alte Werte nach einer prozentualen Zunahme oder Abnahme berechnen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "prozent-prozentwert"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "prozent-vergleich",
+          "iCan": "Ich kann angeben, um wie viel Prozent ein Wert größer oder kleiner als ein anderer ist.",
+          "gradeBand": "7-8",
+          "requires": [
+            "prozent-prozentsatz"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "prozent-sachaufgaben",
+          "iCan": "Ich kann Sachaufgaben zur Prozentrechnung in eine Gleichung oder einen Dreisatz übersetzen und lösen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "prozent-prozentwert",
+            "prozent-prozentsatz",
+            "prozent-grundwert"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "prozent-von-prozenten",
+          "iCan": "Ich kann Prozentpunkte und Prozente unterscheiden und mehrere prozentuale Änderungen verknüpfen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "prozent-veraenderung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zinsrechnung",
+          "iCan": "Ich kann Jahres-, Monats- und Tageszinsen sowie Zinseszinsen berechnen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "prozent-prozentwert",
+            "prozent-prozentsatz",
+            "prozent-grundwert"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "groessenvorstellungen-schaetzen",
+          "iCan": "Ich kann Größen schätzen und Ergebnisse mit einem Überschlag auf Sinn prüfen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "umrechnung-groessen",
+          "iCan": "Ich kann Größen in andere Einheiten umrechnen und passende Einheiten wählen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "groessenvorstellungen-schaetzen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "messen-laenge-masse-geld-zeit",
+          "iCan": "Ich kann Länge, Masse, Geld und Zeit messen und damit in Sachaufgaben rechnen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "groessenvorstellungen-schaetzen"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "algebra",
+      "name": {
+        "de": "Algebra",
+        "en": "Algebra"
+      },
+      "competencies": [
+        {
+          "id": "terme-variable",
+          "iCan": "Ich kann Terme mit Variablen aufstellen, umformen und auf Wertgleichheit prüfen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "grundrechenarten-rechengesetze"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "klammern-binome",
+          "iCan": "Ich kann Klammern auflösen und die binomischen Formeln vorwärts und rückwärts anwenden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "terme-variable"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "potenzen",
+          "iCan": "Ich kann Potenzen und Wurzeln berechnen und die Potenzgesetze anwenden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "grundrechenarten-rechengesetze"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lineare-gleichungen",
+          "iCan": "Ich kann lineare Gleichungen lösen und die Lösungsverfahren vergleichen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "terme-variable"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ungleichungen",
+          "iCan": "Ich kann lineare Ungleichungen lösen und die Lösungsmenge auf der Zahlengeraden zeigen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "lineare-gleichungen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lineare-gleichungssysteme",
+          "iCan": "Ich kann Gleichungssysteme mit zwei Gleichungen und zwei Variablen zeichnerisch und rechnerisch lösen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "lineare-gleichungen",
+            "lineare-funktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "quadratische-gleichungen",
+          "iCan": "Ich kann quadratische Gleichungen mit passenden Verfahren lösen und die Anzahl der Lösungen bestimmen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "klammern-binome",
+            "lineare-gleichungen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "logarithmen",
+          "iCan": "Ich kann den Logarithmus als Umkehrung des Potenzierens erklären und damit einfache Exponentialgleichungen lösen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "potenzen",
+            "exponentialfunktionen"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "funktionen",
+      "name": {
+        "de": "Funktionen",
+        "en": "Functions"
+      },
+      "competencies": [
+        {
+          "id": "zuordnungen",
+          "iCan": "Ich kann Zuordnungen zwischen Größen in Tabellen, Schaubildern und mit Worten darstellen und beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "proportional-antiproportional",
+          "iCan": "Ich kann proportionale und antiproportionale Zuordnungen erkennen, unterscheiden und darstellen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zuordnungen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dreisatz",
+          "iCan": "Ich kann Sachaufgaben mit dem Dreisatz lösen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "proportional-antiproportional"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nichtproportionale-zusammenhaenge",
+          "iCan": "Ich kann Zusammenhänge erkennen und darstellen, die weder proportional noch linear sind.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zuordnungen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lineare-funktionen",
+          "iCan": "Ich kann lineare Funktionen mit Gleichung, Tabelle und Graph beschreiben und Steigung und Achsenabschnitt deuten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "proportional-antiproportional",
+            "koordinatensystem"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "funktionen-darstellung",
+          "iCan": "Ich kann zwischen Funktionsgleichung, Wertetabelle und Graph wechseln.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zuordnungen",
+            "koordinatensystem"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "quadratische-funktionen",
+          "iCan": "Ich kann quadratische Funktionen und ihre Parabeln beschreiben, zeichnen und auf Sachprobleme anwenden.",
+          "gradeBand": "9-10",
+          "requires": [
+            "lineare-funktionen",
+            "funktionen-darstellung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "potenzfunktionen",
+          "iCan": "Ich kann einfache Potenz- und Wurzelfunktionen mit ihren Graphen beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "potenzen",
+            "funktionen-darstellung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "exponentialfunktionen",
+          "iCan": "Ich kann Wachstum und Zerfall mit Exponentialfunktionen beschreiben und Modelle beurteilen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "prozent-veraenderung",
+            "potenzen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sinusfunktion",
+          "iCan": "Ich kann Sinus- und Kosinusfunktion mit ihren Eigenschaften beschreiben und für periodische Vorgänge nutzen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "trigonometrie",
+            "funktionen-darstellung"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "geometrie",
+      "name": {
+        "de": "Geometrie",
+        "en": "Geometry"
+      },
+      "competencies": [
+        {
+          "id": "grundfiguren-eben",
+          "iCan": "Ich kann ebene Grundfiguren erkennen, benennen und ihre Eigenschaften beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "vierecke-grundfiguren",
+          "iCan": "Ich kann besondere Vierecke und den Kreis mit ihren Eigenschaften beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "grundfiguren-eben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "haus-der-vierecke",
+          "iCan": "Ich kann Vierecke nach ihren Eigenschaften im Haus der Vierecke ordnen und begründen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "vierecke-grundfiguren",
+            "symmetrie"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "konstruktionen",
+          "iCan": "Ich kann Figuren mit Geodreieck, Zirkel oder Geometriesoftware zeichnen und konstruieren.",
+          "gradeBand": "5-6",
+          "requires": [
+            "grundfiguren-eben",
+            "parallel-senkrecht-abstand"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "symmetrie",
+          "iCan": "Ich kann Achsen-, Punkt- und Drehsymmetrie bei Figuren erkennen und nutzen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "grundfiguren-eben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "koordinatensystem",
+          "iCan": "Ich kann Punkte und Figuren im Koordinatensystem eintragen und ablesen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "zahldarstellungen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "grundkoerper-quader-wuerfel",
+          "iCan": "Ich kann Quader, Würfel und zusammengesetzte Körper erkennen und beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "grundfiguren-eben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "grundkoerper-prisma-zylinder",
+          "iCan": "Ich kann Prisma und Zylinder erkennen und von anderen Körpern unterscheiden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "grundkoerper-quader-wuerfel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "grundkoerper-pyramide-kegel-kugel",
+          "iCan": "Ich kann Pyramide, Kegel und Kugel beschreiben und Körper aus dem Alltag in Grundkörper zerlegen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "grundkoerper-prisma-zylinder"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "netze-schraegbilder-modelle",
+          "iCan": "Ich kann Netze, Schrägbilder und Modelle von Körpern zeichnen oder bauen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "grundkoerper-quader-wuerfel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "parallel-senkrecht-abstand",
+          "iCan": "Ich kann parallele und senkrechte Geraden zeichnen und Abstände messen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "bewegungen-figuren",
+          "iCan": "Ich kann Figuren spiegeln, verschieben und drehen und die Bildfigur bestimmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "symmetrie",
+            "koordinatensystem"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kongruenz",
+          "iCan": "Ich kann erkennen und begründen, dass Figuren deckungsgleich sind, und die Kongruenzsätze für Dreiecke anwenden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "bewegungen-figuren",
+            "konstruktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "satz-des-pythagoras",
+          "iCan": "Ich kann mit dem Satz des Pythagoras und seiner Umkehrung Streckenlängen berechnen und rechte Winkel prüfen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "reelle-zahlen",
+            "flaeche-umfang-quadrat-rechteck"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "satz-des-thales",
+          "iCan": "Ich kann den Satz des Thales erklären und bei Konstruktionen anwenden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "winkelsaetze",
+            "konstruktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aehnlichkeit-strahlensaetze",
+          "iCan": "Ich kann Figuren maßstabsgetreu vergrößern und mit den Strahlensätzen Streckenlängen berechnen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kongruenz",
+            "proportional-antiproportional"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "trigonometrie",
+          "iCan": "Ich kann mit Sinus, Kosinus und Tangens Seiten und Winkel in Dreiecken berechnen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "satz-des-pythagoras",
+            "aehnlichkeit-strahlensaetze"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "winkel-messen",
+          "iCan": "Ich kann Winkel messen, zeichnen und nach ihrer Größe einteilen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "grundfiguren-eben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "winkelsaetze",
+          "iCan": "Ich kann mit Winkelsätzen und dem Winkelsummensatz fehlende Winkel berechnen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "winkel-messen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zusammengesetzte-figuren",
+          "iCan": "Ich kann Flächeninhalt und Umfang zusammengesetzter Figuren durch Zerlegen berechnen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "flaeche-umfang-quadrat-rechteck",
+            "grundfiguren-eben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "flaeche-umfang-quadrat-rechteck",
+          "iCan": "Ich kann Flächeninhalt und Umfang von Quadrat und Rechteck berechnen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "grundfiguren-eben",
+            "umrechnung-groessen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "flaeche-umfang-dreieck-viereck-kreis",
+          "iCan": "Ich kann Flächeninhalt und Umfang von Dreieck, besonderen Vierecken und Kreis berechnen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "flaeche-umfang-quadrat-rechteck",
+            "vierecke-grundfiguren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "volumen-oberflaeche-quader-wuerfel",
+          "iCan": "Ich kann Volumen und Oberflächeninhalt von Quader und Würfel berechnen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "flaeche-umfang-quadrat-rechteck",
+            "grundkoerper-quader-wuerfel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "volumen-oberflaeche-prisma",
+          "iCan": "Ich kann Volumen und Oberflächeninhalt von Prismen berechnen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "volumen-oberflaeche-quader-wuerfel",
+            "flaeche-umfang-dreieck-viereck-kreis"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "volumen-oberflaeche-pyramide-kegel-zylinder-kugel",
+          "iCan": "Ich kann Volumen und Oberflächeninhalt von Zylinder, Pyramide, Kegel und Kugel berechnen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "volumen-oberflaeche-prisma",
+            "satz-des-pythagoras"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "berechnungen-dreiecke-vielecke",
+          "iCan": "Ich kann Streckenlängen und Winkel in Dreiecken und Vielecken mit Pythagoras, Ähnlichkeit und Trigonometrie berechnen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "satz-des-pythagoras",
+            "aehnlichkeit-strahlensaetze",
+            "trigonometrie"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "stochastik",
+      "name": {
+        "de": "Stochastik",
+        "en": "Probability and statistics"
+      },
+      "competencies": [
+        {
+          "id": "zufallserscheinungen",
+          "iCan": "Ich kann Zufallserscheinungen im Alltag erkennen und Zufallsversuche mit ihren Ergebnissen beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "haeufigkeiten",
+          "iCan": "Ich kann absolute und relative Häufigkeiten bestimmen und als Schätzwerte für Wahrscheinlichkeiten deuten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "zufallserscheinungen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wahrscheinlichkeitsbegriff",
+          "iCan": "Ich kann erklären, was Wahrscheinlichkeit bedeutet, und Wahrscheinlichkeiten auf einer Skala von 0 bis 1 einordnen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "haeufigkeiten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wahrscheinlichkeit",
+          "iCan": "Ich kann Wahrscheinlichkeiten bei ein-, zwei- und mehrstufigen Zufallsexperimenten bestimmen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "wahrscheinlichkeitsbegriff"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zufall-laplace",
+          "iCan": "Ich kann Wahrscheinlichkeiten mit der Laplace-Formel berechnen: günstige durch mögliche Ergebnisse.",
+          "gradeBand": "7-8",
+          "requires": [
+            "wahrscheinlichkeitsbegriff"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zufall-gegenereignis",
+          "iCan": "Ich kann die Wahrscheinlichkeit über das Gegenereignis mit 1 minus P(E) berechnen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zufall-laplace"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zufall-baumdiagramm",
+          "iCan": "Ich kann ein mehrstufiges Zufallsexperiment als Baumdiagramm oder Vierfeldertafel darstellen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zufall-laplace"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zufall-pfadregel-1",
+          "iCan": "Ich kann die Wahrscheinlichkeit eines Pfades berechnen, indem ich die Zweigwahrscheinlichkeiten multipliziere.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zufall-baumdiagramm"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zufall-ohne-zuruecklegen",
+          "iCan": "Ich kann Ziehen mit und ohne Zurücklegen unterscheiden und die Zweigwahrscheinlichkeiten anpassen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zufall-pfadregel-1"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zufall-pfadregel-2",
+          "iCan": "Ich kann die Wahrscheinlichkeit eines Ereignisses berechnen, indem ich die Wahrscheinlichkeiten seiner Pfade addiere.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zufall-pfadregel-1"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zufall-ergebnisform",
+          "iCan": "Ich kann Wahrscheinlichkeiten als Bruch, Dezimalzahl, Prozentangabe oder Rechenterm angeben und zwischen den Formen wechseln.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zufall-laplace",
+            "prozent-grundbegriffe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zufall-ereignis-uebersetzen",
+          "iCan": "Ich kann Ereignisse wie genau einmal oder mindestens einmal in die passenden Pfade eines Baumdiagramms übersetzen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zufall-baumdiagramm",
+            "zufall-pfadregel-2"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "simulationen",
+          "iCan": "Ich kann einfache Zufallsversuche mit Zufallszahlen und Tabellenkalkulation simulieren und auswerten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "haeufigkeiten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "umfragen-erhebungen",
+          "iCan": "Ich kann eine einfache Umfrage planen, durchführen und auswerten und beurteilen, wie aussagekräftig sie ist.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "daten-darstellen",
+          "iCan": "Ich kann Daten in Tabellen und Diagrammen darstellen und die Darstellung begründen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "kenngroessen-lage-streumasse",
+          "iCan": "Ich kann Mittelwert, Median, Spannweite und weitere Kenngrößen von Daten bestimmen und deuten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "daten-darstellen"
+          ],
+          "practisedBy": []
+        }
+      ]
+    }
+  ],
+  "curricula": [
+    {
+      "id": "he-gymnasium",
+      "land": "HE",
+      "schoolType": {
+        "de": "Gymnasium (G9)",
+        "en": "Grammar school (G9)"
+      },
+      "version": "Kerncurriculum Mathematik Gymnasium Sekundarstufe I (Stand 2021) und Lehrplan Mathematik G9 (Übersicht der verbindlichen Themen 5.1 bis 10.5)",
+      "source": {
+        "title": "Kerncurriculum Mathematik Gymnasium, Hessisches Kultusministerium (Jahrgänge und Einheiten nach dem Lehrplan Mathematik G9)",
+        "url": "https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-07/kerncurriculum_mathematik_gymnasium.pdf"
+      },
+      "placements": [
+        {
+          "competency": "natuerliche-zahlen",
+          "grades": [
+            5
+          ],
+          "unit": "5.1"
+        },
+        {
+          "competency": "zahlen-vergleichen-ordnen",
+          "grades": [
+            5,
+            6,
+            7,
+            9
+          ],
+          "unit": "5.1, 6.1, 7.2, 9.2"
+        },
+        {
+          "competency": "runden",
+          "grades": [
+            5,
+            6
+          ],
+          "unit": "5.1, 6.1"
+        },
+        {
+          "competency": "teilbarkeit",
+          "grades": [
+            6
+          ],
+          "unit": "6.1"
+        },
+        {
+          "competency": "zahldarstellungen",
+          "grades": [
+            5,
+            6,
+            7,
+            9
+          ],
+          "unit": "5.1, 6.1, 7.2, 9.2"
+        },
+        {
+          "competency": "brueche-begriff",
+          "grades": [
+            6
+          ],
+          "unit": "6.1"
+        },
+        {
+          "competency": "dezimalbrueche",
+          "grades": [
+            6
+          ],
+          "unit": "6.1"
+        },
+        {
+          "competency": "rationale-zahlen",
+          "grades": [
+            7
+          ],
+          "unit": "7.2"
+        },
+        {
+          "competency": "reelle-zahlen",
+          "grades": [
+            9
+          ],
+          "unit": "9.2, 9.6"
+        },
+        {
+          "competency": "grundrechenarten-rechengesetze",
+          "grades": [
+            5,
+            6
+          ],
+          "unit": "5.1, 6.1"
+        },
+        {
+          "competency": "bruchrechnung-grundaufgaben",
+          "grades": [
+            6
+          ],
+          "unit": "6.1"
+        },
+        {
+          "competency": "rechnen-rational-reell",
+          "grades": [
+            7,
+            9
+          ],
+          "unit": "7.2, 9.2"
+        },
+        {
+          "competency": "prozentrechnung",
+          "grades": [
+            7,
+            8
+          ],
+          "unit": "7.1, 8.3"
+        },
+        {
+          "competency": "prozent-grundbegriffe",
+          "grades": [
+            5,
+            6,
+            7
+          ],
+          "unit": "7.1"
+        },
+        {
+          "competency": "prozent-prozentwert",
+          "grades": [
+            7
+          ],
+          "unit": "7.1"
+        },
+        {
+          "competency": "prozent-prozentsatz",
+          "grades": [
+            7
+          ],
+          "unit": "7.1"
+        },
+        {
+          "competency": "prozent-grundwert",
+          "grades": [
+            7
+          ],
+          "unit": "7.1"
+        },
+        {
+          "competency": "prozent-veraenderung",
+          "grades": [
+            7,
+            8
+          ],
+          "unit": "7.1, 8.3"
+        },
+        {
+          "competency": "prozent-vergleich",
+          "grades": [
+            7
+          ],
+          "unit": "7.1"
+        },
+        {
+          "competency": "prozent-sachaufgaben",
+          "grades": [
+            7
+          ],
+          "unit": "7.1"
+        },
+        {
+          "competency": "prozent-von-prozenten",
+          "grades": [
+            8
+          ],
+          "unit": "8.3"
+        },
+        {
+          "competency": "zinsrechnung",
+          "grades": [
+            7,
+            8
+          ],
+          "unit": "7.1, 8.3"
+        },
+        {
+          "competency": "groessenvorstellungen-schaetzen",
+          "grades": [
+            5
+          ],
+          "unit": "5.1, 5.3"
+        },
+        {
+          "competency": "umrechnung-groessen",
+          "grades": [
+            5,
+            10
+          ],
+          "unit": "5.3, 10.1"
+        },
+        {
+          "competency": "messen-laenge-masse-geld-zeit",
+          "grades": [
+            5
+          ],
+          "unit": "5.3"
+        },
+        {
+          "competency": "terme-variable",
+          "grades": [
+            5,
+            8
+          ],
+          "unit": "5.1, 8.1"
+        },
+        {
+          "competency": "klammern-binome",
+          "grades": [
+            8
+          ],
+          "unit": "8.1"
+        },
+        {
+          "competency": "potenzen",
+          "grades": [
+            5,
+            10
+          ],
+          "unit": "5.1, 10.1"
+        },
+        {
+          "competency": "lineare-gleichungen",
+          "grades": [
+            5,
+            7,
+            8
+          ],
+          "unit": "5.1, 7.2, 8.1"
+        },
+        {
+          "competency": "ungleichungen",
+          "grades": [
+            8
+          ],
+          "unit": "8.1"
+        },
+        {
+          "competency": "lineare-gleichungssysteme",
+          "grades": [
+            9
+          ],
+          "unit": "9.1"
+        },
+        {
+          "competency": "quadratische-gleichungen",
+          "grades": [
+            9
+          ],
+          "unit": "9.3"
+        },
+        {
+          "competency": "logarithmen",
+          "grades": [
+            10
+          ],
+          "unit": "10.2"
+        },
+        {
+          "competency": "zuordnungen",
+          "grades": [
+            5,
+            7
+          ],
+          "unit": "5.1, 7.1"
+        },
+        {
+          "competency": "proportional-antiproportional",
+          "grades": [
+            7,
+            8
+          ],
+          "unit": "7.1, 8.1"
+        },
+        {
+          "competency": "dreisatz",
+          "grades": [
+            7
+          ],
+          "unit": "7.1"
+        },
+        {
+          "competency": "nichtproportionale-zusammenhaenge",
+          "grades": [
+            8,
+            9,
+            10
+          ],
+          "unit": "8.1, 9.3, 10.2"
+        },
+        {
+          "competency": "lineare-funktionen",
+          "grades": [
+            8
+          ],
+          "unit": "8.1"
+        },
+        {
+          "competency": "funktionen-darstellung",
+          "grades": [
+            8,
+            9,
+            10
+          ],
+          "unit": "8.1, 9.3, 10.1"
+        },
+        {
+          "competency": "quadratische-funktionen",
+          "grades": [
+            9
+          ],
+          "unit": "9.3"
+        },
+        {
+          "competency": "potenzfunktionen",
+          "grades": [
+            10
+          ],
+          "unit": "10.1"
+        },
+        {
+          "competency": "exponentialfunktionen",
+          "grades": [
+            10
+          ],
+          "unit": "10.2"
+        },
+        {
+          "competency": "sinusfunktion",
+          "grades": [
+            10
+          ],
+          "unit": "10.4"
+        },
+        {
+          "competency": "grundfiguren-eben",
+          "grades": [
+            5
+          ],
+          "unit": "5.2"
+        },
+        {
+          "competency": "vierecke-grundfiguren",
+          "grades": [
+            7,
+            8
+          ],
+          "unit": "7.3, 8.2"
+        },
+        {
+          "competency": "haus-der-vierecke",
+          "grades": [
+            8
+          ],
+          "unit": "8.2"
+        },
+        {
+          "competency": "konstruktionen",
+          "grades": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "unit": "5.2, 6.2, 7.3, 8.2"
+        },
+        {
+          "competency": "symmetrie",
+          "grades": [
+            5,
+            6,
+            8
+          ],
+          "unit": "5.2, 6.2, 8.2"
+        },
+        {
+          "competency": "koordinatensystem",
+          "grades": [
+            5,
+            7
+          ],
+          "unit": "5.2, 7.2"
+        },
+        {
+          "competency": "grundkoerper-quader-wuerfel",
+          "grades": [
+            5,
+            6
+          ],
+          "unit": "5.2, 6.2"
+        },
+        {
+          "competency": "grundkoerper-prisma-zylinder",
+          "grades": [
+            8,
+            9
+          ],
+          "unit": "8.2, 9.6"
+        },
+        {
+          "competency": "grundkoerper-pyramide-kegel-kugel",
+          "grades": [
+            10
+          ],
+          "unit": "10.3"
+        },
+        {
+          "competency": "netze-schraegbilder-modelle",
+          "grades": [
+            5,
+            8,
+            9,
+            10
+          ],
+          "unit": "5.2, 8.2, 9.6, 10.3"
+        },
+        {
+          "competency": "parallel-senkrecht-abstand",
+          "grades": [
+            5
+          ],
+          "unit": "5.2"
+        },
+        {
+          "competency": "bewegungen-figuren",
+          "grades": [
+            6,
+            7
+          ],
+          "unit": "6.2, 7.2"
+        },
+        {
+          "competency": "kongruenz",
+          "grades": [
+            7,
+            8
+          ],
+          "unit": "7.3, 8.2"
+        },
+        {
+          "competency": "satz-des-pythagoras",
+          "grades": [
+            9
+          ],
+          "unit": "9.5"
+        },
+        {
+          "competency": "satz-des-thales",
+          "grades": [
+            8
+          ],
+          "unit": "8.2"
+        },
+        {
+          "competency": "aehnlichkeit-strahlensaetze",
+          "grades": [
+            9
+          ],
+          "unit": "9.4"
+        },
+        {
+          "competency": "trigonometrie",
+          "grades": [
+            10
+          ],
+          "unit": "10.4"
+        },
+        {
+          "competency": "winkel-messen",
+          "grades": [
+            6
+          ],
+          "unit": "6.2"
+        },
+        {
+          "competency": "winkelsaetze",
+          "grades": [
+            7
+          ],
+          "unit": "7.3"
+        },
+        {
+          "competency": "zusammengesetzte-figuren",
+          "grades": [
+            6,
+            7
+          ],
+          "unit": "6.2, 7.3"
+        },
+        {
+          "competency": "flaeche-umfang-quadrat-rechteck",
+          "grades": [
+            5,
+            6
+          ],
+          "unit": "5.2, 6.2"
+        },
+        {
+          "competency": "flaeche-umfang-dreieck-viereck-kreis",
+          "grades": [
+            7,
+            9
+          ],
+          "unit": "7.3, 9.6"
+        },
+        {
+          "competency": "volumen-oberflaeche-quader-wuerfel",
+          "grades": [
+            5,
+            6
+          ],
+          "unit": "5.2, 6.2"
+        },
+        {
+          "competency": "volumen-oberflaeche-prisma",
+          "grades": [
+            8
+          ],
+          "unit": "8.2"
+        },
+        {
+          "competency": "volumen-oberflaeche-pyramide-kegel-zylinder-kugel",
+          "grades": [
+            9,
+            10
+          ],
+          "unit": "9.6, 10.3"
+        },
+        {
+          "competency": "berechnungen-dreiecke-vielecke",
+          "grades": [
+            9,
+            10
+          ],
+          "unit": "9.5, 10.4"
+        },
+        {
+          "competency": "zufallserscheinungen",
+          "grades": [
+            5,
+            7
+          ],
+          "unit": "5.1, 7.4"
+        },
+        {
+          "competency": "haeufigkeiten",
+          "grades": [
+            5,
+            6,
+            7
+          ],
+          "unit": "5.1, 6.1, 7.4"
+        },
+        {
+          "competency": "wahrscheinlichkeitsbegriff",
+          "grades": [
+            6,
+            7
+          ],
+          "unit": "6.1, 7.4"
+        },
+        {
+          "competency": "wahrscheinlichkeit",
+          "grades": [
+            7,
+            10
+          ],
+          "unit": "7.4, 10.5"
+        },
+        {
+          "competency": "zufall-laplace",
+          "grades": [
+            7
+          ],
+          "unit": "7.4"
+        },
+        {
+          "competency": "zufall-gegenereignis",
+          "grades": [
+            7,
+            10
+          ],
+          "unit": "7.4, 10.5"
+        },
+        {
+          "competency": "zufall-baumdiagramm",
+          "grades": [
+            7,
+            10
+          ],
+          "unit": "7.4, 10.5"
+        },
+        {
+          "competency": "zufall-pfadregel-1",
+          "grades": [
+            7,
+            10
+          ],
+          "unit": "7.4, 10.5"
+        },
+        {
+          "competency": "zufall-ohne-zuruecklegen",
+          "grades": [
+            7
+          ],
+          "unit": "7.4"
+        },
+        {
+          "competency": "zufall-pfadregel-2",
+          "grades": [
+            7,
+            10
+          ],
+          "unit": "7.4, 10.5"
+        },
+        {
+          "competency": "zufall-ergebnisform",
+          "grades": [
+            7
+          ],
+          "unit": "7.4"
+        },
+        {
+          "competency": "zufall-ereignis-uebersetzen",
+          "grades": [
+            7,
+            10
+          ],
+          "unit": "7.4, 10.5"
+        },
+        {
+          "competency": "simulationen",
+          "grades": [
+            8
+          ],
+          "unit": "8.4"
+        },
+        {
+          "competency": "umfragen-erhebungen",
+          "grades": [
+            5,
+            9
+          ],
+          "unit": "5.1, 9.7"
+        },
+        {
+          "competency": "daten-darstellen",
+          "grades": [
+            5,
+            7,
+            8,
+            9
+          ],
+          "unit": "5.1, 7.1, 8.4, 9.7"
+        },
+        {
+          "competency": "kenngroessen-lage-streumasse",
+          "grades": [
+            6,
+            9
+          ],
+          "unit": "6.1, 9.7"
+        }
+      ]
+    }
+  ]
+}
