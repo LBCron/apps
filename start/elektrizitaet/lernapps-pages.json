@@ -1,0 +1,144 @@
+{
+  "format": 1,
+  "strand": "physik/elektrizitaetslehre",
+  "pages": [
+    {
+      "path": "stromkreis/einfacher-stromkreis/",
+      "title": {
+        "de": "Der einfache Stromkreis",
+        "en": "The simple circuit"
+      },
+      "competencies": [
+        "einfacher-stromkreis"
+      ]
+    },
+    {
+      "path": "stromkreis/leiter-nichtleiter/",
+      "title": {
+        "de": "Leiter und Nichtleiter",
+        "en": "Conductors and insulators"
+      },
+      "competencies": [
+        "leiter-nichtleiter"
+      ]
+    },
+    {
+      "path": "schaltungen/schalter-schaltzeichen/",
+      "title": {
+        "de": "Schalter und Schaltzeichen",
+        "en": "Switches and circuit symbols"
+      },
+      "competencies": [
+        "schalter",
+        "schaltzeichen"
+      ]
+    },
+    {
+      "path": "schaltungen/reihenschaltung/",
+      "title": {
+        "de": "Reihenschaltung",
+        "en": "Series circuit"
+      },
+      "competencies": [
+        "reihenschaltung"
+      ]
+    },
+    {
+      "path": "schaltungen/parallelschaltung/",
+      "title": {
+        "de": "Parallelschaltung",
+        "en": "Parallel circuit"
+      },
+      "competencies": [
+        "parallelschaltung"
+      ]
+    },
+    {
+      "path": "alltag/wirkungen/",
+      "title": {
+        "de": "Wirkungen des elektrischen Stroms",
+        "en": "Effects of electric current"
+      },
+      "competencies": [
+        "waermewirkung-strom",
+        "lichtwirkung-strom",
+        "magnetwirkung-strom"
+      ]
+    },
+    {
+      "path": "alltag/sicherheit/",
+      "title": {
+        "de": "Sicher mit Strom umgehen",
+        "en": "Staying safe with electricity"
+      },
+      "competencies": [
+        "gefahren-des-stroms",
+        "sicher-mit-strom-umgehen"
+      ]
+    },
+    {
+      "path": "groessen/stromstaerke/",
+      "title": {
+        "de": "Die Stromstärke",
+        "en": "Current"
+      },
+      "competencies": [
+        "stromstaerke",
+        "stromstaerke-messen"
+      ]
+    },
+    {
+      "path": "groessen/spannung/",
+      "title": {
+        "de": "Die Spannung",
+        "en": "Voltage"
+      },
+      "competencies": [
+        "spannung",
+        "spannung-messen"
+      ]
+    },
+    {
+      "path": "groessen/widerstand/",
+      "title": {
+        "de": "Der Widerstand",
+        "en": "Resistance"
+      },
+      "competencies": [
+        "widerstand",
+        "widerstand-einflussgroessen"
+      ]
+    },
+    {
+      "path": "groessen/ohmsches-gesetz/",
+      "title": {
+        "de": "Das ohmsche Gesetz",
+        "en": "Ohm's law"
+      },
+      "competencies": [
+        "ohmsches-gesetz",
+        "ohmsches-gesetz-rechnen"
+      ]
+    },
+    {
+      "path": "schaltungen-messen/reihenschaltung/",
+      "title": {
+        "de": "Reihenschaltung mit Messgeräten",
+        "en": "Series circuit with meters"
+      },
+      "competencies": [
+        "reihenschaltung-groessen"
+      ]
+    },
+    {
+      "path": "schaltungen-messen/parallelschaltung/",
+      "title": {
+        "de": "Parallelschaltung mit Messgeräten",
+        "en": "Parallel circuit with meters"
+      },
+      "competencies": [
+        "parallelschaltung-groessen"
+      ]
+    }
+  ]
+}

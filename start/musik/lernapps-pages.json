@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "strand": "none",
+  "pages": [
+    {
+      "path": "hoeren/laut-leise/",
+      "title": "Laut und leise"
+    },
+    {
+      "path": "hoeren/schnell-langsam/",
+      "title": "Schnell und langsam"
+    },
+    {
+      "path": "hoeren/klangfarbe/",
+      "title": "Klangfarbe und Instrumentenfamilien"
+    },
+    {
+      "path": "tonhoehe/hoch-tief/",
+      "title": "Hoch und tief"
+    },
+    {
+      "path": "tonhoehe/klaviatur/",
+      "title": "Die Klaviatur"
+    },
+    {
+      "path": "tonhoehe/stimme/",
+      "title": "Meine Stimme hat eine Tonhöhe"
+    },
+    {
+      "path": "rhythmus/grundschlag-takt/",
+      "title": "Grundschlag und Takt"
+    },
+    {
+      "path": "rhythmus/notenwerte/",
+      "title": "Notenwerte und Pausen"
+    },
+    {
+      "path": "rhythmus/klatschen/",
+      "title": "Rhythmen klatschen"
+    },
+    {
+      "path": "noten/linien/",
+      "title": "Notenlinien und Violinschlüssel"
+    },
+    {
+      "path": "noten/benennen/",
+      "title": "Noten benennen"
+    },
+    {
+      "path": "noten/lesen/",
+      "title": "Rhythmus und Melodie lesen"
+    },
+    {
+      "path": "tonleitern/dur-bauen/",
+      "title": "Ganzton, Halbton und die Dur-Tonleiter"
+    },
+    {
+      "path": "tonleitern/dur-moll/",
+      "title": "Dur und Moll hören"
+    },
+    {
+      "path": "tonleitern/intervalle/",
+      "title": "Intervalle"
+    },
+    {
+      "path": "tonleitern/nachsingen/",
+      "title": "Tonfolgen nachsingen"
+    },
+    {
+      "path": "erfinden/begleiten/",
+      "title": "Ein Lied begleiten"
+    },
+    {
+      "path": "erfinden/rhythmus-erfinden/",
+      "title": "Einen eigenen Rhythmus erfinden"
+    },
+    {
+      "path": "erfinden/melodie-erfinden/",
+      "title": "Eine eigene Melodie erfinden und singen"
+    }
+  ]
+}
