@@ -84,3 +84,98 @@
   {%- endfor %}
 </div>
 {% endmacro %}
+
+{#- ── The learning map (src/map*.njk, assets/map.js) ──────────────────────────────────────────────────────── -#}
+
+{#- The address of a page of the map in the page's language: mapUrl("mathematik/c/laplace/"). -#}
+{% macro mapUrl(path) %}{{ ('/map/' + path) | inLang(lang) | url }}{% endmacro %}
+
+{#- A trail of links above a map page; items: [{ label, href }], the last one is the page itself (no href). -#}
+{% macro breadcrumb(items) %}
+<nav aria-label="{{ t.map.breadcrumb }}" class="text-sm text-slate-600">
+  <ol class="list-none p-0 m-0 flex flex-wrap gap-x-2 gap-y-1">
+    {%- for item in items %}
+    <li class="flex gap-2">
+      {%- if item.href %}<a href="{{ item.href }}" class="text-blue-700 underline underline-offset-2"{{ item.attrs | safe }}>{{ item.label }}</a><span aria-hidden="true">›</span>
+      {%- else %}<span aria-current="page"{{ item.attrs | safe }}>{{ item.label }}</span>{% endif %}
+    </li>
+    {%- endfor %}
+  </ol>
+</nav>
+{% endmacro %}
+
+{#- A competency as a box in a grid: filled when an app practises it, dashed when it is a gap (the text says so too).
+    A link to its page; assets/map.js opens its details (template "detail-<id>") as a dialog instead. -#}
+{% macro mapChip(subject, comp, again=[], dialog=true) %}
+{%- set covered = comp.practisedBy.length > 0 %}
+<li{% if covered %} data-covered{% endif %}>
+  <a href="{{ mapUrl(subject.id + '/c/' + comp.id + '/') }}" class="map-chip {{ 'map-chip-covered' if covered else 'map-chip-gap' }}"{% if dialog %} data-opens="detail-{{ comp.id }}"{% endif %}>
+    <span{{ comp.iCan | fallbackLang(lang) | safe }}>{{ comp.iCan | canLabel(lang) }}</span>
+    <span class="sr-only">({{ t.map.covered if covered else t.map.gap }})</span>
+    {%- if again.length %}<span class="map-chip-note">{{ t.map.subject.again(again | join(", ")) }}</span>{% endif %}
+  </a>
+</li>
+{% endmacro %}
+
+{#- A link to a competency, with its strand when that is another strand than `strandId`. -#}
+{% macro mapCompetencyLink(subject, id, strandId) %}
+{%- set other = subject.competencies | byId(id) %}
+<a href="{{ mapUrl(subject.id + '/c/' + id + '/') }}" class="text-blue-700 underline underline-offset-2"><span{{ other.iCan | fallbackLang(lang) | safe }}>{{ other.iCan | canLabel(lang) }}</span></a>
+{%- if other.strand != strandId %}{% set s = subject.strands | byId(other.strand) %} <span class="text-slate-600">· {{ t.map.otherStrand(s.name | tx(lang)) }}</span>{% endif %}
+{% endmacro %}
+
+{#- The apps and pages that practise a competency, or that none does. -#}
+{% macro mapPractised(comp, nothing) %}
+{%- if comp.practisedBy.length %}
+<ul class="list-none p-0 m-0 flex flex-col gap-1">
+  {%- for p in comp.practisedBy %}
+  <li>
+    <a href="{{ ('/' + p.app.id + '/') | inLang(lang) | url }}" class="text-blue-700 underline underline-offset-2"{{ p.app.title | fallbackLang(lang) | safe }}>{{ p.app.title | tx(lang) }}</a>
+    {%- for page in p.pages %} › <a href="{{ page.url }}" class="text-blue-700 underline underline-offset-2"{{ page.title | fallbackLang(lang) | safe }}>{{ page.title | tx(lang) }}</a>{% endfor %}
+  </li>
+  {%- endfor %}
+</ul>
+{%- else %}{{ nothing }}{% endif %}
+{% endmacro %}
+
+{#- The details of a competency for the dialog of the subject page: a <template> per competency, read by assets/map.js
+    (no request). curriculum: the chosen one, or none (then every captured curriculum of the subject). -#}
+{% macro mapDetails(subject, comp, curriculum) %}
+{%- set D = t.map.subject.details %}
+{%- set strand = subject.strands | byId(comp.strand) %}
+<template id="detail-{{ comp.id }}" data-kind="{{ D.kind(strand.name | tx(lang)) }}">
+  <p data-dialog-title{{ comp.iCan | fallbackLang(lang) | safe }}>{{ comp.iCan | canLabel(lang) }}</p>
+  <div data-dialog-body>
+    <p class="m-0"{{ comp.iCan | fallbackLang(lang) | safe }}>{{ comp.iCan | tx(lang) }}</p>
+    <dl class="map-facts">
+      <div><dt>{{ D.richtstufe }}</dt><dd>{{ t.map.grade(comp.gradeBand | band) }}</dd></div>
+      {%- for cu in (subject.curricula if not curriculum else [curriculum]) %}
+      {%- set placed = cu.placements[comp.id] %}
+      <div><dt>{{ t.map.subject.when.curriculum(t.map.lands[cu.land], cu.schoolType | tx(lang)) }}</dt><dd>{% if placed %}{{ t.map.grade(placed.grades | join(", ")) }}{% else %}{{ D.unplaced(comp.gradeBand | band) }}{% endif %}</dd></div>
+      {%- endfor %}
+      <div><dt>{{ D.requires }}</dt><dd>
+        {%- if comp.requires.length %}<ul class="list-none p-0 m-0 flex flex-col gap-1">{% for id in comp.requires %}<li>{{ mapCompetencyLink(subject, id, comp.strand) }}</li>{% endfor %}</ul>
+        {%- else %}{{ D.requiresNone }}{% endif %}</dd></div>
+      <div><dt>{{ D.practised }}</dt><dd>{{ mapPractised(comp, D.practisedNone) }}</dd></div>
+    </dl>
+    <p class="m-0"><a href="{{ mapUrl(subject.id + '/c/' + comp.id + '/') }}" class="btn btn-primary">{{ D.more }}</a></p>
+  </div>
+</template>
+{% endmacro %}
+
+{#- The one dialog of a map page; assets/map.js fills it from a template or a definition and opens it. Without JS it is
+    never shown: the links lead to the pages. -#}
+{% macro mapDialog() %}
+<dialog class="map-dialog" data-map-dialog aria-labelledby="map-dialog-title">
+  <div class="map-dialog-inner">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex flex-col gap-2 items-start">
+        <p class="map-badge m-0" data-dialog-kind></p>
+        <h2 id="map-dialog-title" class="m-0 text-xl font-bold leading-tight text-slate-900" data-dialog-heading></h2>
+      </div>
+      <button type="button" class="btn btn-secondary map-close" data-dialog-close aria-label="{{ t.map.close }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="mt-4 flex flex-col gap-4" data-dialog-content></div>
+  </div>
+</dialog>
+{% endmacro %}

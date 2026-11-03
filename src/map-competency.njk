@@ -1,0 +1,138 @@
+---
+pagination:
+  data: map.competencyPages
+  size: 1
+  alias: view
+permalink: "/{{ view.l.root }}map/{{ view.subject.id }}/c/{{ view.competency.id }}/index.html"
+layout: base.njk
+eleventyComputed:
+  title: "{{ t.map.competency.title(view.competency.iCan | canLabel(lang), view.subject.name | tx(lang)) }}"
+  description: "{{ view.competency.iCan | tx(lang) }}"
+---
+{#-
+  A competency (feat/learning-map, B10): "Ich kann …", strand and source; the learning path (what it requires and what
+  requires it, also across strands); when each captured curriculum places it ("Wann ist er dran?"); the apps and pages
+  that practise it, or that it is a gap.
+-#}
+{%- set K = t.map.competency %}
+{%- set subject = view.subject %}
+{%- set comp = view.competency %}
+{%- set strand = subject.strands | byId(comp.strand) %}
+{%- set label = comp.iCan | canLabel(lang) %}
+{%- import "components.njk" as c with context %}
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 pt-6 pb-12 flex flex-col gap-8">
+  {{ c.breadcrumb([
+    { label: t.map.name, href: c.mapUrl('') | trim },
+    { label: subject.name | tx(lang), href: c.mapUrl(subject.id + '/') | trim, attrs: subject.name | fallbackLang(lang) },
+    { label: strand.name | tx(lang), href: c.mapUrl(subject.id + '/' + strand.id + '/') | trim, attrs: strand.name | fallbackLang(lang) },
+    { label: label, attrs: comp.iCan | fallbackLang(lang) }
+  ]) }}
+
+  <div class="flex flex-col gap-3 items-start">
+    <a href="{{ c.mapUrl('') | trim }}#baustein" class="text-sm text-blue-700 underline underline-offset-2">{{ K.whatIs }}</a>
+    <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.5rem, 4.5vw, 2.25rem);"{{ comp.iCan | fallbackLang(lang) | safe }}>{{ label }}</h1>
+    <p class="m-0 text-lg text-slate-700"{{ comp.iCan | fallbackLang(lang) | safe }}>{{ K.quote(comp.iCan | tx(lang)) }}</p>
+    <dl class="map-facts w-full mt-2">
+      <div><dt>{{ K.strand }}</dt><dd><a href="{{ c.mapUrl(subject.id + '/' + strand.id + '/') | trim }}" class="text-blue-700 underline underline-offset-2"{{ strand.name | fallbackLang(lang) | safe }}>{{ strand.name | tx(lang) }}</a></dd></div>
+      <div><dt>{{ K.richtstufe }}</dt><dd>{{ t.map.grade(comp.gradeBand | band) }}</dd></div>
+      <div><dt>{{ K.source }}</dt><dd lang="de">{% if subject.source.url %}<a href="{{ subject.source.url }}" class="text-blue-700 underline underline-offset-2">{{ subject.source.title }}</a>{% else %}{{ subject.source.title }}{% endif %}</dd></div>
+    </dl>
+  </div>
+
+  <section class="panel" aria-labelledby="weg">
+    <h2 id="weg" class="panel-title">{{ K.path.headline }}</h2>
+    <div class="grid gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] items-start">
+      <div>
+        <h3 class="m-0 text-sm font-semibold text-slate-600">{{ K.path.requires }}</h3>
+        {%- if comp.requires.length %}
+        <ul class="list-none p-0 m-0 mt-2 flex flex-col gap-2">{% for id in comp.requires %}<li>{{ c.mapCompetencyLink(subject, id, comp.strand) }}</li>{% endfor %}</ul>
+        {%- else %}<p class="m-0 mt-2 text-slate-600">{{ K.path.requiresNone }}</p>{% endif %}
+      </div>
+      <span aria-hidden="true" class="hidden md:block text-2xl text-slate-500">→</span>
+      <div class="p-3 rounded-lg bg-blue-700 text-white">
+        <h3 class="m-0 text-sm font-semibold">{{ K.path.self }}</h3>
+        <p class="m-0 mt-1 font-bold"{{ comp.iCan | fallbackLang(lang) | safe }}>{{ label }}</p>
+      </div>
+      <span aria-hidden="true" class="hidden md:block text-2xl text-slate-500">→</span>
+      <div>
+        <h3 class="m-0 text-sm font-semibold text-slate-600">{{ K.path.requiredBy }}</h3>
+        {%- if comp.requiredBy.length %}
+        <ul class="list-none p-0 m-0 mt-2 flex flex-col gap-2">{% for id in comp.requiredBy %}<li>{{ c.mapCompetencyLink(subject, id, comp.strand) }}</li>{% endfor %}</ul>
+        {%- else %}<p class="m-0 mt-2 text-slate-600">{{ K.path.requiredByNone }}</p>{% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="wann">
+    {%- set W = K.when %}
+    <h2 id="wann" class="panel-title">{{ W.headline }}</h2>
+    <p class="m-0 text-slate-600">{{ W.body }}</p>
+    <div class="map-scroll mt-3" role="region" aria-labelledby="wann" tabindex="0">
+      <table class="map-table">
+        <thead>
+          <tr><th scope="col" style="width: 40%;">{{ W.head.which }}</th><th scope="col">{{ W.head.grade }}</th><th scope="col">{{ W.head.unit }}</th><th scope="col">{{ W.head.state }}</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{ W.richtstufe }}</th>
+            <td><strong>{{ comp.gradeBand | band }}</strong></td>
+            <td class="text-slate-600">{{ W.standard }}</td>
+            <td>{{ W.catalog }}</td>
+          </tr>
+          {%- for cu in subject.curricula %}
+          {%- set placed = cu.placements[comp.id] %}
+          <tr>
+            <th scope="row" class="font-normal"><a href="{{ c.mapUrl(subject.id + '/' + cu.id + '/') | trim }}" class="text-blue-700 underline underline-offset-2">{{ t.map.lands[cu.land] }}, {{ cu.schoolType | tx(lang) }}</a></th>
+            {%- if placed %}
+            <td>{{ placed.grades | join(", ") }}</td>
+            <td>{% if placed.unit %}{{ W.unit(placed.unit) }}{% else %}–{% endif %}</td>
+            {%- else %}
+            <td>–</td>
+            <td class="text-slate-600">{{ W.unplaced }}</td>
+            {%- endif %}
+            <td>{{ W.captured }}</td>
+          </tr>
+          {%- endfor %}
+          {%- set missing = [] %}
+          {%- for l in subject.lands %}{% if not l.curricula.length %}{% set _ = missing.push(t.map.lands[l.land]) %}{% endif %}{% endfor %}
+          {%- if missing.length %}
+          <tr>
+            <th scope="row" class="font-normal">{{ W.others }} ({{ missing.length }})</th>
+            <td class="text-slate-600">–</td>
+            <td class="text-slate-600">–</td>
+            <td class="text-slate-600">{{ W.missing }}</td>
+          </tr>
+          {%- endif %}
+        </tbody>
+      </table>
+    </div>
+    {%- if missing.length %}
+    <p class="m-0 mt-3 text-sm text-slate-600">{{ W.others }}, {{ W.missing }}: {{ missing | join(", ") }}</p>
+    {%- endif %}
+  </section>
+
+  <section class="panel" aria-labelledby="wer">
+    {%- set A = K.apps %}
+    <h2 id="wer" class="panel-title">{{ A.headline }}</h2>
+    {%- if comp.practisedBy.length %}
+    <ul class="list-none p-0 m-0 flex flex-col gap-3">
+      {%- for p in comp.practisedBy %}
+      <li class="p-4 rounded-lg border border-slate-200">
+        <h3 class="m-0 text-base font-bold"><a href="{{ ('/' + p.app.id + '/') | inLang(lang) | url }}" class="text-blue-700 underline underline-offset-2"{{ p.app.title | fallbackLang(lang) | safe }}>{{ p.app.title | tx(lang) }}</a></h3>
+        <p class="m-0 mt-1 text-sm text-slate-600">{{ p.app.grades | gradeLabel(lang) }}</p>
+        {%- if p.pages.length %}
+        <p class="m-0 mt-2 text-sm">{{ A.pages }}</p>
+        <ul class="list-none p-0 m-0 mt-1 flex flex-col gap-1">
+          {%- for page in p.pages %}<li><a href="{{ page.url }}" class="text-blue-700 underline underline-offset-2"{{ page.title | fallbackLang(lang) | safe }}>{{ page.title | tx(lang) }}</a></li>{% endfor %}
+        </ul>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- else %}
+    <p class="m-0 p-4 rounded-lg map-chip-gap">{{ A["none"] }}</p>
+    {%- endif %}
+    <p class="m-0 mt-4 text-slate-700">{{ A.build }} <a href="{{ '/build/' | inLang(lang) | url }}" class="text-blue-700 underline underline-offset-2">{{ A.buildLink }}</a></p>
+  </section>
+</div>

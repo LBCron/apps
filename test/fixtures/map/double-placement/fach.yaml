@@ -1,0 +1,7 @@
+name: Fach
+source: { title: Testquelle }
+strands:
+  - id: alpha
+    name: Alpha
+    competencies:
+      - { id: a1, iCan: "Ich kann eins.", gradeBand: "5-6" }

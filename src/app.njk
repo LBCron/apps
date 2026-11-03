@@ -72,6 +72,26 @@ eleventyComputed:
   </section>
   {%- endif %}
 
+  {# ── On the learning map: the app's strand and the competencies it practises (feat/learning-map, B13) ── #}
+  {%- set onMap = map.byApp[app.id] %}
+  {%- if onMap %}
+  {%- set mapSubject = map.subjects | byId(onMap.subject) %}
+  {%- set mapStrand = mapSubject.strands | byId(onMap.strand) %}
+  <section class="panel md:col-span-2" aria-labelledby="karte">
+    <h2 id="karte" class="panel-title">{{ t.map.app.headline }}</h2>
+    <p class="m-0 text-slate-700">{{ t.map.app.strand(mapStrand.name | tx(lang), mapSubject.name | tx(lang)) }}
+      <a href="{{ ('/map/' + mapSubject.id + '/' + mapStrand.id + '/') | inLang(lang) | url }}" class="text-blue-700 underline underline-offset-2">{{ t.map.app.strandLink(mapStrand.name | tx(lang)) }}</a></p>
+    {%- if onMap.competencies.length %}
+    <p class="m-0 mt-3 text-sm font-semibold text-slate-600">{{ t.map.app.practises }}</p>
+    <ul class="list-none p-0 m-0 mt-1 grid gap-x-6 gap-y-2 sm:grid-cols-2">
+      {%- for id in onMap.competencies %}{% set comp = mapSubject.competencies | byId(id) %}
+      <li><a href="{{ ('/map/' + mapSubject.id + '/c/' + id + '/') | inLang(lang) | url }}" class="text-blue-700 underline underline-offset-2"{{ comp.iCan | fallbackLang(lang) | safe }}>{{ comp.iCan | canLabel(lang) }}</a></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </section>
+  {%- endif %}
+
   {# ── Did it help? ── #}
   {%- set pageUrl = site.origin + (('/' + app.id + '/') | inLang(lang) | url) %}
   <section id="danke" class="panel panel-thanks md:col-span-2" aria-labelledby="danke-titel" data-thanks data-wave-text="{{ A.mail.wave }}">

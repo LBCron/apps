@@ -1,0 +1,971 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# PROPOSAL (research, not yet in the catalog). Source base: Hessen (KD-17), compared with Bayern, NRW and Rheinland-Pfalz.
+# Source codes in the comments:
+#   KC = Kerncurriculum Hessen Sekundarstufe I Gymnasium, Musik (Kap. 6 = Ende 9/10, 7.1 = Ende 6, 8 = Synopsen)
+#   G9 = Lehrplan Musik, Gymnasialer Bildungsgang, Hessen (Themenblaetter und Arbeitsbereiche; Jahrgaenge 5, 6, 8, 10;
+#        5,6 -> "5-6", 8 -> "7-8", 10 -> "9-10"; fuer 7 und 9 gibt es keine eigenen Themen)
+#   BY = LehrplanPLUS Bayern Gymnasium (G9) Musik, Mu5 bis Mu10, Lernbereiche LB1 Sprechen-Singen-Musizieren,
+#        LB2 Musik-Mensch-Zeit, LB3 Bewegung-Tanz-Szene, LB4 Musik und ihre Grundlagen; "nur MuG" = Musisches Gymnasium
+#   NW = Kernlehrplan Musik Gymnasium Sek I, Nordrhein-Westfalen (2019), Ordnungssysteme musikalischer Strukturen
+#   RP = Lehrplan Musik Sek I, Rheinland-Pfalz (2018), Kap. 4.2 und 5.1
+name: { de: Musik, en: Music }
+source:
+  title: Kerncurriculum Hessen, Sekundarstufe I - Gymnasium, Musik (Hessisches Kultusministerium), mit Lehrplan Musik G9 Hessen
+  url: https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-07/kerncurriculum_musik_gymnasium.pdf
+strands:
+  - id: hoerkultur
+    name: { de: "Musik hören und beschreiben", en: "Listening to music and describing it" }
+    competencies:
+      # KC 7.1 Musik hören (Konzentration auf den Hörsinn); G9 Hören ohne Noten 5 (konzentriertes Zuhören); RP 4.2.4
+      - id: konzentriert-hoeren
+        iCan: { de: "Ich kann meine Aufmerksamkeit gezielt auf das Hören richten." }
+        gradeBand: "5-6"
+      # KC Inhaltsfeld Hörkultur (Hörweisen); G9 Übergangsprofil (emotional-assoziativ, analysierend-erfassend)
+      - id: hoerweisen-unterscheiden
+        iCan: { de: "Ich kann verschiedene Arten des Hörens unterscheiden, zum Beispiel nebenbei hören und genau hinhören." }
+        gradeBand: "5-6"
+        requires: [konzentriert-hoeren]
+      # KC 7.1 Musik hören (Hörgewohnheiten beschreiben und vergleichen); G9 5/02 Lebenswelt Musik
+      - id: hoergewohnheiten-beschreiben
+        iCan: { de: "Ich kann beschreiben, wann und wie ich selbst Musik höre, und das mit anderen vergleichen." }
+        gradeBand: "5-6"
+        requires: [hoerweisen-unterscheiden]
+      # KC 7.1 Inhaltsfeld Parameter (sechs Grundeigenschaften); G9 Hören ohne Noten 5 (differenzierendes Hören); RP 4.2.4
+      - id: parameter-nennen
+        iCan: { de: "Ich kann die Grundeigenschaften Tempo, Tonhöhe, Tondauer, Lautstärke, Klangfarbe und Klangdichte nennen und unterscheiden." }
+        gradeBand: "5-6"
+        requires: [konzentriert-hoeren]
+      # G9 Hören ohne Noten 8 (rhythmische, melodische, harmonische, formale, klangliche Verläufe unterscheiden); BY Mu7 LB4
+      - id: verlaeufe-hoeren
+        iCan: { de: "Ich kann in einem Stück rhythmische, melodische, klangliche und formale Verläufe heraushören und mit Fachwörtern beschreiben." }
+        gradeBand: "7-8"
+        requires: [parameter-nennen]
+      # KC Kap. 6 Musik hören (differenziert hören, fachgerecht benennen); G9 Hören ohne Noten 10
+      - id: parameter-differenziert-hoeren
+        iCan: { de: "Ich kann die Parameter in einem Musikstück genau heraushören und mit den Fachwörtern benennen." }
+        gradeBand: "9-10"
+        requires: [verlaeufe-hoeren]
+      # KC Kap. 6 Inhaltsfeld Hörkultur (Stille erfahren, Hörlandschaften); RP 4.2.4 (Klangereignisse der Umwelt)
+      - id: hoerlandschaft-entdecken
+        iCan: { de: "Ich kann Stille und die Geräusche meiner Umgebung bewusst wahrnehmen und beschreiben." }
+        gradeBand: "9-10"
+        requires: [konzentriert-hoeren]
+      # KC Kap. 6 Musik hören (Hörgewohnheiten kritisch reflektieren); G9 10/17; BY Mu7/Mu8 (eigene Nutzung und Vorlieben); NW Verwendungen
+      - id: hoergewohnheiten-reflektieren
+        iCan: { de: "Ich kann meine eigenen Hörgewohnheiten kritisch prüfen und begründen, was ich an ihnen ändern möchte." }
+        gradeBand: "9-10"
+        requires: [hoergewohnheiten-beschreiben, sach-werturteil]
+      # KC 7.1 Musik hören (Emotionen und Assoziationen in Worte fassen); NW Rezeption (subjektive Höreindrücke beschreiben); G9 Hören ohne Noten 5
+      - id: gefuehle-in-worte-fassen
+        iCan: { de: "Ich kann in Worte fassen, welche Gefühle und Bilder Musik bei mir auslöst." }
+        gradeBand: "5-6"
+        requires: [konzentriert-hoeren]
+      # KC Inhaltsfeld Ausdruck und Wirkung (Repertoire charakterisierender Begriffe); BY Mu5 LB2 (Funktion und Wirkung)
+      - id: wirkung-beschreiben
+        iCan: { de: "Ich kann die Wirkung von Musik mit passenden Wörtern beschreiben, zum Beispiel feierlich, ruhig oder bedrohlich." }
+        gradeBand: "5-6"
+        requires: [gefuehle-in-worte-fassen]
+      # G9 6/08 Geschichten - Bilder - Musik; NW Bedeutungen 5/6 (musikalische Darstellung außermusikalischer Inhalte); BY Mu5 LB1
+      - id: programmmusik-hoeren
+        iCan: { de: "Ich kann erkennen, wie eine Musik eine Geschichte oder ein Bild darstellt, und das mit Merkmalen der Musik begründen." }
+        gradeBand: "5-6"
+        requires: [wirkung-beschreiben]
+      # KC Inhaltsfeld Ausdruck und Wirkung (kompositorische Mittel); BY Mu6 LB1 (Wirkungen anhand der Mittel begründen)
+      - id: mittel-der-wirkung
+        iCan: { de: "Ich kann zeigen, welche musikalischen Mittel eine Wirkung erzeugen, zum Beispiel Tempo, Lautstärke oder Dur und Moll." }
+        gradeBand: "5-6"
+        requires: [wirkung-beschreiben, parameter-nennen]
+      # BY Mu7 LB1 (Sach- und Werturteil unterscheiden); G9 Musikalische Urteilsfähigkeit (Werturteile begründen, 5/8/10); KC Kap. 8.1 (Meinung über Musik begründen, Ende 4)
+      - id: sach-werturteil
+        iCan: { de: "Ich kann ein Urteil über Musik begründen und eine Sachaussage von einer Geschmacksaussage unterscheiden." }
+        gradeBand: "7-8"
+        requires: [wirkung-beschreiben]
+      # G9 8/12 Musik in Film und Werbung; BY Mu8 LB2 (Filmmusik, Werbung); KC Inhaltsfeld Ausdruck und Wirkung (mediale Inszenierung)
+      - id: medien-inszenierung
+        iCan: { de: "Ich kann erkennen, wie Film, Werbung oder Computerspiele Musik einsetzen, um zu wirken." }
+        gradeBand: "7-8"
+        requires: [mittel-der-wirkung]
+      # KC Kap. 6 Musik hören (Emotionen begründet beschreiben und einordnen)
+      - id: wirkung-begruenden
+        iCan: { de: "Ich kann begründen, warum eine Musik so wirkt, und meine Gefühle dazu einordnen." }
+        gradeBand: "9-10"
+        requires: [mittel-der-wirkung, sach-werturteil]
+      # KC Inhaltsfeld Ausdruck und Wirkung (manipulativ wirken); G9 10/17 (Manipulation); BY Mu8 (Techniken der Beeinflussung in der Werbung); NW Verwendungen
+      - id: beeinflussung-erkennen
+        iCan: { de: "Ich kann erkennen, wann Musik mich beeinflussen soll, und mich dazu begründet verhalten." }
+        gradeBand: "9-10"
+        requires: [medien-inszenierung, wirkung-begruenden]
+  - id: klang
+    name: { de: "Klang, Instrumente und Vortrag", en: "Sound, instruments and performance" }
+    competencies:
+      # KC 7.1 Inhaltsfeld Klang (Stimme, Körper, Instrumente als Klangquellen); G9 5/04; RP Ton, Geräusch, Stille
+      - id: klangquellen-unterscheiden
+        iCan: { de: "Ich kann Stimme, Körper, Gegenstände und Instrumente als Klangquellen unterscheiden." }
+        gradeBand: "5-6"
+      # KC 7.1 Inhaltsfeld Klang (Schwingung); RP Schall, Schwingung
+      - id: schwingung
+        iCan: { de: "Ich kann erklären, dass jeder Klang durch eine Schwingung entsteht." }
+        gradeBand: "5-6"
+        requires: [klangquellen-unterscheiden]
+      # KC 7.1 Inhaltsfeld Klang (Verstärkung); G9 5/04 (Klangeigenschaften, Bau)
+      - id: verstaerkung-resonanz
+        iCan: { de: "Ich kann erklären, wie ein Resonanzkörper einen Klang lauter macht." }
+        gradeBand: "5-6"
+        requires: [schwingung]
+      # KC 7.1 Inhaltsfeld Klang (Klangformung); G9 5/04 (Bau, Tonerzeugung); NW Klangerzeugung
+      - id: klangformung
+        iCan: { de: "Ich kann beschreiben, wie Material und Form eines Instruments den Klang verändern." }
+        gradeBand: "5-6"
+        requires: [schwingung]
+      # KC 7.1 Inhaltsfeld Klang (Übertragung); BY Mu8 LB4 (Ausbreitung von Schallereignissen, nur MuG)
+      - id: klangweg-uebertragung
+        iCan: { de: "Ich kann erklären, wie ein Klang als Schall durch die Luft zu meinem Ohr kommt." }
+        gradeBand: "5-6"
+        requires: [schwingung]
+      # KC 7.1 Inhaltsfeld Klang (Stimme als Klangquelle); BY Mu7 LB1 (physiologische Grundlagen der Stimme)
+      - id: stimme-klangquelle
+        iCan: { de: "Ich kann erklären, wie meine Stimme entsteht und was dabei mitschwingt." }
+        gradeBand: "5-6"
+        requires: [klangquellen-unterscheiden]
+      # G9 5/04 und Elemente der Musik (Instrumentenfamilien); BY Mu5 LB4; NW 5/6 Klangfarbe (Instrumente); RP Orientierungsstufe
+      - id: instrumentenfamilien
+        iCan: { de: "Ich kann Instrumente nach der Art, wie sie klingen, in Familien einordnen." }
+        gradeBand: "5-6"
+        requires: [klangquellen-unterscheiden, schwingung]
+      # G9 5/04 (Instrumentale Besetzungen, Ensembles); NW 5/6 (Ensembles); BY Mu6 LB4 (Besetzungen)
+      - id: ensembles-besetzungen
+        iCan: { de: "Ich kann Besetzungen wie Sinfonieorchester, Band oder Chor erkennen und ihre Instrumente oder Stimmen nennen." }
+        gradeBand: "5-6"
+        requires: [instrumentenfamilien]
+      # G9 Elemente der Musik 6 (Stimmlagen); NW 5/6 (Stimmlagen); RP Klassenstufe 7-9/10 (Sopran, Alt, Tenor, Bass)
+      - id: stimmlagen
+        iCan: { de: "Ich kann die Stimmlagen Sopran, Alt, Tenor und Bass unterscheiden und beim Hören erkennen." }
+        gradeBand: "5-6"
+        requires: [stimme-klangquelle]
+      # KC Inhaltsfeld Parameter (Klangfarbe); G9 Hören ohne Noten 5; NW Klangfarbe/Sound
+      - id: klangfarbe-hoeren
+        iCan: { de: "Ich kann hören, warum zwei Instrumente beim gleichen Ton verschieden klingen, und die Klangfarbe beschreiben." }
+        gradeBand: "5-6"
+        requires: [parameter-nennen]
+      # KC Inhaltsfeld Parameter (Klangdichte; nur das KC nennt sie ausdrücklich); G9 Zusammenklang 5 (Punktklänge, Liegeklänge)
+      - id: klangdichte-hoeren
+        iCan: { de: "Ich kann hören, ob wenige oder viele Stimmen und Instrumente gleichzeitig klingen, und die Dichte beschreiben." }
+        gradeBand: "5-6"
+        requires: [parameter-nennen]
+      # KC Inhaltsfeld Parameter (Lautstärke); G9 Weitere Parameter 5 (Dynamik); NW Dynamik
+      - id: lautstaerke-hoeren
+        iCan: { de: "Ich kann Lautstärken hören und der Stärke nach ordnen." }
+        gradeBand: "5-6"
+        requires: [parameter-nennen]
+      # G9 Weitere Parameter 5 (Bezeichnungen pp-ff, crescendo, diminuendo); BY Mu5 LB4; NW 5/6 (pp bis ff, crescendo)
+      - id: dynamik-zeichen
+        iCan: { de: "Ich kann die Lautstärkezeichen von pianissimo bis fortissimo sowie crescendo und decrescendo lesen und beim Musizieren umsetzen." }
+        gradeBand: "5-6"
+        requires: [lautstaerke-hoeren]
+      # G9 Weitere Parameter 5 (legato, portato, staccato); BY Mu6 LB4 (legato, staccato, Akzent); NW 5/6 (Vortragsarten)
+      - id: artikulation-vortrag
+        iCan: { de: "Ich kann legato und staccato hören und beim Musizieren umsetzen." }
+        gradeBand: "5-6"
+        requires: [dynamik-zeichen]
+      # G9 Instrumentation 6 (Klangverfremdung, Stimmverfremdung), 6/07 Neue Musik und Experimente; BY Mu6 LB2 (Verfremdung)
+      - id: klang-verfremden
+        iCan: { de: "Ich kann einen Klang oder eine Stimme verfremden und beschreiben, was sich am Klang ändert." }
+        gradeBand: "5-6"
+        requires: [klangformung]
+      # G9 Instrumentation 8 (elektrische Instrumente, Computer); BY Mu8 LB4 (digitale Schallereignisse, Klangerzeugung und -verfremdung, nur MuG); NW Klangerzeugung
+      - id: elektronische-klangerzeugung
+        iCan: { de: "Ich kann erklären, wie ein elektrisches oder digitales Instrument Klänge erzeugt und verändert." }
+        gradeBand: "7-8"
+        requires: [schwingung, klangformung]
+      # KC Kap. 6 Inhaltsfeld Klang (Klanggestaltung); NW Sek I Ende (Klangerzeugung, Klangveränderung)
+      - id: klang-gestalten
+        iCan: { de: "Ich kann einen Klang gezielt gestalten, zum Beispiel durch die Art des Anschlagens, durch Dämpfen oder durch Klangbearbeitung." }
+        gradeBand: "9-10"
+        requires: [klangformung, verstaerkung-resonanz, klang-verfremden]
+  - id: rhythmus-takt
+    name: { de: "Rhythmus, Takt und Tempo", en: "Rhythm, metre and tempo" }
+    competencies:
+      # KC Inhaltsfeld Parameter (Tondauer); G9 Tondauer/Rhythmus 5 (lang/kurz)
+      - id: tondauer-hoeren
+        iCan: { de: "Ich kann kurze und lange Töne hören und der Dauer nach ordnen." }
+        gradeBand: "5-6"
+        requires: [parameter-nennen]
+      # G9 Takt/Metrum 5 (Grundschlag, Puls, Beat); NW 5/6 (Metrum); RP Grundschlag, Puls, Metrum
+      - id: grundschlag-finden
+        iCan: { de: "Ich kann in Musik den gleichmäßigen Grundschlag finden und mitklopfen." }
+        gradeBand: "5-6"
+        requires: [tempo-hoeren]
+      # G9 Takt/Metrum 5 (betont/unbetont); RP Taktschwerpunkt
+      - id: betonung-hoeren
+        iCan: { de: "Ich kann betonte und unbetonte Schläge hören." }
+        gradeBand: "5-6"
+        requires: [grundschlag-finden]
+      # G9 Takt/Metrum 5 (gerade/ungerade, 2/4, 3/4, 4/4); NW 5/6 (Taktordnungen); RP Orientierungsstufe
+      - id: taktarten-unterscheiden
+        iCan: { de: "Ich kann den 2/4-, 3/4- und 4/4-Takt am Klang unterscheiden." }
+        gradeBand: "5-6"
+        requires: [betonung-hoeren]
+      # G9 Takt/Metrum 5 (Volltakt/Auftakt); NW 5/6 (Auftakt)
+      - id: auftakt-volltakt
+        iCan: { de: "Ich kann einen Auftakt von einem Volltakt unterscheiden." }
+        gradeBand: "5-6"
+        requires: [taktarten-unterscheiden]
+      # KC 7.1 Inhaltsfeld Parameter (Metrum/Rhythmus als Kombination aus Tempo und Tondauer)
+      - id: rhythmus-erklaeren
+        iCan: { de: "Ich kann erklären, dass der Rhythmus aus Tempo und Tondauer entsteht, und ihn vom Grundschlag unterscheiden." }
+        gradeBand: "5-6"
+        requires: [grundschlag-finden, tondauer-hoeren]
+      # KC Inhaltsfeld Parameter (Tempo); G9 Weitere Parameter 5 (langsam - schnell)
+      - id: tempo-hoeren
+        iCan: { de: "Ich kann schnelles und langsames Tempo hören und beschreiben." }
+        gradeBand: "5-6"
+        requires: [parameter-nennen]
+      # G9 Weitere Parameter 5 (Adagio - Presto); BY Mu5 LB4 (Presto, Allegro, Moderato, Andante, Adagio); NW Tempobezeichnungen
+      - id: tempo-woerter
+        iCan: { de: "Ich kann Tempowörter wie Allegro und Adagio dem passenden Tempo zuordnen." }
+        gradeBand: "5-6"
+        requires: [tempo-hoeren]
+      # G9 Weitere Parameter 5 (accelerando, ritardando, Fermate); NW 5/6 (Tempoveränderungen)
+      - id: tempo-veraendern
+        iCan: { de: "Ich kann hören und lesen, wenn ein Stück schneller oder langsamer wird, und die Fachwörter dafür nennen." }
+        gradeBand: "5-6"
+        requires: [tempo-hoeren]
+      # G9 Tondauer/Rhythmus 6 (Triole); BY Mu6 LB4 (Triole)
+      - id: triole
+        iCan: { de: "Ich kann eine Triole hören, lesen und klatschen." }
+        gradeBand: "5-6"
+        requires: [rhythmus-erklaeren, notenwerte-erkennen]
+      # G9 Takt/Metrum 6 (6/8, Alla breve, Taktwechsel); BY Mu6 LB4 (zusammengesetzte Taktarten, Taktwechsel); RP Klassenstufe 7-9/10
+      - id: weitere-taktarten
+        iCan: { de: "Ich kann zusammengesetzte Taktarten wie 6/8 erkennen und einen Taktwechsel hören." }
+        gradeBand: "5-6"
+        requires: [taktarten-unterscheiden]
+      # BY Mu7 LB4 (Synkope, Off-Beat); RP Klassenstufe 7-9/10; G9 Takt/Metrum 6 (Synkope; Hessen legt sie früher)
+      - id: synkope
+        iCan: { de: "Ich kann eine Synkope hören und klatschen." }
+        gradeBand: "7-8"
+        requires: [weitere-taktarten]
+      # G9 Tondauer/Rhythmus 8 (Triolenfeeling, binär/ternär); BY Mu7 LB4; RP Klassenstufe 7-9/10
+      - id: binaer-ternaer
+        iCan: { de: "Ich kann hören und spielen, ob ein Rhythmus binär oder ternär (swingend) ausgeführt wird." }
+        gradeBand: "7-8"
+        requires: [triole]
+      # G9 Takt/Metrum 8 (Beat - Off Beat); BY Mu7 LB4; NW Sek I Ende (Beat/Off-Beat, Groove); RP Back-Beat
+      - id: beat-offbeat
+        iCan: { de: "Ich kann in einem Song Beat und Off-Beat unterscheiden und den Groove mitklatschen." }
+        gradeBand: "7-8"
+        requires: [synkope, betonung-hoeren]
+      # G9 Takt/Metrum 8 (5/4, 7/4, Polymetrik); BY Mu6 LB4 (7/8, 5/4)
+      - id: besondere-taktarten
+        iCan: { de: "Ich kann ungewöhnliche Taktarten wie 5/4 oder 7/8 erkennen und mitzählen." }
+        gradeBand: "7-8"
+        requires: [weitere-taktarten]
+      # G9 Tondauer/Rhythmus 10 (Komplementärrhythmik, Polyrhythmik); NW Sek I Ende (Polyrhythmik)
+      - id: polyrhythmik
+        iCan: { de: "Ich kann erklären, wie mehrere Rhythmen gleichzeitig eine gemeinsame Wirkung ergeben, und sie zusammen spielen." }
+        gradeBand: "9-10"
+        requires: [beat-offbeat, besondere-taktarten]
+      # G9 Takt/Metrum 10 (freie/gebundene Metrik); NW Sek I Ende (ametrische Musik)
+      - id: freie-metrik
+        iCan: { de: "Ich kann Musik mit festem Metrum von Musik ohne durchgehendes Metrum unterscheiden." }
+        gradeBand: "9-10"
+        requires: [besondere-taktarten]
+  - id: tonhoehe-harmonik
+    name: { de: "Tonhöhe, Tonleitern und Harmonik", en: "Pitch, scales and harmony" }
+    competencies:
+      # KC Inhaltsfeld Parameter (Tonhöhe); G9 Tonhöhe/Melodik 5 (hoch/tief, aufwärts/abwärts); RP Hoch, Tief
+      - id: tonhoehe-hoch-tief
+        iCan: { de: "Ich kann hohe und tiefe Töne unterscheiden und ordnen." }
+        gradeBand: "5-6"
+        requires: [parameter-nennen]
+      # G9 Tonhöhe/Melodik 5 (Klaviertastatur, Stammtöne und abgeleitete Töne); NW 5/6 (Stammtöne)
+      - id: klaviatur-tasten
+        iCan: { de: "Ich kann die Tasten der Klaviatur benennen und das C finden." }
+        gradeBand: "5-6"
+        requires: [tonhoehe-hoch-tief]
+      # G9 Tonhöhe/Melodik 5 (Oktav-Einteilung); BY Mu6 LB4 (Intervalle bis zur Oktave)
+      - id: oktave
+        iCan: { de: "Ich kann Oktaven auf der Klaviatur finden und Töne mit gleichem Namen in verschiedenen Oktaven benennen." }
+        gradeBand: "5-6"
+        requires: [klaviatur-tasten]
+      # G9 Tonhöhe/Melodik 5 (Ganz- und Halbtonschritt); BY Mu5 LB4
+      - id: halbtonschritte
+        iCan: { de: "Ich kann Halbtonschritte auf der Klaviatur abzählen." }
+        gradeBand: "5-6"
+        requires: [klaviatur-tasten]
+      # G9 Tonhöhe/Melodik 5 (Ganz- und Halbtonschritt, Tonskala); BY Mu5 LB4
+      - id: tonleiter-ganzton-halbton
+        iCan: { de: "Ich kann Ganztonschritte und Halbtonschritte unterscheiden." }
+        gradeBand: "5-6"
+        requires: [halbtonschritte]
+      # G9 Tonhöhe/Melodik 5 (Tonwiederholung, Tonschritt, Tonsprung); NW 5/6 Melodik (Bewegungen im Tonraum)
+      - id: intervall-hoeren
+        iCan: { de: "Ich kann hören und beschreiben, ob eine Melodie einen Ton wiederholt, in Schritten geht oder springt." }
+        gradeBand: "5-6"
+        requires: [tonhoehe-hoch-tief]
+      # G9 Zusammenklang/Harmonik 5 (Grund-Intervalle); BY Mu6 LB4 (Intervalle bis zur Quinte); NW 5/6 (Intervalle der Stammtöne)
+      - id: intervall-benennen
+        iCan: { de: "Ich kann den Abstand zwischen zwei Tönen abzählen und mit dem Namen des Intervalls benennen." }
+        gradeBand: "5-6"
+        requires: [intervall-hoeren, klaviatur-tasten]
+      # G9 Zusammenklang/Harmonik 6 (genauere Intervallbestimmung); BY Mu6 LB4 (rein, groß, klein bis zur Oktave)
+      - id: intervall-qualitaet
+        iCan: { de: "Ich kann Intervalle bis zur Oktave genau bestimmen: rein, groß oder klein." }
+        gradeBand: "5-6"
+        requires: [intervall-benennen, halbtonschritte]
+      # BY Mu5 LB4 (Dur-Tonleitern mit unterschiedlichen Grundtönen); G9 Tonhöhe/Melodik 6 (Struktur der Dur- und Molltonleitern)
+      - id: dur-tonleiter-bauen
+        iCan: { de: "Ich kann die Dur-Tonleiter aus Ganzton- und Halbtonschritten aufbauen." }
+        gradeBand: "5-6"
+        requires: [tonleiter-ganzton-halbton]
+      # BY Mu6 LB4 (Tonleitern und Dreiklänge in Dur und Moll hören); RP Dur, Moll (Orientierungsstufe); NW 5/6 (Skalen)
+      - id: dur-moll-hoeren
+        iCan: { de: "Ich kann Dur und Moll am Klang unterscheiden." }
+        gradeBand: "5-6"
+        requires: [konzentriert-hoeren]
+      # G9 Tonhöhe/Melodik 6 (Struktur der Molltonleitern); BY Mu6 LB4 (Aufbau mit Fachbegriffen erläutern)
+      - id: moll-aufbau
+        iCan: { de: "Ich kann erklären, worin sich der Aufbau von Moll von Dur unterscheidet." }
+        gradeBand: "5-6"
+        requires: [dur-tonleiter-bauen, dur-moll-hoeren]
+      # G9 Tonhöhe/Melodik 6 (Leitton); BY Mu6 LB4 (Tonvorräte im Moll-Bereich)
+      - id: moll-varianten
+        iCan: { de: "Ich kann natürliches, harmonisches und melodisches Moll unterscheiden und erklären, was ein Leitton ist." }
+        gradeBand: "5-6"
+        requires: [moll-aufbau]
+      # G9 Tonhöhe/Melodik 6 (Diatonik/Chromatik); RP Klassenstufe 7-9/10 (Chromatik); NW Sek I Ende (Diatonik, Chromatik)
+      - id: diatonik-chromatik
+        iCan: { de: "Ich kann eine diatonische von einer chromatischen Tonfolge unterscheiden." }
+        gradeBand: "5-6"
+        requires: [halbtonschritte, tonleiter-ganzton-halbton]
+      # G9 Tonhöhe/Melodik 6 (Charakteristik von Melodien: Dreiklangs-, Stufenmelodik); BY Mu5/Mu6 LB4
+      - id: melodietypen
+        iCan: { de: "Ich kann eine Melodie als Stufenmelodik oder Dreiklangsmelodik beschreiben." }
+        gradeBand: "5-6"
+        requires: [intervall-hoeren]
+      # G9 Zusammenklang/Harmonik 6 (Tonarten/Vorzeichen); BY Mu5 LB4 (Kreuz- und b-Vorzeichen); RP Kadenz, Dreiklang, Akkord, Tonarten
+      - id: tonart-vorzeichen
+        iCan: { de: "Ich kann an den Vorzeichen erkennen, in welcher Dur-Tonart ein Stück steht." }
+        gradeBand: "5-6"
+        requires: [dur-tonleiter-bauen, vorzeichen-lesen]
+      # G9 Zusammenklang/Harmonik 5 (Dreiklang); BY Mu5 LB4 (Dur-Dreiklang, Grundform); NW 5/6
+      - id: dreiklang
+        iCan: { de: "Ich kann einen Dreiklang aus Grundton, Terz und Quinte aufbauen." }
+        gradeBand: "5-6"
+        requires: [intervall-benennen]
+      # G9 Zusammenklang/Harmonik 6 (Dreiklangsarten); BY Mu6 LB4 (Dreiklänge in Dur und Moll hören, benennen, notieren); NW Sek I Ende (Dur, Moll)
+      - id: dreiklangsarten
+        iCan: { de: "Ich kann Dur- und Moll-Dreiklänge hören, aufbauen und unterscheiden." }
+        gradeBand: "5-6"
+        requires: [dreiklang, moll-aufbau]
+      # G9 Zusammenklang/Harmonik 6 (Konsonanz/Dissonanz); NW 5/6 Harmonik; RP dissonant, konsonant
+      - id: konsonanz-dissonanz
+        iCan: { de: "Ich kann konsonante und dissonante Zusammenklänge hören und unterscheiden." }
+        gradeBand: "5-6"
+        requires: [intervall-qualitaet]
+      # G9 Tonhöhe/Melodik 8 (Pentatonik, Ganztonskala, Blues-Tonleiter); NW Sek I Ende (Blues-Skala; Pentatonik schon 5/6); BY Mu8 LB4 (Tonvorrat)
+      - id: besondere-tonleitern
+        iCan: { de: "Ich kann Pentatonik, Ganztonleiter und Blues-Tonleiter am Klang erkennen und aufbauen." }
+        gradeBand: "7-8"
+        requires: [dur-moll-hoeren, tonleiter-ganzton-halbton]
+      # G9 Zusammenklang/Harmonik 8 (Quintenzirkel); RP Tonartenverwandtschaften
+      - id: quintenzirkel
+        iCan: { de: "Ich kann den Quintenzirkel lesen und damit Tonarten und ihre Vorzeichen finden." }
+        gradeBand: "7-8"
+        requires: [tonart-vorzeichen]
+      # G9 Zusammenklang/Harmonik 8 (Dreiklangsumkehrungen); BY Mu6 LB4 (Dreiklangsumkehrung; Bayern früher)
+      - id: dreiklangsumkehrung
+        iCan: { de: "Ich kann die Umkehrungen eines Dreiklangs bilden und erkennen." }
+        gradeBand: "7-8"
+        requires: [dreiklangsarten]
+      # G9 Zusammenklang/Harmonik 8 (Hauptfunktionen); BY Mu7 LB4 (Haupt- und Nebenstufen)
+      - id: hauptfunktionen
+        iCan: { de: "Ich kann Tonika, Subdominante und Dominante in einer Tonart benennen und ihre Akkorde bilden." }
+        gradeBand: "7-8"
+        requires: [tonart-vorzeichen, dreiklangsarten]
+      # G9 Zusammenklang/Harmonik 8 (Kadenz T-S-D-T); BY Mu7 LB4 (einfache Kadenz); NW Sek I Ende (einfache Kadenz)
+      - id: kadenz
+        iCan: { de: "Ich kann eine einfache Kadenz spielen und hören." }
+        gradeBand: "7-8"
+        requires: [hauptfunktionen]
+      # BY Mu7 LB4 (Verhältnis von Haupt- und Nebenstufen)
+      - id: nebenstufen
+        iCan: { de: "Ich kann erklären, wie Nebenstufen die Hauptfunktionen ersetzen können." }
+        gradeBand: "7-8"
+        requires: [hauptfunktionen]
+      # G9 Zusammenklang/Harmonik 8 (Vierklang D7); BY Mu7 LB4 (Dominantseptakkord, nur MuG)
+      - id: dominantseptakkord
+        iCan: { de: "Ich kann einen Dominantseptakkord bilden und in einer Kadenz erkennen." }
+        gradeBand: "7-8"
+        requires: [hauptfunktionen]
+      # NW Sek I Ende (Intervalle rein, klein, groß, vermindert, übermäßig); BY Mu6 LB4 (übermäßige und verminderte, nur MuG)
+      - id: intervalle-erkennen-singen
+        iCan: { de: "Ich kann alle Intervalle bis zur Oktave hören, benennen und singen, auch übermäßige und verminderte." }
+        gradeBand: "9-10"
+        requires: [intervall-qualitaet, zielton-singen]
+      # G9 Zusammenklang/Harmonik 10 (Kadenzharmonik/freie Harmonik); NW Sek I Ende (Clusterbildung); BY Mu10 LB4 (Auflösung der Tonalität, Atonalität)
+      - id: freie-harmonik
+        iCan: { de: "Ich kann Musik mit Kadenzharmonik von Musik mit freier Harmonik oder Clustern unterscheiden." }
+        gradeBand: "9-10"
+        requires: [kadenz, konsonanz-dissonanz]
+  - id: zeichen
+    name: { de: "Notation und Zeichen", en: "Notation and signs" }
+    competencies:
+      # G9 Tonhöhe/Melodik 5 (Violinschlüssel); BY Mu5 LB4 (traditionelle Notenschrift lesen und schreiben); NW 5/6 Notation
+      - id: notensystem
+        iCan: { de: "Ich kann das Notensystem mit seinen fünf Linien und den Violinschlüssel beschreiben." }
+        gradeBand: "5-6"
+        requires: [tonhoehe-hoch-tief]
+      # G9 Tonhöhe/Melodik 5 (Stammtöne); BY Mu5 LB4 (Tonhöhen im Violinschlüssel); RP Notennamen
+      - id: noten-benennen
+        iCan: { de: "Ich kann Noten auf Linien, in Zwischenräumen und auf Hilfslinien erkennen und mit ihrem Namen benennen." }
+        gradeBand: "5-6"
+        requires: [notensystem, klaviatur-tasten]
+      # G9 Tonhöhe/Melodik 6 (Bass-Schlüssel); BY Mu5 LB4 (Violin- und Bassschlüssel); NW Sek I Ende (Bassschlüssel)
+      - id: bassschluessel
+        iCan: { de: "Ich kann den Bassschlüssel lesen und die Noten darin benennen." }
+        gradeBand: "5-6"
+        requires: [noten-benennen]
+      # BY Mu5 LB4 (Kreuz- und b-Vorzeichen, Auflösungszeichen); NW 5/6 Notation (Vorzeichen); RP Vorzeichen
+      - id: vorzeichen-lesen
+        iCan: { de: "Ich kann Kreuz, b und Auflösungszeichen lesen und erhöhte oder erniedrigte Töne spielen." }
+        gradeBand: "5-6"
+        requires: [noten-benennen, halbtonschritte]
+      # G9 Tondauer/Rhythmus 5 (Noten- und Pausenwerte); BY Mu5 LB4 (bis zum Sechzehntelwert); NW 5/6 Notation (Tondauern)
+      - id: notenwerte-erkennen
+        iCan: { de: "Ich kann ganze, halbe, Viertel- und Achtelnoten unterscheiden und ihre Dauer vergleichen." }
+        gradeBand: "5-6"
+        requires: [tondauer-hoeren]
+      # G9 Tondauer/Rhythmus 5 (Noten- und Pausenwerte); BY Mu5 LB4
+      - id: pausen-kennen
+        iCan: { de: "Ich kann Pausenzeichen lesen und weiß, dass eine Pause genauso lange dauert wie die Note mit gleichem Namen." }
+        gradeBand: "5-6"
+        requires: [notenwerte-erkennen]
+      # G9 Tondauer/Rhythmus 5 (Punktierung); RP Notenwerte, Pausen, Punktierung
+      - id: punktierung
+        iCan: { de: "Ich kann punktierte Noten lesen und ihre Dauer berechnen." }
+        gradeBand: "5-6"
+        requires: [notenwerte-erkennen]
+      # G9 Tondauer/Rhythmus und Takt/Metrum 5; KC 7.1 Zeichen
+      - id: notenwerte-im-takt
+        iCan: { de: "Ich kann Notenwerte und Pausen zusammenzählen und sagen, ob sie in einen Takt passen." }
+        gradeBand: "5-6"
+        requires: [notenwerte-erkennen, taktarten-unterscheiden]
+      # KC 7.1 Musik machen (Zeichen und Notationen lesen und in Klang umsetzen); G9 Gestalten mit Instrumenten 5 (Rhythmen nach Noten)
+      - id: rhythmus-lesen
+        iCan: { de: "Ich kann einen notierten Rhythmus lesen und in Klang umsetzen." }
+        gradeBand: "5-6"
+        requires: [notenwerte-im-takt, rhythmus-nachklatschen]
+      # KC 7.1 Musik machen (Notationen lesen); G9 Gestalten mit Instrumenten 5/6 (Melodien nach Noten); Übergangsprofil
+      - id: melodie-lesen
+        iCan: { de: "Ich kann eine kurze Melodie aus Noten ablesen und anhören oder singen." }
+        gradeBand: "5-6"
+        requires: [noten-benennen, rhythmus-lesen]
+      # KC 7.1 Musik machen (Musik notieren); BY Mu5 LB4 (rhythmische Folgen hörend erfassen und notieren, nur MuG)
+      - id: rhythmus-notieren
+        iCan: { de: "Ich kann einen Rhythmus, den ich gehört oder erfunden habe, in Notenwerten aufschreiben." }
+        gradeBand: "5-6"
+        requires: [notenwerte-im-takt]
+      # KC 7.1 Musik machen (Musik notieren); BY Mu6 LB4 (Tonfolgen nach dem Höreindruck notieren, nur MuG)
+      - id: melodie-notieren
+        iCan: { de: "Ich kann eine kurze Melodie in Noten aufschreiben." }
+        gradeBand: "5-6"
+        requires: [noten-benennen, rhythmus-notieren]
+      # KC Inhaltsfeld Zeichen (Grafiken); G9 Hören ohne Noten 5 (Hörverläufe grafisch); NW 5/6 (grafische Notation)
+      - id: grafisch-notieren
+        iCan: { de: "Ich kann Musik mit eigenen Zeichen als Grafik aufschreiben." }
+        gradeBand: "5-6"
+        requires: [parameter-nennen]
+      # KC 7.1 Musik machen (Zeichen in Klang umsetzen); G9 6/09 (Realisieren nach grafischer Notation)
+      - id: grafik-musizieren
+        iCan: { de: "Ich kann nach einer grafischen Notation Klänge machen." }
+        gradeBand: "5-6"
+        requires: [grafisch-notieren]
+      # KC Inhaltsfeld Zeichen (Gesten); G9 Gestalten durch körperliche Umsetzung 5/6 (Dirigierbewegungen)
+      - id: gesten-verstehen
+        iCan: { de: "Ich kann Handzeichen und Gesten, die Musik anzeigen, verstehen und darauf reagieren." }
+        gradeBand: "5-6"
+        requires: [aufeinander-hoeren]
+      # G9 Hören mit Noten 5/6 (Klangpartitur, Hörpartituren); NW 5/6 Rezeption (einfache Notationen benennen)
+      - id: hoerpartitur-verfolgen
+        iCan: { de: "Ich kann beim Hören einer Hörpartitur oder Klangpartitur mitlesen und die Stelle zeigen, an der die Musik gerade ist." }
+        gradeBand: "5-6"
+        requires: [grafisch-notieren, konzentriert-hoeren]
+      # G9 Hören mit Noten 8 (Akkordnotationen/Leadsheet); BY Mu7 LB4 (Akkordfolgen notieren, Liedbegleitung nach Akkordsymbolen); NW Sek I Ende (Akkordbezeichnungen)
+      - id: akkordsymbole
+        iCan: { de: "Ich kann Akkordsymbole in einem Leadsheet lesen und ein Lied damit begleiten." }
+        gradeBand: "7-8"
+        requires: [dreiklangsarten, melodie-lesen]
+      # G9 Hören mit Noten 6/8 (Einzelstimmen in einfachen Partituren, Klavierauszug); BY Mu7 LB4 (Partiturausschnitte lesen); NW Sek I Ende (Partitur)
+      - id: partitur-mitlesen
+        iCan: { de: "Ich kann in einem Partiturausschnitt eine Stimme verfolgen und beim Hören mitlesen." }
+        gradeBand: "7-8"
+        requires: [melodie-lesen, bassschluessel, ensembles-besetzungen]
+      # KC Kap. 6 Musik machen (grafisch und traditionell notieren)
+      - id: traditionell-und-grafisch-notieren
+        iCan: { de: "Ich kann ein Musikstück sowohl grafisch als auch in traditioneller Notenschrift festhalten." }
+        gradeBand: "9-10"
+        requires: [melodie-notieren, grafisch-notieren]
+      # KC Kap. 6 Musik machen (nach Zeichen und Notationen musizieren)
+      - id: nach-notation-musizieren
+        iCan: { de: "Ich kann nach Noten oder einer Grafik auch mehrstimmig musizieren." }
+        gradeBand: "9-10"
+        requires: [melodie-lesen, grafik-musizieren, mehrstimmig-realisieren]
+      # G9 Hören mit Noten 10 (Orientierung in der Partitur, Auffinden von Gehörtem); BY Mu9/Mu10 LB4 (Einzelstimmen und Stimmgruppen in Partituren verfolgen)
+      - id: partitur-orientieren
+        iCan: { de: "Ich kann mich in einer Orchesterpartitur zurechtfinden und Gehörtes darin wiederfinden." }
+        gradeBand: "9-10"
+        requires: [partitur-mitlesen]
+  - id: form
+    name: { de: "Form und Struktur", en: "Form and structure" }
+    competencies:
+      # KC 7.1 Inhaltsfeld Form (Gliederung); G9 Satztechniken/Formen 5 (Strophe-Refrain, Frage/Antwort); RP Orientierungsstufe
+      - id: abschnitte-hoeren
+        iCan: { de: "Ich kann in einem Stück Abschnitte erkennen und mit Buchstaben wie A und B benennen." }
+        gradeBand: "5-6"
+        requires: [konzentriert-hoeren]
+      # KC 7.1 Inhaltsfeld Form (Wiederholung, Veränderung, Kontrast); G9 6/09; NW 5/6 Formprinzipien
+      - id: wiederholung-kontrast
+        iCan: { de: "Ich kann Wiederholung und Kontrast in einem Stück hören und beschreiben." }
+        gradeBand: "5-6"
+        requires: [abschnitte-hoeren]
+      # KC 7.1 Inhaltsfeld Form (Veränderung); G9 6/09 Elementare Formprinzipien
+      - id: veraenderung-hoeren
+        iCan: { de: "Ich kann hören, wie ein Abschnitt verändert wird." }
+        gradeBand: "5-6"
+        requires: [wiederholung-kontrast]
+      # G9 Satztechniken/Formen 5/6 (Spannung/Entspannung, Steigerung, Rückentwicklung); 6/09
+      - id: spannung-steigerung
+        iCan: { de: "Ich kann hören, wie eine Musik Spannung aufbaut und wieder löst." }
+        gradeBand: "5-6"
+        requires: [wiederholung-kontrast]
+      # G9 Satztechniken/Formen 6 (Motiv, Thema, Sequenz); RP Motiv, Thema; NW Sek I Ende
+      - id: motiv-thema
+        iCan: { de: "Ich kann ein Motiv oder Thema in einem Stück wiedererkennen." }
+        gradeBand: "5-6"
+        requires: [wiederholung-kontrast]
+      # KC 7.1 Inhaltsfeld Form (Kompositionsmodelle); G9 6/09 (Liedformen, ABA); NW 5/6 (Strophe, Refrain, ABA)
+      - id: kompositionsmodelle
+        iCan: { de: "Ich kann einfache Liedformen wie Strophe-Refrain und die dreiteilige ABA-Form erkennen." }
+        gradeBand: "5-6"
+        requires: [wiederholung-kontrast]
+      # G9 6/09 (Menuett, Rondo); NW 5/6 (Rondo); BY Mu6 LB4
+      - id: rondo-menuett
+        iCan: { de: "Ich kann ein Rondo und ein Menuett am Aufbau erkennen." }
+        gradeBand: "5-6"
+        requires: [kompositionsmodelle]
+      # G9 Satztechniken/Formen 5 und 6 (Kanon); RP Musikalische Formen: Kanon (Orientierungsstufe); KC Kap. 6 Inhaltsfeld Form (Kanonprinzip; das KC nennt es erst für Ende 9/10, die Lehrpläne früher)
+      - id: kanon-prinzip
+        iCan: { de: "Ich kann das Kanonprinzip erklären und einen Kanon hören und singen." }
+        gradeBand: "5-6"
+        requires: [abschnitte-hoeren, aufeinander-hoeren]
+      # G9 Tondauer/Rhythmus 6 (rhythmischer Ostinato), Satztechniken 8 (Riff); RP Ostinato, Riff
+      - id: ostinato-riff
+        iCan: { de: "Ich kann einen Ostinato oder ein Riff in einem Stück erkennen und spielen." }
+        gradeBand: "5-6"
+        requires: [wiederholung-kontrast]
+      # G9 Satztechniken/Formen 8 (Homophonie/Polyphonie); BY Mu6 LB4 (Imitation, unisono); RP polyphon, homophon
+      - id: imitation-polyphonie
+        iCan: { de: "Ich kann hören, ob eine Musik mehrstimmig melodisch (polyphon) oder mit Begleitung (homophon) gebaut ist." }
+        gradeBand: "7-8"
+        requires: [kanon-prinzip]
+      # G9 Satztechniken/Formen 8 (Intro, Verse, Chorus, Bridge; Song/Liedformen); RP Chorus, Bridge, Intro, Outro; BY Mu7 LB4
+      - id: songaufbau
+        iCan: { de: "Ich kann den Aufbau eines Pop-Songs mit Intro, Strophe, Refrain und Bridge beschreiben." }
+        gradeBand: "7-8"
+        requires: [kompositionsmodelle]
+      # G9 Satztechniken/Formen 8 (Phrase/Periode); RP Phrase
+      - id: phrase-periode
+        iCan: { de: "Ich kann in einer Melodie Phrasen erkennen und Frage und Antwort unterscheiden." }
+        gradeBand: "7-8"
+        requires: [motiv-thema]
+      # G9 Zusammenklang 8 und Satztechniken 8 (Blues-Schema); NW Sek I Ende (Blues-Schema); BY Mu7 LB4; RP Bluesschema
+      - id: blues-schema
+        iCan: { de: "Ich kann das 12-taktige Blues-Schema hören und spielen." }
+        gradeBand: "7-8"
+        requires: [songaufbau, hauptfunktionen]
+      # G9 8/14 (Variation als Kompositionsprinzip); NW Sek I Ende (Variation); BY Mu5 LB3 (Prinzip der Variation)
+      - id: variationsform
+        iCan: { de: "Ich kann erkennen, wie ein Thema in Variationen verändert wird." }
+        gradeBand: "7-8"
+        requires: [veraenderung-hoeren]
+      # G9 8/14 (konzertierendes Prinzip, Concerto grosso; nur in Hessen verbindlich); BY Mu10 LB4 (Concerto)
+      - id: concerto-grosso
+        iCan: { de: "Ich kann das Wechselspiel von Solo und Tutti im Concerto grosso hören." }
+        gradeBand: "7-8"
+        requires: [wiederholung-kontrast, ensembles-besetzungen]
+      # KC Kap. 6 Inhaltsfeld Form (Entwicklung); G9 Satztechniken 10 (motivisch-thematische Arbeit); NW Sek I Ende (motivische Arbeit)
+      - id: entwicklung-hoeren
+        iCan: { de: "Ich kann beschreiben, wie sich Musik aus einem kurzen Motiv entwickelt." }
+        gradeBand: "9-10"
+        requires: [veraenderung-hoeren, motiv-thema]
+      # G9 Satztechniken/Formen 10 (Sonate, Sinfonie); NW Sek I Ende (Sonatenhauptsatzform); BY Mu9 LB4
+      - id: sonatensatz
+        iCan: { de: "Ich kann die Teile eines Sonatensatzes (Exposition, Durchführung, Reprise) beim Hören verfolgen." }
+        gradeBand: "9-10"
+        requires: [entwicklung-hoeren]
+      # G9 Satztechniken/Formen 10 (Zwölftontechnik, Minimal Music, Klangflächen); BY Mu10 LB4 (Atonalität, Collage)
+      - id: neue-kompositionstechniken
+        iCan: { de: "Ich kann Zwölftonmusik, Minimal Music oder Klangflächenmusik am Aufbau erkennen." }
+        gradeBand: "9-10"
+        requires: [freie-harmonik, entwicklung-hoeren]
+      # KC Kap. 6 Inhaltsfeld Form (einfache Formverläufe); G9 Hören ohne Noten 5/10 (Hörverläufe grafisch)
+      - id: formverlauf-darstellen
+        iCan: { de: "Ich kann den Formverlauf eines Stücks in einer Übersicht darstellen." }
+        gradeBand: "9-10"
+        requires: [kompositionsmodelle, entwicklung-hoeren]
+  - id: gesang-instrumentalspiel
+    name: { de: "Singen, Instrumentalspiel und Erfinden", en: "Singing, playing and inventing" }
+    competencies:
+      # KC 7.1 Musik machen (Körperhaltung und Atmung); G9 5/01 Stimmbildung am Lied; BY Mu5 LB1
+      - id: haltung-atmung
+        iCan: { de: "Ich kann mit aufrechter Haltung und ruhiger Atmung singen." }
+        gradeBand: "5-6"
+      # KC Inhaltsfeld Gesang (funktionale Stimmpflege); G9 Gestalten mit Stimme 5 (Stimmtechnik)
+      - id: stimme-pflegen
+        iCan: { de: "Ich kann meine Stimme pflegen und mich vor dem Singen einsingen." }
+        gradeBand: "5-6"
+        requires: [haltung-atmung]
+      # BY Mu7 LB1 (Stimme in der Phase der Mutation, Stimmideale)
+      - id: stimme-im-stimmwechsel
+        iCan: { de: "Ich kann erklären, was im Stimmwechsel mit der Stimme passiert, und meine Stimme dabei schonend einsetzen." }
+        gradeBand: "7-8"
+        requires: [stimme-pflegen]
+      # KC 7.1 Musik machen (deutliche Artikulation, saubere Intonation); BY Mu5 LB1 (Sprachverständlichkeit)
+      - id: artikulation-intonation
+        iCan: { de: "Ich kann deutlich sprechen und sauber singen." }
+        gradeBand: "5-6"
+        requires: [haltung-atmung]
+      # RP 4.2.1 (intonationssicher im Umfang einer Oktave); KC 7.1 (saubere Intonation)
+      - id: zielton-singen
+        iCan: { de: "Ich kann einen vorgegebenen Ton mit der Stimme treffen." }
+        gradeBand: "5-6"
+        requires: [artikulation-intonation]
+      # KC 7.1 Musik machen (tonale Folgen ausführen); G9 Gestalten mit Stimme 5 (Singen einfacher Melodien)
+      - id: tonfolge-nachsingen
+        iCan: { de: "Ich kann eine kurze Tonfolge hören und Ton für Ton nachsingen." }
+        gradeBand: "5-6"
+        requires: [zielton-singen]
+      # KC 7.1 Musik machen (gemischtes Repertoire auswendig); G9 5/01 Lieder
+      - id: lieder-auswendig-singen
+        iCan: { de: "Ich kann mehrere Lieder aus verschiedenen Bereichen auswendig singen." }
+        gradeBand: "5-6"
+        requires: [artikulation-intonation]
+      # G9 Gestalten mit Stimme 6 (zweistimmig); BY Mu5 LB1 (ein- bis zweistimmig); RP 4.2.1
+      - id: zweistimmig-singen
+        iCan: { de: "Ich kann in einer Gruppe zweistimmig singen, zum Beispiel einen Kanon oder ein Lied mit zweiter Stimme." }
+        gradeBand: "5-6"
+        requires: [tonfolge-nachsingen, aufeinander-hoeren]
+      # KC Kap. 6 Musik machen (umfassendes Repertoire, genrebewusst); G9 Gestalten mit Stimme 8/10 (Singweisen)
+      - id: lieder-genrebewusst-singen
+        iCan: { de: "Ich kann ein großes Repertoire auswendig singen und dabei zum Stil des Liedes passend gestalten." }
+        gradeBand: "9-10"
+        requires: [lieder-auswendig-singen]
+      # KC Kap. 6 Musik machen (mehrstimmig); G9 Gestalten mit Stimme 10 (mehrstimmiges Singen)
+      - id: mehrstimmig-singen
+        iCan: { de: "Ich kann in einem Chor oder Ensemble mehrstimmig singen und meine Stimme sicher halten." }
+        gradeBand: "9-10"
+        requires: [zweistimmig-singen]
+      # KC 7.1 Musik machen (Spieltechniken instrumentengerecht); G9 Gestalten mit Instrumenten 5/6 (Spieltechniken)
+      - id: spieltechnik-instrument
+        iCan: { de: "Ich kann ein Instrument sachgerecht behandeln und mit passender Spieltechnik spielen." }
+        gradeBand: "5-6"
+      # KC Kap. 6 Musik machen (technisch korrekt spielen)
+      - id: instrument-technisch-korrekt
+        iCan: { de: "Ich kann ein Instrument technisch korrekt spielen und seinen Klang bewusst gestalten." }
+        gradeBand: "9-10"
+        requires: [spieltechnik-instrument]
+      # KC 7.1 Musik machen (Rhythmen metrumbezogen ausführen); G9 Gestalten mit Instrumenten 5 (Rhythmen mit Körperinstrumenten)
+      - id: rhythmus-nachklatschen
+        iCan: { de: "Ich kann einen gehörten Rhythmus nachklatschen und im Takt bleiben." }
+        gradeBand: "5-6"
+        requires: [grundschlag-finden]
+      # KC 7.1 Musik machen (Rhythmen metrumbezogen ausführen und in Musikstücken anwenden)
+      - id: rhythmus-nachbauen
+        iCan: { de: "Ich kann ein Rhythmus-Muster zusammensetzen und im Takt klatschen oder spielen." }
+        gradeBand: "5-6"
+        requires: [rhythmus-nachklatschen]
+      # KC 7.1 Musik machen (Rhythmen und tonale Folgen metrumbezogen)
+      - id: tonfolge-im-metrum
+        iCan: { de: "Ich kann eine kurze Tonfolge im gleichmäßigen Grundschlag singen oder spielen." }
+        gradeBand: "5-6"
+        requires: [tonfolge-nachsingen, grundschlag-finden]
+      # G9 Gestalten mit Instrumenten 5 (Spielen von Begleitungen zu Liedern); 5/01
+      - id: lied-begleiten
+        iCan: { de: "Ich kann ein Lied mit dem Grundschlag begleiten und im Tempo bleiben." }
+        gradeBand: "5-6"
+        requires: [rhythmus-nachklatschen]
+      # G9 Gestalten mit Instrumenten 5/6 (Klassenmusizieren, Mitspielsätze); BY Mu5/Mu6 LB1 (Arrangements)
+      - id: mitspielsatz
+        iCan: { de: "Ich kann in einem Mitspielsatz meine Stimme im Klassenensemble spielen." }
+        gradeBand: "5-6"
+        requires: [lied-begleiten, aufeinander-hoeren]
+      # KC 7.1 Musik machen (aufeinander hören und reagieren); BY Mu5 LB1 (achtsam interagieren)
+      - id: aufeinander-hoeren
+        iCan: { de: "Ich kann beim gemeinsamen Musizieren auf die anderen hören und darauf reagieren." }
+        gradeBand: "5-6"
+        requires: [konzentriert-hoeren]
+      # KC Kap. 6 Musik machen (rhythmisch und tonal sicher, auch mehrstimmig); G9 Übergangsprofil (Mitspielsätze)
+      - id: mehrstimmig-realisieren
+        iCan: { de: "Ich kann ein Musikstück mit mehreren Stimmen rhythmisch und tonal sicher gemeinsam aufführen." }
+        gradeBand: "9-10"
+        requires: [aufeinander-hoeren, rhythmus-nachbauen, tonfolge-im-metrum, zweistimmig-singen]
+      # KC Inhaltsfeld Gesang und Instrumentalspiel (Verfahren zur Übung und Festigung); RP 1.5 Üben
+      - id: ueben-strategien
+        iCan: { de: "Ich kann ein Stück mit passenden Übestrategien einüben und festigen." }
+        gradeBand: "5-6"
+      # KC Inhaltsfeld Gesang und Instrumentalspiel (wahrnehmende und vergleichende Reflexion und Korrektur)
+      - id: musizieren-korrigieren
+        iCan: { de: "Ich kann mein Musizieren und das der Gruppe vergleichend wahrnehmen und verbessern." }
+        gradeBand: "9-10"
+        requires: [ueben-strategien, aufeinander-hoeren]
+      # KC 7.1 Musik machen (musikalische Aktionen anleiten); G9 Gestalten durch körperliche Umsetzung 5/6 (Dirigierbewegungen)
+      - id: musizieren-anleiten
+        iCan: { de: "Ich kann eine kleine Gruppe beim Musizieren anleiten, zum Beispiel mit einem Einsatzzeichen." }
+        gradeBand: "5-6"
+        requires: [aufeinander-hoeren, gesten-verstehen]
+      # KC Kap. 6 Musik machen (organisieren und anleiten)
+      - id: musizieren-organisieren
+        iCan: { de: "Ich kann ein Musizieren in der Gruppe vorbereiten und organisieren und dabei anleiten." }
+        gradeBand: "9-10"
+        requires: [musizieren-anleiten]
+      # KC Inhaltsfeld Gesang und Instrumentalspiel (freier und experimenteller Umgang); G9 Gestalten durch Erfinden 6; BY Mu5 LB1
+      - id: frei-experimentieren
+        iCan: { de: "Ich kann frei mit Stimme und Instrument experimentieren und neue Klänge entdecken." }
+        gradeBand: "5-6"
+        requires: [klangquellen-unterscheiden]
+      # KC 7.1 Musik machen (erfinden); G9 Gestalten durch Erfinden 5 (einfache Rhythmen); NW 5/6 Produktion
+      - id: rhythmus-erfinden
+        iCan: { de: "Ich kann einen eigenen Rhythmus über vier Takte erfinden und spielen." }
+        gradeBand: "5-6"
+        requires: [rhythmus-nachbauen, notenwerte-erkennen]
+      # KC 7.1 Musik machen (erfinden); G9 Gestalten durch Erfinden 5 (einfache Melodien)
+      - id: melodie-erfinden
+        iCan: { de: "Ich kann aus den Tönen der Dur-Tonleiter eine kurze eigene Melodie erfinden und singen." }
+        gradeBand: "5-6"
+        requires: [dur-tonleiter-bauen, tonfolge-nachsingen]
+      # G9 Gestalten durch Erfinden 5 (Textieren von Melodien); NW Bedeutungen 5/6 (Textvertonungen)
+      - id: text-vertonen
+        iCan: { de: "Ich kann zu einem kurzen Text eine eigene Melodie erfinden." }
+        gradeBand: "5-6"
+        requires: [melodie-erfinden]
+      # KC 7.1 Musik machen (variieren); G9 6/09 (Veränderung in selbst erfundener Musik)
+      - id: musik-variieren
+        iCan: { de: "Ich kann ein Lied oder eine Melodie verändern, zum Beispiel im Rhythmus, im Tempo oder in der Lautstärke." }
+        gradeBand: "5-6"
+        requires: [mittel-der-wirkung, veraenderung-hoeren]
+      # KC 7.1 Musik machen (nach außermusikalischen Vorgaben erfinden); G9 Gestalten durch Erfinden 5 (Klanggeschichten), 6 (Improvisation über Bilder)
+      - id: musik-nach-vorgabe-erfinden
+        iCan: { de: "Ich kann nach einer Vorgabe außerhalb der Musik, zum Beispiel einem Bild oder einer Geschichte, eine kurze Musik erfinden." }
+        gradeBand: "5-6"
+        requires: [frei-experimentieren]
+      # G9 Gestalten durch Erfinden 8 (Improvisieren zu Programmen und Texten); BY Mu7 LB1 (Improvisieren auf Basis rhythmischer Patterns und einfacher harmonischer Modelle)
+      - id: improvisieren-nach-vorgabe
+        iCan: { de: "Ich kann über ein rhythmisches Pattern oder eine einfache Akkordfolge improvisieren." }
+        gradeBand: "7-8"
+        requires: [frei-experimentieren, rhythmus-nachbauen]
+      # G9 Gestalten durch Erfinden 10 (harmonische Begleitungen, Improvisation über eine Harmoniefolge); Übergangsprofil
+      - id: harmonische-begleitung-erfinden
+        iCan: { de: "Ich kann zu einer Melodie eine harmonische Begleitung erfinden und über eine Harmoniefolge improvisieren." }
+        gradeBand: "9-10"
+        requires: [kadenz, akkordsymbole]
+      # KC Kap. 6 Musik machen (aufgabenbezogen erfinden, variieren, gestalten)
+      - id: musik-aufgabenbezogen-gestalten
+        iCan: { de: "Ich kann nach einer Aufgabe und nach musikalischen Kriterien ein eigenes Stück erfinden, ausarbeiten und vorführen." }
+        gradeBand: "9-10"
+        requires: [musik-nach-vorgabe-erfinden, musik-variieren]
+  - id: bewegung-gestaltungsmedien
+    name: { de: "Bewegung und Gestaltungsmedien", en: "Movement and media of design" }
+    competencies:
+      # KC 7.1 Musik transformieren (Bewegungsmuster auswählen und koordiniert ausführen); G9 Gestalten durch körperliche Umsetzung 5 (Grundschritte); BY Mu5 LB3
+      - id: bewegungsmuster-ausfuehren
+        iCan: { de: "Ich kann ein Bewegungsmuster zu Musik auswählen und gut abgestimmt ausführen." }
+        gradeBand: "5-6"
+        requires: [grundschlag-finden]
+      # G9 Gestalten durch körperliche Umsetzung 6 (Tanzen); BY Mu5/Mu6 LB3 (Volkstanz, barocker Tanz); RP 4.2.3
+      - id: tanzen-nach-anleitung
+        iCan: { de: "Ich kann einen einfachen Tanz, zum Beispiel einen Volkstanz, nach Anleitung tanzen." }
+        gradeBand: "5-6"
+        requires: [bewegungsmuster-ausfuehren, taktarten-unterscheiden]
+      # G9 Gestalten durch körperliche Umsetzung 5/6 (Dirigierbewegungen) und Übergangsprofil
+      - id: dirigieren-taktschlagen
+        iCan: { de: "Ich kann einen 2er-, 3er- und 4er-Takt dirigieren." }
+        gradeBand: "5-6"
+        requires: [taktarten-unterscheiden]
+      # KC 7.1 Musik transformieren (Bewegungen in andere Darstellungsformen); BY Mu5 LB3 (Dynamik, Tempo in Bewegung darstellen)
+      - id: bewegung-nach-ausdruck-form
+        iCan: { de: "Ich kann mich so zu Musik bewegen, dass die Bewegung zu Ausdruck, Tempo und Form der Musik passt." }
+        gradeBand: "5-6"
+        requires: [bewegungsmuster-ausfuehren, wirkung-beschreiben]
+      # KC 7.1 Musik transformieren; G9 Gestalten durch körperliche Umsetzung 6 (Malen zu Musik); NW Bedeutungen 5/6 (Verklanglichung von Bildern)
+      - id: musik-in-bild
+        iCan: { de: "Ich kann den Verlauf und die Wirkung von Musik in einem Bild oder einer Zeichnung darstellen." }
+        gradeBand: "5-6"
+        requires: [wirkung-beschreiben]
+      # KC 7.1 Musik transformieren (szenisch, sprachlich); G9 5/03 Musik - Bewegung - Szene; BY Mu5/Mu6 LB3
+      - id: musik-in-szene-sprache
+        iCan: { de: "Ich kann Musik in einer Szene oder in Worten umsetzen." }
+        gradeBand: "5-6"
+        requires: [wirkung-beschreiben]
+      # KC 7.1 Musik transformieren (Transformationen auf die Musik beziehen und beurteilen); NW Bedeutungen 5/6 (Reflexion)
+      - id: umsetzung-beurteilen
+        iCan: { de: "Ich kann beurteilen, ob ein Bild, eine Bewegung oder eine Szene zur Musik passt." }
+        gradeBand: "5-6"
+        requires: [musik-in-bild]
+      # G9 Gestalten mit technischen Medien 5/6 (Tonaufnahme erstellen); NW 5/6 Produktion (Medienprodukte); BY Mu5 LB1 (Tonaufnahme)
+      - id: tonaufnahme-erstellen
+        iCan: { de: "Ich kann eine eigene Musik mit einem Aufnahmegerät aufnehmen und anhören." }
+        gradeBand: "5-6"
+        requires: [lied-begleiten]
+      # G9 Gestalten durch körperliche Umsetzung 8 (Pantomime zu Musik); BY Mu7 LB3 (szenisch interpretieren)
+      - id: musik-szenisch-interpretieren
+        iCan: { de: "Ich kann Musik und Stimmung eines Werkausschnitts als Pantomime oder Szene darstellen." }
+        gradeBand: "7-8"
+        requires: [musik-in-szene-sprache]
+      # KC Kap. 6 Musik transformieren (kriterienbezogen choreografieren); G9 Gestalten durch körperliche Umsetzung 10; BY Mu7 LB3
+      - id: choreografieren
+        iCan: { de: "Ich kann nach Kriterien Bewegungen zur Musik entwerfen und als Choreografie einüben." }
+        gradeBand: "9-10"
+        requires: [bewegung-nach-ausdruck-form, tanzen-nach-anleitung]
+      # KC Inhaltsfeld Bewegung und Gestaltungsmedien (analoge und digitale Medien zur Visualisierung)
+      - id: musik-digital-visualisieren
+        iCan: { de: "Ich kann den Aufbau und den Ausdruck von Musik mit analogen oder digitalen Medien sichtbar machen." }
+        gradeBand: "9-10"
+        requires: [musik-in-bild]
+      # G9 Gestalten mit technischen Medien 8/10 (Werbespot, Musik mit Computern); NW Sek I Ende (Musik mit digitalen Werkzeugen produzieren); BY Mu7 LB1
+      - id: digitale-musikproduktion
+        iCan: { de: "Ich kann mit einem Programm eine kurze Musik aufnehmen, bearbeiten und zusammenstellen." }
+        gradeBand: "9-10"
+        requires: [tonaufnahme-erstellen]
+      # KC Kap. 6 Musik transformieren (kritisch bewerten, Alternativen aufzeigen)
+      - id: umsetzung-kritisieren
+        iCan: { de: "Ich kann eine Umsetzung von Musik kritisch bewerten und Alternativen vorschlagen." }
+        gradeBand: "9-10"
+        requires: [umsetzung-beurteilen]
+  - id: kontext
+    name: { de: "Musik im Kontext", en: "Music in context" }
+    competencies:
+      # KC 7.1 Inhaltsfeld Kontext (Rahmenbedingungen der Entstehung); G9 5/05 Begegnung mit Komponisten
+      - id: herkunft-einordnen
+        iCan: { de: "Ich kann sagen, wann, wo und von wem ein Musikstück stammt." }
+        gradeBand: "5-6"
+      # G9 5/05 und 6/10 Begegnung mit Komponisten I, II; BY Mu5/Mu6 LB2 (Biografien); NW Entwicklungen 5/6 (biografische Einflüsse)
+      - id: komponist-biografie
+        iCan: { de: "Ich kann wichtige Stationen im Leben einer Komponistin oder eines Komponisten beschreiben und in ihre Zeit einordnen." }
+        gradeBand: "5-6"
+        requires: [herkunft-einordnen]
+      # KC 7.1 Musik erschließen (Musik und Kontext merkmalsorientiert aufeinander beziehen)
+      - id: musik-und-umfeld
+        iCan: { de: "Ich kann Merkmale eines Musikstücks mit seiner Entstehung und seinem Umfeld verbinden und beurteilen." }
+        gradeBand: "5-6"
+        requires: [herkunft-einordnen]
+      # KC Inhaltsfeld Kontext (ethnisch, geografisch); G9 6/06 Lieder und Tänze aus verschiedenen Ländern; BY Mu6 LB1; RP Lieder und Tänze der Welt
+      - id: musik-anderer-kulturen
+        iCan: { de: "Ich kann Musik aus anderen Ländern und Kulturen kennenlernen und ihr einen Ort zuordnen." }
+        gradeBand: "5-6"
+        requires: [herkunft-einordnen]
+      # BY Mu6 LB2 (Bach/Händel); NW Entwicklungen 5/6 (höfische Musik im Barock); G9 Übergangsprofil (Epochen)
+      - id: epoche-barock
+        iCan: { de: "Ich kann Musik des Barock an typischen Merkmalen erkennen und in ihre Zeit einordnen." }
+        gradeBand: "5-6"
+        requires: [komponist-biografie]
+      # KC 7.1 Inhaltsfeld Gebrauchspraxis; G9 Musik in der Umwelt/Funktionen von Musik 5
+      - id: gebrauchspraxen-nennen
+        iCan: { de: "Ich kann Beispiele nennen, wofür Musik gebraucht wird, zum Beispiel bei Festen, im Sport oder zum Tanzen." }
+        gradeBand: "5-6"
+        requires: [herkunft-einordnen]
+      # KC Kap. 8.1 (Musik in Bezug auf Zweck und Umfeld einordnen und beurteilen); NW Verwendungen 5/6
+      - id: zweck-umfeld-einordnen
+        iCan: { de: "Ich kann Musik nach Zweck und Umfeld einordnen und beurteilen." }
+        gradeBand: "5-6"
+        requires: [gebrauchspraxen-nennen]
+      # KC Inhaltsfeld Gebrauchspraxis (Aufbau eines exemplarischen Repertoires); G9 Musik in der Umwelt/Funktionen von Musik 5
+      - id: repertoire-aufbauen
+        iCan: { de: "Ich kann Lieder und Stücke aus verschiedenen Bereichen der Musikpraxis vortragen." }
+        gradeBand: "5-6"
+        requires: [lieder-auswendig-singen, gebrauchspraxen-nennen]
+      # KC 7.1 Musik erschließen (Aufführungen planen, gestaltend teilnehmen, auswerten); BY Mu5 LB1 (Auftritt, Bühnenhaltung)
+      - id: auffuehrung-mitgestalten
+        iCan: { de: "Ich kann bei einer Aufführung in der Schule gestaltend mitmachen." }
+        gradeBand: "5-6"
+        requires: [repertoire-aufbauen]
+      # KC 7.1 Musik erschließen (Aufführungen auswerten)
+      - id: auffuehrung-auswerten
+        iCan: { de: "Ich kann eine Aufführung auswerten und sagen, was gelungen ist und was ich anders machen würde." }
+        gradeBand: "5-6"
+        requires: [auffuehrung-mitgestalten]
+      # G9 8/14 (Variation in der Wiener Klassik); BY Mu7/Mu9 LB2 (Wiener Klassik); G9 Übergangsprofil
+      - id: epoche-klassik
+        iCan: { de: "Ich kann Musik der Wiener Klassik an typischen Merkmalen erkennen und in ihre Zeit einordnen." }
+        gradeBand: "7-8"
+        requires: [epoche-barock]
+      # G9 8/11 Songs in Rock und Pop; BY Mu7/Mu8 LB2 und LB4 (Stile der Popularmusik); NW 9 Bedeutungen; RP Popmusik
+      - id: popularmusik-stile
+        iCan: { de: "Ich kann Stile der Popularmusik an Rhythmus, Besetzung und Sound unterscheiden." }
+        gradeBand: "7-8"
+        requires: [gebrauchspraxen-nennen, songaufbau]
+      # BY Mu8 LB2 und LB4 (Musik in einem nicht abendländisch geprägten Kulturkreis); G9 Musik und Gesellschaft 8; RP Traditionelle Musik der Welt
+      - id: musik-nicht-abendlaendisch
+        iCan: { de: "Ich kann Musik aus einem nicht europäischen Kulturkreis beschreiben und ihre Aufgabe dort erklären." }
+        gradeBand: "7-8"
+        requires: [musik-anderer-kulturen]
+      # BY Mu7 LB2 (Urheberrecht, digitale Plattformen); NW Sek I Ende (Musikdistribution, Urheber- und Nutzungsrecht); G9 8 (Bedeutung der Medien, Technisierung)
+      - id: urheberrecht-musikmarkt
+        iCan: { de: "Ich kann erklären, wie Musik im Internet vertrieben wird und was das Urheberrecht für Musikschaffende bedeutet." }
+        gradeBand: "7-8"
+        requires: [gebrauchspraxen-nennen]
+      # G9 10/20 Musik als Spiegel ihrer Zeit; BY Mu9 LB2 (Romantik); G9 Übergangsprofil
+      - id: epoche-romantik
+        iCan: { de: "Ich kann Musik der Romantik an typischen Merkmalen erkennen und in ihre Zeit einordnen." }
+        gradeBand: "9-10"
+        requires: [epoche-klassik]
+      # G9 6/07 Neue Musik und Experimente, 10/20; BY Mu10 LB2 (Kunstmusik 1890-1950); G9 Übergangsprofil
+      - id: epoche-neue-musik
+        iCan: { de: "Ich kann Musik des 20. Jahrhunderts an neuen Mitteln erkennen und in ihre Zeit einordnen." }
+        gradeBand: "9-10"
+        requires: [epoche-romantik]
+      # KC Kap. 6 Inhaltsfeld Kontext (geschichtliche Bedingungsfaktoren); G9 10/20 Musik als Spiegel ihrer Zeit
+      - id: musik-zeitepoche
+        iCan: { de: "Ich kann ein Musikstück einer geschichtlichen Zeit zuordnen und die Zeit am Stück begründen." }
+        gradeBand: "9-10"
+        requires: [epoche-barock, epoche-klassik, epoche-romantik, epoche-neue-musik]
+      # BY Mu10 LB2 und LB4 (Jazz); RP Jazz; G9 Musik und Gesellschaft 8 (Blues, Jazz)
+      - id: jazz
+        iCan: { de: "Ich kann erklären, wie der Jazz aus dem Blues entstand, und typische Stilmittel des Jazz hören." }
+        gradeBand: "9-10"
+        requires: [binaer-ternaer, blues-schema, besondere-tonleitern]
+      # G9 10/19 Musiktheater; BY Mu9 LB2/LB4 (Oper, Musical); RP Oper/Musical; NW Verwendungen
+      - id: musiktheater
+        iCan: { de: "Ich kann Oper und Musical vergleichen und ihre Bestandteile wie Ouvertüre, Rezitativ, Arie und Chor nennen." }
+        gradeBand: "9-10"
+        requires: [wirkung-beschreiben, abschnitte-hoeren]
+      # KC Inhaltsfeld Kontext (ökonomisch, sozial); G9 10/17 (Musikmarkt); NW Sek I Ende (ökonomische Zusammenhänge)
+      - id: soziale-bedingungen
+        iCan: { de: "Ich kann erklären, wie Wirtschaft, Gesellschaft und Medien beeinflussen, welche Musik entsteht und gehört wird." }
+        gradeBand: "9-10"
+        requires: [musik-und-umfeld]
+      # KC Inhaltsfeld Kontext (Rezeption); BY Mu9 LB2 (rezeptionsgeschichtliche Aspekte)
+      - id: rezeption-erklaeren
+        iCan: { de: "Ich kann erklären, wie ein Stück zu verschiedenen Zeiten aufgenommen und verstanden wurde." }
+        gradeBand: "9-10"
+        requires: [musik-zeitepoche]
+      # KC Kap. 6 Musik erschließen (Gebrauchspraxen unterscheiden); G9 10/16-18
+      - id: gebrauchspraxen-unterscheiden
+        iCan: { de: "Ich kann verschiedene musikalische Gebrauchspraxen unterscheiden und ihre Merkmale erklären." }
+        gradeBand: "9-10"
+        requires: [zweck-umfeld-einordnen]
+      # KC Inhaltsfeld Gebrauchspraxis (identitätsstiftend, Peergroup, Mode); G9 8/11, 10/17
+      - id: identitaet-peergroup
+        iCan: { de: "Ich kann erklären, wie Musik zu einer Gruppe, einer Mode oder einer Zeit gehört und Zugehörigkeit zeigt." }
+        gradeBand: "9-10"
+        requires: [gebrauchspraxen-unterscheiden, soziale-bedingungen]
+      # KC Kap. 6 Musik erschließen (kritisch bewerten, positionieren); BY Mu9 LB2 (Sach- und Werturteil)
+      - id: gebrauchspraxis-positionieren
+        iCan: { de: "Ich kann die Eigenarten einer Gebrauchspraxis kritisch bewerten und begründet Stellung nehmen." }
+        gradeBand: "9-10"
+        requires: [gebrauchspraxen-unterscheiden, sach-werturteil]
+      # KC Kap. 6 Musik erschließen (Aufführungen planen, teilnehmen, auswerten)
+      - id: auffuehrung-planen
+        iCan: { de: "Ich kann eine musikalische Aufführung planen, gestaltend an ihr teilnehmen und sie auswerten." }
+        gradeBand: "9-10"
+        requires: [auffuehrung-auswerten, musizieren-organisieren]

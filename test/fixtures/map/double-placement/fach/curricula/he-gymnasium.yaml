@@ -1,0 +1,9 @@
+# a1 placed twice, and a placement of a competency the subject does not have.
+land: HE
+schoolType: Gymnasium
+version: Test
+source: { title: Testlehrplan }
+placements:
+  - { competency: a1, grades: [5] }
+  - { competency: a1, grades: [6] }
+  - { competency: unbekannt, grades: [7] }

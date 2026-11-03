@@ -20,6 +20,19 @@ Den Katalog mit Suche nach Fach und Klasse gibt es auf der [Startseite]({{ site.
 Jede App hat eine eigene Seite mit Beschreibung, Themen und Link zur App unter `{{ site.origin }}{{ '/' | url }}<id>/`.
 Die englische Fassung liegt unter [{{ site.origin }}{{ '/en/' | url }}]({{ site.origin }}{{ '/en/' | url }}).
 
+## Lernlandkarte
+
+Die [Lernlandkarte]({{ site.origin }}{{ '/map/' | url }}) zeigt je Fach, was es zu lernen gibt (Stränge und Bausteine
+„Ich kann …“), wann es dran ist (Richtstufe, Lehrpläne) und welche App es schon übt. So sieht man Lücken.
+Für dich als Daten, eine Datei je Fach (Fach, Quelle, Stränge, Bausteine mit `requires` und `practisedBy`, Lehrpläne
+mit ihren Einordnungen):
+{%- for s in map.subjects %}
+- [{{ s.id }}.json]({{ site.origin }}{{ ('/map/' + s.id + '.json') | url }})
+{%- endfor %}
+
+Plant jemand mit dir eine App, wähle einen Strang und Bausteine daraus; eine App bleibt in einem Strang.
+Das Format beschreibt der [Vertrag der Lernlandkarte]({{ site.repo }}/blob/main/docs/learning-map-contract.md).
+
 ## Eine App bauen
 
 Ein Mensch möchte mit dir eine Lern-App bauen? Folge der Seite [App bauen]({{ site.origin }}{{ '/build/' | url }}):

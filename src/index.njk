@@ -75,6 +75,8 @@ eleventyComputed:
     <p class="m-0 mt-1 text-sm text-slate-600">{{ F.practice }} <a href="{{ '/practice/' | otherSiteIn(pageLanguage.code) }}" class="text-blue-700 underline underline-offset-2">{{ F.practiceLink }} <span aria-hidden="true">→</span></a></p>
   </div>
 
+  <p class="m-0 mt-8 text-slate-700">{{ t.map.home.text }} <a href="{{ '/map/' | inLang(lang) | url }}" class="font-semibold text-blue-700 underline underline-offset-2">{{ t.map.home.link }} <span aria-hidden="true">→</span></a></p>
+
   <div class="mt-8 p-5 rounded-xl border border-slate-200 bg-white flex flex-wrap items-center gap-x-6 gap-y-3" data-build>
     <p class="m-0 text-slate-700 flex-1 min-w-0 basis-80"><strong class="text-slate-900">{{ F.build.headline }}</strong> {{ F.build.body }}</p>
     <a href="{{ '/build/' | inLang(lang) | url }}" class="btn btn-primary" data-build-link>{{ F.build.link }}</a>

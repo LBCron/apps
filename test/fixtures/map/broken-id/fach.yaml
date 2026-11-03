@@ -1,0 +1,9 @@
+# a2 requires a competency that does not exist.
+name: Fach
+source: { title: Testquelle }
+strands:
+  - id: alpha
+    name: Alpha
+    competencies:
+      - { id: a1, iCan: "Ich kann eins.", gradeBand: "5-6" }
+      - { id: a2, iCan: "Ich kann zwei.", gradeBand: "7-8", requires: [gibt-es-nicht] }

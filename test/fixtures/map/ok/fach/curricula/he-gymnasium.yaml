@@ -1,0 +1,11 @@
+# Places a1 in 5, a2 in 7 and 8, b1 in 6 and 9, b2 in 11 (outside the rows: stays in its band); a3 is not placed.
+land: HE
+schoolType: Gymnasium
+version: Test
+source:
+  title: Testlehrplan
+placements:
+  - { competency: a1, grades: [5] }
+  - { competency: a2, grades: [7, 8], unit: "7.1" }
+  - { competency: b1, grades: [6, 9] }
+  - { competency: b2, grades: [11] }

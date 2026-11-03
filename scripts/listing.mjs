@@ -6,7 +6,7 @@
 //
 // Per entry it runs `lernapps check --entry <file>` of @lernapps/tooling: the checks of the built app on the entry's
 // url, the url and every topic link resolve, the fitness values match the measured ones. One rule is the catalog's
-// own: fitness.checked may be true only when the check passes. The reports go to <dir>, one <id>.yaml each
+// own: fitness.checked may be true only when the check passes; the strand and competencies exist on the learning map. The reports go to <dir>, one <id>.yaml each
 // (default node_modules/.cache/lernapps/listing/). Exit code 0 when every entry passes, 1 when one fails, 2 on wrong
 // usage.
 import { spawnSync } from "node:child_process";
@@ -16,6 +16,7 @@ import { fileURLToPath } from "node:url";
 import { dump, load } from "js-yaml";
 import { render } from "./listing-comment.mjs";
 import { reserved } from "../schemas/reserved.js";
+import { loadMap, checkApp } from "../lib/map.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const LERNAPPS = join(root, "node_modules", ".bin", "lernapps");
@@ -112,6 +113,62 @@ function freeId(file, report) {
   if (!report.rules.includes("entry-from-schema")) report.rules = [...report.rules, "entry-from-schema"].sort();
 }
 
+/**
+ * The catalog's own rule entry-learning-map (docs/learning-map-contract.md, section 4): the strand and the competencies
+ * an app names exist on the learning map, and they belong to one strand. An explainer of format 2 says them in
+ * lernapps-pages.json beside its index.html; another app in its entry. An unknown competency and one of another strand
+ * are errors (KD-19); an app without a strand is listed, only not on the map.
+ */
+async function learningMap(file, report) {
+  let entry;
+  try {
+    entry = load(readFileSync(file, "utf8"));
+  } catch {
+    return;
+  }
+  if (typeof entry?.url !== "string") return;
+  const add = (severity, where, found, fix) => report.findings.push({ ...finding("entry-learning-map", where, found, fix), severity });
+  let pages;
+  try {
+    const base = entry.url.endsWith("/") ? entry.url : `${entry.url}/`;
+    const response = await fetch(new URL("lernapps-pages.json", base), { signal: AbortSignal.timeout(15_000) });
+    if (response.ok) pages = await response.json();
+  } catch {
+    // no page list: not an explainer of format 2, or not reachable; the app's own check reports an unreachable url
+  }
+  let strand = entry.strand;
+  let competencies = entry.competencies ?? [];
+  let recaps = [];
+  if (pages && pages.format === 1 && Array.isArray(pages.pages)) {
+    if (entry.competencies) {
+      add("error", `${file}: competencies`, "the app is an explainer of format 2: its pages name their competencies", "Remove competencies from the entry");
+    }
+    if (entry.strand && entry.strand !== pages.strand) {
+      add("error", `${file}: strand`, `the entry says ${entry.strand}, the app's src/app.yaml says ${pages.strand}`, "Remove strand from the entry or make it match src/app.yaml");
+    }
+    strand = pages.strand;
+    competencies = [...new Set(pages.pages.flatMap((p) => p.competencies ?? []))];
+    recaps = [...new Set(pages.pages.map((p) => p.recap).filter(Boolean))];
+  }
+  if ((!strand || strand === "none") && competencies.length === 0) return;
+  let subjects;
+  try {
+    subjects = loadMap(join(root, "map"));
+  } catch (error) {
+    add("error", "map/", `the learning map of the catalog is broken: ${error.message}`, "Fix the files in map/ (lernapps/apps)");
+    return;
+  }
+  const { errors, hints } = checkApp(subjects, { strand, competencies, recaps });
+  const fixError = "Use a strand and competency ids of https://lernapps.net/apps/map/ ; a missing competency is proposed to lernapps/apps (map/<subject>.yaml)";
+  for (const e of errors) add("error", file, e, fixError);
+  // With a strand, an app practises only the competencies of that strand (KD-19): another strand is an error too.
+  for (const h of hints) add("error", file, h, "Keep the app in its strand: move these pages to an app of their strand, or give the app strand: none");
+  report.findings.sort(byPlace);
+  if (report.findings.some((f) => f.rule === "entry-learning-map") && !report.rules.includes("entry-learning-map")) {
+    report.rules = [...report.rules, "entry-learning-map"].sort();
+  }
+}
+
 const args = process.argv.slice(2);
 let out = CACHE;
 const at = args.indexOf("--out");
@@ -133,6 +190,7 @@ for (const file of args) {
   const report = check(file, out);
   checkedFromPassing(file, report);
   freeId(file, report);
+  await learningMap(file, report);
   writeFileSync(join(out, `${basename(file, ".yaml")}.yaml`), dump(report, { lineWidth: -1, noRefs: true }));
 }
 

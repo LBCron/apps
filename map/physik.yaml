@@ -1,0 +1,560 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# Vorschlag. Quellenkürzel: KMK = Weiterentwickelte Bildungsstandards Physik (MSA) 2024, verbindliche inhaltliche Aspekte;
+# HE = Kerncurriculum Hessen Sek I Gymnasium Physik (2011), Schwerpunkte s1 (erste Hälfte der Stunden) / s2 (nach Jg 9/10);
+# BY = LehrplanPLUS Bayern Gymnasium (NT 5-7, Physik 8-10); NW = Kernlehrplan NRW Sek I Gymnasium Physik (2019) mit Jahrgang aus dem Umsetzungsbeispiel (SiLP).
+# Genaue Titel, Ausgaben und URLs: report.md. NEU = Baustein neu; "Früher" = frühere Richtstufe.
+name: { de: Physik, en: Physics }                  # the file name is the subject's id: physik
+source:
+  title: KMK, Weiterentwickelte Bildungsstandards in den Naturwissenschaften für das Fach Physik (MSA), Beschluss vom 16.12.2004 i.d.F. vom 13.06.2024
+  url: https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2024/2024_06_13-WeBiS_Physik_MSA.pdf
+strands:
+  - id: energie
+    name: { de: Energie, en: Energy }
+    competencies:
+      # KMK Energie (Energieformen); HE s1 (anschaulicher Energiebegriff); BY Ph9 1.1 (Jg 9); NW IF7 (SiLP 9.4, Jg 9). Abweichung: HE s1 = 7-8
+      - id: energieformen
+        iCan: "Ich kann Bewegungsenergie, Lageenergie, elektrische Energie, thermische Energie und Strahlungsenergie unterscheiden und Beispiele nennen."
+        gradeBand: "9-10"
+      # KMK Energie (physikalische Größe Energie); HE s2 (Energie als quantifizierbare Größe); BY Ph9 1.1; NW IF7 (Jg 9)
+      - id: energie-und-joule
+        iCan: "Ich kann Energie als physikalische Größe mit der Einheit Joule beschreiben."
+        gradeBand: "9-10"
+        requires: [energieformen]
+      # KMK Energie (Lage-, Bewegungsenergie); HE s2; BY Ph9 1.1; NW IF7 (Jg 9)
+      - id: lageenergie-bewegungsenergie
+        iCan: "Ich kann erklären, wovon Lageenergie und Bewegungsenergie abhängen."
+        gradeBand: "9-10"
+        requires: [energieformen]
+      # NEU. KMK Energie (quantitativ); BY Ph9 1.1 (Höhenenergie quantitativ); NW IF7 (Definitionsgleichung Lageenergie); HE s2 (Quantifizierung)
+      - id: lageenergie-berechnen
+        iCan: "Ich kann die Lageenergie eines Körpers aus Masse und Höhe berechnen."
+        gradeBand: "9-10"
+        requires: [lageenergie-bewegungsenergie, energie-und-joule, gewichtskraft-berechnen]
+      # NEU. KMK Energie (quantitativ); BY Ph9 1.1 (kinetische Energie quantitativ); HE s2 (Quantifizierung); NW nennt nur die Lageenergie als Formel
+      - id: bewegungsenergie-berechnen
+        iCan: "Ich kann die Bewegungsenergie eines Körpers aus Masse und Geschwindigkeit berechnen."
+        gradeBand: "9-10"
+        requires: [lageenergie-bewegungsenergie, energie-und-joule, geschwindigkeit-berechnen]
+      # KMK Energie (thermische Energie); NW IF1 (Jg 6); HE s1 (Temperatur); BY Ph9 3.1 (innere Energie, Jg 9). Dreifach uneins (5-6/7-8/9-10): Mitte
+      - id: thermische-energie
+        iCan: "Ich kann thermische Energie und Temperatur voneinander unterscheiden."
+        gradeBand: "7-8"
+        requires: [temperatur]
+      # NEU. KMK Energie (Energieübertragung); HE s2 (Übertragung thermischer Energie); BY Ph9 3.2 (Wärmeleitung, Konvektion, Wärmestrahlung); NW IF1 (Jg 6: Wärmemitführung, -leitung, -strahlung). Abweichung: NW 5-6
+      - id: waermetransport
+        iCan: "Ich kann Wärmeleitung, Wärmemitführung (Konvektion) und Wärmestrahlung unterscheiden und Beispiele aus dem Alltag zuordnen."
+        gradeBand: "9-10"
+        requires: [thermische-energie, waermestrahlung]
+      # KMK Energie (Energieumwandlung); BY Ph9 1.1 (qualitative Beschreibung); NW IF7 (Umwandlungsketten, Jg 9); HE s2 (Umwandlungsketten)
+      - id: energieumwandlung
+        iCan: "Ich kann Energieumwandlungen in Geräten und Vorgängen mit einem Energieflussdiagramm beschreiben."
+        gradeBand: "9-10"
+        requires: [energieformen]
+      # KMK Energie (Energieübertragung); HE s1 (Energietransport); BY Ph9 3.2 (Änderung der inneren Energie durch Arbeit oder Wärme); NW IF11 (Energieübertragung, Jg 10). Abweichung: HE s1 = 7-8
+      - id: energieuebertragung
+        iCan: "Ich kann beschreiben, wie Energie durch Arbeit, Wärme, Strahlung oder elektrischen Strom von einem Körper auf einen anderen übertragen wird."
+        gradeBand: "9-10"
+        requires: [energieumwandlung]
+      # KMK Energie (Energieerhaltung); BY Ph9 LB 1 (Energie als Erhaltungsgröße); NW IF7; HE s2
+      - id: energieerhaltung
+        iCan: "Ich kann mit dem Energieerhaltungssatz erklären, dass Energie nicht verloren geht, sondern nur umgewandelt oder übertragen wird."
+        gradeBand: "9-10"
+        requires: [energieumwandlung, energieuebertragung]
+      # KMK Energie (Energieentwertung); HE s1 und s2 (Entwertung); NW IF11 (Jg 10); BY Ph9 3.2 (Energiestrom)
+      - id: energieentwertung
+        iCan: "Ich kann erklären, warum bei Energieumwandlungen ein Teil der Energie als nicht nutzbare Wärme entwertet wird."
+        gradeBand: "9-10"
+        requires: [energieerhaltung, thermische-energie]
+      # KMK Energie (quantitative Bilanzierung); BY Ph9 1.1 (quantitative Bilanzierung); NW IF7; HE s2
+      - id: energiebilanz
+        iCan: "Ich kann die Energiebilanz eines Vorgangs berechnen."
+        gradeBand: "9-10"
+        requires: [energieerhaltung, energie-und-joule, lageenergie-berechnen, bewegungsenergie-berechnen]
+      # KMK Energie (Leistung); BY Ph9 1.1 (Jg 9); NW IF7 (Jg 9); HE s2 (Leistungen). Früher 7-8: kein Land belegt das
+      - id: leistung
+        iCan: "Ich kann Leistung als Energie pro Zeit erklären und mit der Einheit Watt angeben."
+        gradeBand: "9-10"
+        requires: [energie-und-joule]
+      # KMK Energie (Zusammenhang Energie/Leistung quantitativ); NW IF7 (Leistungen berechnen); BY Ph9 1.1
+      - id: leistung-berechnen
+        iCan: "Ich kann Leistung, Energie oder Zeit aus den anderen beiden Größen berechnen."
+        gradeBand: "9-10"
+        requires: [leistung]
+      # KMK Energie (Wirkungsgrad); BY Ph9 1.2; NW IF11 (berechnen); HE s2 (Bestimmung von Wirkungsgraden)
+      - id: wirkungsgrad
+        iCan: "Ich kann den Wirkungsgrad eines Geräts berechnen und bewerten."
+        gradeBand: "9-10"
+        requires: [energieentwertung, leistung-berechnen]
+      # KMK Energie (insbesondere Energiespeicherung); HE s2 (Speicherung und Transport); NW IF11; BY Ph9 4.2 (Speicherung)
+      - id: energiespeicherung
+        iCan: "Ich kann erklären, wie Energie gespeichert werden kann, und Speicher wie Pumpspeicher oder Akku vergleichen."
+        gradeBand: "9-10"
+        requires: [energieumwandlung]
+      # NEU. KMK Energie (nachhaltige Energieversorgung); HE s1 (regenerativ/erschöpfbar); NW IF11; BY Ph9 4.2 (regenerative Energiequellen). Abweichung: HE s1 = 7-8
+      - id: energiequellen
+        iCan: "Ich kann regenerative und erschöpfbare Energiequellen unterscheiden und Beispiele nennen."
+        gradeBand: "9-10"
+        requires: [energieformen]
+      # NEU. KMK Elektrizitätslehre (Versorgung) und Energie (nachhaltige Versorgung); HE s2 (Großenergieanlagen, Kraftwerksarten); NW IF11 (Kraftwerke); BY Ph9 4.2
+      - id: kraftwerksarten
+        iCan: "Ich kann die Energieumwandlungskette verschiedener Kraftwerksarten beschreiben und sie vergleichen."
+        gradeBand: "9-10"
+        requires: [energieumwandlung, generator]
+      # KMK Energie (nachhaltige Energieversorgung); HE s2 (Bewertung zentraler/dezentraler Versorgung); NW IF11 (Bewertung); BY Ph9 4.2
+      - id: nachhaltige-energieversorgung
+        iCan: "Ich kann Möglichkeiten einer nachhaltigen Energieversorgung vergleichen und bewerten."
+        gradeBand: "9-10"
+        requires: [energiespeicherung, stromversorgung, energiequellen, kraftwerksarten]
+
+  - id: elektrizitaetslehre
+    name: { de: Elektrizitätslehre, en: Electricity }
+    competencies:
+      # KMK Elektrizitätslehre (Wirkungen); NW IF2 (Jg 6); HE s1 (Elemente des Stromkreises); BY NT7 1.3 / Ph8 1 (Jg 7-8). Zweigeteilt (5-6 oder 7-8): bleibt
+      - id: einfacher-stromkreis
+        iCan: "Ich kann einen einfachen Stromkreis aus Batterie, Lampe und Kabeln aufbauen und erklären, warum er geschlossen sein muss."
+        gradeBand: "5-6"
+      # NW IF2 (Jg 6); HE s1 (Leitfähigkeit von Materialien); BY Ph8 1 (Leiter, Isolator, Jg 8)
+      - id: leiter-nichtleiter
+        iCan: "Ich kann Leiter und Nichtleiter unterscheiden und Beispiele nennen."
+        gradeBand: "5-6"
+        requires: [einfacher-stromkreis]
+      # NEU. NW IF2 (Spannungsquellen, Jg 6); BY Ph8 4.1 (Elektrizitätsquellen, nur Profilbereich)
+      - id: spannungsquellen
+        iCan: "Ich kann Spannungsquellen wie Batterie, Netzgerät und Steckdose nennen und sagen, wofür sie sich eignen."
+        gradeBand: "5-6"
+        requires: [einfacher-stromkreis]
+      # nur mittelbar: NW IF2 (Stromkreise und Schaltungen); HE s1 (Elemente des Stromkreises); BY NT7 1.3 (Schaltungen mit Schaltern). Kein Land nennt den Schalter als eigenen Schwerpunkt
+      - id: schalter
+        iCan: "Ich kann erklären, wie ein Schalter einen Stromkreis öffnet und schließt."
+        gradeBand: "5-6"
+        requires: [einfacher-stromkreis]
+      # NW IF2 / SiLP 6.3 (Schaltskizzen lesen und erstellen, Jg 6); HE s1 (Schaltskizzen); BY NT7 1.3
+      - id: schaltzeichen
+        iCan: "Ich kann einen Stromkreis als Schaltplan mit Schaltzeichen zeichnen und einen Schaltplan lesen."
+        gradeBand: "5-6"
+        requires: [schalter]
+      # NW IF2 (Schaltungen, Jg 6); HE s1; BY Ph8 1 (Reihen- und Parallelschaltung, Jg 8). Abweichung: BY 7-8
+      - id: reihenschaltung
+        iCan: "Ich kann eine Reihenschaltung aufbauen und erklären, was passiert, wenn ein Bauteil ausfällt."
+        gradeBand: "5-6"
+        requires: [schaltzeichen]
+      # NW IF2 (verzweigte Stromkreise, Jg 6); HE s1; BY Ph8 1 (Jg 8). Abweichung: BY 7-8
+      - id: parallelschaltung
+        iCan: "Ich kann eine Parallelschaltung aufbauen und erklären, was passiert, wenn ein Zweig ausfällt."
+        gradeBand: "5-6"
+        requires: [schaltzeichen]
+      # KMK Elektrizitätslehre (Wirkungen des Stroms); NW IF2 (Jg 6); BY NT7 1.3 (Wärme- und Leuchtwirkung); HE s1
+      - id: waermewirkung-strom
+        iCan: "Ich kann die Wärmewirkung des elektrischen Stroms an Beispielen erklären."
+        gradeBand: "5-6"
+        requires: [einfacher-stromkreis]
+      # KMK Elektrizitätslehre (Wirkungen); BY NT7 1.3 (Leuchtwirkung). NW IF2 nennt nur Wärme- und magnetische Wirkung: nur ein Land belegt es
+      - id: lichtwirkung-strom
+        iCan: "Ich kann die Lichtwirkung des elektrischen Stroms an Beispielen erklären."
+        gradeBand: "5-6"
+        requires: [einfacher-stromkreis]
+      # KMK Elektrizitätslehre (Wirkungen); NW IF2 (Jg 6); BY NT7 1.3 (Jg 7, Experiment); HE s2 (magnetische Wirkung, 9/10). Dreifach uneins: Mitte
+      - id: magnetwirkung-strom
+        iCan: "Ich kann die magnetische Wirkung des elektrischen Stroms an einem Elektromagneten erklären."
+        gradeBand: "7-8"
+        requires: [einfacher-stromkreis, permanentmagnete]
+      # KMK Elektrizitätslehre (Gefahren); NW IF2 (Jg 6) und IF9; HE s1; BY Ph8 1 (Haushaltsinstallation)
+      - id: gefahren-des-stroms
+        iCan: "Ich kann erklären, warum Strom aus der Steckdose gefährlich ist und Strom aus einer Batterie nicht."
+        gradeBand: "5-6"
+        requires: [einfacher-stromkreis]
+      # KMK Elektrizitätslehre (Gefahren); HE s1 (Bewertung des eigenen Verhaltens); NW IF2 (Jg 6)
+      - id: sicher-mit-strom-umgehen
+        iCan: "Ich kann Regeln für den sicheren Umgang mit Strom nennen und anwenden."
+        gradeBand: "5-6"
+        requires: [gefahren-des-stroms]
+      # KMK Elektrizitätslehre (Ladung); HE s2 (Elektrostatik); NW IF9 (Jg 9-10); BY NT7 1.3 (Jg 7). Abweichung: BY 7-8 (G8). Früher 7-8
+      - id: elektrische-ladung
+        iCan: "Ich kann elektrische Ladung beschreiben und erklären, wie sich gleichartige und verschiedenartige Ladungen verhalten."
+        gradeBand: "9-10"
+        requires: [atomaufbau]
+      # NEU. HE s2 (elektrostatische Alltagsphänomene); NW IF9 (Elektrostatik, SiLP 9.6 Blitze und Gewitter); BY NT7 1.3 (Reibungselektrizität, Jg 7). Abweichung: BY 7-8
+      - id: elektrostatische-phaenomene
+        iCan: "Ich kann elektrostatische Phänomene aus dem Alltag wie Reibungselektrizität oder Blitze mit Ladungen erklären."
+        gradeBand: "9-10"
+        requires: [elektrische-ladung]
+      # KMK Elektrizitätslehre (Stromstärke); BY Ph8 1 (Jg 8); HE s1 (Größen Strom und Spannung); NW IF9 (Jg 9-10). Abweichung: NW 9-10
+      - id: stromstaerke
+        iCan: "Ich kann die Stromstärke als Maß dafür erklären, wie viel Strom fließt, und sie in Ampere angeben."
+        gradeBand: "7-8"
+        requires: [einfacher-stromkreis]
+      # NEU. NW IF9 (Ladungstransport, Elektronen-Atomrumpf-Modell); HE s2 (Strom als Ladung pro Zeit); BY NT7 1.3 (Strom als Bewegung von Ladungen, Jg 7). Abweichung: BY 7-8
+      - id: strom-als-ladungstransport
+        iCan: "Ich kann den elektrischen Strom als Transport von Ladungen mit einem Elektronenmodell erklären."
+        gradeBand: "9-10"
+        requires: [stromstaerke, elektrische-ladung]
+      # NW IF9 (Stromstärken messen, Jg 9-10); BY Ph8 1 (Messen, Jg 8); HE s1/s2 (Aufbauen und Erkunden). Uneins: bleibt
+      - id: stromstaerke-messen
+        iCan: "Ich kann die Stromstärke mit einem Amperemeter richtig messen."
+        gradeBand: "7-8"
+        requires: [stromstaerke, schaltzeichen]
+      # KMK Elektrizitätslehre (Spannung); BY Ph8 1 (Spannung als Antrieb, Jg 8); HE s1 (Größen Strom und Spannung); NW IF9 (Jg 9-10). Abweichung: NW 9-10
+      - id: spannung
+        iCan: "Ich kann die Spannung als Antrieb des Stroms erklären und sie in Volt angeben."
+        gradeBand: "7-8"
+        requires: [einfacher-stromkreis]
+      # NW IF9 (Jg 9-10); BY Ph8 1 (Jg 8); HE s1/s2. Uneins: bleibt
+      - id: spannung-messen
+        iCan: "Ich kann die Spannung mit einem Voltmeter richtig messen."
+        gradeBand: "7-8"
+        requires: [spannung, schaltzeichen]
+      # KMK Elektrizitätslehre (Widerstand); NW IF9 (Jg 9-10); HE s2 (Einfluss von Widerständen); BY Ph8 1 (Jg 8). Abweichung: BY 7-8. Früher 7-8
+      - id: widerstand
+        iCan: "Ich kann den elektrischen Widerstand als Maß dafür erklären, wie stark ein Bauteil den Strom hemmt, und ihn in Ohm angeben."
+        gradeBand: "9-10"
+        requires: [stromstaerke, spannung, leiter-nichtleiter]
+      # NW IF9 (Einflussgrößen, Variablenkontrolle); HE s2; BY Ph8 1 (Widerstand, Kurzschluss): nur NW nennt die Einflussgrößen
+      - id: widerstand-einflussgroessen
+        iCan: "Ich kann erklären, wie der Widerstand eines Drahtes von Material, Länge und Dicke abhängt."
+        gradeBand: "9-10"
+        requires: [widerstand]
+      # KMK Elektrizitätslehre (Zusammenhang U und I, auch quantitativ); BY Ph8 1 (Kennlinien, Jg 8); NW IF9; HE s2. Abweichung: BY 7-8. Früher 7-8
+      - id: ohmsches-gesetz
+        iCan: "Ich kann den Zusammenhang zwischen Spannung und Stromstärke in einem Diagramm darstellen und beschreiben."
+        gradeBand: "9-10"
+        requires: [stromstaerke-messen, spannung-messen, widerstand]
+      # KMK Elektrizitätslehre (quantitativ); NW IF9; BY Ph8 1; HE s2. Früher 7-8
+      - id: ohmsches-gesetz-rechnen
+        iCan: "Ich kann mit dem ohmschen Gesetz R = U / I eine fehlende Größe berechnen."
+        gradeBand: "9-10"
+        requires: [ohmsches-gesetz]
+      # NW IF9 (Reihen- und Parallelschaltung, mathematisch); HE s2 (Gesetzmäßigkeiten in komplexeren Stromkreisen); BY Ph8 1 (Jg 8). Abweichung: BY 7-8. Früher 7-8
+      - id: reihenschaltung-groessen
+        iCan: "Ich kann in einer Reihenschaltung Stromstärke und Spannungen vorhersagen, berechnen und messen."
+        gradeBand: "9-10"
+        requires: [reihenschaltung, ohmsches-gesetz-rechnen]
+      # wie reihenschaltung-groessen. Früher 7-8
+      - id: parallelschaltung-groessen
+        iCan: "Ich kann in einer Parallelschaltung Stromstärken und Spannung vorhersagen, berechnen und messen."
+        gradeBand: "9-10"
+        requires: [parallelschaltung, ohmsches-gesetz-rechnen]
+      # NW IF9 (Jg 9-10); BY Ph8 1 (bis drei Widerstände, Jg 8); HE s2. Hinweis: kein Land nennt die Formel für den Parallel-Gesamtwiderstand ausdrücklich
+      - id: gesamtwiderstand
+        iCan: "Ich kann den Gesamtwiderstand von Reihen- und Parallelschaltungen berechnen."
+        gradeBand: "9-10"
+        requires: [reihenschaltung-groessen, parallelschaltung-groessen]
+      # KMK Elektrizitätslehre (elektrische Leistung); BY Ph9 1.2 (Jg 9); NW IF9 (Definitionsgleichungen); HE s2
+      - id: elektrische-leistung
+        iCan: "Ich kann die elektrische Leistung aus Spannung und Stromstärke berechnen."
+        gradeBand: "9-10"
+        requires: [leistung, ohmsches-gesetz-rechnen]
+      # KMK Elektrizitätslehre (elektrische Energie); NW IF9 (Energiekosten berechnen); BY Ph9 1.2; HE s1 (Energiekosten deuten). Abweichung: HE s1
+      - id: elektrische-energie
+        iCan: "Ich kann die elektrische Energie eines Geräts aus Leistung und Zeit berechnen und in Kilowattstunden angeben."
+        gradeBand: "9-10"
+        requires: [elektrische-leistung]
+      # NEU. KMK Elektrizitätslehre (Gefahren); NW IF9 (Hausinstallation, Sicherheitsvorrichtungen, SiLP 10.1); BY Ph8 1 (Haushaltsinstallation, Kurzschluss, Jg 8). Zweigeteilt; 9-10 wegen der Voraussetzungen
+      - id: hausinstallation-sicherungen
+        iCan: "Ich kann erklären, wie Sicherungen und Kurzschlussschutz in der Hausinstallation vor Überlastung schützen."
+        gradeBand: "9-10"
+        requires: [widerstand, elektrische-leistung]
+      # NEU. NW IF2 (Magnetpole, Kräfte, Jg 6); HE s1 (Eigenschaften von Magneten); BY NT7 1.1 (Jg 7)
+      - id: permanentmagnete
+        iCan: "Ich kann Eigenschaften von Permanentmagneten beschreiben: Pole, anziehende und abstoßende Kräfte, magnetisierbare Stoffe."
+        gradeBand: "5-6"
+      # NEU. NW IF2 (Modell der Elementarmagnete, Jg 6); HE s1 (Modell elementarisierten Magnetismus); BY NT7 1.1 (Elementarmagnete, Jg 7)
+      - id: elementarmagnete-modell
+        iCan: "Ich kann mit dem Modell der Elementarmagnete erklären, wie sich Stoffe magnetisieren lassen."
+        gradeBand: "5-6"
+        requires: [permanentmagnete]
+      # NEU. NW IF2 (Feldlinienmodell, Jg 6); HE s1 (graphische Darstellung von Magnetfeldern); BY Ph10 1 (Feldlinienbilder, Jg 10). Abweichung: BY 9-10
+      - id: magnetfeld-feldlinien
+        iCan: "Ich kann das Magnetfeld eines Stabmagneten mit Feldlinien zeichnen und lesen."
+        gradeBand: "5-6"
+        requires: [permanentmagnete]
+      # NEU. NW IF2 (Magnetfeld der Erde, Jg 6); BY NT7 1.1 (Erdmagnetfeld, Orientierung, Jg 7); HE s1 (Navigation)
+      - id: erdmagnetfeld-kompass
+        iCan: "Ich kann erklären, wie ein Kompass mit dem Magnetfeld der Erde die Himmelsrichtung anzeigt."
+        gradeBand: "5-6"
+        requires: [permanentmagnete]
+      # NEU. NW IF11 (Magnetfelder stromdurchflossener Leiter, Spule); BY Ph10 1 (Feldlinienbilder der Spule); HE s2 (Analogien natürlicher und elektrisch erzeugter Magnetfelder)
+      - id: magnetfeld-spule
+        iCan: "Ich kann das Magnetfeld eines stromdurchflossenen Leiters und einer Spule mit Feldlinien darstellen."
+        gradeBand: "9-10"
+        requires: [magnetwirkung-strom, magnetfeld-feldlinien]
+      # NEU. NW IF11 (Elektromotor); BY Ph10 1 (Kraft auf Leiter, Bau eines Elektromotors); HE s2 (elektromagnetische Energiewandler)
+      - id: elektromotor
+        iCan: "Ich kann erklären, wie ein Elektromotor mit der Kraft auf einen stromdurchflossenen Leiter im Magnetfeld arbeitet."
+        gradeBand: "9-10"
+        requires: [magnetfeld-spule]
+      # KMK Elektrizitätslehre (elektromagnetische Induktion); BY Ph10 1; NW IF11; HE s2
+      - id: elektromagnetische-induktion
+        iCan: "Ich kann erklären, wie sich durch ein sich änderndes Magnetfeld in einer Spule eine Spannung erzeugen lässt."
+        gradeBand: "9-10"
+        requires: [magnetfeld-spule, spannung]
+      # NW IF11 (Generator, Wechselspannung); BY Ph10 1; HE s2 (Energiewandler)
+      - id: generator
+        iCan: "Ich kann erklären, wie ein Generator mit Induktion Wechselspannung erzeugt."
+        gradeBand: "9-10"
+        requires: [elektromagnetische-induktion]
+      # NW IF11; BY Ph10 1 (idealer Transformator); HE s2 (Spannungstransformation)
+      - id: transformator
+        iCan: "Ich kann erklären, wie ein Transformator Spannungen verändert, und die Spannungen berechnen."
+        gradeBand: "9-10"
+        requires: [elektromagnetische-induktion]
+      # KMK Elektrizitätslehre (Versorgung mit elektrischer Energie); NW IF11 (Energieübertragung); HE s2 (Energieversorgungsnetze); BY Ph10 1 (Transformator)
+      - id: stromversorgung
+        iCan: "Ich kann den Weg des Stroms vom Kraftwerk bis zur Steckdose beschreiben und erklären, warum Strom mit hoher Spannung übertragen wird."
+        gradeBand: "9-10"
+        requires: [generator, transformator, elektrische-leistung]
+
+  - id: mechanik
+    name: { de: Mechanik, en: Mechanics }
+    competencies:
+      # KMK Mechanik (Strecke, Zeit); BY NT5 1.1 (Messen von Größen, Jg 5); HE s1 (physikalische Größen und ihre Messung); NW Jg 6 (Messen physikalischer Größen)
+      - id: strecke-und-zeit-messen
+        iCan: "Ich kann Strecken und Zeiten messen und in passenden Einheiten angeben."
+        gradeBand: "5-6"
+      # KMK Mechanik (Geschwindigkeit); HE s1 (Weg, Zeit, Geschwindigkeit); BY Ph8 3.1 (Jg 8); NW IF7 (SiLP 9.2, Jg 9). Abweichung: NW 9-10
+      - id: geschwindigkeit
+        iCan: "Ich kann Geschwindigkeit als Strecke pro Zeit erklären."
+        gradeBand: "7-8"
+        requires: [strecke-und-zeit-messen]
+      # KMK Mechanik (Geschwindigkeit quantitativ); HE s1; BY Ph8 3.1; NW IF7 (gleichförmige Bewegung berechnen, Jg 9). Abweichung: NW 9-10
+      - id: geschwindigkeit-berechnen
+        iCan: "Ich kann Geschwindigkeit, Strecke oder Zeit aus den anderen beiden Größen berechnen und Einheiten umrechnen."
+        gradeBand: "7-8"
+        requires: [geschwindigkeit]
+      # KMK Mechanik (Geschwindigkeitsänderungen); NW IF7 (Beschleunigung, Jg 9); HE s2 (Bewegungsänderungen durch Kräfte); BY Ph8 3.1 (Jg 8). Abweichung: BY 7-8. Früher 7-8
+      - id: geschwindigkeitsaenderung
+        iCan: "Ich kann beschreiben, wann sich eine Bewegung beschleunigt, verlangsamt oder die Richtung ändert."
+        gradeBand: "9-10"
+        requires: [geschwindigkeit]
+      # KMK Mechanik (Diagramme); NW IF7 (Orts-Zeit-Diagramme, Jg 9); BY Ph10 3 (Zeit-Ort- und Zeit-Geschwindigkeit-Diagramme); HE s1 (Darstellung Weg/Zeit/Geschwindigkeit). Abweichung: HE s1. Früher 7-8
+      - id: bewegungsdiagramme
+        iCan: "Ich kann eine Bewegung in einem Weg-Zeit-Diagramm und einem Geschwindigkeit-Zeit-Diagramm darstellen und ablesen."
+        gradeBand: "9-10"
+        requires: [geschwindigkeit-berechnen]
+      # KMK Mechanik (Kräfte und ihre Wirkungen); HE s2; NW IF7 (Jg 9); BY Ph8 3.2 (Jg 8). Abweichung: BY 7-8. Früher 7-8
+      - id: kraft-wirkungen
+        iCan: "Ich kann erklären, dass eine Kraft einen Körper verformen oder seine Bewegung ändern kann."
+        gradeBand: "9-10"
+      # KMK Mechanik (Kraft); NW IF7 (Kräfte als vektorielle Größen, Jg 9); HE s2 (Kräftepaare darstellen); BY Ph8 3.2 (Jg 8). Früher 7-8
+      - id: kraft-darstellen
+        iCan: "Ich kann eine Kraft mit Betrag und Richtung als Pfeil darstellen und mit einem Kraftmesser messen."
+        gradeBand: "9-10"
+        requires: [kraft-wirkungen]
+      # NEU. HE s2 (Wechselwirkung von Körpern, Kräftepaare); NW IF7 (Kraft und Gegenkraft, Jg 9); KMK Basiskonzept Ursache und Wirkung. BY nennt es nicht ausdrücklich
+      - id: wechselwirkungsprinzip
+        iCan: "Ich kann Kraft und Gegenkraft zwischen zwei Körpern erkennen und an Beispielen beschreiben."
+        gradeBand: "9-10"
+        requires: [kraft-darstellen]
+      # NEU. NW IF7 (Reibung, Jg 9); BY Ph8 3.2 (Hinweis auf Reibungskräfte, Luftwiderstand). HE nennt sie nicht
+      - id: reibung
+        iCan: "Ich kann Reibungskräfte erkennen und erklären, wie sie Bewegungen bremsen."
+        gradeBand: "9-10"
+        requires: [kraft-darstellen]
+      # KMK Mechanik (Kräfte); NW IF7 (Kräfteaddition, Jg 9); BY Ph8 3.2 (Kräfteaddition, Jg 8); HE s2. Abweichung: BY 7-8
+      - id: kraefte-zusammensetzen
+        iCan: "Ich kann Kräfte auf einen Körper zeichnerisch zusammensetzen und das Kräftegleichgewicht erkennen."
+        gradeBand: "9-10"
+        requires: [kraft-darstellen]
+      # KMK Mechanik (Geschwindigkeitsänderung nach Betrag und Richtung); HE s2; BY Ph8 3.1 (Jg 8)
+      - id: kraft-aendert-geschwindigkeit
+        iCan: "Ich kann erklären, wie eine Kraft den Betrag und die Richtung der Geschwindigkeit ändert."
+        gradeBand: "9-10"
+        requires: [kraft-darstellen, geschwindigkeitsaenderung]
+      # KMK Mechanik (Trägheitsprinzip); HE s2 (Trägheit); BY Ph8 3.2 (Trägheitssatz, Jg 8); NW IF7 (Kräftegleichgewicht). Abweichung: BY 7-8
+      - id: traegheitsprinzip
+        iCan: "Ich kann mit dem Trägheitsprinzip erklären, wie sich ein Körper bewegt, wenn keine Kraft oder ein Kräftegleichgewicht auf ihn wirkt."
+        gradeBand: "9-10"
+        requires: [kraft-aendert-geschwindigkeit, kraefte-zusammensetzen]
+      # KMK Mechanik (Masse); BY NT5 1.1 (Massenbestimmung, Jg 5) und NT7 1.1; HE s1 (Körper und ihre Eigenschaften); NW Jg 6 (Messen physikalischer Größen)
+      - id: masse
+        iCan: "Ich kann Masse als Eigenschaft eines Körpers erklären und mit einer Waage messen."
+        gradeBand: "5-6"
+      # KMK Mechanik (Masse und Gewichtskraft); NW IF7 (Jg 9); HE s2; BY Ph8 3.2 (Jg 8). Abweichung: BY 7-8. Früher 7-8
+      - id: gewichtskraft
+        iCan: "Ich kann Masse und Gewichtskraft unterscheiden und erklären, dass die Gewichtskraft vom Ort abhängt."
+        gradeBand: "9-10"
+        requires: [masse, kraft-darstellen]
+      # KMK Mechanik (auch quantitativ); NW IF7 (Gewichtskräfte berechnen); BY Ph8 3.2 (Fallbeschleunigung, Zusammenhang Masse/Gewichtskraft). Früher 7-8
+      - id: gewichtskraft-berechnen
+        iCan: "Ich kann die Gewichtskraft aus der Masse berechnen."
+        gradeBand: "9-10"
+        requires: [gewichtskraft]
+
+  - id: elektromagnetische-strahlung
+    name: { de: Elektromagnetische Strahlung, en: Electromagnetic radiation }
+    competencies:
+      # KMK Elektromagnetische Strahlung (physikalische Größe Temperatur); NW IF1 (Jg 6); BY NT5 1.1 (Celsiusskala, Jg 5); HE s1 (Temperatur und ihre Messung)
+      - id: temperatur
+        iCan: "Ich kann Temperaturen mit einem Thermometer messen und in Grad Celsius angeben."
+        gradeBand: "5-6"
+      # KMK Elektromagnetische Strahlung (geradlinige Ausbreitung); NW IF4 (Lichtstrahlmodell, Jg 6); HE s1 (Sender-Empfänger-Modell); BY NT7 1.2 (Jg 7)
+      - id: geradlinige-lichtausbreitung
+        iCan: "Ich kann erklären, dass sich Licht geradlinig ausbreitet, und Lichtstrahlen zeichnen."
+        gradeBand: "5-6"
+      # NEU. NW IF4 (Lichtquellen und -empfänger, Jg 6); BY NT7 1.2 (Sehvorgang, Jg 7); HE s1 (Wahrnehmung mit den Sinnesorganen)
+      - id: lichtquellen-und-sehen
+        iCan: "Ich kann Lichtquellen und beleuchtete Körper unterscheiden und erklären, wie wir etwas sehen."
+        gradeBand: "5-6"
+        requires: [geradlinige-lichtausbreitung]
+      # NW IF4 (Schattenbildung, Jg 6); HE s1 (Schatten); BY NT7 1.2 (Kern-, Halbschatten, Jg 7)
+      - id: schatten
+        iCan: "Ich kann Schatten mit der geradlinigen Ausbreitung des Lichts erklären und ihre Form vorhersagen."
+        gradeBand: "5-6"
+        requires: [geradlinige-lichtausbreitung]
+      # KMK Elektromagnetische Strahlung (Mondphasen); HE s1 (Sonne-Erde-Mond); BY NT7 1.2 (Jg 7); NW IF6 (SiLP 7.5, Jg 7)
+      - id: mondphasen
+        iCan: "Ich kann die Mondphasen mit der Stellung von Sonne, Erde und Mond erklären."
+        gradeBand: "7-8"
+        requires: [schatten]
+      # KMK Elektromagnetische Strahlung (Finsternisse); BY NT7 1.2; NW IF6 (Jg 7); HE s1
+      - id: finsternisse
+        iCan: "Ich kann Sonnenfinsternis und Mondfinsternis erklären."
+        gradeBand: "7-8"
+        requires: [mondphasen]
+      # KMK Elektromagnetische Strahlung (Grenzen der Wahrnehmung, Sensoren); BY Ph9 1.2 (UV, IR, Jg 9); NW IF5 (Jg 7, SiLP 7.2 Licht und UV); HE s1 (Sinne erweitern). Zweigeteilt: bleibt
+      - id: wahrnehmungsgrenzen
+        iCan: "Ich kann erklären, welche Strahlung Lebewesen wahrnehmen und welche nur Sensoren erfassen, zum Beispiel Wärmestrahlung."
+        gradeBand: "7-8"
+        requires: [geradlinige-lichtausbreitung]
+      # KMK Elektromagnetische Strahlung (Streuung); NW IF4 (Streuung, Jg 6); BY NT7 1.2 (Jg 7); HE s1 (Licht an Grenzflächen). Früher 7-8. Neu ohne die Voraussetzung reflexion
+      - id: streuung
+        iCan: "Ich kann erklären, wie Licht an rauen Flächen und an Teilchen gestreut wird."
+        gradeBand: "5-6"
+        requires: [geradlinige-lichtausbreitung]
+      # KMK Elektromagnetische Strahlung (Absorption, Emission, Transmission); NW IF4 (Jg 6) und IF5 (Jg 7); BY NT7 1.2 (Absorption, Jg 7), Ph9 1.2 (Spektren). Zweigeteilt (5-6/9-10): bleibt. Eher grob (drei Begriffe)
+      - id: absorption-emission-transmission
+        iCan: "Ich kann Absorption, Emission und Transmission von Strahlung unterscheiden und an Beispielen erklären."
+        gradeBand: "7-8"
+        requires: [streuung, lichtquellen-und-sehen]
+      # KMK Elektromagnetische Strahlung (Reflexion); NW IF5 (Reflexionsgesetz, Planspiegel, Jg 7); BY Ph8 2 (Jg 8); HE s1 (Licht an Grenzflächen). Früher 5-6
+      - id: reflexion
+        iCan: "Ich kann das Reflexionsgesetz anwenden und den Weg des Lichts an einem Spiegel zeichnen."
+        gradeBand: "7-8"
+        requires: [geradlinige-lichtausbreitung]
+      # KMK Elektromagnetische Strahlung (Brechung); NW IF5 (Jg 7); BY Ph8 2 (Jg 8); HE s1
+      - id: brechung
+        iCan: "Ich kann erklären und zeichnen, wie Licht beim Übergang in einen anderen durchsichtigen Stoff gebrochen wird."
+        gradeBand: "7-8"
+        requires: [geradlinige-lichtausbreitung]
+      # NEU. NW IF5 (Totalreflexion, Lichtleiter); BY Ph8 2 (Totalreflexion, Lichtleiter). HE nennt es nicht
+      - id: totalreflexion-lichtleiter
+        iCan: "Ich kann erklären, wann Licht totalreflektiert wird und wie ein Lichtleiter funktioniert."
+        gradeBand: "7-8"
+        requires: [brechung, reflexion]
+      # NEU. NW IF5 (Bildentstehung bei Sammellinsen, Jg 7); BY Ph8 2 (Jg 8); HE s2 (optische Abbildungen). Abweichung: HE 9-10
+      - id: sammellinse-abbildung
+        iCan: "Ich kann die Bildentstehung bei einer Sammellinse mit Strahlen konstruieren."
+        gradeBand: "7-8"
+        requires: [brechung]
+      # NEU. NW IF5 (Auge, SiLP 7.3, Jg 7); BY Ph8 2 (Auge und Fehlsichtigkeit, Jg 8); HE s2 (Sehhilfen). Abweichung: HE 9-10
+      - id: auge-und-sehhilfen
+        iCan: "Ich kann erklären, wie das Auge ein Bild erzeugt und wie Brillen Fehlsichtigkeit ausgleichen."
+        gradeBand: "7-8"
+        requires: [sammellinse-abbildung]
+      # NEU. NW IF5 (Spektralzerlegung, Farbmischung, Jg 7); BY NT7 1.2 (Farben, Jg 7) und Ph8 4.2 (Dispersion)
+      - id: farben-und-spektralzerlegung
+        iCan: "Ich kann erklären, wie weißes Licht in Spektralfarben zerlegt wird und warum Gegenstände farbig aussehen."
+        gradeBand: "7-8"
+        requires: [brechung, absorption-emission-transmission]
+      # KMK Elektromagnetische Strahlung (Wärmestrahlung); HE s2 (Wärmeübertragung); BY Ph9 3.2 (Wärmestrahlung, Jg 9); NW IF1 (Jg 6). Abweichung: NW 5-6. Früher 7-8
+      - id: waermestrahlung
+        iCan: "Ich kann Wärmestrahlung beschreiben und erklären, wie sie mit der Temperatur eines Körpers zusammenhängt."
+        gradeBand: "9-10"
+        requires: [temperatur, absorption-emission-transmission, wahrnehmungsgrenzen]
+      # KMK Elektromagnetische Strahlung (Wellenlänge); BY Ph9 1.2 (Farbe und Photonenenergie). NW und HE nennen die Wellenlänge nicht: schwach belegt
+      - id: wellenlaenge
+        iCan: "Ich kann Strahlung mit ihrer Wellenlänge beschreiben."
+        gradeBand: "9-10"
+        requires: [wahrnehmungsgrenzen]
+      # KMK Elektromagnetische Strahlung (Spektrum); BY Ph9 1.2 (UV, IR, Spektren)
+      - id: elektromagnetisches-spektrum
+        iCan: "Ich kann das elektromagnetische Spektrum nach der Wellenlänge ordnen: Mobilfunk, Wärmestrahlung, sichtbares Licht und Röntgenstrahlung."
+        gradeBand: "9-10"
+        requires: [wellenlaenge]
+      # KMK Elektromagnetische Strahlung (Mobilfunk, Röntgen); NW IF10 (Röntgenstrahlung). Mobilfunk nur im KMK-Text; eher grob (zwei Themen)
+      - id: mobilfunkstrahlung-roentgenstrahlung
+        iCan: "Ich kann Nutzen und Risiken von Mobilfunkstrahlung und Röntgenstrahlung vergleichen."
+        gradeBand: "9-10"
+        requires: [elektromagnetisches-spektrum]
+      # KMK Elektromagnetische Strahlung (Strahlungshaushalt, Rückstrahlvermögen); BY Ph9 3.2 (Strahlungsgleichgewicht); HE s2 (Klima)
+      - id: strahlungshaushalt-erde
+        iCan: "Ich kann den Strahlungshaushalt der Erde beschreiben, auch das Rückstrahlvermögen von Flächen."
+        gradeBand: "9-10"
+        requires: [absorption-emission-transmission, elektromagnetisches-spektrum]
+      # KMK Elektromagnetische Strahlung (Treibhauseffekt); BY Ph9 3.2 (Modellversuch, anthropogene Beiträge); HE s2 (Klimaproblematik)
+      - id: treibhauseffekt
+        iCan: "Ich kann den natürlichen und den menschengemachten Treibhauseffekt erklären."
+        gradeBand: "9-10"
+        requires: [strahlungshaushalt-erde]
+      # KMK Elektromagnetische Strahlung (Kippelemente); BY Ph9 4.1 (nur Profilbereich). Nur ein Land über KMK hinaus
+      - id: kippelemente
+        iCan: "Ich kann erklären, was Kippelemente im Klimasystem sind, und ein Beispiel beschreiben."
+        gradeBand: "9-10"
+        requires: [treibhauseffekt]
+
+  - id: ionisierende-strahlung
+    name: { de: Ionisierende Strahlung, en: Ionising radiation }
+    competencies:
+      # NEU. NW IF10 (Atomaufbau, Isotope) und IF9 (Elektronen-Atomrumpf); BY Ph9 LB 2 (Atome), Ph10 4 (Atomkern); HE s1 (Modelle des Aufbaus der Materie); KMK Ionisierende Strahlung (Kernumwandlungen setzen ihn voraus)
+      - id: atomaufbau
+        iCan: "Ich kann den Aufbau eines Atoms aus Kern und Hülle beschreiben und Protonen, Neutronen und Elektronen unterscheiden."
+        gradeBand: "9-10"
+      # KMK Ionisierende Strahlung; NW IF10 (Jg 10); BY Ph10 4 (Entdeckung der Radioaktivität); HE s2. Voraussetzung vorher: elektromagnetisches-spektrum
+      - id: radioaktivitaet
+        iCan: "Ich kann erklären, was radioaktive Strahlung ist und wo sie vorkommt."
+        gradeBand: "9-10"
+        requires: [atomaufbau]
+      # NEU. NW IF10 (Alpha-, Beta-, Gamma-, Röntgenstrahlung); BY Ph10 4 (Eigenschaften und Entstehung); HE s2 (verschiedene Strahlungsarten)
+      - id: strahlungsarten
+        iCan: "Ich kann Alpha-, Beta- und Gammastrahlung und Röntgenstrahlung nach ihren Eigenschaften unterscheiden."
+        gradeBand: "9-10"
+        requires: [radioaktivitaet, elektromagnetisches-spektrum]
+      # KMK Ionisierende Strahlung (Aktivität, Zählrate); NW IF10 (Aktivität in Bq, Nachweismethoden). BY und HE nennen sie nicht ausdrücklich
+      - id: aktivitaet-zaehlrate
+        iCan: "Ich kann Aktivität und Zählrate unterscheiden und Zählraten mit einem Zählrohr deuten."
+        gradeBand: "9-10"
+        requires: [radioaktivitaet]
+      # KMK Ionisierende Strahlung (Spontanzerfall); NW IF10 (Zufallsprozess); BY Ph10 4 (α-Zerfall); HE s2 (radioaktive Zerfallsprozesse)
+      - id: spontanzerfall
+        iCan: "Ich kann den Zerfall von Atomkernen als Zufallsprozess beschreiben."
+        gradeBand: "9-10"
+        requires: [radioaktivitaet]
+      # KMK Ionisierende Strahlung (Halbwertszeit); BY Ph10 4; NW IF10; HE s2 (Daten radioaktiver Zerfallsprozesse)
+      - id: halbwertszeit
+        iCan: "Ich kann erklären, was die Halbwertszeit ist, und sie aus einem Zerfallsdiagramm ablesen."
+        gradeBand: "9-10"
+        requires: [spontanzerfall, aktivitaet-zaehlrate]
+      # NW IF10 (Zerfallsgesetz); KMK nennt "quantitativ" bei Ionisierender Strahlung nicht. BY und HE nicht belegt: schwach
+      - id: halbwertszeit-rechnen
+        iCan: "Ich kann mit der Halbwertszeit berechnen, wie viel einer radioaktiven Probe nach einer gegebenen Zeit übrig ist."
+        gradeBand: "9-10"
+        requires: [halbwertszeit]
+      # KMK Ionisierende Strahlung (Absorption); NW IF10 (Wechselwirkung mit Materie, Absorption, Schutz); HE s2 (Schutzmaßnahmen)
+      - id: absorption-ionisierender-strahlung
+        iCan: "Ich kann erklären, wie sich ionisierende Strahlung abschirmen lässt."
+        gradeBand: "9-10"
+        requires: [strahlungsarten]
+      # KMK Ionisierende Strahlung (biologische Wirkung); NW IF10 (Dosis, Schutz); BY Ph10 4 (Strahlenwirkung, Schutzmaßnahmen); HE s2
+      - id: biologische-wirkung
+        iCan: "Ich kann die biologische Wirkung ionisierender Strahlung beschreiben und Regeln des Strahlenschutzes nennen."
+        gradeBand: "9-10"
+        requires: [absorption-ionisierender-strahlung]
+      # KMK Ionisierende Strahlung (medizinische Nutzung); NW IF10; HE "Physik in der Verantwortung"; BY Ph10 5.2 (nur Profilbereich)
+      - id: medizinische-nutzung
+        iCan: "Ich kann Nutzen und Risiken ionisierender Strahlung in der Medizin abwägen."
+        gradeBand: "9-10"
+        requires: [biologische-wirkung]
+      # KMK Ionisierende Strahlung (Kernspaltung); NW IF10 (Kernreaktor); BY Ph10 4 (Kernprozess) und 5.2 (Profilbereich). HE s2 nennt sie nicht
+      - id: kernspaltung
+        iCan: "Ich kann die Kernspaltung beschreiben und erklären, wie ein Kernkraftwerk Energie gewinnt."
+        gradeBand: "9-10"
+        requires: [spontanzerfall, atomaufbau, energieumwandlung]
+      # KMK Ionisierende Strahlung (Kernfusion); NW IF10; BY Ph10 5.2 (Fusionsreaktor, Profilbereich)
+      - id: kernfusion
+        iCan: "Ich kann die Kernfusion beschreiben und mit der Kernspaltung vergleichen."
+        gradeBand: "9-10"
+        requires: [kernspaltung]
+      # KMK Ionisierende Strahlung (Lagerung); NW IF10 (Endlagerung); BY Ph10 5.2 (Endlagerung, Profilbereich)
+      - id: lagerung-radioaktiver-abfaelle
+        iCan: "Ich kann erklären, warum radioaktive Abfälle sicher gelagert werden müssen und welche Fragen dabei offen sind."
+        gradeBand: "9-10"
+        requires: [halbwertszeit, kernspaltung]

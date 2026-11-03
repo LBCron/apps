@@ -1,0 +1,131 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/curriculum.v1.schema.json
+land: HE
+schoolType: { de: "Gymnasium (G9)", en: "Grammar school (G9)" }
+version: Kerncurriculum Mathematik Sekundarstufe I Gymnasium (2011) und Lehrplan Mathematik gymnasialer Bildungsgang G9 (2016, verbindliche Themen 5.1 bis 10.5)
+source:
+  title: Kerncurriculum Mathematik Gymnasium Sekundarstufe I, Hessisches Kultusministerium (Jahrgänge und Einheiten nach dem Lehrplan Mathematik G9)
+  url: https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-07/kerncurriculum_mathematik_gymnasium.pdf
+placements:
+  - { competency: natuerliche-zahlen, grades: [5], unit: "5.1" }
+  - { competency: zahlen-vergleichen-ordnen, grades: [5], unit: "5.1" }
+  - { competency: runden, grades: [5, 6], unit: "5.1, 6.1" }
+  - { competency: schriftliche-verfahren, grades: [5], unit: "5.1" }
+  - { competency: grundrechenarten-rechengesetze, grades: [5, 6], unit: "5.1, 6.1" }
+  - { competency: ueberschlagen, grades: [5, 6, 7], unit: "5.1, 6.1, 7.1" }
+  - { competency: potenzen, grades: [5, 10], unit: "5.1, 10.1" }
+  - { competency: teilbarkeit, grades: [6], unit: "6.1" }
+  - { competency: primfaktoren-ggt-kgv, grades: [6], unit: "6.1" }
+  - { competency: brueche-begriff, grades: [6], unit: "6.1" }
+  - { competency: brueche-kuerzen-erweitern, grades: [6], unit: "6.1" }
+  - { competency: bruchrechnung-grundaufgaben, grades: [6], unit: "6.1" }
+  - { competency: brueche-addieren-subtrahieren, grades: [6], unit: "6.1" }
+  - { competency: brueche-multiplizieren-dividieren, grades: [6], unit: "6.1" }
+  - { competency: dezimalbrueche, grades: [6], unit: "6.1" }
+  - { competency: dezimalbrueche-rechnen, grades: [6], unit: "6.1" }
+  - { competency: rationale-zahlen, grades: [7], unit: "7.2" }
+  - { competency: rationale-zahlen-rechnen, grades: [7], unit: "7.2" }
+  - { competency: quadratwurzeln, grades: [9], unit: "9.2" }
+  - { competency: reelle-zahlen, grades: [9], unit: "9.2" }
+  - { competency: wurzelgesetze, grades: [9], unit: "9.2" }
+  - { competency: prozent-grundbegriffe, grades: [7], unit: "7.1" }
+  - { competency: prozent-prozentwert, grades: [7], unit: "7.1" }
+  - { competency: prozent-prozentsatz, grades: [7], unit: "7.1" }
+  - { competency: prozent-grundwert, grades: [7], unit: "7.1" }
+  - { competency: prozent-veraenderung, grades: [7, 8], unit: "7.1, 8.3" }
+  - { competency: prozent-vergleich, grades: [7], unit: "7.1" }
+  - { competency: prozent-sachaufgaben, grades: [7], unit: "7.1" }
+  - { competency: prozent-von-prozenten, grades: [8], unit: "8.3" }
+  - { competency: zinsrechnung, grades: [7, 8], unit: "7.1, 8.3" }
+  - { competency: zinseszins, grades: [7, 8], unit: "7.1, 8.3" }
+  - { competency: groessenvorstellungen-schaetzen, grades: [5], unit: "5.1, 5.3" }
+  - { competency: umrechnung-groessen, grades: [5, 10], unit: "5.3, 10.1" }
+  - { competency: messen-laenge-masse-geld-zeit, grades: [5], unit: "5.3" }
+  - { competency: einfache-gleichungen, grades: [5, 7], unit: "5.1, 7.2" }
+  - { competency: terme-variable, grades: [8], unit: "8.1" }
+  - { competency: terme-umformen, grades: [8], unit: "8.1" }
+  - { competency: klammern-binome, grades: [8], unit: "8.1" }
+  - { competency: lineare-gleichungen, grades: [8], unit: "8.1" }
+  - { competency: gleichungen-aufstellen, grades: [8], unit: "8.1" }
+  - { competency: formeln-umstellen, grades: [8], unit: "8.1" }
+  - { competency: ungleichungen, grades: [8], unit: "8.1" }
+  - { competency: bruchgleichungen, grades: [9], unit: "9.3" }
+  - { competency: lineare-gleichungssysteme, grades: [9], unit: "9.1" }
+  - { competency: lgs-rechnerisch, grades: [9], unit: "9.1" }
+  - { competency: potenzgesetze, grades: [10], unit: "10.1" }
+  - { competency: potenzen-ganzzahlige-exponenten, grades: [10], unit: "10.1" }
+  - { competency: n-te-wurzeln, grades: [10], unit: "10.1" }
+  - { competency: quadratische-gleichungen-einfach, grades: [9], unit: "9.3" }
+  - { competency: quadratische-gleichungen, grades: [9], unit: "9.3" }
+  - { competency: logarithmen, grades: [10], unit: "10.2" }
+  - { competency: zuordnungen, grades: [5, 7], unit: "5.1, 7.1" }
+  - { competency: dreisatz, grades: [7], unit: "7.1" }
+  - { competency: proportionale-zuordnungen, grades: [7, 8], unit: "7.1, 8.1" }
+  - { competency: antiproportionale-zuordnungen, grades: [7, 8], unit: "7.1, 8.1" }
+  - { competency: funktionsbegriff, grades: [8], unit: "8.1" }
+  - { competency: funktionen-darstellung, grades: [8, 9, 10], unit: "8.1, 9.3, 10.1" }
+  - { competency: lineare-funktionen, grades: [8], unit: "8.1" }
+  - { competency: geradengleichungen, grades: [8], unit: "8.1" }
+  - { competency: quadratische-funktionen, grades: [9], unit: "9.3" }
+  - { competency: quadratische-funktionen-anwenden, grades: [9], unit: "9.3" }
+  - { competency: potenzfunktionen, grades: [10], unit: "10.1" }
+  - { competency: exponentialfunktionen, grades: [10], unit: "10.2" }
+  - { competency: bogenmass, grades: [10], unit: "10.4" }
+  - { competency: sinusfunktion, grades: [10], unit: "10.4" }
+  - { competency: grundfiguren-eben, grades: [5], unit: "5.2" }
+  - { competency: parallel-senkrecht-abstand, grades: [5], unit: "5.2" }
+  - { competency: winkel-messen, grades: [6], unit: "6.2" }
+  - { competency: koordinatensystem, grades: [5, 7], unit: "5.2, 7.2" }
+  - { competency: symmetrie, grades: [5, 6, 8], unit: "5.2, 6.2, 8.2" }
+  - { competency: vierecke-grundfiguren, grades: [5], unit: "5.2" }
+  - { competency: konstruktionen, grades: [5], unit: "5.2" }
+  - { competency: bewegungen-figuren, grades: [6, 7], unit: "6.2, 7.2" }
+  - { competency: grundkoerper-quader-wuerfel, grades: [5, 6], unit: "5.2, 6.2" }
+  - { competency: netze-schraegbilder-modelle, grades: [5], unit: "5.2" }
+  - { competency: einheiten-flaeche-volumen, grades: [5], unit: "5.3" }
+  - { competency: flaeche-umfang-quadrat-rechteck, grades: [5, 6], unit: "5.2, 6.2" }
+  - { competency: zusammengesetzte-figuren, grades: [6, 7], unit: "6.2, 7.3" }
+  - { competency: volumen-oberflaeche-quader-wuerfel, grades: [5, 6], unit: "5.2, 6.2" }
+  - { competency: haus-der-vierecke, grades: [8], unit: "8.2" }
+  - { competency: winkelsaetze, grades: [7], unit: "7.3" }
+  - { competency: dreieckskonstruktion, grades: [7], unit: "7.3" }
+  - { competency: kongruenz, grades: [7, 8], unit: "7.3, 8.2" }
+  - { competency: linien-im-dreieck, grades: [7, 8], unit: "7.3, 8.2" }
+  - { competency: kreis-sehne-tangente, grades: [8], unit: "8.2" }
+  - { competency: satz-des-thales, grades: [8], unit: "8.2" }
+  - { competency: flaeche-umfang-dreieck-viereck, grades: [7], unit: "7.3" }
+  - { competency: grundkoerper-prisma-zylinder, grades: [8, 9], unit: "8.2, 9.6" }
+  - { competency: netze-schraegbilder-prisma-zylinder, grades: [8, 9], unit: "8.2, 9.6" }
+  - { competency: volumen-oberflaeche-prisma, grades: [8], unit: "8.2" }
+  - { competency: kreis-umfang-flaeche, grades: [9], unit: "9.6" }
+  - { competency: aehnlichkeit, grades: [9], unit: "9.4" }
+  - { competency: strahlensaetze, grades: [9], unit: "9.4" }
+  - { competency: satz-des-pythagoras, grades: [9], unit: "9.5" }
+  - { competency: trigonometrie, grades: [10], unit: "10.4" }
+  - { competency: sinus-kosinussatz, grades: [10], unit: "10.4" }
+  - { competency: grundkoerper-pyramide-kegel-kugel, grades: [10], unit: "10.3" }
+  - { competency: netze-schraegbilder-pyramide-kegel, grades: [10], unit: "10.3" }
+  - { competency: volumen-oberflaeche-zylinder, grades: [9], unit: "9.6" }
+  - { competency: volumen-oberflaeche-pyramide-kegel-kugel, grades: [10], unit: "10.3" }
+  - { competency: berechnungen-dreiecke-vielecke, grades: [9, 10], unit: "9.5, 10.4" }
+  - { competency: daten-darstellen, grades: [5, 7, 8, 9], unit: "5.1, 7.1, 8.4, 9.7" }
+  - { competency: umfragen-erhebungen, grades: [9], unit: "9.7" }
+  - { competency: haeufigkeiten, grades: [5, 6], unit: "5.1, 6.1" }
+  - { competency: mittelwert, grades: [6, 9], unit: "6.1, 9.7" }
+  - { competency: zaehlprinzip, grades: [10], unit: "10.5" }
+  - { competency: zufallserscheinungen, grades: [5, 7], unit: "5.1, 7.4" }
+  - { competency: haeufigkeit-als-schaetzwert, grades: [7, 10], unit: "7.4, 10.5" }
+  - { competency: wahrscheinlichkeitsbegriff, grades: [6, 7], unit: "6.1, 7.4" }
+  - { competency: zufall-laplace, grades: [7], unit: "7.4" }
+  - { competency: zufall-gegenereignis, grades: [7, 10], unit: "7.4, 10.5" }
+  - { competency: zufall-baumdiagramm, grades: [7, 10], unit: "7.4, 10.5" }
+  - { competency: zufall-pfadregel-1, grades: [7, 10], unit: "7.4, 10.5" }
+  - { competency: zufall-ohne-zuruecklegen, grades: [7], unit: "7.4" }
+  - { competency: zufall-pfadregel-2, grades: [7, 10], unit: "7.4, 10.5" }
+  - { competency: zufall-ergebnisform, grades: [7], unit: "7.4" }
+  - { competency: zufall-ereignis-uebersetzen, grades: [7, 10], unit: "7.4, 10.5" }
+  - { competency: simulationen, grades: [8], unit: "8.4" }
+  - { competency: kenngroessen-lage-streumasse, grades: [9], unit: "9.7" }
+  - { competency: boxplot, grades: [7, 8] }
+  - { competency: daten-kritisch-lesen, grades: [9], unit: "9.7" }
+  - { competency: stichproben-erhebungen-planen, grades: [9], unit: "9.7" }
+  - { competency: vierfeldertafel, grades: [7, 8] }

@@ -1,0 +1,100 @@
+---
+pagination:
+  data: map.termsPages
+  size: 1
+  alias: pageLanguage
+permalink: "/{{ pageLanguage.root }}map/index.html"
+layout: base.njk
+scripts: [map.js]
+eleventyComputed:
+  title: "{{ t.map.terms.title }}"
+  description: "{{ t.map.terms.description }}"
+---
+{#-
+  The entry to the learning map (feat/learning-map, B12): the subjects with a map, and the terms (KD-02) as a picture
+  of the model. Each box of the picture is a link to its definition on this page; assets/map.js opens the definition
+  as a dialog instead. The arrows are drawn with CSS and hidden from screen readers, which read the same as sentences.
+-#}
+{%- set T = t.map.terms %}
+{%- import "components.njk" as c with context %}
+
+{%- macro node(id, cls="") %}{% set item = T.items | byId(id) %}<a href="#{{ id }}" class="map-node {{ cls }}" data-opens="{{ id }}"><b>{{ item.title }}</b><span>{{ T.nodes[id] }}</span></a>{% endmacro %}
+
+<div class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-12 flex flex-col gap-10">
+  <div class="flex flex-col gap-2">
+    <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">{{ T.headline }}</h1>
+    <p class="m-0 max-w-3xl text-lg text-slate-600">{{ T.lead }}</p>
+  </div>
+
+  <section aria-labelledby="faecher">
+    <h2 id="faecher" class="m-0 text-2xl font-bold text-slate-900">{{ T.subjects }}</h2>
+    <ul class="list-none p-0 m-0 mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {%- for s in map.subjects %}
+      <li class="panel">
+        <h3 class="m-0 text-xl font-bold"><a href="{{ c.mapUrl(s.id + '/') | trim }}" class="text-blue-700 underline underline-offset-2"{{ s.name | fallbackLang(lang) | safe }}>{{ s.name | tx(lang) }}</a></h3>
+        <p class="m-0 mt-1 text-slate-600">{{ T.subjectInfo(s.strands.length, s.competencies.length) }}{% if s.curricula.length %} · {{ T.subjectCurricula(s.curricula.length) }}{% endif %}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <section aria-labelledby="bild" class="flex flex-col gap-3">
+    <h2 id="bild" class="m-0 text-2xl font-bold text-slate-900">{{ T.modelHeadline }}</h2>
+    <p class="m-0 text-slate-600">{{ T.modelLead }}</p>
+    <figure class="m-0 flex flex-col gap-3">
+      <div class="map-scroll" role="region" aria-label="{{ T.pictureLabel }}" tabindex="0">
+        <div class="map-model">
+          <div class="map-loop" style="grid-column: 5; grid-row: 1;"><a href="#baut-auf" class="map-edge-link" data-opens="baut-auf">{{ T.edges.requires }}</a></div>
+          <div style="grid-column: 1; grid-row: 2;" class="grid">{{ node("fach") }}</div>
+          <div style="grid-column: 2; grid-row: 2;" class="map-edge map-edge-h" aria-hidden="true">{{ T.edges.hasMany }}</div>
+          <div style="grid-column: 3; grid-row: 2;" class="grid">{{ node("strang") }}</div>
+          <div style="grid-column: 4; grid-row: 2;" class="map-edge map-edge-h" aria-hidden="true">{{ T.edges.hasMany }}</div>
+          <div style="grid-column: 5; grid-row: 2;" class="grid">{{ node("baustein", "map-node-main") }}</div>
+          <div style="grid-column: 6; grid-row: 2;" class="map-edge map-edge-h" aria-hidden="true">{{ T.edges.placement }}</div>
+          <div style="grid-column: 7; grid-row: 2;" class="grid">{{ node("lehrplan") }}</div>
+          <div style="grid-column: 1; grid-row: 3;" class="map-edge map-edge-v map-edge-down" aria-hidden="true">{{ T.edges.from }}</div>
+          <div style="grid-column: 3; grid-row: 3;" class="map-edge map-edge-v map-edge-up" aria-hidden="true">{{ T.edges.staysIn }}</div>
+          <div style="grid-column: 5; grid-row: 3;" class="map-edge map-edge-v map-edge-up map-edge-blue" aria-hidden="true">{{ T.edges.practises }}</div>
+          <div style="grid-column: 1; grid-row: 4;" class="grid">{{ node("quelle", "map-node-source") }}</div>
+          <div style="grid-column: 3; grid-row: 4;" class="grid">{{ node("app", "map-node-app") }}</div>
+          <div style="grid-column: 4; grid-row: 4;" class="map-edge map-edge-h" aria-hidden="true">{{ T.edges.hasMany }}</div>
+          <div style="grid-column: 5; grid-row: 4;" class="grid">{{ node("seite", "map-node-app") }}</div>
+        </div>
+      </div>
+      <figcaption class="text-slate-600">
+        <p class="m-0">{{ T.sentencesLead }}</p>
+        <ul class="m-0 mt-1 pl-5 grid gap-x-6 sm:grid-cols-2">
+          {%- for sentence in T.sentences %}<li>{{ sentence }}</li>{% endfor %}
+        </ul>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section aria-labelledby="begriffe">
+    <h2 id="begriffe" class="m-0 text-2xl font-bold text-slate-900">{{ T.definitions }}</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      {%- for item in T.items %}
+      <article id="{{ item.id }}" class="panel scroll-mt-4" data-kind="{{ T.kind }}" aria-labelledby="{{ item.id }}-titel">
+        <h3 id="{{ item.id }}-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>{{ item.title }}</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">{{ item.text }}</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>{{ T.example }}</b> {{ item.example }}</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">{{ T.inPicture }}</b> {{ item.links }}</p>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section aria-labelledby="regeln">
+    <h2 id="regeln" class="m-0 text-2xl font-bold text-slate-900">{{ T.rulesHeadline }}</h2>
+    <ol class="m-0 mt-3 pl-6 flex flex-col gap-2 text-lg">
+      {%- for rule in T.rules %}<li>{{ rule }}</li>{% endfor %}
+    </ol>
+  </section>
+
+  <p class="m-0 text-sm text-slate-600">{{ T.data }}
+    {%- for s in map.subjects %} <a href="{{ ('/map/' + s.id + '.json') | url }}" class="text-blue-700 underline underline-offset-2">{{ s.id }}.json</a>{% if not loop.last %},{% endif %}{% endfor %}</p>
+</div>
+
+{{ c.mapDialog() }}

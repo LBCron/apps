@@ -1,0 +1,10 @@
+---
+pagination:
+  data: map.json
+  size: 1
+  alias: item
+permalink: "/map/{{ item.subject }}.json"
+eleventyExcludeFromCollections: true
+---
+{#- The map of a subject as data, for assistants and the tooling (docs/learning-map-contract.md, section 5). -#}
+{{ item.data | dump(2) | safe }}

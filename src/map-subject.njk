@@ -1,0 +1,142 @@
+---
+pagination:
+  data: map.subjectPages
+  size: 1
+  alias: view
+permalink: "/{{ view.l.root }}map/{{ view.subject.id }}/{% if view.curriculum %}{{ view.curriculum.id }}/{% endif %}index.html"
+layout: base.njk
+scripts: [map.js]
+eleventyComputed:
+  title: "{% if view.curriculum %}{{ t.map.subject.titleCurriculum(view.subject.name | tx(lang), t.map.lands[view.curriculum.land] + ', ' + (view.curriculum.schoolType | tx(lang))) }}{% else %}{{ t.map.subject.title(view.subject.name | tx(lang)) }}{% endif %}"
+  description: "{{ t.map.subject.description(view.subject.name | tx(lang)) }}"
+---
+{#-
+  The map of a subject (feat/learning-map, B8): a grid of strands (columns) and rows, without a curriculum one row per
+  grade band (Richtstufe), with one the rows of KD-06: 5 · 5/6 · 6 · 7 · … where a band row holds what the curriculum
+  does not place ("noch ohne Klasse"). One page per subject and curriculum (KD-15), so the curriculum is in the address.
+  Without JS: the curricula are links, every competency is a link to its page, all competencies show. With JS
+  (assets/map.js): a drop-down instead of the links, "Nur Lücken zeigen", a competency's details as a dialog.
+-#}
+{%- set S = t.map.subject %}
+{%- set subject = view.subject %}
+{%- set curriculum = view.curriculum %}
+{%- set name = subject.name | tx(lang) %}
+{%- import "components.njk" as c with context %}
+{%- set here = c.mapUrl(subject.id + '/' + ((curriculum.id + '/') if curriculum else '')) | trim %}
+
+<div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 flex flex-col gap-6">
+  {{ c.breadcrumb([{ label: t.map.name, href: c.mapUrl('') | trim }, { label: name, attrs: subject.name | fallbackLang(lang) }]) }}
+
+  <div class="flex flex-col gap-2">
+    <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">{{ S.headline(name) }}</h1>
+    <p class="m-0 max-w-3xl text-lg text-slate-600">{{ S.description(name) }}</p>
+  </div>
+
+  <section class="panel" aria-labelledby="lesen">
+    <div class="flex flex-wrap items-baseline justify-between gap-2">
+      <h2 id="lesen" class="m-0 text-lg font-bold text-slate-900">{{ S.howTo.headline }}</h2>
+      <a href="{{ c.mapUrl('') | trim }}#begriffe" class="text-blue-700 underline underline-offset-2">{{ S.howTo.all }}</a>
+    </div>
+    <dl class="m-0 mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
+      {%- for item in S.howTo.items %}
+      <div><dt class="font-bold"><a href="{{ c.mapUrl('') | trim }}#{{ item.id }}" class="text-blue-700 underline underline-offset-2">{{ item.term }}</a> · {{ item.where }}</dt><dd class="m-0 mt-1 text-slate-600">{{ item.text }}</dd></div>
+      {%- endfor %}
+    </dl>
+  </section>
+
+  {#- Which curriculum: links without JS; a drop-down with JS (map.js navigates on change). Every Land is listed;
+      one without a captured curriculum cannot be chosen. #}
+  <div class="flex flex-col gap-3">
+    {%- set W = S.when %}
+    <div data-map-when hidden>
+      <label for="lehrplan" class="block text-sm font-semibold text-slate-700">{{ W.label }}</label>
+      <select id="lehrplan" class="field mt-1 w-full sm:w-auto" aria-describedby="modus" data-current="{{ here }}">
+        <option value="{{ c.mapUrl(subject.id + '/') | trim }}"{% if not curriculum %} selected{% endif %}>{{ W.richtstufe }}</option>
+        {%- for l in subject.lands %}
+        {%- if l.curricula.length %}
+        {%- for id in l.curricula %}{% set cu = subject.curricula | byId(id) %}
+        <option value="{{ c.mapUrl(subject.id + '/' + cu.id + '/') | trim }}"{% if curriculum and curriculum.id == cu.id %} selected{% endif %}>{{ W.curriculum(t.map.lands[l.land], cu.schoolType | tx(lang)) }}</option>
+        {%- endfor %}
+        {%- else %}
+        <option disabled>{{ W.missing(t.map.lands[l.land]) }}</option>
+        {%- endif %}
+        {%- endfor %}
+      </select>
+    </div>
+    <nav aria-labelledby="lehrplan-links" data-map-when-links>
+      <h2 id="lehrplan-links" class="m-0 text-sm font-semibold text-slate-700">{{ W.label }}</h2>
+      <ul class="list-none p-0 m-0 mt-1 flex flex-wrap gap-2">
+        <li><a href="{{ c.mapUrl(subject.id + '/') | trim }}" class="btn {{ 'btn-primary' if not curriculum else 'btn-secondary' }}"{% if not curriculum %} aria-current="page"{% endif %}>{{ W.richtstufe }}</a></li>
+        {%- for cu in subject.curricula %}
+        <li><a href="{{ c.mapUrl(subject.id + '/' + cu.id + '/') | trim }}" class="btn {{ 'btn-primary' if curriculum and curriculum.id == cu.id else 'btn-secondary' }}"{% if curriculum and curriculum.id == cu.id %} aria-current="page"{% endif %}>{{ W.curriculum(t.map.lands[cu.land], cu.schoolType | tx(lang)) }}</a></li>
+        {%- endfor %}
+      </ul>
+      {%- set missing = [] %}
+      {%- for l in subject.lands %}{% if not l.curricula.length %}{% set _ = missing.push(t.map.lands[l.land]) %}{% endif %}{% endfor %}
+      {%- if missing.length %}
+      <p class="m-0 mt-2 text-sm text-slate-600">{{ W.missingList }} {{ missing | join(", ") }}</p>
+      {%- endif %}
+    </nav>
+    <p id="modus" class="map-mode max-w-3xl">
+      {%- if curriculum %}{{ S.mode.curriculum(t.map.lands[curriculum.land] + ', ' + (curriculum.schoolType | tx(lang)), curriculum.placed, subject.competencies.length) }}
+      {%- else %}{{ S.mode.richtstufe }}{% endif -%}
+    </p>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+      <label class="flex items-center gap-2 min-h-11 cursor-pointer" data-map-gaps hidden>
+        <input type="checkbox" class="w-5 h-5 m-0">
+        {{ S.onlyGaps }}
+      </label>
+      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-covered"></span>{{ S.legend.covered }}</p>
+      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-gap"></span>{{ S.legend.gap }}</p>
+    </div>
+  </div>
+
+  {%- set rows = curriculum.rows if curriculum else subject.rows %}
+  <div class="map-scroll" role="region" aria-label="{{ S.gridLabel(name) }}" tabindex="0">
+    <table class="map-grid" style="min-width: {{ 7 + subject.strands.length * 12 }}rem;">
+      <colgroup><col style="width: 7rem;">{% for s in subject.strands %}<col>{% endfor %}</colgroup>
+      <thead>
+        <tr>
+          <td class="text-sm text-slate-600 align-bottom">{{ S.corner }}</td>
+          {%- for s in subject.strands %}
+          <th scope="col">
+            <a href="{{ c.mapUrl(subject.id + '/' + s.id + '/') | trim }}" class="text-lg font-bold text-slate-900 underline underline-offset-2"{{ s.name | fallbackLang(lang) | safe }}>{{ s.name | tx(lang) }}</a>
+            <span class="block mt-1 text-sm text-slate-600">{{ S.count(s.covered, s.total) }}</span>
+            <span aria-hidden="true" class="map-bar mt-2"><span style="width: {{ (s.covered / s.total * 100) | round }}%;"></span></span>
+          </th>
+          {%- endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {%- for row in rows %}
+        <tr{% if row.band %} class="map-band"{% endif %}>
+          <th scope="row">{{ t.map.grade(row.label) }}{% if row.band %}<span class="block mt-1 text-xs font-normal text-slate-600">{{ S.noGrade }}</span>{% endif %}</th>
+          {%- for cell in row.cells %}
+          <td>
+            {%- if cell.competencies.length %}
+            <ul class="map-cell">
+              {%- for item in cell.competencies %}
+              {{ c.mapChip(subject, subject.competencies | byId(item.id), item.again) }}
+              {%- endfor %}
+            </ul>
+            {%- endif %}
+          </td>
+          {%- endfor %}
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <p class="m-0 text-slate-600">{{ S.hint }}</p>
+
+  <p class="m-0 text-sm text-slate-600">{{ S.source }}
+    {% if subject.source.url %}<a href="{{ subject.source.url }}" class="text-blue-700 underline underline-offset-2" lang="de">{{ subject.source.title }}</a>{% else %}<span lang="de">{{ subject.source.title }}</span>{% endif %}
+    {%- if curriculum %} · {% if curriculum.source.url %}<a href="{{ curriculum.source.url }}" class="text-blue-700 underline underline-offset-2" lang="de">{{ curriculum.source.title }}</a>{% else %}<span lang="de">{{ curriculum.source.title }}</span>{% endif %}{% endif %}
+    · <a href="{{ ('/map/' + subject.id + '.json') | url }}" class="text-blue-700 underline underline-offset-2">{{ S.json }}</a></p>
+</div>
+
+{%- for comp in subject.competencies %}
+{{ c.mapDetails(subject, comp, curriculum) }}
+{%- endfor %}
+{{ c.mapDialog() }}

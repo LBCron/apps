@@ -1,0 +1,8 @@
+{
+  "format": 1,
+  "strand": "physik/elektrizitaetslehre",
+  "pages": [
+    { "path": "stromkreis/einfach/", "title": { "de": "Der einfache Stromkreis" }, "competencies": ["einfacher-stromkreis", "schalter"] },
+    { "path": "stromkreis/messen/", "title": "Stromstärke messen", "competencies": ["stromstaerke-messen"] }
+  ]
+}

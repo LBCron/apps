@@ -9,7 +9,7 @@ const https = z.url({ protocol: /^https$/ });
 // A text for readers: a plain string (German, the language of the catalog) or a map of texts by language,
 // { de: …, en: … }, as in the app templates (runtime/shared/languages.ts). German is required, other languages are
 // optional: a page in a language without a translation shows the German text.
-const Text = z.union([
+export const Text = z.union([
   z.string().min(1),
   z.strictObject({
     de: z.string().min(1).describe("German"),
@@ -25,6 +25,12 @@ const TrimmedText = z.union([
     en: z.string().trim().min(1).optional().describe("English"),
   }),
 ]);
+
+// An id of the learning map: lower-case letters, digits and hyphens; a strand is addressed as "<subject>/<strand>".
+export const Id = z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, "lower-case letters, digits and hyphens");
+export const StrandRef = z
+  .string()
+  .regex(/^[a-z0-9]+(-[a-z0-9]+)*\/[a-z0-9]+(-[a-z0-9]+)*$/, "\"<subject>/<strand>\", e.g. mathematik/stochastik");
 
 export const Entry = z
   .object({
@@ -43,6 +49,18 @@ export const Entry = z
       .optional()
       .describe("Single topics with a deep link into the app"),
     keywords: z.array(Text).optional().describe("More words people search for"),
+    strand: StrandRef.optional().describe(
+      "The strand of the learning map the app stays in, \"<subject>/<strand>\" (https://lernapps.net/apps/map/). " +
+        "Leave it out when the app has none. An explainer of format 2 says its strand in src/app.yaml; give it here only to match",
+    ),
+    competencies: z
+      .array(Id)
+      .min(1)
+      .optional()
+      .describe(
+        "Only for apps that are not explainers: the competencies of the strand's subject the app practises, by id. " +
+          "An explainer of format 2 names them on its pages",
+      ),
     creator: z
       .strictObject({
         name: z.string().min(1).describe("Name thanks are addressed to"),
@@ -86,6 +104,10 @@ export const Entry = z
   .refine((e) => e.fitness.thirdParty === "none" || e.fitness.thirdPartyNote, {
     message: "fitness.thirdPartyNote: say which servers, and when",
     path: ["fitness", "thirdPartyNote"],
+  })
+  .refine((e) => !e.competencies || e.strand, {
+    message: "competencies need a strand: say which strand of the learning map the app stays in",
+    path: ["strand"],
   });
 
 export const SCHEMA_ID = "https://lernapps.net/apps/schemas/entry.v1.schema.json";

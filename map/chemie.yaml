@@ -1,0 +1,412 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+#
+# Proposal for map/chemie.yaml. Not in /home/user/apps. Reasons and decisions: report.md in the same folder.
+#
+# Source abbreviations in the comments (full citations in report.md, section 1):
+#   KMK  = KMK, Weiterentwickelte Bildungsstandards Chemie (MSA), Beschluss 16.12.2004 i.d.F. 13.06.2024
+#          S = Standard (S 0 .. S 3.3); "Inhalt" = Verbindliche inhaltliche Aspekte (p. 15)
+#   IMPL = KMK, Implementationsbroschüre Naturwissenschaften, 06.06.2024
+#   HE   = Hessen, Kerncurriculum Sekundarstufe I Gymnasium, Chemie (2011)
+#          HE1 = "1. Lernjahr" (counts as band 7-8), HE2 = "zusätzlich nach Abschluss Jg. 9/10" (band 9-10)
+#   BY   = Bayern, LehrplanPLUS Gymnasium, Chemie 8, 9, 10 (NTG); BY8 / BY9 / BY10 = Jahrgangsstufe, LB = Lernbereich
+#   NW   = Nordrhein-Westfalen, Kernlehrplan Sek I Gymnasium (G9) Chemie, Heft 3415 (2019); IF = Inhaltsfeld.
+#          The Kernlehrplan itself has two stages only. The grades NW7..NW10 come from two school-internal curricula
+#          (Hildegardis-Gymnasium Bochum, Couven-Gymnasium Aachen), which agree: IF1-4 Jg. 7, IF5-7 Jg. 8,
+#          IF8 Jg. 9, IF9-10 Jg. 10. They are indicative only.
+#   (Länder) = content not in the KMK list but in the named Länder.
+#   "Richtstufe geschätzt" = no majority of the three curricula; the band is carried over from the old model.
+# gradeBand rule: two of the three Länder curricula; disagreements are named. No Chemie in grades 5-6 in any of them.
+name: { de: Chemie, en: Chemistry }
+source:
+  title: KMK-Bildungsstandards Chemie, Mittlerer Schulabschluss (Beschluss vom 16.12.2004 i.d.F. vom 13.06.2024); Strang- und Baustein-Zuschnitt nach den verbindlichen inhaltlichen Aspekten, ergänzt um Inhalte der Kerncurricula Hessen, Bayern und Nordrhein-Westfalen
+  url: https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2024/2024_06_13-WeBiS_Chemie_MSA.pdf
+strands:
+  - id: stoffe-und-teilchen
+    name: { de: Aufbau und Eigenschaften von Stoffen und Teilchen, en: Structure and properties of substances and particles }
+    competencies:
+      # ---- Stoffe und ihre Eigenschaften (makroskopische Ebene) ----
+      - id: sicherheit-beim-experimentieren
+        # KMK Inhalt "Sicherheitsmaßnahmen beim Experimentieren"; BY8 LB1 Gefahrstoffkennzeichnung; HE1 Gefahrenpotenzial. NW: only in school plans (Jg. 7).
+        iCan: "Ich kann beim Experimentieren die Sicherheitsregeln einhalten und Gefahrenzeichen deuten."
+        gradeBand: "7-8"
+      - id: stoffeigenschaften-beschreiben
+        # KMK Inhalt "Stoffeigenschaften", S 1.3; BY8 LB2; NW IF1; HE1 Welt der Stoffe.
+        iCan: "Ich kann Stoffe an ihren Eigenschaften wie Farbe, Geruch, Härte und Dichte beschreiben."
+        gradeBand: "7-8"
+        requires: [sicherheit-beim-experimentieren]
+      - id: aggregatzustaende-beschreiben
+        # KMK Inhalt "Einfluss äußerer Bedingungen auf Aggregatzustände"; BY8 LB2; NW IF1; HE1 Verwandlungen. iCan sharpened: now also the names of the transitions (was too small).
+        iCan: "Ich kann die drei Aggregatzustände und ihre Übergänge (schmelzen, erstarren, verdampfen, kondensieren, sublimieren) benennen und beschreiben."
+        gradeBand: "7-8"
+      - id: schmelz-und-siedetemperatur
+        # BY8 LB2 "Kenneigenschaften"; NW IF1 (Reinstoffe an Schmelz-/Siedetemperatur identifizieren); HE1 Messverfahren, Stoffidentifikation.
+        iCan: "Ich kann Schmelz- und Siedetemperatur eines Stoffes aus einer Tabelle oder Messreihe ablesen und deuten."
+        gradeBand: "7-8"
+        requires: [aggregatzustaende-beschreiben]
+      - id: aggregatzustand-bei-aeusseren-bedingungen
+        # KMK Inhalt "Einfluss äußerer Bedingungen auf Aggregatzustände", S 1.4. The pressure part is only in the KMK, not in the three Länder: Richtstufe geschätzt.
+        iCan: "Ich kann vorhersagen, in welchem Aggregatzustand ein Stoff bei einer bestimmten Temperatur und einem bestimmten Druck vorliegt."
+        gradeBand: "7-8"
+        requires: [schmelz-und-siedetemperatur]
+      - id: stoffe-erkennen-und-verwenden
+        # KMK S 1.3 and Basiskonzept "Verwendungsmöglichkeiten"; NW IF1 (klassifizieren, Verwendung begründen); HE1 Stoffidentifikation; BY8 LB2.
+        iCan: "Ich kann einen Stoff an seinen Eigenschaften erkennen und aus ihnen auf seine Verwendung schließen."
+        gradeBand: "7-8"
+        requires: [stoffeigenschaften-beschreiben]
+      - id: elektrische-leitfaehigkeit
+        # KMK Inhalt "Stoffeigenschaften inkl. elektrischer Leitfähigkeit"; BY8 LB4 (Leitfähigkeitsmessungen); NW IF6 (Jg. 8, Salzschmelzen und -lösungen). HE: only implicit.
+        iCan: "Ich kann mit einem Versuch prüfen, ob ein Stoff oder eine Lösung Strom leitet."
+        gradeBand: "7-8"
+        requires: [stoffeigenschaften-beschreiben]
+      - id: loeslichkeit
+        # KMK Inhalt "Stoffeigenschaften inkl. ... Löslichkeit"; BY8 LB2; NW IF1; HE1 Lösevorgänge im Alltag.
+        iCan: "Ich kann untersuchen und angeben, wie gut sich ein Stoff in Wasser löst."
+        gradeBand: "7-8"
+        requires: [stoffeigenschaften-beschreiben]
+      - id: gasnachweise
+        # NEW (Länder). BY8 LB2 (Glimmspan-, Kalkwasser-, Knallgasprobe); NW IF3 (Jg. 7, Nachweisreaktionen von Gasen); HE1 Mess- und Nachweisverfahren. Fits KMK S 1.3 (Stoffe identifizieren).
+        iCan: "Ich kann Sauerstoff, Wasserstoff und Kohlenstoffdioxid mit Glimmspan-, Knallgas- und Kalkwasserprobe nachweisen."
+        gradeBand: "7-8"
+        requires: [stoffeigenschaften-beschreiben, sicherheit-beim-experimentieren]
+      - id: ph-wert-deuten
+        # KMK Inhalt "pH-Wert von Lösungen"; NW IF9 (Jg. 10, pH-Wert bestimmen); BY10 LB2 (Indikatoren, pH-Skala); HE2 Säuren, Laugen. (BY8 only as optional Profil.)
+        # requires changed: was loeslichkeit (no content link). iCan now names Indikatoren (BY, NW).
+        iCan: "Ich kann mit Indikatoren und dem pH-Wert eine Lösung als sauer, neutral oder alkalisch einordnen."
+        gradeBand: "9-10"
+        requires: [stoffeigenschaften-beschreiben]
+      - id: ionen-in-sauren-und-alkalischen-loesungen
+        # NEW. KMK S 2.8 / Basiskonzept Donator-Akzeptor (Teilchenebene); NW IF9 (Jg. 10, "hydratisierte Ionen"); BY10 LB2 (Oxonium-/Hydroxid-Ionen); HE2 Säuren, Laugen.
+        iCan: "Ich kann erklären, dass saure Lösungen Oxonium-Ionen und alkalische Lösungen Hydroxid-Ionen enthalten."
+        gradeBand: "9-10"
+        requires: [ph-wert-deuten, atome-ionen-und-molekuele-unterscheiden]
+      # ---- Ordnung der Stoffe: Reinstoffe, Gemische, Elemente, Verbindungen ----
+      - id: reinstoffe-und-gemische
+        # KMK S 1.1, Inhalt "Reinstoffe und Stoffgemische"; BY8 LB2; NW IF1; HE1 Der Mix macht's.
+        iCan: "Ich kann Reinstoffe und Gemische unterscheiden."
+        gradeBand: "7-8"
+      - id: gemische-trennen
+        # BY8 LB2 (Destillation, Chromatographie, Extraktion); NW IF1 (Filtration, Destillation); HE1 Trennverfahren. Not in the KMK list. Borderline coarse (2-3 lessons), not split.
+        iCan: "Ich kann ein Stoffgemisch mit einem passenden Verfahren trennen, etwa durch Filtrieren, Eindampfen oder Destillieren."
+        gradeBand: "7-8"
+        requires: [reinstoffe-und-gemische, stoffeigenschaften-beschreiben]
+      - id: elemente-und-verbindungen
+        # KMK S 1.1, Inhalt "Elemente und Verbindungen"; BY8 LB3; NW IF3 (Jg. 7); HE1 Verwandlungen.
+        iCan: "Ich kann Elemente und Verbindungen als Reinstoffe unterscheiden."
+        gradeBand: "7-8"
+        requires: [reinstoffe-und-gemische]
+      # ---- Modelle: vom Teilchenmodell zum Atommodell ----
+      - id: teilchenmodell
+        # KMK Inhalt "Denkmodelle ... auf submikroskopischer Ebene"; BY8 LB2; NW IF1 "einfache Teilchenvorstellung"; HE1 Teilchenmodell.
+        iCan: "Ich kann das Teilchenmodell beschreiben und sagen, was es erklärt und was nicht."
+        gradeBand: "7-8"
+      - id: aggregatzustaende-mit-teilchenmodell
+        # NW IF1 (Aggregatzustände mit einfachem Teilchenmodell erklären); BY8 LB2; HE1.
+        iCan: "Ich kann mit dem Teilchenmodell erklären, warum Stoffe fest, flüssig oder gasförmig sind und wie sie ineinander übergehen."
+        gradeBand: "7-8"
+        requires: [teilchenmodell, aggregatzustaende-beschreiben]
+      - id: denkmodelle-und-sachmodelle
+        # KMK Inhalt "Denkmodelle, sächliche Darstellung von Denkmodellen sowie Sachmodelle"; BY8 LB1 (Eigenschaften und Grenzen von Modellen); HE (Modell- und Realitätsebene, Jg. 9/10 expectations); NW E6.
+        iCan: "Ich kann ein Denkmodell und ein Sachmodell unterscheiden und sagen, wofür ein Modell taugt und wo es an Grenzen stößt."
+        gradeBand: "7-8"
+        requires: [teilchenmodell]
+      - id: daltonsches-atommodell
+        # NEW. NW IF3 (Jg. 7, einfaches Atommodell erklärt Massenänderungen); BY8 LB3 (Daltonsches Atommodell: Massenerhaltung, Umgruppierung von Atomen). HE: no explicit Dalton step.
+        iCan: "Ich kann mit dem Atommodell nach Dalton erklären, was Atome sind und wie sie sich bei einer Reaktion neu gruppieren."
+        gradeBand: "7-8"
+        requires: [teilchenmodell, elemente-und-verbindungen]
+      - id: symbole-der-elemente
+        # HE1 Elementsymbole; BY8 LB3 Atomartensymbole; KMK S 3.1.
+        iCan: "Ich kann Elemente mit ihrem Symbol benennen und schreiben."
+        gradeBand: "7-8"
+        requires: [elemente-und-verbindungen]
+      - id: formeln-von-verbindungen
+        # KMK S 3.1; BY8 LB3 (Molekülformel), LB4 (Verhältnisformel); NW IF6 (Jg. 8, Verhältnisformel); HE2 "Elementsymbole und Formeln" (later: disagreement).
+        iCan: "Ich kann die Formel einer Verbindung lesen und schreiben und sagen, welche Atome in welcher Anzahl enthalten sind."
+        gradeBand: "7-8"
+        requires: [symbole-der-elemente, daltonsches-atommodell]
+      - id: atombau-bausteine
+        # KMK S 2.3; BY8 LB4 (Kern-Hülle-Modell: Proton, Neutron, Elektron); NW IF5 (Jg. 8); HE2 (Kern-Hülle-Modell in Blick hinter die Kulissen: disagreement).
+        iCan: "Ich kann sagen, aus welchen Teilchen ein Atom besteht: Protonen, Neutronen und Elektronen."
+        gradeBand: "7-8"
+        requires: [daltonsches-atommodell]
+      - id: atome-ionen-und-molekuele-unterscheiden
+        # NEW. KMK S 2.2 "unterscheiden Atome, Ionen und Moleküle"; BY8 LB4 (Bausteine der Reinstoffe); NW IF6/IF8 (Jg. 8/9); HE2 (Atome, Moleküle, Ionen).
+        iCan: "Ich kann Atome, Ionen und Moleküle unterscheiden und an Beispielen zeigen, aus welchen Teilchen ein Stoff besteht."
+        gradeBand: "7-8"
+        requires: [atombau-bausteine, formeln-von-verbindungen]
+      # ---- Periodensystem und Atommodell ----
+      - id: periodensystem-lesen
+        # KMK Inhalt "Periodensystem als Ordnungssystem"; BY8 LB3 (PSE als Informationsquelle); NW IF5 (Jg. 8); HE1 Elementsymbole, HE2 Aufbau. requires changed: ordnungszahl-und-massenzahl moves to 9-10.
+        iCan: "Ich kann ein Element im Periodensystem finden und Ordnungszahl, Symbol, Periode und Gruppe ablesen."
+        gradeBand: "7-8"
+        requires: [symbole-der-elemente]
+      - id: metalle-und-nichtmetalle
+        # BY8 LB3 (Metalle, Halbmetalle, Nichtmetalle im PSE); NW IF4/IF5; HE2 Stoffgruppen (Metalle, Nichtmetalle).
+        iCan: "Ich kann Metalle, Nichtmetalle und Grenzfälle an ihren Eigenschaften und ihrem Platz im Periodensystem erkennen."
+        gradeBand: "7-8"
+        requires: [periodensystem-lesen, stoffeigenschaften-beschreiben]
+      - id: ordnungszahl-und-massenzahl
+        # BY9 LB2 (Protonenzahl, Nukleonenzahl, Isotope); HE2 (Ordnungszahl, Kernladungszahl, Atommassen); NW IF5 (Jg. 8: disagreement). Band changed 7-8 -> 9-10 by majority.
+        iCan: "Ich kann mit Ordnungszahl und Massenzahl die Zahl der Protonen, Neutronen und Elektronen eines Atoms bestimmen."
+        gradeBand: "9-10"
+        requires: [atombau-bausteine, periodensystem-lesen]
+      - id: schalenmodell
+        # NW IF5 (Jg. 8, Elektronenkonfiguration; Schalenmodell in school plan); BY9 LB2 (Elektronenkonfiguration); HE2. Band changed 7-8 -> 9-10 by majority (BY, HE).
+        iCan: "Ich kann die Elektronen eines Atoms im Schalenmodell auf die Schalen verteilen."
+        gradeBand: "9-10"
+        requires: [ordnungszahl-und-massenzahl]
+      - id: atommodell-mit-energiestufen
+        # KMK Inhalt "differenziertes Atommodell"; BY9 LB2 (Energiestufenmodell, Ionisierungsenergie); HE2 differenziertes Atommodell; NW IF5.
+        iCan: "Ich kann Elektronen in einem Atommodell mit Energiestufen und Außenelektronen beschreiben."
+        gradeBand: "9-10"
+        requires: [schalenmodell]
+      - id: hauptgruppen
+        # BY9 LB2 (Hauptgruppen, Valenzelektronen); HE2 (Gruppen und Perioden); NW IF5 (Jg. 8: disagreement). Band changed 7-8 -> 9-10 by majority.
+        iCan: "Ich kann die acht Hauptgruppen nennen und sagen, wie viele Außenelektronen ihre Atome haben."
+        gradeBand: "9-10"
+        requires: [periodensystem-lesen, schalenmodell]
+      - id: reaktionen-mit-atommodell-vorhersagen
+        # KMK Inhalt "differenziertes Atommodell, das dazu geeignet ist, Reaktionen vorherzusagen"; BY9 LB2 (Edelgasregel, Ionenladung); NW IF6; HE2 (Elektronenkonfiguration und Reaktionsverhalten).
+        iCan: "Ich kann mit der Zahl der Außenelektronen vorhersagen, wie ein Atom reagiert."
+        gradeBand: "9-10"
+        requires: [atommodell-mit-energiestufen]
+      - id: periodensystem-und-atombau
+        # KMK Inhalt "Periodensystem ... auf submikroskopischer Ebene"; BY9 LB2; HE2; NW IF5.
+        iCan: "Ich kann den Platz eines Elements im Periodensystem mit dem Bau seiner Atome begründen."
+        gradeBand: "9-10"
+        requires: [hauptgruppen, atommodell-mit-energiestufen]
+      - id: eigenschaften-im-periodensystem
+        # NW IF5 (Eigenschaften der Elementfamilien Alkalimetalle, Halogene, Edelgase vorhersagen; Jg. 8); HE2 (Stoffeigenschaften und Reaktionsverhalten über Gruppen und Perioden, Elektronegativität); BY9 (Profil).
+        iCan: "Ich kann Eigenschaften von Elementen innerhalb einer Gruppe oder Periode vergleichen und Trends erklären."
+        gradeBand: "9-10"
+        requires: [periodensystem-und-atombau]
+      # ---- Chemische Bindung ----
+      - id: ionen-bilden
+        # KMK S 2.2; BY9 LB3 (Ionenbildung als Elektronenübergang); NW IF6 (Jg. 8: disagreement); HE2.
+        iCan: "Ich kann beschreiben, wie aus Atomen durch Abgeben oder Aufnehmen von Elektronen Ionen entstehen."
+        gradeBand: "9-10"
+        requires: [reaktionen-mit-atommodell-vorhersagen]
+      - id: ionenbindung
+        # KMK Inhalt "Ionenbindung"; BY8 LB4 (ungerichtete Anziehung Kation-Anion); NW IF6 (Jg. 8); HE2 (Ionenbindung: disagreement). Band changed 9-10 -> 7-8 by majority. requires changed: BY8 and NW teach it with given ion charges, so ionen-bilden is not a prerequisite.
+        iCan: "Ich kann die Ionenbindung beschreiben und sagen, welche Stoffe so gebunden sind."
+        gradeBand: "7-8"
+        requires: [atome-ionen-und-molekuele-unterscheiden, metalle-und-nichtmetalle]
+      - id: ionengitter
+        # KMK Inhalt "Ionengitter"; BY8 LB4 (Ionengitter, Sprödigkeit, Leitfähigkeit von Schmelzen); NW IF6 (Jg. 8); HE2. Band changed 9-10 -> 7-8 by majority.
+        iCan: "Ich kann den Aufbau eines Ionengitters beschreiben und seine Eigenschaften wie Sprödigkeit und Schmelztemperatur erklären."
+        gradeBand: "7-8"
+        requires: [ionenbindung]
+      - id: metallbindung
+        # KMK Inhalt "Metallbindung"; BY8 LB4 (Elektronengasmodell). Neither HE nor NW treats the Metallbindung: only one Land. Band follows BY (was 9-10).
+        iCan: "Ich kann die Metallbindung beschreiben und damit Eigenschaften von Metallen erklären."
+        gradeBand: "7-8"
+        requires: [metalle-und-nichtmetalle, atome-ionen-und-molekuele-unterscheiden]
+      - id: elektronenpaarbindung
+        # KMK Inhalt "Elektronenpaarbindung"; BY9 LB4; NW IF8 (Jg. 9); HE2. Unanimous. iCan narrowed: Lewis-Formeln now their own Baustein (was too coarse).
+        iCan: "Ich kann die Elektronenpaarbindung beschreiben und erklären, warum Nichtmetall-Atome Elektronenpaare teilen."
+        gradeBand: "9-10"
+        requires: [reaktionen-mit-atommodell-vorhersagen]
+      - id: lewis-formeln
+        # NEW (split from elektronenpaarbindung). NW IF8 (Lewis-Schreibweise); BY9 LB4 (Valenzstrichschreibweise); HE2 (Lewisschreibweise).
+        iCan: "Ich kann Lewis-Formeln einfacher Moleküle zeichnen und lesen."
+        gradeBand: "9-10"
+        requires: [elektronenpaarbindung]
+      - id: bindungstypen-vergleichen
+        # KMK S 2.4, Inhalt "Ionenbindung, Elektronenpaarbindung und Metallbindung als Bindungstypen und Ordnungssystem".
+        iCan: "Ich kann Stoffe nach ihrer Bindung (Ionenbindung, Elektronenpaarbindung, Metallbindung) ordnen."
+        gradeBand: "9-10"
+        requires: [ionenbindung, elektronenpaarbindung, metallbindung]
+      - id: raeumliche-struktur-von-molekuelen
+        # KMK S 2.5, Inhalt "räumliche Struktur von Molekülen"; BY9 LB4 (Elektronenpaarabstoßungsmodell); NW IF8 (Jg. 9). HE2: not explicit.
+        iCan: "Ich kann die räumliche Struktur einfacher Moleküle beschreiben, etwa von Wasser oder Methan."
+        gradeBand: "9-10"
+        requires: [lewis-formeln]
+      - id: partialladungen-und-dipole
+        # KMK Inhalt "Partialladungen, permanente Dipole"; BY9 LB5 (Elektronegativität, Polarität); NW IF8 (Dipolmoleküle); HE2 (Elektronegativität).
+        iCan: "Ich kann erklären, wie Partialladungen entstehen, und erkennen, ob ein Molekül ein Dipol ist."
+        gradeBand: "9-10"
+        requires: [raeumliche-struktur-von-molekuelen]
+      - id: wechselwirkungen-zwischen-teilchen
+        # KMK S 2.6; BY9 LB5 (Van-der-Waals, Wasserstoffbrücken, Ion-Dipol); NW IF8 (Wasserstoffbrücken, Wasser als Lösemittel; Jg. 9); HE2 (Wechselwirkungen). Example Wasser: BY9, NW.
+        iCan: "Ich kann Wechselwirkungen zwischen Teilchen wie Wasserstoffbrücken nennen und mit ihnen Stoffeigenschaften erklären."
+        gradeBand: "9-10"
+        requires: [partialladungen-und-dipole]
+      - id: struktur-und-eigenschaften-verbinden
+        # KMK S 2.7 "begründen makroskopische Eigenschaften von Stoffen auf submikroskopischer Ebene"; BY9 LB5; NW IF6/IF8; HE2.
+        iCan: "Ich kann aus dem Bau der Teilchen und ihrer Bindung auf die Eigenschaften eines Stoffes schließen."
+        gradeBand: "9-10"
+        requires: [bindungstypen-vergleichen, wechselwirkungen-zwischen-teilchen]
+      # ---- Organische Stoffe (Länder-Ergänzung, nicht KMK-verbindlich; KMK: "landesspezifische Ergänzungen") ----
+      - id: kohlenwasserstoffe-alkane
+        # NEW (Länder). NW IF10 (Alkane, Nomenklatur; Jg. 10); BY8 LB3 (homologe Reihe der Alkane), BY9 LB4 (Nomenklatur, Isomerie); HE2 "Magie des Kohlenstoffs".
+        iCan: "Ich kann Alkane mit Molekülformel und Strukturformel darstellen und ihre homologe Reihe benennen."
+        gradeBand: "9-10"
+        requires: [lewis-formeln]
+      - id: funktionelle-gruppen-und-stoffklassen
+        # NEW (Länder). BY9 LB5 (Alkohole, Aldehyde, Ketone, Carbonsäuren); NW IF10 (Stoffklassen, Alkanole); HE2 (funktionelle Gruppen, Stoffklassen).
+        iCan: "Ich kann organische Stoffe an ihrer funktionellen Gruppe einer Stoffklasse zuordnen, etwa Alkanole."
+        gradeBand: "9-10"
+        requires: [kohlenwasserstoffe-alkane]
+      - id: eigenschaften-organischer-stoffe
+        # NEW (Länder). NW IF10 (Löslichkeit, Siedetemperatur aus Molekülstruktur); BY9 LB5 (Eigenschaften molekularer Stoffe, Lösemittel); HE2 (Eigenschaften mittels Struktur und funktionellen Gruppen).
+        iCan: "Ich kann Siedetemperatur und Löslichkeit organischer Stoffe mit ihrer Molekülstruktur und den Wechselwirkungen zwischen den Molekülen erklären."
+        gradeBand: "9-10"
+        requires: [funktionelle-gruppen-und-stoffklassen, wechselwirkungen-zwischen-teilchen]
+      - id: kunststoffe
+        # NEW (Länder, two of three). NW IF10 (Makromoleküle, Kunststoffe); HE2 (Kunststoffe als Stoffgruppe). BY: not in Sek I Chemie. Optional.
+        iCan: "Ich kann Eigenschaften und Verwendung von Kunststoffen mit ihrem Bau aus Makromolekülen begründen."
+        gradeBand: "9-10"
+        requires: [kohlenwasserstoffe-alkane, wechselwirkungen-zwischen-teilchen]
+  - id: chemische-reaktion
+    name: { de: Chemische Reaktion, en: Chemical reaction }
+    competencies:
+      # ---- Stoffumwandlung, Erhaltung, Sprache der Reaktion ----
+      - id: kennzeichen-chemischer-reaktionen
+        # KMK Inhalt "Kennzeichen chemischer Reaktionen", S 1.5; BY8 LB3; NW IF2; HE1.
+        iCan: "Ich kann an Beobachtungen erkennen, dass eine chemische Reaktion abgelaufen ist."
+        gradeBand: "7-8"
+        requires: [stoffeigenschaften-beschreiben]
+      - id: reaktion-oder-zustandsaenderung
+        # BY8 LB3 (von physikalischem Vorgang abgrenzen); NW IF2; HE1 "Abgrenzung physikalischer und chemischer Vorgänge".
+        iCan: "Ich kann eine chemische Reaktion von einer Zustandsänderung unterscheiden."
+        gradeBand: "7-8"
+        requires: [kennzeichen-chemischer-reaktionen, aggregatzustaende-beschreiben]
+      - id: synthese-und-analyse
+        # NW IF3 (Jg. 7, Analyse und Synthese). Not in KMK, BY, HE: only one Land; kept because it is cheap and is the base of umkehrbarkeit-chemischer-reaktionen.
+        iCan: "Ich kann Synthese und Analyse unterscheiden."
+        gradeBand: "7-8"
+        requires: [kennzeichen-chemischer-reaktionen, elemente-und-verbindungen]
+      - id: massenerhaltung
+        # KMK Inhalt "Massen- und Energieerhaltung"; BY8 LB3; NW IF3 (Jg. 7); HE2 (Erhaltung der Masse: disagreement).
+        iCan: "Ich kann mit einem Versuch zeigen und erklären, dass bei einer Reaktion die Gesamtmasse gleich bleibt."
+        gradeBand: "7-8"
+        requires: [kennzeichen-chemischer-reaktionen, teilchenmodell]
+      - id: wortgleichung
+        # NW IF2 (Reaktionsschemata in Worten); HE1 (Wortgleichungen); BY8 LB1/LB3 (Reaktionsschema).
+        iCan: "Ich kann eine Reaktion als Wortgleichung aufschreiben."
+        gradeBand: "7-8"
+        requires: [kennzeichen-chemischer-reaktionen]
+      - id: verbrennung
+        # NEW (Länder). NW IF3 (Jg. 7, Verbrennung als Reaktion mit Sauerstoff, Zündtemperatur, Zerteilungsgrad); BY8 LB3 (Verbrennung von Kohlenwasserstoffen, Energieträger). HE: only as context.
+        iCan: "Ich kann eine Verbrennung als Reaktion mit Sauerstoff beschreiben und sagen, was zum Brennen nötig ist."
+        gradeBand: "7-8"
+        requires: [kennzeichen-chemischer-reaktionen, elemente-und-verbindungen]
+      - id: umkehrbarkeit-chemischer-reaktionen
+        # NEW. KMK S 1.6 and Basiskonzept "Umkehrbarkeit chemischer Reaktionen"; NW IF3/IF4 (Jg. 7/8, Wasser: Analyse und Synthese); BY10 LB2-4 (Reversibilität); HE2 (reversible Reaktionen). Band: BY, HE (NW earlier).
+        iCan: "Ich kann an einem Beispiel zeigen, dass eine chemische Reaktion umkehrbar sein kann, etwa Zerlegung und Synthese von Wasser."
+        gradeBand: "9-10"
+        requires: [synthese-und-analyse, wortgleichung]
+      - id: reaktionsgleichung-aufstellen
+        # KMK S 3.2; BY8 LB3 ("einfache Reaktionsgleichung"); NW IF6 (Jg. 8); HE2 (Reaktionsgleichungen: disagreement).
+        iCan: "Ich kann eine einfache Reaktionsgleichung aufstellen, bei der auf beiden Seiten gleich viele Atome stehen."
+        gradeBand: "7-8"
+        requires: [wortgleichung, formeln-von-verbindungen, massenerhaltung, daltonsches-atommodell]
+      # ---- Stöchiometrie ----
+      - id: stoffmenge-und-molare-masse
+        # KMK Inhalt "einfache stöchiometrische Betrachtungen"; NW IF9 (Jg. 10, Stoffmenge); HE2 (Stöchiometrie); BY8 LB3 already teaches Stoffmenge and molare Masse (disagreement). Band 9-10 by majority.
+        iCan: "Ich kann die Stoffmenge und die molare Masse eines Stoffes nutzen, um Teilchenzahl und Masse ineinander umzurechnen."
+        gradeBand: "9-10"
+        requires: [formeln-von-verbindungen, massenerhaltung]
+      - id: stoechiometrische-berechnung
+        # KMK Inhalt "einfache stöchiometrische Betrachtungen als mathematische Modellierung des Reaktionsgeschehens"; NW IF9; HE2; BY8 LB3 (Stoffumsätze).
+        iCan: "Ich kann mit einer Reaktionsgleichung berechnen, wie viel Masse eines Stoffes mit einer bestimmten Masse eines anderen reagiert."
+        gradeBand: "9-10"
+        requires: [stoffmenge-und-molare-masse, reaktionsgleichung-aufstellen]
+      - id: konzentration-von-loesungen
+        # NEW (Länder). NW IF9 (Stoffmengenkonzentration, Jg. 10), IF6 (Gehaltsangaben); BY10 LB2 (Stoffmengenkonzentration, Lösungen herstellen); HE: not named.
+        iCan: "Ich kann die Konzentration einer Lösung berechnen und eine Lösung mit bestimmter Konzentration herstellen."
+        gradeBand: "9-10"
+        requires: [stoffmenge-und-molare-masse, loeslichkeit]
+      # ---- Donator-Akzeptor: Sauerstoff, Elektronen, Protonen ----
+      - id: oxidation-und-reduktion
+        # NW IF3/IF4 (Jg. 7/8, Oxidbildung, Sauerstoffübertragung "im Sinne des Donator-Akzeptor-Konzeptes"); HE1 (Affinitätsreihen aus Oxidationsversuchen). BY teaches Redox only as Elektronenübergang from Jg. 9 (see their Ergänzende Information zum Redoxkonzept).
+        iCan: "Ich kann Oxidation und Reduktion als Aufnahme und Abgabe von Sauerstoff beschreiben."
+        gradeBand: "7-8"
+        requires: [reaktionsgleichung-aufstellen, verbrennung]
+      - id: edle-und-unedle-metalle
+        # NEW (Länder). NW IF4 (Jg. 8, edle/unedle Metalle, Metallgewinnung); HE1 (Affinitätsreihen). BY: only Profil (Redoxreihe).
+        iCan: "Ich kann Metalle nach ihrer Reaktionsfähigkeit mit Sauerstoff in edle und unedle Metalle ordnen."
+        gradeBand: "7-8"
+        requires: [oxidation-und-reduktion, metalle-und-nichtmetalle]
+      - id: redoxreaktion-als-elektronenuebergang
+        # KMK Inhalt "Redoxreaktionen als Donator-Akzeptor-Vorgänge", S 2.8; BY9 LB3; NW IF7 (Jg. 8: disagreement); HE2 (Donator-Akzeptor-Prinzip).
+        iCan: "Ich kann eine Redoxreaktion als Übertragung von Elektronen zwischen Teilchen beschreiben."
+        gradeBand: "9-10"
+        requires: [oxidation-und-reduktion, ionen-bilden]
+      - id: elektrolyse
+        # NEW (Länder, three of three). BY9 LB3 (Elektrolyse als erzwungene Redoxreaktion); NW IF7 (Elektrolyse; Jg. 8-9); HE2 ("Elektrochemische Vorgänge").
+        iCan: "Ich kann die Elektrolyse einer Salzlösung oder Salzschmelze als erzwungene Redoxreaktion beschreiben."
+        gradeBand: "9-10"
+        requires: [redoxreaktion-als-elektronenuebergang, elektrische-leitfaehigkeit]
+      - id: saeure-base-reaktion
+        # KMK Inhalt "Säure-Base-Reaktionen ... als Donator-Akzeptor-Vorgänge"; BY10 LB2 (Brønsted); NW IF9 (Jg. 10); HE2. requires changed: ionen-in-sauren-und-alkalischen-loesungen instead of ph-wert-deuten and ionen-bilden.
+        iCan: "Ich kann eine Säure-Base-Reaktion als Übertragung von Protonen beschreiben."
+        gradeBand: "9-10"
+        requires: [ionen-in-sauren-und-alkalischen-loesungen, reaktionsgleichung-aufstellen]
+      - id: neutralisation
+        # BY10 LB2; NW IF9 (Neutralisation und Salzbildung); HE2 (Neutralisation); KMK Basiskonzept.
+        iCan: "Ich kann eine Neutralisation mit einer Reaktionsgleichung beschreiben."
+        gradeBand: "9-10"
+        requires: [saeure-base-reaktion]
+      - id: salze-loesen
+        # KMK Inhalt "Löseprozesse von Salzen als chemische Reaktionen"; BY9 LB5 (Hydratation, Ion-Dipol); NW IF8 (Jg. 9, Wasser als Lösemittel, Lösen von Salzen); HE1 Lösevorgänge.
+        iCan: "Ich kann das Lösen eines Salzes in Wasser als Vorgang mit Ionen beschreiben."
+        gradeBand: "9-10"
+        requires: [ionengitter, partialladungen-und-dipole, loeslichkeit]
+      - id: temperatur-und-reaktionsgeschwindigkeit
+        # KMK S 1.7, Inhalt "Beeinflussung chemischer Reaktionen durch Variation der Temperatur". Not in HE, BY, NW (their Sek I texts predate the 2024 standards): Richtstufe geschätzt.
+        iCan: "Ich kann erklären, wie eine Änderung der Temperatur die Geschwindigkeit einer Reaktion beeinflusst."
+        gradeBand: "9-10"
+        requires: [kennzeichen-chemischer-reaktionen, teilchenmodell]
+  - id: energie
+    name: { de: Energie, en: Energy }
+    competencies:
+      - id: energieformen-unterscheiden
+        # KMK S 1.8, Inhalt "chemische, elektrische, thermische und Strahlungsenergie"; BY8 LB3 (Wärme, Arbeit, Strahlung); NW IF2 (chemische Energie in andere Formen); HE1.
+        iCan: "Ich kann chemische, elektrische, thermische und Strahlungsenergie unterscheiden."
+        gradeBand: "7-8"
+      - id: energieumwandlung-bei-reaktionen
+        # KMK S 1.5 "Einheit von Stoff- und Energieumwandlungen"; NW IF2; BY8 LB3; HE1 (Energiebilanz: HE2).
+        iCan: "Ich kann beschreiben, welche Energieformen bei einer Reaktion ineinander umgewandelt werden."
+        gradeBand: "7-8"
+        requires: [energieformen-unterscheiden, kennzeichen-chemischer-reaktionen]
+      - id: exotherm-und-endotherm
+        # KMK Inhalt "exotherme und endotherme Reaktionen"; HE1; BY8 LB3; NW IF3 (Energie an die Umgebung abgegeben).
+        iCan: "Ich kann exotherme und endotherme Reaktionen an Messwerten und Beobachtungen unterscheiden."
+        gradeBand: "7-8"
+        requires: [energieumwandlung-bei-reaktionen]
+      - id: energieerhaltung
+        # KMK Inhalt "Massen- und Energieerhaltung"; NW IF7 (Energieerhaltungssatz, Jg. 8); HE2 (Energiebilanz). BY: not named. Richtstufe geschätzt.
+        iCan: "Ich kann erklären, dass bei einer Reaktion Energie weder entsteht noch verschwindet."
+        gradeBand: "7-8"
+        requires: [energieumwandlung-bei-reaktionen]
+      - id: energieschema-lesen
+        # KMK S 3.3, Inhalt "Energieschemata"; BY8 LB3 (grafisch darstellen); NW sample plans Jg. 7 (Energiediagramme); HE2. Band changed 9-10 -> 7-8 by majority (BY, NW). requires changed: exotherm-und-endotherm.
+        iCan: "Ich kann ein Energieschema einer Reaktion lesen und zeichnen."
+        gradeBand: "7-8"
+        requires: [exotherm-und-endotherm]
+      - id: aktivierungsenergie
+        # KMK Inhalt "Katalyse und Aktivierungsenergie"; NW IF2 (Jg. 7); BY8 LB3 (Aktivierung); HE2. Band changed 9-10 -> 7-8 by majority.
+        iCan: "Ich kann an einem Energieschema die Aktivierungsenergie zeigen und erklären, warum manche Reaktionen erst nach einem Anstoß ablaufen."
+        gradeBand: "7-8"
+        requires: [energieschema-lesen]
+      - id: energieaustausch-mit-der-umgebung
+        # KMK Inhalt "Energieaustausch zwischen Reaktionssystem und Umgebung"; BY8 LB3 (Profil: offenes, geschlossenes, isoliertes System); NW IF3 (qualitativ); HE2 (Energiebilanz). No majority: Richtstufe geschätzt.
+        iCan: "Ich kann beschreiben, wie ein Reaktionssystem Energie mit seiner Umgebung austauscht."
+        gradeBand: "9-10"
+        requires: [exotherm-und-endotherm, energieerhaltung]
+      - id: katalysator
+        # KMK Inhalt "Katalyse"; NW IF8 (Jg. 9); HE2 (Rolle von Katalysatoren); BY8 LB3 (disagreement).
+        iCan: "Ich kann erklären, wie ein Katalysator die Aktivierungsenergie senkt und eine Reaktion beschleunigt."
+        gradeBand: "9-10"
+        requires: [aktivierungsenergie, temperatur-und-reaktionsgeschwindigkeit]
+      - id: energie-beim-loesen-von-salzen
+        # NEW (Länder). BY9 LB5 (Hydratation, Energiebeteiligung beim Lösen); NW IF8 (Jg. 9, Temperaturänderung beim Lösen, Gitter- und Hydratationsenergie); HE: not named.
+        iCan: "Ich kann erklären, warum sich eine Lösung beim Lösen eines Salzes erwärmt oder abkühlt."
+        gradeBand: "9-10"
+        requires: [salze-loesen, exotherm-und-endotherm]
+      - id: galvanisches-element
+        # NEW (Länder, three of three). KMK Inhalt "elektrische Energie" as an Energieform; BY9 LB3 (Daniell-Element, Batterie); NW IF7 (galvanisches Element, Batterie, Akkumulator, Brennstoffzelle); HE2 ("Elektrochemische Vorgänge").
+        iCan: "Ich kann erklären, wie in einer Batterie oder einem galvanischen Element chemische Energie in elektrische Energie umgewandelt wird."
+        gradeBand: "9-10"
+        requires: [redoxreaktion-als-elektronenuebergang, energieumwandlung-bei-reaktionen]

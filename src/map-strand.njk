@@ -1,0 +1,75 @@
+---
+pagination:
+  data: map.strandPages
+  size: 1
+  alias: view
+permalink: "/{{ view.l.root }}map/{{ view.subject.id }}/{{ view.strand.id }}/index.html"
+layout: base.njk
+eleventyComputed:
+  title: "{{ t.map.strand.title(view.strand.name | tx(lang), view.subject.name | tx(lang)) }}"
+  description: "{{ t.map.strand.description(view.strand.name | tx(lang), view.subject.name | tx(lang)) }}"
+---
+{#-
+  A strand (feat/learning-map, B11): its competencies grouped by grade band, without arrows (a strand implies no order;
+  what a competency builds on is on its own page); the apps of the strand as bars over the bands they practise, a band
+  without an app as a dashed gap; and the invitation to build an app for the strand.
+-#}
+{%- set T = t.map.strand %}
+{%- set subject = view.subject %}
+{%- set strand = view.strand %}
+{%- set name = strand.name | tx(lang) %}
+{%- import "components.njk" as c with context %}
+
+<div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 flex flex-col gap-6">
+  {{ c.breadcrumb([
+    { label: t.map.name, href: c.mapUrl('') | trim },
+    { label: subject.name | tx(lang), href: c.mapUrl(subject.id + '/') | trim, attrs: subject.name | fallbackLang(lang) },
+    { label: name, attrs: strand.name | fallbackLang(lang) }
+  ]) }}
+
+  <div class="flex flex-col gap-2 items-start">
+    <a href="{{ c.mapUrl('') | trim }}#strang" class="text-sm text-blue-700 underline underline-offset-2">{{ T.whatIs }}</a>
+    <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);"{{ strand.name | fallbackLang(lang) | safe }}>{{ name }}</h1>
+    <p class="m-0 max-w-3xl text-lg text-slate-600">{{ T.lead }}</p>
+    <p class="m-0 text-slate-700">{{ t.map.subject.count(strand.covered, strand.total) }}</p>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-covered"></span>{{ t.map.subject.legend.covered }}</p>
+      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-gap"></span>{{ t.map.subject.legend.gap }}</p>
+    </div>
+  </div>
+
+  <div class="map-scroll" role="region" aria-label="{{ T.gridLabel(name) }}" tabindex="0">
+    <div class="map-strand">
+      {%- for b in strand.bands %}
+      <section aria-labelledby="stufe-{{ b.band }}" style="grid-column: {{ loop.index }}; grid-row: 1;" class="flex flex-col">
+        <h2 id="stufe-{{ b.band }}" class="map-strand-head m-0 text-base text-slate-900">{{ t.map.grade(b.band | band) }}</h2>
+        <ul class="map-cell">
+          {%- for id in b.competencies %}
+          {{ c.mapChip(subject, subject.competencies | byId(id), [], false) }}
+          {%- endfor %}
+        </ul>
+      </section>
+      {%- endfor %}
+
+      <h2 class="map-strand-apps m-0" style="grid-row: 2;">{{ T.apps }}</h2>
+      {%- set row = 3 %}
+      {%- for bar in strand.bars %}
+      <a href="{{ ('/' + bar.app.id + '/') | inLang(lang) | url }}" class="map-appbar" style="grid-column: {{ bar.from + 1 }} / {{ bar.to + 2 }}; grid-row: {{ row + loop.index0 }};">
+        <strong{{ bar.app.title | fallbackLang(lang) | safe }}>{{ bar.app.title | tx(lang) }}</strong>
+        <span class="text-slate-300">{{ T.barCount(bar.count, strand.total) }} · {{ t.map.grade((strand.bands[bar.from].band | band) if bar.from == bar.to else ((strand.bands[bar.from].band.split('-')[0]) + '–' + (strand.bands[bar.to].band.split('-')[1]))) }}</span>
+      </a>
+      {%- endfor %}
+      {%- for i in strand.gaps %}
+      <p class="map-gapbar m-0" style="grid-column: {{ i + 1 }}; grid-row: {{ row + strand.bars.length }};">{{ T.gap }} <span class="sr-only">({{ t.map.grade(strand.bands[i].band | band) }})</span></p>
+      {%- endfor %}
+    </div>
+  </div>
+
+  <section class="panel flex flex-wrap items-center justify-between gap-4" aria-labelledby="bauen">
+    <div class="max-w-3xl">
+      <h2 id="bauen" class="panel-title">{{ T.build.headline }}</h2>
+      <p class="m-0 text-slate-600">{{ T.build.body }}</p>
+    </div>
+    <a href="{{ '/build/' | inLang(lang) | url }}" class="btn btn-primary">{{ T.build.link }}</a>
+  </section>
+</div>

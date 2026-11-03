@@ -6,7 +6,7 @@
 // links an app's copy (button, link, topics, QR code) only when start/copies.txt lists it at its entry's commit, so
 // it never links a copy that is not live; otherwise it links the entry's url. LERNAPPS_COPIES names another list (a
 // URL or a file, for the tests); without network the catalog links the entries' urls.
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { load } from "js-yaml";
 import QRCode from "qrcode";
@@ -47,7 +47,39 @@ function check(id, raw) {
   return result.data;
 }
 
-export default async function () {
+/**
+ * The pages of an explainer of format 2: lernapps-pages.json at the root of its bundle (docs/learning-map-contract.md,
+ * section 3), read from the served copy or the creator's address. undefined when the app has none (format 1, another
+ * archetype) or it cannot be read; LERNAPPS_PAGES names a directory with <id>.json instead (the tests), "off" reads none.
+ */
+async function explainerPages(id, base) {
+  const from = process.env.LERNAPPS_PAGES;
+  if (from === "off") return undefined;
+  try {
+    let data;
+    if (from) {
+      const file = join(from, `${id}.json`);
+      if (!existsSync(file)) return undefined;
+      data = JSON.parse(readFileSync(file, "utf8"));
+    } else {
+      const response = await fetch(new URL("lernapps-pages.json", base), { signal: AbortSignal.timeout(10_000) });
+      if (!response.ok) return undefined;
+      data = await response.json();
+    }
+    if (data?.format !== 1 || !Array.isArray(data.pages)) return undefined;
+    return data;
+  } catch {
+    return undefined;
+  }
+}
+
+let cached;
+/** The catalog, built once per build: src/_data/map.js reads it too. */
+export default function () {
+  return (cached ??= build());
+}
+
+async function build() {
   const apps = [];
   const live = await liveCopies();
   for (const file of readdirSync(DIR).filter((f) => f.endsWith(".yaml")).sort()) {
@@ -56,6 +88,10 @@ export default async function () {
     const copy = live.get(id) === entry.commit ? `${START}/${id}/` : undefined;
     const url = copy ?? entry.url;
     const base = url.endsWith("/") ? url : url + "/";
+    // A format-2 explainer says its strand and pages itself; they replace the hand-written topics (KD-13).
+    const own = await explainerPages(id, base);
+    const pages = own?.pages.map((p) => ({ ...p, url: new URL(p.path, base).href }));
+    const strand = own ? (own.strand === "none" ? undefined : own.strand) : entry.strand;
     apps.push({
       ...entry,
       url,
@@ -63,7 +99,12 @@ export default async function () {
       copy: copy !== undefined,
       id,
       keywords: entry.keywords ?? [],
-      topics: (entry.topics ?? []).map((t) => ({ ...t, url: new URL(t.path, base).href })),
+      strand,
+      explainer: Boolean(own),
+      pages,
+      topics: pages
+        ? pages.map((p) => ({ title: p.title, path: p.path, url: p.url }))
+        : (entry.topics ?? []).map((t) => ({ ...t, url: new URL(t.path, base).href })),
       qr: await QRCode.toString(url, { type: "svg", margin: 0, errorCorrectionLevel: "M", color: { dark: "#0f172a", light: "#ffffff" } }),
     });
   }

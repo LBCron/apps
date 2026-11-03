@@ -1,0 +1,827 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+#
+# PROPOSAL (research, not applied): subject model Mathematik, strands and Bausteine revised from public sources.
+# Format of map/<subject>.yaml (docs/learning-map-contract.md). Details, decisions and the id migration: report.md.
+#
+# Source abbreviations used in the comments (full citations in report.md):
+#   KMK    = KMK Bildungsstandards Mathematik ESA/MSA (i.d.F. 23.06.2022); page of the PDF
+#   KMK-P  = KMK Bildungsstandards Mathematik Primarbereich (i.d.F. 23.06.2022)
+#   HE     = Hessen, Lehrplan Mathematik gymnasialer Bildungsgang Jg. 5-13 (G9), unit number "5.1" ... "10.5" (grade = first number)
+#   HE-KC  = Hessen, Kerncurriculum Mathematik Sek I Gymnasium, Kap. 7.3 Schwerpunktsetzungen (two-year bands 5/6, 7/8, 9/10)
+#   BY     = Bayern, LehrplanPLUS Gymnasium (neunstufig) Mathematik 5 ... 10, section "M<Jg> <n.m>"
+#   NRW    = Nordrhein-Westfalen, Kernlehrplan Sek I Gymnasium Mathematik (Heft 3401, 2019): E = Erprobungsstufe (5-6),
+#            S1 = Erste Stufe, S2 = Zweite Stufe, Ari/Fkt/Geo/Sto-n = Kompetenzerwartung n of the Inhaltsfeld
+#   SILP   = NRW, Beispiel fuer einen schulinternen Lehrplan Gymnasium Sek I Mathematik (31.01.2020), unit "6.2" ... (grade = first number;
+#            the Kernlehrplan itself names only the stages, the example gives the grades; S1 is read as 7-8, S2 as 9-10)
+#   "bands" = where HE / BY / NRW place it; the Richtstufe is the majority. Where all three differ it says "no majority".
+name: { de: Mathematik, en: Mathematics }
+source:
+  title: KMK-Bildungsstandards Mathematik, ESA und MSA (2022)
+  url: https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2022/2022_06_23-Bista-ESA-MSA-Mathe.pdf
+strands:
+  # ===================================================================================================================
+  # ARITHMETIK: KMK Leitidee "Zahl und Operation" (Sachgebiete Arithmetik, Algebra [, Stochastik]), p. 15-16, plus the
+  # arithmetic part of "Groessen und Messen" (Groessen vorstellen, umrechnen, messen; p. 17). Prozent- und Zinsrechnung:
+  # KMK p. 15 ("Zahl und Operation").
+  # ===================================================================================================================
+  - id: arithmetik
+    name: { de: Arithmetik, en: Arithmetic }
+    competencies:
+      - id: natuerliche-zahlen
+        # KMK p.15 (stellen Zahlen der Situation angemessen dar), KMK-P p.14; HE 5.1 (Stellenwertsysteme, bis Billion); BY M5 1.1; NRW E Ari-8 (SILP 5.2)
+        # bands: HE 5 / BY 5 / NRW 5-6 -> 5-6
+        iCan: "Ich kann natürliche Zahlen im Stellenwertsystem lesen, schreiben und darstellen."
+        gradeBand: "5-6"
+      - id: zahlen-vergleichen-ordnen
+        # NARROWED to natural numbers (was: also fractions, negative numbers, roots; those moved to their own Bausteine).
+        # KMK p.15-16; HE 5.1 (Vergleichen, Ordnen, Zahlenstrahl, Groessenordnung); BY M5 1.1 (Zahlenstrahl, Skalierung); NRW E Ari-8
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann natürliche Zahlen vergleichen, am Zahlenstrahl ablesen und der Größe nach ordnen."
+        gradeBand: "5-6"
+        requires: [natuerliche-zahlen]
+      - id: runden
+        # KMK p.16 (runden Zahlen sinnvoll); HE 5.1, 6.1 (Dezimalbrueche runden); BY M5 1.1; NRW E Ari-10
+        # bands: 5-6 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Zahlen und Größen sinnvoll runden und die Genauigkeit zur Aufgabe passend wählen."
+        gradeBand: "5-6"
+        requires: [natuerliche-zahlen]
+      - id: schriftliche-verfahren
+        # NEW (split from grundrechenarten-rechengesetze). KMK p.16 (Algorithmen, z. B. schriftliche Rechenoperationen), KMK-P p.14;
+        # HE 5.1 (schriftliche Division); BY M5 1.2, 3.1; NRW E Ari-14
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann natürliche Zahlen schriftlich addieren, subtrahieren, multiplizieren und dividieren."
+        gradeBand: "5-6"
+        requires: [natuerliche-zahlen]
+      - id: grundrechenarten-rechengesetze
+        # NARROWED to laws and precedence (schriftliche Verfahren split off). KMK p.16 (Rechengesetze, vorteilhaftes Rechnen);
+        # HE 5.1 (Vorrangregeln, Distributivgesetz); BY M5 1.2, 3.2; NRW E Ari-3, Ari-4
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Klammern und Vorrangregeln beachten und Rechengesetze für vorteilhaftes Rechnen nutzen."
+        gradeBand: "5-6"
+        requires: [schriftliche-verfahren]
+      - id: ueberschlagen
+        # NEW (split from groessenvorstellungen-schaetzen). KMK p.16 (Ueberschlagsrechnungen zur Orientierung und Kontrolle);
+        # HE 5.1, 6.1; BY M5 3.1, M6 1.3; NRW E Ari-10
+        # bands: 5-6 / 5-6 / 5-6 -> 5-6
+        iCan: "Ich kann Ergebnisse mit einem Überschlag auf Sinn prüfen."
+        gradeBand: "5-6"
+        requires: [runden, grundrechenarten-rechengesetze]
+      - id: potenzen
+        # NARROWED and MOVED from algebra (numbers, not terms): natural exponents and powers of ten. Potenzgesetze, negative
+        # exponents, roots: own Bausteine (algebra, arithmetik).
+        # KMK p.15-16 (Zehnerpotenzschreibweise, einfache Potenzen); HE 5.1 (Potenzschreibweise, Stellenwertsysteme); BY M5 3.1; NRW E Ari-1, S2 Ari-1
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Potenzen mit natürlichen Exponenten berechnen und Zehnerpotenzen zum Darstellen großer Zahlen nutzen."
+        gradeBand: "5-6"
+        requires: [grundrechenarten-rechengesetze]
+      - id: teilbarkeit
+        # NARROWED (ggT/kgV and Primfaktoren split off). KMK p.15 (untersuchen Zahlen nach ihren Faktoren); HE 6.1; BY M5 3.1; NRW E Ari-2
+        # bands: 6 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Teiler und Vielfache bestimmen und Teilbarkeitsregeln anwenden."
+        gradeBand: "5-6"
+        requires: [grundrechenarten-rechengesetze]
+      - id: primfaktoren-ggt-kgv
+        # NEW (split from teilbarkeit). KMK p.15; HE 6.1 (Primzahlen, Primfaktorzerlegung, ggT, kgV); BY M5 3.1 (Primfaktorzerlegung);
+        # NRW E Ari-1 (Primfaktorzerlegung; ggT/kgV not named, SILP 5.9)
+        # bands: 6 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Zahlen in Primfaktoren zerlegen und ggT und kgV bestimmen."
+        gradeBand: "5-6"
+        requires: [teilbarkeit, potenzen]
+      - id: brueche-begriff
+        # NARROWED (kuerzen/erweitern split off). KMK p.16 (Vorstellungen zum Bruchbegriff); HE 6.1; BY M6 1.1; NRW E Ari-11 (SILP 5.9)
+        # bands: 6 / 6 / 5-6 -> 5-6
+        iCan: "Ich kann Brüche als Teil eines Ganzen deuten und darstellen."
+        gradeBand: "5-6"
+        requires: [natuerliche-zahlen]
+      - id: brueche-kuerzen-erweitern
+        # NEW (split from brueche-begriff). HE 6.1 (Kuerzen, Erweitern, Hauptnenner, Vergleichen und Ordnen); BY M6 1.1; NRW E Ari-12
+        # bands: 6 / 6 / 5-6 -> 5-6
+        iCan: "Ich kann Brüche kürzen und erweitern und der Größe nach vergleichen."
+        gradeBand: "5-6"
+        requires: [brueche-begriff, teilbarkeit]
+      - id: bruchrechnung-grundaufgaben
+        # NARROWED to the three Grundaufgaben (arithmetic with fractions split into the next Bausteine).
+        # HE 6.1 ("Grundaufgaben der Bruchrechnung": Bruchteil, Ganzes, Anteil); BY M6 1.1, 1.5 (Anteile von Anteilen); NRW E Ari-13
+        # bands: 6 / 6 / 5-6 -> 5-6
+        iCan: "Ich kann Bruchteil, Ganzes und Anteil bestimmen."
+        gradeBand: "5-6"
+        requires: [brueche-begriff]
+      - id: brueche-addieren-subtrahieren
+        # NEW. KMK p.16 (rechnen mit rationalen Zahlen); HE 6.1; BY M6 1.3; NRW E Ari-14 (SILP 6.5)
+        # bands: 6 / 6 / 6 -> 5-6
+        iCan: "Ich kann Brüche und gemischte Zahlen addieren und subtrahieren."
+        gradeBand: "5-6"
+        requires: [brueche-kuerzen-erweitern]
+      - id: brueche-multiplizieren-dividieren
+        # NEW. HE 6.1; BY M6 1.4; NRW E Ari-14 (SILP 6.7)
+        # bands: 6 / 6 / 6 -> 5-6
+        iCan: "Ich kann Brüche multiplizieren und dividieren."
+        gradeBand: "5-6"
+        requires: [brueche-addieren-subtrahieren]
+      - id: dezimalbrueche
+        # KMK p.16; HE 6.1 (Dezimalschreibweise, gewoehnliche Brueche in endliche und periodische Dezimalbrueche); BY M6 1.2; NRW E Ari-8 (SILP 6.4)
+        # bands: 6 / 6 / 6 -> 5-6
+        iCan: "Ich kann Brüche in Dezimalbrüche umwandeln und erklären, ob sie abbrechen oder sich wiederholen."
+        gradeBand: "5-6"
+        requires: [brueche-begriff]
+      - id: dezimalbrueche-rechnen
+        # NEW (split from bruchrechnung-grundaufgaben). HE 6.1 (vier Grundrechenarten bei abbrechenden Dezimalbruechen); BY M6 1.3, 1.4; NRW E Ari-14 (SILP 6.5, 6.7)
+        # bands: 6 / 6 / 6 -> 5-6
+        iCan: "Ich kann mit Dezimalbrüchen rechnen."
+        gradeBand: "5-6"
+        requires: [dezimalbrueche, schriftliche-verfahren]
+      - id: rationale-zahlen
+        # Content stays (negative numbers: Zahlengerade, Gegenzahl, Betrag), BAND CHANGED 7-8 -> 5-6. KMK p.15-16 (Zahlbereichserweiterung N -> Z -> Q);
+        # HE 7.2; BY M5 1.1; NRW E Ari-15 (ganze Zahlen darstellen, SILP 6.2), S1 Ari-1, Ari-2
+        # bands: HE 7 / BY 5 / NRW 6 -> 5-6 (HE dissents; 2 of 3)
+        iCan: "Ich kann mit negativen Zahlen, Gegenzahlen und Beträgen umgehen und sie an Beispielen wie Temperatur erklären."
+        gradeBand: "5-6"
+        requires: [natuerliche-zahlen]
+      - id: rationale-zahlen-rechnen
+        # REPLACES rechnen-rational-reell (negative numbers only; roots moved to wurzelgesetze). KMK p.16 (rechnen mit ganzen und rationalen Zahlen);
+        # HE 7.2 (Rechnen, Klammer-/Vorrangregeln); BY M5 1.2, 3.1 (Vorzeichenregeln, ganze Zahlen), M6 1.3-1.5; NRW S1 Ari-3 (SILP 7.4)
+        # bands: HE 7 / BY 5 / NRW 7 -> 7-8 (BY dissents)
+        iCan: "Ich kann mit negativen Zahlen rechnen und dabei Vorzeichen- und Klammerregeln beachten."
+        gradeBand: "7-8"
+        requires: [rationale-zahlen, brueche-multiplizieren-dividieren]
+      - id: quadratwurzeln
+        # NEW (split from reelle-zahlen). KMK p.16 (Wurzeln erlaeutern und berechnen; Heron-Verfahren, Intervallschachtelung); HE 9.2; BY M9 1; NRW S2 Ari-6, Ari-7, Ari-9 (SILP 9.2)
+        # bands: 9 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann Quadratwurzeln erklären und Näherungswerte bestimmen."
+        gradeBand: "9-10"
+        requires: [potenzen, zahlen-vergleichen-ordnen, dezimalbrueche-rechnen]
+      - id: reelle-zahlen
+        # NARROWED to the number domain (Quadratwurzeln and Pi moved: quadratwurzeln, kreis-umfang-flaeche). KMK p.15-16 (reelle Zahlen, Vollstaendigkeit der Zahlengerade);
+        # HE 9.2 (irrationale Quadratwurzeln und reelle Zahlen); BY M9 1 (Irrationalitaet); NRW S2 Ari-2
+        # bands: 9 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann rationale und irrationale Zahlen unterscheiden und die reellen Zahlen als Zahlbereich einordnen."
+        gradeBand: "9-10"
+        requires: [quadratwurzeln, rationale-zahlen-rechnen]
+      - id: wurzelgesetze
+        # NEW (from rechnen-rational-reell). KMK p.16; HE 9.2 (Rechenregeln fuer Quadratwurzeln); BY M9 1; NRW S2 Ari-7
+        # bands: 9 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann Wurzelgesetze anwenden und einfache Wurzelterme vereinfachen."
+        gradeBand: "9-10"
+        requires: [quadratwurzeln, rationale-zahlen-rechnen]
+      - id: prozent-grundbegriffe
+        # unchanged (used by an app). KMK p.16, 18 (Prozent- und Zinsrechnung vorstellungsbasiert, z. B. Prozentstreifen); HE 7.1 (Prozentbegriff, Bruch-/Dezimal-/Prozentschreibweise);
+        # BY M6 1.1, 3; NRW E Ari-8 (Prozentzahl als Darstellung, SILP 5.2/6.4)
+        # bands: HE 7 / BY 6 / NRW 5-6 -> 5-6 (HE dissents; the calculation Bausteine below are 7-8)
+        iCan: "Ich kann Prozent als Hundertstel deuten und in einer Aufgabe Grundwert, Prozentwert und Prozentsatz erkennen."
+        gradeBand: "5-6"
+        requires: [brueche-begriff, dezimalbrueche]
+      - id: prozent-prozentwert
+        # unchanged (used by an app). KMK p.15; HE 7.1 (Grundaufgaben); BY M6 3 (Grundgleichung der Prozentrechnung); NRW S1 Fkt-8 (SILP 7.2)
+        # bands: 7 / 6 / 7 -> 7-8 (BY dissents)
+        iCan: "Ich kann den Prozentwert aus Grundwert und Prozentsatz berechnen."
+        gradeBand: "7-8"
+        requires: [prozent-grundbegriffe]
+      - id: prozent-prozentsatz
+        # unchanged (used by an app); sources and bands as prozent-prozentwert
+        iCan: "Ich kann den Prozentsatz aus Prozentwert und Grundwert berechnen."
+        gradeBand: "7-8"
+        requires: [prozent-grundbegriffe]
+      - id: prozent-grundwert
+        # unchanged (used by an app); sources and bands as prozent-prozentwert
+        iCan: "Ich kann den Grundwert aus Prozentwert und Prozentsatz berechnen."
+        gradeBand: "7-8"
+        requires: [prozent-grundbegriffe]
+      - id: prozent-veraenderung
+        # unchanged (used by an app). HE 7.1 (erhoehter/verminderter Grundwert), 8.3 (Aenderung um/auf, Prozentsaetze ueber 100 %); BY M7 3; NRW S1 Fkt-9 (Wachstumsfaktor)
+        # bands: 7-8 / 7 / 7-8 -> 7-8
+        iCan: "Ich kann neue und alte Werte nach einer prozentualen Zunahme oder Abnahme berechnen."
+        gradeBand: "7-8"
+        requires: [prozent-prozentwert]
+      - id: prozent-vergleich
+        # unchanged (used by an app). HE 7.1 ("Vergleich des Anteils"); BY M6 3, M7 3; NRW S1 Fkt-8
+        # bands: 7 / 6-7 / 7 -> 7-8
+        iCan: "Ich kann angeben, um wie viel Prozent ein Wert größer oder kleiner als ein anderer ist."
+        gradeBand: "7-8"
+        requires: [prozent-prozentsatz]
+      - id: prozent-sachaufgaben
+        # unchanged (used by an app). HE 7.1 (Aufgaben aus komplexen Sachzusammenhaengen), 8.1; BY M7 3 (komplexere Aufgaben); NRW S1 Fkt-8
+        # bands: 7 / 7 / 7 -> 7-8
+        iCan: "Ich kann Sachaufgaben zur Prozentrechnung in eine Gleichung oder einen Dreisatz übersetzen und lösen."
+        gradeBand: "7-8"
+        requires: [prozent-prozentwert, prozent-prozentsatz, prozent-grundwert]
+      - id: prozent-von-prozenten
+        # unchanged. HE 8.3 (Verknuepfungen von Prozentsaetzen); BY M6 3 (Prozent und Prozentpunkte); NRW S1 Fkt-9 (kombinieren prozentuale Veraenderungen)
+        # bands: 8 / 6 / 7-8 -> 7-8
+        iCan: "Ich kann Prozentpunkte und Prozente unterscheiden und mehrere prozentuale Änderungen verknüpfen."
+        gradeBand: "7-8"
+        requires: [prozent-veraenderung]
+      - id: zinsrechnung
+        # NARROWED (Zinseszins split off). KMK p.15, 18; HE 7.1 (Jahreszinsen), 8.3 (Monats-, Tageszinsen); BY M6 3 (Zins), M7 3; NRW S1 Fkt-8
+        # bands: 7-8 / 6-7 / 7 -> 7-8
+        iCan: "Ich kann Jahres-, Monats- und Tageszinsen berechnen."
+        gradeBand: "7-8"
+        requires: [prozent-prozentwert, prozent-prozentsatz, prozent-grundwert]
+      - id: zinseszins
+        # NEW (split from zinsrechnung). KMK p.18 (Prozentrechnung bei Wachstumsprozessen, z. B. Zinsrechnung); HE 7.1 (Zinsen von Zinsen), 8.3 (Zinseszins); NRW S1 Ari-8, Fkt-9 (SILP 8.6); BY M10 1 (exponentielles Wachstum, later)
+        # bands: 8 / 10 / 7-8 -> 7-8 (BY dissents)
+        iCan: "Ich kann Zinseszinsen berechnen."
+        gradeBand: "7-8"
+        requires: [zinsrechnung, prozent-veraenderung]
+      - id: groessenvorstellungen-schaetzen
+        # NARROWED (Ueberschlag split off). KMK p.17 (schaetzen Groessen mit Repraesentanten, Plausibilitaetspruefung), KMK-P p.15; HE 5.3; BY M5 4.1; NRW E Ari-9
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Größen mithilfe von Bezugsgrößen schätzen und prüfen, ob ein Ergebnis zur Sache passt."
+        gradeBand: "5-6"
+      - id: umrechnung-groessen
+        # KMK p.17 (Einheiten situationsgerecht waehlen und umwandeln); HE 5.3; BY M5 4.1; NRW E Ari-9
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Größen in andere Einheiten umrechnen und passende Einheiten wählen."
+        gradeBand: "5-6"
+        requires: [groessenvorstellungen-schaetzen]
+      - id: messen-laenge-masse-geld-zeit
+        # KMK p.17 (Grundprinzip des Messens, Messungen vornehmen, Berechnungen mit Massangaben); HE 5.3 (Sachrechnen: Waehrung, Laenge, Gewicht, Zeitpunkt/Zeitspanne); BY M5 4.1; NRW E Ari-9
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Länge, Masse, Geld und Zeit messen und damit in Sachaufgaben rechnen."
+        gradeBand: "5-6"
+        requires: [groessenvorstellungen-schaetzen]
+
+  # ===================================================================================================================
+  # ALGEBRA: KMK Leitidee "Strukturen und funktionaler Zusammenhang" (Sachgebiete Algebra, Funktionen), p. 18-19:
+  # Variablen, Terme, Gleichungen, Gleichungssysteme; plus Potenzen/Wurzeln as operations on terms (p. 16).
+  # ===================================================================================================================
+  - id: algebra
+    name: { de: Algebra, en: Algebra }
+    competencies:
+      - id: einfache-gleichungen
+        # NEW. KMK p.19 (einfache lineare Gleichungen numerisch, systematisches Probieren); KMK-P p.16 (Gleichheit von Ausdruecken); HE 5.1 (Variable, einfache Gleichungen durch Probieren), 7.2;
+        # BY M5 1.2, 3.1 (a + x = b ... durch Probieren oder Umkehraufgabe); NRW E Ari-5 (Rechenanweisungen umkehren)
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann einfache Gleichungen durch Probieren oder mit der Umkehraufgabe lösen."
+        gradeBand: "5-6"
+        requires: [grundrechenarten-rechengesetze]
+      - id: muster-zahlenfolgen
+        # NEW (weakly backed in the Laender: only NRW). KMK p.16 (Zahlenfolgen fortfuehren, auch mit Variablen), KMK-P p.16 (Strukturen in Mustern); NRW E Fkt-3 (SILP 6.9)
+        # bands: HE - / BY - / NRW 5-6 -> 5-6 (single curriculum)
+        iCan: "Ich kann Zahlenfolgen fortsetzen und die Regel mit Worten und mit einem Term beschreiben."
+        gradeBand: "5-6"
+        requires: [grundrechenarten-rechengesetze]
+      - id: terme-variable
+        # NARROWED (umformen split off), BAND CHANGED 5-6 -> 7-8. KMK p.18 (Variablen; Terme aufstellen); HE 8.1 (Aufstellen von Termen, Wertgleichheit); BY M7 1.1; NRW S1 Ari-4, Ari-5, Ari-7 (E Ari-6/7 only first steps; SILP 7.6)
+        # bands: 8 / 7 / 7-8 -> 7-8
+        iCan: "Ich kann Terme mit Variablen aufstellen, ihren Wert berechnen und auf Wertgleichheit prüfen."
+        gradeBand: "7-8"
+        requires: [grundrechenarten-rechengesetze, einfache-gleichungen]
+      - id: terme-umformen
+        # NEW. KMK p.18 (formen Terme um); HE 8.1 (Umformungsregeln); BY M7 1.2 (Zusammenfassen, Ausklammern); NRW S1 Ari-7 (SILP 7.5)
+        # bands: 8 / 7 / 7-8 -> 7-8
+        iCan: "Ich kann gleichartige Glieder zusammenfassen und gemeinsame Faktoren ausklammern."
+        gradeBand: "7-8"
+        requires: [terme-variable]
+      - id: klammern-binome
+        # unchanged (used by an app). KMK p.18; HE 8.1 (Binomische Formeln, Faktorisieren); BY M7 1.2; NRW S1 (binomische Formeln, SILP 7.6)
+        # bands: 8 / 7 / 7-8 -> 7-8
+        iCan: "Ich kann Klammern auflösen und die binomischen Formeln vorwärts und rückwärts anwenden."
+        gradeBand: "7-8"
+        requires: [terme-umformen]
+      - id: lineare-gleichungen
+        # BAND CHANGED 5-6 -> 7-8 (the 5-6 content is einfache-gleichungen). KMK p.19 (algebraisch/Umformen); HE 8.1; BY M7 3 (Aequivalenzumformungen); NRW S1 Ari-9, Ari-10
+        # bands: 8 / 7 / 7-8 -> 7-8
+        iCan: "Ich kann lineare Gleichungen lösen und die Lösungsverfahren vergleichen."
+        gradeBand: "7-8"
+        requires: [terme-umformen, einfache-gleichungen]
+      - id: gleichungen-aufstellen
+        # NEW. KMK p.18 (Terme/Gleichungen im Sachkontext); HE 8.1 ("Aufstellen von Termen"), 8.3 (komplexe Fragestellungen mit linearen Gleichungen); BY M7 3 (passende Gleichungen aufstellen); NRW S1 Ari-6 (Gleichungen aufstellen), Ari-9 (im Sachkontext deuten)
+        # bands: 8 / 7 / 7-8 -> 7-8
+        iCan: "Ich kann zu einer Sachaufgabe eine lineare Gleichung aufstellen, lösen und die Lösung deuten."
+        gradeBand: "7-8"
+        requires: [lineare-gleichungen]
+      - id: formeln-umstellen
+        # NEW (not named by KMK / NRW). HE 8.1 (Umstellen einer Formel); BY M8 4 (Formeln nach einer Variablen aufloesen)
+        # bands: 8 / 8 / - -> 7-8 (two curricula)
+        iCan: "Ich kann eine Formel nach einer Variablen umstellen."
+        gradeBand: "7-8"
+        requires: [lineare-gleichungen]
+      - id: ungleichungen
+        # KMK (Ungleichungen not named); HE 8.1 (Lösungsmenge auf der Zahlengeraden); BY M8 2 (Intervallschreibweise); NRW S1 Ari-6 (Ungleichungen aufstellen)
+        # bands: 8 / 8 / 7-8 -> 7-8
+        iCan: "Ich kann lineare Ungleichungen lösen und die Lösungsmenge auf der Zahlengeraden zeigen."
+        gradeBand: "7-8"
+        requires: [lineare-gleichungen]
+      - id: bruchterme
+        # NEW (not in HE except as optional item). KMK p.18 (Terme umformen); BY M8 4; NRW S1 Ari-7 (Bruchterme), SILP 8.5
+        # bands: HE - / BY 8 / NRW 7-8 -> 7-8
+        iCan: "Ich kann Bruchterme kürzen, erweitern und zusammenfassen."
+        gradeBand: "7-8"
+        requires: [klammern-binome, brueche-kuerzen-erweitern]
+      - id: bruchgleichungen
+        # NEW. BY M8 4; NRW S1 Ari-9 (elementare Bruchgleichungen), SILP 8.5; HE: optional (8)
+        # bands: HE - / BY 8 / NRW 7-8 -> 7-8
+        iCan: "Ich kann einfache Gleichungen lösen, in denen die Variable im Nenner steht."
+        gradeBand: "7-8"
+        requires: [bruchterme, lineare-gleichungen]
+      - id: lineare-gleichungssysteme
+        # NARROWED to the graphical solution and the solution count; BAND CHANGED 9-10 -> 7-8. KMK p.19 (lineare Gleichungssysteme grafisch, Loesbarkeit); HE 9.1 (geometrische Lösung); BY M8 6; NRW S1 Ari-9 (SILP 8.4)
+        # bands: HE 9 / BY 8 / NRW 7-8 -> 7-8 (HE dissents)
+        iCan: "Ich kann Gleichungssysteme mit zwei Gleichungen und zwei Variablen zeichnerisch lösen und sagen, wie viele Lösungen sie haben."
+        gradeBand: "7-8"
+        requires: [lineare-gleichungen, lineare-funktionen]
+      - id: lgs-rechnerisch
+        # NEW (split from lineare-gleichungssysteme). KMK p.19 (algebraisch); HE 9.1 (Einsetzungs-, Gleichsetzungs-, Additionsverfahren); BY M8 6; NRW S1 Ari-9, Ari-10
+        # bands: 9 / 8 / 7-8 -> 7-8 (HE dissents)
+        iCan: "Ich kann ein Gleichungssystem mit dem Einsetzungs-, Gleichsetzungs- oder Additionsverfahren lösen."
+        gradeBand: "7-8"
+        requires: [lineare-gleichungssysteme]
+      - id: potenzgesetze
+        # NEW (split from potenzen). KMK p.16; HE 10.1 (Potenzgesetze); BY M7 1.2 (Produkte/Potenzen von Potenzen), M8 4; NRW S2 Ari-3 (SILP "Potenzen und Wurzeln" in 9-10)
+        # bands: HE 10 / BY 7 / NRW 9-10 -> 9-10 (BY dissents)
+        iCan: "Ich kann die Potenzgesetze für natürliche Exponenten anwenden."
+        gradeBand: "9-10"
+        requires: [potenzen, terme-umformen]
+      - id: potenzen-ganzzahlige-exponenten
+        # NEW. HE 10.1 (ganzzahlige Exponenten); BY M6 1.4 (negative Exponenten als Schreibweise), M8 4; NRW S2 Ari-4 (Bruchdarstellung <-> Potenzschreibweise)
+        # bands: 10 / 6-8 / 9-10 -> 9-10 (BY dissents)
+        iCan: "Ich kann Potenzen mit negativen Exponenten als Bruch deuten und berechnen."
+        gradeBand: "9-10"
+        requires: [potenzgesetze, brueche-multiplizieren-dividieren]
+      - id: n-te-wurzeln
+        # NEW. HE 10.1 (Potenzgleichungen x^n = a, Wurzelfunktionen); BY M9 5 (allgemeine Wurzel, rationale Exponenten); NRW S2 Ari-5, Ari-9
+        # bands: 10 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann n-te Wurzeln bestimmen und Wurzeln als Potenzen mit Bruch-Exponenten schreiben."
+        gradeBand: "9-10"
+        requires: [quadratwurzeln, potenzen-ganzzahlige-exponenten]
+      - id: quadratische-gleichungen-einfach
+        # NEW (split from quadratische-gleichungen). KMK p.19; HE 9.3 (Ausklammern, Produkt gleich null, rein quadratisch); BY M9 2.1; NRW S2 Ari-8
+        # bands: 9 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann einfache quadratische Gleichungen lösen, zum Beispiel durch Wurzelziehen, Ausklammern oder Produkt gleich null."
+        gradeBand: "9-10"
+        requires: [klammern-binome, quadratwurzeln]
+      - id: quadratische-gleichungen
+        # NARROWED to the general case. KMK p.19 (quadratische Gleichungen, Lösbarkeit); HE 9.3; BY M9 2.1 (Loesungsformel); NRW S2 Ari-8 (quadratische Ergaenzung, p-q-Formel, Vieta; SILP 9.4)
+        # bands: 9 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann quadratische Gleichungen mit passenden Verfahren lösen und die Anzahl der Lösungen bestimmen."
+        gradeBand: "9-10"
+        requires: [quadratische-gleichungen-einfach, lineare-gleichungen]
+      - id: logarithmen
+        # KMK: not named; HE 10.2 (Logarithmieren); BY M10 1; NRW S2 Ari-10 (Exponentialgleichungen b^x = c durch Logarithmieren)
+        # bands: 10 / 10 / 9-10 -> 9-10
+        iCan: "Ich kann den Logarithmus als Umkehrung des Potenzierens erklären und damit einfache Exponentialgleichungen lösen."
+        gradeBand: "9-10"
+        requires: [potenzgesetze, exponentialfunktionen]
+
+  # ===================================================================================================================
+  # FUNKTIONEN: KMK Leitidee "Strukturen und funktionaler Zusammenhang" (Sachgebiet Funktionen), p. 18-19; NRW Inhaltsfeld Funktionen.
+  # ===================================================================================================================
+  - id: funktionen
+    name: { de: Funktionen, en: Functions }
+    competencies:
+      - id: zuordnungen
+        # BAND CHANGED 5-6 -> 7-8 (tables of quantities are already Primarstufe: KMK-P p.16). KMK p.18; HE 7.1 (Zuordnungen), HE-KC 5/6 first notions; BY M8 1; NRW E Fkt-1 (SILP 5.8)
+        # bands: HE 7 / BY 8 / NRW 5-6 -> 7-8 (NRW dissents)
+        iCan: "Ich kann Zuordnungen zwischen Größen in Tabellen, Schaubildern und mit Worten darstellen und beschreiben."
+        gradeBand: "7-8"
+        requires: [koordinatensystem]
+      - id: dreisatz
+        # BAND CHANGED 7-8 -> 5-6, and no longer requires proportional-antiproportional (reversed). KMK p.19 (ggf. Dreisatz); HE 7.1; BY M5 4.1 (Schlussrechnung/Dreisatz); NRW E Fkt-2 (SILP 5.3)
+        # bands: HE 7 / BY 5 / NRW 5-6 -> 5-6 (HE dissents)
+        iCan: "Ich kann Sachaufgaben mit dem Dreisatz lösen."
+        gradeBand: "5-6"
+        requires: [grundrechenarten-rechengesetze, messen-laenge-masse-geld-zeit]
+      - id: massstab
+        # NEW. KMK p.18 (nutzen Maßstäbe beim Lesen und Anfertigen von Zeichnungen); HE 5.3 (optional: Maßstab lesen); BY M5 4.1; NRW E Fkt-4, Geo-10
+        # bands: HE 5 (optional) / BY 5 / NRW 5-6 -> 5-6
+        iCan: "Ich kann mit Maßstäben rechnen und Zeichnungen im passenden Maßstab lesen und anfertigen."
+        gradeBand: "5-6"
+        requires: [dreisatz, umrechnung-groessen]
+      - id: proportionale-zuordnungen
+        # REPLACES proportional-antiproportional (split). KMK p.18-19; HE 7.1 (Quotientengleichheit, Proportionalitätsfaktor, Ursprungsgerade); HE-KC 7/8; BY M8 2 (y = a·x); NRW S1 Fkt-1 (Quotientengleichheit, Proportionalitaetsfaktor)
+        # bands: 7 / 8 / 7-8 -> 7-8
+        iCan: "Ich kann proportionale Zuordnungen erkennen, darstellen und mit dem Proportionalitätsfaktor rechnen."
+        gradeBand: "7-8"
+        requires: [zuordnungen, dreisatz]
+      - id: antiproportionale-zuordnungen
+        # REPLACES proportional-antiproportional (split). KMK p.18-19; HE 7.1 (Produktgleichheit); BY M8 3 (y = a/x als indirekte Proportionalität); NRW S1 Fkt-1 (Produktgleichheit)
+        # bands: 7 / 8 / 7-8 -> 7-8
+        iCan: "Ich kann antiproportionale Zuordnungen erkennen, darstellen und von proportionalen unterscheiden."
+        gradeBand: "7-8"
+        requires: [zuordnungen, dreisatz]
+      - id: funktionsbegriff
+        # NEW. KMK p.18 (funktionale Zusammenhaenge, Darstellungen); HE 8.1 (Festigung des Funktionsbegriffs); HE-KC; BY M8 1 (Funktion als eindeutige Zuordnung, Definitions-/Wertemenge); NRW S1 Fkt-3
+        # bands: 8 / 8 / 7-8 -> 7-8
+        iCan: "Ich kann erklären, was eine Funktion ist, und Funktionsterm, Graph, Definitionsmenge und Wertemenge unterscheiden."
+        gradeBand: "7-8"
+        requires: [zuordnungen]
+      - id: funktionen-darstellung
+        # KMK p.18, 19 (Repraesentationen wechseln); HE 8.1; BY M8 1; NRW S1 Fkt-4
+        # bands: 8-10 / 8 / 7-8 -> 7-8
+        iCan: "Ich kann zwischen Funktionsgleichung, Wertetabelle und Graph wechseln."
+        gradeBand: "7-8"
+        requires: [funktionsbegriff, koordinatensystem]
+      - id: lineare-funktionen
+        # KMK p.19 (kennzeichnende Merkmale, Steigung interpretieren); HE 8.1; BY M8 2; NRW S1 Fkt-5, Fkt-6 (SILP 8.3)
+        # bands: 8 / 8 / 7-8 -> 7-8
+        iCan: "Ich kann lineare Funktionen mit Gleichung, Tabelle und Graph beschreiben und Steigung und Achsenabschnitt deuten."
+        gradeBand: "7-8"
+        requires: [proportionale-zuordnungen, funktionen-darstellung, koordinatensystem]
+      - id: geradengleichungen
+        # NEW. HE 8.1 (Funktionsgleichungen zu Graphen, Nullstelle, Punktprobe); BY M8 2 (Geradengleichungen aufstellen, Nullstellen, Schnittpunkt zweier Geraden); NRW S1 Fkt-5
+        # bands: 8 / 8 / 7-8 -> 7-8
+        iCan: "Ich kann die Gleichung einer Geraden aus zwei Punkten oder aus Punkt und Steigung bestimmen und Nullstelle und Schnittpunkt berechnen."
+        gradeBand: "7-8"
+        requires: [lineare-funktionen, lineare-gleichungen]
+      - id: quadratische-funktionen
+        # NARROWED (Anwenden split off); sinn unchanged. KMK p.18-19; HE 9.3; BY M9 2.1 (Parameter a, d, e; Scheitelpunkt); NRW S2 Fkt-4, Fkt-5, Fkt-8 (SILP 9.4)
+        # bands: 9 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann quadratische Funktionen und ihre Parabeln beschreiben und zeichnen."
+        gradeBand: "9-10"
+        requires: [lineare-funktionen, funktionen-darstellung, klammern-binome]
+      - id: quadratische-funktionen-anwenden
+        # NEW (split from quadratische-funktionen). KMK p.19 (lineare und quadratische Funktionen bei Problemen anwenden); HE 9.3 (Extremalprobleme); BY M9 2.2; NRW S2 Fkt-9, Fkt-12
+        # bands: 9 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann Sachprobleme mit quadratischen Funktionen lösen, zum Beispiel Nullstellen und Höchstwerte bestimmen."
+        gradeBand: "9-10"
+        requires: [quadratische-funktionen, quadratische-gleichungen]
+      - id: potenzfunktionen
+        # Backed by HE and BY only (KMK and NRW do not name them). HE 10.1 (Potenz- und Wurzelfunktionen); BY M9 5 (a·x^n)
+        # bands: 10 / 9 / - -> 9-10
+        iCan: "Ich kann einfache Potenz- und Wurzelfunktionen mit ihren Graphen beschreiben."
+        gradeBand: "9-10"
+        requires: [potenzgesetze, funktionen-darstellung]
+      - id: exponentialfunktionen
+        # KMK p.19 (f(x) = a·b^x); HE 10.2; BY M10 1; NRW S2 Fkt-10 (SILP 10.2)
+        # bands: 10 / 10 / 9-10 -> 9-10
+        iCan: "Ich kann Wachstum und Zerfall mit Exponentialfunktionen beschreiben und Modelle beurteilen."
+        gradeBand: "9-10"
+        requires: [prozent-veraenderung, potenzgesetze]
+      - id: bogenmass
+        # NEW. HE Übergangsprofil Jg. 10 (Kreis und Kreisteile: Winkel im Bogenmaß), HE 10.4; BY M10 3 (Bogenmaß, Einheitskreis); NRW S2 (Inhalt Sinusfunktionen: Grad- und Bogenmaß)
+        # bands: 10 / 10 / 9-10 -> 9-10
+        iCan: "Ich kann Winkel im Bogenmaß angeben und zwischen Grad- und Bogenmaß wechseln."
+        gradeBand: "9-10"
+        requires: [trigonometrie, kreis-umfang-flaeche]
+      - id: sinusfunktion
+        # KMK p.19 (f(x) = a·sin(b·x) fuer periodische Vorgaenge); HE 10.4; BY M10 3; NRW S2 Fkt-13, Fkt-14
+        # bands: 10 / 10 / 9-10 -> 9-10
+        iCan: "Ich kann Sinus- und Kosinusfunktion mit ihren Eigenschaften beschreiben und für periodische Vorgänge nutzen."
+        gradeBand: "9-10"
+        requires: [trigonometrie, bogenmass, funktionen-darstellung]
+
+  # ===================================================================================================================
+  # GEOMETRIE: KMK Leitidee "Raum und Form" (Sachgebiet Geometrie), p. 20-21, plus the geometric part of "Groessen und Messen"
+  # (Flaeche, Volumen, Streckenlaengen und Winkel berechnen; p. 17).
+  # ===================================================================================================================
+  - id: geometrie
+    name: { de: Geometrie, en: Geometry }
+    competencies:
+      - id: grundfiguren-eben
+        # KMK p.20 (benennen und beschreiben geometrische Objekte; analysieren Winkel, Dreiecke, Vierecke); HE 5.2; BY M5 2; NRW E Geo-1
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann ebene Grundfiguren erkennen, benennen und ihre Eigenschaften beschreiben."
+        gradeBand: "5-6"
+      - id: parallel-senkrecht-abstand
+        # KMK p.20; HE 5.2 (Lagebeziehung von Geraden); BY M5 2; NRW E Geo-1
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann parallele und senkrechte Geraden zeichnen und Abstände messen."
+        gradeBand: "5-6"
+      - id: winkel-messen
+        # KMK p.17, 20; HE 6.2 (Winkel); BY M5 2 (Winkel bis 360°); NRW E Geo-9
+        # bands: 6 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Winkel messen, zeichnen und nach ihrer Größe einteilen."
+        gradeBand: "5-6"
+        requires: [grundfiguren-eben]
+      - id: koordinatensystem
+        # KMK p.20-21 (Figuren im kartesischen Koordinatensystem); HE 5.2, 7.2; BY M5 2; NRW E Geo-6 (SILP 6.2: vier Quadranten)
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Punkte und Figuren im Koordinatensystem eintragen und ablesen."
+        gradeBand: "5-6"
+        requires: [natuerliche-zahlen]
+      - id: symmetrie
+        # KMK p.20 (Symmetrie); HE 5.2, 6.2; BY M7 2.1; NRW E Geo-5
+        # bands: 5-6 / 7 / 5-6 -> 5-6 (BY dissents)
+        iCan: "Ich kann Achsen-, Punkt- und Drehsymmetrie bei Figuren erkennen und nutzen."
+        gradeBand: "5-6"
+        requires: [grundfiguren-eben]
+      - id: vierecke-grundfiguren
+        # NARROWED (Kreis is in grundfiguren-eben), BAND CHANGED 7-8 -> 5-6. KMK p.20; HE 5.2; BY M5 2 (Vierecke erkennen und erzeugen); NRW E Geo-2
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann besondere Vierecke mit ihren Eigenschaften beschreiben und unterscheiden."
+        gradeBand: "5-6"
+        requires: [grundfiguren-eben, parallel-senkrecht-abstand]
+      - id: konstruktionen
+        # unchanged (the basic drawing and constructing; triangle constructions are dreieckskonstruktion). KMK p.21; HE 5.2 (Geodreieck, Zirkel); BY M5 2; NRW E Geo-4
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Figuren mit Geodreieck, Zirkel oder Geometriesoftware zeichnen und konstruieren."
+        gradeBand: "5-6"
+        requires: [grundfiguren-eben, parallel-senkrecht-abstand]
+      - id: bewegungen-figuren
+        # KMK p.20 (verschieben, drehen, spiegeln); HE 6.2; HE-KC 5/6; NRW E Geo-7 (SILP 6.10); BY: not as a unit
+        # bands: 6 / - / 5-6 -> 5-6
+        iCan: "Ich kann Figuren spiegeln, verschieben und drehen und die Bildfigur bestimmen."
+        gradeBand: "5-6"
+        requires: [symmetrie, koordinatensystem]
+      - id: grundkoerper-quader-wuerfel
+        # KMK p.20; HE 5.2; BY M5 4.2; NRW E Geo-3
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Quader, Würfel und zusammengesetzte Körper erkennen und beschreiben."
+        gradeBand: "5-6"
+        requires: [grundfiguren-eben]
+      - id: netze-schraegbilder-modelle
+        # NARROWED to Quader/Wuerfel (Prisma/Zylinder and Pyramide/Kegel split off). KMK p.20; HE 5.2; BY M5 4.2; NRW E Geo-15
+        # bands: 5 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Netze, Schrägbilder und Modelle von Quader und Würfel zeichnen oder bauen."
+        gradeBand: "5-6"
+        requires: [grundkoerper-quader-wuerfel]
+      - id: einheiten-flaeche-volumen
+        # NEW. KMK p.17 (Einheiten fuer Flaeche, Volumen waehlen und umwandeln; Einheitsquadrat/-wuerfel), KMK-P p.15; HE 5.3; BY M5 4.2, M6 2.2; NRW E Ari-9, Geo-11
+        # bands: 5 / 5-6 / 5-6 -> 5-6
+        iCan: "Ich kann Flächen- und Volumeneinheiten umrechnen und ihre Größe einschätzen."
+        gradeBand: "5-6"
+        requires: [umrechnung-groessen]
+      - id: flaeche-umfang-quadrat-rechteck
+        # KMK p.17; HE 5.2, 6.2; BY M5 4.2; NRW E Geo-12
+        # bands: 5-6 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Flächeninhalt und Umfang von Quadrat und Rechteck berechnen."
+        gradeBand: "5-6"
+        requires: [grundfiguren-eben, umrechnung-groessen, einheiten-flaeche-volumen]
+      - id: zusammengesetzte-figuren
+        # KMK p.17; HE 6.2; BY M5 4.2; NRW E Geo-13
+        # bands: 6 / 5 / 5-6 -> 5-6
+        iCan: "Ich kann Flächeninhalt und Umfang zusammengesetzter Figuren durch Zerlegen berechnen."
+        gradeBand: "5-6"
+        requires: [flaeche-umfang-quadrat-rechteck, grundfiguren-eben]
+      - id: volumen-oberflaeche-quader-wuerfel
+        # KMK p.17; HE 5.2, 6.2; BY M5 4.2, M6 2.2; NRW E Geo-12
+        # bands: 5-6 / 5-6 / 5-6 -> 5-6
+        iCan: "Ich kann Volumen und Oberflächeninhalt von Quader und Würfel berechnen."
+        gradeBand: "5-6"
+        requires: [flaeche-umfang-quadrat-rechteck, grundkoerper-quader-wuerfel]
+      - id: haus-der-vierecke
+        # Backed by HE (8.2, HE-KC 7/8) only as an explicit unit; BY/NRW classify already in grade 5-6. KMK p.20 (klassifizieren)
+        # bands: 8 / (5) / (5-6) -> 7-8 (single explicit source)
+        iCan: "Ich kann Vierecke nach ihren Eigenschaften im Haus der Vierecke ordnen und begründen."
+        gradeBand: "7-8"
+        requires: [vierecke-grundfiguren, symmetrie]
+      - id: winkelsaetze
+        # KMK p.20-21; HE 7.3; BY M7 2.2; NRW S1 Geo-1, Geo-2 (SILP 7.3)
+        # bands: 7 / 7 / 7-8 -> 7-8
+        iCan: "Ich kann mit Winkelsätzen und dem Winkelsummensatz fehlende Winkel berechnen."
+        gradeBand: "7-8"
+        requires: [winkel-messen, parallel-senkrecht-abstand]
+      - id: dreieckskonstruktion
+        # NEW (split from konstruktionen). KMK p.21 (Konstruktion, Loesbarkeit); HE 7.3 (Konstruktion von Dreiecken und Vierecken); BY M7 5; NRW S1 Geo-3, Geo-4, Geo-5
+        # bands: 7 / 7 / 7-8 -> 7-8
+        iCan: "Ich kann Dreiecke aus Seiten und Winkeln konstruieren und sagen, ob die Konstruktion eindeutig ist."
+        gradeBand: "7-8"
+        requires: [konstruktionen, winkel-messen]
+      - id: kongruenz
+        # KMK p.20 (Idee der Kongruenz); HE 7.3, 8.2; BY M7 5; NRW S1 Geo-3 (Kongruenzsaetze)
+        # bands: 7-8 / 7 / 7-8 -> 7-8
+        iCan: "Ich kann erkennen und begründen, dass Figuren deckungsgleich sind, und die Kongruenzsätze für Dreiecke anwenden."
+        gradeBand: "7-8"
+        requires: [bewegungen-figuren, dreieckskonstruktion]
+      - id: linien-im-dreieck
+        # NEW. HE 8.2 (Mittelsenkrechte, Winkelhalbierende, Hoehen, Umkreis, Inkreis); BY M7 2.1, M7 5; NRW S1 Geo (Konstruktion: Mittelsenkrechte, Seitenhalbierende, Winkelhalbierende, Inkreis, Umkreis)
+        # bands: 8 / 7 / 7-8 -> 7-8
+        iCan: "Ich kann Mittelsenkrechten, Winkelhalbierenden und Höhen im Dreieck konstruieren und Um- und Inkreis zeichnen."
+        gradeBand: "7-8"
+        requires: [dreieckskonstruktion]
+      - id: kreis-sehne-tangente
+        # NEW. HE 8.2 (Sehne, Sekante, Tangente); BY M7 5 (Tangente an einen Kreis); NRW S2 Geo (Kreis: Tangente)
+        # bands: 8 / 7 / 9-10 -> 7-8 (NRW dissents)
+        iCan: "Ich kann Sehne, Sekante und Tangente am Kreis unterscheiden und eine Tangente zeichnen."
+        gradeBand: "7-8"
+        requires: [grundfiguren-eben, parallel-senkrecht-abstand]
+      - id: satz-des-thales
+        # KMK p.21 (Satz des Thales, MSA); HE 8.2, HE-KC 7/8; BY M7 5; NRW S1 Geo-2 (SILP 7.3)
+        # bands: 8 / 7 / 7-8 -> 7-8
+        iCan: "Ich kann den Satz des Thales erklären und bei Konstruktionen anwenden."
+        gradeBand: "7-8"
+        requires: [winkelsaetze, konstruktionen, kreis-sehne-tangente]
+      - id: flaeche-umfang-dreieck-viereck
+        # REPLACES flaeche-umfang-dreieck-viereck-kreis (Kreis split to kreis-umfang-flaeche). KMK p.17; HE 7.3 (Parallelogramm, Dreieck, Trapez); BY M6 2.1; NRW S1 Geo-8 (SILP 7.5, 8.2)
+        # bands: 7 / 6 / 7-8 -> 7-8 (BY dissents)
+        iCan: "Ich kann Flächeninhalt und Umfang von Dreieck und besonderen Vierecken berechnen."
+        gradeBand: "7-8"
+        requires: [flaeche-umfang-quadrat-rechteck, vierecke-grundfiguren]
+      - id: grundkoerper-prisma-zylinder
+        # unchanged. KMK p.20; HE 8.2, HE-KC 7/8; BY M8 7; NRW S2 Geo (Koerper: Prisma, Zylinder)
+        # bands: 8 / 8 / 9-10 -> 7-8 (NRW dissents)
+        iCan: "Ich kann Prisma und Zylinder erkennen und von anderen Körpern unterscheiden."
+        gradeBand: "7-8"
+        requires: [grundkoerper-quader-wuerfel]
+      - id: netze-schraegbilder-prisma-zylinder
+        # NEW (split from netze-schraegbilder-modelle). KMK p.20 (Netze, Schraegbilder, Modelle von Prisma ...); HE 8.2; BY M8 7; HE-KC 7/8
+        # bands: 8 / 8 / - -> 7-8
+        iCan: "Ich kann Netze, Schrägbilder und Modelle von Prisma und Zylinder zeichnen oder bauen."
+        gradeBand: "7-8"
+        requires: [netze-schraegbilder-modelle, grundkoerper-prisma-zylinder]
+      - id: volumen-oberflaeche-prisma
+        # KMK p.17; HE 8.2; BY M8 7; NRW S2 Geo-5
+        # bands: 8 / 8 / 9-10 -> 7-8 (NRW dissents)
+        iCan: "Ich kann Volumen und Oberflächeninhalt von Prismen berechnen."
+        gradeBand: "7-8"
+        requires: [volumen-oberflaeche-quader-wuerfel, flaeche-umfang-dreieck-viereck, grundkoerper-prisma-zylinder]
+      - id: kreis-umfang-flaeche
+        # NEW (split from flaeche-umfang-dreieck-viereck-kreis and reelle-zahlen: Pi). KMK p.17 (Kreis); HE 9.6; BY M8 7; NRW S2 Geo-3, Geo-4 (SILP 9.3)
+        # bands: 9 / 8 / 9-10 -> 9-10 (BY dissents)
+        iCan: "Ich kann Umfang und Flächeninhalt eines Kreises berechnen und die Zahl Pi am Kreis erklären."
+        gradeBand: "9-10"
+        requires: [flaeche-umfang-quadrat-rechteck, dezimalbrueche-rechnen]
+      - id: aehnlichkeit
+        # NEW (split from aehnlichkeit-strahlensaetze). KMK p.20-21 (Aehnlichkeit, zentrische Streckung); HE 9.4 (maßstabsgetreues Vergroessern); BY M9 4 (Ähnlichkeit, Flächen-/Volumenveränderung); NRW S2 Geo-2 (SILP 9.8)
+        # bands: 9 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann Figuren maßstabsgetreu vergrößern und verkleinern und ähnliche Figuren erkennen."
+        gradeBand: "9-10"
+        requires: [kongruenz, proportionale-zuordnungen, massstab]
+      - id: strahlensaetze
+        # NEW (split from aehnlichkeit-strahlensaetze). KMK p.20-21; HE 9.4; BY M9 4; NRW S2 Geo-9 (Aehnlichkeitsbeziehungen)
+        # bands: 9 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann mit den Strahlensätzen Streckenlängen berechnen."
+        gradeBand: "9-10"
+        requires: [aehnlichkeit, lineare-gleichungen]
+      - id: satz-des-pythagoras
+        # KMK p.17, 20; HE 9.5; BY M9 6; NRW S2 Geo-1 (SILP 9.1)
+        # bands: 9 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann mit dem Satz des Pythagoras und seiner Umkehrung Streckenlängen berechnen und rechte Winkel prüfen."
+        gradeBand: "9-10"
+        requires: [quadratwurzeln, flaeche-umfang-quadrat-rechteck]
+      - id: trigonometrie
+        # KMK p.17, 20 (trigonometrische Beziehungen; MSA); HE 10.4; BY M9 7.1; NRW S2 Geo-7, Geo-9
+        # bands: 10 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann mit Sinus, Kosinus und Tangens Seiten und Winkel in rechtwinkligen Dreiecken berechnen."
+        gradeBand: "9-10"
+        requires: [satz-des-pythagoras, aehnlichkeit]
+      - id: sinus-kosinussatz
+        # NEW (split from trigonometrie / berechnungen). HE 10.4 (Sinus-, Kosinussatz); BY M9 7.2; NRW S2 Geo-8 (Kosinussatz); KMK p.20-21 ("allgemeine Dreiecke" only in HE-KC 9/10)
+        # bands: 10 / 9 / 9-10 -> 9-10
+        iCan: "Ich kann mit Sinus- und Kosinussatz Seiten und Winkel in beliebigen Dreiecken berechnen."
+        gradeBand: "9-10"
+        requires: [trigonometrie]
+      - id: grundkoerper-pyramide-kegel-kugel
+        # unchanged. KMK p.20; HE 10.3 (HE 5.2 and NRW E only name the solids); BY M10 5; NRW S2 Geo-5
+        # bands: 10 / 10 / 9-10 -> 9-10
+        iCan: "Ich kann Pyramide, Kegel und Kugel beschreiben und Körper aus dem Alltag in Grundkörper zerlegen."
+        gradeBand: "9-10"
+        requires: [grundkoerper-prisma-zylinder]
+      - id: netze-schraegbilder-pyramide-kegel
+        # NEW (split from netze-schraegbilder-modelle). KMK p.20 (Prisma, Pyramide); HE 10.3, HE-KC 9/10; BY M10 5
+        # bands: 10 / 10 / - -> 9-10
+        iCan: "Ich kann Netze, Schrägbilder und Modelle von Pyramide und Kegel zeichnen oder bauen."
+        gradeBand: "9-10"
+        requires: [netze-schraegbilder-prisma-zylinder, grundkoerper-pyramide-kegel-kugel]
+      - id: volumen-oberflaeche-zylinder
+        # NEW (split from volumen-oberflaeche-pyramide-kegel-zylinder-kugel). KMK p.17; HE 9.6; BY M8 7; NRW S2 Geo-5
+        # bands: 9 / 8 / 9-10 -> 9-10 (BY dissents)
+        iCan: "Ich kann Volumen und Oberflächeninhalt von Zylindern berechnen."
+        gradeBand: "9-10"
+        requires: [volumen-oberflaeche-prisma, kreis-umfang-flaeche]
+      - id: volumen-oberflaeche-pyramide-kegel-kugel
+        # NARROWED (Zylinder split off). KMK p.17; HE 10.3; BY M10 5; NRW S2 Geo-5, Geo-6
+        # bands: 10 / 10 / 9-10 -> 9-10
+        iCan: "Ich kann Volumen und Oberflächeninhalt von Pyramide, Kegel und Kugel berechnen."
+        gradeBand: "9-10"
+        requires: [volumen-oberflaeche-zylinder, satz-des-pythagoras, grundkoerper-pyramide-kegel-kugel]
+      - id: berechnungen-dreiecke-vielecke
+        # unchanged (synthesis Baustein). KMK p.17 (berechnen Streckenlaengen und Winkelgroessen mit Pythagoras, Trigonometrie, Aehnlichkeit); HE 9.5, HE-KC 9/10 (Berechnungen in Dreiecken und Vielecken); BY M9 6, 7; NRW S2 Geo-9
+        # bands: 9-10 / 9-10 / 9-10 -> 9-10
+        iCan: "Ich kann Streckenlängen und Winkel in Dreiecken und Vielecken mit Pythagoras, Ähnlichkeit und Trigonometrie berechnen."
+        gradeBand: "9-10"
+        requires: [satz-des-pythagoras, strahlensaetze, trigonometrie]
+
+  # ===================================================================================================================
+  # STOCHASTIK: KMK Leitidee "Daten und Zufall" (Sachgebiet Stochastik), p. 21-22, plus systematic counting (p. 16).
+  # ===================================================================================================================
+  - id: stochastik
+    name: { de: Stochastik, en: Probability and statistics }
+    competencies:
+      - id: daten-darstellen
+        # NARROWED to tables and the common diagrams; Boxplot split off. KMK p.21-22 (Tabellen, Saeulen-, Balken-, Kreis-, Liniendiagramm); HE 5.1, 6.1, 7.1 (Kreis-, Saeulendiagramm), 8.4; HE-KC 5/6, 7/8; BY M6 3; NRW E Sto-2, Sto-4
+        # bands: 5-8 / 6 / 5-6 -> 5-6
+        iCan: "Ich kann Daten in Tabellen und Diagrammen darstellen und die Darstellung begründen."
+        gradeBand: "5-6"
+      - id: umfragen-erhebungen
+        # NARROWED to the simple survey (planning with Stichprobe split off). KMK p.21 (ESA: planen einfache Befragungen); HE-KC 5/6 (Umfragen und Erhebungen); NRW E Sto-1 (SILP 5.1, 6.8); BY M6 3 (Daten aus Erhebungen)
+        # bands: HE 5-6 (KC) / 6 / 5-6 -> 5-6
+        iCan: "Ich kann eine einfache Umfrage planen, durchführen und die Antworten in Listen erfassen."
+        gradeBand: "5-6"
+        requires: [daten-darstellen]
+      - id: haeufigkeiten
+        # NARROWED to the statistics side (the estimate-for-probability part is haeufigkeit-als-schaetzwert). KMK p.22; HE 5.1 (absolute), 6.1 (relative); BY M6 3; NRW E Sto-3
+        # bands: 5-6 / 6 / 5-6 -> 5-6
+        iCan: "Ich kann absolute und relative Häufigkeiten bestimmen."
+        gradeBand: "5-6"
+        requires: [brueche-begriff]
+      - id: mittelwert
+        # NEW (split from kenngroessen-lage-streumasse). KMK p.21-22 (arithmetisches Mittel); HE 6.1 (Mittelwerte); BY M6 3; NRW E Sto-3
+        # bands: 6 / 6 / 5-6 -> 5-6
+        iCan: "Ich kann das arithmetische Mittel berechnen und deuten."
+        gradeBand: "5-6"
+        requires: [daten-darstellen, dezimalbrueche-rechnen]
+      - id: zaehlprinzip
+        # NEW. KMK p.16 (systematische Zaehlprinzipien, MSA); BY M5 3.1 (Zaehlprinzip, Baumdiagramme); NRW S2 Sto-4 (kombinatorische Ueberlegungen); HE 5.1 only "Anzahlen bestimmen"
+        # bands: (5) / 5 / 9-10 -> 5-6 (no real majority; BY places it earliest, NRW latest)
+        iCan: "Ich kann mit dem Zählprinzip und Baumdiagrammen die Anzahl von Möglichkeiten bestimmen."
+        gradeBand: "5-6"
+        requires: [grundrechenarten-rechengesetze]
+      - id: zufallserscheinungen
+        # BAND CHANGED 5-6 -> 7-8. KMK p.22 (beschreiben Zufallserscheinungen); HE 7.4 (HE-KC 5/6 first notions); BY M8 5; NRW S1 Sto-1 (SILP 7.7)
+        # bands: 7 / 8 / 7-8 -> 7-8
+        iCan: "Ich kann Zufallserscheinungen im Alltag erkennen und Zufallsversuche mit ihren Ergebnissen beschreiben."
+        gradeBand: "7-8"
+        requires: [haeufigkeiten]
+      - id: haeufigkeit-als-schaetzwert
+        # NEW (split from haeufigkeiten). KMK p.22 (relative Haeufigkeiten als Schaetzwerte, wachsender Stichprobenumfang); HE 7.4; BY M8 5; NRW S1 Sto-1 (empirisches Gesetz der grossen Zahlen)
+        # bands: 7 / 8 / 7-8 -> 7-8
+        iCan: "Ich kann relative Häufigkeiten als Schätzwerte für Wahrscheinlichkeiten deuten und erklären, warum sie bei vielen Versuchen verlässlicher werden."
+        gradeBand: "7-8"
+        requires: [zufallserscheinungen]
+      - id: wahrscheinlichkeitsbegriff
+        # BAND CHANGED 5-6 -> 7-8. KMK p.22; HE 7.4 (HE-KC 5/6); BY M8 5; NRW S1 Sto (Begriffsbildung: Wahrscheinlichkeit)
+        # bands: 7 / 8 / 7-8 -> 7-8
+        iCan: "Ich kann erklären, was Wahrscheinlichkeit bedeutet, und Wahrscheinlichkeiten auf einer Skala von 0 bis 1 einordnen."
+        gradeBand: "7-8"
+        requires: [haeufigkeit-als-schaetzwert, brueche-begriff]
+      - id: zufall-laplace
+        # unchanged (used by an app). KMK p.22 (einfache Zufallsexperimente); HE 7.4 (Laplace-Formel); BY M8 5; NRW S1 Sto-4
+        # bands: 7 / 8 / 7-8 -> 7-8
+        iCan: "Ich kann Wahrscheinlichkeiten mit der Laplace-Formel berechnen: günstige durch mögliche Ergebnisse."
+        gradeBand: "7-8"
+        requires: [wahrscheinlichkeitsbegriff]
+      - id: zufall-gegenereignis
+        # unchanged (used by an app). HE 7.4 (Ereignisse, Additionssatz); BY M8 5 (Gegenereignis named); NRW S1 Sto-3 (stochastische Regeln)
+        # bands: 7 / 8 / 7-8 -> 7-8
+        iCan: "Ich kann die Wahrscheinlichkeit über das Gegenereignis mit 1 minus P(E) berechnen."
+        gradeBand: "7-8"
+        requires: [zufall-laplace]
+      - id: zufall-baumdiagramm
+        # unchanged (used by an app; its text still mentions the Vierfeldertafel, which the sources place later: see vierfeldertafel). KMK p.22; HE 7.4, HE-KC 7/8; BY M8 5 (Baum fuer Zaehlen), M10 2; NRW S1 Sto-2 (SILP 8.1)
+        # bands: 7 / 8-10 / 7-8 -> 7-8
+        iCan: "Ich kann ein mehrstufiges Zufallsexperiment als Baumdiagramm oder Vierfeldertafel darstellen."
+        gradeBand: "7-8"
+        requires: [zufall-laplace]
+      - id: zufall-pfadregel-1
+        # unchanged (used by an app; requires extended by the fraction skill it needs). KMK p.22; HE 7.4 (Multiplikationsregel); BY M10 2; NRW S1 Sto-3 (SILP 8.1)
+        # bands: 7 / 10 / 7-8 -> 7-8 (BY dissents)
+        iCan: "Ich kann die Wahrscheinlichkeit eines Pfades berechnen, indem ich die Zweigwahrscheinlichkeiten multipliziere."
+        gradeBand: "7-8"
+        requires: [zufall-baumdiagramm, brueche-multiplizieren-dividieren]
+      - id: zufall-ohne-zuruecklegen
+        # unchanged (used by an app). KMK p.22; HE 7.4; BY M10 2; NRW S1 Sto-2, Sto-3
+        # bands: 7 / 10 / 7-8 -> 7-8 (BY dissents)
+        iCan: "Ich kann Ziehen mit und ohne Zurücklegen unterscheiden und die Zweigwahrscheinlichkeiten anpassen."
+        gradeBand: "7-8"
+        requires: [zufall-pfadregel-1]
+      - id: zufall-pfadregel-2
+        # unchanged (used by an app; requires extended). KMK p.22; HE 7.4 (Additionssatz); BY M10 2; NRW S1 Sto-3
+        # bands: 7 / 10 / 7-8 -> 7-8 (BY dissents)
+        iCan: "Ich kann die Wahrscheinlichkeit eines Ereignisses berechnen, indem ich die Wahrscheinlichkeiten seiner Pfade addiere."
+        gradeBand: "7-8"
+        requires: [zufall-pfadregel-1, brueche-addieren-subtrahieren]
+      - id: zufall-ergebnisform
+        # unchanged (used by an app). WEAKLY BACKED: no source names it as a unit; touches BY M6 3 (relative Haeufigkeit als Bruch, Dezimalbruch, Prozentsatz) and HE 7.4 (Bruchrechnung wiederholen). Candidate to fold into wahrscheinlichkeitsbegriff later.
+        # bands: no source unit; follows prozent-grundbegriffe and laplace -> 7-8
+        iCan: "Ich kann Wahrscheinlichkeiten als Bruch, Dezimalzahl, Prozentangabe oder Rechenterm angeben und zwischen den Formen wechseln."
+        gradeBand: "7-8"
+        requires: [zufall-laplace, prozent-grundbegriffe]
+      - id: zufall-ereignis-uebersetzen
+        # unchanged (used by an app). Indirectly backed: KMK p.22 (Wahrscheinlichkeiten bei mehrstufigen Experimenten mit Visualisierungen), NRW S1 Sto-2, Sto-3, BY M10 2. The wording "genau einmal / mindestens einmal" is the app's.
+        # bands: 7 / 10 / 7-8 -> 7-8
+        iCan: "Ich kann Ereignisse wie genau einmal oder mindestens einmal in die passenden Pfade eines Baumdiagramms übersetzen."
+        gradeBand: "7-8"
+        requires: [zufall-baumdiagramm, zufall-pfadregel-2]
+      - id: simulationen
+        # KMK p.21 (Simulationen); HE 8.4; BY M10 2 (stochastische Simulationen, Monte-Carlo); NRW S1 Sto-5
+        # bands: 8 / 10 / 7-8 -> 7-8 (BY dissents)
+        iCan: "Ich kann einfache Zufallsversuche mit Zufallszahlen und Tabellenkalkulation simulieren und auswerten."
+        gradeBand: "7-8"
+        requires: [haeufigkeit-als-schaetzwert]
+      - id: kenngroessen-lage-streumasse
+        # NARROWED (Mittelwert split off). KMK p.22 (Median, Spannweite, Quartile); HE 9.7 (Zentralwert, Spannweite, Standardabweichung), HE-KC 9/10; BY M7 4; NRW E Sto-3 (SILP 5.1, 6.8)
+        # bands: HE 9 / BY 7 / NRW 5-6 -> no majority; middle taken: 7-8
+        iCan: "Ich kann Median, Spannweite und Quartile von Daten bestimmen und deuten."
+        gradeBand: "7-8"
+        requires: [mittelwert]
+      - id: boxplot
+        # NEW (split from daten-darstellen). KMK p.22 (Boxplot, MSA); BY M7 4; NRW E Sto (Boxplots, SILP 5.1); HE-KC 7/8 (Boxplot)
+        # bands: HE (7-8 KC) / 7 / 5-6 -> 7-8
+        iCan: "Ich kann einen Boxplot zeichnen und daraus Aussagen über die Daten ablesen."
+        gradeBand: "7-8"
+        requires: [kenngroessen-lage-streumasse]
+      - id: daten-kritisch-lesen
+        # NEW. KMK p.22 (reflektieren Umgang mit und Darstellung von Daten in Medien); BY M6 3 (Darstellungen in Diagrammen beurteilen); NRW E Sto-6, S2 Sto-2 (Manipulation, SILP 9.9)
+        # bands: HE - / 6 / 5-6 and 9-10 -> no majority; middle taken: 7-8
+        iCan: "Ich kann Diagramme in Medien kritisch lesen und erkennen, wie sie täuschen können."
+        gradeBand: "7-8"
+        requires: [daten-darstellen]
+      - id: stichproben-erhebungen-planen
+        # NEW (split from umfragen-erhebungen). KMK p.21 (MSA: Stichprobenauswahl, Erhebungsinstrument); HE 9.7 (Gesamtheit, Stichprobe, Arbeitsweisen der Statistik); NRW S2 Sto-1
+        # bands: 9 / - / 9-10 -> 9-10
+        iCan: "Ich kann eine statistische Erhebung mit Stichprobe und Erhebungsinstrument planen und beurteilen, wie aussagekräftig sie ist."
+        gradeBand: "9-10"
+        requires: [umfragen-erhebungen, haeufigkeiten]
+      - id: vierfeldertafel
+        # NEW. KMK p.22 (Vierfeldertafel, MSA); BY M9 3 (verknuepfte Ereignisse, Vierfeldertafeln); NRW S2 Sto-5; HE-KC 7/8 (Baumdiagramme und Vierfeldertafeln)
+        # bands: (HE-KC 7-8) / 9 / 9-10 -> 9-10
+        iCan: "Ich kann zwei verknüpfte Ereignisse in einer Vierfeldertafel darstellen und Wahrscheinlichkeiten ablesen."
+        gradeBand: "9-10"
+        requires: [zufall-laplace, haeufigkeiten]
+      - id: bedingte-wahrscheinlichkeit
+        # NEW. KMK p.22 (bedingte Wahrscheinlichkeiten erkennen, MSA); NRW S2 (Inhalt: bedingte Wahrscheinlichkeit, stochastische Unabhaengigkeit; SILP 10.6); BY M9 3 (aus Vierfeldertafeln); HE: not named
+        # bands: HE - / 9 / 10 -> 9-10
+        iCan: "Ich kann bedingte Wahrscheinlichkeiten am Baumdiagramm oder in der Vierfeldertafel erkennen und berechnen."
+        gradeBand: "9-10"
+        requires: [vierfeldertafel, zufall-pfadregel-2]
