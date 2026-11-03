@@ -5,9 +5,8 @@
 // - turns the legend of a subject map into two buttons: one shows only the competencies an app practises, the other
 //   only the gaps; pressing the pressed one again shows all,
 // - opens a competency's details (a <template> on the page), a term's definition or the help of a subject map in a
-//   dialog instead of leaving the page; the dialog closes with its button, Escape or a click beside it, and the focus goes back,
-// - shows a term's definition as a tooltip when a box of the picture is pointed at or gets the focus (WCAG 1.4.13: it
-//   stays while pointed at, Escape hides it),
+//   dialog instead of leaving the page; the dialog closes with its button, Escape or a click beside it, and the focus
+//   goes back,
 // - closes the list of terms unless the address points into it, and opens it when a link does.
 // Nothing is stored in the browser, nothing is sent anywhere.
 
@@ -95,63 +94,6 @@ if (dialog) {
     opener?.focus();
     opener = null;
   });
-}
-
-// The tooltip of the picture's boxes: the first paragraph of the term's definition, placed below the box (above when
-// there is no room) and kept in the window; it follows the box when the page or the frame scrolls. It is fixed to the
-// window, so the scrolling frame does not cut it.
-const tip = document.querySelector("[data-map-tip]");
-if (tip) {
-  let current = null;
-  let leaving = 0;
-  const hide = () => {
-    clearTimeout(leaving);
-    if (!current) return;
-    current.removeAttribute("aria-describedby");
-    current = null;
-    tip.hidden = true;
-  };
-  const show = (node) => {
-    clearTimeout(leaving);
-    if (current === node) return;
-    hide();
-    const text = document.getElementById(node.dataset.opens)?.querySelector("[data-dialog-body] > p");
-    if (!text) return;
-    const more = document.createElement("span");
-    more.className = "map-tip-more";
-    more.textContent = tip.dataset.more;
-    tip.replaceChildren(text.textContent, more);
-    tip.hidden = false;
-    node.setAttribute("aria-describedby", tip.id);
-    current = node;
-    place();
-  };
-  const place = () => {
-    if (!current) return;
-    const box = current.getBoundingClientRect();
-    const width = tip.offsetWidth;
-    const left = Math.min(Math.max(8, box.left + box.width / 2 - width / 2), innerWidth - width - 8);
-    const below = box.bottom + 8;
-    const top = below + tip.offsetHeight > innerHeight - 8 ? box.top - tip.offsetHeight - 8 : below;
-    tip.style.left = `${left}px`;
-    tip.style.top = `${Math.max(8, top)}px`;
-  };
-  const leave = () => {
-    clearTimeout(leaving);
-    leaving = setTimeout(hide, 200);
-  };
-  for (const node of document.querySelectorAll(".map-model a.map-node[data-opens]")) {
-    node.addEventListener("pointerenter", (event) => event.pointerType !== "touch" && show(node));
-    node.addEventListener("pointerleave", leave);
-    node.addEventListener("focus", () => node.matches(":focus-visible") && show(node));
-    node.addEventListener("blur", hide);
-    node.addEventListener("click", hide);
-  }
-  tip.addEventListener("pointerenter", () => clearTimeout(leaving));
-  tip.addEventListener("pointerleave", leave);
-  addEventListener("keydown", (event) => event.key === "Escape" && hide());
-  addEventListener("scroll", place, { passive: true, capture: true });
-  addEventListener("resize", place);
 }
 
 // The list of terms: open without JavaScript; closed here unless the address points into it, opened by a link to it.
