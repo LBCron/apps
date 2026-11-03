@@ -65,3 +65,13 @@ textarea.field { resize: vertical; font-size: .875rem; }
   .flow-step[data-who="you"] { --flow: #60a5fa; --flow-bg: #172554; --flow-fg: #bfdbfe; }
   .flow-step[data-who="team"] { --flow: #34d399; --flow-bg: #064e3b; --flow-fg: #a7f3d0; }
 }
+
+/* Who brings what (build.njk, build.give): the colour of the label says who, as in the listing steps. */
+.give[data-who="you"] strong { color: #1d4ed8; }
+.give[data-who="ki"] strong { color: #6d28d9; }
+.give[data-who="la"] strong { color: #047857; }
+@media (prefers-color-scheme: dark) {
+  .give[data-who="you"] strong { color: #93c5fd; }
+  .give[data-who="ki"] strong { color: #c4b5fd; }
+  .give[data-who="la"] strong { color: #6ee7b7; }
+}

@@ -34,6 +34,7 @@
   <script src="/lernapps-count.js" defer></script>
   <link rel="stylesheet" href="/apps/uno.css">
   <link rel="stylesheet" href="/apps/assets/apps.css">
+  <script src="/apps/assets/bauen.js" defer></script>
   <script src="/apps/assets/kopieren.js" defer></script>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col" style="font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;">
@@ -52,16 +53,28 @@
   <div class="max-w-4xl mx-auto px-4 sm:px-6 pt-10 pb-12">
     <h1 class="m-0 font-extrabold leading-tight tracking-tight whitespace-pre-line" style="font-size: clamp(1.75rem, 5vw, 2.75rem);">Bau eine Lern-App
 mit deinem KI-Assistenten.</h1>
+    <p class="m-0 mt-3 text-lg text-white font-semibold max-w-2xl" data-searched="Du suchst etwas {suche}? Dann bau es, für dich und alle, die danach suchen."
+       data-topic="zu „{v}“" data-subject="in {v}" data-grade="für Klasse {v}" hidden></p>
     <p class="m-0 mt-3 text-lg text-slate-300 max-w-2xl">Programmieren musst du nicht. Du sagst, was die App lehren soll. Dein Assistent plant mit dir, baut die App und prüft sie.</p>
-    <p class="m-0 mt-4 text-slate-300">Du hast schon eine App? <a href="#eintragen" class="text-blue-300 underline underline-offset-2 hover:text-white">Direkt zum Eintragen ↓</a></p>
+    <p class="m-0 mt-4 text-slate-300">Du hast schon eine App? <a href="/apps/enter/" class="text-blue-300 underline underline-offset-2 hover:text-white">Direkt zum Eintragen <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 
 <div class="max-w-4xl mx-auto px-4 sm:px-6 mt-8 grid gap-6">
+  <section aria-labelledby="mitbringen">
+    <h2 id="mitbringen" class="sr-only">Wer was mitbringt</h2>
+    <ul class="list-none p-0 m-0 grid gap-4 sm:grid-cols-3">
+      <li class="give" data-who="you"><strong class="block text-xs uppercase tracking-wider">Du bringst mit</strong><span class="block mt-1 text-slate-700">Was deine Lernenden brauchen: welcher Stoff drankommt, wo es hakt, welche Beispiele sie kennen.</span></li>
+      <li class="give" data-who="ki"><strong class="block text-xs uppercase tracking-wider">Die KI bringt mit</strong><span class="block mt-1 text-slate-700">Das Fachwissen und das Programmieren. Sie plant mit dir, baut die App und prüft sie.</span></li>
+      <li class="give" data-who="la"><strong class="block text-xs uppercase tracking-wider">lernapps.net bringt mit</strong><span class="block mt-1 text-slate-700">Vorlagen, Regeln und Prüfungen, damit die App gut wird. Und den Weg, sie mit anderen zu teilen.</span></li>
+    </ul>
+  </section>
+
   <section class="panel min-w-0" aria-labelledby="start">
     <h2 id="start" class="panel-title">Sag deinem Assistenten:</h2>
     <p class="m-0 text-slate-700">Du brauchst einen KI-Assistenten, der auf deinem Rechner Befehle ausführen darf. Kopier diesen Auftrag und gib ihn ihm.</p>
     <div class="mt-3">
+      <div data-prompt="Bau mit mir eine Lern-App für lernapps.net {suche}. Lies zuerst https://lernapps.net/tooling/llms.txt und folge dem Schnellweg: Starte die App in einem neuen, leeren Ordner mit npx --yes @lernapps/tooling init &lt;name&gt; (für &lt;name&gt; ein kurzer Name ohne Leerzeichen). Frag mich dann, was die App lehren soll, und schreib mit mir den Plan. Erst wenn ich den Plan bestätigt habe, legst du die App an, wie der Plan es sagt.">
       
 <div data-copy>
   <label for="bauen-auftrag" class="block text-sm font-semibold text-slate-700">Auftrag für deinen Assistenten</label>
@@ -71,10 +84,9 @@ mit deinem KI-Assistenten.</h1>
   </div>
 </div>
 
+      </div>
     </div>
-    <p class="m-0 mt-3 text-slate-700">Mit diesem Befehl startet dein Assistent die App: Er schreibt den Plan und legt die Skills ab. Das Werkzeug dafür lädt er selbst aus der npm-Registry.</p>
-    <pre class="m-0 mt-1 p-3 rounded bg-slate-100 text-sm overflow-x-auto"><code>npx --yes @lernapps/tooling init &lt;name&gt;</code></pre>
-    <p class="m-0 mt-3 text-slate-700">Der Schnellweg für Assistenten ist der Skill <a href="https://github.com/lernapps/tooling/blob/main/skills/process/lernapps-app/SKILL.md" class="text-blue-700 underline underline-offset-2">lernapps-app</a>.</p>
+    <p class="m-0 mt-3 text-sm text-slate-600">Du willst für eine Arbeit mit deinem eigenen Material üben? <a href="/practice/" class="text-blue-700 underline underline-offset-2">Dann schau bei Üben <span aria-hidden="true">→</span></a></p>
   </section>
 
   <section class="panel" aria-labelledby="assistent">
