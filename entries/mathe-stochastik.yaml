@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/entry.v1.schema.json
+title: "Mathe: Stochastik – Wahrscheinlichkeit"
+subject: Mathematik
+grades: [7, 8]
+summary: >-
+  Wahrscheinlichkeit Schritt für Schritt: die Laplace-Formel, Baumdiagramme, die Pfadregeln, das Gegenereignis und
+  Ziehen ohne Zurücklegen. Jede Seite erklärt eine Sache mit Regel, Beispiel und Bild. Danach üben die Lernenden mit
+  Aufgaben, die sofort sagen, ob das Ergebnis stimmt.
+url: https://lernapps.net/mathe-stochastik/
+keywords: [Wahrscheinlichkeit, Stochastik, Zufall, Würfel, Baumdiagramm, Laplace, Pfadregel]
+creator: { name: "Ralf D. Müller", url: "https://github.com/raifdmueller" }
+source: https://github.com/lernapps/mathe-stochastik
+commit: cf48d251cc436f00e4bcb73fe67686cfcb8bae9e
+fitness:
+  account: false
+  install: false
+  storage: device
+  thirdParty: on-click
+  thirdPartyNote: Erst wenn jemand ein Erklärvideo startet, lädt es von YouTube.
+  checked: false

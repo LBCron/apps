@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/entry.v1.schema.json
+title: "Mathe: Arithmetik – Prozentrechnung"
+subject: Mathematik
+grades: [7, 8]
+summary: >-
+  Prozentrechnung Schritt für Schritt: Grundwert, Prozentwert und Prozentsatz erkennen und berechnen, Zunahme und
+  Abnahme, Vergleiche und Sachaufgaben. Jede Seite erklärt eine Sache mit Regel, Beispiel und Bild. Danach üben die
+  Lernenden mit Aufgaben, die sofort sagen, ob das Ergebnis stimmt.
+url: https://lernapps.net/mathe-arithmetik/
+keywords: [Prozentrechnung, Prozent, Grundwert, Prozentwert, Prozentsatz, Rabatt, Zinsen]
+creator: { name: "Ralf D. Müller", url: "https://github.com/raifdmueller" }
+source: https://github.com/lernapps/mathe-arithmetik
+commit: f245a2d40f1d7555e87f0fa86337705b75d9fd9f
+fitness:
+  account: false
+  install: false
+  storage: device
+  thirdParty: on-click
+  thirdPartyNote: Erst wenn jemand ein Erklärvideo startet, lädt es von YouTube.
+  checked: false

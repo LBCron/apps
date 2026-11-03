@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/entry.v1.schema.json
+title: { de: "Chemie – Chemische Reaktionen", en: "Chemistry – chemical reactions" }
+subject: { de: Chemie, en: Chemistry }
+grades: [7, 8]
+summary:
+  de: >-
+    Wann ist etwas eine chemische Reaktion, und wie schreibt man sie auf? Die Lernenden unterscheiden Reaktionen von
+    Zustandsänderungen und stellen einfache Reaktionsgleichungen auf. Vorher wiederholen sie kurz, was sie dafür
+    brauchen. Auf jeder Seite üben sie selbst.
+  en: >-
+    When is something a chemical reaction, and how do you write it down? Learners tell reactions from changes of state
+    and write simple reaction equations. First they briefly go over what they need for it. They practise on every page.
+url: https://lernapps.net/chemie-reaktionen/
+keywords:
+  - { de: chemische Reaktion, en: chemical reaction }
+  - { de: Reaktionsgleichung, en: reaction equation }
+  - { de: Zustandsänderung, en: change of state }
+  - { de: Formeln, en: formulas }
+  - { de: Massenerhaltung, en: conservation of mass }
+creator: { name: "Oliver", url: "https://github.com/mrsimpson" }
+source: https://github.com/lernapps/chemie-reaktionen
+commit: 725ae8ad834a833790b982565711400ff481d6e9
+fitness:
+  account: false
+  install: false
+  storage: device
+  thirdParty: none
+  checked: false

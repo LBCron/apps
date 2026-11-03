@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/entry.v1.schema.json
+title: "Mathe: Algebra – Binomische Formeln"
+subject: Mathematik
+grades: [8]
+summary: >-
+  Die binomischen Formeln Schritt für Schritt: zwei Klammern multiplizieren, die drei Formeln anwenden, rückwärts
+  faktorisieren und damit geschickt rechnen. Jede Seite erklärt eine Sache mit Regel, Beispiel und Bild. Danach üben
+  die Lernenden mit Aufgaben, die sofort sagen, ob der Term stimmt.
+url: https://lernapps.net/mathe-algebra/
+keywords: [binomische Formeln, Binom, Termumformung, Faktorisieren, Algebra, Klammern]
+creator: { name: "Ralf D. Müller", url: "https://github.com/raifdmueller" }
+source: https://github.com/lernapps/mathe-algebra
+commit: 71a4ddbec8f50c4ac1e4e1571aec1183059ddbf6
+fitness:
+  account: false
+  install: false
+  storage: device
+  thirdParty: on-click
+  thirdPartyNote: Erst wenn jemand ein Erklärvideo startet, lädt es von YouTube.
+  checked: false
