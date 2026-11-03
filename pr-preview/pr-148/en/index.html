@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-la-theme="auto">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,7 +68,7 @@
       <div>
         <label for="klasse" class="block text-sm font-semibold text-slate-300">Grade</label>
         <select id="klasse" name="klasse" class="field field-dark mt-1 w-full">
-          <option value="">All grades</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option>
+          <option value="">All grades</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option>
         </select>
       </div>
     </form>
@@ -76,8 +76,11 @@
 </section>
 
 <div class="max-w-4xl mx-auto px-4 sm:px-6 pt-8">
-  <p class="m-0 text-sm font-semibold text-slate-600" aria-live="polite" data-count
-     data-none="No app found" data-one="1 app" data-many="{n} apps">8 apps</p>
+  <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
+    <p class="m-0 font-semibold text-slate-600" aria-live="polite" data-count
+       data-none="No app found" data-one="1 app" data-many="{n} apps">8 apps</p>
+    <p class="m-0 text-slate-600" data-hint hidden>Nothing that fits? <a href="/apps/pr-preview/pr-148/en/build/" class="font-semibold text-blue-700 underline underline-offset-2 whitespace-nowrap" data-build-link>Build one yourself <span aria-hidden="true">→</span></a></p>
+  </div>
 
   <ul class="list-none p-0 m-0 mt-3 grid gap-4" data-results>
     
@@ -352,19 +355,28 @@
 
   </ul>
 
-  <div class="mt-4 p-5 rounded-xl border border-dashed border-slate-300" data-empty hidden>
-    <p class="m-0 font-semibold">There is no app for this yet.</p>
-    <p class="m-0 mt-1 text-slate-700">lernapps.net is just getting started. Do you know a fitting app, or did you publish one yourself? <a href="/apps/pr-preview/pr-148/en/enter/" class="text-blue-700 underline underline-offset-2">List an app</a></p>
+  <div class="mt-4 p-5 rounded-xl border border-dashed border-slate-300 grid gap-2" data-empty hidden>
+    <h2 class="m-0 text-lg font-bold text-slate-900" data-empty-headline data-searched="There is no app {suche} yet. Not yet."
+        data-topic="on “{v}”" data-subject="in {v}" data-grade="for grade {v}">There is no app for this yet. Not yet.</h2>
+    <p class="m-0 text-slate-700">There is no company and no editorial team behind lernapps.net. Every app here was built by a person who cares about good digital education. That is why a lot is still missing, and some grades hardly appear.</p>
+    <p class="m-0 text-slate-700">The good news: your AI assistant already knows the subject matter. You know what learners in this grade need. Together you build the app, and then everyone finds it here. You don&#39;t have to program.</p>
+    <div class="mt-2 flex flex-wrap items-center gap-x-5 gap-y-3">
+      <a href="/apps/pr-preview/pr-148/en/build/" class="btn btn-primary" data-build-link>Build an app yourself</a>
+    </div>
+    <p class="m-0 mt-1 text-sm text-slate-600">Only want to practise for a test with your own material? <a href="/practice/en/" class="text-blue-700 underline underline-offset-2">Then have a look at Practise <span aria-hidden="true">→</span></a></p>
   </div>
 
-  <div class="mt-8 p-5 rounded-xl border border-slate-200 bg-white flex flex-wrap items-center gap-x-6 gap-y-3">
-    <p class="m-0 text-slate-700"><strong class="text-slate-900">Nothing found?</strong> Help yourself and build an app. With our tooling it is really easy.</p>
-    <a href="/apps/pr-preview/pr-148/en/build/" class="btn btn-primary">Build an app</a>
+  <div class="mt-8 p-5 rounded-xl border border-slate-200 bg-white flex flex-wrap items-center gap-x-6 gap-y-3" data-build>
+    <p class="m-0 text-slate-700 flex-1 min-w-0 basis-80"><strong class="text-slate-900">Nothing that fits?</strong> No editorial team writes here; people like you build the apps. What is missing, you can build yourself. Then everyone else who looks for it finds it too.</p>
+    <a href="/apps/pr-preview/pr-148/en/build/" class="btn btn-primary" data-build-link>Build an app yourself</a>
+    <p class="m-0 basis-full text-sm text-slate-600">Only want to practise for a test with your own material? <a href="/practice/en/" class="text-blue-700 underline underline-offset-2">Then have a look at Practise <span aria-hidden="true">→</span></a></p>
   </div>
 
   <section class="mt-12 p-5 rounded-xl bg-blue-50 border border-blue-100" aria-labelledby="vertrauen">
     <h2 id="vertrauen" class="m-0 text-lg font-bold text-slate-900">Which apps are listed here</h2>
     <p class="m-0 mt-2 text-slate-700">Only apps that run in the browser, without sign-up and without installation. They are free, have no ads and collect nothing in secret. So you can use them without a long check. <a href="/apps/pr-preview/pr-148/en/enter/#bedingungen" class="text-blue-700 underline underline-offset-2">What exactly we require</a></p>
+    <h2 class="m-0 mt-5 text-lg font-bold text-slate-900">Who is behind lernapps.net</h2>
+    <p class="m-0 mt-2 text-slate-700">Not a company, but people who care about digital education. Teachers, parents and others build the apps and offer them here to everyone. We earn nothing from you or your data. That is why there are no ads and no accounts here.</p>
   </section>
 </div>
 

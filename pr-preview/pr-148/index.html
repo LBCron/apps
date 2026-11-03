@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-la-theme="auto">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,7 +68,7 @@
       <div>
         <label for="klasse" class="block text-sm font-semibold text-slate-300">Klasse</label>
         <select id="klasse" name="klasse" class="field field-dark mt-1 w-full">
-          <option value="">Alle Klassen</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option>
+          <option value="">Alle Klassen</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option>
         </select>
       </div>
     </form>
@@ -76,8 +76,11 @@
 </section>
 
 <div class="max-w-4xl mx-auto px-4 sm:px-6 pt-8">
-  <p class="m-0 text-sm font-semibold text-slate-600" aria-live="polite" data-count
-     data-none="Keine App gefunden" data-one="1 App" data-many="{n} Apps">8 Apps</p>
+  <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
+    <p class="m-0 font-semibold text-slate-600" aria-live="polite" data-count
+       data-none="Keine App gefunden" data-one="1 App" data-many="{n} Apps">8 Apps</p>
+    <p class="m-0 text-slate-600" data-hint hidden>Nichts Passendes dabei? <a href="/apps/pr-preview/pr-148/build/" class="font-semibold text-blue-700 underline underline-offset-2 whitespace-nowrap" data-build-link>Bau dir selbst eine <span aria-hidden="true">→</span></a></p>
+  </div>
 
   <ul class="list-none p-0 m-0 mt-3 grid gap-4" data-results>
     
@@ -352,19 +355,28 @@
 
   </ul>
 
-  <div class="mt-4 p-5 rounded-xl border border-dashed border-slate-300" data-empty hidden>
-    <p class="m-0 font-semibold">Dazu gibt es hier noch keine App.</p>
-    <p class="m-0 mt-1 text-slate-700">lernapps.net fängt gerade erst an. Kennst du eine passende App, oder hast du selbst eine veröffentlicht? <a href="/apps/pr-preview/pr-148/enter/" class="text-blue-700 underline underline-offset-2">App eintragen</a></p>
+  <div class="mt-4 p-5 rounded-xl border border-dashed border-slate-300 grid gap-2" data-empty hidden>
+    <h2 class="m-0 text-lg font-bold text-slate-900" data-empty-headline data-searched="{suche} gibt es noch keine App. Noch nicht."
+        data-topic="zu „{v}“" data-subject="in {v}" data-grade="für Klasse {v}">Dazu gibt es noch keine App. Noch nicht.</h2>
+    <p class="m-0 text-slate-700">Hinter lernapps.net steht keine Firma und keine Redaktion. Jede App hier hat ein Mensch gebaut, dem gute digitale Bildung wichtig ist. Darum fehlt noch vieles, und manche Klassen kommen kaum vor.</p>
+    <p class="m-0 text-slate-700">Das Gute daran: Den Stoff kennt dein KI-Assistent schon. Du weißt, was Lernende in dieser Klasse brauchen. Zusammen baut ihr die App, und dann findet sie hier jede und jeder. Programmieren musst du dafür nicht.</p>
+    <div class="mt-2 flex flex-wrap items-center gap-x-5 gap-y-3">
+      <a href="/apps/pr-preview/pr-148/build/" class="btn btn-primary" data-build-link>Selbst eine App bauen</a>
+    </div>
+    <p class="m-0 mt-1 text-sm text-slate-600">Du willst nur für eine Arbeit mit deinem eigenen Material üben? <a href="/practice/" class="text-blue-700 underline underline-offset-2">Dann schau bei Üben <span aria-hidden="true">→</span></a></p>
   </div>
 
-  <div class="mt-8 p-5 rounded-xl border border-slate-200 bg-white flex flex-wrap items-center gap-x-6 gap-y-3">
-    <p class="m-0 text-slate-700"><strong class="text-slate-900">Nichts gefunden?</strong> Hilf dir selbst und bau eine App. Mit unserem Tooling ist es ganz einfach.</p>
-    <a href="/apps/pr-preview/pr-148/build/" class="btn btn-primary">Eine App bauen</a>
+  <div class="mt-8 p-5 rounded-xl border border-slate-200 bg-white flex flex-wrap items-center gap-x-6 gap-y-3" data-build>
+    <p class="m-0 text-slate-700 flex-1 min-w-0 basis-80"><strong class="text-slate-900">Nichts Passendes dabei?</strong> Hier schreibt keine Redaktion, hier bauen Menschen wie du. Was fehlt, kannst du selbst bauen. Dann finden es auch alle anderen, die danach suchen.</p>
+    <a href="/apps/pr-preview/pr-148/build/" class="btn btn-primary" data-build-link>Selbst eine App bauen</a>
+    <p class="m-0 basis-full text-sm text-slate-600">Du willst nur für eine Arbeit mit deinem eigenen Material üben? <a href="/practice/" class="text-blue-700 underline underline-offset-2">Dann schau bei Üben <span aria-hidden="true">→</span></a></p>
   </div>
 
   <section class="mt-12 p-5 rounded-xl bg-blue-50 border border-blue-100" aria-labelledby="vertrauen">
     <h2 id="vertrauen" class="m-0 text-lg font-bold text-slate-900">Welche Apps hier stehen</h2>
     <p class="m-0 mt-2 text-slate-700">Hier stehen nur Apps, die im Browser laufen, ohne Anmeldung und ohne Installation. Sie sind kostenlos, ohne Werbung und sammeln nichts heimlich. Darum kannst du sie einsetzen, ohne lange zu prüfen. <a href="/apps/pr-preview/pr-148/enter/#bedingungen" class="text-blue-700 underline underline-offset-2">Was wir genau verlangen</a></p>
+    <h2 class="m-0 mt-5 text-lg font-bold text-slate-900">Wer hinter lernapps.net steht</h2>
+    <p class="m-0 mt-2 text-slate-700">Kein Unternehmen, sondern Menschen, denen digitale Bildung wichtig ist. Lehrkräfte, Eltern und andere bauen die Apps und stellen sie hier allen zur Verfügung. Wir verdienen nichts an dir und deinen Daten. Darum gibt es hier keine Werbung und kein Konto.</p>
   </section>
 </div>
 

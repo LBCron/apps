@@ -19,7 +19,7 @@ Die englische Fassung liegt unter [https://lernapps.net/apps/pr-preview/pr-148/e
 ## Eine App bauen
 
 Ein Mensch möchte mit dir eine Lern-App bauen? Folge der Seite [App bauen](https://lernapps.net/apps/pr-preview/pr-148/build/):
-Sie nennt den Schnellweg, den Skill und den Befehl, mit dem du die App anlegst.
+Sie nennt den Schnellweg, den Skill und den Befehl, mit dem du die App startest.
 Ist die App veröffentlicht, trag sie ein, wie der nächste Abschnitt sagt.
 
 ## Eine App eintragen
