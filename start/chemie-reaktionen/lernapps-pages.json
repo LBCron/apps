@@ -37,12 +37,31 @@
     {
       "path": "reaktionen/reaktionen/",
       "title": {
-        "de": "Chemische Reaktionen",
-        "en": "Chemical reactions"
+        "de": "Woran du eine Reaktion erkennst",
+        "en": "How to recognise a reaction"
       },
       "competencies": [
-        "kennzeichen-chemischer-reaktionen",
+        "kennzeichen-chemischer-reaktionen"
+      ]
+    },
+    {
+      "path": "reaktionen/zustandsaenderung/",
+      "title": {
+        "de": "Reaktion oder Zustandsänderung?",
+        "en": "Reaction or change of state?"
+      },
+      "competencies": [
         "reaktion-oder-zustandsaenderung"
+      ]
+    },
+    {
+      "path": "reaktionen/massenerhaltung/",
+      "title": {
+        "de": "Die Masse bleibt gleich",
+        "en": "Mass stays the same"
+      },
+      "competencies": [
+        "massenerhaltung"
       ]
     },
     {
@@ -52,8 +71,7 @@
         "en": "Reaction equations"
       },
       "competencies": [
-        "reaktionsgleichung-aufstellen",
-        "massenerhaltung"
+        "reaktionsgleichung-aufstellen"
       ]
     }
   ]

@@ -49,14 +49,18 @@ Nennt die Adresse dieser Seite `bedarf=`, gilt jeder Abschnitt, den sie nennt, m
 ### Kapitel „Chemische Reaktionen“
 
 - Selbsteinschätzung des Kapitels
-- „Chemische Reaktionen“ · Aufgaben A1, A2, A3
-- „Reaktionsgleichungen“ · Aufgaben A4, A5, A6
+- „Woran du eine Reaktion erkennst“ · Aufgaben A1, A2
+- „Reaktion oder Zustandsänderung?“ · Aufgaben A3, A4
+- „Die Masse bleibt gleich“ · Aufgaben A5, A6
+- „Reaktionsgleichungen“ · Aufgaben A7, A8
 
 ## Die Aufgaben dieser Selbsteinschätzung
 
-- A1: Übung vorgang-art der Seite „Chemische Reaktionen“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
-- A2: Übung sicheres-zeichen der Seite „Chemische Reaktionen“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
-- A3: Übung atome-entstehen der Seite „Chemische Reaktionen“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
-- A4: Übung koeffizient-wasser der Seite „Reaktionsgleichungen“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
-- A5: Übung koeffizient-ammoniak der Seite „Reaktionsgleichungen“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
-- A6: Übung koeffizient-methan der Seite „Reaktionsgleichungen“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
+- A1: Übung beobachtung-hinweis der Seite „Woran du eine Reaktion erkennst“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
+- A2: Übung sicheres-zeichen der Seite „Woran du eine Reaktion erkennst“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
+- A3: Übung vorgang-art der Seite „Reaktion oder Zustandsänderung?“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
+- A4: Übung kerzenwachs der Seite „Reaktion oder Zustandsänderung?“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
+- A5: Übung waage-geschlossen der Seite „Die Masse bleibt gleich“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
+- A6: Übung masse-magnesium der Seite „Die Masse bleibt gleich“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
+- A7: Übung koeffizient-wasser der Seite „Reaktionsgleichungen“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)
+- A8: Übung koeffizient-methan der Seite „Reaktionsgleichungen“ (immer dieselbe Aufgabe, auch auf der Seite: richtig kann gemerkt sein)

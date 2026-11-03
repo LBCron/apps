@@ -49,14 +49,18 @@ If the address of this page names `bedarf=`, each section it names holds, severa
 ### Chapter “Chemical reactions”
 
 - self-assessment of the chapter
-- “Chemical reactions” · Tasks A1, A2, A3
-- “Reaction equations” · Tasks A4, A5, A6
+- “How to recognise a reaction” · Tasks A1, A2
+- “Reaction or change of state?” · Tasks A3, A4
+- “Mass stays the same” · Tasks A5, A6
+- “Reaction equations” · Tasks A7, A8
 
 ## The tasks of this self-assessment
 
-- A1: exercise vorgang-art of the page “Chemical reactions” (always the same task, on its page too: right may be remembered)
-- A2: exercise sicheres-zeichen of the page “Chemical reactions” (always the same task, on its page too: right may be remembered)
-- A3: exercise atome-entstehen of the page “Chemical reactions” (always the same task, on its page too: right may be remembered)
-- A4: exercise koeffizient-wasser of the page “Reaction equations” (always the same task, on its page too: right may be remembered)
-- A5: exercise koeffizient-ammoniak of the page “Reaction equations” (always the same task, on its page too: right may be remembered)
-- A6: exercise koeffizient-methan of the page “Reaction equations” (always the same task, on its page too: right may be remembered)
+- A1: exercise beobachtung-hinweis of the page “How to recognise a reaction” (always the same task, on its page too: right may be remembered)
+- A2: exercise sicheres-zeichen of the page “How to recognise a reaction” (always the same task, on its page too: right may be remembered)
+- A3: exercise vorgang-art of the page “Reaction or change of state?” (always the same task, on its page too: right may be remembered)
+- A4: exercise kerzenwachs of the page “Reaction or change of state?” (always the same task, on its page too: right may be remembered)
+- A5: exercise waage-geschlossen of the page “Mass stays the same” (always the same task, on its page too: right may be remembered)
+- A6: exercise masse-magnesium of the page “Mass stays the same” (always the same task, on its page too: right may be remembered)
+- A7: exercise koeffizient-wasser of the page “Reaction equations” (always the same task, on its page too: right may be remembered)
+- A8: exercise koeffizient-methan of the page “Reaction equations” (always the same task, on its page too: right may be remembered)

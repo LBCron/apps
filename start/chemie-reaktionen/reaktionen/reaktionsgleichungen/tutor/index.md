@@ -45,7 +45,7 @@ Eine Reaktionsgleichung zeigt, welche Stoffe reagieren. Auf beiden Seiten müsse
 
 Mit einer Reaktionsgleichung beschreibst du eine Reaktion kurz und genau: Welche Stoffe gehen hinein, welche kommen heraus und in welchem Verhältnis.
 
-Du brauchst dafür drei Dinge, die du vorher gelernt hast: Formeln lesen (kurz wiederholt auf der Seite „Symbole und Formeln“), die Wortgleichung ([so schreibst du eine Reaktion in Worten auf](https://lernapps.net/apps/map/chemie/c/wortgleichung/)) und das Atommodell nach Dalton ([was Atome sind und wie sie sich neu gruppieren](https://lernapps.net/apps/map/chemie/c/daltonsches-atommodell/)).
+Du brauchst dafür vier Dinge, die du vorher gelernt hast: die Massenerhaltung (die Seite davor), Formeln lesen (kurz wiederholt auf der Seite „Symbole und Formeln“), die Wortgleichung ([so schreibst du eine Reaktion in Worten auf](https://lernapps.net/apps/map/chemie/c/wortgleichung/)) und das Atommodell nach Dalton ([was Atome sind und wie sie sich neu gruppieren](https://lernapps.net/apps/map/chemie/c/daltonsches-atommodell/)).
 
 ### Regel
 
@@ -53,7 +53,7 @@ Du brauchst dafür drei Dinge, die du vorher gelernt hast: Formeln lesen (kurz w
 
 - **Koeffizient**: Ein Koeffizient ist die große Zahl vor einer Formel. Er sagt, wie oft die Formel vorkommt.
 
-Die Atome bleiben bei einer Reaktion erhalten. Deshalb muss jede Atomsorte links und rechts gleich oft vorkommen. Du erreichst das mit Koeffizienten. Die Indizes in den Formeln änderst du nie, sonst wäre es ein anderer Stoff.
+Wegen der Massenerhaltung bleiben die Atome bei einer Reaktion erhalten. Deshalb muss jede Atomsorte links und rechts gleich oft vorkommen. Du erreichst das mit Koeffizienten. Die Indizes in den Formeln änderst du nie, sonst wäre es ein anderer Stoff.
 
 $\ce{2H2 + O2 -> 2H2O}$
 

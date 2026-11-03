@@ -45,7 +45,7 @@ A reaction equation shows which substances react. There must be the same number 
 
 With a reaction equation you describe a reaction briefly and precisely: which substances go in, which come out and in which ratio.
 
-You need three things you have learned before: reading formulas (briefly recapped on the page “Symbols and formulas”), the word equation ([how to write a reaction in words](https://lernapps.net/apps/map/chemie/c/wortgleichung/)) and Dalton's atomic model ([what atoms are and how they regroup](https://lernapps.net/apps/map/chemie/c/daltonsches-atommodell/)).
+You need four things you have learned before: conservation of mass (the page before), reading formulas (briefly recapped on the page “Symbols and formulas”), the word equation ([how to write a reaction in words](https://lernapps.net/apps/map/chemie/c/wortgleichung/)) and Dalton's atomic model ([what atoms are and how they regroup](https://lernapps.net/apps/map/chemie/c/daltonsches-atommodell/)).
 
 ### Rule
 
@@ -53,7 +53,7 @@ You need three things you have learned before: reading formulas (briefly recappe
 
 - **Coefficient**: A coefficient is the big number in front of a formula. It tells how often the formula occurs.
 
-The atoms are kept in a reaction. So every kind of atom must occur equally often on the left and on the right. You achieve that with coefficients. You never change the indices in the formulas, otherwise it would be a different substance.
+Because of conservation of mass the atoms are kept in a reaction. So every kind of atom must occur equally often on the left and on the right. You achieve that with coefficients. You never change the indices in the formulas, otherwise it would be a different substance.
 
 $\ce{2H2 + O2 -> 2H2O}$
 
