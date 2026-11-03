@@ -503,8 +503,17 @@ Ids say the step; tasks of one step run in order, steps as in the Plan's strateg
   against the online map (no errors; hints one-competency-per-page and prerequisites-linked are content work for later), merged:
   elektrizitaet#19, anorganische-chemie#15, musik#17, mathe-arithmetik#1, mathe-algebra#1, mathe-stochastik#1,
   chemie-reaktionen#1.
-- [ ] C4 New apps online (GitHub Pages of mathe-arithmetik, mathe-algebra, mathe-stochastik, chemie-reaktionen) and listed in the
-  catalog (lernapps-listing).
+- [x] C4 New apps online (the owner turned GitHub Pages on: the deploy's GITHUB_TOKEN may not create a Pages site) and listed:
+  lernapps/apps#175 (with anorganische-chemie's entry), #176 (elektrizitaet and musik at their format-2 commits; no automatic
+  update pull request came). chemie-reaktionen's licence names the content's author (lernapps/chemie-reaktionen#2). The map shows
+  all six apps of a strand.
+- [x] C6 The Mathe-Karte leaves the catalog and the pages of lernapps.net; the app stays online in its repo (owner's decision):
+  lernapps/apps#177, lernapps/lernapps.github.io#117 (examples and screenshots now mathe-arithmetik and mathe-stochastik),
+  lernapps/app-templates#133, lernapps/practice#54. lernapps/.github (profile, ORGANIZATION, GOVERNANCE) as a patch for the owner:
+  this session cannot attach a repo whose name starts with a dot.
+- [ ] C7 Open: Pages on at the first deploy (needs a token with Administration: write, e.g. a GitHub App's, or a step at repo
+  creation); why no update pull requests came for elektrizitaet and musik; in dark mode the axis labels of the bar figure of
+  mathe-arithmetik have little contrast.
 - [ ] C5 Later: content hints (split pages with two competencies; recap pages or links for prerequisites); test run 4 with the
   map online; lernapps/app-templates#130.
 
