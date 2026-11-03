@@ -11,9 +11,10 @@ eleventyComputed:
   description: "{{ t.map.terms.description }}"
 ---
 {#-
-  The entry to the learning map (feat/learning-map, B12): the subjects with a map, and the terms (KD-02) as a picture
-  of the model. Each box of the picture is a link to its definition on this page; assets/map.js opens the definition
-  as a dialog instead. The arrows are drawn with CSS and hidden from screen readers, which read the same as sentences.
+  The entry to the learning maps (feat/learning-map, B12): first the maps there are, then how they belong to the apps
+  and why the map is a method of our own, last the terms (KD-02) as a picture of the model. Each box of the picture is
+  a link to its definition in the list of terms; assets/map.js opens the definition as a dialog instead. The list is
+  open without JavaScript; map.js closes it unless the address points into it. The arrows are drawn with CSS and hidden from screen readers, which read the same as sentences.
 -#}
 {%- set T = t.map.terms %}
 {%- import "components.njk" as c with context %}
@@ -21,22 +22,52 @@ eleventyComputed:
 {%- macro node(id, cls="") %}{% set item = T.items | byId(id) %}<a href="#{{ id }}" class="map-node {{ cls }}" data-opens="{{ id }}"><b>{{ item.title }}</b><span>{{ T.nodes[id] }}</span></a>{% endmacro %}
 
 <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-12 flex flex-col gap-10">
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-3">
     <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">{{ T.headline }}</h1>
-    <p class="m-0 max-w-3xl text-lg text-slate-600">{{ T.lead }}</p>
+    <p class="m-0 max-w-3xl text-xl text-slate-700">{{ T.lead }}</p>
   </div>
 
-  <section aria-labelledby="faecher">
-    <h2 id="faecher" class="m-0 text-2xl font-bold text-slate-900">{{ T.subjects }}</h2>
-    <ul class="list-none p-0 m-0 mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  <section aria-labelledby="karten" class="flex flex-col gap-4">
+    <h2 id="karten" class="m-0 text-2xl font-bold text-slate-900">{{ T.subjects }}</h2>
+    <ul class="map-cards">
       {%- for s in map.subjects %}
-      <li class="panel">
-        <h3 class="m-0 text-xl font-bold"><a href="{{ c.mapUrl(s.id + '/') | trim }}" class="text-blue-700 underline underline-offset-2"{{ s.name | fallbackLang(lang) | safe }}>{{ s.name | tx(lang) }}</a></h3>
-        <p class="m-0 mt-1 text-slate-600">{{ T.subjectInfo(s.strands.length, s.competencies.length) }}{% if s.curricula.length %} · {{ T.subjectCurricula(s.curricula.length) }}{% endif %}</p>
+      {%- set total = s.competencies.length %}
+      {%- set filled = ((s.covered / total) * 32) | round if total else 0 %}
+      {%- if s.covered and filled < 1 %}{% set filled = 1 %}{% endif %}
+      <li>
+        <a href="{{ c.mapUrl(s.id + '/') | trim }}" class="map-card">
+          <b{{ s.name | fallbackLang(lang) | safe }}>{{ s.name | tx(lang) }}</b>
+          <span class="map-mini" aria-hidden="true">{% for i in range(32) %}<i{% if i < filled %} class="map-mini-covered"{% endif %}></i>{% endfor %}</span>
+          <span class="map-card-meta">{{ T.subjectInfo(s.strands.length, total) }}<br>{{ T.subjectCovered(s.covered) }}{% if s.curricula.length %} · {{ T.subjectCurricula(s.curricula.length) }}{% endif %}</span>
+          <span class="map-card-go">{{ T.subjectOpen }} <span aria-hidden="true">→</span></span>
+        </a>
       </li>
       {%- endfor %}
     </ul>
+    <p class="m-0 text-slate-600">{{ T.subjectsMore }}</p>
   </section>
+
+  <section aria-labelledby="apps" class="flex flex-col gap-4">
+    <h2 id="apps" class="m-0 text-2xl font-bold text-slate-900">{{ T.apps.headline }}</h2>
+    <ol class="map-steps">
+      {%- for step in T.apps.steps %}<li>{{ step | safe }}</li>{% endfor %}
+    </ol>
+    <p class="m-0"><a href="{{ '/build/' | inLang(lang) | url }}" class="btn btn-secondary">{{ T.apps.build }}</a></p>
+  </section>
+
+  {%- set M = T.method %}
+  <section aria-labelledby="methode" class="map-honest">
+    <p class="map-honest-tag">{{ M.tag }}</p>
+    <h2 id="methode" class="m-0 text-2xl font-bold text-slate-900">{{ M.headline }}</h2>
+    <p>{{ M.intro }}</p>
+    <ul>
+      {%- for reason in M.reasons %}<li>{{ reason | safe }}</li>{% endfor %}
+    </ul>
+    <p>{{ M.ours }}</p>
+    <p>{{ M.feedback }} <a href="{{ site.repo }}/issues/new?title={{ M.issueTitle | urlencode }}" class="text-blue-700 underline underline-offset-2">{{ M.feedbackLink }}</a> <span class="text-slate-600">{{ M.feedbackNote }}</span></p>
+  </section>
+
+  <hr class="map-rule">
 
   <section aria-labelledby="bild" class="flex flex-col gap-3">
     <h2 id="bild" class="m-0 text-2xl font-bold text-slate-900">{{ T.modelHeadline }}</h2>
@@ -70,8 +101,8 @@ eleventyComputed:
     </figure>
   </section>
 
-  <section aria-labelledby="begriffe">
-    <h2 id="begriffe" class="m-0 text-2xl font-bold text-slate-900">{{ T.definitions }}</h2>
+  <details class="map-terms" open data-map-terms>
+    <summary><h2 id="begriffe" class="m-0 text-xl font-bold text-slate-900">{{ T.definitions }}</h2></summary>
     <div class="mt-4 grid gap-4 md:grid-cols-2">
       {%- for item in T.items %}
       <article id="{{ item.id }}" class="panel scroll-mt-4" data-kind="{{ T.kind }}" aria-labelledby="{{ item.id }}-titel">
@@ -84,7 +115,7 @@ eleventyComputed:
       </article>
       {%- endfor %}
     </div>
-  </section>
+  </details>
 
   <section aria-labelledby="regeln">
     <h2 id="regeln" class="m-0 text-2xl font-bold text-slate-900">{{ T.rulesHeadline }}</h2>

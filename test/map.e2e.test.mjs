@@ -1,11 +1,14 @@
 // The pages of the learning map (src/map*.njk, assets/map.js), built from this repo into a temporary folder with an
 // explainer's page list from test/fixtures/map/pages/ (elektrizitaet practises three competencies of Physik):
 //   - the pages exist in both languages, the JSON per subject, and the links from the start page, the app page and
-//     llms.txt;
-//   - without JavaScript everything is a link: the curricula, the competencies, the terms;
+//     llms.txt; the start of the maps shows the maps first, the model last, and asks for feedback as a GitHub issue;
+//   - without JavaScript everything is a link: the curricula, the competencies, the terms; the legend is text and the
+//     list of terms is open;
 //   - with JavaScript, by keyboard: the drop-down goes to the chosen curriculum, a competency opens as a dialog that
-//     closes with Escape, its button or the backdrop and gives the focus back, "Nur Lücken zeigen" hides what is
-//     practised, and a box of the terms' picture opens its definition.
+//     closes with Escape, its button or the backdrop and gives the focus back, the legend's buttons show only what is
+//     practised or only the gaps, the help beside the headline opens as a dialog (without JS: at the end of the
+//     page), a box of the terms' picture opens its definition as a dialog, and the list of terms is closed unless the
+//     address points into it.
 // Offline; needs Chromium (test/browser.mjs).
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
@@ -65,6 +68,22 @@ describe("the built pages", () => {
     assert.match(page, /href="\/apps\/elektrizitaet\/"/);
     assert.match(page, /Der einfache Stromkreis/);
     assert.match(read("map/mathematik/c/zufall-laplace/index.html"), /Noch übt keine App diesen Baustein/);
+  });
+
+  test("the start of the maps shows the maps first and the model last, and asks for feedback as an issue", () => {
+    const html = read("map/index.html");
+    const at = (text) => {
+      const i = html.indexOf(text);
+      assert.ok(i >= 0, text);
+      return i;
+    };
+    const order = ['id="karten"', 'id="apps"', 'id="methode"', 'id="bild"', 'id="begriffe"'].map(at);
+    assert.deepEqual(order, [...order].sort((a, b) => a - b));
+    assert.match(html, /<h1[^>]*>Lernlandkarten<\/h1>/);
+    assert.match(html, /href="\/apps\/map\/physik\/" class="map-card"/);
+    assert.match(html, /3 davon übt schon eine App/);
+    assert.match(html, /href="https:\/\/github\.com\/lernapps\/apps\/issues\/new\?title=Lernlandkarte/);
+    assert.match(read("en/map/index.html"), /<h1[^>]*>Learning maps<\/h1>/);
   });
 
   test("the start page, the app page and llms.txt link the map", () => {
@@ -148,13 +167,60 @@ describe("in the browser", () => {
     await page.context().close();
   });
 
-  test("“Nur Lücken zeigen” hides the competencies an app practises", async () => {
+  test("the legend's buttons show only what is practised or only the gaps; pressed again, all", async () => {
     const page = await open("map/physik/");
     const covered = page.locator('a[href$="/c/einfacher-stromkreis/"]');
-    assert.equal(await covered.isVisible(), true);
-    await page.getByLabel("Nur Lücken zeigen").check();
+    const gap = page.locator('a[href$="/c/elektrische-ladung/"]');
+    const onlyGaps = page.getByRole("button", { name: /^Lücke \d+$/ });
+    const onlyCovered = page.getByRole("button", { name: /^Abgedeckt \d+$/ });
+    assert.equal(await page.getByRole("group", { name: "Bausteine zeigen" }).isVisible(), true);
+    assert.match(await onlyCovered.textContent(), /3$/);
+    await onlyGaps.click();
+    assert.equal(await onlyGaps.getAttribute("aria-pressed"), "true");
     assert.equal(await covered.isVisible(), false);
-    assert.equal(await page.locator('a[href$="/c/elektrische-ladung/"]').isVisible(), true);
+    assert.equal(await gap.isVisible(), true);
+    await onlyCovered.focus();
+    await page.keyboard.press("Enter");
+    assert.equal(await onlyGaps.getAttribute("aria-pressed"), "false");
+    assert.equal(await covered.isVisible(), true);
+    assert.equal(await gap.isVisible(), false);
+    await page.keyboard.press("Enter");
+    assert.equal(await onlyCovered.getAttribute("aria-pressed"), "false");
+    assert.equal(await gap.isVisible(), true);
+    await page.context().close();
+  });
+
+  test("without JavaScript the legend is text and the help is at the end; with it, the help is a dialog", async () => {
+    let page = await open("map/physik/", { javaScriptEnabled: false });
+    assert.equal(await page.locator("[data-map-legend]").isVisible(), true);
+    assert.equal(await page.locator("[data-map-filter]").isVisible(), false);
+    assert.equal(await page.locator("section#hilfe").isVisible(), true);
+    await page.context().close();
+    page = await open("map/physik/");
+    assert.equal(await page.locator("section#hilfe").isVisible(), false);
+    const link = page.getByRole("link", { name: "So liest du die Karte" });
+    await link.focus();
+    await page.keyboard.press("Enter");
+    const dialog = page.locator("dialog[data-map-dialog]");
+    assert.equal(await dialog.isVisible(), true);
+    assert.equal((await dialog.getByRole("heading").textContent()).trim(), "So liest du die Karte");
+    assert.match(await dialog.textContent(), /Du siehst die Richtstufe/);
+    await page.keyboard.press("Escape");
+    assert.equal(await link.evaluate((el) => el === document.activeElement), true);
+    await page.context().close();
+  });
+
+  test("the list of terms is open without JavaScript, closed with it, and open when the address points into it", async () => {
+    let page = await open("map/", { javaScriptEnabled: false });
+    assert.equal(await page.locator("article#strang").isVisible(), true);
+    await page.context().close();
+    page = await open("map/");
+    assert.equal(await page.locator("article#strang").isVisible(), false);
+    await page.goto(site.url + "map/#strang");
+    assert.equal(await page.locator("article#strang").isVisible(), true);
+    await page.context().close();
+    page = await open("map/#richtstufe");
+    assert.equal(await page.locator("article#richtstufe").isVisible(), true);
     await page.context().close();
   });
 

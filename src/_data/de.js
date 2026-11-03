@@ -373,12 +373,41 @@ const de = {
       title: "Lernlandkarte · lernapps.net",
       description:
         "Die Lernlandkarte zeigt für jedes Fach, was es zu lernen gibt, wie es aufeinander aufbaut und welche App es schon übt.",
-      headline: "Lernlandkarte",
-      lead: "Die Lernlandkarte zeigt für jedes Fach, was es zu lernen gibt, wie es aufeinander aufbaut und welche App es schon übt. So siehst du auch, wo noch eine App fehlt.",
-      subjects: "Wähle ein Fach",
-      subjectInfo: (strands, competencies) => `${strands} Stränge, ${competencies} Bausteine`,
+      headline: "Lernlandkarten",
+      lead: "Eine Lernlandkarte zeigt, was es in einem Fach zu lernen gibt und was worauf aufbaut. Und sie zeigt, welche App etwas schon übt – und wo noch eine fehlt.",
+      // the maps there are, as cards
+      subjects: "Diese Karten gibt es schon",
+      subjectInfo: (strands, competencies) => `${strands} Stränge · ${competencies} Bausteine`,
+      subjectCovered: (n) => `${n} davon übt schon eine App`,
       subjectCurricula: (n) => (n === 1 ? "1 Lehrplan erfasst" : `${n} Lehrpläne erfasst`),
-      modelHeadline: "So ist die Karte aufgebaut",
+      subjectOpen: "Karte öffnen",
+      subjectsMore: "Weitere Fächer folgen.",
+      // how the map and the apps belong together
+      apps: {
+        headline: "Karte und Apps",
+        steps: [
+          "Die Karte zerlegt ein Fach in <b>Bausteine</b>. Jeder ist ein Satz: „Ich kann …“.",
+          "Jede App sagt, welche Bausteine ihre Seiten üben.",
+          "Auf der Karte ist ein Baustein dann <b>blau</b>. Gestrichelt heißt: Hier fehlt noch eine App.",
+        ],
+        build: "Eine App für eine Lücke bauen",
+      },
+      // why the map is a method of our own
+      method: {
+        tag: "Ehrlich gesagt",
+        headline: "Die Karte ist unsere eigene Methode",
+        intro: "Es gibt keine fertige Vorlage, die zeigt, wie das Wissen eines Fachs zusammenhängt. Deshalb haben wir uns selbst eine Methode überlegt.",
+        reasons: [
+          "<b>Lehrpläne</b> legen fest, in welcher Reihenfolge unterrichtet wird. Jedes Bundesland hat eigene. Wie das Wissen logisch zusammenhängt, zeigen sie nur zum Teil.",
+          "<b>Bildungsstandards der KMK</b> beschreiben, was Kinder können sollen. Die gibt es aber nicht für jedes Fach.",
+        ],
+        ours: "Wir ordnen das Wissen darum nach seinem logischen Zusammenhang: Was baut worauf auf? Jedes Land bekommt darin seine eigene Reihenfolge. Wählst du auf einer Karte einen Lehrplan, siehst du dessen Klassen.",
+        feedback: "Etwas fehlt oder ist falsch eingeordnet?",
+        feedbackLink: "Sag uns Bescheid",
+        feedbackNote: "(GitHub-Issue, braucht ein GitHub-Konto)",
+        issueTitle: "Lernlandkarte: ",
+      },
+      modelHeadline: "Wie die Karte aufgebaut ist",
       modelLead: "Klicke auf ein Kästchen im Bild. Dann bekommst du den Begriff erklärt.",
       pictureLabel: "Bild: wie die Teile der Karte zusammenhängen",
       // the nodes of the picture: the term (an id of `items`) and a short example
@@ -410,7 +439,7 @@ const de = {
         "Eine App hat mehrere Seiten.",
         "Eine Seite übt Bausteine.",
       ],
-      definitions: "Die Begriffe",
+      definitions: "Alle Begriffe als Liste",
       kind: "Begriff",
       example: "Beispiel:",
       inPicture: "Im Bild:",
@@ -497,11 +526,12 @@ const de = {
       howTo: {
         headline: "So liest du die Karte",
         all: "Alle Begriffe und wie sie zusammenhängen",
+        method: "Warum diese Methode?",
         items: [
           { term: "Strang", id: "strang", where: "eine Spalte", text: "Ein Teilgebiet des Fachs, das sich über mehrere Schuljahre zieht." },
           { term: "Baustein", id: "baustein", where: "ein Kästchen", text: "Eine Sache, die ein Kind lernen kann: „Ich kann …“." },
           { term: "Richtstufe", id: "richtstufe", where: "eine Zeile", text: "Ungefähr wann ein Baustein dran ist. Wählst du einen Lehrplan, siehst du dessen Klassen." },
-          { term: "App", id: "app", where: "die Farbe", text: "Blau: Eine App übt den Baustein. Gestrichelt: noch keine." },
+          { term: "App", id: "app", where: "die Farbe", text: "Blau heißt abgedeckt: Eine App übt den Baustein. Gestrichelt heißt Lücke: Noch keine App übt ihn." },
         ],
       },
       when: {
@@ -518,8 +548,9 @@ const de = {
         curriculum: (name, placed, total) =>
           `Du siehst den Lehrplan ${name}. Er ordnet ${placed} von ${total} Bausteinen einer Klasse zu. Ein Baustein steht in der ersten Klasse, in der er dran ist. „Wieder in Klasse …“ sagt, wann der Lehrplan ihn noch einmal aufgreift. Bausteine ohne Klasse stehen in der gestreiften Zeile ihrer Richtstufe.`,
       },
-      onlyGaps: "Nur Lücken zeigen",
-      legend: { covered: "Eine App übt diesen Baustein", gap: "Lücke: noch keine App" },
+      // the legend; with JavaScript its entries are buttons that show only their kind
+      legend: { covered: "Abgedeckt", gap: "Lücke" },
+      filter: "Bausteine zeigen",
       corner: "Klasse ↓ · Strang →",
       gridLabel: (subject) => `Lernlandkarte ${subject}: Bausteine nach Strang und Klasse`,
       noGrade: "noch ohne Klasse",

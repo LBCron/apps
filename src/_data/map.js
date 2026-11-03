@@ -79,6 +79,8 @@ export default async function () {
       competencies,
       curricula,
       rows: rows(subject),
+      // How many competencies an app practises (the cards of /map/, the filter of the subject page).
+      covered: competencies.filter((c) => c.practisedBy.length).length,
       // Every Land in the drop-down; one without a captured curriculum is shown, but cannot be chosen.
       lands: LANDS.map((land) => ({ land, curricula: curricula.filter((c) => c.land === land).map((c) => c.id) })),
     };
