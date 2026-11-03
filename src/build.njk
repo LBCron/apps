@@ -5,40 +5,56 @@ pagination:
   alias: pageLanguage
 permalink: "/{{ pageLanguage.root }}build/index.html"
 layout: base.njk
-scripts: [kopieren.js]
+scripts: [bauen.js, kopieren.js]
 eleventyComputed:
   title: "{{ t.build.title }}"
   description: "{{ t.build.description }}"
 ---
 {#-
-  Bauen: the creator's entry point to building an app with the tooling of lernapps.net (site.tooling): the prompt
-  to give the assistant, the command that starts the app, the skill as the quick path, a short box on which assistant
+  Bauen: the creator's entry point to building an app for the catalog with the tooling of lernapps.net
+  (site.tooling): the prompt to give the assistant (it contains the command that starts the app; the quick path the
+  assistant reads in llms.txt, so the page shows no command of its own), a pointer to /practice/ for those who
+  only want to practise with their own material, a short box on which assistant
   to use (the page /tooling/assistants/), building freely without the
   templates (any framework, or tools such as Lovable or bolt.new), then the step out into the world: publishing it on
   lernapps.net (/enter/, a prominent link with a rocket, the section #eintragen, which the header's "App bauen" now
   stands for too); this page is about building only.
   test/entry-point.e2e.test.mjs runs the command from the built page.
+  Coming from a search on the find page (?thema=&fach=&klasse=), assets/bauen.js puts the search into a line under the
+  lead and into the task for the assistant. Without it, or without JS, the page is the same for everyone.
+  Who brings what (build.give) makes building feel doable for non-programmers.
 -#}
 {%- set B = t.build %}
 {%- import "components.njk" as c with context %}
 <section class="bg-slate-900 text-white">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 pt-10 pb-12">
     <h1 class="m-0 font-extrabold leading-tight tracking-tight whitespace-pre-line" style="font-size: clamp(1.75rem, 5vw, 2.75rem);">{{ B.headline }}</h1>
+    <p class="m-0 mt-3 text-lg text-white font-semibold max-w-2xl" data-searched="{{ B.searched }}"
+       data-topic="{{ t.find.searched.topic }}" data-subject="{{ t.find.searched.subject }}" data-grade="{{ t.find.searched.grade }}" hidden></p>
     <p class="m-0 mt-3 text-lg text-slate-300 max-w-2xl">{{ B.lead }}</p>
-    <p class="m-0 mt-4 text-slate-300">{{ B.haveApp }} <a href="#eintragen" class="text-blue-300 underline underline-offset-2 hover:text-white">{{ B.haveAppLink }} ↓</a></p>
+    <p class="m-0 mt-4 text-slate-300">{{ B.haveApp }} <a href="{{ '/enter/' | inLang(lang) | url }}" class="text-blue-300 underline underline-offset-2 hover:text-white">{{ B.haveAppLink }} <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 
 <div class="max-w-4xl mx-auto px-4 sm:px-6 mt-8 grid gap-6">
+  <section aria-labelledby="mitbringen">
+    <h2 id="mitbringen" class="sr-only">{{ B.give.headline }}</h2>
+    <ul class="list-none p-0 m-0 grid gap-4 sm:grid-cols-3">
+      {%- for item in B.give.items %}
+      <li class="give" data-who="{{ item.who }}"><strong class="block text-xs uppercase tracking-wider">{{ item.title }}</strong><span class="block mt-1 text-slate-700">{{ item.body }}</span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+
   <section class="panel min-w-0" aria-labelledby="start">
     <h2 id="start" class="panel-title">{{ B.start.headline }}</h2>
     <p class="m-0 text-slate-700">{{ B.start.body }}</p>
     <div class="mt-3">
+      <div data-prompt="{{ B.start.prompt(site.tooling.llms, site.tooling.init, ' {suche}') }}">
       {{ c.copyField("bauen-auftrag", B.start.label, B.start.prompt(site.tooling.llms, site.tooling.init), B.start.copy, B.start.copied, true) }}
+      </div>
     </div>
-    <p class="m-0 mt-3 text-slate-700">{{ B.start.command }}</p>
-    <pre class="m-0 mt-1 p-3 rounded bg-slate-100 text-sm overflow-x-auto"><code>{{ site.tooling.init }}</code></pre>
-    <p class="m-0 mt-3 text-slate-700">{{ B.start.skill }} <a href="{{ site.tooling.skill }}" class="text-blue-700 underline underline-offset-2">lernapps-app</a>.</p>
+    <p class="m-0 mt-3 text-sm text-slate-600">{{ B.start.practice }} <a href="{{ '/practice/' | otherSiteIn(pageLanguage.code) }}" class="text-blue-700 underline underline-offset-2">{{ B.start.practiceLink }} <span aria-hidden="true">→</span></a></p>
   </section>
 
   <section class="panel" aria-labelledby="assistent">

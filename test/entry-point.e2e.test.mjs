@@ -119,9 +119,8 @@ describe("the creator's entry points", () => {
     assert.deepEqual(await brokenLinks(t, links), []);
   });
 
-  test("building links the skill lernapps-app as the quick path and leads on to listing; listing leads back", () => {
+  test("building points the assistant to the tooling's llms.txt (the quick path) and leads on to listing; listing leads back", () => {
     for (const text of [page, llms]) assert.match(text, /lernapps\.net\/tooling\/llms\.txt/);
-    assert.match(page, /skills\/process\/lernapps-app\/SKILL\.md/);
     assert.match(page, /skills\/tooling\/lernapps-cli\/references\/platform-rules\.md/, "free builders get the platform rules");
     assert.match(page, /href="\/apps\/enter\/"/, "/apps/build/ leads on to listing");
     assert.match(enter, /href="\/apps\/build\/"/, "/apps/enter/ leads to building for those without an app");
@@ -135,7 +134,7 @@ describe("the creator's entry points", () => {
   test("listing promotes the skill lernapps-listing; e-mail only as the fallback at the end", () => {
     const skill = /skills\/process\/lernapps-listing\/SKILL\.md/;
     const first = enter.search(skill);
-    assert.ok(first >= 0, "/apps/enter/ links the skill lernapps-listing");
+    assert.ok(first >= 0, "/apps/enter/ gives the skill lernapps-listing (in the prompt)");
     const prompt = decode(enter.match(/<textarea\b[^>]*id="auftrag"[^>]*>([\s\S]*?)<\/textarea>/)?.[1] ?? "");
     assert.match(prompt, /lernapps-listing/, "the prompt to copy names the skill");
     const mails = [...enter.matchAll(/mailto:/g)];
@@ -165,9 +164,9 @@ async function freePorts(count) {
 
 /** The command to start an app, as the built page /apps/build/ shows it: the one `<code>` that runs `npx … init`. */
 function startCommand() {
-  const commands = new Set(
-    [...page.matchAll(/<code\b[^>]*>([\s\S]*?)<\/code>/g)].map((m) => decode(m[1]).trim()).filter((c) => /^npx .* init /.test(c)),
-  );
+  // The page shows the command only inside the prompt to copy (the quick path is in llms.txt).
+  const prompt = decode(page.match(/<textarea\b[^>]*id="bauen-auftrag"[^>]*>([\s\S]*?)<\/textarea>/)?.[1] ?? "");
+  const commands = new Set([...prompt.matchAll(/npx [^\s]+ [^\s]+ init <name>/g)].map((m) => m[0]));
   assert.equal(commands.size, 1, `one command to start an app on the page, found: ${[...commands].join(" | ")}`);
   return [...commands][0];
 }

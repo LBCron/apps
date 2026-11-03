@@ -15,6 +15,9 @@ eleventyComputed:
   Without JS all apps are listed. With JS (assets/finden.js) the form filters the list and shows the
   topics that match, with a deep link into the app; the query is kept in the URL (?thema=…), so a search
   can be shared. Nothing is stored in the browser.
+  The invitation to build an app yourself (find.hint, find.empty, find.build): with a search and matches one line under
+  the count, so it is on the first screen; without a match the box that says honestly why so much is missing; under
+  the results always; both boxes point to /practice/ for those who only want to practise. Its links ([data-build-link]) carry the search to /build/ (set by finden.js).
 -#}
 {%- set F = t.find %}
 {%- import "components.njk" as c with context %}
@@ -48,8 +51,11 @@ eleventyComputed:
 </section>
 
 <div class="max-w-4xl mx-auto px-4 sm:px-6 pt-8">
-  <p class="m-0 text-sm font-semibold text-slate-600" aria-live="polite" data-count
-     data-none="{{ F.count["none"] }}" data-one="{{ F.count.one }}" data-many="{{ F.count.many('{n}') }}">{{ F.count.many(catalog.apps.length) }}</p>
+  <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
+    <p class="m-0 font-semibold text-slate-600" aria-live="polite" data-count
+       data-none="{{ F.count["none"] }}" data-one="{{ F.count.one }}" data-many="{{ F.count.many('{n}') }}">{{ F.count.many(catalog.apps.length) }}</p>
+    <p class="m-0 text-slate-600" data-hint hidden>{{ F.hint.text }} <a href="{{ '/build/' | inLang(lang) | url }}" class="font-semibold text-blue-700 underline underline-offset-2 whitespace-nowrap" data-build-link>{{ F.hint.link }} <span aria-hidden="true">→</span></a></p>
+  </div>
 
   <ul class="list-none p-0 m-0 mt-3 grid gap-4" data-results>
     {%- for app in catalog.apps %}
@@ -57,18 +63,28 @@ eleventyComputed:
     {%- endfor %}
   </ul>
 
-  <div class="mt-4 p-5 rounded-xl border border-dashed border-slate-300" data-empty hidden>
-    <p class="m-0 font-semibold">{{ F.empty.headline }}</p>
-    <p class="m-0 mt-1 text-slate-700">{{ F.empty.body }} <a href="{{ '/enter/' | inLang(lang) | url }}" class="text-blue-700 underline underline-offset-2">{{ F.empty.link }}</a></p>
+  <div class="mt-4 p-5 rounded-xl border border-dashed border-slate-300 grid gap-2" data-empty hidden>
+    <h2 class="m-0 text-lg font-bold text-slate-900" data-empty-headline data-searched="{{ F.empty.headlineSearched }}"
+        data-topic="{{ F.searched.topic }}" data-subject="{{ F.searched.subject }}" data-grade="{{ F.searched.grade }}">{{ F.empty.headline }}</h2>
+    {%- for paragraph in F.empty.body %}
+    <p class="m-0 text-slate-700">{{ paragraph }}</p>
+    {%- endfor %}
+    <div class="mt-2 flex flex-wrap items-center gap-x-5 gap-y-3">
+      <a href="{{ '/build/' | inLang(lang) | url }}" class="btn btn-primary" data-build-link>{{ F.empty.build }}</a>
+    </div>
+    <p class="m-0 mt-1 text-sm text-slate-600">{{ F.practice }} <a href="{{ '/practice/' | otherSiteIn(pageLanguage.code) }}" class="text-blue-700 underline underline-offset-2">{{ F.practiceLink }} <span aria-hidden="true">→</span></a></p>
   </div>
 
-  <div class="mt-8 p-5 rounded-xl border border-slate-200 bg-white flex flex-wrap items-center gap-x-6 gap-y-3">
-    <p class="m-0 text-slate-700"><strong class="text-slate-900">{{ F.build.headline }}</strong> {{ F.build.body }}</p>
-    <a href="{{ '/build/' | inLang(lang) | url }}" class="btn btn-primary">{{ F.build.link }}</a>
+  <div class="mt-8 p-5 rounded-xl border border-slate-200 bg-white flex flex-wrap items-center gap-x-6 gap-y-3" data-build>
+    <p class="m-0 text-slate-700 flex-1 min-w-0 basis-80"><strong class="text-slate-900">{{ F.build.headline }}</strong> {{ F.build.body }}</p>
+    <a href="{{ '/build/' | inLang(lang) | url }}" class="btn btn-primary" data-build-link>{{ F.build.link }}</a>
+    <p class="m-0 basis-full text-sm text-slate-600">{{ F.practice }} <a href="{{ '/practice/' | otherSiteIn(pageLanguage.code) }}" class="text-blue-700 underline underline-offset-2">{{ F.practiceLink }} <span aria-hidden="true">→</span></a></p>
   </div>
 
   <section class="mt-12 p-5 rounded-xl bg-blue-50 border border-blue-100" aria-labelledby="vertrauen">
     <h2 id="vertrauen" class="m-0 text-lg font-bold text-slate-900">{{ F.trust.headline }}</h2>
     <p class="m-0 mt-2 text-slate-700">{{ F.trust.body }} <a href="{{ '/enter/#bedingungen' | inLang(lang) | url }}" class="text-blue-700 underline underline-offset-2">{{ F.trust.link }}</a></p>
+    <h2 class="m-0 mt-5 text-lg font-bold text-slate-900">{{ F.trust.whoHeadline }}</h2>
+    <p class="m-0 mt-2 text-slate-700">{{ F.trust.who }}</p>
   </section>
 </div>

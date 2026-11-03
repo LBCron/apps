@@ -74,7 +74,9 @@ export default async function () {
   const subjects = [...new Set(apps.map((a) => a.subject))]
     .filter((s, i, all) => all.findIndex((o) => de(o) === de(s)) === i)
     .sort((a, b) => de(a).localeCompare(de(b), "de"));
-  const grades = [...new Set(apps.flatMap((a) => a.grades))].sort((a, b) => a - b);
+  // Every grade of the schema (1 to 13), also those without an app: a search for them shows that something is
+  // missing, and how to build it (find.empty).
+  const grades = Array.from({ length: 13 }, (_, i) => i + 1);
   // One page per app and language, for the pagination of src/app.njk.
   const pages = apps.flatMap((app) => languages.map((l) => ({ app, l })));
   return { apps, subjects, grades, pages };

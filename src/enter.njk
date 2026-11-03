@@ -13,11 +13,11 @@ eleventyComputed:
 {#-
   Eintragen: steps s-listing-help and t-list-app of x-list-and-hear-back (D7), channel ch-listing (D5):
   a few fields, an automatic check (src/_data/catalog.js). The way is the creator's AI assistant with the skill
-  lernapps-listing (site.tooling.listing, which follows llms.txt); the issue form for those without one; the owner's
+  lernapps-listing (named in the prompt only: the skill is a detail for the assistant, not for the creator); the issue form for those without one; the owner's
   personal help by e-mail (concierge, D8 mvp-first-draft) only as the fallback, the one mailto of the page.
   Building an app comes first, on its own page (/build/, build.njk); this page lists an app that is published.
   "So läuft das Eintragen ab" shows the listing as steps, coloured by who acts; "Deine App bleibt deine" (#deine-app)
-  says why lernapps.net serves a copy: the app stays the creator's, lernapps.net carries the regulatory part (KD-21).
+  (after the ways and their fallback, so that the ways come first) says why lernapps.net serves a copy: the app stays the creator's, lernapps.net carries the regulatory part (KD-21).
   "Was du zurückbekommst" is s-use-insight: thanks and feedback, counted openly, on the app's page.
 -#}
 {%- set L = t.list %}
@@ -60,14 +60,6 @@ eleventyComputed:
     <p class="m-0 mt-4 text-slate-700">{{ L.flow.after }} <a href="#deine-app" class="text-blue-700 underline underline-offset-2">{{ L.flow.afterLink }}</a>.</p>
   </section>
 
-  <section class="panel scroll-mt-16" aria-labelledby="deine-app">
-    <h2 id="deine-app" class="panel-title">{{ L.own.headline }}</h2>
-    <p class="m-0 text-slate-700">{{ L.own.intro }}</p>
-    <ul class="list-none p-0 m-0 mt-3 flex flex-col gap-2">
-      {%- for item in L.own.items %}<li class="check"><strong>{{ item.title }}</strong> {{ item.body }}</li>{% endfor %}
-    </ul>
-  </section>
-
   <section aria-labelledby="wege">
     <h2 id="wege" class="m-0 text-xl font-bold text-slate-900">{{ L.ways.headline }}</h2>
     <div class="panel panel-main mt-3 min-w-0">
@@ -76,7 +68,6 @@ eleventyComputed:
       <div class="mt-3">
         {{ c.copyField("auftrag", L.ways.agent.label, L.ways.agent.prompt(site.tooling.listingRaw, site.tooling.skills), L.ways.agent.copy, L.ways.agent.copied, true) }}
       </div>
-      <p class="m-0 mt-3 text-slate-700">{{ L.ways.agent.skill }} <a href="{{ site.tooling.listing }}" class="text-blue-700 underline underline-offset-2">lernapps-listing</a>.</p>
     </div>
     <div class="panel mt-4 flex flex-col">
       <h3 class="m-0 text-base font-bold">{{ L.ways.form.title }}</h3>
@@ -88,6 +79,14 @@ eleventyComputed:
   <section id="notfalls" aria-labelledby="notfalls-titel" class="text-slate-600">
     <h2 id="notfalls-titel" class="m-0 text-base font-semibold">{{ L.ways.mail.title }}</h2>
     <p class="m-0 mt-1">{{ L.ways.mail.before }} <a href="mailto:{{ site.email }}?subject={{ L.ways.mail.subject | urlencode }}" class="underline underline-offset-2">{{ L.ways.mail.link }}</a>. {{ L.ways.mail.after }}</p>
+  </section>
+
+  <section class="panel scroll-mt-16" aria-labelledby="deine-app">
+    <h2 id="deine-app" class="panel-title">{{ L.own.headline }}</h2>
+    <p class="m-0 text-slate-700">{{ L.own.intro }}</p>
+    <ul class="list-none p-0 m-0 mt-3 flex flex-col gap-2">
+      {%- for item in L.own.items %}<li class="check"><strong>{{ item.title }}</strong> {{ item.body }}</li>{% endfor %}
+    </ul>
   </section>
 
   <section class="panel" aria-labelledby="zurueck">
