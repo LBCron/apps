@@ -30,14 +30,30 @@
           "requires": [
             "sicherheit-beim-experimentieren"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/stoffe/stoffeigenschaften/"
+              ]
+            }
+          ]
         },
         {
           "id": "aggregatzustaende-beschreiben",
           "iCan": "Ich kann die drei Aggregatzustände und ihre Übergänge (schmelzen, erstarren, verdampfen, kondensieren, sublimieren) benennen und beschreiben.",
           "gradeBand": "7-8",
           "requires": [],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/stoffe/stoffeigenschaften/"
+              ]
+            }
+          ]
         },
         {
           "id": "schmelz-und-siedetemperatur",
@@ -46,7 +62,15 @@
           "requires": [
             "aggregatzustaende-beschreiben"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/stoffe/stoffeigenschaften/"
+              ]
+            }
+          ]
         },
         {
           "id": "aggregatzustand-bei-aeusseren-bedingungen",
@@ -64,7 +88,15 @@
           "requires": [
             "stoffeigenschaften-beschreiben"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/stoffe/stoffeigenschaften/"
+              ]
+            }
+          ]
         },
         {
           "id": "elektrische-leitfaehigkeit",
@@ -118,7 +150,15 @@
           "iCan": "Ich kann Reinstoffe und Gemische unterscheiden.",
           "gradeBand": "7-8",
           "requires": [],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/stoffe/reinstoffe-gemische/"
+              ]
+            }
+          ]
         },
         {
           "id": "gemische-trennen",
@@ -144,7 +184,15 @@
           "iCan": "Ich kann das Teilchenmodell beschreiben und sagen, was es erklärt und was nicht.",
           "gradeBand": "7-8",
           "requires": [],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/teilchen/teilchenmodell/"
+              ]
+            }
+          ]
         },
         {
           "id": "aggregatzustaende-mit-teilchenmodell",
@@ -154,7 +202,15 @@
             "teilchenmodell",
             "aggregatzustaende-beschreiben"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/teilchen/teilchenmodell/"
+              ]
+            }
+          ]
         },
         {
           "id": "denkmodelle-und-sachmodelle",
@@ -182,7 +238,15 @@
           "requires": [
             "elemente-und-verbindungen"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/formeln/symbole-formeln/"
+              ]
+            }
+          ]
         },
         {
           "id": "formeln-von-verbindungen",
@@ -192,7 +256,15 @@
             "symbole-der-elemente",
             "daltonsches-atommodell"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/formeln/symbole-formeln/"
+              ]
+            }
+          ]
         },
         {
           "id": "atombau-bausteine",
@@ -201,7 +273,15 @@
           "requires": [
             "daltonsches-atommodell"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/teilchen/atombau/"
+              ]
+            }
+          ]
         },
         {
           "id": "atome-ionen-und-molekuele-unterscheiden",
@@ -220,7 +300,15 @@
           "requires": [
             "symbole-der-elemente"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/periodensystem/periodensystem-lesen/"
+              ]
+            }
+          ]
         },
         {
           "id": "metalle-und-nichtmetalle",
@@ -230,7 +318,15 @@
             "periodensystem-lesen",
             "stoffeigenschaften-beschreiben"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/periodensystem/metalle-nichtmetalle/"
+              ]
+            }
+          ]
         },
         {
           "id": "ordnungszahl-und-massenzahl",
@@ -240,7 +336,15 @@
             "atombau-bausteine",
             "periodensystem-lesen"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/teilchen/atombau/"
+              ]
+            }
+          ]
         },
         {
           "id": "schalenmodell",
@@ -249,7 +353,15 @@
           "requires": [
             "ordnungszahl-und-massenzahl"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/periodensystem/hauptgruppen/"
+              ]
+            }
+          ]
         },
         {
           "id": "atommodell-mit-energiestufen",
@@ -268,7 +380,15 @@
             "periodensystem-lesen",
             "schalenmodell"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "anorganische-chemie",
+              "url": "https://lernapps.net/apps/start/anorganische-chemie/",
+              "pages": [
+                "https://lernapps.net/apps/start/anorganische-chemie/periodensystem/hauptgruppen/"
+              ]
+            }
+          ]
         },
         {
           "id": "reaktionen-mit-atommodell-vorhersagen",
@@ -456,7 +576,15 @@
           "requires": [
             "stoffeigenschaften-beschreiben"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "chemie-reaktionen",
+              "url": "https://lernapps.net/apps/start/chemie-reaktionen/",
+              "pages": [
+                "https://lernapps.net/apps/start/chemie-reaktionen/reaktionen/reaktionen/"
+              ]
+            }
+          ]
         },
         {
           "id": "reaktion-oder-zustandsaenderung",
@@ -466,7 +594,15 @@
             "kennzeichen-chemischer-reaktionen",
             "aggregatzustaende-beschreiben"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "chemie-reaktionen",
+              "url": "https://lernapps.net/apps/start/chemie-reaktionen/",
+              "pages": [
+                "https://lernapps.net/apps/start/chemie-reaktionen/reaktionen/reaktionen/"
+              ]
+            }
+          ]
         },
         {
           "id": "synthese-und-analyse",
@@ -486,7 +622,15 @@
             "kennzeichen-chemischer-reaktionen",
             "teilchenmodell"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "chemie-reaktionen",
+              "url": "https://lernapps.net/apps/start/chemie-reaktionen/",
+              "pages": [
+                "https://lernapps.net/apps/start/chemie-reaktionen/reaktionen/reaktionsgleichungen/"
+              ]
+            }
+          ]
         },
         {
           "id": "wortgleichung",
@@ -527,7 +671,15 @@
             "massenerhaltung",
             "daltonsches-atommodell"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "chemie-reaktionen",
+              "url": "https://lernapps.net/apps/start/chemie-reaktionen/",
+              "pages": [
+                "https://lernapps.net/apps/start/chemie-reaktionen/reaktionen/reaktionsgleichungen/"
+              ]
+            }
+          ]
         },
         {
           "id": "stoffmenge-und-molare-masse",

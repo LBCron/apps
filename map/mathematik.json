@@ -220,7 +220,15 @@
             "brueche-begriff",
             "dezimalbrueche"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-arithmetik",
+              "url": "https://lernapps.net/apps/start/mathe-arithmetik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-arithmetik/prozent/grundbegriffe/"
+              ]
+            }
+          ]
         },
         {
           "id": "prozent-prozentwert",
@@ -229,7 +237,15 @@
           "requires": [
             "prozent-grundbegriffe"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-arithmetik",
+              "url": "https://lernapps.net/apps/start/mathe-arithmetik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-arithmetik/prozent/prozentwert/"
+              ]
+            }
+          ]
         },
         {
           "id": "prozent-prozentsatz",
@@ -238,7 +254,15 @@
           "requires": [
             "prozent-grundbegriffe"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-arithmetik",
+              "url": "https://lernapps.net/apps/start/mathe-arithmetik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-arithmetik/prozent/prozentsatz/"
+              ]
+            }
+          ]
         },
         {
           "id": "prozent-grundwert",
@@ -247,7 +271,15 @@
           "requires": [
             "prozent-grundbegriffe"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-arithmetik",
+              "url": "https://lernapps.net/apps/start/mathe-arithmetik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-arithmetik/prozent/grundwert/"
+              ]
+            }
+          ]
         },
         {
           "id": "prozent-veraenderung",
@@ -256,7 +288,15 @@
           "requires": [
             "prozent-prozentwert"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-arithmetik",
+              "url": "https://lernapps.net/apps/start/mathe-arithmetik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-arithmetik/prozent/veraenderung/"
+              ]
+            }
+          ]
         },
         {
           "id": "prozent-vergleich",
@@ -265,7 +305,15 @@
           "requires": [
             "prozent-prozentsatz"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-arithmetik",
+              "url": "https://lernapps.net/apps/start/mathe-arithmetik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-arithmetik/prozent/vergleich/"
+              ]
+            }
+          ]
         },
         {
           "id": "prozent-sachaufgaben",
@@ -276,7 +324,15 @@
             "prozent-prozentsatz",
             "prozent-grundwert"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-arithmetik",
+              "url": "https://lernapps.net/apps/start/mathe-arithmetik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-arithmetik/prozent/sachaufgaben/"
+              ]
+            }
+          ]
         },
         {
           "id": "prozent-von-prozenten",
@@ -386,7 +442,20 @@
           "requires": [
             "terme-umformen"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-algebra",
+              "url": "https://lernapps.net/apps/start/mathe-algebra/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-algebra/binom/klammern-multiplizieren/",
+                "https://lernapps.net/apps/start/mathe-algebra/binom/erste-binomische/",
+                "https://lernapps.net/apps/start/mathe-algebra/binom/zweite-binomische/",
+                "https://lernapps.net/apps/start/mathe-algebra/binom/dritte-binomische/",
+                "https://lernapps.net/apps/start/mathe-algebra/binom/binome-rueckwaerts/",
+                "https://lernapps.net/apps/start/mathe-algebra/binom/geschickt-rechnen/"
+              ]
+            }
+          ]
         },
         {
           "id": "lineare-gleichungen",
@@ -1131,7 +1200,15 @@
           "requires": [
             "wahrscheinlichkeitsbegriff"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-stochastik",
+              "url": "https://lernapps.net/apps/start/mathe-stochastik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-stochastik/zufall/laplace/"
+              ]
+            }
+          ]
         },
         {
           "id": "zufall-gegenereignis",
@@ -1140,7 +1217,15 @@
           "requires": [
             "zufall-laplace"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-stochastik",
+              "url": "https://lernapps.net/apps/start/mathe-stochastik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-stochastik/zufall/gegenereignis/"
+              ]
+            }
+          ]
         },
         {
           "id": "zufall-baumdiagramm",
@@ -1149,7 +1234,15 @@
           "requires": [
             "zufall-laplace"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-stochastik",
+              "url": "https://lernapps.net/apps/start/mathe-stochastik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-stochastik/zufall/baumdiagramm/"
+              ]
+            }
+          ]
         },
         {
           "id": "zufall-pfadregel-1",
@@ -1159,7 +1252,15 @@
             "zufall-baumdiagramm",
             "brueche-multiplizieren-dividieren"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-stochastik",
+              "url": "https://lernapps.net/apps/start/mathe-stochastik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-stochastik/zufall/pfadregel-1/"
+              ]
+            }
+          ]
         },
         {
           "id": "zufall-ohne-zuruecklegen",
@@ -1168,7 +1269,15 @@
           "requires": [
             "zufall-pfadregel-1"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-stochastik",
+              "url": "https://lernapps.net/apps/start/mathe-stochastik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-stochastik/zufall/ohne-zuruecklegen/"
+              ]
+            }
+          ]
         },
         {
           "id": "zufall-pfadregel-2",
@@ -1178,7 +1287,15 @@
             "zufall-pfadregel-1",
             "brueche-addieren-subtrahieren"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-stochastik",
+              "url": "https://lernapps.net/apps/start/mathe-stochastik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-stochastik/zufall/pfadregel-2/"
+              ]
+            }
+          ]
         },
         {
           "id": "zufall-ergebnisform",
@@ -1188,7 +1305,15 @@
             "zufall-laplace",
             "prozent-grundbegriffe"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-stochastik",
+              "url": "https://lernapps.net/apps/start/mathe-stochastik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-stochastik/zufall/ergebnisformen/"
+              ]
+            }
+          ]
         },
         {
           "id": "zufall-ereignis-uebersetzen",
@@ -1198,7 +1323,15 @@
             "zufall-baumdiagramm",
             "zufall-pfadregel-2"
           ],
-          "practisedBy": []
+          "practisedBy": [
+            {
+              "app": "mathe-stochastik",
+              "url": "https://lernapps.net/apps/start/mathe-stochastik/",
+              "pages": [
+                "https://lernapps.net/apps/start/mathe-stochastik/zufall/pfade-uebersetzen/"
+              ]
+            }
+          ]
         },
         {
           "id": "simulationen",
