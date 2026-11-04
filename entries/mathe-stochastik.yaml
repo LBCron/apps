@@ -10,7 +10,7 @@ url: https://lernapps.net/mathe-stochastik/
 keywords: [Wahrscheinlichkeit, Stochastik, Zufall, Würfel, Baumdiagramm, Laplace, Pfadregel]
 creator: { name: "Ralf D. Müller", url: "https://github.com/raifdmueller" }
 source: https://github.com/lernapps/mathe-stochastik
-commit: cf48d251cc436f00e4bcb73fe67686cfcb8bae9e
+commit: ab819942fdb20cb3fa6ee1343c854201f82018ce
 fitness:
   account: false
   install: false
