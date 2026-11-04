@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en" data-la-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Find learning apps · lernapps.net</title>
+  <meta name="description" content="Find a learning app for your next lesson or for tonight: free, no sign-up, ready right away.">
+  <link rel="canonical" href="https://lernapps.net/apps/en/">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/apps/pr-preview/pr-187/lernapps-tokens.css">
+<link rel="stylesheet" href="/apps/pr-preview/pr-187/lernapps-frame.css">
+<link rel="alternate" hreflang="en" href="/apps/pr-preview/pr-187/en/">
+<link rel="alternate" hreflang="de" href="/apps/pr-preview/pr-187/">
+<script>(() => {
+  const key = "lernapps-lang", here = "en", pages = {"de":"/apps/pr-preview/pr-187/"};
+  const known = ["de","en"];
+  const browser = (navigator.languages || [navigator.language]).map((l) => String(l).slice(0, 2).toLowerCase()).find((l) => known.includes(l));
+  let chosen = null;
+  try { chosen = localStorage.getItem(key); } catch {}
+  const wanted = known.includes(chosen) ? chosen : browser;
+  if (wanted && wanted !== here && pages[wanted] && !/bot|crawl|spider|slurp/i.test(navigator.userAgent)) {
+    location.replace(pages[wanted] + location.search + location.hash);
+    return;
+  }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest("a[data-la-lang]");
+    if (!a) return;
+    try { a.dataset.laLang === browser ? localStorage.removeItem(key) : localStorage.setItem(key, a.dataset.laLang); } catch {}
+  });
+})();</script>
+  <link rel="stylesheet" href="/apps/pr-preview/pr-187/uno.css">
+  <link rel="stylesheet" href="/apps/pr-preview/pr-187/assets/apps.css">
+  <script src="/apps/pr-preview/pr-187/assets/finden.js" defer></script>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col" style="font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;">
+  <a class="la-skip" href="#main-content" lang="en">Skip to content</a>
+<p class="la-preview" lang="en">Preview of a change. The real page: <a href="https://lernapps.net/apps/en/">lernapps.net/apps/en/</a></p><header class="la-header" lang="en">
+  <div class="la-header__inner">
+    <a class="la-brand" href="/en/" aria-label="lernapps.net – home page"><img src="/brand/mark-plain.svg" alt=""><span>lernapps<span class="la-brand__tld">.net</span></span></a>
+    <nav class="la-nav la-nav--bar" aria-label="Main navigation"><ul><li><a href="/apps/pr-preview/pr-187/en/" aria-current="page">Catalog</a></li><li><a href="/practice/en/">Practise</a></li><li><a href="/apps/pr-preview/pr-187/en/build/">Build an app</a></li><li><a href="/tooling/en/">Tooling</a></li><li><a href="/en/tutor/">Tutor</a></li><li><a href="/en/features/">Features</a></li><li><a href="/docs/en/">Platform</a></li><li><a href="/en/join/">Get involved</a></li><li class="la-lang"><a href="/apps/pr-preview/pr-187/" hreflang="de" lang="de" data-la-lang="de" aria-label="Sprache: Deutsch">Deutsch</a></li></ul></nav>
+    <details class="la-menu"><summary>Menu</summary><nav class="la-nav la-nav--menu" aria-label="Main navigation"><div class="la-menu__group"><p class="la-menu__title" id="la-menu-0">For learners</p><ul aria-labelledby="la-menu-0"><li><a href="/apps/pr-preview/pr-187/en/" aria-current="page">App catalog</a></li><li><a href="/practice/en/">Practise for a test</a></li></ul></div><div class="la-menu__group"><p class="la-menu__title" id="la-menu-1">For makers</p><ul aria-labelledby="la-menu-1"><li><a href="/apps/pr-preview/pr-187/en/build/">Build an app</a></li><li><a href="/tooling/en/">Tooling</a></li></ul></div><div class="la-menu__group"><p class="la-menu__title" id="la-menu-2">Understand and join in</p><ul aria-labelledby="la-menu-2"><li><a href="/en/tutor/">Tutor</a></li><li><a href="/en/features/">Features</a></li><li><a href="/docs/en/">Platform</a></li><li><a href="/en/join/">Get involved</a></li></ul></div><ul class="la-menu__lang"><li class="la-lang"><a href="/apps/pr-preview/pr-187/" hreflang="de" lang="de" data-la-lang="de" aria-label="Sprache: Deutsch">Deutsch</a></li></ul></nav></details>
+  </div>
+</header>
+
+  <main id="main-content" tabindex="-1" class="flex-1 outline-none">
+    
+<section class="bg-slate-900 text-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 pt-10 pb-12">
+    <h1 class="m-0 font-extrabold leading-tight tracking-tight" style="font-size: clamp(1.75rem, 5vw, 2.75rem);">A learning app for your next lesson</h1>
+    <p class="m-0 mt-3 text-lg text-slate-300">Free, no sign-up, ready right away. Search by topic and grade.</p>
+    <p class="m-0 mt-1 text-slate-400">A test tomorrow? Your child can start tonight at the kitchen table.</p>
+
+    <form class="mt-8 grid gap-3 sm:grid-cols-[1fr_auto_auto] items-end" role="search" aria-label="Search" data-search-form hidden>
+      <div>
+        <label for="thema" class="block text-sm font-semibold text-slate-300">Topic</label>
+        <input id="thema" name="thema" type="search" autocomplete="off" placeholder="e.g. percent or tree diagram" class="field field-dark mt-1 w-full">
+      </div>
+      <div>
+        <label for="fach" class="block text-sm font-semibold text-slate-300">Subject</label>
+        <select id="fach" name="fach" class="field field-dark mt-1 w-full">
+          <option value="">All subjects</option><option value="Chemie">Chemistry</option><option value="Deutsch" lang="de">Deutsch</option><option value="Erdkunde">Geography</option><option value="Informatik">Computer Science</option><option value="Mathematik">Mathematics</option><option value="Musik" lang="de">Musik</option><option value="Physik">Physics</option>
+        </select>
+      </div>
+      <div>
+        <label for="klasse" class="block text-sm font-semibold text-slate-300">Grade</label>
+        <select id="klasse" name="klasse" class="field field-dark mt-1 w-full">
+          <option value="">All grades</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option>
+        </select>
+      </div>
+    </form>
+  </div>
+</section>
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 pt-8">
+  <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
+    <p class="m-0 font-semibold text-slate-600" aria-live="polite" data-count
+       data-none="No app found" data-one="1 app" data-many="{n} apps">11 apps</p>
+    <p class="m-0 text-slate-600" data-hint hidden>Nothing that fits? <a href="/apps/pr-preview/pr-187/en/build/" class="font-semibold text-blue-700 underline underline-offset-2 whitespace-nowrap" data-build-link>Build one yourself <span aria-hidden="true">→</span></a></p>
+  </div>
+
+  <ul class="list-none p-0 m-0 mt-3 grid gap-4" data-results>
+    
+<li class="app-card bg-white rounded-xl border border-slate-200 shadow-sm"
+    data-app
+    data-subject="Chemie"
+    data-grades="7 8"
+    data-search="Inorganic chemistry – first steps Chemistry You learn what substances are made of: pure substances and mixtures, particles and atoms, the main groups of the periodic table, symbols and formulas. You match, build atoms and calculate on your own. Atome Periodensystem Stoffe Formeln Oliver (@mrsimpson)">
+  <a href="/apps/pr-preview/pr-187/en/anorganische-chemie/" class="block p-5 no-underline text-inherit rounded-xl focus-visible:outline-3 focus-visible:outline-blue-500" aria-label="More about Inorganic chemistry – first steps">
+    <p class="m-0 text-sm text-slate-500"><span>Chemistry</span> · Grades 7 and 8</p>
+    <h2 class="m-0 mt-1 text-xl font-bold text-slate-900">Inorganic chemistry – first steps</h2>
+    <p class="m-0 mt-2 text-slate-700">You learn what substances are made of: pure substances and mixtures, particles and atoms, the main groups of the periodic table, symbols and formulas. You match, build atoms and calculate on your own.</p>
+    
+<ul class="list-none p-0 m-0 mt-3 flex flex-wrap gap-2 text-sm" aria-label="The most important points at a glance:">
+  <li class="chip">✓ No sign-up</li>
+  <li class="chip">✓ No installation</li>
+  <li class="chip">✓ Free</li>
+</ul>
+
+  </a>
+  <div class="px-5 pb-5 -mt-2" data-topics hidden>
+    <p class="m-0 text-sm font-semibold text-slate-600">Matches your search:</p>
+    <ul class="list-none p-0 m-0 mt-1 flex flex-col gap-1">
+      <li data-topic data-search="Pure substances and mixtures" hidden><a href="https://lernapps.net/apps/start/anorganische-chemie/stoffe/reinstoffe-gemische/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Pure substances and mixtures</a></li>
+      <li data-topic data-search="Properties of substances" hidden><a href="https://lernapps.net/apps/start/anorganische-chemie/stoffe/stoffeigenschaften/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Properties of substances</a></li>
+      <li data-topic data-search="Particle model" hidden><a href="https://lernapps.net/apps/start/anorganische-chemie/teilchen/teilchenmodell/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Particle model</a></li>
+      <li data-topic data-search="Atomic structure" hidden><a href="https://lernapps.net/apps/start/anorganische-chemie/teilchen/atombau/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Atomic structure</a></li>
+      <li data-topic data-search="Reading the periodic table" hidden><a href="https://lernapps.net/apps/start/anorganische-chemie/periodensystem/periodensystem-lesen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Reading the periodic table</a></li>
+      <li data-topic data-search="The eight main groups" hidden><a href="https://lernapps.net/apps/start/anorganische-chemie/periodensystem/hauptgruppen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">The eight main groups</a></li>
+      <li data-topic data-search="Metals and non-metals" hidden><a href="https://lernapps.net/apps/start/anorganische-chemie/periodensystem/metalle-nichtmetalle/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Metals and non-metals</a></li>
+      <li data-topic data-search="Symbols and formulas" hidden><a href="https://lernapps.net/apps/start/anorganische-chemie/formeln/symbole-formeln/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Symbols and formulas</a></li>
+    </ul>
+  </div>
+</li>
+
+    
+<li class="app-card bg-white rounded-xl border border-slate-200 shadow-sm"
+    data-app
+    data-subject="Chemie"
+    data-grades="7 8"
+    data-search="Chemistry – chemical reactions Chemistry When is something a chemical reaction, and how do you write it down? Learners tell reactions from changes of state and write simple reaction equations. First they briefly go over what they need for it. They practise on every page. chemical reaction reaction equation change of state formulas conservation of mass Oliver">
+  <a href="/apps/pr-preview/pr-187/en/chemie-reaktionen/" class="block p-5 no-underline text-inherit rounded-xl focus-visible:outline-3 focus-visible:outline-blue-500" aria-label="More about Chemistry – chemical reactions">
+    <p class="m-0 text-sm text-slate-500"><span>Chemistry</span> · Grades 7 and 8</p>
+    <h2 class="m-0 mt-1 text-xl font-bold text-slate-900">Chemistry – chemical reactions</h2>
+    <p class="m-0 mt-2 text-slate-700">When is something a chemical reaction, and how do you write it down? Learners tell reactions from changes of state and write simple reaction equations. First they briefly go over what they need for it. They practise on every page.</p>
+    
+<ul class="list-none p-0 m-0 mt-3 flex flex-wrap gap-2 text-sm" aria-label="The most important points at a glance:">
+  <li class="chip">✓ No sign-up</li>
+  <li class="chip">✓ No installation</li>
+  <li class="chip">✓ Free</li>
+</ul>
+
+  </a>
+  <div class="px-5 pb-5 -mt-2" data-topics hidden>
+    <p class="m-0 text-sm font-semibold text-slate-600">Matches your search:</p>
+    <ul class="list-none p-0 m-0 mt-1 flex flex-col gap-1">
+      <li data-topic data-search="Properties of substances – a short recap" hidden><a href="https://lernapps.net/chemie-reaktionen/vorwissen/stoffeigenschaften/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Properties of substances – a short recap</a></li>
+      <li data-topic data-search="States of matter – a short recap" hidden><a href="https://lernapps.net/chemie-reaktionen/vorwissen/aggregatzustaende/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">States of matter – a short recap</a></li>
+      <li data-topic data-search="Particle model – a short recap" hidden><a href="https://lernapps.net/chemie-reaktionen/vorwissen/teilchenmodell/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Particle model – a short recap</a></li>
+      <li data-topic data-search="Symbols and formulas – a short recap" hidden><a href="https://lernapps.net/chemie-reaktionen/vorwissen/formeln/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Symbols and formulas – a short recap</a></li>
+      <li data-topic data-search="How to recognise a reaction" hidden><a href="https://lernapps.net/chemie-reaktionen/reaktionen/reaktionen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">How to recognise a reaction</a></li>
+      <li data-topic data-search="Reaction or change of state?" hidden><a href="https://lernapps.net/chemie-reaktionen/reaktionen/zustandsaenderung/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Reaction or change of state?</a></li>
+      <li data-topic data-search="Mass stays the same" hidden><a href="https://lernapps.net/chemie-reaktionen/reaktionen/massenerhaltung/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Mass stays the same</a></li>
+      <li data-topic data-search="Reaction equations" hidden><a href="https://lernapps.net/chemie-reaktionen/reaktionen/reaktionsgleichungen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Reaction equations</a></li>
+    </ul>
+  </div>
+</li>
+
+    
+<li class="app-card bg-white rounded-xl border border-slate-200 shadow-sm"
+    data-app
+    data-subject="Deutsch"
+    data-grades="3 4 5 6 7 8 9 10 11 12 13"
+    data-search="Textcheck Deutsch Genau lesen üben, auf zwei Arten: Fehler in einem Text finden, von der Rechtschreibung bis zum Widerspruch, oder eine Wiedergabe mit ihrer Quelle vergleichen und Falsches finden, etwa geänderte Zahlen, hinzugefügte Sätze und Meinungen, die wie Tatsachen klingen. Jede Übung hat drei Stufen. Nach dem Prüfen erklärt die App jeden Fehler. Lesen Textverständnis Fehlersuche Korrekturlesen Lesekompetenz genau lesen Oliver">
+  <a href="/apps/pr-preview/pr-187/en/textcheck/" class="block p-5 no-underline text-inherit rounded-xl focus-visible:outline-3 focus-visible:outline-blue-500" aria-label="More about Textcheck">
+    <p class="m-0 text-sm text-slate-500"><span lang="de">Deutsch</span> · Grades 3 to 13</p>
+    <h2 class="m-0 mt-1 text-xl font-bold text-slate-900" lang="de">Textcheck</h2>
+    <p class="m-0 mt-2 text-slate-700" lang="de">Genau lesen üben, auf zwei Arten: Fehler in einem Text finden, von der Rechtschreibung bis zum Widerspruch, oder eine Wiedergabe mit ihrer Quelle vergleichen und Falsches finden, etwa geänderte Zahlen, hinzugefügte Sätze und Meinungen, die wie Tatsachen klingen. Jede Übung hat drei Stufen. Nach dem Prüfen erklärt die App jeden Fehler.</p>
+    
+<ul class="list-none p-0 m-0 mt-3 flex flex-wrap gap-2 text-sm" aria-label="The most important points at a glance:">
+  <li class="chip">✓ No sign-up</li>
+  <li class="chip">✓ No installation</li>
+  <li class="chip">✓ Free</li>
+</ul>
+
+  </a>
+</li>
+
+    
+<li class="app-card bg-white rounded-xl border border-slate-200 shadow-sm"
+    data-app
+    data-subject="Erdkunde"
+    data-grades="5 6 7 8 9 10"
+    data-search="Naturwunder-Quiz Geography In the quiz, students answer questions about natural wonders of the Earth: mountains and volcanoes, waterfalls, deserts, caves, coasts and reefs on all continents. After each answer, they read a short note on every option and can read on in the Wikipedia article. natural wonders geography geography quiz continents world heritage volcanoes deserts waterfalls Oliver">
+  <a href="/apps/pr-preview/pr-187/en/naturwunder-quiz/" class="block p-5 no-underline text-inherit rounded-xl focus-visible:outline-3 focus-visible:outline-blue-500" aria-label="More about Naturwunder-Quiz">
+    <p class="m-0 text-sm text-slate-500"><span>Geography</span> · Grades 5 to 10</p>
+    <h2 class="m-0 mt-1 text-xl font-bold text-slate-900" lang="de">Naturwunder-Quiz</h2>
+    <p class="m-0 mt-2 text-slate-700">In the quiz, students answer questions about natural wonders of the Earth: mountains and volcanoes, waterfalls, deserts, caves, coasts and reefs on all continents. After each answer, they read a short note on every option and can read on in the Wikipedia article.</p>
+    
+<ul class="list-none p-0 m-0 mt-3 flex flex-wrap gap-2 text-sm" aria-label="The most important points at a glance:">
+  <li class="chip">✓ No sign-up</li>
+  <li class="chip">✓ No installation</li>
+  <li class="chip">✓ Free</li>
+</ul>
+
+  </a>
+  <div class="px-5 pb-5 -mt-2" data-topics hidden>
+    <p class="m-0 text-sm font-semibold text-slate-600">Matches your search:</p>
+    <ul class="list-none p-0 m-0 mt-1 flex flex-col gap-1">
+      <li data-topic data-search="Mountains and volcanoes" hidden><a href="https://lernapps.net/apps/start/naturwunder-quiz/#frage-everest-hoehe" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Mountains and volcanoes</a></li>
+      <li data-topic data-search="Waterfalls, rivers and lakes" hidden><a href="https://lernapps.net/apps/start/naturwunder-quiz/#frage-baikalsee" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Waterfalls, rivers and lakes</a></li>
+      <li data-topic data-search="Deserts" hidden><a href="https://lernapps.net/apps/start/naturwunder-quiz/#frage-atacama" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Deserts</a></li>
+      <li data-topic data-search="Caves and gorges" hidden><a href="https://lernapps.net/apps/start/naturwunder-quiz/#frage-hoehlen-rekorde" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Caves and gorges</a></li>
+      <li data-topic data-search="Coasts, islands and reefs" hidden><a href="https://lernapps.net/apps/start/naturwunder-quiz/#frage-great-barrier-reef" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Coasts, islands and reefs</a></li>
+      <li data-topic data-search="Natural wonders by continent" hidden><a href="https://lernapps.net/apps/start/naturwunder-quiz/#frage-kontinente-zuordnen" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Natural wonders by continent</a></li>
+    </ul>
+  </div>
+</li>
+
+    
+<li class="app-card bg-white rounded-xl border border-slate-200 shadow-sm"
+    data-app
+    data-subject="Informatik"
+    data-grades="3 4 5 6 7 8 9 10 11 12 13"
+    data-search="Typonaut Computer Science Learn touch typing on a journey through space. Words fly across the screen in an arc; type them correctly and they turn into stardust. Chapter by chapter new keys are added, from the home row to the whole keyboard, with a German or an English keyboard. touch typing keyboarding learn to type typing practice keyboard game Oliver">
+  <a href="/apps/pr-preview/pr-187/en/typonaut/" class="block p-5 no-underline text-inherit rounded-xl focus-visible:outline-3 focus-visible:outline-blue-500" aria-label="More about Typonaut">
+    <p class="m-0 text-sm text-slate-500"><span>Computer Science</span> · Grades 3 to 13</p>
+    <h2 class="m-0 mt-1 text-xl font-bold text-slate-900" lang="de">Typonaut</h2>
+    <p class="m-0 mt-2 text-slate-700">Learn touch typing on a journey through space. Words fly across the screen in an arc; type them correctly and they turn into stardust. Chapter by chapter new keys are added, from the home row to the whole keyboard, with a German or an English keyboard.</p>
+    
+<ul class="list-none p-0 m-0 mt-3 flex flex-wrap gap-2 text-sm" aria-label="The most important points at a glance:">
+  <li class="chip">✓ No sign-up</li>
+  <li class="chip">✓ No installation</li>
+  <li class="chip">✓ Free</li>
+</ul>
+
+  </a>
+  <div class="px-5 pb-5 -mt-2" data-topics hidden>
+    <p class="m-0 text-sm font-semibold text-slate-600">Matches your search:</p>
+    <ul class="list-none p-0 m-0 mt-1 flex flex-col gap-1">
+      <li data-topic data-search="German with a German keyboard (QWERTZ)" hidden><a href="https://lernapps.net/apps/start/typonaut/app/#de" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">German with a German keyboard (QWERTZ)</a></li>
+      <li data-topic data-search="English with an English keyboard (QWERTY)" hidden><a href="https://lernapps.net/apps/start/typonaut/app/#en" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">English with an English keyboard (QWERTY)</a></li>
+    </ul>
+  </div>
+</li>
+
+    
+<li class="app-card bg-white rounded-xl border border-slate-200 shadow-sm"
+    data-app
+    data-subject="Mathematik"
+    data-grades="7 8"
+    data-search="Yahtzee Trainer Mathematics You play Yahtzee and learn to work out chances as fractions and percentages. In explain mode a coach shows you the chances with every throw and a tree of how they come about. In the game with joker you work out the fractions yourself when you want help. In the plain game you collect points for the high-score list. Wahrscheinlichkeit Würfel Kniffel Yahtzee Chancen Brüche Prozent Baumdiagramm Oliver">
+  <a href="/apps/pr-preview/pr-187/en/kniffel-trainer/" class="block p-5 no-underline text-inherit rounded-xl focus-visible:outline-3 focus-visible:outline-blue-500" aria-label="More about Yahtzee Trainer">
+    <p class="m-0 text-sm text-slate-500"><span>Mathematics</span> · Grades 7 and 8</p>
+    <h2 class="m-0 mt-1 text-xl font-bold text-slate-900">Yahtzee Trainer</h2>
+    <p class="m-0 mt-2 text-slate-700">You play Yahtzee and learn to work out chances as fractions and percentages. In explain mode a coach shows you the chances with every throw and a tree of how they come about. In the game with joker you work out the fractions yourself when you want help. In the plain game you collect points for the high-score list.</p>
+    
+<ul class="list-none p-0 m-0 mt-3 flex flex-wrap gap-2 text-sm" aria-label="The most important points at a glance:">
+  <li class="chip">✓ No sign-up</li>
+  <li class="chip">✓ No installation</li>
+  <li class="chip">✓ Free</li>
+</ul>
+
+  </a>
+  <div class="px-5 pb-5 -mt-2" data-topics hidden>
+    <p class="m-0 text-sm font-semibold text-slate-600">Matches your search:</p>
+    <ul class="list-none p-0 m-0 mt-1 flex flex-col gap-1">
+      <li data-topic data-search="Explain mode with coach and tree" hidden><a href="https://lernapps.net/apps/start/kniffel-trainer/app/#erklaeren" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Explain mode with coach and tree</a></li>
+      <li data-topic data-search="Game with joker" hidden><a href="https://lernapps.net/apps/start/kniffel-trainer/app/#joker" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Game with joker</a></li>
+      <li data-topic data-search="Plain game with high scores" hidden><a href="https://lernapps.net/apps/start/kniffel-trainer/app/#spielen" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Plain game with high scores</a></li>
+    </ul>
+  </div>
+</li>
+
+    
+<li class="app-card bg-white rounded-xl border border-slate-200 shadow-sm"
+    data-app
+    data-subject="Mathematik"
+    data-grades="8"
+    data-search="Mathe: Algebra – Binomische Formeln Mathematik Die binomischen Formeln Schritt für Schritt: zwei Klammern multiplizieren, die drei Formeln anwenden, rückwärts faktorisieren und damit geschickt rechnen. Jede Seite erklärt eine Sache mit Regel, Beispiel und Bild. Danach üben die Lernenden mit Aufgaben, die sofort sagen, ob der Term stimmt. binomische Formeln Binom Termumformung Faktorisieren Algebra Klammern Ralf D. Müller">
+  <a href="/apps/pr-preview/pr-187/en/mathe-algebra/" class="block p-5 no-underline text-inherit rounded-xl focus-visible:outline-3 focus-visible:outline-blue-500" aria-label="More about Mathe: Algebra – Binomische Formeln">
+    <p class="m-0 text-sm text-slate-500"><span lang="de">Mathematik</span> · Grade 8</p>
+    <h2 class="m-0 mt-1 text-xl font-bold text-slate-900" lang="de">Mathe: Algebra – Binomische Formeln</h2>
+    <p class="m-0 mt-2 text-slate-700" lang="de">Die binomischen Formeln Schritt für Schritt: zwei Klammern multiplizieren, die drei Formeln anwenden, rückwärts faktorisieren und damit geschickt rechnen. Jede Seite erklärt eine Sache mit Regel, Beispiel und Bild. Danach üben die Lernenden mit Aufgaben, die sofort sagen, ob der Term stimmt.</p>
+    
+<ul class="list-none p-0 m-0 mt-3 flex flex-wrap gap-2 text-sm" aria-label="The most important points at a glance:">
+  <li class="chip">✓ No sign-up</li>
+  <li class="chip">✓ No installation</li>
+  <li class="chip">✓ Free</li>
+</ul>
+
+  </a>
+  <div class="px-5 pb-5 -mt-2" data-topics hidden>
+    <p class="m-0 text-sm font-semibold text-slate-600">Matches your search:</p>
+    <ul class="list-none p-0 m-0 mt-1 flex flex-col gap-1">
+      <li data-topic data-search="Zwei Klammern multiplizieren" hidden><a href="https://lernapps.net/apps/start/mathe-algebra/binom/klammern-multiplizieren/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Zwei Klammern multiplizieren</a></li>
+      <li data-topic data-search="Erste binomische Formel" hidden><a href="https://lernapps.net/apps/start/mathe-algebra/binom/erste-binomische/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Erste binomische Formel</a></li>
+      <li data-topic data-search="Zweite binomische Formel" hidden><a href="https://lernapps.net/apps/start/mathe-algebra/binom/zweite-binomische/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Zweite binomische Formel</a></li>
+      <li data-topic data-search="Dritte binomische Formel" hidden><a href="https://lernapps.net/apps/start/mathe-algebra/binom/dritte-binomische/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Dritte binomische Formel</a></li>
+      <li data-topic data-search="Binome rückwärts" hidden><a href="https://lernapps.net/apps/start/mathe-algebra/binom/binome-rueckwaerts/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Binome rückwärts</a></li>
+      <li data-topic data-search="Geschickt rechnen" hidden><a href="https://lernapps.net/apps/start/mathe-algebra/binom/geschickt-rechnen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Geschickt rechnen</a></li>
+    </ul>
+  </div>
+</li>
+
+    
+<li class="app-card bg-white rounded-xl border border-slate-200 shadow-sm"
+    data-app
+    data-subject="Mathematik"
+    data-grades="7 8"
+    data-search="Mathe: Arithmetik – Prozentrechnung Mathematik Prozentrechnung Schritt für Schritt: Grundwert, Prozentwert und Prozentsatz erkennen und berechnen, Zunahme und Abnahme, Vergleiche und Sachaufgaben. Jede Seite erklärt eine Sache mit Regel, Beispiel und Bild. Danach üben die Lernenden mit Aufgaben, die sofort sagen, ob das Ergebnis stimmt. Prozentrechnung Prozent Grundwert Prozentwert Prozentsatz Rabatt Zinsen Ralf D. Müller">
+  <a href="/apps/pr-preview/pr-187/en/mathe-arithmetik/" class="block p-5 no-underline text-inherit rounded-xl focus-visible:outline-3 focus-visible:outline-blue-500" aria-label="More about Mathe: Arithmetik – Prozentrechnung">
+    <p class="m-0 text-sm text-slate-500"><span lang="de">Mathematik</span> · Grades 7 and 8</p>
+    <h2 class="m-0 mt-1 text-xl font-bold text-slate-900" lang="de">Mathe: Arithmetik – Prozentrechnung</h2>
+    <p class="m-0 mt-2 text-slate-700" lang="de">Prozentrechnung Schritt für Schritt: Grundwert, Prozentwert und Prozentsatz erkennen und berechnen, Zunahme und Abnahme, Vergleiche und Sachaufgaben. Jede Seite erklärt eine Sache mit Regel, Beispiel und Bild. Danach üben die Lernenden mit Aufgaben, die sofort sagen, ob das Ergebnis stimmt.</p>
+    
+<ul class="list-none p-0 m-0 mt-3 flex flex-wrap gap-2 text-sm" aria-label="The most important points at a glance:">
+  <li class="chip">✓ No sign-up</li>
+  <li class="chip">✓ No installation</li>
+  <li class="chip">✓ Free</li>
+</ul>
+
+  </a>
+  <div class="px-5 pb-5 -mt-2" data-topics hidden>
+    <p class="m-0 text-sm font-semibold text-slate-600">Matches your search:</p>
+    <ul class="list-none p-0 m-0 mt-1 flex flex-col gap-1">
+      <li data-topic data-search="Grundwert, Prozentwert und Prozentsatz erkennen" hidden><a href="https://lernapps.net/apps/start/mathe-arithmetik/prozent/grundbegriffe/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Grundwert, Prozentwert und Prozentsatz erkennen</a></li>
+      <li data-topic data-search="Prozentsatz berechnen" hidden><a href="https://lernapps.net/apps/start/mathe-arithmetik/prozent/prozentsatz/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Prozentsatz berechnen</a></li>
+      <li data-topic data-search="Prozentwert berechnen" hidden><a href="https://lernapps.net/apps/start/mathe-arithmetik/prozent/prozentwert/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Prozentwert berechnen</a></li>
+      <li data-topic data-search="Grundwert berechnen" hidden><a href="https://lernapps.net/apps/start/mathe-arithmetik/prozent/grundwert/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Grundwert berechnen</a></li>
+      <li data-topic data-search="Prozentuale Zunahme und Abnahme" hidden><a href="https://lernapps.net/apps/start/mathe-arithmetik/prozent/veraenderung/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Prozentuale Zunahme und Abnahme</a></li>
+      <li data-topic data-search="Zwei Werte vergleichen" hidden><a href="https://lernapps.net/apps/start/mathe-arithmetik/prozent/vergleich/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Zwei Werte vergleichen</a></li>
+      <li data-topic data-search="Sachaufgaben übersetzen" hidden><a href="https://lernapps.net/apps/start/mathe-arithmetik/prozent/sachaufgaben/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Sachaufgaben übersetzen</a></li>
+    </ul>
+  </div>
+</li>
+
+    
+<li class="app-card bg-white rounded-xl border border-slate-200 shadow-sm"
+    data-app
+    data-subject="Mathematik"
+    data-grades="7 8"
+    data-search="Mathe: Stochastik – Wahrscheinlichkeit Mathematik Wahrscheinlichkeit Schritt für Schritt: die Laplace-Formel, Baumdiagramme, die Pfadregeln, das Gegenereignis und Ziehen ohne Zurücklegen. Jede Seite erklärt eine Sache mit Regel, Beispiel und Bild. Danach üben die Lernenden mit Aufgaben, die sofort sagen, ob das Ergebnis stimmt. Wahrscheinlichkeit Stochastik Zufall Würfel Baumdiagramm Laplace Pfadregel Ralf D. Müller">
+  <a href="/apps/pr-preview/pr-187/en/mathe-stochastik/" class="block p-5 no-underline text-inherit rounded-xl focus-visible:outline-3 focus-visible:outline-blue-500" aria-label="More about Mathe: Stochastik – Wahrscheinlichkeit">
+    <p class="m-0 text-sm text-slate-500"><span lang="de">Mathematik</span> · Grades 7 and 8</p>
+    <h2 class="m-0 mt-1 text-xl font-bold text-slate-900" lang="de">Mathe: Stochastik – Wahrscheinlichkeit</h2>
+    <p class="m-0 mt-2 text-slate-700" lang="de">Wahrscheinlichkeit Schritt für Schritt: die Laplace-Formel, Baumdiagramme, die Pfadregeln, das Gegenereignis und Ziehen ohne Zurücklegen. Jede Seite erklärt eine Sache mit Regel, Beispiel und Bild. Danach üben die Lernenden mit Aufgaben, die sofort sagen, ob das Ergebnis stimmt.</p>
+    
+<ul class="list-none p-0 m-0 mt-3 flex flex-wrap gap-2 text-sm" aria-label="The most important points at a glance:">
+  <li class="chip">✓ No sign-up</li>
+  <li class="chip">✓ No installation</li>
+  <li class="chip">✓ Free</li>
+</ul>
+
+  </a>
+  <div class="px-5 pb-5 -mt-2" data-topics hidden>
+    <p class="m-0 text-sm font-semibold text-slate-600">Matches your search:</p>
+    <ul class="list-none p-0 m-0 mt-1 flex flex-col gap-1">
+      <li data-topic data-search="Laplace-Formel" hidden><a href="https://lernapps.net/apps/start/mathe-stochastik/zufall/laplace/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Laplace-Formel</a></li>
+      <li data-topic data-search="Baumdiagramm" hidden><a href="https://lernapps.net/apps/start/mathe-stochastik/zufall/baumdiagramm/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Baumdiagramm</a></li>
+      <li data-topic data-search="1. Pfadregel" hidden><a href="https://lernapps.net/apps/start/mathe-stochastik/zufall/pfadregel-1/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">1. Pfadregel</a></li>
+      <li data-topic data-search="Gegenereignis" hidden><a href="https://lernapps.net/apps/start/mathe-stochastik/zufall/gegenereignis/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Gegenereignis</a></li>
+      <li data-topic data-search="Ohne Zurücklegen" hidden><a href="https://lernapps.net/apps/start/mathe-stochastik/zufall/ohne-zuruecklegen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Ohne Zurücklegen</a></li>
+      <li data-topic data-search="2. Pfadregel" hidden><a href="https://lernapps.net/apps/start/mathe-stochastik/zufall/pfadregel-2/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">2. Pfadregel</a></li>
+      <li data-topic data-search="Produkt, Summe, Potenz" hidden><a href="https://lernapps.net/apps/start/mathe-stochastik/zufall/ergebnisformen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Produkt, Summe, Potenz</a></li>
+      <li data-topic data-search="In Pfade übersetzen" hidden><a href="https://lernapps.net/apps/start/mathe-stochastik/zufall/pfade-uebersetzen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">In Pfade übersetzen</a></li>
+    </ul>
+  </div>
+</li>
+
+    
+<li class="app-card bg-white rounded-xl border border-slate-200 shadow-sm"
+    data-app
+    data-subject="Musik"
+    data-grades="5 6 7"
+    data-search="Musik erleben Musik Hören, klatschen, singen und vergleichen: Die Kinder lernen Töne, Rhythmen und Noten kennen und erfinden eigene kleine Stücke. Alle Klänge entstehen im Browser und klingen wie ein Klavier. Das Mikrofon ist freiwillig, und jede Übung geht auch ohne. Noten lesen Rhythmus klatschen Tonleiter Intervalle Klaviatur Instrumente Takt Dur und Moll Oliver Jägle">
+  <a href="/apps/pr-preview/pr-187/en/musik/" class="block p-5 no-underline text-inherit rounded-xl focus-visible:outline-3 focus-visible:outline-blue-500" aria-label="More about Musik erleben">
+    <p class="m-0 text-sm text-slate-500"><span lang="de">Musik</span> · Grades 5 to 7</p>
+    <h2 class="m-0 mt-1 text-xl font-bold text-slate-900" lang="de">Musik erleben</h2>
+    <p class="m-0 mt-2 text-slate-700" lang="de">Hören, klatschen, singen und vergleichen: Die Kinder lernen Töne, Rhythmen und Noten kennen und erfinden eigene kleine Stücke. Alle Klänge entstehen im Browser und klingen wie ein Klavier. Das Mikrofon ist freiwillig, und jede Übung geht auch ohne.</p>
+    
+<ul class="list-none p-0 m-0 mt-3 flex flex-wrap gap-2 text-sm" aria-label="The most important points at a glance:">
+  <li class="chip">✓ No sign-up</li>
+  <li class="chip">✓ No installation</li>
+  <li class="chip">✓ Free</li>
+</ul>
+
+  </a>
+  <div class="px-5 pb-5 -mt-2" data-topics hidden>
+    <p class="m-0 text-sm font-semibold text-slate-600">Matches your search:</p>
+    <ul class="list-none p-0 m-0 mt-1 flex flex-col gap-1">
+      <li data-topic data-search="Laut und leise" hidden><a href="https://lernapps.net/apps/start/musik/hoeren/laut-leise/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Laut und leise</a></li>
+      <li data-topic data-search="Schnell und langsam" hidden><a href="https://lernapps.net/apps/start/musik/hoeren/schnell-langsam/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Schnell und langsam</a></li>
+      <li data-topic data-search="Klangfarbe und Instrumentenfamilien" hidden><a href="https://lernapps.net/apps/start/musik/hoeren/klangfarbe/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Klangfarbe und Instrumentenfamilien</a></li>
+      <li data-topic data-search="Hoch und tief" hidden><a href="https://lernapps.net/apps/start/musik/tonhoehe/hoch-tief/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Hoch und tief</a></li>
+      <li data-topic data-search="Die Klaviatur" hidden><a href="https://lernapps.net/apps/start/musik/tonhoehe/klaviatur/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Die Klaviatur</a></li>
+      <li data-topic data-search="Meine Stimme hat eine Tonhöhe" hidden><a href="https://lernapps.net/apps/start/musik/tonhoehe/stimme/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Meine Stimme hat eine Tonhöhe</a></li>
+      <li data-topic data-search="Grundschlag und Takt" hidden><a href="https://lernapps.net/apps/start/musik/rhythmus/grundschlag-takt/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Grundschlag und Takt</a></li>
+      <li data-topic data-search="Notenwerte und Pausen" hidden><a href="https://lernapps.net/apps/start/musik/rhythmus/notenwerte/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Notenwerte und Pausen</a></li>
+      <li data-topic data-search="Rhythmen klatschen" hidden><a href="https://lernapps.net/apps/start/musik/rhythmus/klatschen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Rhythmen klatschen</a></li>
+      <li data-topic data-search="Notenlinien und Violinschlüssel" hidden><a href="https://lernapps.net/apps/start/musik/noten/linien/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Notenlinien und Violinschlüssel</a></li>
+      <li data-topic data-search="Noten benennen" hidden><a href="https://lernapps.net/apps/start/musik/noten/benennen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Noten benennen</a></li>
+      <li data-topic data-search="Rhythmus und Melodie lesen" hidden><a href="https://lernapps.net/apps/start/musik/noten/lesen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Rhythmus und Melodie lesen</a></li>
+      <li data-topic data-search="Ganzton, Halbton und die Dur-Tonleiter" hidden><a href="https://lernapps.net/apps/start/musik/tonleitern/dur-bauen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Ganzton, Halbton und die Dur-Tonleiter</a></li>
+      <li data-topic data-search="Dur und Moll hören" hidden><a href="https://lernapps.net/apps/start/musik/tonleitern/dur-moll/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Dur und Moll hören</a></li>
+      <li data-topic data-search="Intervalle" hidden><a href="https://lernapps.net/apps/start/musik/tonleitern/intervalle/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Intervalle</a></li>
+      <li data-topic data-search="Tonfolgen nachsingen" hidden><a href="https://lernapps.net/apps/start/musik/tonleitern/nachsingen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Tonfolgen nachsingen</a></li>
+      <li data-topic data-search="Ein Lied begleiten" hidden><a href="https://lernapps.net/apps/start/musik/erfinden/begleiten/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Ein Lied begleiten</a></li>
+      <li data-topic data-search="Einen eigenen Rhythmus erfinden" hidden><a href="https://lernapps.net/apps/start/musik/erfinden/rhythmus-erfinden/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Einen eigenen Rhythmus erfinden</a></li>
+      <li data-topic data-search="Eine eigene Melodie erfinden und singen" hidden><a href="https://lernapps.net/apps/start/musik/erfinden/melodie-erfinden/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2" lang="de">Eine eigene Melodie erfinden und singen</a></li>
+    </ul>
+  </div>
+</li>
+
+    
+<li class="app-card bg-white rounded-xl border border-slate-200 shadow-sm"
+    data-app
+    data-subject="Physik"
+    data-grades="5 6 7 8"
+    data-search="Electricity Physics Learners work out step by step how a circuit works, which materials conduct electricity and how series and parallel circuits differ. In grades 7 and 8, current, voltage, resistance and Ohm&#39;s law follow. On every page they practise with a circuit in which you can see the current flow, build circuits and measure. The app is available in German and English. circuit conductor insulator switch series circuit parallel circuit circuit diagram short circuit electricity current voltage resistance Ohm&#39;s law direct current ammeter voltmeter Oliver">
+  <a href="/apps/pr-preview/pr-187/en/elektrizitaet/" class="block p-5 no-underline text-inherit rounded-xl focus-visible:outline-3 focus-visible:outline-blue-500" aria-label="More about Electricity">
+    <p class="m-0 text-sm text-slate-500"><span>Physics</span> · Grades 5 to 8</p>
+    <h2 class="m-0 mt-1 text-xl font-bold text-slate-900">Electricity</h2>
+    <p class="m-0 mt-2 text-slate-700">Learners work out step by step how a circuit works, which materials conduct electricity and how series and parallel circuits differ. In grades 7 and 8, current, voltage, resistance and Ohm&#39;s law follow. On every page they practise with a circuit in which you can see the current flow, build circuits and measure. The app is available in German and English.</p>
+    
+<ul class="list-none p-0 m-0 mt-3 flex flex-wrap gap-2 text-sm" aria-label="The most important points at a glance:">
+  <li class="chip">✓ No sign-up</li>
+  <li class="chip">✓ No installation</li>
+  <li class="chip">✓ Free</li>
+</ul>
+
+  </a>
+  <div class="px-5 pb-5 -mt-2" data-topics hidden>
+    <p class="m-0 text-sm font-semibold text-slate-600">Matches your search:</p>
+    <ul class="list-none p-0 m-0 mt-1 flex flex-col gap-1">
+      <li data-topic data-search="The simple circuit" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/stromkreis/einfacher-stromkreis/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">The simple circuit</a></li>
+      <li data-topic data-search="Conductors and insulators" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/stromkreis/leiter-nichtleiter/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Conductors and insulators</a></li>
+      <li data-topic data-search="Switches and circuit symbols" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/schaltungen/schalter-schaltzeichen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Switches and circuit symbols</a></li>
+      <li data-topic data-search="Series circuit" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/schaltungen/reihenschaltung/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Series circuit</a></li>
+      <li data-topic data-search="Parallel circuit" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/schaltungen/parallelschaltung/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Parallel circuit</a></li>
+      <li data-topic data-search="Effects of electric current" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/alltag/wirkungen/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Effects of electric current</a></li>
+      <li data-topic data-search="Staying safe with electricity" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/alltag/sicherheit/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Staying safe with electricity</a></li>
+      <li data-topic data-search="Current" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/groessen/stromstaerke/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Current</a></li>
+      <li data-topic data-search="Voltage" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/groessen/spannung/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Voltage</a></li>
+      <li data-topic data-search="Resistance" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/groessen/widerstand/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Resistance</a></li>
+      <li data-topic data-search="Ohm&#39;s law" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/groessen/ohmsches-gesetz/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Ohm&#39;s law</a></li>
+      <li data-topic data-search="Series circuit with meters" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/schaltungen-messen/reihenschaltung/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Series circuit with meters</a></li>
+      <li data-topic data-search="Parallel circuit with meters" hidden><a href="https://lernapps.net/apps/start/elektrizitaet/schaltungen-messen/parallelschaltung/" target="_blank" rel="noopener" class="text-blue-700 underline underline-offset-2">Parallel circuit with meters</a></li>
+    </ul>
+  </div>
+</li>
+
+  </ul>
+
+  <div class="mt-4 p-5 rounded-xl border border-dashed border-slate-300 grid gap-2" data-empty hidden>
+    <h2 class="m-0 text-lg font-bold text-slate-900" data-empty-headline data-searched="There is no app {suche} yet. Not yet."
+        data-topic="on “{v}”" data-subject="in {v}" data-grade="for grade {v}">There is no app for this yet. Not yet.</h2>
+    <p class="m-0 text-slate-700">There is no company and no editorial team behind lernapps.net. Every app here was built by a person who cares about good digital education. That is why a lot is still missing, and some grades hardly appear.</p>
+    <p class="m-0 text-slate-700">The good news: your AI assistant already knows the subject matter. You know what learners in this grade need. Together you build the app, and then everyone finds it here. You don&#39;t have to program.</p>
+    <div class="mt-2 flex flex-wrap items-center gap-x-5 gap-y-3">
+      <a href="/apps/pr-preview/pr-187/en/build/" class="btn btn-primary" data-build-link>Build an app yourself</a>
+    </div>
+    <p class="m-0 mt-1 text-sm text-slate-600">Only want to practise for a test with your own material? <a href="/practice/en/" class="text-blue-700 underline underline-offset-2">Then have a look at Practise <span aria-hidden="true">→</span></a></p>
+  </div>
+
+  <p class="m-0 mt-8 text-slate-700">What is there to learn in your subject, and which app already practises it? <a href="/apps/pr-preview/pr-187/en/map/" class="font-semibold text-blue-700 underline underline-offset-2">To the learning map <span aria-hidden="true">→</span></a></p>
+
+  <div class="mt-8 p-5 rounded-xl border border-slate-200 bg-white flex flex-wrap items-center gap-x-6 gap-y-3" data-build>
+    <p class="m-0 text-slate-700 flex-1 min-w-0 basis-80"><strong class="text-slate-900">Nothing that fits?</strong> No editorial team writes here; people like you build the apps. What is missing, you can build yourself. Then everyone else who looks for it finds it too.</p>
+    <a href="/apps/pr-preview/pr-187/en/build/" class="btn btn-primary" data-build-link>Build an app yourself</a>
+    <p class="m-0 basis-full text-sm text-slate-600">Only want to practise for a test with your own material? <a href="/practice/en/" class="text-blue-700 underline underline-offset-2">Then have a look at Practise <span aria-hidden="true">→</span></a></p>
+  </div>
+
+  <section class="mt-12 p-5 rounded-xl bg-blue-50 border border-blue-100" aria-labelledby="vertrauen">
+    <h2 id="vertrauen" class="m-0 text-lg font-bold text-slate-900">Which apps are listed here</h2>
+    <p class="m-0 mt-2 text-slate-700">Only apps that run in the browser, without sign-up and without installation. They are free, have no ads and collect nothing in secret. So you can use them without a long check. <a href="/apps/pr-preview/pr-187/en/enter/#bedingungen" class="text-blue-700 underline underline-offset-2">What exactly we require</a></p>
+    <h2 class="m-0 mt-5 text-lg font-bold text-slate-900">Who is behind lernapps.net</h2>
+    <p class="m-0 mt-2 text-slate-700">Not a company, but people who care about digital education. Teachers, parents and others build the apps and offer them here to everyone. We earn nothing from you or your data. That is why there are no ads and no accounts here.</p>
+  </section>
+</div>
+
+  </main>
+
+  <footer class="la-footer" lang="en">
+  <div class="la-footer__inner">
+    <p>lernapps.net is free and has no ads. It lives on your thanks.</p>
+    <nav aria-label="Footer"><ul><li><a href="/en/privacy/">Privacy</a></li><li><a href="/en/imprint/">Imprint</a></li><li><a href="/docs/en/platform-design/">Platform design</a></li><li><a href="https://github.com/lernapps/apps">Source code</a></li></ul></nav>
+  </div>
+</footer>
+</body>
+</html>
