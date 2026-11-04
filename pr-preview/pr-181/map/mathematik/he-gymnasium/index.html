@@ -49,7 +49,7 @@
   <main id="main-content" tabindex="-1" class="flex-1 outline-none">
     
 
-<div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 flex flex-col gap-6">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 flex flex-col gap-4">
   
 <nav aria-label="Brotkrumen" class="text-sm text-slate-600">
   <ol class="list-none p-0 m-0 flex flex-wrap gap-x-2 gap-y-1">
@@ -60,28 +60,14 @@
   </ol>
 </nav>
 
-
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
     <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">Lernlandkarte Mathematik</h1>
-    <p class="m-0 max-w-3xl text-lg text-slate-600">Was es in Mathematik zu lernen gibt, wann es dran ist und welche App es schon übt.</p>
+    <a href="#hilfe" class="map-help-link" data-opens="hilfe"><span aria-hidden="true" class="map-help-icon">?</span>So liest du die Karte</a>
   </div>
-
-  <section class="panel" aria-labelledby="lesen">
-    <div class="flex flex-wrap items-baseline justify-between gap-2">
-      <h2 id="lesen" class="m-0 text-lg font-bold text-slate-900">So liest du die Karte</h2>
-      <a href="/apps/pr-preview/pr-181/map/#begriffe" class="text-blue-700 underline underline-offset-2">Alle Begriffe und wie sie zusammenhängen</a>
-    </div>
-    <dl class="m-0 mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
-      <div><dt class="font-bold"><a href="/apps/pr-preview/pr-181/map/#strang" class="text-blue-700 underline underline-offset-2">Strang</a> · eine Spalte</dt><dd class="m-0 mt-1 text-slate-600">Ein Teilgebiet des Fachs, das sich über mehrere Schuljahre zieht.</dd></div>
-      <div><dt class="font-bold"><a href="/apps/pr-preview/pr-181/map/#baustein" class="text-blue-700 underline underline-offset-2">Baustein</a> · ein Kästchen</dt><dd class="m-0 mt-1 text-slate-600">Eine Sache, die ein Kind lernen kann: „Ich kann …“.</dd></div>
-      <div><dt class="font-bold"><a href="/apps/pr-preview/pr-181/map/#richtstufe" class="text-blue-700 underline underline-offset-2">Richtstufe</a> · eine Zeile</dt><dd class="m-0 mt-1 text-slate-600">Ungefähr wann ein Baustein dran ist. Wählst du einen Lehrplan, siehst du dessen Klassen.</dd></div>
-      <div><dt class="font-bold"><a href="/apps/pr-preview/pr-181/map/#app" class="text-blue-700 underline underline-offset-2">App</a> · die Farbe</dt><dd class="m-0 mt-1 text-slate-600">Blau: Eine App übt den Baustein. Gestrichelt: noch keine.</dd></div>
-    </dl>
-  </section>
-  <div class="flex flex-col gap-3">
+  <div class="map-toolbar">
     <div data-map-when hidden>
-      <label for="lehrplan" class="block text-sm font-semibold text-slate-700">Wann ist was dran?</label>
-      <select id="lehrplan" class="field mt-1 w-full sm:w-auto" aria-describedby="modus" data-current="/apps/pr-preview/pr-181/map/mathematik/he-gymnasium/">
+      <label for="lehrplan" class="sr-only">Wann ist was dran?</label>
+      <select id="lehrplan" class="field map-when" aria-describedby="modus" data-current="/apps/pr-preview/pr-181/map/mathematik/he-gymnasium/">
         <option value="/apps/pr-preview/pr-181/map/mathematik/">Richtstufe (ohne Lehrplan)</option>
         <option disabled>Lehrplan Baden-Württemberg – noch nicht erfasst</option>
         <option disabled>Lehrplan Bayern – noch nicht erfasst</option>
@@ -102,21 +88,19 @@
       </select>
     </div>
     <nav aria-labelledby="lehrplan-links" data-map-when-links>
-      <h2 id="lehrplan-links" class="m-0 text-sm font-semibold text-slate-700">Wann ist was dran?</h2>
-      <ul class="list-none p-0 m-0 mt-1 flex flex-wrap gap-2">
+      <h2 id="lehrplan-links" class="sr-only">Wann ist was dran?</h2>
+      <ul class="list-none p-0 m-0 flex flex-wrap gap-2">
         <li><a href="/apps/pr-preview/pr-181/map/mathematik/" class="btn btn-secondary">Richtstufe (ohne Lehrplan)</a></li>
         <li><a href="/apps/pr-preview/pr-181/map/mathematik/he-gymnasium/" class="btn btn-primary" aria-current="page">Lehrplan Hessen, Gymnasium (G9)</a></li>
       </ul>
-      <p class="m-0 mt-2 text-sm text-slate-600">Noch nicht erfasst: Baden-Württemberg, Bayern, Berlin, Brandenburg, Bremen, Hamburg, Mecklenburg-Vorpommern, Niedersachsen, Nordrhein-Westfalen, Rheinland-Pfalz, Saarland, Sachsen, Sachsen-Anhalt, Schleswig-Holstein, Thüringen</p>
     </nav>
-    <p id="modus" class="map-mode max-w-3xl">Du siehst den Lehrplan Hessen, Gymnasium (G9). Er ordnet 123 von 127 Bausteinen einer Klasse zu. Ein Baustein steht in der ersten Klasse, in der er dran ist. „Wieder in Klasse …“ sagt, wann der Lehrplan ihn noch einmal aufgreift. Bausteine ohne Klasse stehen in der gestreiften Zeile ihrer Richtstufe.</p>
-    <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
-      <label class="flex items-center gap-2 min-h-11 cursor-pointer" data-map-gaps hidden>
-        <input type="checkbox" class="w-5 h-5 m-0">
-        Nur Lücken zeigen
-      </label>
-      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-covered"></span>Eine App übt diesen Baustein</p>
-      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-gap"></span>Lücke: noch keine App</p>
+    <div class="map-legend" data-map-legend>
+      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-covered"></span>Abgedeckt</p>
+      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-gap"></span>Lücke</p>
+    </div>
+    <div class="map-legend" role="group" aria-label="Bausteine zeigen" data-map-filter hidden>
+      <button type="button" class="map-filter" data-show="covered" aria-pressed="false"><span aria-hidden="true" class="map-swatch map-chip-covered"></span>Abgedeckt <span class="map-filter-count">16</span></button>
+      <button type="button" class="map-filter" data-show="gap" aria-pressed="false"><span aria-hidden="true" class="map-swatch map-chip-gap"></span>Lücke <span class="map-filter-count">111</span></button>
     </div>
   </div>
   <div class="map-scroll" role="region" aria-label="Lernlandkarte Mathematik: Bausteine nach Strang und Klasse" tabindex="0">
@@ -1355,6 +1339,20 @@
   <p class="m-0 text-sm text-slate-600">Stränge und Bausteine stammen aus:
     <a href="https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2022/2022_06_23-Bista-ESA-MSA-Mathe.pdf" class="text-blue-700 underline underline-offset-2" lang="de">KMK-Bildungsstandards Mathematik, ESA und MSA (2022)</a> · <a href="https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-07/kerncurriculum_mathematik_gymnasium.pdf" class="text-blue-700 underline underline-offset-2" lang="de">Kerncurriculum Mathematik Gymnasium Sekundarstufe I, Hessisches Kultusministerium (Jahrgänge und Einheiten nach dem Lehrplan Mathematik G9)</a>
     · <a href="/apps/pr-preview/pr-181/map/mathematik.json" class="text-blue-700 underline underline-offset-2">Die Karte als Daten (JSON)</a></p>
+  <section id="hilfe" class="panel scroll-mt-4" aria-labelledby="hilfe-titel" data-kind="Mathematik" data-map-help>
+    <h2 id="hilfe-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>So liest du die Karte</h2>
+    <div class="mt-3" data-dialog-body>
+      <dl class="m-0 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+        <div><dt class="font-bold"><a href="/apps/pr-preview/pr-181/map/#strang" class="text-blue-700 underline underline-offset-2">Strang</a> · eine Spalte</dt><dd class="m-0 mt-1 text-slate-600">Ein Teilgebiet des Fachs, das sich über mehrere Schuljahre zieht.</dd></div>
+        <div><dt class="font-bold"><a href="/apps/pr-preview/pr-181/map/#baustein" class="text-blue-700 underline underline-offset-2">Baustein</a> · ein Kästchen</dt><dd class="m-0 mt-1 text-slate-600">Eine Sache, die ein Kind lernen kann: „Ich kann …“.</dd></div>
+        <div><dt class="font-bold"><a href="/apps/pr-preview/pr-181/map/#richtstufe" class="text-blue-700 underline underline-offset-2">Richtstufe</a> · eine Zeile</dt><dd class="m-0 mt-1 text-slate-600">Ungefähr wann ein Baustein dran ist. Wählst du einen Lehrplan, siehst du dessen Klassen.</dd></div>
+        <div><dt class="font-bold"><a href="/apps/pr-preview/pr-181/map/#app" class="text-blue-700 underline underline-offset-2">App</a> · die Farbe</dt><dd class="m-0 mt-1 text-slate-600">Blau heißt abgedeckt: Eine App übt den Baustein. Gestrichelt heißt Lücke: Noch keine App übt ihn.</dd></div>
+      </dl>
+      <p id="modus" class="m-0 mt-4 text-slate-600">Du siehst den Lehrplan Hessen, Gymnasium (G9). Er ordnet 123 von 127 Bausteinen einer Klasse zu. Ein Baustein steht in der ersten Klasse, in der er dran ist. „Wieder in Klasse …“ sagt, wann der Lehrplan ihn noch einmal aufgreift. Bausteine ohne Klasse stehen in der gestreiften Zeile ihrer Richtstufe.</p>
+      <p class="m-0 mt-2 text-slate-600">Noch nicht erfasst: Baden-Württemberg, Bayern, Berlin, Brandenburg, Bremen, Hamburg, Mecklenburg-Vorpommern, Niedersachsen, Nordrhein-Westfalen, Rheinland-Pfalz, Saarland, Sachsen, Sachsen-Anhalt, Schleswig-Holstein, Thüringen</p>
+      <p class="m-0 mt-3"><a href="/apps/pr-preview/pr-181/map/#begriffe" class="text-blue-700 underline underline-offset-2">Alle Begriffe und wie sie zusammenhängen</a> · <a href="/apps/pr-preview/pr-181/map/#methode" class="text-blue-700 underline underline-offset-2">Warum diese Methode?</a></p>
+    </div>
+  </section>
 </div>
 
 <template id="detail-natuerliche-zahlen" data-kind="Baustein · Arithmetik">

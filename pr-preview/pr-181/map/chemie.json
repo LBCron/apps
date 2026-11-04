@@ -599,7 +599,7 @@
               "app": "chemie-reaktionen",
               "url": "https://lernapps.net/apps/start/chemie-reaktionen/",
               "pages": [
-                "https://lernapps.net/apps/start/chemie-reaktionen/reaktionen/reaktionen/"
+                "https://lernapps.net/apps/start/chemie-reaktionen/reaktionen/zustandsaenderung/"
               ]
             }
           ]
@@ -627,7 +627,7 @@
               "app": "chemie-reaktionen",
               "url": "https://lernapps.net/apps/start/chemie-reaktionen/",
               "pages": [
-                "https://lernapps.net/apps/start/chemie-reaktionen/reaktionen/reaktionsgleichungen/"
+                "https://lernapps.net/apps/start/chemie-reaktionen/reaktionen/massenerhaltung/"
               ]
             }
           ]
