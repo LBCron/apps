@@ -50,35 +50,70 @@
     
 
 <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-12 flex flex-col gap-10">
-  <div class="flex flex-col gap-2">
-    <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">Lernlandkarte</h1>
-    <p class="m-0 max-w-3xl text-lg text-slate-600">Die Lernlandkarte zeigt für jedes Fach, was es zu lernen gibt, wie es aufeinander aufbaut und welche App es schon übt. So siehst du auch, wo noch eine App fehlt.</p>
+  <div class="flex flex-col gap-3">
+    <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">Lernlandkarten</h1>
+    <p class="m-0 max-w-3xl text-xl text-slate-700">Eine Lernlandkarte zeigt, was es in einem Fach zu lernen gibt und was worauf aufbaut. Und sie zeigt, welche App etwas schon übt – und wo noch eine fehlt.</p>
   </div>
 
-  <section aria-labelledby="faecher">
-    <h2 id="faecher" class="m-0 text-2xl font-bold text-slate-900">Wähle ein Fach</h2>
-    <ul class="list-none p-0 m-0 mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <li class="panel">
-        <h3 class="m-0 text-xl font-bold"><a href="/apps/pr-preview/pr-180/map/chemie/" class="text-blue-700 underline underline-offset-2">Chemie</a></h3>
-        <p class="m-0 mt-1 text-slate-600">3 Stränge, 75 Bausteine</p>
+  <section aria-labelledby="karten" class="flex flex-col gap-4">
+    <h2 id="karten" class="m-0 text-2xl font-bold text-slate-900">Diese Karten gibt es schon</h2>
+    <ul class="map-cards">
+      <li>
+        <a href="/apps/pr-preview/pr-180/map/chemie/" class="map-card">
+          <b>Chemie</b>
+          <span class="map-mini" aria-hidden="true"><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">3 Stränge · 75 Bausteine<br>19 davon übt schon eine App</span>
+          <span class="map-card-go">Karte öffnen <span aria-hidden="true">→</span></span>
+        </a>
       </li>
-      <li class="panel">
-        <h3 class="m-0 text-xl font-bold"><a href="/apps/pr-preview/pr-180/map/mathematik/" class="text-blue-700 underline underline-offset-2">Mathematik</a></h3>
-        <p class="m-0 mt-1 text-slate-600">5 Stränge, 127 Bausteine · 1 Lehrplan erfasst</p>
+      <li>
+        <a href="/apps/pr-preview/pr-180/map/mathematik/" class="map-card">
+          <b>Mathematik</b>
+          <span class="map-mini" aria-hidden="true"><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">5 Stränge · 127 Bausteine<br>16 davon übt schon eine App · 1 Lehrplan erfasst</span>
+          <span class="map-card-go">Karte öffnen <span aria-hidden="true">→</span></span>
+        </a>
       </li>
-      <li class="panel">
-        <h3 class="m-0 text-xl font-bold"><a href="/apps/pr-preview/pr-180/map/musik/" class="text-blue-700 underline underline-offset-2">Musik</a></h3>
-        <p class="m-0 mt-1 text-slate-600">9 Stränge, 187 Bausteine</p>
+      <li>
+        <a href="/apps/pr-preview/pr-180/map/musik/" class="map-card">
+          <b>Musik</b>
+          <span class="map-mini" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">9 Stränge · 187 Bausteine<br>0 davon übt schon eine App</span>
+          <span class="map-card-go">Karte öffnen <span aria-hidden="true">→</span></span>
+        </a>
       </li>
-      <li class="panel">
-        <h3 class="m-0 text-xl font-bold"><a href="/apps/pr-preview/pr-180/map/physik/" class="text-blue-700 underline underline-offset-2">Physik</a></h3>
-        <p class="m-0 mt-1 text-slate-600">5 Stränge, 108 Bausteine</p>
+      <li>
+        <a href="/apps/pr-preview/pr-180/map/physik/" class="map-card">
+          <b>Physik</b>
+          <span class="map-mini" aria-hidden="true"><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">5 Stränge · 108 Bausteine<br>21 davon übt schon eine App</span>
+          <span class="map-card-go">Karte öffnen <span aria-hidden="true">→</span></span>
+        </a>
       </li>
     </ul>
+    <p class="m-0 text-slate-600">Weitere Fächer folgen.</p>
   </section>
 
+  <section aria-labelledby="apps" class="flex flex-col gap-4">
+    <h2 id="apps" class="m-0 text-2xl font-bold text-slate-900">Karte und Apps</h2>
+    <ol class="map-steps"><li>Die Karte zerlegt ein Fach in <b>Bausteine</b>. Jeder ist ein Satz: „Ich kann …“.</li><li>Jede App sagt, welche Bausteine ihre Seiten üben.</li><li>Auf der Karte ist ein Baustein dann <b>blau</b>. Gestrichelt heißt: Hier fehlt noch eine App.</li>
+    </ol>
+    <p class="m-0"><a href="/apps/pr-preview/pr-180/build/" class="btn btn-secondary">Eine App für eine Lücke bauen</a></p>
+  </section>
+  <section aria-labelledby="methode" class="map-honest">
+    <p class="map-honest-tag">Ehrlich gesagt</p>
+    <h2 id="methode" class="m-0 text-2xl font-bold text-slate-900">Die Karte ist unsere eigene Methode</h2>
+    <p>Es gibt keine fertige Vorlage, die zeigt, wie das Wissen eines Fachs zusammenhängt. Deshalb haben wir uns selbst eine Methode überlegt.</p>
+    <ul><li><b>Lehrpläne</b> legen fest, in welcher Reihenfolge unterrichtet wird. Jedes Bundesland hat eigene. Wie das Wissen logisch zusammenhängt, zeigen sie nur zum Teil.</li><li><b>Bildungsstandards der KMK</b> beschreiben, was Kinder können sollen. Die gibt es aber nicht für jedes Fach.</li>
+    </ul>
+    <p>Wir ordnen das Wissen darum nach seinem logischen Zusammenhang: Was baut worauf auf? Jedes Land bekommt darin seine eigene Reihenfolge. Wählst du auf einer Karte einen Lehrplan, siehst du dessen Klassen.</p>
+    <p>Etwas fehlt oder ist falsch eingeordnet? <a href="https://github.com/lernapps/apps/issues/new?title=Lernlandkarte%3A%20" class="text-blue-700 underline underline-offset-2">Sag uns Bescheid</a> <span class="text-slate-600">(GitHub-Issue, braucht ein GitHub-Konto)</span></p>
+  </section>
+
+  <hr class="map-rule">
+
   <section aria-labelledby="bild" class="flex flex-col gap-3">
-    <h2 id="bild" class="m-0 text-2xl font-bold text-slate-900">So ist die Karte aufgebaut</h2>
+    <h2 id="bild" class="m-0 text-2xl font-bold text-slate-900">Wie die Karte aufgebaut ist</h2>
     <p class="m-0 text-slate-600">Klicke auf ein Kästchen im Bild. Dann bekommst du den Begriff erklärt.</p>
     <figure class="m-0 flex flex-col gap-3">
       <div class="map-scroll" role="region" aria-label="Bild: wie die Teile der Karte zusammenhängen" tabindex="0">
@@ -108,8 +143,8 @@
     </figure>
   </section>
 
-  <section aria-labelledby="begriffe">
-    <h2 id="begriffe" class="m-0 text-2xl font-bold text-slate-900">Die Begriffe</h2>
+  <details class="map-terms" open data-map-terms>
+    <summary><h2 id="begriffe" class="m-0 text-xl font-bold text-slate-900">Alle Begriffe als Liste</h2></summary>
     <div class="mt-4 grid gap-4 md:grid-cols-2">
       <article id="fach" class="panel scroll-mt-4" data-kind="Begriff" aria-labelledby="fach-titel">
         <h3 id="fach-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Fach</h3>
@@ -184,7 +219,7 @@
         </div>
       </article>
     </div>
-  </section>
+  </details>
 
   <section aria-labelledby="regeln">
     <h2 id="regeln" class="m-0 text-2xl font-bold text-slate-900">Drei Regeln</h2>

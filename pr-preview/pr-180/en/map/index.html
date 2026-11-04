@@ -50,32 +50,67 @@
     
 
 <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-12 flex flex-col gap-10">
-  <div class="flex flex-col gap-2">
-    <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">Learning map</h1>
-    <p class="m-0 max-w-3xl text-lg text-slate-600">For each subject, the learning map shows what there is to learn, how it builds on itself and which app already practises it. So you also see where an app is still missing.</p>
+  <div class="flex flex-col gap-3">
+    <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">Learning maps</h1>
+    <p class="m-0 max-w-3xl text-xl text-slate-700">A learning map shows what there is to learn in a subject and what builds on what. And it shows which app already practises something – and where an app is still missing.</p>
   </div>
 
-  <section aria-labelledby="faecher">
-    <h2 id="faecher" class="m-0 text-2xl font-bold text-slate-900">Choose a subject</h2>
-    <ul class="list-none p-0 m-0 mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <li class="panel">
-        <h3 class="m-0 text-xl font-bold"><a href="/apps/pr-preview/pr-180/en/map/chemie/" class="text-blue-700 underline underline-offset-2">Chemistry</a></h3>
-        <p class="m-0 mt-1 text-slate-600">3 strands, 75 building blocks</p>
+  <section aria-labelledby="karten" class="flex flex-col gap-4">
+    <h2 id="karten" class="m-0 text-2xl font-bold text-slate-900">These maps exist so far</h2>
+    <ul class="map-cards">
+      <li>
+        <a href="/apps/pr-preview/pr-180/en/map/chemie/" class="map-card">
+          <b>Chemistry</b>
+          <span class="map-mini" aria-hidden="true"><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">3 strands · 75 building blocks<br>19 of them already practised by an app</span>
+          <span class="map-card-go">Open the map <span aria-hidden="true">→</span></span>
+        </a>
       </li>
-      <li class="panel">
-        <h3 class="m-0 text-xl font-bold"><a href="/apps/pr-preview/pr-180/en/map/mathematik/" class="text-blue-700 underline underline-offset-2">Mathematics</a></h3>
-        <p class="m-0 mt-1 text-slate-600">5 strands, 127 building blocks · 1 curriculum captured</p>
+      <li>
+        <a href="/apps/pr-preview/pr-180/en/map/mathematik/" class="map-card">
+          <b>Mathematics</b>
+          <span class="map-mini" aria-hidden="true"><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">5 strands · 127 building blocks<br>16 of them already practised by an app · 1 curriculum captured</span>
+          <span class="map-card-go">Open the map <span aria-hidden="true">→</span></span>
+        </a>
       </li>
-      <li class="panel">
-        <h3 class="m-0 text-xl font-bold"><a href="/apps/pr-preview/pr-180/en/map/musik/" class="text-blue-700 underline underline-offset-2">Music</a></h3>
-        <p class="m-0 mt-1 text-slate-600">9 strands, 187 building blocks</p>
+      <li>
+        <a href="/apps/pr-preview/pr-180/en/map/musik/" class="map-card">
+          <b>Music</b>
+          <span class="map-mini" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">9 strands · 187 building blocks<br>0 of them already practised by an app</span>
+          <span class="map-card-go">Open the map <span aria-hidden="true">→</span></span>
+        </a>
       </li>
-      <li class="panel">
-        <h3 class="m-0 text-xl font-bold"><a href="/apps/pr-preview/pr-180/en/map/physik/" class="text-blue-700 underline underline-offset-2">Physics</a></h3>
-        <p class="m-0 mt-1 text-slate-600">5 strands, 108 building blocks</p>
+      <li>
+        <a href="/apps/pr-preview/pr-180/en/map/physik/" class="map-card">
+          <b>Physics</b>
+          <span class="map-mini" aria-hidden="true"><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">5 strands · 108 building blocks<br>21 of them already practised by an app</span>
+          <span class="map-card-go">Open the map <span aria-hidden="true">→</span></span>
+        </a>
       </li>
     </ul>
+    <p class="m-0 text-slate-600">More subjects will follow.</p>
   </section>
+
+  <section aria-labelledby="apps" class="flex flex-col gap-4">
+    <h2 id="apps" class="m-0 text-2xl font-bold text-slate-900">The map and the apps</h2>
+    <ol class="map-steps"><li>The map splits a subject into <b>building blocks</b>. Each is a sentence: “I can …”.</li><li>Each app says which building blocks its pages practise.</li><li>On the map, such a building block is <b>blue</b>. Dashed means: an app is still missing here.</li>
+    </ol>
+    <p class="m-0"><a href="/apps/pr-preview/pr-180/en/build/" class="btn btn-secondary">Build an app for a gap</a></p>
+  </section>
+  <section aria-labelledby="methode" class="map-honest">
+    <p class="map-honest-tag">To be honest</p>
+    <h2 id="methode" class="m-0 text-2xl font-bold text-slate-900">The map is a method of our own</h2>
+    <p>There is no ready-made template that shows how the knowledge of a subject belongs together. So we came up with a method of our own.</p>
+    <ul><li><b>Curricula</b> set the order in which things are taught. Each German state has its own. They show only in part how the knowledge belongs together logically.</li><li>The <b>KMK educational standards</b> describe what children should be able to do. But they do not exist for every subject.</li>
+    </ul>
+    <p>So we sort the knowledge by how it belongs together logically: what builds on what? Within that, each state gets its own order. Choose a curriculum on a map to see its grades.</p>
+    <p>Something is missing or in the wrong place? <a href="https://github.com/lernapps/apps/issues/new?title=Learning%20map%3A%20" class="text-blue-700 underline underline-offset-2">Let us know</a> <span class="text-slate-600">(GitHub issue, needs a GitHub account)</span></p>
+  </section>
+
+  <hr class="map-rule">
 
   <section aria-labelledby="bild" class="flex flex-col gap-3">
     <h2 id="bild" class="m-0 text-2xl font-bold text-slate-900">How the map is built</h2>
@@ -108,8 +143,8 @@
     </figure>
   </section>
 
-  <section aria-labelledby="begriffe">
-    <h2 id="begriffe" class="m-0 text-2xl font-bold text-slate-900">The terms</h2>
+  <details class="map-terms" open data-map-terms>
+    <summary><h2 id="begriffe" class="m-0 text-xl font-bold text-slate-900">All terms as a list</h2></summary>
     <div class="mt-4 grid gap-4 md:grid-cols-2">
       <article id="fach" class="panel scroll-mt-4" data-kind="Term" aria-labelledby="fach-titel">
         <h3 id="fach-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Subject</h3>
@@ -184,7 +219,7 @@
         </div>
       </article>
     </div>
-  </section>
+  </details>
 
   <section aria-labelledby="regeln">
     <h2 id="regeln" class="m-0 text-2xl font-bold text-slate-900">Three rules</h2>
