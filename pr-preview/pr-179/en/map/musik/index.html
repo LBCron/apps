@@ -49,7 +49,7 @@
   <main id="main-content" tabindex="-1" class="flex-1 outline-none">
     
 
-<div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 flex flex-col gap-6">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 flex flex-col gap-4">
   
 <nav aria-label="Breadcrumb" class="text-sm text-slate-600">
   <ol class="list-none p-0 m-0 flex flex-wrap gap-x-2 gap-y-1">
@@ -60,28 +60,14 @@
   </ol>
 </nav>
 
-
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
     <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">Learning map Music</h1>
-    <p class="m-0 max-w-3xl text-lg text-slate-600">What there is to learn in Music, when it is taught and which app already practises it.</p>
+    <a href="#hilfe" class="map-help-link" data-opens="hilfe"><span aria-hidden="true" class="map-help-icon">?</span>How to read the map</a>
   </div>
-
-  <section class="panel" aria-labelledby="lesen">
-    <div class="flex flex-wrap items-baseline justify-between gap-2">
-      <h2 id="lesen" class="m-0 text-lg font-bold text-slate-900">How to read the map</h2>
-      <a href="/apps/pr-preview/pr-179/en/map/#begriffe" class="text-blue-700 underline underline-offset-2">All terms and how they belong together</a>
-    </div>
-    <dl class="m-0 mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
-      <div><dt class="font-bold"><a href="/apps/pr-preview/pr-179/en/map/#strang" class="text-blue-700 underline underline-offset-2">Strand</a> · a column</dt><dd class="m-0 mt-1 text-slate-600">A part of the subject that runs over several school years.</dd></div>
-      <div><dt class="font-bold"><a href="/apps/pr-preview/pr-179/en/map/#baustein" class="text-blue-700 underline underline-offset-2">Building block</a> · a box</dt><dd class="m-0 mt-1 text-slate-600">One thing a child can learn: “I can …”.</dd></div>
-      <div><dt class="font-bold"><a href="/apps/pr-preview/pr-179/en/map/#richtstufe" class="text-blue-700 underline underline-offset-2">Grade band</a> · a row</dt><dd class="m-0 mt-1 text-slate-600">Roughly when a building block is taught. Choose a curriculum to see its grades.</dd></div>
-      <div><dt class="font-bold"><a href="/apps/pr-preview/pr-179/en/map/#app" class="text-blue-700 underline underline-offset-2">App</a> · the colour</dt><dd class="m-0 mt-1 text-slate-600">Blue: an app practises the building block. Dashed: none yet.</dd></div>
-    </dl>
-  </section>
-  <div class="flex flex-col gap-3">
+  <div class="map-toolbar">
     <div data-map-when hidden>
-      <label for="lehrplan" class="block text-sm font-semibold text-slate-700">What is taught when?</label>
-      <select id="lehrplan" class="field mt-1 w-full sm:w-auto" aria-describedby="modus" data-current="/apps/pr-preview/pr-179/en/map/musik/">
+      <label for="lehrplan" class="sr-only">What is taught when?</label>
+      <select id="lehrplan" class="field map-when" aria-describedby="modus" data-current="/apps/pr-preview/pr-179/en/map/musik/">
         <option value="/apps/pr-preview/pr-179/en/map/musik/" selected>Grade band (no curriculum)</option>
         <option disabled>Curriculum Baden-Württemberg – not captured yet</option>
         <option disabled>Curriculum Bavaria – not captured yet</option>
@@ -102,20 +88,18 @@
       </select>
     </div>
     <nav aria-labelledby="lehrplan-links" data-map-when-links>
-      <h2 id="lehrplan-links" class="m-0 text-sm font-semibold text-slate-700">What is taught when?</h2>
-      <ul class="list-none p-0 m-0 mt-1 flex flex-wrap gap-2">
+      <h2 id="lehrplan-links" class="sr-only">What is taught when?</h2>
+      <ul class="list-none p-0 m-0 flex flex-wrap gap-2">
         <li><a href="/apps/pr-preview/pr-179/en/map/musik/" class="btn btn-primary" aria-current="page">Grade band (no curriculum)</a></li>
       </ul>
-      <p class="m-0 mt-2 text-sm text-slate-600">Not captured yet: Baden-Württemberg, Bavaria, Berlin, Brandenburg, Bremen, Hamburg, Hesse, Mecklenburg-Western Pomerania, Lower Saxony, North Rhine-Westphalia, Rhineland-Palatinate, Saarland, Saxony, Saxony-Anhalt, Schleswig-Holstein, Thuringia</p>
     </nav>
-    <p id="modus" class="map-mode max-w-3xl">You see the grade band: roughly in which two school years a building block is taught. Each German state sets this a little differently. Choose a curriculum, and the map sorts the building blocks by its grades.</p>
-    <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
-      <label class="flex items-center gap-2 min-h-11 cursor-pointer" data-map-gaps hidden>
-        <input type="checkbox" class="w-5 h-5 m-0">
-        Show only gaps
-      </label>
-      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-covered"></span>An app practises this building block</p>
-      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-gap"></span>Gap: no app yet</p>
+    <div class="map-legend" data-map-legend>
+      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-covered"></span>Covered</p>
+      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-gap"></span>Gap</p>
+    </div>
+    <div class="map-legend" role="group" aria-label="Show building blocks" data-map-filter hidden>
+      <button type="button" class="map-filter" data-show="covered" aria-pressed="false" disabled><span aria-hidden="true" class="map-swatch map-chip-covered"></span>Covered <span class="map-filter-count">0</span></button>
+      <button type="button" class="map-filter" data-show="gap" aria-pressed="false"><span aria-hidden="true" class="map-swatch map-chip-gap"></span>Gap <span class="map-filter-count">187</span></button>
     </div>
   </div>
   <div class="map-scroll" role="region" aria-label="Learning map Music: building blocks by strand and grade" tabindex="0">
@@ -1794,6 +1778,20 @@
   <p class="m-0 text-sm text-slate-600">Strands and building blocks come from:
     <a href="https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-07/kerncurriculum_musik_gymnasium.pdf" class="text-blue-700 underline underline-offset-2" lang="de">Kerncurriculum Hessen, Sekundarstufe I - Gymnasium, Musik (Hessisches Kultusministerium), mit Lehrplan Musik G9 Hessen</a>
     · <a href="/apps/pr-preview/pr-179/map/musik.json" class="text-blue-700 underline underline-offset-2">The map as data (JSON)</a></p>
+  <section id="hilfe" class="panel scroll-mt-4" aria-labelledby="hilfe-titel" data-kind="Music" data-map-help>
+    <h2 id="hilfe-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>How to read the map</h2>
+    <div class="mt-3" data-dialog-body>
+      <dl class="m-0 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+        <div><dt class="font-bold"><a href="/apps/pr-preview/pr-179/en/map/#strang" class="text-blue-700 underline underline-offset-2">Strand</a> · a column</dt><dd class="m-0 mt-1 text-slate-600">A part of the subject that runs over several school years.</dd></div>
+        <div><dt class="font-bold"><a href="/apps/pr-preview/pr-179/en/map/#baustein" class="text-blue-700 underline underline-offset-2">Building block</a> · a box</dt><dd class="m-0 mt-1 text-slate-600">One thing a child can learn: “I can …”.</dd></div>
+        <div><dt class="font-bold"><a href="/apps/pr-preview/pr-179/en/map/#richtstufe" class="text-blue-700 underline underline-offset-2">Grade band</a> · a row</dt><dd class="m-0 mt-1 text-slate-600">Roughly when a building block is taught. Choose a curriculum to see its grades.</dd></div>
+        <div><dt class="font-bold"><a href="/apps/pr-preview/pr-179/en/map/#app" class="text-blue-700 underline underline-offset-2">App</a> · the colour</dt><dd class="m-0 mt-1 text-slate-600">Blue means covered: an app practises the building block. Dashed means a gap: no app practises it yet.</dd></div>
+      </dl>
+      <p id="modus" class="m-0 mt-4 text-slate-600">You see the grade band: roughly in which two school years a building block is taught. Each German state sets this a little differently. Choose a curriculum, and the map sorts the building blocks by its grades.</p>
+      <p class="m-0 mt-2 text-slate-600">Not captured yet: Baden-Württemberg, Bavaria, Berlin, Brandenburg, Bremen, Hamburg, Hesse, Mecklenburg-Western Pomerania, Lower Saxony, North Rhine-Westphalia, Rhineland-Palatinate, Saarland, Saxony, Saxony-Anhalt, Schleswig-Holstein, Thuringia</p>
+      <p class="m-0 mt-3"><a href="/apps/pr-preview/pr-179/en/map/#begriffe" class="text-blue-700 underline underline-offset-2">All terms and how they belong together</a> · <a href="/apps/pr-preview/pr-179/en/map/#methode" class="text-blue-700 underline underline-offset-2">Why this method?</a></p>
+    </div>
+  </section>
 </div>
 
 <template id="detail-konzentriert-hoeren" data-kind="Building block · Listening to music and describing it">

@@ -2,9 +2,12 @@
 // are links, every competency leads to its page, every term to its definition, and all competencies show. This
 // script only
 // - shows the drop-down "Wann ist was dran?" instead of the links and goes to the chosen curriculum's page,
-// - shows "Nur Lücken zeigen", which hides the competencies an app already practises,
-// - opens a competency's details (a <template> on the page) or a term's definition in a dialog instead of leaving
-//   the page; the dialog closes with its button, Escape or a click beside it, and the focus goes back.
+// - turns the legend of a subject map into two buttons: one shows only the competencies an app practises, the other
+//   only the gaps; pressing the pressed one again shows all,
+// - opens a competency's details (a <template> on the page), a term's definition or the help of a subject map in a
+//   dialog instead of leaving the page; the dialog closes with its button, Escape or a click beside it, and the focus
+//   goes back,
+// - closes the list of terms unless the address points into it, and opens it when a link does.
 // Nothing is stored in the browser, nothing is sent anywhere.
 
 // The drop-down: the address of each curriculum's page is its value.
@@ -22,13 +25,32 @@ if (when && select) {
   });
 }
 
-// Only gaps: hides every competency an app practises.
-const gaps = document.querySelector("[data-map-gaps]");
-const gapsBox = gaps?.querySelector("input");
-if (gaps && gapsBox) {
-  gaps.hidden = false;
-  const apply = () => document.querySelectorAll("li[data-covered]").forEach((li) => (li.hidden = gapsBox.checked));
-  gapsBox.addEventListener("change", apply);
+// The help of a subject map: a dialog (opened by the link beside the headline), so not at the end of the page.
+document.querySelector("[data-map-help]")?.setAttribute("hidden", "");
+
+// The legend as a filter: "covered" or "gap" shows only that kind, null shows all.
+const filter = document.querySelector("[data-map-filter]");
+if (filter) {
+  filter.hidden = false;
+  document.querySelector("[data-map-legend]")?.setAttribute("hidden", "");
+  const buttons = [...filter.querySelectorAll("button[data-show]")];
+  let only = null;
+  const apply = () => {
+    for (const button of buttons) {
+      button.setAttribute("aria-pressed", String(button.dataset.show === only));
+      button.toggleAttribute("data-dimmed", only !== null && button.dataset.show !== only);
+    }
+    document.querySelectorAll(".map-cell > li").forEach((li) => {
+      const kind = li.hasAttribute("data-covered") ? "covered" : "gap";
+      li.hidden = only !== null && kind !== only;
+    });
+  };
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      only = only === button.dataset.show ? null : button.dataset.show;
+      apply();
+    });
+  }
   apply();
 }
 
@@ -71,5 +93,22 @@ if (dialog) {
   dialog.addEventListener("close", () => {
     opener?.focus();
     opener = null;
+  });
+}
+
+// The list of terms: open without JavaScript; closed here unless the address points into it, opened by a link to it.
+const terms = document.querySelector("[data-map-terms]");
+if (terms) {
+  const target = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const element = id && document.getElementById(id);
+    return element && terms.contains(element) ? element : null;
+  };
+  if (!target()) terms.open = false;
+  addEventListener("hashchange", () => {
+    const element = target();
+    if (!element) return;
+    terms.open = true;
+    element.scrollIntoView();
   });
 }
