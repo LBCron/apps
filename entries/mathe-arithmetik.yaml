@@ -10,7 +10,7 @@ url: https://lernapps.net/mathe-arithmetik/
 keywords: [Prozentrechnung, Prozent, Grundwert, Prozentwert, Prozentsatz, Rabatt, Zinsen]
 creator: { name: "Ralf D. Müller", url: "https://github.com/raifdmueller" }
 source: https://github.com/lernapps/mathe-arithmetik
-commit: f245a2d40f1d7555e87f0fa86337705b75d9fd9f
+commit: 9922e9528118a360eb356b1aabaa380458b60afc
 fitness:
   account: false
   install: false
