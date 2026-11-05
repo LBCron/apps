@@ -182,6 +182,20 @@
         ]
       }
     },
+    "strand": {
+      "description": "The strand of the learning map the app stays in, \"<subject>/<strand>\" (https://lernapps.net/apps/map/). Leave it out when the app has none. An explainer of format 2 says its strand in src/app.yaml; give it here only to match",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*\\/[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "competencies": {
+      "description": "Only for apps that are not explainers: the competencies of the strand's subject the app practises, by id. An explainer of format 2 names them on its pages",
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      }
+    },
     "creator": {
       "type": "object",
       "properties": {
