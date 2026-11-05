@@ -16,10 +16,24 @@ Den Katalog mit Suche nach Fach und Klasse gibt es auf der [Startseite](https://
 Jede App hat eine eigene Seite mit Beschreibung, Themen und Link zur App unter `https://lernapps.net/apps/pr-preview/pr-149/<id>/`.
 Die englische Fassung liegt unter [https://lernapps.net/apps/pr-preview/pr-149/en/](https://lernapps.net/apps/pr-preview/pr-149/en/).
 
+## Lernlandkarte
+
+Die [Lernlandkarte](https://lernapps.net/apps/pr-preview/pr-149/map/) zeigt je Fach, was es zu lernen gibt (Stränge und Bausteine
+„Ich kann …“), wann es dran ist (Richtstufe, Lehrpläne) und welche App es schon übt. So sieht man Lücken.
+Für dich als Daten, eine Datei je Fach (Fach, Quelle, Stränge, Bausteine mit `requires` und `practisedBy`, Lehrpläne
+mit ihren Einordnungen):
+- [chemie.json](https://lernapps.net/apps/pr-preview/pr-149/map/chemie.json)
+- [mathematik.json](https://lernapps.net/apps/pr-preview/pr-149/map/mathematik.json)
+- [musik.json](https://lernapps.net/apps/pr-preview/pr-149/map/musik.json)
+- [physik.json](https://lernapps.net/apps/pr-preview/pr-149/map/physik.json)
+
+Plant jemand mit dir eine App, wähle einen Strang und Bausteine daraus; eine App bleibt in einem Strang.
+Das Format beschreibt der [Vertrag der Lernlandkarte](https://github.com/lernapps/apps/blob/main/docs/learning-map-contract.md).
+
 ## Eine App bauen
 
 Ein Mensch möchte mit dir eine Lern-App bauen? Folge der Seite [App bauen](https://lernapps.net/apps/pr-preview/pr-149/build/):
-Sie nennt den Schnellweg, den Skill und den Befehl, mit dem du die App anlegst.
+Sie nennt den Schnellweg, den Skill und den Befehl, mit dem du die App startest.
 Ist die App veröffentlicht, trag sie ein, wie der nächste Abschnitt sagt.
 
 ## Eine App eintragen
