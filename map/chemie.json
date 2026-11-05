@@ -579,9 +579,9 @@
           "practisedBy": [
             {
               "app": "chemie-reaktionen",
-              "url": "https://lernapps.net/apps/start/chemie-reaktionen/",
+              "url": "https://lernapps.net/chemie-reaktionen/",
               "pages": [
-                "https://lernapps.net/apps/start/chemie-reaktionen/reaktionen/reaktionen/"
+                "https://lernapps.net/chemie-reaktionen/reaktionen/reaktionen/"
               ]
             }
           ]
@@ -597,9 +597,9 @@
           "practisedBy": [
             {
               "app": "chemie-reaktionen",
-              "url": "https://lernapps.net/apps/start/chemie-reaktionen/",
+              "url": "https://lernapps.net/chemie-reaktionen/",
               "pages": [
-                "https://lernapps.net/apps/start/chemie-reaktionen/reaktionen/zustandsaenderung/"
+                "https://lernapps.net/chemie-reaktionen/reaktionen/zustandsaenderung/"
               ]
             }
           ]
@@ -625,9 +625,9 @@
           "practisedBy": [
             {
               "app": "chemie-reaktionen",
-              "url": "https://lernapps.net/apps/start/chemie-reaktionen/",
+              "url": "https://lernapps.net/chemie-reaktionen/",
               "pages": [
-                "https://lernapps.net/apps/start/chemie-reaktionen/reaktionen/massenerhaltung/"
+                "https://lernapps.net/chemie-reaktionen/reaktionen/massenerhaltung/"
               ]
             }
           ]
@@ -674,9 +674,9 @@
           "practisedBy": [
             {
               "app": "chemie-reaktionen",
-              "url": "https://lernapps.net/apps/start/chemie-reaktionen/",
+              "url": "https://lernapps.net/chemie-reaktionen/",
               "pages": [
-                "https://lernapps.net/apps/start/chemie-reaktionen/reaktionen/reaktionsgleichungen/"
+                "https://lernapps.net/chemie-reaktionen/reaktionen/reaktionsgleichungen/"
               ]
             }
           ]
