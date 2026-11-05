@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en" data-la-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Learning map · lernapps.net</title>
+  <meta name="description" content="For each subject, the learning map shows what there is to learn, how it builds on itself and which app already practises it.">
+  <link rel="canonical" href="https://lernapps.net/apps/en/map/">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/apps/pr-preview/pr-192/lernapps-tokens.css">
+<link rel="stylesheet" href="/apps/pr-preview/pr-192/lernapps-frame.css">
+<link rel="alternate" hreflang="en" href="/apps/pr-preview/pr-192/en/map/">
+<link rel="alternate" hreflang="de" href="/apps/pr-preview/pr-192/map/">
+<script>(() => {
+  const key = "lernapps-lang", here = "en", pages = {"de":"/apps/pr-preview/pr-192/map/"};
+  const known = ["de","en"];
+  const browser = (navigator.languages || [navigator.language]).map((l) => String(l).slice(0, 2).toLowerCase()).find((l) => known.includes(l));
+  let chosen = null;
+  try { chosen = localStorage.getItem(key); } catch {}
+  const wanted = known.includes(chosen) ? chosen : browser;
+  if (wanted && wanted !== here && pages[wanted] && !/bot|crawl|spider|slurp/i.test(navigator.userAgent)) {
+    location.replace(pages[wanted] + location.search + location.hash);
+    return;
+  }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest("a[data-la-lang]");
+    if (!a) return;
+    try { a.dataset.laLang === browser ? localStorage.removeItem(key) : localStorage.setItem(key, a.dataset.laLang); } catch {}
+  });
+})();</script>
+  <link rel="stylesheet" href="/apps/pr-preview/pr-192/uno.css">
+  <link rel="stylesheet" href="/apps/pr-preview/pr-192/assets/apps.css">
+  <script src="/apps/pr-preview/pr-192/assets/map.js" defer></script>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col" style="font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;">
+  <a class="la-skip" href="#main-content" lang="en">Skip to content</a>
+<p class="la-preview" lang="en">Preview of a change. The real page: <a href="https://lernapps.net/apps/en/map/">lernapps.net/apps/en/map/</a></p><header class="la-header" lang="en">
+  <div class="la-header__inner">
+    <a class="la-brand" href="/en/" aria-label="lernapps.net – home page"><img src="/brand/mark-plain.svg" alt=""><span>lernapps<span class="la-brand__tld">.net</span></span></a>
+    <nav class="la-nav la-nav--bar" aria-label="Main navigation"><ul><li><a href="/apps/pr-preview/pr-192/en/" aria-current="page">Catalog</a></li><li><a href="/practice/en/">Practise</a></li><li><a href="/apps/pr-preview/pr-192/en/build/">Build an app</a></li><li><a href="/tooling/en/">Tooling</a></li><li><a href="/en/tutor/">Tutor</a></li><li><a href="/en/features/">Features</a></li><li><a href="/docs/en/">Platform</a></li><li><a href="/en/join/">Get involved</a></li><li class="la-lang"><a href="/apps/pr-preview/pr-192/map/" hreflang="de" lang="de" data-la-lang="de" aria-label="Sprache: Deutsch">Deutsch</a></li></ul></nav>
+    <details class="la-menu"><summary>Menu</summary><nav class="la-nav la-nav--menu" aria-label="Main navigation"><div class="la-menu__group"><p class="la-menu__title" id="la-menu-0">For learners</p><ul aria-labelledby="la-menu-0"><li><a href="/apps/pr-preview/pr-192/en/" aria-current="page">App catalog</a></li><li><a href="/practice/en/">Practise for a test</a></li></ul></div><div class="la-menu__group"><p class="la-menu__title" id="la-menu-1">For makers</p><ul aria-labelledby="la-menu-1"><li><a href="/apps/pr-preview/pr-192/en/build/">Build an app</a></li><li><a href="/tooling/en/">Tooling</a></li></ul></div><div class="la-menu__group"><p class="la-menu__title" id="la-menu-2">Understand and join in</p><ul aria-labelledby="la-menu-2"><li><a href="/en/tutor/">Tutor</a></li><li><a href="/en/features/">Features</a></li><li><a href="/docs/en/">Platform</a></li><li><a href="/en/join/">Get involved</a></li></ul></div><ul class="la-menu__lang"><li class="la-lang"><a href="/apps/pr-preview/pr-192/map/" hreflang="de" lang="de" data-la-lang="de" aria-label="Sprache: Deutsch">Deutsch</a></li></ul></nav></details>
+  </div>
+</header>
+
+  <main id="main-content" tabindex="-1" class="flex-1 outline-none">
+    
+
+<div class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-12 flex flex-col gap-10">
+  <div class="flex flex-col gap-3">
+    <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">Learning maps</h1>
+    <p class="m-0 max-w-3xl text-xl text-slate-700">A learning map shows what there is to learn in a subject and what builds on what. And it shows which app already practises something – and where an app is still missing.</p>
+  </div>
+
+  <section aria-labelledby="karten" class="flex flex-col gap-4">
+    <h2 id="karten" class="m-0 text-2xl font-bold text-slate-900">These maps exist so far</h2>
+    <ul class="map-cards">
+      <li>
+        <a href="/apps/pr-preview/pr-192/en/map/chemie/" class="map-card">
+          <b>Chemistry</b>
+          <span class="map-mini" aria-hidden="true"><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">3 strands · 75 building blocks<br>19 of them already practised by an app</span>
+          <span class="map-card-go">Open the map <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+      <li>
+        <a href="/apps/pr-preview/pr-192/en/map/mathematik/" class="map-card">
+          <b>Mathematics</b>
+          <span class="map-mini" aria-hidden="true"><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">5 strands · 127 building blocks<br>16 of them already practised by an app · 1 curriculum captured</span>
+          <span class="map-card-go">Open the map <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+      <li>
+        <a href="/apps/pr-preview/pr-192/en/map/musik/" class="map-card">
+          <b>Music</b>
+          <span class="map-mini" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">9 strands · 187 building blocks<br>0 of them already practised by an app</span>
+          <span class="map-card-go">Open the map <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+      <li>
+        <a href="/apps/pr-preview/pr-192/en/map/physik/" class="map-card">
+          <b>Physics</b>
+          <span class="map-mini" aria-hidden="true"><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">5 strands · 108 building blocks<br>21 of them already practised by an app</span>
+          <span class="map-card-go">Open the map <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+    </ul>
+    <p class="m-0 text-slate-600">More subjects will follow.</p>
+  </section>
+
+  <section aria-labelledby="apps" class="flex flex-col gap-4">
+    <h2 id="apps" class="m-0 text-2xl font-bold text-slate-900">The map and the apps</h2>
+    <ol class="map-steps"><li>The map splits a subject into <b>building blocks</b>. Each is a sentence: “I can …”.</li><li>Each app says which building blocks its pages practise.</li><li>On the map, such a building block is <b>blue</b>. Dashed means: an app is still missing here.</li>
+    </ol>
+    <p class="m-0"><a href="/apps/pr-preview/pr-192/en/build/" class="btn btn-secondary">Build an app for a gap</a></p>
+  </section>
+  <section aria-labelledby="methode" class="map-honest">
+    <p class="map-honest-tag">To be honest</p>
+    <h2 id="methode" class="m-0 text-2xl font-bold text-slate-900">The map is a method of our own</h2>
+    <p>There is no ready-made template that shows how the knowledge of a subject belongs together. So we came up with a method of our own.</p>
+    <ul><li><b>Curricula</b> set the order in which things are taught. Each German state has its own. They show only in part how the knowledge belongs together logically.</li><li>The <b>KMK educational standards</b> describe what children should be able to do. But they do not exist for every subject.</li>
+    </ul>
+    <p>So we sort the knowledge by how it belongs together logically: what builds on what? Within that, each state gets its own order. Choose a curriculum on a map to see its grades.</p>
+    <p>Something is missing or in the wrong place? <a href="https://github.com/lernapps/apps/issues/new?title=Learning%20map%3A%20" class="text-blue-700 underline underline-offset-2">Let us know</a> <span class="text-slate-600">(GitHub issue, needs a GitHub account)</span></p>
+  </section>
+
+  <hr class="map-rule">
+
+  <section aria-labelledby="bild" class="flex flex-col gap-3">
+    <h2 id="bild" class="m-0 text-2xl font-bold text-slate-900">How the map is built</h2>
+    <p class="m-0 text-slate-600">Click a box in the picture to get the term explained.</p>
+    <figure class="m-0 flex flex-col gap-3">
+      <div class="map-scroll" role="region" aria-label="Picture: how the parts of the map belong together" tabindex="0">
+        <div class="map-model">
+          <div class="map-loop" style="grid-column: 5; grid-row: 1;"><a href="#baut-auf" class="map-edge-link" data-opens="baut-auf">builds on</a></div>
+          <div style="grid-column: 1; grid-row: 2;" class="grid"><a href="#fach" class="map-node " data-opens="fach"><b>Subject</b><span>e.g. Mathematics</span></a></div>
+          <div style="grid-column: 2; grid-row: 2;" class="map-edge map-edge-h" aria-hidden="true">has several</div>
+          <div style="grid-column: 3; grid-row: 2;" class="grid"><a href="#strang" class="map-node " data-opens="strang"><b>Strand</b><span>e.g. Probability</span></a></div>
+          <div style="grid-column: 4; grid-row: 2;" class="map-edge map-edge-h" aria-hidden="true">has several</div>
+          <div style="grid-column: 5; grid-row: 2;" class="grid"><a href="#baustein" class="map-node map-node-main" data-opens="baustein"><b>Building block</b><span>“I can …”</span></a></div>
+          <div style="grid-column: 6; grid-row: 2;" class="map-edge map-edge-h" aria-hidden="true">placement</div>
+          <div style="grid-column: 7; grid-row: 2;" class="grid"><a href="#lehrplan" class="map-node " data-opens="lehrplan"><b>Curriculum and placement</b><span>e.g. Hesse, grammar school</span></a></div>
+          <div style="grid-column: 1; grid-row: 3;" class="map-edge map-edge-v map-edge-down" aria-hidden="true">comes from</div>
+          <div style="grid-column: 3; grid-row: 3;" class="map-edge map-edge-v map-edge-up" aria-hidden="true">stays in one</div>
+          <div style="grid-column: 5; grid-row: 3;" class="map-edge map-edge-v map-edge-up map-edge-blue" aria-hidden="true">practises</div>
+          <div style="grid-column: 1; grid-row: 4;" class="grid"><a href="#quelle" class="map-node map-node-source" data-opens="quelle"><b>Source</b><span>e.g. KMK standards</span></a></div>
+          <div style="grid-column: 3; grid-row: 4;" class="grid"><a href="#app" class="map-node map-node-app" data-opens="app"><b>App</b><span>on lernapps.net</span></a></div>
+          <div style="grid-column: 4; grid-row: 4;" class="map-edge map-edge-h" aria-hidden="true">has several</div>
+          <div style="grid-column: 5; grid-row: 4;" class="grid"><a href="#seite" class="map-node map-node-app" data-opens="seite"><b>Page</b><span>of an app</span></a></div>
+        </div>
+      </div>
+      <figcaption class="text-slate-600">
+        <p class="m-0">Read each arrow as a sentence:</p>
+        <ul class="m-0 mt-1 pl-5 grid gap-x-6 sm:grid-cols-2"><li>A subject has several strands.</li><li>A strand has several building blocks.</li><li>A building block builds on other building blocks.</li><li>A curriculum places a building block in grades (placement).</li><li>A subject comes from a source.</li><li>An app stays in one strand.</li><li>An app has several pages.</li><li>A page practises building blocks.</li>
+        </ul>
+      </figcaption>
+    </figure>
+  </section>
+
+  <details class="map-terms" open data-map-terms>
+    <summary><h2 id="begriffe" class="m-0 text-xl font-bold text-slate-900">All terms as a list</h2></summary>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      <article id="fach" class="panel scroll-mt-4" data-kind="Term" aria-labelledby="fach-titel">
+        <h3 id="fach-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Subject</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">A school subject. Each subject has a learning map of its own.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Example:</b> Mathematics, physics, music.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">In the picture:</b> A subject has several strands. Its strands and building blocks come from a source.</p>
+        </div>
+      </article>
+      <article id="strang" class="panel scroll-mt-4" data-kind="Term" aria-labelledby="strang-titel">
+        <h3 id="strang-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Strand</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">A part of the subject that runs over several school years. What is in it builds on itself.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Example:</b> Algebra, geometry, probability.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">In the picture:</b> A strand has several building blocks. An app stays in one strand.</p>
+        </div>
+      </article>
+      <article id="baustein" class="panel scroll-mt-4" data-kind="Term" aria-labelledby="baustein-titel">
+        <h3 id="baustein-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Building block</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">One thing a child can learn, as a sentence “I can …”. Each building block belongs to exactly one strand.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Example:</b> “I can calculate the percentage value.”</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">In the picture:</b> A building block builds on other building blocks. A curriculum places it in grades. Pages of apps practise it.</p>
+        </div>
+      </article>
+      <article id="baut-auf" class="panel scroll-mt-4" data-kind="Term" aria-labelledby="baut-auf-titel">
+        <h3 id="baut-auf-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>builds on</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">Building block B needs building block A first. This also holds across strands. Together they make the learning path. There is no fixed order within a strand.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Example:</b> Exponential growth (strand Functions) builds on percentages (strand Arithmetic).</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">In the picture:</b> The arrow leads from one building block to another.</p>
+        </div>
+      </article>
+      <article id="richtstufe" class="panel scroll-mt-4" data-kind="Term" aria-labelledby="richtstufe-titel">
+        <h3 id="richtstufe-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Grade band</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">Roughly in which two school years a building block is taught: grade 5/6, 7/8 or 9/10. Every building block has one. The map shows it when no curriculum is chosen or a curriculum does not place the building block.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Example:</b> Tree diagram: grade band 7/8.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">In the picture:</b> The grade band is part of the building block. It has no box of its own in the picture.</p>
+        </div>
+      </article>
+      <article id="lehrplan" class="panel scroll-mt-4" data-kind="Term" aria-labelledby="lehrplan-titel">
+        <h3 id="lehrplan-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Curriculum and placement</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">A curriculum holds for one German state and one type of school. The placement says in which grade this curriculum teaches a building block. That can be several grades. We capture the curricula one by one.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Example:</b> Tree diagram: curriculum Hesse, grammar school: grades 7 and 10.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">In the picture:</b> A curriculum places building blocks in grades.</p>
+        </div>
+      </article>
+      <article id="quelle" class="panel scroll-mt-4" data-kind="Term" aria-labelledby="quelle-titel">
+        <h3 id="quelle-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Source</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">Where the strands and building blocks of a subject come from. The source says how binding the map is.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Example:</b> KMK educational standards in mathematics (2022). For subjects without standards, a subject association or one state&#39;s curriculum.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">In the picture:</b> A subject comes from a source.</p>
+        </div>
+      </article>
+      <article id="app" class="panel scroll-mt-4" data-kind="Term" aria-labelledby="app-titel">
+        <h3 id="app-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>App</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">A learning app on lernapps.net. It stays in one strand and grows along the learning path with new versions.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Example:</b> An app “Probability 5–10”.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">In the picture:</b> An app stays in one strand and has several pages.</p>
+        </div>
+      </article>
+      <article id="seite" class="panel scroll-mt-4" data-kind="Term" aria-labelledby="seite-titel">
+        <h3 id="seite-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Page</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">A page of an app. It practises one or more building blocks. That is how the map knows which building blocks are practised and where the gaps are.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Example:</b> The page “Percentage value” of an app on percentages.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">In the picture:</b> A page belongs to an app and practises one or more building blocks.</p>
+        </div>
+      </article>
+    </div>
+  </details>
+
+  <section aria-labelledby="regeln">
+    <h2 id="regeln" class="m-0 text-2xl font-bold text-slate-900">Three rules</h2>
+    <ol class="m-0 mt-3 pl-6 flex flex-col gap-2 text-lg"><li>Each building block belongs to exactly one strand.</li><li>Each app stays in one strand and grows with new versions along the arrows “builds on”.</li><li>When a building block is taught is set by the curriculum. Without a curriculum, the grade band holds.</li>
+    </ol>
+  </section>
+
+  <p class="m-0 text-sm text-slate-600">For AI assistants, each map is also available as data: <a href="/apps/pr-preview/pr-192/map/chemie.json" class="text-blue-700 underline underline-offset-2">chemie.json</a>, <a href="/apps/pr-preview/pr-192/map/mathematik.json" class="text-blue-700 underline underline-offset-2">mathematik.json</a>, <a href="/apps/pr-preview/pr-192/map/musik.json" class="text-blue-700 underline underline-offset-2">musik.json</a>, <a href="/apps/pr-preview/pr-192/map/physik.json" class="text-blue-700 underline underline-offset-2">physik.json</a></p>
+</div>
+
+
+<dialog class="map-dialog" data-map-dialog aria-labelledby="map-dialog-title">
+  <div class="map-dialog-inner">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex flex-col gap-2 items-start">
+        <p class="map-badge m-0" data-dialog-kind></p>
+        <h2 id="map-dialog-title" class="m-0 text-xl font-bold leading-tight text-slate-900" data-dialog-heading></h2>
+      </div>
+      <button type="button" class="btn btn-secondary map-close" data-dialog-close aria-label="Close"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="mt-4 flex flex-col gap-4" data-dialog-content></div>
+  </div>
+</dialog>
+
+
+  </main>
+
+  <footer class="la-footer" lang="en">
+  <div class="la-footer__inner">
+    <p>lernapps.net is free and has no ads. It lives on your thanks.</p>
+    <nav aria-label="Footer"><ul><li><a href="/en/privacy/">Privacy</a></li><li><a href="/en/imprint/">Imprint</a></li><li><a href="/docs/en/platform-design/">Platform design</a></li><li><a href="https://github.com/lernapps/apps">Source code</a></li></ul></nav>
+  </div>
+</footer>
+</body>
+</html>
