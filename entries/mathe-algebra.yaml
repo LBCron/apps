@@ -10,7 +10,7 @@ url: https://lernapps.net/mathe-algebra/
 keywords: [binomische Formeln, Binom, Termumformung, Faktorisieren, Algebra, Klammern]
 creator: { name: "Ralf D. Müller", url: "https://github.com/raifdmueller" }
 source: https://github.com/lernapps/mathe-algebra
-commit: 4cdec3bed13c9b40b9c3ce605398c198fcbd40d4
+commit: fc7ae5c4c9006082139befbfdc241cec3bbc83f8
 fitness:
   account: false
   install: false
