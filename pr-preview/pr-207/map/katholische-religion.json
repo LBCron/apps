@@ -10,7 +10,7 @@
   },
   "strands": [
     {
-      "id": "mensch-und-welt",
+      "id": "mensch",
       "name": {
         "de": "Mensch und Welt",
         "en": "Human beings and the world"
@@ -43,15 +43,6 @@
           "practisedBy": []
         },
         {
-          "id": "schoepfungsverantwortung",
-          "iCan": "Ich kann erklären, welchen Auftrag Christen aus dem Schöpfungsglauben für den Umgang mit der Natur ableiten.",
-          "gradeBand": "5-6",
-          "requires": [
-            "gottebenbildlichkeit"
-          ],
-          "practisedBy": []
-        },
-        {
           "id": "schoepfung-und-naturwissenschaft",
           "iCan": "Ich kann erklären, warum sich nach katholischem Verständnis die biblischen Schöpfungserzählungen und naturwissenschaftliche Theorien zur Entstehung der Welt nicht widersprechen müssen.",
           "gradeBand": "7-8",
@@ -71,54 +62,11 @@
           "practisedBy": []
         },
         {
-          "id": "goldene-regel",
-          "iCan": "Ich kann die Goldene Regel wiedergeben und an Beispielen aus dem Alltag erklären.",
-          "gradeBand": "5-6",
-          "requires": [],
-          "practisedBy": []
-        },
-        {
-          "id": "zehn-gebote",
-          "iCan": "Ich kann die Zehn Gebote in Grundzügen wiedergeben und erklären, warum sie in der Bibel als Weisung zur Freiheit gelten.",
-          "gradeBand": "7-8",
-          "requires": [
-            "exodus"
-          ],
-          "practisedBy": []
-        },
-        {
-          "id": "naechstenliebe",
-          "iCan": "Ich kann das Gebot der Gottes- und Nächstenliebe und das Gebot der Feindesliebe erklären.",
-          "gradeBand": "7-8",
-          "requires": [
-            "goldene-regel"
-          ],
-          "practisedBy": []
-        },
-        {
-          "id": "gewissen",
-          "iCan": "Ich kann erklären, was das Gewissen ist und warum nach katholischer Lehre Gewissensbildung wichtig ist.",
-          "gradeBand": "7-8",
-          "requires": [
-            "zehn-gebote"
-          ],
-          "practisedBy": []
-        },
-        {
           "id": "identitaet-jugendalter",
           "iCan": "Ich kann beschreiben, welche Fragen nach der eigenen Identität im Jugendalter wichtig werden und was das christliche Menschenbild dazu sagt.",
           "gradeBand": "7-8",
           "requires": [
             "gottebenbildlichkeit"
-          ],
-          "practisedBy": []
-        },
-        {
-          "id": "freundschaft-und-partnerschaft",
-          "iCan": "Ich kann beschreiben, was nach christlichem Verständnis zu einer gelingenden Freundschaft und Partnerschaft gehört.",
-          "gradeBand": "7-8",
-          "requires": [
-            "identitaet-jugendalter"
           ],
           "practisedBy": []
         },
@@ -129,42 +77,6 @@
           "requires": [
             "gottebenbildlichkeit",
             "identitaet-jugendalter"
-          ],
-          "practisedBy": []
-        },
-        {
-          "id": "schuld-und-vergebung",
-          "iCan": "Ich kann an biblischen Erzählungen wie dem Gleichnis vom barmherzigen Vater erklären, wie die Bibel von Schuld, Umkehr und Vergebung erzählt.",
-          "gradeBand": "5-6",
-          "requires": [],
-          "practisedBy": []
-        },
-        {
-          "id": "christliche-ethik",
-          "iCan": "Ich kann an einem Beispiel zeigen, wie man ethisch argumentieren kann, zum Beispiel mit einem Grundsatz oder mit den Folgen einer Handlung, und welche Maßstäbe die christliche Ethik dafür nennt.",
-          "gradeBand": "9-10",
-          "requires": [
-            "gewissen",
-            "naechstenliebe"
-          ],
-          "practisedBy": []
-        },
-        {
-          "id": "schutz-des-lebens",
-          "iCan": "Ich kann an einem Beispiel wie Sterbehilfe oder Todesstrafe darstellen, wie die katholische Kirche ihre Haltung zum Schutz des Lebens begründet.",
-          "gradeBand": "9-10",
-          "requires": [
-            "christliche-ethik",
-            "einzigartigkeit-des-menschen"
-          ],
-          "practisedBy": []
-        },
-        {
-          "id": "solidaritaet",
-          "iCan": "Ich kann an einem Beispiel erklären, warum sich Christen für gerechte Lebensbedingungen von Menschen weltweit einsetzen.",
-          "gradeBand": "5-6",
-          "requires": [
-            "einzigartigkeit-des-menschen"
           ],
           "practisedBy": []
         },
@@ -198,7 +110,7 @@
       ]
     },
     {
-      "id": "frage-nach-gott",
+      "id": "gott",
       "name": {
         "de": "Die Frage nach Gott",
         "en": "The question of God"
@@ -335,7 +247,7 @@
       ]
     },
     {
-      "id": "bibel-und-tradition",
+      "id": "bibel",
       "name": {
         "de": "Bibel und Tradition",
         "en": "Bible and tradition"
@@ -683,7 +595,7 @@
       ]
     },
     {
-      "id": "kirche-und-gemeinde",
+      "id": "kirche",
       "name": {
         "de": "Kirche und Gemeinde",
         "en": "Church and parish"
@@ -1160,6 +1072,103 @@
           "gradeBand": "7-8",
           "requires": [
             "religioese-angebote-pruefen"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "ethik",
+      "name": {
+        "de": "Ethik und Verantwortung",
+        "en": "Ethics and responsibility"
+      },
+      "competencies": [
+        {
+          "id": "goldene-regel",
+          "iCan": "Ich kann die Goldene Regel wiedergeben und an Beispielen aus dem Alltag erklären.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "solidaritaet",
+          "iCan": "Ich kann an einem Beispiel erklären, warum sich Christen für gerechte Lebensbedingungen von Menschen weltweit einsetzen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "einzigartigkeit-des-menschen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schoepfungsverantwortung",
+          "iCan": "Ich kann erklären, welchen Auftrag Christen aus dem Schöpfungsglauben für den Umgang mit der Natur ableiten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "gottebenbildlichkeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schuld-und-vergebung",
+          "iCan": "Ich kann an biblischen Erzählungen wie dem Gleichnis vom barmherzigen Vater erklären, wie die Bibel von Schuld, Umkehr und Vergebung erzählt.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "zehn-gebote",
+          "iCan": "Ich kann die Zehn Gebote in Grundzügen wiedergeben und erklären, warum sie in der Bibel als Weisung zur Freiheit gelten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "exodus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "naechstenliebe",
+          "iCan": "Ich kann das Gebot der Gottes- und Nächstenliebe und das Gebot der Feindesliebe erklären.",
+          "gradeBand": "7-8",
+          "requires": [
+            "goldene-regel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gewissen",
+          "iCan": "Ich kann erklären, was das Gewissen ist und warum nach katholischer Lehre Gewissensbildung wichtig ist.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zehn-gebote"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "freundschaft-und-partnerschaft",
+          "iCan": "Ich kann beschreiben, was nach christlichem Verständnis zu einer gelingenden Freundschaft und Partnerschaft gehört.",
+          "gradeBand": "7-8",
+          "requires": [
+            "identitaet-jugendalter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "christliche-ethik",
+          "iCan": "Ich kann an einem Beispiel zeigen, wie man ethisch argumentieren kann, zum Beispiel mit einem Grundsatz oder mit den Folgen einer Handlung, und welche Maßstäbe die christliche Ethik dafür nennt.",
+          "gradeBand": "9-10",
+          "requires": [
+            "gewissen",
+            "naechstenliebe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schutz-des-lebens",
+          "iCan": "Ich kann an einem Beispiel wie Sterbehilfe oder Todesstrafe darstellen, wie die katholische Kirche ihre Haltung zum Schutz des Lebens begründet.",
+          "gradeBand": "9-10",
+          "requires": [
+            "christliche-ethik",
+            "einzigartigkeit-des-menschen"
           ],
           "practisedBy": []
         }
