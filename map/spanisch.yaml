@@ -1,0 +1,940 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# Vorschlag. Spanisch ist am Gymnasium zweite Fremdsprache (HE und NW ab Jg 7) oder dritte Fremdsprache (BY ab Jg 8;
+# HE und NW ab Jg 9). Es gibt keine KMK-Bildungsstandards Spanisch für die Sek I; die KMK-Standards für die erste
+# Fremdsprache tragen die Struktur (sprachliche Mittel, interkulturelle Kompetenz, Text- und Medienkompetenz), aber
+# keine einzelnen Spanisch-Inhalte.
+# Quellenkürzel in den Kommentaren:
+#   KMK = Bildungsstandards für die erste Fremdsprache (Englisch/Französisch) ESA/MSA, i. d. F. vom 22.06.2023;
+#         LG = Lexiko-Grammatik (S. 18-19), Aussprache und Prosodie (S. 20), IK = Interkulturelle Kompetenz (S. 20),
+#         SPR = Sprechen (S. 14), SCHR = Schreiben (S. 15-16), TM = Text- und Medienkompetenz (S. 21-22).
+#   HE  = Lehrplan Spanisch, Gymnasialer Bildungsgang, Jahrgangsstufen 7 bis 13 (Hessen, G9), Spanisch als 2. Fremdsprache;
+#         "HE7 3.3" = Jahrgangsstufe 7, Abschnitt 3.3 (1.1 Textverstehen, 1.2 Texterstellen, 2.1 Situationen,
+#         2.2 Themenbereiche, 2.3 Landeskunde, 2.4 Lektüre, 3.1 Lautlehre, 3.2 Wortschatz, 3.3 Grammatik,
+#         3.4 Rechtschreibung, 4 Methoden); HE7 S. 11-14, HE8 S. 15-17, HE9 S. 18-20, HE10 S. 21-22.
+#         HE-KC = Kerncurriculum Hessen Sek I Gymnasium, Moderne Fremdsprachen (2023), Kap. 7.4 (Ende Jg 8, 2. FS) und
+#         6.1 (Ende Jg 10); nur dort gezählt, wo der Lehrplan schweigt.
+#   BY  = LehrplanPLUS Bayern Gymnasium, Spanisch (3. Fremdsprache), Fachlehrpläne Sp8 bis Sp10 (Spanisch beginnt in
+#         Jg 8; für Jg 5-7 gibt es keinen Fachlehrplan Spanisch); Lernbereiche 1.1 Fertigkeiten, 1.2 sprachliche Mittel,
+#         2 Interkulturelle Kompetenzen, 3 Text- und Medienkompetenzen, 4 Methodische Kompetenzen, 5 Themengebiete.
+#   NW  = Kernlehrplan Spanisch Sek I Gymnasium NRW (G9, Heft 3416, 2019), Spanisch als 2. Fremdsprache ab Klasse 7:
+#         S1 = erste Stufe (Schreiben S. 17, Grammatik S. 19, Aussprache S. 19-20, Orthografie S. 20, IK S. 21,
+#         TM = Text- und Medienkompetenz S. 21-22), S2 = zweite Stufe (Schreiben S. 25, Grammatik S. 27, Aussprache und
+#         Orthografie S. 28, IK S. 29, TM S. 29-30). Der Kernlehrplan nennt für die Stufen keine Jahrgänge.
+# Richtstufe = Stufe im Lehrgang, nicht Jahrgang: Jede Stimme wird zum Lernjahr y (Jahrgang - erster Jahrgang + 1); bei n
+# Lernjahren geht y in Teil floor(3 * (y - 1/2) / n) + 1, Teil 1 -> 5-6, 2 -> 7-8, 3 -> 9-10.
+#   HE ab Jg 7, n = 4: Jg 7 -> 5-6, Jg 8 und 9 -> 7-8, Jg 10 -> 9-10. HE-KC Ende Jg 8 = LJ 1-2 -> 5-6 und 7-8,
+#   Ende Jg 10 = LJ 3-4 -> 7-8 und 9-10.   BY ab Jg 8, n = 3: Jg 8 -> 5-6, Jg 9 -> 7-8, Jg 10 -> 9-10.
+#   NW ab Jg 7, n = 4, Stufen ohne Jahrgang: S1 = LJ 1-2 -> 5-6 und 7-8, S2 = LJ 3-4 -> 7-8 und 9-10 (eine Stimme für jede
+#   Stufe, die sie abdeckt). Das Schulbeispiel (SiLP 2020) stimmt nicht mit.
+# Es gewinnt die Stufe mit den meisten Stimmen; Gleichstand: die frühere, außer requires erzwingt die spätere. Hält eine
+# Stufe mehr als die Hälfte eines Strangs, rücken Bausteine entlang requires weiter ("verteilt", mit Grund).
+# SCHWACH = schwach belegt (Grund genannt). Genaue Titel, Ausgaben und URLs: .vibe/research-spanisch.md.
+name: { de: Spanisch, en: Spanish }                # the file name is the subject's id: spanisch
+source:
+  title: KMK, Bildungsstandards für die erste Fremdsprache (Englisch/Französisch) für den Ersten Schulabschluss und den Mittleren Schulabschluss, Beschluss vom 15.10.2004 und vom 04.12.2003 i.d.F. vom 22.06.2023 (Struktur; Inhalte aus den Lehrplänen Hessen, Bayern und NRW)
+  url: https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2023/2023_06_22-Bista-ESA-MSA-ErsteFremdsprache.pdf
+strands:
+  - id: grammatik
+    name: { de: Grammatik, en: Grammar }
+    competencies:
+      # HE7 3.3 (Genus; bestimmter/unbestimmter Artikel); BY Sp8 1.2 (Substantiv; bestimmter und unbestimmter Artikel); NW S1 Grammatik (artículo determinado und indeterminado) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: artikel-und-genus
+        iCan: "Ich kann den bestimmten und unbestimmten Artikel (el, la, un, una) richtig verwenden und das Genus eines Nomens erkennen."
+        gradeBand: "5-6"
+      # HE7 3.3 (Numerus: los amigos, unas amigas); BY Sp8 1.2 (Pluralbildung) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW – | 2× 5-6 → 5-6 (Mehrheit)
+      - id: plural
+        iCan: "Ich kann den Plural von Nomen und Artikeln bilden (los amigos, unas casas)."
+        gradeBand: "5-6"
+        requires: [artikel-und-genus]
+      # HE7 3.3 (Verbparadigma); HE8 3.3 (betonte Personalpronomen); BY Sp8 1.2 (Subjektpronomen inkl. ustedes); NW S1 Grammatik (frequente Pronomina) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: subjektpronomen
+        iCan: "Ich kann die Subjektpronomen (yo, tú, él, nosotros, ustedes …) verwenden und weiß, dass man sie oft weglässt."
+        gradeBand: "5-6"
+      # HE7 3.3 (Struktur des Aussagesatzes); BY Sp8 1.2 (Aussagesatz); NW S1 Grammatik (grundlegende syntaktische Strukturen) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: aussagesatz
+        iCan: "Ich kann einfache spanische Aussagesätze in der richtigen Wortstellung bilden."
+        gradeBand: "5-6"
+        requires: [subjektpronomen]
+      # BY Sp8 1.2 (Negation no, nunca, tampoco; Indefinitpronomen nada, nadie); NW S1 Grammatik (Negation) | HE –; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: verneinung
+        iCan: "Ich kann Sätze mit no, nunca, nada, nadie und tampoco verneinen und weiß, wann man zwei Verneinungswörter braucht."
+        gradeBand: "5-6"
+        requires: [aussagesatz]
+      # HE7 3.3 (Fragesätze mit Fragepronomen, Intonationsfrage); BY Sp8 1.2 (Interrogativpronomen und Fragesatz, auch qué und cuál); NW S1 Grammatik (Fragen formulieren) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: fragesaetze
+        iCan: "Ich kann Fragen mit und ohne Fragewort stellen (¿Quién?, ¿Dónde?, ¿Cuándo?, ¿Qué?, ¿Cuál?)."
+        gradeBand: "5-6"
+        requires: [aussagesatz]
+      # HE7 3.3 (Possessivbegleiter mi amiga, tus padres); BY Sp8 1.2 (Possessivbegleiter); NW S1 Grammatik (frequente Pronomina) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: possessivbegleiter
+        iCan: "Ich kann mit mi, tu, su, nuestro und vuestro sagen, wem etwas gehört."
+        gradeBand: "5-6"
+        requires: [subjektpronomen, plural]
+      # HE7 3.3 (Demonstrativpronomen este, ese, aquel); BY Sp8 1.2 (Demonstrativpronomen und -begleiter); NW S1 Grammatik (frequente Pronomina) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: demonstrativbegleiter
+        iCan: "Ich kann mit este, ese und aquel auf Nahes und Fernes zeigen."
+        gradeBand: "5-6"
+        requires: [artikel-und-genus]
+      # HE9 3.3 (pronombres posesivos tónicos mío, tuyo, suyo); BY Sp9 1.2 (Possessivpronomen) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW – | 2× 7-8 → 7-8 (Mehrheit)
+      - id: possessivpronomen
+        iCan: "Ich kann die betonten Possessivformen (mío, tuyo, suyo) verwenden, zum Beispiel in „Es mío“."
+        gradeBand: "7-8"
+        requires: [possessivbegleiter]
+      # HE10 3.3 (Übersicht: alle indefiniten Pronomen); BY Sp9 1.2 (Indefinitbegleiter cualquier, cada, algún, ningún) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 9 = LJ 2/3 → 7-8; NW – | 1× 7-8, 1× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: indefinitbegleiter
+        iCan: "Ich kann algún, ningún, cada, cualquier und otro richtig verwenden."
+        gradeBand: "7-8"
+        requires: [verneinung]
+      # HE7 3.3 (Adjektive und ihre Veränderung, attributiv und prädikativ); BY Sp8 1.2 (Adjektiv); NW S1 Grammatik (Adjektive) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: adjektiv-angleichung
+        iCan: "Ich kann Adjektive in Genus und Numerus an das Nomen angleichen (un chico alto, unas chicas altas)."
+        gradeBand: "5-6"
+        requires: [plural]
+      # BY Sp8 1.2 (Stellung hinter dem Substantiv, verkürzte Form bei Voranstellung); NW S1 Grammatik (Adjektive und Adverbien: Stellung) | HE –; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: adjektiv-stellung
+        iCan: "Ich kann Adjektive richtig stellen und die Kurzformen buen, gran und primer vor dem Nomen verwenden."
+        gradeBand: "5-6"
+        requires: [adjektiv-angleichung]
+      # BY Sp8 1.2 (Adverbien muy und mucho; auch Wortschatz); NW S1 Grammatik (Adverbien) | HE –; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: muy-und-mucho
+        iCan: "Ich kann muy und mucho richtig unterscheiden (muy bien, mucho tiempo, trabaja mucho)."
+        gradeBand: "5-6"
+        requires: [adjektiv-angleichung]
+      # HE9 3.3 (Adverbien auf -mente, Adverb und Adjektiv); BY Sp9 1.2 (Adverbien auf -mente); NW S1 Grammatik (Adverbien) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S1 = LJ 1-2/4 → 5-6/7-8 | 1× 5-6, 3× 7-8 → 7-8 (Mehrheit)
+      - id: adverbien-auf-mente
+        iCan: "Ich kann Adverbien auf -mente bilden und Adverb und Adjektiv richtig unterscheiden."
+        gradeBand: "7-8"
+        requires: [adjektiv-angleichung]
+      # HE8 3.3 (Steigerung der Adjektive und Vergleich); BY Sp8 1.2 (Komparativ; tan(to) … como); NW S1 Grammatik (Komparativ) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: komparativ
+        iCan: "Ich kann mit más … que, menos … que und tan … como vergleichen, auch mit mejor und peor."
+        gradeBand: "5-6"
+        requires: [adjektiv-angleichung]
+      # HE8 3.3 (Steigerung der Adjektive); BY Sp8 1.2 (relativer Superlativ); NW S1 Grammatik (Superlativ) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 43 von 83; baut auf komparativ auf)
+      - id: superlativ
+        iCan: "Ich kann mit el más … und la menos … sagen, wer oder was am meisten oder am wenigsten etwas ist."
+        gradeBand: "7-8"
+        requires: [komparativ]
+      # HE8 3.3 (Elativ auf -ísimo); BY Sp10 1.2 (absoluter Superlativ -ísimo); NW S1 Grammatik (Superlativ) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW S1 = LJ 1-2/4 → 5-6/7-8 | 1× 5-6, 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: absoluter-superlativ
+        iCan: "Ich kann den absoluten Superlativ auf -ísimo bilden (guapísimo, riquísimo)."
+        gradeBand: "7-8"
+        requires: [adjektiv-angleichung]
+      # HE7 3.3 (Verbparadigma Präsens -ar, -er, -ir); BY Sp8 1.2 (Präsensformen der regelmäßigen Verben); NW S1 Grammatik (Präsensformen der verbos regulares) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: praesens-regelmaessig
+        iCan: "Ich kann regelmäßige Verben auf -ar, -er und -ir im Präsens konjugieren."
+        gradeBand: "5-6"
+        requires: [subjektpronomen]
+      # HE7 3.3 (ser (de)); BY Sp8 1.2 (ser; Gebrauch von ser); NW S1 Grammatik (u. a. ser) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: ser
+        iCan: "Ich kann ser im Präsens konjugieren und damit sagen, wer jemand ist, woher er kommt und wie er ist."
+        gradeBand: "5-6"
+        requires: [subjektpronomen]
+      # HE7 3.3 (estar); BY Sp8 1.2 (estar; Gebrauch von estar); NW S1 Grammatik (u. a. estar) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: estar
+        iCan: "Ich kann estar im Präsens konjugieren und damit sagen, wo etwas ist und wie es jemandem geht."
+        gradeBand: "5-6"
+        requires: [subjektpronomen]
+      # HE7 3.3 (hay); BY Sp8 1.2 (Gebrauch von ser, estar und hay); NW S1 Grammatik (u. a. hay) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: hay
+        iCan: "Ich kann mit hay sagen, dass es etwas gibt, und hay von está unterscheiden."
+        gradeBand: "5-6"
+        requires: [estar, artikel-und-genus]
+      # HE7 3.3 (ser, estar); BY Sp8 1.2 (Gebrauch von ser, estar und hay); NW S1 Grammatik (ser, estar) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: ser-oder-estar
+        iCan: "Ich kann entscheiden, ob ich ser oder estar brauche (es alto, está cansado)."
+        gradeBand: "5-6"
+        requires: [ser, estar, adjektiv-angleichung]
+      # HE7 3.3 (tener); BY Sp8 1.2 (1. Person von tener; Gruppenverben); NW S1 Grammatik (wichtige unregelmäßige Verben; tener que) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: tener
+        iCan: "Ich kann tener im Präsens konjugieren und damit Besitz und Alter angeben (Tengo catorce años)."
+        gradeBand: "5-6"
+        requires: [praesens-regelmaessig]
+      # HE7 3.3 (ir (a), venir (de)); BY Sp8 1.2 (ir; venir); NW S1 Grammatik (u. a. ir) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: ir-praesens
+        iCan: "Ich kann ir im Präsens konjugieren und mit a und de Ziel und Herkunft angeben (voy a Madrid, vengo de casa)."
+        gradeBand: "5-6"
+        requires: [praesens-regelmaessig]
+      # HE7 3.3 (hacer, decir, poner, venir); BY Sp8 1.2 (1. Person von saber, hacer, poner, salir, decir …; Verben mit -zco); NW S1 Grammatik (u. a. hacer) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: verben-mit-unregelmaessiger-ich-form
+        iCan: "Ich kann Verben mit unregelmäßiger ich-Form im Präsens konjugieren (hago, pongo, salgo, digo, conozco)."
+        gradeBand: "5-6"
+        requires: [praesens-regelmaessig]
+      # HE7 3.3 (Gruppenverben empezar, querer (ie), encontrar, volver (ue)); BY Sp8 1.2 (Gruppenverben e/ie, o/ue, auch jugar); NW S1 Grammatik (Gruppenverben) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: gruppenverben-diphthong
+        iCan: "Ich kann Verben mit Stammwechsel e → ie und o → ue im Präsens konjugieren (quiero, puedo, juego)."
+        gradeBand: "5-6"
+        requires: [praesens-regelmaessig]
+      # BY Sp8 1.2 (Gruppenverben e/i); NW S1 Grammatik (Gruppenverben) | HE –; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: gruppenverben-e-i
+        iCan: "Ich kann Verben mit Stammwechsel e → i im Präsens konjugieren (pido, repito, sigo)."
+        gradeBand: "5-6"
+        requires: [gruppenverben-diphthong]
+      # HE7 3.3 (reflexive Verben llamarse, irse); BY Sp8 1.2 (reflexiver Gebrauch von Verben, Stellung der Reflexivpronomen); NW S1 Grammatik (reflexive Verben) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: reflexive-verben
+        iCan: "Ich kann reflexive Verben konjugieren und das Reflexivpronomen richtig stellen (me levanto, se llama)."
+        gradeBand: "5-6"
+        requires: [praesens-regelmaessig]
+      # HE7 3.3 (querer als Gruppenverb); BY Sp8 1.2 Wortschatz (querer, preferir + infinitivo; saber/poder); NW S1 Grammatik (modale Hilfsverben, u. a. poder, querer) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: querer-poder-infinitiv
+        iCan: "Ich kann mit querer, poder und preferir und einem Infinitiv sagen, was ich will, kann oder lieber mache."
+        gradeBand: "5-6"
+        requires: [gruppenverben-diphthong]
+      # BY Sp8 1.2 Wortschatz (Verpflichtungen: tener que); NW S1 Grammatik (tener que) | HE –; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: tener-que
+        iCan: "Ich kann mit tener que und einem Infinitiv sagen, was jemand tun muss."
+        gradeBand: "5-6"
+        requires: [tener]
+      # HE8 3.3 (Strukturen mit gustar und parecer; a mí no me gusta nada); BY Sp8 1.2 Wortschatz (gustar + infinitivo); NW S1 Grammatik (modale Hilfsverben, u. a. gustar) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: gustar
+        iCan: "Ich kann mit gustar, encantar und parecer sagen, was mir und anderen gefällt (me gusta, a él le gustan)."
+        gradeBand: "5-6"
+        requires: [praesens-regelmaessig]
+      # HE7 3.3 (Verlaufsform estamos comiendo); BY Sp8 1.2 (Verlaufsform estar + gerundio); NW S1 Grammatik (estar + gerundio) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: estar-gerundio
+        iCan: "Ich kann mit estar und dem gerundio sagen, was gerade passiert (estoy comiendo)."
+        gradeBand: "5-6"
+        requires: [estar]
+      # HE7 3.3 (de und a, Verbindung zu al und del); BY Sp8 1.2 (Verschmelzung des Artikels mit a und de; Präpositionen) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW – | 2× 5-6 → 5-6 (Mehrheit)
+      - id: praepositionen-a-und-de
+        iCan: "Ich kann die Präpositionen a und de verwenden und mit dem Artikel zu al und del verbinden."
+        gradeBand: "5-6"
+        requires: [artikel-und-genus]
+      # BY Sp8 1.2 (Präpositionen des Ortes; Wortschatz aquí, allí); NW S1 Grammatik (basale Ortsadverbien) | HE –; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: ortsangaben
+        iCan: "Ich kann mit Präpositionen und Adverbien des Ortes sagen, wo etwas ist (encima de, al lado de, aquí, allí)."
+        gradeBand: "5-6"
+        requires: [estar, praepositionen-a-und-de]
+      # BY Sp8 1.2 (Konjunktionen y/e, o/u, pero, porque, cuando, si + indicativo); NW S1 Grammatik (einfache Konnektoren; cuando- und porque-Satz) | HE –; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: konjunktionen
+        iCan: "Ich kann Sätze mit y, o, pero, porque, cuando und si verbinden und dabei y zu e und o zu u verändern."
+        gradeBand: "5-6"
+        requires: [aussagesatz]
+      # HE9 3.3 (Relativpronomen que); BY Sp8 1.2 (Relativpronomen que); NW S1 Grammatik (einfache Relativsätze) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: relativsatz-mit-que
+        iCan: "Ich kann einfache Relativsätze mit que bilden (el chico que vive aquí)."
+        gradeBand: "5-6"
+        requires: [aussagesatz]
+      # HE9 3.3 (Relativpronomen lo que); BY Sp9 1.2 (Relativpronomen donde und lo que) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW – | 2× 7-8 → 7-8 (Mehrheit)
+      - id: relativpronomen-lo-que-donde
+        iCan: "Ich kann Relativsätze mit lo que und donde bilden."
+        gradeBand: "7-8"
+        requires: [relativsatz-mit-que]
+      # HE9 3.3 (el que, la que, cuyo); BY Sp10 1.2 (Relativsatz mit el que, quien und Präpositionen) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW – | 1× 7-8, 1× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: relativpronomen-mit-praeposition
+        iCan: "Ich kann Relativsätze mit el que, la que und quien bilden, auch nach einer Präposition (la chica con la que hablo)."
+        gradeBand: "7-8"
+        requires: [relativpronomen-lo-que-donde]
+      # HE8 3.3 (Personalpronomen als direktes Pronomen lo …); BY Sp8 1.2 (pronombre átono: complemento directo); NW S1 Grammatik (frequente Pronomina) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: direkte-objektpronomen
+        iCan: "Ich kann die direkten Objektpronomen lo, la, los und las verwenden und richtig stellen."
+        gradeBand: "5-6"
+        requires: [praesens-regelmaessig, artikel-und-genus]
+      # HE8 3.3 (Personalpronomen als indirektes Pronomen le …); BY Sp8 1.2 (pronombre átono: complemento indirecto); NW S1 Grammatik (frequente Pronomina) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: indirekte-objektpronomen
+        iCan: "Ich kann die indirekten Objektpronomen me, te, le, nos, os und les verwenden und richtig stellen."
+        gradeBand: "5-6"
+        requires: [praesens-regelmaessig]
+      # HE8 3.3 (betonte Personalpronomen und Hervorhebung: a mí, a él); BY Sp8 1.2 (pronombres tónicos, inkl. conmigo, contigo); NW S1 Grammatik (frequente Pronomina) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: betonte-pronomen
+        iCan: "Ich kann die betonten Pronomen nach Präpositionen verwenden (para mí, con él, conmigo, contigo)."
+        gradeBand: "5-6"
+        requires: [subjektpronomen]
+      # BY Sp8 1.2 (Stellung beim konjugierten Verb, Infinitiv und gerundio); NW S2 Grammatik (vor- oder nachgestelltes complemento directo e indirecto) | HE –; BY Jg 8 = LJ 1/3 → 5-6; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 5-6, 1× 7-8, 1× 9-10 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 43 von 83; baut auf den Objektpronomen auf)
+      - id: pronomen-bei-infinitiv-und-gerundio
+        iCan: "Ich kann Objektpronomen an Infinitiv und gerundio anhängen oder vor das konjugierte Verb stellen (quiero verlo, lo quiero ver)."
+        gradeBand: "7-8"
+        requires: [direkte-objektpronomen, indirekte-objektpronomen]
+      # HE10 3.3 (2 Objektpronomen im Satz und beim Imperativ); BY Sp9 1.2 (Stellung von zwei Objektpronomen inkl. se) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 9 = LJ 2/3 → 7-8; NW – | 1× 7-8, 1× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: zwei-objektpronomen
+        iCan: "Ich kann zwei Objektpronomen in einem Satz verwenden und le zu se verändern (se lo doy)."
+        gradeBand: "7-8"
+        requires: [pronomen-bei-infinitiv-und-gerundio]
+      # HE8 3.3 (positive Imperative tú, vosotros); BY Sp8 1.2 (bejahter Aufforderungssatz, 2. Person Singular und Plural); NW S1 Grammatik (affirmativer imperativo) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: imperativ-tu-vosotros
+        iCan: "Ich kann den bejahten Imperativ für tú und vosotros bilden (¡habla!, ¡comed!)."
+        gradeBand: "5-6"
+        requires: [praesens-regelmaessig]
+      # HE8 3.3 (¡pon!, ¡ten!, ¡sal!, ¡haz!, ¡ven!, ¡di!); BY Sp8 1.2 (imperativo, auch unregelmäßige Formen); NW S1 Grammatik (affirmativer imperativo) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 43 von 83; baut auf imperativ-tu-vosotros auf)
+      - id: imperativ-unregelmaessig
+        iCan: "Ich kann die unregelmäßigen Imperative ¡pon!, ¡ten!, ¡sal!, ¡haz!, ¡ven!, ¡di!, ¡ve! und ¡sé! verwenden."
+        gradeBand: "7-8"
+        requires: [imperativ-tu-vosotros]
+      # HE8 3.3 (¡dime!, ¡dile!, ¡hazlo!, ¡ponlo!); BY Sp8 1.2 (Stellung beim bejahten Imperativ) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW – | 1× 5-6, 1× 7-8 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 43 von 83; baut auf imperativ-unregelmaessig und den Objektpronomen auf)
+      - id: imperativ-mit-pronomen
+        iCan: "Ich kann Pronomen an den bejahten Imperativ anhängen und den Akzent richtig setzen (¡dime!, ¡hazlo!, ¡levántate!)."
+        gradeBand: "7-8"
+        requires: [imperativ-unregelmaessig, direkte-objektpronomen, indirekte-objektpronomen]
+      # HE9 3.3 (Pronomen beim negativen Imperativ: no me digas); BY Sp9 1.2 (Aufforderungssatz bejaht und verneint); NW S2 Grammatik (verneinter imperativo) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: imperativ-verneint
+        iCan: "Ich kann den verneinten Imperativ mit den Formen des subjuntivo bilden (¡no hables!, ¡no me digas!)."
+        gradeBand: "7-8"
+        requires: [subjuntivo-praesens-unregelmaessig, imperativ-mit-pronomen]
+      # HE8 3.3 (positive Imperative Ud, Uds); BY Sp9 1.2 (Aufforderungssatz, auch in der höflichen Form) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW – | 2× 7-8 → 7-8 (Mehrheit)
+      - id: imperativ-usted
+        iCan: "Ich kann den Imperativ für usted und ustedes bilden (¡pase!, ¡siéntense!)."
+        gradeBand: "7-8"
+        requires: [subjuntivo-praesens-unregelmaessig]
+      # HE7 3.3 (futuro próximo: van a trabajar); BY Sp8 1.2 (ir a + infinitivo); NW S1 Grammatik (futuro perifrástico) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: futuro-inmediato
+        iCan: "Ich kann mit ir a und einem Infinitiv sagen, was ich vorhabe (voy a viajar)."
+        gradeBand: "5-6"
+        requires: [ir-praesens]
+      # HE8 3.3 (futuro der Verben auf -ar, -er, -ir); BY Sp10 1.2 (futuro simple); NW S2 Grammatik (futuro simple) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 2× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: futuro-simple
+        iCan: "Ich kann das futuro simple regelmäßiger Verben bilden und verwenden (hablaré, viviremos)."
+        gradeBand: "7-8"
+        requires: [praesens-regelmaessig]
+      # HE8 3.3 (unregelmäßige Formen des futuro); BY Sp10 1.2 (futuro simple); NW S2 Grammatik (futuro simple) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 2× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: futuro-simple-unregelmaessig
+        iCan: "Ich kann die unregelmäßigen Formen des futuro simple bilden (tendré, haré, diré, podré)."
+        gradeBand: "7-8"
+        requires: [futuro-simple]
+      # HE8 3.3 (indefinido: regelmäßige Formen); BY Sp8 1.2 (perfecto simple: regelmäßige Formen inkl. orthographischer Besonderheiten); NW S1 Grammatik (frequente Formen des indefinido) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 43 von 83; erste Vergangenheitszeit nach dem Präsens; HE im 2. Lernjahr)
+      - id: indefinido-regelmaessig
+        iCan: "Ich kann das pretérito indefinido regelmäßiger Verben bilden, auch mit Schreibbesonderheiten (llegué, empecé)."
+        gradeBand: "7-8"
+        requires: [praesens-regelmaessig]
+      # HE8 3.3 (indefinido: unregelmäßige Formen); BY Sp8 1.2 (ser, ir, estar, hacer, decir, tener, poner); NW S1 Grammatik (frequente Formen des indefinido) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 43 von 83; baut auf indefinido-regelmaessig auf)
+      - id: indefinido-unregelmaessig
+        iCan: "Ich kann die wichtigsten unregelmäßigen Formen des indefinido bilden (fui, estuve, tuve, hice, dije, puse)."
+        gradeBand: "7-8"
+        requires: [indefinido-regelmaessig]
+      # SCHWACH: nur BY nennt die Formen ausdrücklich; HE und NW nennen das indefinido allgemein. HE8 3.3 (regelmäßige und unregelmäßige Formen, allgemein); BY Sp9 1.2 (Gruppenverben e/ie – i, o/ue – u des perfecto simple); NW S2 Grammatik (indefinido, allgemein) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: indefinido-gruppenverben
+        iCan: "Ich kann das indefinido von Verben mit Stammwechsel e → i und o → u bilden (pidió, durmieron)."
+        gradeBand: "7-8"
+        requires: [indefinido-unregelmaessig, gruppenverben-e-i]
+      # HE7 3.3 (pretérito perfecto der regelm. Verben); BY Sp9 1.2 (pretérito perfecto, regelmäßige Partizipformen); NW S2 Grammatik (perfecto) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 5-6, 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: perfecto-regelmaessig
+        iCan: "Ich kann das pretérito perfecto mit haber und dem Partizip regelmäßiger Verben bilden (he hablado, has comido)."
+        gradeBand: "7-8"
+        requires: [praesens-regelmaessig]
+      # HE7 3.3 (hacer, decir, poner, escribir, abrir, ver, volver); HE8 3.3 (repaso und neu, auch romper); BY Sp9 1.2 (unregelmäßige Partizipformen); NW S2 Grammatik (perfecto) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 5-6, 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: partizip-unregelmaessig
+        iCan: "Ich kann die unregelmäßigen Partizipien verwenden (hecho, dicho, puesto, escrito, abierto, visto, vuelto, roto)."
+        gradeBand: "7-8"
+        requires: [perfecto-regelmaessig]
+      # HE8 3.3 (wechselnder Gebrauch von perfecto und indefinido, Signalwörter); BY Sp9 1.2 (erste Kontrastierung zum indefinido) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW – | 2× 7-8 → 7-8 (Mehrheit)
+      - id: perfecto-oder-indefinido
+        iCan: "Ich kann entscheiden, ob ich das perfecto oder das indefinido brauche, und nutze dafür Signalwörter wie hoy, ayer und el año pasado."
+        gradeBand: "7-8"
+        requires: [perfecto-regelmaessig, indefinido-unregelmaessig]
+      # HE9 3.3 (pretérito imperfecto); BY Sp9 1.2 (imperfecto); NW S2 Grammatik (imperfecto) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: imperfecto-formen
+        iCan: "Ich kann das pretérito imperfecto bilden, auch die unregelmäßigen Formen von ser, ir und ver."
+        gradeBand: "7-8"
+        requires: [praesens-regelmaessig]
+      # HE9 3.3 (Gebrauch des imperfecto); BY Sp9 1.2 (Zustände, Gewohnheiten, sich wiederholende Ereignisse); NW S2 Grammatik (imperfecto) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: imperfecto-gebrauch
+        iCan: "Ich kann mit dem imperfecto Zustände, Gewohnheiten und Hintergründe in der Vergangenheit beschreiben (de niño jugaba …)."
+        gradeBand: "7-8"
+        requires: [imperfecto-formen]
+      # HE9 3.3 (Gebrauch von imperfecto und indefinido im Einzelsatz und im Erzähltext); BY Sp9 1.2 (Abgrenzung von der Erzählzeit des indefinido; Bedeutung bei conocer, saber, tener); NW S2 Grammatik (indefinido, imperfecto) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: indefinido-oder-imperfecto
+        iCan: "Ich kann in einer Erzählung entscheiden, ob ich das indefinido oder das imperfecto brauche."
+        gradeBand: "7-8"
+        requires: [imperfecto-gebrauch, indefinido-unregelmaessig]
+      # HE9 3.3 (pretérito pluscuamperfecto); BY Sp9 1.2 (Formen und Verwendung des pluscuamperfecto); NW S2 Grammatik (pluscuamperfecto) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: pluscuamperfecto
+        iCan: "Ich kann das pluscuamperfecto bilden und damit ausdrücken, was vor einem Ereignis in der Vergangenheit geschah."
+        gradeBand: "7-8"
+        requires: [imperfecto-formen, partizip-unregelmaessig]
+      # HE10 3.3 (repaso: alle Zeiten / Verbformen); BY Sp10 1.2 (Gegenüberstellung aller Vergangenheitszeiten); NW S2 Grammatik (weitere Tempusformen) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 7-8, 3× 9-10 → 9-10 (Mehrheit)
+      - id: vergangenheitszeiten-im-vergleich
+        iCan: "Ich kann alle Vergangenheitszeiten (indefinido, perfecto, imperfecto, pluscuamperfecto) in einem Text richtig verwenden."
+        gradeBand: "9-10"
+        requires: [indefinido-oder-imperfecto, perfecto-oder-indefinido, pluscuamperfecto]
+      # HE9 3.3 (perífrasis verbales con infinitivo: acabar de, volver a, ponerse a, llegar a); BY Sp8 1.2 Wortschatz (acabar de); Sp9 1.2 (volver a, dejar de); NW S2 Grammatik (Verbalperiphrasen, u. a. acabar de, empezar a) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: periphrasen-mit-infinitiv
+        iCan: "Ich kann Verbalperiphrasen mit Infinitiv verwenden (acabar de, volver a, empezar a, dejar de)."
+        gradeBand: "7-8"
+        requires: [futuro-inmediato]
+      # HE9 3.3 (perífrasis verbales con gerundio: llevar, continuar, seguir, ir); BY Sp9 1.2 (seguir, continuar, llevar, pasar + gerundio); NW S2 Grammatik (gerundio) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: periphrasen-mit-gerundio
+        iCan: "Ich kann Verbalperiphrasen mit gerundio verwenden (seguir, continuar, llevar + gerundio)."
+        gradeBand: "7-8"
+        requires: [estar-gerundio]
+      # HE9 3.3 (para, por; antes de, después de; hasta; al + Infinitiv); BY Sp10 1.2 (Nebensatzverkürzungen mit infinitivo); Sp8 (para + infinitivo); NW S2 Grammatik (Infinitivkonstruktionen) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 2× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: infinitivkonstruktionen
+        iCan: "Ich kann Nebensätze mit Präposition und Infinitiv verkürzen (antes de salir, después de comer, al llegar, para aprender)."
+        gradeBand: "7-8"
+        requires: [praepositionen-a-und-de]
+      # HE9 3.3 (gerundio als Adverb und als Nebensatzverkürzung); NW S2 Grammatik (des gerundio) | HE Jg 9 = LJ 3/4 → 7-8; BY –; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: gerundio-als-adverb
+        iCan: "Ich kann das gerundio verwenden, um zu sagen, wie oder wodurch etwas geschieht (Aprendo escuchando canciones)."
+        gradeBand: "7-8"
+        requires: [estar-gerundio]
+      # HE9 3.3 (subjuntivo: Formen); BY Sp9 1.2 (presente de subjuntivo); NW S2 Grammatik (Formen des presente de subjuntivo) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: subjuntivo-praesens-formen
+        iCan: "Ich kann die Formen des presente de subjuntivo regelmäßiger Verben bilden (hable, coma, viva)."
+        gradeBand: "7-8"
+        requires: [praesens-regelmaessig, verben-mit-unregelmaessiger-ich-form]
+      # HE9 3.3 (subjuntivo: Formen); BY Sp9 1.2 (presente de subjuntivo); NW S2 Grammatik (Formen des presente de subjuntivo) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: subjuntivo-praesens-unregelmaessig
+        iCan: "Ich kann die unregelmäßigen Formen des presente de subjuntivo bilden (sea, vaya, tenga, haga, esté, pueda)."
+        gradeBand: "7-8"
+        requires: [subjuntivo-praesens-formen, gruppenverben-diphthong]
+      # HE9 3.3 (Gebrauch des subjuntivo bei verschiedenen Auslösern); BY Sp9 1.2 (nach Ausdrücken des Wunsches); NW S2 Grammatik (frequente Auslöser, u. a. quiero que) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: subjuntivo-nach-wuenschen
+        iCan: "Ich kann den subjuntivo nach Wünschen und Aufforderungen verwenden (Quiero que vengas)."
+        gradeBand: "7-8"
+        requires: [subjuntivo-praesens-unregelmaessig]
+      # HE9 3.3 (Gebrauch des subjuntivo bei verschiedenen Auslösern); BY Sp9 1.2 (nach Ausdrücken der Gefühlsäußerung, der Wertung); NW S2 Grammatik (frequente Auslöser, u. a. es importante que) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: subjuntivo-nach-gefuehlen-und-wertungen
+        iCan: "Ich kann den subjuntivo nach Gefühlen und Wertungen verwenden (Me alegra que …, Es importante que …)."
+        gradeBand: "7-8"
+        requires: [subjuntivo-nach-wuenschen]
+      # HE9 3.3 (Unterscheidung im Gebrauch des subjuntivo e indicativo); BY Sp9 1.2 (nach verneinten Verben des Sagens und Denkens) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW – | 2× 7-8 → 7-8 (Mehrheit)
+      - id: subjuntivo-oder-indikativ
+        iCan: "Ich kann nach Verben des Sagens und Denkens entscheiden, ob ich den subjuntivo brauche (Creo que viene – No creo que venga)."
+        gradeBand: "7-8"
+        requires: [subjuntivo-nach-wuenschen]
+      # HE9 3.3 (Auslöser); HE10 3.3 (Übersicht: Konjunktionen als Nebensatzeinleitung); BY Sp9 1.2 (Konjunktionen mit subjuntivo: antes de que, para que, sin que); NW S2 Grammatik (u. a. para que) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: subjuntivo-nach-konjunktionen
+        iCan: "Ich kann den subjuntivo nach para que, antes de que und sin que verwenden."
+        gradeBand: "7-8"
+        requires: [subjuntivo-nach-wuenschen, konjunktionen]
+      # SCHWACH: nur BY nennt cuando + subjuntivo ausdrücklich; HE nennt die Unterscheidung allgemein. HE9 3.3 (Unterscheidung subjuntivo e indicativo, allgemein); BY Sp9 1.2 (hasta que, aunque mit indicativo); Sp10 1.2 (subjuntivo nach cuando, mientras, hasta que, aunque) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW – | 2× 7-8 → 7-8 (Mehrheit)
+      - id: subjuntivo-nach-cuando
+        iCan: "Ich kann nach cuando, hasta que und aunque entscheiden, ob ich den subjuntivo oder den indicativo brauche (Cuando llegue, te llamo)."
+        gradeBand: "7-8"
+        requires: [subjuntivo-nach-konjunktionen]
+      # HE10 3.3 (reale Bedingungssätze); BY Sp9 1.2 (der reale Bedingungssatz); Sp8 (si + indicativo); NW S2 Grammatik (realer Bedingungssätze) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 2× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: bedingungssatz-real
+        iCan: "Ich kann reale Bedingungssätze mit si bilden (Si tengo tiempo, voy al cine)."
+        gradeBand: "7-8"
+        requires: [konjunktionen, futuro-inmediato]
+      # HE10 3.3 (condicional I); BY Sp10 1.2 (condicional simple); Sp8 Wortschatz (podría, me gustaría); NW S2 Grammatik (condicional) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 7-8, 3× 9-10 → 9-10 (Mehrheit)
+      - id: condicional-simple
+        iCan: "Ich kann das condicional simple bilden und damit höfliche Bitten, Wünsche und Vermutungen ausdrücken (me gustaría, podría)."
+        gradeBand: "9-10"
+        requires: [futuro-simple-unregelmaessig]
+      # HE10 3.3 (imperfecto de subjuntivo); BY Sp10 1.2 (imperfecto de subjuntivo, Formen auf -se rezeptiv) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 10 = LJ 3/3 → 9-10; NW – | 2× 9-10 → 9-10 (Mehrheit)
+      - id: imperfecto-de-subjuntivo
+        iCan: "Ich kann die Formen des imperfecto de subjuntivo auf -ra bilden (hablara, tuviera, fuera)."
+        gradeBand: "9-10"
+        requires: [indefinido-unregelmaessig, subjuntivo-praesens-unregelmaessig]
+      # HE10 3.3 (irreale Bedingungssätze); BY Sp10 1.2 (irreale Bedingungssätze der Gegenwart); NW S2 Grammatik (Hypothesen oder Bedingungen) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 7-8, 3× 9-10 → 9-10 (Mehrheit)
+      - id: bedingungssatz-irreal-gegenwart
+        iCan: "Ich kann irreale Bedingungssätze der Gegenwart bilden (Si tuviera tiempo, iría al cine)."
+        gradeBand: "9-10"
+        requires: [bedingungssatz-real, condicional-simple, imperfecto-de-subjuntivo]
+      # HE10 3.3 (condicional II); BY Sp10 1.2 (condicional compuesto) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 10 = LJ 3/3 → 9-10; NW – | 2× 9-10 → 9-10 (Mehrheit)
+      - id: condicional-compuesto
+        iCan: "Ich kann das condicional compuesto bilden (habría ido) und damit sagen, was hätte geschehen können."
+        gradeBand: "9-10"
+        requires: [condicional-simple, partizip-unregelmaessig]
+      # HE10 3.3 (irreale Bedingungssätze); BY Sp10 1.2 (pluscuamperfecto de subjuntivo, irreale Bedingungssätze der Vergangenheit) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 10 = LJ 3/3 → 9-10; NW – | 2× 9-10 → 9-10 (Mehrheit)
+      - id: bedingungssatz-irreal-vergangenheit
+        iCan: "Ich kann irreale Bedingungssätze der Vergangenheit bilden (Si hubiera tenido tiempo, habría ido)."
+        gradeBand: "9-10"
+        requires: [bedingungssatz-irreal-gegenwart, condicional-compuesto]
+      # HE10 3.3 (indirekte Rede); BY Sp8 1.2 (indirekte Rede bzw. Frage ohne Zeitenverschiebung) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 8 = LJ 1/3 → 5-6; NW – | 1× 5-6, 1× 9-10 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 43 von 83; Stimmen 5-6 und 9-10: die Stufe dazwischen)
+      - id: indirekte-rede
+        iCan: "Ich kann wiedergeben, was jemand sagt oder fragt (Dice que … / Pregunta si …)."
+        gradeBand: "7-8"
+        requires: [konjunktionen, fragesaetze]
+      # HE10 3.3 (Passiv); NW S2 Grammatik (Passivsätze) | HE Jg 10 = LJ 4/4 → 9-10; BY –; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 7-8, 2× 9-10 → 9-10 (Mehrheit)
+      - id: passiv-mit-ser
+        iCan: "Ich kann Passivsätze mit ser und dem Partizip bilden und verstehen (La casa fue construida en 1900)."
+        gradeBand: "9-10"
+        requires: [partizip-unregelmaessig, indefinido-unregelmaessig]
+      # HE10 3.3 (Passiv); BY Sp10 1.2 (pasiva refleja und weitere unpersönliche Formen); NW S2 Grammatik (Passivsätze) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 7-8, 3× 9-10 → 9-10 (Mehrheit)
+      - id: pasiva-refleja
+        iCan: "Ich kann unpersönliche Sätze mit se bilden (Se venden pisos, Aquí se habla español)."
+        gradeBand: "9-10"
+        requires: [reflexive-verben]
+      # SCHWACH: nur BY nennt den voseo ausdrücklich; NW nennt hispanoamerikanische Varietäten allgemein. BY Sp9 5 Themengebiete (Sprachreflexion: der voseo und die damit verbundenen Verbformen); NW S2 IK (regionalismos und hispanoamerikanische Varietäten verstehen) | HE –; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: voseo
+        iCan: "Ich kann die Verbformen des voseo verstehen (vos tenés, vos sos)."
+        gradeBand: "7-8"
+        requires: [praesens-regelmaessig]
+  - id: wortschatz
+    name: { de: Wortschatz, en: Vocabulary }
+    competencies:
+      # HE7 2.2 (Ich-Perspektive, Begegnung mit anderen); BY Sp8 1.1 (Fragen und Auskunft zur eigenen Person); Sp8 2 (Gruß- und Anredeformeln); NW S1 IK (Alltagsleben) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: sich-vorstellen
+        iCan: "Ich kann jemanden begrüßen, mich vorstellen und nach Name, Alter und Herkunft fragen."
+        gradeBand: "5-6"
+      # HE7 2.2 (Familie); BY Sp8 5 (Familie); NW S1 IK (Familie) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: familie
+        iCan: "Ich kann meine Familie vorstellen und Verwandte benennen."
+        gradeBand: "5-6"
+        requires: [possessivbegleiter]
+      # HE7 2.2 (Freunde); HE-KC 7.4 (Personen beschreiben); BY Sp8 1.1 Sprechen (Personen beschreiben); NW S1 IK (Freundschaften) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: personen-beschreiben
+        iCan: "Ich kann Aussehen und Charakter einer Person beschreiben."
+        gradeBand: "5-6"
+        requires: [ser-oder-estar, adjektiv-angleichung]
+      # HE7 2.2 (Schule); BY Sp8 5 (Schulalltag); NW S1 IK (Aspekte des Schulalltags) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: schule
+        iCan: "Ich kann über meine Schule, Fächer und den Stundenplan sprechen."
+        gradeBand: "5-6"
+      # HE7 2.2 (Wohnen); BY Sp8 5 (Wohnen) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW – | 2× 5-6 → 5-6 (Mehrheit)
+      - id: wohnen
+        iCan: "Ich kann mein Zuhause, meine Wohnung und mein Zimmer beschreiben."
+        gradeBand: "5-6"
+        requires: [hay, ortsangaben]
+      # HE7 2.2 (Tagesablauf); BY Sp8 5 (Tagesablauf); NW S1 IK (Tagesabläufe) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: tagesablauf
+        iCan: "Ich kann meinen Tagesablauf beschreiben (me levanto, desayuno, voy al instituto)."
+        gradeBand: "5-6"
+        requires: [reflexive-verben, uhrzeit]
+      # HE7 2.2 (Freizeit, Hobbys); BY Sp8 1.2 (individueller Wortschatz zu Freizeitaktivitäten); NW S1 IK (Freizeitgestaltung) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: freizeit-und-hobbys
+        iCan: "Ich kann über meine Freizeit und Hobbys sprechen und sagen, was ich gern mache."
+        gradeBand: "5-6"
+        requires: [gustar]
+      # HE7 2.2 (Einkaufen); BY Sp8 5 (Einkaufen); Sp8 1.2 (Mengenangaben mit de) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW – | 2× 5-6 → 5-6 (Mehrheit)
+      - id: einkaufen
+        iCan: "Ich kann einkaufen, nach Preisen fragen und Mengen angeben (un kilo de, un poco de)."
+        gradeBand: "5-6"
+        requires: [zahlen-bis-100]
+      # HE7 2.3 (Mahlzeiten); BY Sp8 1.1 Sprachmittlung (Bestellung in einem Lokal); Sp8 1.1 Leseverstehen (Speisekarten) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW – | 2× 5-6 → 5-6 (Mehrheit)
+      - id: essen-und-trinken
+        iCan: "Ich kann Speisen und Getränke benennen und im Restaurant oder Café bestellen."
+        gradeBand: "5-6"
+        requires: [querer-poder-infinitiv]
+      # HE7 2.2 (Verkehr); BY Sp8 5 (Transportmittel, Wegbeschreibung) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW – | 2× 5-6 → 5-6 (Mehrheit)
+      - id: stadt-und-verkehr
+        iCan: "Ich kann Orte in der Stadt und Verkehrsmittel benennen und einen Weg beschreiben."
+        gradeBand: "5-6"
+        requires: [ortsangaben, imperativ-tu-vosotros]
+      # HE8 3.3 (Jahreseinteilung); BY Sp8 5 (Jahreszeiten) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW – | 1× 5-6, 1× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: wetter-und-jahreszeiten
+        iCan: "Ich kann über das Wetter und die Jahreszeiten sprechen (hace calor, llueve)."
+        gradeBand: "5-6"
+      # HE7 3.3 (Zahlen von 1–100); BY Sp8 1.2 (die Grundzahlen); NW S1 Wortschatz (grundlegender Wortschatz) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: zahlen-bis-100
+        iCan: "Ich kann die Zahlen bis 100 verstehen, sprechen und schreiben."
+        gradeBand: "5-6"
+      # HE8 3.3 (Zahlenbereich zwischen 100 und 1000); BY Sp8 1.2 (Grundzahlen; Jahreszahlen) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW – | 1× 5-6, 1× 7-8 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 22 von 32; baut auf zahlen-bis-100 auf)
+      - id: grosse-zahlen
+        iCan: "Ich kann Zahlen über 100 und Jahreszahlen verstehen und sagen (doscientos, mil novecientos noventa)."
+        gradeBand: "7-8"
+        requires: [zahlen-bis-100]
+      # HE8 3.3 (Tageszeiten); BY Sp8 1.2 (die Uhrzeit); NW S1 IK (Tagesabläufe) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: uhrzeit
+        iCan: "Ich kann nach der Uhrzeit fragen und sie angeben (Son las tres y media)."
+        gradeBand: "5-6"
+        requires: [zahlen-bis-100, ser]
+      # HE8 3.3 (Monatsnamen); BY Sp8 1.2 (das Datum) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW – | 1× 5-6, 1× 7-8 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 22 von 32; baut auf zahlen-bis-100 auf)
+      - id: datum
+        iCan: "Ich kann Wochentage, Monate und das Datum angeben (el lunes, el 3 de mayo)."
+        gradeBand: "7-8"
+        requires: [zahlen-bis-100]
+      # HE-KC 7.4 (mehrteilige Arbeitsanweisungen verstehen); BY Sp8 1.2 (Arbeitsanweisungen, frases en clase); NW S1 Wortschatz (zur unterrichtlichen Kommunikation) | HE KC Ende Jg 8 = LJ 1-2 → 5-6/7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 2× 7-8 → 5-6 (Mehrheit)
+      - id: unterrichtssprache
+        iCan: "Ich kann Arbeitsanweisungen und Sätze im Unterricht verstehen und selbst verwenden (¿Cómo se dice …?, ¿Puedes repetir?)."
+        gradeBand: "5-6"
+      # HE-KC 7.4 (Missverständnisse mit formelhaften Wendungen überbrücken); BY Sp8 1.2 (bueno, vale); Sp9 1.2 (pues, mira) | HE KC Ende Jg 8 = LJ 1-2 → 5-6/7-8; BY Jg 8 = LJ 1/3 → 5-6; NW – | 2× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: gespraechswoerter
+        iCan: "Ich kann mit Wörtern wie bueno, vale, pues und mira ein Gespräch in Gang halten."
+        gradeBand: "5-6"
+      # HE-KC 6.1 (mithilfe von einigen Umschreibungen, Ende 9/10); BY Sp8 1.2 (Paraphrasierungswortschatz); Sp9 1.2 (erweitert) | HE KC Ende Jg 10 = LJ 3-4 → 7-8/9-10; BY Jg 8 = LJ 1/3 → 5-6; NW – | 1× 5-6, 1× 7-8, 1× 9-10 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 22 von 32; baut auf relativsatz-mit-que auf; HE-KC erst Ende Jg 10)
+      - id: umschreiben
+        iCan: "Ich kann ein Wort, das ich nicht kenne, umschreiben (Es algo que sirve para …)."
+        gradeBand: "7-8"
+        requires: [relativsatz-mit-que]
+      # HE-KC 7.4 (Alltagssituationen auf der Grundlage bildlicher Impulse versprachlichen); BY Sp8 1.2 (Bildbeschreibung); Sp9 1.2 | HE KC Ende Jg 8 = LJ 1-2 → 5-6/7-8; BY Jg 8 = LJ 1/3 → 5-6; NW – | 2× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: bildbeschreibung
+        iCan: "Ich kann ein Bild beschreiben (En la foto hay …, al fondo, en el centro)."
+        gradeBand: "5-6"
+        requires: [hay, ortsangaben]
+      # HE9 1.2.1 (Textgliederung, Hinführung zur Inhaltsangabe); BY Sp8 1.2 (erste Redemittel zur Textarbeit); Sp9 1.2 (Wortschatz zur Textarbeit, Operatoren); NW S2 Wortschatz (zur Textbesprechung) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 5-6, 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: wortschatz-textarbeit
+        iCan: "Ich kann über einen Text sprechen und seinen Inhalt zusammenfassen (El texto trata de …, el párrafo, resumir)."
+        gradeBand: "7-8"
+      # HE9 1.2.1 (Formulierung einer Stellungnahme); BY Sp9 1.2 (Meinung in einfacher Weise); Sp10 1.2 (Interaktionswortschatz); NW S2 Grammatik (Annahmen, Gefühle, Erwartungen formulieren) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: meinung-aeussern
+        iCan: "Ich kann meine Meinung sagen, begründen und auf andere reagieren (creo que, en mi opinión, estoy de acuerdo)."
+        gradeBand: "7-8"
+        requires: [konjunktionen]
+      # HE10 3.3 (Übersicht: alle Konjunktionen); BY Sp9 1.2 (sin embargo, además, por un lado, por otro lado); Sp10 1.2 (aunque, así que, por lo tanto); NW S2 Grammatik (weiterführende Konnektoren: por lo tanto, sin embargo, no obstante, en cambio) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 2× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: konnektoren
+        iCan: "Ich kann Gedanken in einem Text mit además, sin embargo, por un lado … por otro lado und por lo tanto verbinden."
+        gradeBand: "7-8"
+        requires: [konjunktionen]
+      # HE8 4 (produktive Ableitungsmuster, Wortfamilien); BY Sp8 4 (Wortfamilien, erste Wortbildungsregeln) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW – | 1× 5-6, 1× 7-8 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 22 von 32; Wortbildung nach dem Grundwortschatz; HE im 2. Lernjahr)
+      - id: wortfamilien
+        iCan: "Ich kann Wortfamilien nutzen, um neue Wörter zu bilden und zu verstehen (viajar, el viaje, el viajero)."
+        gradeBand: "7-8"
+      # HE-KC 6.1 (unbekannte lexikalische Einheiten durch Ableitung von bekanntem Vokabular verstehen); BY Sp8 4 (aus anderen Sprachen bekannte lexikalische Strukturen erschließen); Sp8 5 (Sprachreflexion Wortschatz) | HE KC Ende Jg 10 = LJ 3-4 → 7-8/9-10; BY Jg 8 = LJ 1/3 → 5-6; NW – | 1× 5-6, 1× 7-8, 1× 9-10 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 22 von 32; Erschließungsstrategie; HE-KC erst Ende Jg 10)
+      - id: woerter-aus-anderen-sprachen
+        iCan: "Ich kann spanische Wörter mithilfe von Englisch, Französisch, Latein oder Deutsch erschließen."
+        gradeBand: "7-8"
+      # HE9 3.2 (falsos amigos); BY Sp8 5 (Sprachreflexion: Parallelen und Unterschiede zum Wortschatz anderer Sprachen) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW – | 1× 5-6, 1× 7-8 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 22 von 32; baut auf woerter-aus-anderen-sprachen auf)
+      - id: falsche-freunde
+        iCan: "Ich kann falsche Freunde erkennen (la carta ist kein Karton, el bombón ist kein Bonbon)."
+        gradeBand: "7-8"
+        requires: [woerter-aus-anderen-sprachen]
+      # HE8 3.1 (lateinamerikanisches Spanisch: Phonetik und Lexik); BY Sp8 1.2 (Lateinamerikanismen lindo, plata); Sp9 1.2 (el auto, acá, vos); NW S2 IK (hispanoamerikanische Varietäten verstehen) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 5-6, 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: lateinamerikanische-woerter
+        iCan: "Ich kann wichtige Wörter aus Lateinamerika verstehen (el carro, la plata, lindo, acá, ustedes statt vosotros)."
+        gradeBand: "7-8"
+      # HE9 1.2.1 (Bewusstsein für Sprachebenen); BY Sp9 1.2 (gängige umgangssprachliche Wendungen); Sp9 5 (Jugendsprache vs. Standardsprache) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW – | 2× 7-8 → 7-8 (Mehrheit)
+      - id: umgangssprache-und-standardsprache
+        iCan: "Ich kann umgangssprachliche Wendungen und Jugendsprache von der Standardsprache unterscheiden."
+        gradeBand: "7-8"
+      # BY Sp9 5 (Konsum- und Medienverhalten von Jugendlichen); NW S1 IK (Nutzung digitaler Medien im Alltag); S2 IK (Bedeutung digitaler Medien) | HE –; BY Jg 9 = LJ 2/3 → 7-8; NW S1 = LJ 1-2/4 → 5-6/7-8 | 1× 5-6, 2× 7-8 → 7-8 (Mehrheit)
+      - id: medien-im-alltag
+        iCan: "Ich kann über Handy, Internet und soziale Medien in meinem Alltag sprechen."
+        gradeBand: "7-8"
+      # HE8 2.2 (Jugendkultur); HE9 2.2 (conflicto generacional); BY Sp9 5 (Freundschaften, Probleme Gleichaltriger); NW S2 IK (Freundschaft/Partnerschaft) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: freundschaft-und-gefuehle
+        iCan: "Ich kann über Freundschaft, Gefühle und Probleme unter Jugendlichen sprechen."
+        gradeBand: "7-8"
+        requires: [gustar, estar]
+      # HE8 2.2 (Umwelt); NW S2 IK (Konsumverhalten unter Berücksichtigung des Umweltschutzes) | HE Jg 8 = LJ 2/4 → 7-8; BY –; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: umwelt
+        iCan: "Ich kann über Umwelt und Umweltschutz im Alltag sprechen (reciclar, ahorrar agua)."
+        gradeBand: "7-8"
+      # HE10 2.1 (turismo en España); BY Sp9 5 (Urlaub und Reisen); Sp9 1.2 (individueller Wortschatz: Urlaubserlebnisse) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 9 = LJ 2/3 → 7-8; NW – | 1× 7-8, 1× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: reisen-und-urlaub
+        iCan: "Ich kann über Reisen und Urlaub sprechen und von einer Reise erzählen."
+        gradeBand: "7-8"
+        requires: [indefinido-oder-imperfecto]
+      # HE9 2.2 (berufliche Perspektiven); BY Sp9 5 (Schulsystem und Berufswelt); NW S2 IK (Berufs- und Arbeitswelt, Praktika) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: berufe-und-zukunft
+        iCan: "Ich kann Berufe benennen und über meine Pläne für Ausbildung und Beruf sprechen."
+        gradeBand: "7-8"
+        requires: [futuro-simple]
+  - id: aussprache
+    name: { de: Aussprache und Rechtschreibung, en: Pronunciation and spelling }
+    competencies:
+      # HE7 3.1 (alle Vokale offen aussprechen); BY Sp8 1.2 (die für das Spanische spezifischen Laute); NW S1 Aussprache (spanische Phoneme) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: vokale
+        iCan: "Ich kann die fünf spanischen Vokale klar und offen aussprechen, auch in unbetonten Silben."
+        gradeBand: "5-6"
+      # HE7 3.1 (Aussprache der Diphthonge); BY Sp8 1.2 (spezifische Laute); NW S1 Aussprache (Phoneme, u. a. Diphthonge) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 7-8 (Mehrheit 5-6; verteilt: 5-6 hielte sonst 14 von 15; baut auf vokale auf)
+      - id: diphthonge
+        iCan: "Ich kann Diphthonge wie ie, ue und ai richtig aussprechen."
+        gradeBand: "7-8"
+        requires: [vokale]
+      # HE7 3.1 (Phoneme rr); BY Sp8 1.1 Schreiben (Unterscheidung <rr> und <r>); NW S1 Aussprache (Bildung der r-Laute) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: r-und-rr
+        iCan: "Ich kann das einfache r und das gerollte rr aussprechen und richtig schreiben (pero – perro)."
+        gradeBand: "5-6"
+      # HE7 3.1 (besondere Phoneme ll, ñ, ch); HE7 3.4; BY Sp8 1.1 Schreiben (Unterscheidung <ll> und <l>); NW S1 Orthografie (ñ) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: ll-n-ch
+        iCan: "Ich kann ll, ñ und ch richtig aussprechen und schreiben."
+        gradeBand: "5-6"
+      # HE7 3.1 (Aussprache der Konsonanten bei unterschiedlicher Vokalfolge); BY Sp8 1.2 (spezifische Laute); NW S1 Aussprache (positionsbedingte Realisierung von g und c) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: c-g-j-aussprache
+        iCan: "Ich kann c, g, j und z je nach folgendem Vokal richtig aussprechen (casa – cine, gato – gente, jamón)."
+        gradeBand: "5-6"
+        requires: [vokale]
+      # SCHWACH: nur HE nennt die Laute einzeln; BY und NW nennen die spanischen Laute allgemein. HE7 3.1 (stimmhaft, stimmlos; keine Aspiration); HE7 3.4 (Nichtlautung des h); BY Sp8 1.2 (spezifische Laute); NW S1 Aussprache (spanische Phoneme) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: h-b-v
+        iCan: "Ich kann Wörter mit h, b und v richtig aussprechen: Das h ist stumm, b und v klingen gleich."
+        gradeBand: "5-6"
+      # HE7 3.4 (ca, co, cu, que, qui; ga, go, gu, gue, gui; za, zo, zu, ce, ci; ja, ge, gi); BY Sp8 1.1 Schreiben (Zusammenhänge von Lautung und Schreibung); Sp8 1.2 (orthographische Besonderheiten der Verben); NW S1 Orthografie (Laut-Schriftzeichen-Entsprechungen, lauterhaltende Vokale) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 7-8 (Mehrheit 5-6; verteilt: 5-6 hielte sonst 14 von 15; Schreibung nach der Aussprache: baut auf c-g-j-aussprache auf)
+      - id: laute-und-buchstaben
+        iCan: "Ich kann Wörter mit c/qu, g/gu und z/c richtig schreiben (que, quien, guerra, cero, zapato)."
+        gradeBand: "7-8"
+        requires: [c-g-j-aussprache]
+      # HE7 3.1 (Betonung und Akzent); BY Sp8 1.2 (Aussprache unbekannter Wörter); NW S1 Aussprache (Umsetzung der Betonungsregeln) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: betonung
+        iCan: "Ich kann nach den Regeln erkennen, welche Silbe eines Wortes betont wird."
+        gradeBand: "5-6"
+        requires: [vokale]
+      # HE7 3.4 (Betonung durch Akzentsetzung); BY Sp8 1.1 Schreiben (Akzentsetzung); NW S1 Orthografie (Akzentsetzung, la tilde) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 7-8 (Mehrheit 5-6; verteilt: 5-6 hielte sonst 14 von 15; baut auf betonung auf)
+      - id: akzent-setzen
+        iCan: "Ich kann den schriftlichen Akzent (tilde) nach den Betonungsregeln richtig setzen (canción, lápiz, música)."
+        gradeBand: "7-8"
+        requires: [betonung]
+      # SCHWACH: nur NW nennt den bedeutungsunterscheidenden Akzent; HE und BY nennen die Akzentsetzung allgemein. HE7 3.4 (Betonung durch Akzentsetzung); BY Sp8 1.1 Schreiben (Akzentsetzung); NW S1 Orthografie (semantisch relevante Sonderzeichen: la tilde) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 7-8 (Mehrheit 5-6; verteilt: 5-6 hielte sonst 14 von 15; baut auf akzent-setzen auf)
+      - id: unterscheidungsakzent
+        iCan: "Ich kann gleich lautende Wörter am Akzent unterscheiden (tú – tu, él – el, sí – si, qué – que)."
+        gradeBand: "7-8"
+        requires: [akzent-setzen]
+      # HE7 3.4 (Frage- und Ausrufezeichen zu Beginn und am Ende); NW S1 Orthografie (Sonderzeichen ¿, ¡) | HE Jg 7 = LJ 1/4 → 5-6; BY –; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: frage-und-ausrufezeichen
+        iCan: "Ich kann die umgedrehten Frage- und Ausrufezeichen am Satzanfang setzen (¿Cuánto vale? ¡Qué calor!)."
+        gradeBand: "5-6"
+      # HE7 3.4 (Kleinschreibung mit Ausnahme von Eigennamen und Satzanfang); BY Sp8 1.1 Schreiben (Groß-/Kleinschreibung); NW S1 Orthografie (Groß- und Kleinschreibung) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 7-8 (Mehrheit 5-6; verteilt: 5-6 hielte sonst 14 von 15; baut auf datum (Wochentage, Monate) auf)
+      - id: kleinschreibung
+        iCan: "Ich kann Nomen klein schreiben und weiß, dass auch Wochentage, Monate und Nationalitäten klein geschrieben werden."
+        gradeBand: "7-8"
+        requires: [datum]
+      # HE7 3.1 (Intonationsmuster Aussagesatz – Fragesatz); BY Sp8 1.2 (Aussage-, Aufforderungs- und Frageintonation); NW S1 Aussprache (Aussprache und Intonation) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 7-8 (Mehrheit 5-6; verteilt: 5-6 hielte sonst 14 von 15; baut auf betonung und fragesaetze auf)
+      - id: satzmelodie
+        iCan: "Ich kann Aussagen, Fragen und Aufforderungen mit der passenden Satzmelodie sprechen."
+        gradeBand: "7-8"
+        requires: [fragesaetze, betonung]
+      # HE8 1.1.2 (phonetisch und intonatorisch annähernd korrektes Vorlesen); BY Sp8 1.2 (unbekannte Wörter richtig aussprechen, Texte vorlesen); NW S1 Aussprache (Lesetexte vortragen) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 7-8 (Gleichstand: die frühere 5-6; verteilt: 5-6 hielte sonst 14 von 15; baut auf betonung, c-g-j-aussprache und diphthonge auf)
+      - id: unbekannte-woerter-vorlesen
+        iCan: "Ich kann auch unbekannte Wörter und Texte nach den Ausspracheregeln richtig vorlesen."
+        gradeBand: "7-8"
+        requires: [betonung, c-g-j-aussprache, diphthonge]
+      # HE8 3.1 (regionale Aussprachevarianten); HE9 1.1.1 (LAm: el seseo); BY Sp10 5 (regionale Aussprachevarianten); NW S2 IK (regionalismos und hispanoamerikanische Varietäten verstehen) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 2× 9-10 → 9-10 (Gleichstand: die frühere 7-8; verteilt: 5-6 hielte sonst 14 von 15; 7-8 hielte sonst 8 von 15; Ende der Kette, baut auf c-g-j-aussprache auf)
+      - id: aussprachevarianten
+        iCan: "Ich kann regionale Aussprachen verstehen, zum Beispiel den seseo in Lateinamerika und Andalusien."
+        gradeBand: "9-10"
+        requires: [c-g-j-aussprache]
+  - id: landeskunde
+    name: { de: Länder und Kulturen, en: Countries and cultures }
+    competencies:
+      # HE7 2.3 (geographische Orientierung); BY Sp8 2 (spanischer Sprachraum; Spanisch als Weltsprache); Sp8 5; NW S1 IK (Überblick über die Länder Lateinamerikas) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: spanisch-als-weltsprache
+        iCan: "Ich kann sagen, wo auf der Welt Spanisch gesprochen wird und warum es eine Weltsprache ist."
+        gradeBand: "5-6"
+      # HE7 2.3 (geographische Orientierung in Spanien und der Península Ibérica); BY Sp8 5 (Länder, Hauptstädte); NW S1 IK (Überblick über die Regionen Spaniens) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: geografie-spaniens
+        iCan: "Ich kann auf einer Karte wichtige Regionen, Städte, Flüsse und Gebirge Spaniens zeigen."
+        gradeBand: "5-6"
+      # HE8 2.3 (ein Land Lateinamerikas); BY Sp8 5 (Länder, v. a. Mittelamerika inkl. Mexiko, Hauptstädte); NW S1 IK (Überblick über die Länder Lateinamerikas) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: laender-lateinamerikas
+        iCan: "Ich kann die spanischsprachigen Länder Lateinamerikas und ihre Hauptstädte nennen und auf einer Karte zeigen."
+        gradeBand: "5-6"
+        requires: [spanisch-als-weltsprache]
+      # HE8 2.3 (Regionen in Auswahl: Madrid); BY Sp8 1.1 Leseverstehen (Sehenswürdigkeiten Madrids); Sp8 5 (Hauptstädte, Sehenswürdigkeiten) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW – | 1× 5-6, 1× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: madrid
+        iCan: "Ich kann Madrid als Hauptstadt mit einigen Sehenswürdigkeiten vorstellen."
+        gradeBand: "5-6"
+        requires: [geografie-spaniens]
+      # HE10 2.3 (las Comunidades Autónomas); BY Sp8 5 (autonome Regionen); NW S2 IK (regionale Diversität) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 8 = LJ 1/3 → 5-6; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 5-6, 1× 7-8, 2× 9-10 → 9-10 (Mehrheit)
+      - id: autonome-gemeinschaften
+        iCan: "Ich kann erklären, dass Spanien aus autonomen Gemeinschaften besteht, und einige nennen."
+        gradeBand: "9-10"
+        requires: [geografie-spaniens]
+      # HE8 2.3 (Regionen Cataluña, Galicia, País Vasco); BY Sp8 5 (Mehrsprachigkeit in Spanien); Sp8 2 (Sprachenvielfalt Spaniens); NW S2 IK (regionale Diversität und sprachliche Besonderheiten) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 5-6, 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: sprachen-spaniens
+        iCan: "Ich kann die Sprachen Spaniens nennen (castellano, catalán, gallego, euskera) und sagen, wo man sie spricht."
+        gradeBand: "7-8"
+        requires: [geografie-spaniens]
+      # HE7 2.3 (späterer Mahlzeitenrhythmus, ¿siesta?); BY Sp8 2 (Unterschiede bei Öffnungszeiten); NW S1 IK (Alltagsleben, Tagesabläufe) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: tagesrhythmus-in-spanien
+        iCan: "Ich kann den Tagesablauf in Spanien mit Deutschland vergleichen, zum Beispiel Essenszeiten und Öffnungszeiten."
+        gradeBand: "5-6"
+      # HE7 2.2 (Schule); BY Sp8 2 (Schulleben; Schulnoten); Sp8 1.1 Sprachmittlung; NW S1 IK (Aspekte des Schulalltags) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: schulalltag-in-spanien
+        iCan: "Ich kann den Schulalltag Jugendlicher in Spanien oder Lateinamerika mit meinem vergleichen, auch das Notensystem."
+        gradeBand: "5-6"
+      # HE7 2.3 (Navidades, Nochevieja, Reyes, fiestas nacionales y regionales); BY Sp8 5 (Feste und Bräuche); NW S1 IK (gesellschaftliches Leben, Feste, Traditionen) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: feste-und-braeuche
+        iCan: "Ich kann wichtige Feste in Spanien und Lateinamerika beschreiben (Navidad, Nochevieja, los Reyes Magos, Día de Muertos)."
+        gradeBand: "5-6"
+      # HE-KC 6.1 (Sensibilität für andere Gebräuche); BY Sp8 2 (tutear bzw. tratar de usted; besitos zur Begrüßung); NW S1 IK (kulturspezifische Konventionen in Begegnungssituationen) | HE KC Ende Jg 10 = LJ 3-4 → 7-8/9-10; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8, 1× 9-10 → 5-6 (Gleichstand: die frühere)
+      - id: tu-oder-usted
+        iCan: "Ich kann entscheiden, ob ich jemanden duze oder sieze, und Menschen höflich begrüßen (dos besos, señor, señora)."
+        gradeBand: "5-6"
+      # HE8 2.3 (Regionen in Auswahl: Andalucía); BY Sp10 5 (Andalusien: Kultur, Wirtschaft, Stereotype); NW S2 IK (vertiefte Beschäftigung mit einer ausgewählten Region in Spanien) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 2× 9-10 → 9-10 (Gleichstand: die frühere; requires erzwingt 9-10)
+      - id: region-andalusien
+        iCan: "Ich kann Andalusien mit seiner Kultur, Wirtschaft und seinen Klischees vorstellen."
+        gradeBand: "9-10"
+        requires: [autonome-gemeinschaften]
+      # HE8 2.3 (Regionen in Auswahl: Galicia); BY Sp9 5 (Galicien als mehrsprachige Region, gallego); NW S2 IK (vertiefte Beschäftigung mit einer ausgewählten Region in Spanien) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: region-galicien
+        iCan: "Ich kann Galicien als Region mit eigener Sprache vorstellen."
+        gradeBand: "7-8"
+        requires: [sprachen-spaniens]
+      # HE10 2.1 (turismo en España); BY Sp9 5 (die Balearen als touristisch bedeutsame Region); NW S2 IK (wirtschaftliches Leben in Spanien) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 2× 9-10 → 9-10 (Gleichstand: die frühere; requires erzwingt 9-10)
+      - id: tourismus-in-spanien
+        iCan: "Ich kann erklären, welche Bedeutung der Tourismus für Spanien hat, zum Beispiel auf den Balearen."
+        gradeBand: "9-10"
+        requires: [autonome-gemeinschaften]
+      # HE-KC 6.1 (unterschiedliche kulturelle Perspektiven wahrnehmen); BY Sp9 2 (Spanienbild als Vorurteile und Klischees); Sp10 2 (Stereotype); NW S2 IK (Stereotype und Unterschiede hinterfragen) | HE KC Ende Jg 10 = LJ 3-4 → 7-8/9-10; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 2× 9-10 → 7-8 (Mehrheit)
+      - id: klischees-hinterfragen
+        iCan: "Ich kann Klischees über Spanien und Lateinamerika erkennen und hinterfragen (España es sol, playa y fiesta)."
+        gradeBand: "7-8"
+      # HE9 2.3 (ein Land in Mittelamerika, z. B. Guatemala oder México); BY Sp8 5 (v. a. Mittelamerika inklusive Mexiko); NW S2 IK (vertiefte Beschäftigung mit einem lateinamerikanischen Land) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 5-6, 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: mexiko
+        iCan: "Ich kann Mexiko mit seiner Geografie, Geschichte und Kultur vorstellen."
+        gradeBand: "7-8"
+        requires: [laender-lateinamerikas]
+      # HE8 2.3 (oder ein Land Lateinamerikas); BY Sp9 5 (Argentinien); Sp10 5 (Peru als Andenstaat mit ethnischer Vielfalt); NW S2 IK (vertiefte Beschäftigung mit einem lateinamerikanischen Land) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: ein-land-lateinamerikas
+        iCan: "Ich kann ein Land Südamerikas wie Argentinien oder Peru mit seiner Geografie und seinen Menschen vorstellen."
+        gradeBand: "7-8"
+        requires: [laender-lateinamerikas]
+      # HE10 2.1 (la realidad social de América Latina; la situación de los jóvenes); BY Sp10 2 (Gegebenheiten, die das Leben Jugendlicher in Spanien und Hispanoamerika prägen); NW S2 IK (Lebenswirklichkeit von Jugendlichen in Spanien und Lateinamerika) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 7-8, 3× 9-10 → 9-10 (Mehrheit)
+      - id: jugendliche-in-lateinamerika
+        iCan: "Ich kann das Leben Jugendlicher in einem Land Lateinamerikas beschreiben und mit meinem vergleichen."
+        gradeBand: "9-10"
+        requires: [ein-land-lateinamerikas]
+      # HE9 2.2 (Schulsystem und Ausbildung im Vergleich zu Deutschland); BY Sp9 5 (Schulsystem und Berufswelt); NW S2 IK (Einblicke in Schulsysteme und in die Berufs- und Arbeitswelt) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: schulsystem-und-ausbildung
+        iCan: "Ich kann das Schulsystem und die Ausbildung in Spanien mit Deutschland vergleichen."
+        gradeBand: "7-8"
+        requires: [schulalltag-in-spanien]
+      # HE9 2.3 (Aspekte der indianischen Realität in Mittelamerika); BY Sp10 5 (civilizaciones precolombinas; Machu Picchu, Tenochtitlan) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW – | 1× 7-8, 1× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: vorkolumbische-kulturen
+        iCan: "Ich kann die Kulturen der Azteken, Maya und Inka beschreiben und Orte wie Tenochtitlan und Machu Picchu zuordnen."
+        gradeBand: "7-8"
+        requires: [laender-lateinamerikas]
+      # SCHWACH: in HE nur fakultativ. HE8 fakultativ (El descubrimiento y la conquista de América); BY Sp10 5 (1492, la Conquista del Nuevo Mundo) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW – | 1× 7-8, 1× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: conquista
+        iCan: "Ich kann erklären, was 1492 geschah und was die Eroberung Amerikas für die Menschen dort bedeutete."
+        gradeBand: "7-8"
+        requires: [vorkolumbische-kulturen]
+      # SCHWACH: in HE nur fakultativ. HE8 fakultativ (Reconquista – Convivencia de tres culturas); BY Sp10 5 (la España árabe; Granada) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW – | 1× 7-8, 1× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: al-andalus
+        iCan: "Ich kann beschreiben, wie Christen, Muslime und Juden im mittelalterlichen Spanien zusammenlebten, zum Beispiel in Granada."
+        gradeBand: "7-8"
+        requires: [geografie-spaniens]
+      # HE10 2.1 (transición, democracia, monarquía constitucional; España en la UE); BY Sp10 5 (aktuelle gesellschaftspolitische Entwicklungen); NW S2 IK (aktuelles politisches Leben in Spanien) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 7-8, 3× 9-10 → 9-10 (Mehrheit)
+      - id: spanien-heute
+        iCan: "Ich kann beschreiben, wie Spanien zur Demokratie wurde und heute als parlamentarische Monarchie in der EU regiert wird."
+        gradeBand: "9-10"
+        requires: [autonome-gemeinschaften]
+      # HE10 2.1 (emigración; gitanos e inmigrantes (minorías) en España); NW S2 IK (Umgang mit Vielfalt) | HE Jg 10 = LJ 4/4 → 9-10; BY –; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 7-8, 2× 9-10 → 9-10 (Mehrheit)
+      - id: migration
+        iCan: "Ich kann über Auswanderung und Einwanderung in Spanien und Lateinamerika sprechen."
+        gradeBand: "9-10"
+  - id: texte
+    name: { de: Texte und Medien, en: Texts and media }
+    competencies:
+      # KMK TM (Text- und Medienkompetenz, S. 21-22); HE7 1.1.2 (Informationsentnahme aus Texten durch Leitfragen ¿Quién?, ¿Qué?, ¿Dónde?, ¿Cuándo?, ¿Por qué?); BY Sp8 3 (beantworten und stellen einfache verständnissichernde Fragen zu Texten); NW S1 TM (aus einfach strukturierten Texten wesentliche Informationen zu Themen, Handlungen und Personen entnehmen) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: fragen-zum-text
+        iCan: "Ich kann Fragen zu einem Text stellen und beantworten (¿Quién? ¿Qué? ¿Dónde? ¿Cuándo? ¿Por qué?)."
+        gradeBand: "5-6"
+        requires: [fragesaetze]
+      # KMK TM (Text- und Medienkompetenz, S. 21-22); HE9 1.1.2 (Gebrauchstexte: folletos, Auszüge aus Reiseführern); BY Sp8 3 (Speisekarten, Fahrpläne, Stadtpläne, Rezepte, Hinweisschilder, Plakate); Sp9 3 (Reiseführer, Werbetexte, Anzeigen); NW S1 TM (Ausgangstexte: Werbe- und Informationstexte, u. a. aus dem öffentlichen Raum) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: gebrauchstexte
+        iCan: "Ich kann Alltagstexten wie Speisekarten, Fahrplänen, Prospekten und Schildern gezielt Informationen entnehmen."
+        gradeBand: "5-6"
+        requires: [essen-und-trinken, stadt-und-verkehr]
+      # KMK TM (Text- und Medienkompetenz, S. 21-22); HE8 1.1 (Ausschnitte aus Spielfilmen, Fernsehsendungen); BY Sp8 3 (Filmsequenzen: Handlungsablauf und Figuren); Sp9 3 (Figuren, Handlungsverlauf, Schauplatz); NW S1 TM (Hörsehtexte; Informationen zu Handlungen und Personen) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: filmszenen
+        iCan: "Ich kann einer kurzen Filmszene entnehmen, wer mitspielt, wo sie spielt und was passiert."
+        gradeBand: "5-6"
+        requires: [fragen-zum-text]
+      # KMK TM (Text- und Medienkompetenz, S. 21-22); HE7 1.1 (Textarten: Lieder, Reime); HE9 1.1.1 (canciones aus der Latino-Popmusik); BY Sp8 3 (Lieder); Sp9 3 (Lieder, Gedichte); NW S1 TM (kurze literarische Texte: u. a. Lieder); S2 TM (Lieder, Gedichte) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: lieder-und-gedichte
+        iCan: "Ich kann ein spanisches Lied oder ein kurzes Gedicht verstehen und vortragen."
+        gradeBand: "5-6"
+      # KMK SCHR S. 15 (eigene Reaktionen auf einen literarisch-ästhetischen Text ausdrücken); BY Sp8 3 (äußern Eindrücke und Gefühle: Gefallen, Missfallen, Interesse); Sp9 3 (emotionale Wirkung, z. B. von Liedern); NW S2 TM (zu Textaussagen persönliche Eindrücke und Gefühle formulieren) | HE –; BY Jg 8 = LJ 1/3 → 5-6; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 5-6, 1× 7-8, 1× 9-10 → 5-6 (Gleichstand: die frühere)
+      - id: wirkung-eines-textes
+        iCan: "Ich kann sagen, wie ein Lied, ein Text oder ein Film auf mich wirkt und welche Gefühle er bei mir auslöst."
+        gradeBand: "5-6"
+        requires: [gustar, lieder-und-gedichte]
+      # SCHWACH: BY und NW ordnen die Texte so, verlangen die Unterscheidung aber nicht ausdrücklich. KMK TM (Text- und Medienkompetenz, S. 21-22); BY Sp9 3 (fiktionale und nicht-fiktionale Texte); NW S1 TM (Ausgangstexte: Sach- und Gebrauchstexte; kurze literarische Texte) | HE –; BY Jg 9 = LJ 2/3 → 7-8; NW S1 = LJ 1-2/4 → 5-6/7-8 | 1× 5-6, 2× 7-8 → 7-8 (Mehrheit)
+      - id: sachtext-oder-erzaehlung
+        iCan: "Ich kann Sachtexte und erzählende Texte unterscheiden und typische Merkmale nennen."
+        gradeBand: "7-8"
+      # KMK TM (Text- und Medienkompetenz, S. 21-22); BY Sp9 3 (kurze Zeitungs- und Zeitschriftentexte); Sp10 3 (Berichte, Kommentare); NW S1 TM (Ausgangstexte: kurze und einfach strukturierte Zeitungsartikel); S2 TM (Zeitungsartikel und Tagesnachrichten) | HE –; BY Jg 9 = LJ 2/3 → 7-8; NW S1 = LJ 1-2/4 → 5-6/7-8 | 1× 5-6, 2× 7-8 → 7-8 (Mehrheit)
+      - id: zeitungsartikel
+        iCan: "Ich kann einem kurzen Zeitungsartikel entnehmen, was wann, wo und warum passiert ist."
+        gradeBand: "7-8"
+        requires: [fragen-zum-text, indefinido-unregelmaessig]
+      # KMK TM (Text- und Medienkompetenz, S. 21-22); BY Sp9 3 (Interviews); Sp10 3 (Interviews); NW S2 TM (Ausgangstexte: Interviews) | HE –; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: interview
+        iCan: "Ich kann einem Interview entnehmen, was die befragte Person über sich erzählt und was sie meint."
+        gradeBand: "7-8"
+        requires: [fragen-zum-text]
+      # KMK TM (Text- und Medienkompetenz, S. 21-22); BY Sp9 3 (authentische Gebrauchstexte: Werbetexte, Anzeigen); NW S2 TM (Werbe- und Informationstexte; sprachlich-stilistische Gestaltungsmittel und ihre Wirkungsabsichten) | HE –; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: werbung
+        iCan: "Ich kann erkennen, wie eine Anzeige oder ein Werbetext mit Bild und Sprache überzeugen will."
+        gradeBand: "7-8"
+        requires: [gebrauchstexte]
+      # KMK TM (Text- und Medienkompetenz, S. 21-22); HE9 1.1.2 (erste lehrwerkbegleitende Lektüren); HE10 2.4 (Jugendroman in Auszügen, cuentos); BY Sp9 3 (erste authentische fiktionale Texte: Geschichten); Sp10 3 (geeignete literarische Texte); NW S2 TM (literarische Texte: narrativer Text) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: lektuere
+        iCan: "Ich kann eine vereinfachte Lektüre oder einen Auszug aus einem Jugendroman lesen und die Handlung verstehen."
+        gradeBand: "7-8"
+        requires: [nacherzaehlen]
+      # KMK TM (Text- und Medienkompetenz, S. 21-22); HE8 1.1.2 (Wahrnehmen und Erlernen von Gliederungsprinzipien); HE9 1.2.1 (Textgliederung); HE9 4 (Kapitelüberschriften); BY Sp10 3 (erschließen Inhalt, Aussage und Struktur) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW – | 1× 7-8, 1× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: textgliederung
+        iCan: "Ich kann einen Text in Abschnitte gliedern und jedem Abschnitt eine Überschrift geben."
+        gradeBand: "7-8"
+        requires: [zusammenfassen]
+      # KMK TM S. 22 (MSA: allgemeine Trends in einfachen Diagrammen wiedergeben); HE10 4 (Informationsentnahme und Auswertung: Karten, Tabellen); BY Sp10 3 (analysieren und interpretieren einfache bildliche und grafische Darstellungen: Diagramme, Statistiken, Fotos) | HE Jg 10 = LJ 4/4 → 9-10; BY Jg 10 = LJ 3/3 → 9-10; NW – | 2× 9-10 → 9-10 (Mehrheit)
+      - id: diagramme
+        iCan: "Ich kann ein einfaches Diagramm oder eine Statistik beschreiben und sagen, was sie zeigt."
+        gradeBand: "9-10"
+        requires: [grosse-zahlen, komparativ]
+      # KMK TM S. 22 (Gestaltungsmittel erkennen und deuten); BY Sp10 3 (erkennen erste auffällige sprachliche und inhaltliche Gestaltungsmittel); NW S2 TM (auffällige sprachlich-stilistische Gestaltungsmittel und ihre Wirkungsabsichten herausarbeiten) | HE –; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 7-8, 2× 9-10 → 9-10 (Mehrheit)
+      - id: gestaltungsmittel
+        iCan: "Ich kann auffällige sprachliche Mittel in einem Text erkennen, zum Beispiel Wiederholungen, Vergleiche oder Fragen an die Leser, und sagen, was sie bewirken."
+        gradeBand: "9-10"
+        requires: [wirkung-eines-textes]
+      # SCHWACH: BY nennt nur Deutungsversuche, keine Charakterisierung. KMK TM S. 22 (Aussagen am Text belegen); BY Sp10 3 (erste eigenständige Deutungsversuche zu erzählenden Texten); NW S2 TM (Perspektiven und Handlungsmuster von Figuren; Zieltexte: Charakterisierungen) | HE –; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 7-8, 2× 9-10 → 9-10 (Mehrheit)
+      - id: figuren-charakterisieren
+        iCan: "Ich kann eine Figur aus einem Text beschreiben und ihr Verhalten mit Stellen aus dem Text erklären."
+        gradeBand: "9-10"
+        requires: [personen-beschreiben, lektuere]
+      # KMK SCHR S. 15 (ESA: kurze, einfache Notizen und Mitteilungen); BY Sp8 3 (persönliche oder sachliche Mitteilungen; kurze Mitteilungen, z. B. Sprachnachrichten); NW S1 TM (Zieltexte: (persönliche) Nachrichten) | HE –; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: kurze-nachricht
+        iCan: "Ich kann eine kurze Nachricht schreiben, zum Beispiel eine Verabredung oder eine Absage im Chat."
+        gradeBand: "5-6"
+        requires: [uhrzeit]
+      # KMK SCHR S. 15 (persönliche Korrespondenzen); HE7 1.2.2 (Verfassen von Briefen); BY Sp8 3 (persönliche Mitteilungen); Sp9 3 (Standardbriefe oder E-Mails); NW S1 TM (Zieltexte: (persönliche) Nachrichten) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: brief-und-e-mail
+        iCan: "Ich kann einen persönlichen Brief oder eine E-Mail mit passender Anrede und passendem Gruß schreiben (Querida Ana: … Un abrazo)."
+        gradeBand: "5-6"
+        requires: [sich-vorstellen]
+      # KMK SCHR S. 16 (schriftliche Produktion: Texte zu vertrauten Themen verfassen); HE7 1.2.2 (Verfassen von Dialogen); HE7 1.2.1 (Spielszenen); BY Sp8 3 (Dialoge); Sp9 3 (szenische Dialoge); NW S1 TM (Zieltexte: Dialoge) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: dialog-schreiben
+        iCan: "Ich kann einen kurzen Dialog oder eine Spielszene schreiben."
+        gradeBand: "5-6"
+        requires: [fragesaetze]
+      # KMK SCHR S. 16 (schriftliche Produktion: Texte zu vertrauten Themen verfassen); HE7 1.2.2 (Tagebucheinträge); BY Sp9 3 (Blog- oder Tagebucheinträge); NW S1 TM (Zieltexte: Tagebucheinträge) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 9 = LJ 2/3 → 7-8; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: tagebucheintrag
+        iCan: "Ich kann einen Tagebucheintrag über meinen Tag oder ein Erlebnis schreiben."
+        gradeBand: "5-6"
+        requires: [tagesablauf]
+      # KMK SCHR S. 16 (schriftliche Produktion: Texte zu vertrauten Themen verfassen); HE7 1.2.2 (Erstellen von Texten zu Bildvorlagen); HE8 1.2 (Versprachlichen von Bildvorgaben: Bildergeschichten); BY Sp8 3 (Bildgeschichten; gestalten einfache Texte nach Vorgaben bzw. Impulsen) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW – | 2× 5-6 → 5-6 (Mehrheit)
+      - id: bildergeschichte
+        iCan: "Ich kann zu einer Bildergeschichte erzählen oder aufschreiben, was passiert."
+        gradeBand: "5-6"
+        requires: [bildbeschreibung]
+      # KMK SCHR S. 16 (ESA: einfache Geschichten erzählen); HE7 1.2.1 (Erzählen von Geschichten); BY Sp8 3 (verfassen kurze erzählende Texte: Geschichten); Sp9 3 (berichten über Erlebtes); NW S1 TM (kurze, produktionsorientierte oder kreative Texte zum persönlichen Lebensumfeld erstellen) | HE Jg 7 = LJ 1/4 → 5-6; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 3× 5-6, 1× 7-8 → 5-6 (Mehrheit)
+      - id: geschichte-schreiben
+        iCan: "Ich kann eine kurze Geschichte oder ein Erlebnis mit Anfang, Mitte und Ende aufschreiben."
+        gradeBand: "5-6"
+        requires: [konjunktionen]
+      # KMK TM (Text- und Medienkompetenz, S. 21-22); HE8 1.2 (gelenktes Nacherzählen); BY Sp8 3 (erzählen einfache Handlungsverläufe nach); NW S1 TM (wesentliche Informationen mündlich und schriftlich wiedergeben) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: nacherzaehlen
+        iCan: "Ich kann den Inhalt einer Geschichte in eigenen Worten nacherzählen."
+        gradeBand: "5-6"
+        requires: [fragen-zum-text]
+      # KMK TM (Text- und Medienkompetenz, S. 21-22); HE8 1.2 (Zusammenfassen einfach strukturierter Sachverhalte); BY Sp8 3 (fassen die Inhalte auf einfache Weise zusammen); NW S1 TM (Zieltexte: kurze Textzusammenfassungen) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: zusammenfassen
+        iCan: "Ich kann das Wichtigste eines kurzen Textes in wenigen Sätzen zusammenfassen."
+        gradeBand: "5-6"
+        requires: [fragen-zum-text]
+      # KMK SPR S. 14 (eingeübte kurze Präsentationen zu vertrauten Themen vortragen); HE9 1.2 (Kurzreferate); BY Sp8 1.1 Sprechen (erste Kurzreferate, z. B. charla de un minuto, mit Stichwortzettel); Sp9 1.1 (kurze Präsentationen); NW S1 TM (Zieltexte: kurze Vorträge, Präsentationen und Berichte) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 2× 7-8 → 5-6 (Gleichstand: die frühere)
+      - id: vortrag
+        iCan: "Ich kann einen kurzen Vortrag zu einem Thema mit einem Stichwortzettel gliedern und halten."
+        gradeBand: "5-6"
+      # KMK SCHR S. 16 (MSA: kurze Berichte); BY Sp8 3 (verfassen kurze berichtende Texte); NW S1 TM (Zieltexte: kurze Vorträge, Präsentationen und Berichte) | HE –; BY Jg 8 = LJ 1/3 → 5-6; NW S1 = LJ 1-2/4 → 5-6/7-8 | 2× 5-6, 1× 7-8 → 7-8 (Mehrheit; requires erzwingt 7-8)
+      - id: bericht-schreiben
+        iCan: "Ich kann einen kurzen Bericht über ein Ereignis schreiben: wer, was, wann und wo."
+        gradeBand: "7-8"
+        requires: [indefinido-regelmaessig]
+      # KMK TM (Text- und Medienkompetenz, S. 21-22); HE9 1.2.1 (Hinführung zur Inhaltsangabe); HE10 1.2 (Anleitung zur Textzusammenfassung); BY Sp9 3 (fassen wesentliche Aspekte zusammen); Sp10 3; NW S2 TM (Zieltexte: Textzusammenfassungen); S2 Schreiben (wichtige Informationen aus Texten wiedergeben, bündeln) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 3× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: inhaltsangabe
+        iCan: "Ich kann eine Inhaltsangabe (resumen) schreiben: Thema, Hauptpersonen und wichtigste Handlung im Präsens."
+        gradeBand: "7-8"
+        requires: [zusammenfassen, wortschatz-textarbeit]
+      # KMK SCHR S. 16 (schriftliche Produktion: Texte zu vertrauten Themen verfassen); HE8 1.2.2 (Fortführen und Ergänzen von Texten); HE9 1.2 (eine Geschichte zu Ende erzählen); BY Sp10 3 (Fortsetzen und Umschreiben von Geschichten); NW S1 TM (kurze kreative Texte erstellen, umformen und ergänzen) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW S1 = LJ 1-2/4 → 5-6/7-8 | 1× 5-6, 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: geschichte-fortsetzen
+        iCan: "Ich kann eine Geschichte fortsetzen oder ein anderes Ende dafür schreiben."
+        gradeBand: "7-8"
+        requires: [geschichte-schreiben]
+      # KMK SCHR S. 16 (schriftliche Produktion: Texte zu vertrauten Themen verfassen); HE8 1.2 (Textwiedergabe mit Perspektivenwechsel); HE9 1.2 (Wechsel der Erzählperspektive); BY Sp10 3 (Änderung der Textart oder Perspektive); NW S2 TM (einen Perspektivwechsel vollziehen) | HE Jg 8 = LJ 2/4 → 7-8; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 2× 9-10 → 7-8 (Gleichstand: die frühere)
+      - id: perspektivwechsel
+        iCan: "Ich kann eine Geschichte aus der Sicht einer anderen Figur erzählen."
+        gradeBand: "7-8"
+        requires: [nacherzaehlen]
+      # KMK TM S. 22 (Texte in ein anderes Genre überführen); BY Sp9 3 (gestalten Texte unterschiedlicher Art um); Sp10 3 (Änderung der Textart); NW S1 TM (kurze kreative Texte umformen) | HE –; BY Jg 9 = LJ 2/3 → 7-8; NW S1 = LJ 1-2/4 → 5-6/7-8 | 1× 5-6, 2× 7-8 → 7-8 (Mehrheit)
+      - id: textsorte-wechseln
+        iCan: "Ich kann einen Text in eine andere Textsorte umschreiben, zum Beispiel eine Geschichte in einen Dialog."
+        gradeBand: "7-8"
+        requires: [dialog-schreiben, geschichte-schreiben]
+      # KMK SCHR S. 16 (ESA: eigene Eindrücke und Meinungen äußern); HE9 1.2.1 (Formulierung einer Stellungnahme); BY Sp9 3 (persönliche Mitteilungen und Stellungnahmen); Sp10 3 (argumentierende Texte); NW S1 TM (zu Textaussagen persönliche Stellungnahmen formulieren; Zieltexte: kurze Stellungnahmen) | HE Jg 9 = LJ 3/4 → 7-8; BY Jg 9 = LJ 2/3 → 7-8; NW S1 = LJ 1-2/4 → 5-6/7-8 | 1× 5-6, 3× 7-8 → 7-8 (Mehrheit)
+      - id: stellungnahme
+        iCan: "Ich kann in einer kurzen Stellungnahme meine Meinung zu einem Text oder Thema schreiben und mit Gründen stützen."
+        gradeBand: "7-8"
+        requires: [meinung-aeussern]
+      # KMK SCHR S. 15 (MSA: Beitrag zu einer Online-Diskussion); BY Sp9 3 (Blogs; Blog- oder Tagebucheinträge); NW S2 TM (Zieltexte: Artikel für Zeitung oder Internet) | HE –; BY Jg 9 = LJ 2/3 → 7-8; NW S2 = LJ 3-4/4 → 7-8/9-10 | 2× 7-8, 1× 9-10 → 7-8 (Mehrheit)
+      - id: blog-und-forum
+        iCan: "Ich kann einen Blogbeitrag oder einen Kommentar in einem Online-Forum schreiben."
+        gradeBand: "7-8"
+        requires: [meinung-aeussern]
+      # KMK SCHR S. 15 (MSA: formelle Schreiben); BY Sp10 3 (sachliche Schreiben, z. B. Anfragen und Reservierungen per E-Mail); NW S2 Schreiben (formalisierte Texte verfassen) | HE –; BY Jg 10 = LJ 3/3 → 9-10; NW S2 = LJ 3-4/4 → 7-8/9-10 | 1× 7-8, 2× 9-10 → 9-10 (Mehrheit)
+      - id: formelle-e-mail
+        iCan: "Ich kann eine förmliche E-Mail schreiben, zum Beispiel eine Anfrage oder eine Reservierung (Estimados señores: …)."
+        gradeBand: "9-10"
+        requires: [brief-und-e-mail, tu-oder-usted, condicional-simple]
