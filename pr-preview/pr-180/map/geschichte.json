@@ -1,0 +1,1913 @@
+{
+  "id": "geschichte",
+  "name": {
+    "de": "Geschichte",
+    "en": "History"
+  },
+  "source": {
+    "title": "Gemeinsame Inhaltsbereiche der Länder (keine KMK-Bildungsstandards Geschichte Sek I); Grundlage Kerncurriculum Hessen, Sekundarstufe I - Gymnasium, Geschichte (Hessisches Kultusministerium), mit LehrplanPLUS Bayern und Kernlehrplan NRW",
+    "url": "https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-07/kerncurriculum_geschichte_gymnasium.pdf"
+  },
+  "strands": [
+    {
+      "id": "grundlagen",
+      "name": {
+        "de": "Geschichte und Zeit: Grundbegriffe",
+        "en": "History and time: basic concepts"
+      },
+      "competencies": [
+        {
+          "id": "was-ist-geschichte",
+          "iCan": "Ich kann Vergangenheit, Gegenwart und Zukunft unterscheiden und erklären, womit sich das Fach Geschichte beschäftigt.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "spuren-der-vergangenheit",
+          "iCan": "Ich kann in meiner Umgebung Spuren der Vergangenheit finden, zum Beispiel alte Gebäude, Straßennamen oder Denkmäler.",
+          "gradeBand": "5-6",
+          "requires": [
+            "was-ist-geschichte"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zeitrechnung",
+          "iCan": "Ich kann Jahreszahlen vor und nach Christi Geburt lesen und ausrechnen, wie lange ein Ereignis her ist.",
+          "gradeBand": "5-6",
+          "requires": [
+            "was-ist-geschichte"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "jahrhunderte",
+          "iCan": "Ich kann eine Jahreszahl dem richtigen Jahrhundert und Jahrtausend zuordnen, zum Beispiel 1517 dem 16. Jahrhundert.",
+          "gradeBand": "5-6",
+          "requires": [
+            "zeitrechnung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zeitleiste",
+          "iCan": "Ich kann Ereignisse auf einer Zeitleiste in die richtige Reihenfolge bringen und Abstände zwischen ihnen erkennen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "zeitrechnung",
+            "jahrhunderte"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "epochen",
+          "iCan": "Ich kann die Epochen Urgeschichte, Antike, Mittelalter und Neuzeit in die richtige Reihenfolge bringen und ungefähr datieren.",
+          "gradeBand": "5-6",
+          "requires": [
+            "zeitleiste"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "quellenarten",
+          "iCan": "Ich kann schriftliche, bildliche, gegenständliche und mündliche Quellen unterscheiden und Beispiele nennen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "was-ist-geschichte"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "quelle-und-darstellung",
+          "iCan": "Ich kann eine Quelle von einer Darstellung unterscheiden, zum Beispiel einen Brief aus der Zeit von einem Text im Schulbuch.",
+          "gradeBand": "5-6",
+          "requires": [
+            "quellenarten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ueberrest-und-tradition",
+          "iCan": "Ich kann unterscheiden, ob eine Quelle zufällig erhalten ist (Überrest) oder mit Absicht für die Nachwelt geschaffen wurde (Überlieferung).",
+          "gradeBand": "5-6",
+          "requires": [
+            "quellenarten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "archaeologie",
+          "iCan": "Ich kann erklären, wie Archäologinnen und Archäologen Funde ausgraben, datieren und deuten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "quellenarten"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "urgeschichte",
+      "name": {
+        "de": "Urgeschichte und frühe Hochkulturen",
+        "en": "Prehistory and early civilisations"
+      },
+      "competencies": [
+        {
+          "id": "menschwerdung",
+          "iCan": "Ich kann beschreiben, wie sich die ersten Menschen in Afrika entwickelten und über die Erde ausbreiteten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "epochen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "altsteinzeit",
+          "iCan": "Ich kann beschreiben, wie die Menschen in der Altsteinzeit als Jäger und Sammler lebten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "menschwerdung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "feuer-und-werkzeuge",
+          "iCan": "Ich kann erklären, wie Feuer, Werkzeuge und Waffen das Leben der Menschen in der Steinzeit verändert haben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "altsteinzeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "jungsteinzeit",
+          "iCan": "Ich kann beschreiben, wie die Menschen in der Jungsteinzeit als Bauern und Viehzüchter in Dörfern lebten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "altsteinzeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "neolithische-revolution",
+          "iCan": "Ich kann erklären, warum der Übergang zur Sesshaftigkeit „Neolithische Revolution“ heißt und wie er Arbeit, Besitz und Umwelt veränderte.",
+          "gradeBand": "5-6",
+          "requires": [
+            "jungsteinzeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nil-und-hochkultur",
+          "iCan": "Ich kann erklären, warum am Nil eine Hochkultur entstand und wie die Nilschwemme das Leben der Menschen bestimmte.",
+          "gradeBand": "5-6",
+          "requires": [
+            "neolithische-revolution"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "merkmale-hochkultur",
+          "iCan": "Ich kann die Merkmale einer Hochkultur nennen, zum Beispiel Staat, Schrift, Arbeitsteilung und Religion, und sie am alten Ägypten zeigen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "nil-und-hochkultur"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "pharao-und-gesellschaft",
+          "iCan": "Ich kann die Herrschaft des Pharaos und den Aufbau der ägyptischen Gesellschaft mit Beamten, Priestern, Bauern und Sklaven beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "merkmale-hochkultur"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "monarchie",
+          "iCan": "Ich kann am Beispiel des Pharaos erklären, was eine Monarchie ist und wie ein Herrscher seine Macht begründen kann.",
+          "gradeBand": "5-6",
+          "requires": [
+            "pharao-und-gesellschaft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "religion-aegypten",
+          "iCan": "Ich kann die Götter- und Jenseitsvorstellungen der Ägypter beschreiben und erklären, warum sie Pyramiden und Grabmäler bauten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "merkmale-hochkultur"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "hieroglyphen",
+          "iCan": "Ich kann erklären, wie die Ägypter mit Hieroglyphen schrieben und warum die Schrift für eine Hochkultur wichtig war.",
+          "gradeBand": "5-6",
+          "requires": [
+            "merkmale-hochkultur"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "leistungen-aegypten",
+          "iCan": "Ich kann Leistungen der Ägypter nennen, die bis heute wirken, zum Beispiel den Kalender, die Landvermessung und die Baukunst.",
+          "gradeBand": "5-6",
+          "requires": [
+            "merkmale-hochkultur"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "antike",
+      "name": {
+        "de": "Antike: Griechenland und Rom",
+        "en": "Antiquity: Greece and Rome"
+      },
+      "competencies": [
+        {
+          "id": "polis",
+          "iCan": "Ich kann erklären, wie die Landschaft Griechenlands dazu beitrug, dass viele selbstständige Stadtstaaten (Poleis) entstanden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "epochen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "griechische-kolonisation",
+          "iCan": "Ich kann erklären, warum Griechen Kolonien rund um das Mittelmeer gründeten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "polis"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "goetter-und-olympia",
+          "iCan": "Ich kann beschreiben, woran die Griechen glaubten und welche Rolle Götter, Mythen und die Olympischen Spiele für sie spielten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "polis"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "attische-demokratie",
+          "iCan": "Ich kann beschreiben, wie die Demokratie in Athen funktionierte, zum Beispiel mit Volksversammlung, Rat und Scherbengericht.",
+          "gradeBand": "5-6",
+          "requires": [
+            "polis"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "buerger-und-nichtbuerger",
+          "iCan": "Ich kann erklären, wer in Athen mitbestimmen durfte und wer nicht, zum Beispiel Frauen, Fremde und Sklaven.",
+          "gradeBand": "5-6",
+          "requires": [
+            "attische-demokratie"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "demokratie-damals-heute",
+          "iCan": "Ich kann die Demokratie im antiken Athen mit unserer Demokratie heute vergleichen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "buerger-und-nichtbuerger"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "perserkriege",
+          "iCan": "Ich kann erklären, wie die Perserkriege Athen zur führenden Seemacht machten und die Demokratie stärkten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "attische-demokratie"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "alexander-und-hellenismus",
+          "iCan": "Ich kann beschreiben, wie Alexander der Große ein Weltreich eroberte und wie sich dadurch die griechische Kultur ausbreitete (Hellenismus).",
+          "gradeBand": "5-6",
+          "requires": [
+            "polis"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gruendungssage-roms",
+          "iCan": "Ich kann die Sage von der Gründung Roms erzählen und erklären, wie sich ein Mythos von einem Geschichtsbericht unterscheidet.",
+          "gradeBand": "5-6",
+          "requires": [
+            "quelle-und-darstellung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "roemische-republik",
+          "iCan": "Ich kann den Aufbau der römischen Republik mit Senat, Konsuln und Volksversammlung beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "gruendungssage-roms"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "patrizier-und-plebejer",
+          "iCan": "Ich kann den Streit zwischen Patriziern und Plebejern erklären und beschreiben, wie die Plebejer mehr Rechte erkämpften.",
+          "gradeBand": "5-6",
+          "requires": [
+            "roemische-republik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "roemische-familie",
+          "iCan": "Ich kann beschreiben, wie eine römische Familie (familia) aufgebaut war und welche Rolle Vater, Mutter, Kinder und Sklaven hatten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "roemische-republik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "expansion-roms",
+          "iCan": "Ich kann beschreiben, wie Rom vom Stadtstaat zum Weltreich wurde, und die Etappen auf einer Karte zeigen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "roemische-republik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "krise-der-republik",
+          "iCan": "Ich kann erklären, wie die Eroberungen zu Konflikten in Rom führten und die Republik in eine Krise stürzten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "expansion-roms",
+            "patrizier-und-plebejer"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "caesar-und-augustus",
+          "iCan": "Ich kann erklären, wie Caesar und Augustus die Alleinherrschaft errichteten und wie aus der Republik das Kaisertum (Prinzipat) wurde.",
+          "gradeBand": "5-6",
+          "requires": [
+            "krise-der-republik",
+            "monarchie"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "leben-in-rom",
+          "iCan": "Ich kann das Alltagsleben in der Großstadt Rom beschreiben, zum Beispiel Wohnen, Arbeiten, Thermen und „Brot und Spiele“.",
+          "gradeBand": "5-6",
+          "requires": [
+            "roemische-republik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "romanisierung",
+          "iCan": "Ich kann erklären, wie die Römer das Leben in den Provinzen prägten (Romanisierung), auch im Gebiet des heutigen Deutschlands.",
+          "gradeBand": "5-6",
+          "requires": [
+            "expansion-roms"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "limes",
+          "iCan": "Ich kann erklären, was der Limes war und wie Römer und Germanen an dieser Grenze zusammenlebten und Handel trieben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "romanisierung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "christen-im-roemischen-reich",
+          "iCan": "Ich kann beschreiben, wie die Christen im Römischen Reich erst verfolgt wurden und das Christentum dann Staatsreligion wurde.",
+          "gradeBand": "5-6",
+          "requires": [
+            "caesar-und-augustus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "erbe-der-antike",
+          "iCan": "Ich kann Spuren der griechischen und römischen Antike in unserer Kultur zeigen, zum Beispiel in Sprache, Bauwerken, Recht und Politik.",
+          "gradeBand": "5-6",
+          "requires": [
+            "romanisierung",
+            "attische-demokratie",
+            "spuren-der-vergangenheit"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "mittelalter",
+      "name": {
+        "de": "Mittelalter",
+        "en": "Middle Ages"
+      },
+      "competencies": [
+        {
+          "id": "voelkerwanderung",
+          "iCan": "Ich kann erklären, wie die Völkerwanderung zum Ende des Weströmischen Reiches 476 beitrug und warum sich der Übergang zum Mittelalter nicht an einem Jahr festmachen lässt.",
+          "gradeBand": "5-6",
+          "requires": [
+            "limes",
+            "epochen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "islam-ausbreitung",
+          "iCan": "Ich kann beschreiben, wie Mohammed den Islam begründete und wie sich der Islam schnell ausbreitete.",
+          "gradeBand": "5-6",
+          "requires": [
+            "epochen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "drei-religionen",
+          "iCan": "Ich kann gemeinsame Wurzeln und Unterschiede von Judentum, Christentum und Islam beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "christen-im-roemischen-reich",
+            "islam-ausbreitung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dreiteilung-mittelmeerwelt",
+          "iCan": "Ich kann erklären, wie die Mittelmeerwelt nach der Antike in das lateinisch-christliche Europa, Byzanz und die islamische Welt zerfiel.",
+          "gradeBand": "5-6",
+          "requires": [
+            "voelkerwanderung",
+            "islam-ausbreitung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "frankenreich",
+          "iCan": "Ich kann beschreiben, wie die Franken ein Großreich bildeten und dabei römische, christliche und germanische Traditionen verbanden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "voelkerwanderung",
+            "christen-im-roemischen-reich"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "karl-der-grosse",
+          "iCan": "Ich kann erklären, wie Karl der Große sein Reich regierte und verwaltete, zum Beispiel mit Pfalzen, Grafen und Königsboten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "frankenreich"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kaiserkroenung-800",
+          "iCan": "Ich kann erklären, warum Karl der Große im Jahr 800 vom Papst zum Kaiser gekrönt wurde und was das für Kaiser und Papst bedeutete.",
+          "gradeBand": "5-6",
+          "requires": [
+            "karl-der-grosse"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "koenigserhebung",
+          "iCan": "Ich kann an einer Königserhebung erklären, wie Rituale und Symbole wie Salbung und Krone die Herrschaft eines Königs rechtfertigten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kaiserkroenung-800"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "heiliges-roemisches-reich",
+          "iCan": "Ich kann erklären, wie unter Otto dem Großen das Heilige Römische Reich entstand und warum es mit dem Kaisertum verbunden war.",
+          "gradeBand": "5-6",
+          "requires": [
+            "kaiserkroenung-800"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "staendegesellschaft",
+          "iCan": "Ich kann die mittelalterliche Ständegesellschaft mit Geistlichen, Adligen und Bauern beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "karl-der-grosse"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lehnswesen",
+          "iCan": "Ich kann das Lehnswesen erklären: wer wem Land gab und wer dafür Treue und Dienste schuldete.",
+          "gradeBand": "7-8",
+          "requires": [
+            "staendegesellschaft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "grundherrschaft",
+          "iCan": "Ich kann erklären, wie Bauern in der Grundherrschaft lebten und arbeiteten, zum Beispiel mit Abgaben, Frondiensten und Dreifelderwirtschaft.",
+          "gradeBand": "7-8",
+          "requires": [
+            "staendegesellschaft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ritter-und-burg",
+          "iCan": "Ich kann das Leben von Rittern auf einer Burg beschreiben und erklären, was höfische Kultur war.",
+          "gradeBand": "7-8",
+          "requires": [
+            "lehnswesen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kloster",
+          "iCan": "Ich kann das Leben in einem Kloster beschreiben und erklären, warum Klöster für Glauben, Bildung und Wirtschaft wichtig waren.",
+          "gradeBand": "7-8",
+          "requires": [
+            "staendegesellschaft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "glaube-im-mittelalter",
+          "iCan": "Ich kann erklären, welche Rolle der christliche Glaube und die Kirche im Leben der Menschen im Mittelalter spielten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "staendegesellschaft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "investiturstreit",
+          "iCan": "Ich kann erklären, worum Kaiser und Papst im Investiturstreit stritten und warum Heinrich IV. nach Canossa ging.",
+          "gradeBand": "7-8",
+          "requires": [
+            "heiliges-roemisches-reich",
+            "glaube-im-mittelalter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fuerstenmacht",
+          "iCan": "Ich kann erklären, warum im Heiligen Römischen Reich die Fürsten immer mächtiger wurden und die Macht des Königs abnahm.",
+          "gradeBand": "7-8",
+          "requires": [
+            "investiturstreit",
+            "lehnswesen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kurfuersten",
+          "iCan": "Ich kann erklären, wer die Kurfürsten waren und wie die Goldene Bulle von 1356 die Wahl des Königs regelte.",
+          "gradeBand": "7-8",
+          "requires": [
+            "fuerstenmacht"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stadtgruendung",
+          "iCan": "Ich kann erklären, warum im Mittelalter Städte gegründet wurden und was eine Stadt von einem Dorf unterschied, zum Beispiel Markt, Mauer und Stadtrecht.",
+          "gradeBand": "7-8",
+          "requires": [
+            "grundherrschaft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stadtluft-macht-frei",
+          "iCan": "Ich kann erklären, warum das Leben in der Stadt für viele Menschen anziehend war („Stadtluft macht frei“).",
+          "gradeBand": "7-8",
+          "requires": [
+            "stadtgruendung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stadtgesellschaft",
+          "iCan": "Ich kann die Gesellschaft einer mittelalterlichen Stadt beschreiben: Patrizier, Handwerker in Zünften, Unterschichten und Minderheiten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "stadtluft-macht-frei"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "selbstverwaltung-der-stadt",
+          "iCan": "Ich kann erklären, wie sich die Bürger einer Stadt mit einem Rat selbst verwalteten und was eine Reichsstadt war.",
+          "gradeBand": "7-8",
+          "requires": [
+            "stadtgesellschaft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "juden-im-mittelalter",
+          "iCan": "Ich kann beschreiben, wie Juden in mittelalterlichen Städten lebten und wie sie ausgegrenzt und verfolgt wurden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "drei-religionen",
+            "stadtgesellschaft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kreuzzuege",
+          "iCan": "Ich kann Ursachen, Verlauf und Folgen der Kreuzzüge erklären.",
+          "gradeBand": "7-8",
+          "requires": [
+            "drei-religionen",
+            "glaube-im-mittelalter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kulturkontakt",
+          "iCan": "Ich kann an Beispielen zeigen, dass Christen und Muslime im Mittelalter nicht nur gegeneinander kämpften, sondern auch voneinander lernten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kreuzzuege"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "hanse-und-fernhandel",
+          "iCan": "Ich kann erklären, wie Kaufleute im Mittelalter Fernhandel trieben und sich Städte in der Hanse verbündeten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "stadtgesellschaft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "handel-mit-asien-und-afrika",
+          "iCan": "Ich kann beschreiben, wie Europa im Mittelalter über Handelswege zu Land und zur See mit Asien und Afrika verbunden war.",
+          "gradeBand": "7-8",
+          "requires": [
+            "hanse-und-fernhandel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "pest",
+          "iCan": "Ich kann erklären, wie die Pest im 14. Jahrhundert die Menschen in Europa traf und warum sie Sündenböcke suchten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "juden-im-mittelalter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "konstantinopel-1453",
+          "iCan": "Ich kann erklären, warum die Eroberung Konstantinopels durch die Osmanen 1453 als Wendepunkt gilt.",
+          "gradeBand": "7-8",
+          "requires": [
+            "dreiteilung-mittelmeerwelt",
+            "kreuzzuege"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "fruehe-neuzeit",
+      "name": {
+        "de": "Frühe Neuzeit",
+        "en": "Early modern period"
+      },
+      "competencies": [
+        {
+          "id": "renaissance-und-humanismus",
+          "iCan": "Ich kann erklären, was Renaissance und Humanismus waren und wie sich dabei das Bild vom Menschen veränderte.",
+          "gradeBand": "7-8",
+          "requires": [
+            "erbe-der-antike",
+            "glaube-im-mittelalter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kunst-und-wissenschaft-der-renaissance",
+          "iCan": "Ich kann an Beispielen wie Leonardo da Vinci oder Kopernikus zeigen, wie Kunst und Wissenschaft in der Renaissance neue Wege gingen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "renaissance-und-humanismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "buchdruck",
+          "iCan": "Ich kann erklären, wie Gutenbergs Buchdruck die Verbreitung von Wissen und Meinungen veränderte.",
+          "gradeBand": "7-8",
+          "requires": [
+            "renaissance-und-humanismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "entdeckungsfahrten",
+          "iCan": "Ich kann erklären, warum Europäer wie Kolumbus auf Entdeckungsfahrt gingen und was ihnen dabei half.",
+          "gradeBand": "7-8",
+          "requires": [
+            "renaissance-und-humanismus",
+            "handel-mit-asien-und-afrika"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "eroberung-amerikas",
+          "iCan": "Ich kann beschreiben, wie die Spanier die Reiche der Azteken und Inka eroberten und was das für die Menschen dort bedeutete.",
+          "gradeBand": "7-8",
+          "requires": [
+            "entdeckungsfahrten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "welthandel",
+          "iCan": "Ich kann erklären, wie nach 1492 Handelswege zwischen Europa, Amerika, Afrika und Asien entstanden und die Welt enger verbanden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "eroberung-amerikas"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fugger",
+          "iCan": "Ich kann am Beispiel der Fugger erklären, wie Kaufleute mit Handel, Bergbau und Bankgeschäften reich und politisch mächtig wurden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "hanse-und-fernhandel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kritik-an-der-kirche",
+          "iCan": "Ich kann erklären, welche Missstände in der Kirche um 1500 kritisiert wurden, zum Beispiel den Ablasshandel.",
+          "gradeBand": "7-8",
+          "requires": [
+            "glaube-im-mittelalter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "luther-und-reformation",
+          "iCan": "Ich kann erklären, was Luther 1517 mit seinen Thesen wollte und wie sich seine Lehre von der katholischen unterschied.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kritik-an-der-kirche"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ausbreitung-der-reformation",
+          "iCan": "Ich kann erklären, warum sich die Reformation schnell ausbreitete und welche Rolle Buchdruck und Flugblätter dabei spielten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "luther-und-reformation",
+            "buchdruck"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bauernkrieg",
+          "iCan": "Ich kann erklären, was die Bauern 1525 forderten und warum der Bauernkrieg scheiterte.",
+          "gradeBand": "7-8",
+          "requires": [
+            "luther-und-reformation",
+            "grundherrschaft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "augsburger-religionsfriede",
+          "iCan": "Ich kann erklären, wie Kaiser Karl V. auf die Reformation reagierte und was der Augsburger Religionsfriede von 1555 regelte.",
+          "gradeBand": "7-8",
+          "requires": [
+            "luther-und-reformation"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "hexenverfolgung",
+          "iCan": "Ich kann an einem Beispiel erklären, warum Menschen in der Frühen Neuzeit als Hexen verfolgt wurden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kritik-an-der-kirche"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dreissigjaehriger-krieg",
+          "iCan": "Ich kann die religiösen und politischen Ursachen des Dreißigjährigen Krieges erklären.",
+          "gradeBand": "7-8",
+          "requires": [
+            "augsburger-religionsfriede"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "folgen-des-dreissigjaehrigen-krieges",
+          "iCan": "Ich kann beschreiben, was der Dreißigjährige Krieg für die Menschen bedeutete, zum Beispiel Hunger, Seuchen und Zerstörung.",
+          "gradeBand": "7-8",
+          "requires": [
+            "dreissigjaehriger-krieg"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "westfaelischer-friede",
+          "iCan": "Ich kann erklären, was der Westfälische Friede von 1648 regelte und warum er als Friedensordnung für Europa gilt.",
+          "gradeBand": "7-8",
+          "requires": [
+            "dreissigjaehriger-krieg"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "absolutismus",
+          "iCan": "Ich kann am Beispiel Ludwigs XIV. erklären, was Absolutismus ist.",
+          "gradeBand": "7-8",
+          "requires": [
+            "monarchie",
+            "westfaelischer-friede"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "versailles-und-hof",
+          "iCan": "Ich kann erklären, wie das Schloss Versailles und das Leben am Hof die Macht des Königs zeigen sollten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "absolutismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "merkantilismus",
+          "iCan": "Ich kann erklären, wie der Staat im Merkantilismus die Wirtschaft lenkte, um reich und mächtig zu werden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "absolutismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "moderner-staat",
+          "iCan": "Ich kann erklären, wie absolutistische Herrscher mit Beamten, Steuern und einem stehenden Heer den modernen Staat vorbereiteten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "absolutismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "absolutismus-in-deutschland",
+          "iCan": "Ich kann an einem Beispiel aus meiner Region zeigen, wie deutsche Fürsten Ludwig XIV. nachahmten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "versailles-und-hof"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "revolutionen",
+      "name": {
+        "de": "Aufklärung, Revolutionen und 19. Jahrhundert",
+        "en": "Enlightenment, revolutions and the 19th century"
+      },
+      "competencies": [
+        {
+          "id": "aufklaerung",
+          "iCan": "Ich kann die wichtigsten Ideen der Aufklärung erklären, zum Beispiel Vernunft, Freiheit, Gleichheit und Menschenrechte.",
+          "gradeBand": "7-8",
+          "requires": [
+            "absolutismus",
+            "renaissance-und-humanismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gewaltenteilung",
+          "iCan": "Ich kann erklären, was Gewaltenteilung ist und warum sie vor Willkür schützt.",
+          "gradeBand": "7-8",
+          "requires": [
+            "aufklaerung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "amerikanische-unabhaengigkeit",
+          "iCan": "Ich kann erklären, warum sich die nordamerikanischen Kolonien von England lösten und was die Unabhängigkeitserklärung von 1776 verkündete.",
+          "gradeBand": "7-8",
+          "requires": [
+            "aufklaerung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ursachen-der-franzoesischen-revolution",
+          "iCan": "Ich kann Ursachen und Anlass der Französischen Revolution unterscheiden, zum Beispiel Staatsschulden und die Ungleichheit der Stände.",
+          "gradeBand": "7-8",
+          "requires": [
+            "aufklaerung",
+            "absolutismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "revolution-1789",
+          "iCan": "Ich kann die Ereignisse von 1789 beschreiben: Generalstände, Ballhausschwur und Sturm auf die Bastille.",
+          "gradeBand": "7-8",
+          "requires": [
+            "ursachen-der-franzoesischen-revolution"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "menschenrechte-1789",
+          "iCan": "Ich kann erklären, was die Erklärung der Menschen- und Bürgerrechte von 1789 versprach und für wen sie damals galt.",
+          "gradeBand": "7-8",
+          "requires": [
+            "revolution-1789"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "konstitutionelle-monarchie",
+          "iCan": "Ich kann an der französischen Verfassung von 1791 erklären, was eine konstitutionelle Monarchie ist.",
+          "gradeBand": "7-8",
+          "requires": [
+            "gewaltenteilung",
+            "revolution-1789"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "jakobinerherrschaft",
+          "iCan": "Ich kann erklären, wie die Revolution unter den Jakobinern in eine Schreckensherrschaft umschlug.",
+          "gradeBand": "7-8",
+          "requires": [
+            "menschenrechte-1789"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "napoleon",
+          "iCan": "Ich kann beschreiben, wie Napoleon an die Macht kam, sich zum Kaiser krönte und große Teile Europas beherrschte.",
+          "gradeBand": "7-8",
+          "requires": [
+            "jakobinerherrschaft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ende-des-reiches-1806",
+          "iCan": "Ich kann erklären, wie unter Napoleon 1806 das Heilige Römische Reich endete und die Landkarte Deutschlands neu geordnet wurde.",
+          "gradeBand": "7-8",
+          "requires": [
+            "napoleon",
+            "heiliges-roemisches-reich"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "reformen-um-1800",
+          "iCan": "Ich kann an einem Beispiel wie den preußischen Reformen oder den Reformen in Bayern erklären, wie deutsche Staaten nach 1800 modernisiert wurden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "ende-des-reiches-1806"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nationalbewegung",
+          "iCan": "Ich kann erklären, wie im Kampf gegen Napoleon die Idee einer deutschen Nation entstand.",
+          "gradeBand": "7-8",
+          "requires": [
+            "napoleon"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wiener-kongress",
+          "iCan": "Ich kann erklären, wie der Wiener Kongress 1815 Europa neu ordnete und den Deutschen Bund schuf.",
+          "gradeBand": "7-8",
+          "requires": [
+            "ende-des-reiches-1806"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "liberalismus-und-nationalismus",
+          "iCan": "Ich kann erklären, was Liberale und Nationale im 19. Jahrhundert forderten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "nationalbewegung",
+            "aufklaerung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "restauration",
+          "iCan": "Ich kann erklären, wie Fürsten wie Metternich nach 1815 die liberale und nationale Bewegung mit Zensur und Verboten unterdrückten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "wiener-kongress",
+            "liberalismus-und-nationalismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "hambacher-fest",
+          "iCan": "Ich kann erklären, wie Studenten und Bürger zum Beispiel auf dem Hambacher Fest 1832 für Einheit und Freiheit demonstrierten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "restauration"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "revolution-1848",
+          "iCan": "Ich kann den Verlauf der Revolution von 1848/49 in Deutschland beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "restauration"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "paulskirche",
+          "iCan": "Ich kann erklären, was die Nationalversammlung in der Frankfurter Paulskirche beschloss, zum Beispiel Grundrechte und eine Verfassung für Deutschland.",
+          "gradeBand": "7-8",
+          "requires": [
+            "revolution-1848"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "scheitern-1848",
+          "iCan": "Ich kann erklären, warum die Revolution von 1848/49 scheiterte und was von ihr blieb.",
+          "gradeBand": "7-8",
+          "requires": [
+            "paulskirche"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "industrialisierung-england",
+          "iCan": "Ich kann erklären, warum die Industrialisierung in England begann.",
+          "gradeBand": "7-8",
+          "requires": [
+            "merkantilismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dampfmaschine-und-eisenbahn",
+          "iCan": "Ich kann erklären, wie Erfindungen wie die Dampfmaschine und die Eisenbahn Arbeit und Verkehr veränderten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "industrialisierung-england"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "industrialisierung-deutschland",
+          "iCan": "Ich kann erklären, wie die Industrialisierung in Deutschland ablief und welche Rolle die Eisenbahn und der Zollverein dabei spielten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "dampfmaschine-und-eisenbahn"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fabrikarbeit",
+          "iCan": "Ich kann beschreiben, wie Männer, Frauen und Kinder in den Fabriken des 19. Jahrhunderts arbeiteten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "industrialisierung-deutschland"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "verstaedterung",
+          "iCan": "Ich kann erklären, warum die Städte durch die Industrialisierung schnell wuchsen und wie Arbeiterfamilien dort wohnten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "industrialisierung-deutschland"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "soziale-frage",
+          "iCan": "Ich kann erklären, was man unter der Sozialen Frage versteht.",
+          "gradeBand": "7-8",
+          "requires": [
+            "fabrikarbeit",
+            "verstaedterung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "antworten-auf-die-soziale-frage",
+          "iCan": "Ich kann verschiedene Antworten auf die Soziale Frage vergleichen, zum Beispiel von Gewerkschaften, Kirchen, Unternehmern und Staat.",
+          "gradeBand": "7-8",
+          "requires": [
+            "soziale-frage"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sozialismus-und-kommunismus",
+          "iCan": "Ich kann erklären, was Marx und Engels im Kommunistischen Manifest forderten und was Sozialismus und Kommunismus bedeuten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "soziale-frage"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "reichsgruendung-1871",
+          "iCan": "Ich kann erklären, wie das Deutsche Kaiserreich 1871 nach drei Kriegen unter Bismarck gegründet wurde.",
+          "gradeBand": "7-8",
+          "requires": [
+            "scheitern-1848"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "verfassung-des-kaiserreichs",
+          "iCan": "Ich kann die Verfassung des Kaiserreichs beschreiben und zeigen, wie viel Macht Kaiser, Kanzler und Reichstag hatten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "reichsgruendung-1871",
+            "konstitutionelle-monarchie"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bismarcks-sozialpolitik",
+          "iCan": "Ich kann erklären, wie Bismarck die Sozialdemokratie mit dem Sozialistengesetz bekämpfte und zugleich Sozialversicherungen einführte.",
+          "gradeBand": "7-8",
+          "requires": [
+            "verfassung-des-kaiserreichs",
+            "antworten-auf-die-soziale-frage",
+            "sozialismus-und-kommunismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "obrigkeitsstaat-und-militarismus",
+          "iCan": "Ich kann an Beispielen zeigen, wie Gehorsam, Militär und Nationalismus das Leben im Kaiserreich prägten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "reichsgruendung-1871",
+            "liberalismus-und-nationalismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "frauenbewegung",
+          "iCan": "Ich kann erklären, wofür die Frauenbewegung im Kaiserreich kämpfte.",
+          "gradeBand": "7-8",
+          "requires": [
+            "reichsgruendung-1871"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "juden-im-19-jahrhundert",
+          "iCan": "Ich kann beschreiben, wie Juden im 19. Jahrhundert gleiche Rechte erhielten und zugleich ein neuer Antisemitismus entstand.",
+          "gradeBand": "9-10",
+          "requires": [
+            "juden-im-mittelalter",
+            "reichsgruendung-1871"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "weltkrieg-weimar",
+      "name": {
+        "de": "Imperialismus, Erster Weltkrieg und Weimarer Republik",
+        "en": "Imperialism, First World War and Weimar Republic"
+      },
+      "competencies": [
+        {
+          "id": "imperialismus",
+          "iCan": "Ich kann Motive des Imperialismus erklären, zum Beispiel wirtschaftliche Interessen, Nationalismus und die Vorstellung, überlegen zu sein.",
+          "gradeBand": "7-8",
+          "requires": [
+            "industrialisierung-deutschland",
+            "liberalismus-und-nationalismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aufteilung-afrikas",
+          "iCan": "Ich kann beschreiben, wie europäische Staaten um 1900 Afrika unter sich aufteilten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "imperialismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "leben-in-den-kolonien",
+          "iCan": "Ich kann an einem Beispiel beschreiben, was die Kolonialherrschaft für die Menschen in den Kolonien bedeutete.",
+          "gradeBand": "7-8",
+          "requires": [
+            "aufteilung-afrikas"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "deutsche-kolonien",
+          "iCan": "Ich kann beschreiben, welche Kolonien das Deutsche Kaiserreich hatte und wie heute an die deutsche Kolonialzeit erinnert wird.",
+          "gradeBand": "9-10",
+          "requires": [
+            "leben-in-den-kolonien",
+            "reichsgruendung-1871"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "buendnisse-und-wettruesten",
+          "iCan": "Ich kann erklären, wie Bündnisse und Wettrüsten die Spannungen zwischen den Großmächten vor 1914 verschärften.",
+          "gradeBand": "7-8",
+          "requires": [
+            "imperialismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "julikrise-1914",
+          "iCan": "Ich kann Anlass und Ursachen des Ersten Weltkriegs unterscheiden und die Julikrise 1914 beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "buendnisse-und-wettruesten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stellungskrieg",
+          "iCan": "Ich kann beschreiben, was den Ersten Weltkrieg zu einem neuen, industriellen Krieg machte, zum Beispiel Stellungskrieg und Materialschlacht.",
+          "gradeBand": "7-8",
+          "requires": [
+            "julikrise-1914",
+            "industrialisierung-deutschland"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "krieg-und-zivilbevoelkerung",
+          "iCan": "Ich kann beschreiben, wie der Erste Weltkrieg das Leben der Menschen in der Heimat veränderte, zum Beispiel durch Hunger und Frauenarbeit.",
+          "gradeBand": "7-8",
+          "requires": [
+            "stellungskrieg"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "russische-revolution",
+          "iCan": "Ich kann beschreiben, wie Lenin und die Bolschewiki 1917 in Russland die Macht übernahmen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "julikrise-1914",
+            "sozialismus-und-kommunismus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "epochenjahr-1917",
+          "iCan": "Ich kann erklären, warum 1917 als Epochenjahr gilt: Die USA traten in den Krieg ein, und in Russland begann die Revolution.",
+          "gradeBand": "7-8",
+          "requires": [
+            "russische-revolution"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "versailler-vertrag",
+          "iCan": "Ich kann die wichtigsten Bestimmungen des Versailler Vertrags nennen und erklären, warum viele Deutsche ihn ablehnten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "epochenjahr-1917"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "neuordnung-europas-1919",
+          "iCan": "Ich kann erklären, wie die Pariser Friedensverträge Europa neu ordneten und wozu der Völkerbund gegründet wurde.",
+          "gradeBand": "7-8",
+          "requires": [
+            "versailler-vertrag"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "erinnerung-an-den-ersten-weltkrieg",
+          "iCan": "Ich kann an einem Kriegerdenkmal zeigen, wie an die Toten des Ersten Weltkriegs erinnert wurde und wird.",
+          "gradeBand": "7-8",
+          "requires": [
+            "stellungskrieg",
+            "spuren-der-vergangenheit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "novemberrevolution",
+          "iCan": "Ich kann beschreiben, wie in der Novemberrevolution 1918 das Kaiserreich endete und die Republik ausgerufen wurde.",
+          "gradeBand": "9-10",
+          "requires": [
+            "versailler-vertrag",
+            "verfassung-des-kaiserreichs"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "raete-oder-parlament",
+          "iCan": "Ich kann Rätesystem und parlamentarische Demokratie unterscheiden und erklären, worüber 1918/19 gestritten wurde.",
+          "gradeBand": "9-10",
+          "requires": [
+            "novemberrevolution"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "weimarer-verfassung",
+          "iCan": "Ich kann Stärken und Schwächen der Weimarer Reichsverfassung erklären, zum Beispiel die große Macht des Reichspräsidenten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "raete-oder-parlament",
+            "gewaltenteilung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "frauenwahlrecht",
+          "iCan": "Ich kann erklären, seit wann Frauen in Deutschland wählen dürfen und was sich für Frauen in der Weimarer Republik änderte und was nicht.",
+          "gradeBand": "9-10",
+          "requires": [
+            "weimarer-verfassung",
+            "frauenbewegung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "feinde-der-republik",
+          "iCan": "Ich kann erklären, wie Gegner der Republik von rechts und links gegen die Demokratie kämpften, zum Beispiel mit der Dolchstoßlegende.",
+          "gradeBand": "9-10",
+          "requires": [
+            "novemberrevolution",
+            "versailler-vertrag"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "inflation-1923",
+          "iCan": "Ich kann erklären, was eine Inflation ist und wie die Inflation von 1923 die Ersparnisse vieler Menschen vernichtete.",
+          "gradeBand": "9-10",
+          "requires": [
+            "versailler-vertrag"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "krisenjahr-1923",
+          "iCan": "Ich kann die Krisen des Jahres 1923 beschreiben, zum Beispiel die Ruhrbesetzung und den Hitlerputsch.",
+          "gradeBand": "9-10",
+          "requires": [
+            "feinde-der-republik",
+            "inflation-1923"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stabilisierung",
+          "iCan": "Ich kann erklären, warum sich die Republik Mitte der 1920er-Jahre stabilisierte, auch durch die Außenpolitik Stresemanns.",
+          "gradeBand": "9-10",
+          "requires": [
+            "krisenjahr-1923"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "weltwirtschaftskrise",
+          "iCan": "Ich kann erklären, wie die Weltwirtschaftskrise ab 1929 in Deutschland zu Massenarbeitslosigkeit und Not führte.",
+          "gradeBand": "9-10",
+          "requires": [
+            "stabilisierung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "praesidialkabinette",
+          "iCan": "Ich kann erklären, wie die Demokratie ab 1930 mit Präsidialkabinetten und Notverordnungen ausgehöhlt wurde.",
+          "gradeBand": "9-10",
+          "requires": [
+            "weimarer-verfassung",
+            "weltwirtschaftskrise"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aufstieg-der-nsdap",
+          "iCan": "Ich kann erklären, warum die NSDAP ab 1930 so viele Wählerstimmen gewann.",
+          "gradeBand": "9-10",
+          "requires": [
+            "weltwirtschaftskrise",
+            "feinde-der-republik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "scheitern-von-weimar",
+          "iCan": "Ich kann mehrere Ursachen für das Scheitern der Weimarer Republik nennen und gewichten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "praesidialkabinette",
+            "aufstieg-der-nsdap"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "nationalsozialismus",
+      "name": {
+        "de": "Nationalsozialismus und Zweiter Weltkrieg",
+        "en": "National Socialism and Second World War"
+      },
+      "competencies": [
+        {
+          "id": "machtuebernahme-1933",
+          "iCan": "Ich kann erklären, wie Hitler am 30. Januar 1933 Reichskanzler wurde.",
+          "gradeBand": "9-10",
+          "requires": [
+            "scheitern-von-weimar"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ns-ideologie",
+          "iCan": "Ich kann die Grundgedanken der NS-Ideologie erklären, zum Beispiel „Rassenlehre“, „Führerprinzip“ und „Volksgemeinschaft“.",
+          "gradeBand": "9-10",
+          "requires": [
+            "aufstieg-der-nsdap"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "antisemitismus",
+          "iCan": "Ich kann erklären, was Antisemitismus ist und warum der Hass auf Juden im Mittelpunkt der NS-Ideologie stand.",
+          "gradeBand": "9-10",
+          "requires": [
+            "ns-ideologie",
+            "juden-im-19-jahrhundert"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ermaechtigungsgesetz",
+          "iCan": "Ich kann erklären, wie die Nationalsozialisten 1933 mit dem Ermächtigungsgesetz die Demokratie und den Rechtsstaat abschafften.",
+          "gradeBand": "9-10",
+          "requires": [
+            "machtuebernahme-1933",
+            "weimarer-verfassung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gleichschaltung",
+          "iCan": "Ich kann an Beispielen erklären, wie die Nationalsozialisten Länder, Parteien, Gewerkschaften und Vereine „gleichschalteten“.",
+          "gradeBand": "9-10",
+          "requires": [
+            "ermaechtigungsgesetz"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "terror-und-verfolgung",
+          "iCan": "Ich kann erklären, wie der NS-Staat Gegner mit Terror, Geheimpolizei und Konzentrationslagern verfolgte.",
+          "gradeBand": "9-10",
+          "requires": [
+            "gleichschaltung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "propaganda",
+          "iCan": "Ich kann an Beispielen zeigen, wie die NS-Propaganda die Menschen beeinflussen wollte.",
+          "gradeBand": "9-10",
+          "requires": [
+            "ns-ideologie"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "totalitaere-diktatur",
+          "iCan": "Ich kann die Merkmale einer totalitären Diktatur nennen und am NS-Staat zeigen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "gleichschaltung",
+            "terror-und-verfolgung",
+            "propaganda"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "alltag-im-ns-staat",
+          "iCan": "Ich kann beschreiben, wie Menschen im Alltag der NS-Diktatur lebten, zwischen Begeisterung, Mitmachen, Angst und Verfolgung.",
+          "gradeBand": "9-10",
+          "requires": [
+            "totalitaere-diktatur"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "entrechtung-der-juden",
+          "iCan": "Ich kann beschreiben, wie Juden ab 1933 Schritt für Schritt entrechtet wurden, zum Beispiel durch die Nürnberger Gesetze von 1935.",
+          "gradeBand": "9-10",
+          "requires": [
+            "antisemitismus",
+            "ermaechtigungsgesetz"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "novemberpogrom-1938",
+          "iCan": "Ich kann beschreiben, was beim Novemberpogrom am 9. November 1938 geschah.",
+          "gradeBand": "9-10",
+          "requires": [
+            "entrechtung-der-juden"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "weitere-verfolgte",
+          "iCan": "Ich kann weitere Gruppen nennen, die die Nationalsozialisten verfolgten und ermordeten, zum Beispiel Sinti und Roma, Homosexuelle und kranke Menschen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "ns-ideologie",
+            "terror-und-verfolgung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "weg-in-den-krieg",
+          "iCan": "Ich kann beschreiben, wie Hitler den Krieg vorbereitete, vom Austritt aus dem Völkerbund bis zum Hitler-Stalin-Pakt.",
+          "gradeBand": "9-10",
+          "requires": [
+            "ns-ideologie",
+            "neuordnung-europas-1919"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zweiter-weltkrieg",
+          "iCan": "Ich kann den Verlauf des Zweiten Weltkriegs in Europa in groben Zügen beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "weg-in-den-krieg"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "vernichtungskrieg",
+          "iCan": "Ich kann erklären, warum der Krieg gegen die Sowjetunion ein Vernichtungskrieg war und was er für die Zivilbevölkerung bedeutete.",
+          "gradeBand": "9-10",
+          "requires": [
+            "zweiter-weltkrieg"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "holocaust",
+          "iCan": "Ich kann beschreiben, wie die Nationalsozialisten die europäischen Juden in Vernichtungslagern wie Auschwitz ermordeten (Holocaust, Shoah).",
+          "gradeBand": "9-10",
+          "requires": [
+            "novemberpogrom-1938",
+            "vernichtungskrieg"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "widerstand",
+          "iCan": "Ich kann Formen und Gruppen des Widerstands gegen den Nationalsozialismus nennen, zum Beispiel die Weiße Rose und das Attentat vom 20. Juli 1944.",
+          "gradeBand": "9-10",
+          "requires": [
+            "alltag-im-ns-staat"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "krieg-im-pazifik",
+          "iCan": "Ich kann erklären, wie die USA in den Krieg im Pazifik eintraten und wie der Krieg in Asien mit den Atombomben auf Hiroshima und Nagasaki endete.",
+          "gradeBand": "9-10",
+          "requires": [
+            "zweiter-weltkrieg"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kriegsende-1945",
+          "iCan": "Ich kann beschreiben, wie der Krieg in Europa mit der bedingungslosen Kapitulation am 8. Mai 1945 endete, und eine Bilanz des Krieges ziehen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "zweiter-weltkrieg"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "flucht-und-vertreibung",
+          "iCan": "Ich kann erklären, warum Millionen Deutsche am Ende des Krieges und danach fliehen mussten oder vertrieben wurden, und was das für sie bedeutete.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kriegsende-1945"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "erinnerung-an-den-ns",
+          "iCan": "Ich kann erklären, warum die Erinnerung an die Verbrechen des Nationalsozialismus bis heute wichtig ist, zum Beispiel in Gedenkstätten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "holocaust"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "nachkriegszeit",
+      "name": {
+        "de": "Teilung, Kalter Krieg und Wiedervereinigung",
+        "en": "Division, Cold War and reunification"
+      },
+      "competencies": [
+        {
+          "id": "potsdamer-konferenz",
+          "iCan": "Ich kann erklären, was die Siegermächte 1945 auf der Potsdamer Konferenz beschlossen und wie Deutschland in Besatzungszonen geteilt wurde.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kriegsende-1945"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "entnazifizierung",
+          "iCan": "Ich kann erklären, was Entnazifizierung bedeutete und wie die Siegermächte sie umsetzten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "potsdamer-konferenz"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nachkriegsalltag",
+          "iCan": "Ich kann beschreiben, wie die Menschen in Deutschland nach 1945 lebten, zum Beispiel mit Hunger, Trümmern und Wohnungsnot.",
+          "gradeBand": "9-10",
+          "requires": [
+            "potsdamer-konferenz",
+            "flucht-und-vertreibung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kalter-krieg",
+          "iCan": "Ich kann erklären, wie nach 1945 der Kalte Krieg zwischen den USA und der Sowjetunion entstand und die Welt in zwei Blöcke teilte.",
+          "gradeBand": "9-10",
+          "requires": [
+            "potsdamer-konferenz",
+            "epochenjahr-1917"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "doppelte-staatsgruendung",
+          "iCan": "Ich kann erklären, wie es 1949 zur Gründung von zwei deutschen Staaten kam, der Bundesrepublik und der DDR.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kalter-krieg"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "grundgesetz",
+          "iCan": "Ich kann wichtige Grundsätze des Grundgesetzes von 1949 nennen und zeigen, welche Lehren es aus der Weimarer Republik zog.",
+          "gradeBand": "9-10",
+          "requires": [
+            "doppelte-staatsgruendung",
+            "weimarer-verfassung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nato-und-warschauer-pakt",
+          "iCan": "Ich kann die Bündnisse NATO und Warschauer Pakt beschreiben und erklären, wie die beiden deutschen Staaten in sie eingebunden wurden.",
+          "gradeBand": "9-10",
+          "requires": [
+            "doppelte-staatsgruendung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "marktwirtschaft-und-planwirtschaft",
+          "iCan": "Ich kann die Soziale Marktwirtschaft der Bundesrepublik und die Planwirtschaft der DDR unterscheiden.",
+          "gradeBand": "9-10",
+          "requires": [
+            "doppelte-staatsgruendung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wirtschaftswunder",
+          "iCan": "Ich kann erklären, wie die Bundesrepublik in den 1950er-Jahren wirtschaftlich aufstieg und welche Rolle Vertriebene und „Gastarbeiter“ dabei spielten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "marktwirtschaft-und-planwirtschaft",
+            "nachkriegsalltag"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sed-diktatur",
+          "iCan": "Ich kann Merkmale der SED-Diktatur in der DDR beschreiben, zum Beispiel die Überwachung durch die Staatssicherheit.",
+          "gradeBand": "9-10",
+          "requires": [
+            "doppelte-staatsgruendung",
+            "totalitaere-diktatur"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aufstand-17-juni-1953",
+          "iCan": "Ich kann beschreiben, was beim Aufstand am 17. Juni 1953 in der DDR geschah.",
+          "gradeBand": "9-10",
+          "requires": [
+            "sed-diktatur"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "mauerbau-1961",
+          "iCan": "Ich kann erklären, warum die DDR 1961 die Mauer baute und was das für die Menschen bedeutete.",
+          "gradeBand": "9-10",
+          "requires": [
+            "sed-diktatur"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "alltag-in-der-ddr",
+          "iCan": "Ich kann das Alltagsleben in der DDR beschreiben, zum Beispiel in Schule, Freizeit und Arbeit.",
+          "gradeBand": "9-10",
+          "requires": [
+            "sed-diktatur",
+            "marktwirtschaft-und-planwirtschaft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kuba-krise",
+          "iCan": "Ich kann beschreiben, wie die Kuba-Krise 1962 die Welt an den Rand eines Atomkriegs brachte und wie sie gelöst wurde.",
+          "gradeBand": "9-10",
+          "requires": [
+            "nato-und-warschauer-pakt"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stellvertreterkrieg",
+          "iCan": "Ich kann an einem Beispiel wie dem Vietnamkrieg erklären, was ein Stellvertreterkrieg ist.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kalter-krieg"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "entspannungspolitik",
+          "iCan": "Ich kann erklären, wie die Entspannungspolitik und die Ostverträge das Verhältnis zwischen Ost und West und zwischen den beiden deutschen Staaten veränderten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "mauerbau-1961",
+            "kuba-krise"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "68er-bewegung",
+          "iCan": "Ich kann beschreiben, wofür die 68er-Bewegung eintrat und wie sie die Bundesrepublik veränderte.",
+          "gradeBand": "9-10",
+          "requires": [
+            "wirtschaftswunder",
+            "aufarbeitung-der-ns-zeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aufarbeitung-der-ns-zeit",
+          "iCan": "Ich kann vergleichen, wie die Bundesrepublik und die DDR mit der NS-Vergangenheit umgingen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "entnazifizierung",
+            "erinnerung-an-den-ns",
+            "doppelte-staatsgruendung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "entkolonialisierung",
+          "iCan": "Ich kann an einem Beispiel erklären, wie eine Kolonie nach 1945 unabhängig wurde und welche Folgen das bis heute hat.",
+          "gradeBand": "9-10",
+          "requires": [
+            "leben-in-den-kolonien",
+            "kalter-krieg"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "europaeische-einigung",
+          "iCan": "Ich kann die wichtigsten Schritte der europäischen Einigung von der Montanunion bis zur Europäischen Union beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "nato-und-warschauer-pakt"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "umbruch-in-osteuropa",
+          "iCan": "Ich kann erklären, wie die Reformen Gorbatschows den Umbruch in Osteuropa ab 1989 möglich machten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "entspannungspolitik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "friedliche-revolution",
+          "iCan": "Ich kann beschreiben, wie die friedliche Revolution in der DDR 1989 zum Fall der Mauer führte.",
+          "gradeBand": "9-10",
+          "requires": [
+            "umbruch-in-osteuropa",
+            "alltag-in-der-ddr"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wiedervereinigung",
+          "iCan": "Ich kann die Schritte zur deutschen Einheit am 3. Oktober 1990 beschreiben, auch die Rolle der Siegermächte im Zwei-plus-Vier-Vertrag.",
+          "gradeBand": "9-10",
+          "requires": [
+            "friedliche-revolution"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "globalisierung",
+          "iCan": "Ich kann erklären, was Globalisierung ist und wie die Welt seit 1945 und besonders nach 1990 wirtschaftlich enger zusammenwuchs.",
+          "gradeBand": "9-10",
+          "requires": [
+            "europaeische-einigung",
+            "welthandel"
+          ],
+          "practisedBy": []
+        }
+      ]
+    }
+  ],
+  "curricula": []
+}
