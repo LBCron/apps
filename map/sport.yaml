@@ -1,0 +1,932 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# Vorschlag. Keine KMK-Bildungsstandards für Sport: Stränge = die Bewegungs- und Inhaltsfelder, die die drei Länder teilen.
+# Quellenkürzel in den Kommentaren (genaue Titel, Ausgaben und URLs: .vibe/research-sport.md):
+#   HE = Kerncurriculum Hessen Sek I Gymnasium Sport (2011): Kap. 5 Leitideen, Kap. 6 Ende Jg 9/10 (Inhaltsfelder für Jg 7-9),
+#        Kap. 7.1 Ende Jg 6. Stimme "5-6" = Kap. 7.1, "7-10" = Kap. 6; "5-10" = für alle Stufen gleich (Kompetenzerwartungen,
+#        Leitideen, Inhaltsfelder Wasser und Fahren-Rollen-Gleiten)
+#   BY = LehrplanPLUS Bayern Gymnasium, Basissport 5-10 (S5 ... S10), LB1 Gesundheit und Fitness, LB2 Fairness/Kooperation/
+#        Selbstkompetenz, LB3 Freizeit und Umwelt, LB4 Sportliche Handlungsfelder 4.1-4.6
+#   NW = Kernlehrplan NRW Sek I Gymnasium Sport (2019), 2.4 bis Ende Erprobungsstufe ("5-6"), 2.5 bis Ende Sek I ("7-10");
+#        IF a-f = Inhaltsfelder, BF1-BF9 = Bewegungsfelder; SiLP = Beispiel für einen schulinternen Lehrplan (nur Hinweis)
+# Stimmen HE / BY / NW. SCHWACH = weniger als zwei Länder nennen den Baustein ausdrücklich (eines nur allgemein oder zur Wahl).
+name: { de: Sport, en: Physical education }       # the file name is the subject's id: sport
+source:
+  title: Bewegungs- und Inhaltsfelder der Länder (keine KMK-Bildungsstandards), Leitquelle Kernlehrplan Sport Gymnasium Sek I NRW (2019), verglichen mit dem Kerncurriculum Hessen und dem LehrplanPLUS Bayern
+  url: https://lehrplannavigator.nrw.de/system/files/media/document/file/g9_sp_klp_3426_2019_06_23.pdf
+strands:
+  - id: fitness
+    name: { de: "Den Körper trainieren, die Fitness verbessern", en: "Fitness and training" }
+    competencies:
+      # HE Kap. 6 Bewegungskompetenz, S. 18 (Kraft, Ausdauer, Schnelligkeit, Beweglichkeit anforderungsgemäß anwenden); gilt laut Kap. 7.1 auch für Ende Jg 6; BY S6 4.1 (koordinative und konditionelle Fähigkeiten verbessern); NW 2.4.1 IF d, S. 22 (motorische Grundfähigkeiten Kraft, Schnelligkeit, Ausdauer, Beweglichkeit benennen)
+      # Stimmen 5-10 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: motorische-grundfaehigkeiten
+        iCan: "Ich kann die motorischen Grundfähigkeiten Ausdauer, Kraft, Schnelligkeit und Beweglichkeit unterscheiden und zu jeder ein Beispiel aus dem Sport nennen."
+        gradeBand: "5-6"
+      # HE Kap. 7.1 Den Körper trainieren, S. 28 (Rhythmisierung, Gleichgewicht, Orientierung im Raum, Reaktion, Differenzierung des Krafteinsatzes); BY S5 4.2, 4.3 (koordinative Fähigkeiten zeigen); NW 2.5.1 IF d, S. 30 (koordinative Anforderungen von Bewegungsaufgaben benennen)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 7-10 -> 5-6 (Mehrheit)
+      - id: koordinative-faehigkeiten
+        iCan: "Ich kann koordinative Fähigkeiten wie Gleichgewicht, Orientierung, Reaktion, Rhythmus und Differenzierung an Beispielen erklären."
+        gradeBand: "5-6"
+        requires: [motorische-grundfaehigkeiten]
+      # HE Kap. 7.1 Den Körper trainieren, S. 28 (koordinative Anforderungen unter Präzisions-, Zeit- und Variabilitätsdruck); BY S6 4.1 (koordinative Fähigkeiten zunehmend systematisch verbessern); NW 2.5.2 BF1, S. 33 (Koordinationstraining unter unterschiedlichen Anforderungssituationen; SiLP Jg 9, UV 1.7)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 7-10 -> 5-6 (Mehrheit)
+      - id: koordination-trainieren
+        iCan: "Ich kann erklären, wie man Koordination gezielt übt: unter Zeitdruck, mit hoher Genauigkeit und unter wechselnden Bedingungen."
+        gradeBand: "5-6"
+        requires: [koordinative-faehigkeiten]
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (Bewegungs- und Körpererfahrungen reflektieren; nur allgemein); BY S5 LB1 (Atmung und Pulsfrequenz vor, während und nach Belastungen); S6 LB1 (Belastung und Temperaturregulation); NW 2.4.1 IF d, S. 22 (psycho-physische Reaktionen des Körpers beschreiben); IF f, S. 23 (Anstrengung anhand der Reaktionen des Körpers beurteilen)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: belastung-und-koerper
+        iCan: "Ich kann beschreiben, wie Atmung, Puls, Körpertemperatur und Schwitzen sich vor, während und nach einer Belastung verändern."
+        gradeBand: "5-6"
+      # SCHWACH (nur BY nennt das Pulsmessen ausdrücklich; NW allgemein; Voraussetzung von belastung-ueber-puls). BY S6 LB1 (messen weitgehend sicher ihren Puls; Pulsschätz- und Pulsvorgabeläufe); NW 2.4.1 IF d, S. 22 (einfache Methoden zur Erfassung körperlicher Leistungsfähigkeit anwenden; allgemein)
+      # Stimmen – / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: puls-messen
+        iCan: "Ich kann meinen Puls am Handgelenk oder am Hals messen und die Schläge pro Minute ausrechnen."
+        gradeBand: "5-6"
+        requires: [belastung-und-koerper]
+      # HE Kap. 7.1 Laufen, Springen, Werfen, S. 27 (ausdauerndes Laufen in selbst gewähltem Tempo); BY S5 LB1 (Ausdauerleistung im aeroben Bereich); NW 2.4.2 BF1, S. 23 f. (aerobe Ausdauerleistung ohne Unterbrechung)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: aerobe-ausdauer
+        iCan: "Ich kann erklären, was aerobe Ausdauer ist und woran ich merke, dass ich in einem Tempo laufe, das ich lange durchhalten kann."
+        gradeBand: "5-6"
+        requires: [belastung-und-koerper]
+      # HE Kap. 7.1 LSW, S. 27 (Dauerlauf in selbst gewähltem Tempo über mindestens 15 Minuten); BY S5 LB1 (15-minütige Ausdauerleistung im aeroben Bereich); NW 2.4.2 BF1, S. 24 (z. B. Laufen 15 min)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: ausdauer-15-minuten
+        iCan: "Ich kann 15 Minuten ohne Pause in einem gleichmäßigen Tempo laufen."
+        gradeBand: "5-6"
+        requires: [aerobe-ausdauer]
+      # HE Kap. 6 LSW, S. 22 (Dauerlauf in gleichmäßigem Tempo über mindestens 30 Minuten); BY S8 LB1 (30-minütige Ausdauerleistung im aeroben Bereich); NW 2.5.2 BF1, S. 33 (z. B. Laufen 30 min)
+      # Stimmen 7-10 / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: ausdauer-30-minuten
+        iCan: "Ich kann 30 Minuten ohne Pause in einem selbst gewählten, gleichmäßigen Tempo laufen."
+        gradeBand: "7-8"
+        requires: [ausdauer-15-minuten, dauermethode]
+      # HE Kap. 6 LSW, S. 22 (Trainingsmethoden: kontinuierliche Dauermethode); BY S7 LB1 (Wissen über die Dauermethode umsetzen); NW 2.5.1 IF d, S. 30 (grundlegende Methoden zur Verbesserung von Ausdauer und Kraft beschreiben)
+      # Stimmen 7-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: dauermethode
+        iCan: "Ich kann die Dauermethode beschreiben: lange, gleichmäßige Belastung ohne Pause mit mittlerer Intensität."
+        gradeBand: "7-8"
+        requires: [aerobe-ausdauer]
+      # HE Kap. 6 LSW, S. 22 (Fahrtspiel, Tempowechselmethode); BY S6 4.1 (Dauerläufe, z. B. Fahrtspiel); S7, S9 4.1; NW 2.5.1 IF d, S. 30 (Methoden zur Verbesserung der Ausdauer)
+      # Stimmen 7-10 / 5-6 (Jg 6) / 7-10 -> 7-8 (Gleichstand 7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: fahrtspiel
+        iCan: "Ich kann das Fahrtspiel als Trainingsmethode mit Tempowechseln beschreiben und einen Lauf danach gestalten."
+        gradeBand: "7-8"
+        requires: [dauermethode]
+      # BY S8 LB1 (extensives Intervalltraining); S10 4.1, 4.2; NW 2.5.1 IF d, S. 30 (Methoden zur Verbesserung der Ausdauer)
+      # Stimmen – / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: intervallmethode
+        iCan: "Ich kann die extensive Intervallmethode mit Belastung und lohnender Pause beschreiben."
+        gradeBand: "7-8"
+        requires: [dauermethode]
+      # HE Kap. 6 Den Körper trainieren, S. 24 (gezielte Belastungsdosierung); BY S6 LB1 (Pulskontrolle, Pulsvorgabeläufe); NW 2.5.1 IF d, S. 30 (Belastungsgrößen, u. a. Intensität)
+      # Stimmen 7-10 / 5-6 (Jg 6) / 7-10 -> 7-8 (Gleichstand 7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: belastung-ueber-puls
+        iCan: "Ich kann die Belastung in einem Ausdauertraining über meinen Puls steuern."
+        gradeBand: "7-8"
+        requires: [puls-messen, aerobe-ausdauer]
+      # HE Kap. 6 Den Körper trainieren, S. 24 (Bereich Ausdauer: Wissen über Gesundheit); BY S7 LB1 (gesundheitlicher Wert aeroben Ausdauertrainings; Herz-Kreislauf-System, Immunsystem, Psyche); S9 LB1; NW 2.5.1 IF f, S. 32 (Auswirkungen gezielten Sporttreibens auf die Gesundheit beschreiben)
+      # Stimmen 7-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: ausdauer-und-gesundheit
+        iCan: "Ich kann erklären, wie Ausdauertraining Herz, Kreislauf, Immunsystem und Wohlbefinden stärkt."
+        gradeBand: "7-8"
+        requires: [aerobe-ausdauer]
+      # HE Kap. 6 Den Körper trainieren, S. 24 (Kraft: Kompensation und Vermeidung gesundheitlicher Risiken); BY S5 LB1 (Bedeutung der Rumpfmuskulatur für die Wirbelsäule und eine gute Haltung); NW 2.4.2 BF1, S. 23 (Muskel- und Körperspannung aufbauen und nutzen)
+      # Stimmen 7-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: rumpfmuskulatur
+        iCan: "Ich kann erklären, warum eine kräftige Bauch- und Rückenmuskulatur die Wirbelsäule schützt und für eine gute Haltung wichtig ist."
+        gradeBand: "5-6"
+      # HE Kap. 6 Den Körper trainieren, S. 24 (Übungsauswahl und Art der Übungsausführung); BY S5 LB1 (Kräftigung der Bauch- und Rückenmuskulatur); S6 LB1 (je zwei funktionelle Übungen); S8 LB1 (richtige Ausführung und Atmung); NW 2.5.2 BF1, S. 33 (gesund-funktionales Muskeltraining sachgemäß durchführen)
+      # Stimmen 7-10 / 5-6 (Jg 5) / 7-10 -> 7-8 (Gleichstand 7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: kraeftigungsuebungen
+        iCan: "Ich kann Kräftigungsübungen für Bauch und Rücken richtig ausführen und dabei auf Haltung und Atmung achten."
+        gradeBand: "7-8"
+        requires: [rumpfmuskulatur]
+      # HE Kap. 6 Den Körper trainieren, S. 24 (Kraft: Trainingsmethoden, Bestimmung der angemessenen Trainingslast); BY S8 LB1 (gesundheitsorientierte Kräftigung, z. B. Zirkeltraining); NW 2.5.2 BF1, S. 33 (Muskeltraining, z. B. als Zirkeltraining; SiLP Jg 9, UV 1.6)
+      # Stimmen 7-10 / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: zirkeltraining
+        iCan: "Ich kann ein Zirkeltraining mit Stationen für verschiedene Muskelgruppen aufbauen und Belastungs- und Pausenzeiten festlegen."
+        gradeBand: "7-8"
+        requires: [kraeftigungsuebungen]
+      # HE Kap. 6 Bewegungskompetenz, S. 18 (Beweglichkeit anforderungsgemäß anwenden); BY S5 LB1 (einfache Dehn- und Mobilisationsübungen); S8 LB1 (richtige Ausführung von Dehnübungen); NW 2.4.1 IF d, S. 22 (Beweglichkeit als motorische Grundfähigkeit; nur benennen)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: dehnen-und-mobilisieren
+        iCan: "Ich kann Dehn- und Mobilisationsübungen für die wichtigsten Muskelgruppen richtig ausführen und erklären, wozu sie dienen."
+        gradeBand: "5-6"
+        requires: [motorische-grundfaehigkeiten]
+      # HE Kap. 6 Den Körper trainieren, S. 24 (Belastungsdosierung, angemessene Trainingslast); BY S10 LB1 (Wahl der Belastungsparameter); NW 2.5.1 IF d, S. 30 (Belastungsgrößen Intensität, Umfang, Dichte, Dauer erläutern)
+      # Stimmen 7-10 / 9-10 (Jg 10) / 7-10 -> 9-10 (Mehrheit)
+      - id: belastungsgroessen
+        iCan: "Ich kann die Belastungsgrößen Intensität, Umfang, Dauer und Dichte erklären."
+        gradeBand: "9-10"
+        requires: [intervallmethode]
+      # HE Kap. 6 Den Körper trainieren, S. 24 (Trainingsmethoden, Trainingswirkungen); Urteils- und Entscheidungskompetenz, S. 19 (Wirkung von Trainieren und Üben); BY S9 LB1 (Trainingslehre: mittel- und langfristige Trainingsplanung, Regeneration); NW 2.5.1 IF d, S. 30 (grundlegende Methoden und Prinzipien beschreiben)
+      # Stimmen 7-10 / 9-10 (Jg 9) / 7-10 -> 9-10 (Mehrheit)
+      - id: trainingsprinzipien
+        iCan: "Ich kann erklären, warum Training regelmäßig sein muss, die Belastung allmählich steigen soll und Erholung dazugehört."
+        gradeBand: "9-10"
+        requires: [belastungsgroessen]
+      # HE Kap. 6 Den Körper trainieren, S. 24 (Trainingswirkungen, Auswirkungen auf die körperliche Entwicklung, Vermeidung gesundheitlicher Risiken); BY S10 LB1 (gesundheitsorientiertes Krafttraining: Altersgemäßheit, Trainierbarkeit, positive Auswirkungen); NW 2.5.1 IF f, S. 32 (Auswirkungen gezielten Sporttreibens auf die Gesundheit)
+      # Stimmen 7-10 / 9-10 (Jg 10) / 7-10 -> 9-10 (Mehrheit)
+      - id: krafttraining-und-gesundheit
+        iCan: "Ich kann erklären, wie gesundheitsorientiertes Krafttraining wirkt und worauf Jugendliche dabei achten müssen."
+        gradeBand: "9-10"
+        requires: [zirkeltraining, trainingsprinzipien]
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (Rückschlüsse für die eigene Leistungssteigerung ziehen; persönliche Ziele setzen); BY S9 LB1 (mittel- und langfristige Trainingsplanung); S10 4.1 (einfache Übungseinheiten selbständig organisieren); NW 2.5.1 IF d, S. 30 (individualisierten Trainingsplan aus vorgegebenen Einzelelementen zusammenstellen)
+      # Stimmen 5-10 / 9-10 (Jg 9) / 7-10 -> 9-10 (Mehrheit)
+      - id: trainingsplan
+        iCan: "Ich kann aus vorgegebenen Übungen einen eigenen Trainingsplan zusammenstellen, um meine Ausdauer oder Kraft zu verbessern."
+        gradeBand: "9-10"
+        requires: [trainingsprinzipien]
+  - id: gesundheit
+    name: { de: "Gesundheit, Sicherheit und Wagnis", en: "Health, safety and risk" }
+    competencies:
+      # HE Kap. 6 Den Körper trainieren, S. 24 (funktionelles Aufwärmen); BY S5 LB1 (spielerische Formen des Aufwärmens); S6 LB1 (Varianten des Aufwärmens); NW 2.4.1 IF f, S. 23 (Merkmale einer sachgerechten Vorbereitung, u. a. allgemeines Aufwärmen); 2.4.2 BF1, S. 23
+      # Stimmen 7-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: aufwaermen-warum
+        iCan: "Ich kann erklären, warum ich mich vor dem Sport aufwärme und was dabei in meinem Körper passiert."
+        gradeBand: "5-6"
+        requires: [belastung-und-koerper]
+      # HE Kap. 6 Den Körper trainieren, S. 24 (funktionelles Aufwärmen); BY S8 LB1 (gestalten weitgehend selbständig ein allgemeines Aufwärmprogramm); NW 2.4.2 BF1, S. 23 (allgemeines und spezielles Aufwärmen; SiLP Jg 6, UV 1.3)
+      # Stimmen 7-10 / 7-8 (Jg 8) / 5-6 -> 7-8 (Mehrheit)
+      - id: aufwaermprogramm
+        iCan: "Ich kann ein allgemeines Aufwärmprogramm aus lockerem Einlaufen, Mobilisieren und steigernden Übungen zusammenstellen."
+        gradeBand: "7-8"
+        requires: [aufwaermen-warum]
+      # HE Kap. 6 Den Körper trainieren, S. 24 (funktionelles Aufwärmen); BY S9 LB1 (gestalten selbständig ein sportartspezifisches Aufwärmprogramm); NW 2.5.2 BF1, S. 33 (allgemein und sportartspezifisch aufwärmen); 2.5.1 IF f, S. 32 (Prinzipien der Vorbereitung erläutern)
+      # Stimmen 7-10 / 9-10 (Jg 9) / 7-10 -> 9-10 (Mehrheit)
+      - id: sportartspezifisch-aufwaermen
+        iCan: "Ich kann ein Aufwärmen planen, das auf eine bestimmte Sportart vorbereitet."
+        gradeBand: "9-10"
+        requires: [aufwaermprogramm]
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (Zusammenhang von sportlichem Handeln, Körperhygiene und Ernährung); BY S5 LB1 (Merkmale funktioneller Sportkleidung, Körperpflege nach dem Sport); NW 2.4.1 IF f, S. 23 (Merkmale einer sachgerechten Vorbereitung, u. a. Kleidung)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: sportkleidung-und-hygiene
+        iCan: "Ich kann passende Sportkleidung wählen und erklären, warum ich Schmuck ablege und mich nach dem Sport wasche."
+        gradeBand: "5-6"
+      # HE Kap. 7.1 Bewegen an und mit Geräten, S. 26 (sach-, situations- und bewegungsgerechte Nutzung der Geräte); BY S5 LB1 (Unfallprophylaxe, sicherer Umgang mit Groß- und Kleingeräten); S5 LB2 (Signale, Handzeichen, feste Organisationsformen); NW 2.4.1 IF f, S. 23 (Gefahrenmomente, Organisations- und Sicherheitsvereinbarungen benennen)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: sicher-in-der-sporthalle
+        iCan: "Ich kann Regeln für sicheres Verhalten in der Sporthalle nennen, zum Beispiel beim Umgang mit Geräten und bei Signalen der Lehrkraft."
+        gradeBand: "5-6"
+      # HE Kap. 7.1 Bewegen an und mit Geräten, S. 26 (fachgerechter Auf- und Abbau der Geräte einschließlich der Absicherung); BY S5 LB3, 4.4 (Auf- und Abbau von Geräten in der Gruppe); S6 LB1 (Aufbau- und Stationspläne); NW 2.4.1 IF e, S. 22 f. (Spielflächen und -geräte gemeinsam auf- und abbauen)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: geraete-auf-und-abbauen
+        iCan: "Ich kann Geräte und Matten nach einem Aufbauplan gemeinsam mit anderen sicher auf- und abbauen."
+        gradeBand: "5-6"
+        requires: [sicher-in-der-sporthalle]
+      # HE Kap. 6 Bewegen im Wasser, S. 23 (Kenntnisse über eine erste Hilfe; Erläuterung gilt auch für Jg 5/6); BY S9 LB1 (Sofortmaßnahmen bei typischen Sportverletzungen); NW 2.5.1 IF f, S. 32 (Unfall- und Verletzungsprophylaxe; Erste Hilfe nicht ausdrücklich)
+      # Stimmen 5-10 / 9-10 (Jg 9) / 7-10 -> 9-10 (Mehrheit)
+      - id: erste-hilfe-sportverletzung
+        iCan: "Ich kann bei typischen Sportverletzungen wie Prellung, Zerrung oder Verstauchung Erste Hilfe nach der PECH-Regel leisten."
+        gradeBand: "9-10"
+        requires: [sicher-in-der-sporthalle]
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (Ernährung, Rückschlüsse für eine gesunde Lebensweise); BY S5 LB1 (Aspekte gesunder Ernährung, z. B. Getränke, Zucker, Vitamine)
+      # Stimmen 5-10 / 5-6 (Jg 5) / – -> 5-6 (Mehrheit)
+      - id: gesunde-ernaehrung
+        iCan: "Ich kann erklären, was zu einer gesunden Ernährung gehört, zum Beispiel genug Wasser, wenig Zucker und viel Obst und Gemüse."
+        gradeBand: "5-6"
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (Zusammenhang von sportlichem Handeln und Ernährung); BY S7 LB1 (gesunde Ernährung im Zusammenhang mit sportlicher Betätigung, Flüssigkeitshaushalt, Nährstoffe)
+      # Stimmen 5-10 / 7-8 (Jg 7) / – -> 7-8 (Mehrheit)
+      - id: ernaehrung-und-sport
+        iCan: "Ich kann erklären, was ich vor, während und nach dem Sport essen und trinken sollte und warum Flüssigkeit wichtig ist."
+        gradeBand: "7-8"
+        requires: [gesunde-ernaehrung]
+      # HE Kap. 5 Leitidee Gesundheit, S. 15 (Sporttreiben in den Alltag integrieren; Folgen von Bewegungsmangel); BY S10 LB1 (regelmäßige sportliche Aktivitäten und Wohlbefinden); S10 LB3 (gesundheitsfördernde Freizeitgestaltung); S9 LB3; NW 2.5.1 IF f, S. 32 (Muster des eigenen Bewegungsverhaltens im Alltag erfassen und analysieren)
+      # Stimmen 5-10 / 9-10 (Jg 10) / 7-10 -> 9-10 (Mehrheit)
+      - id: bewegungsmangel
+        iCan: "Ich kann erklären, welche Folgen Bewegungsmangel hat und wie ich mehr Bewegung in meinen Alltag bringe."
+        gradeBand: "9-10"
+        requires: [ausdauer-und-gesundheit]
+      # HE Kap. 5 Leitidee Gesundheit, S. 15 (Entspannungsmethoden); Leitidee Körperwahrnehmung, S. 14; BY S5 LB1 (Wechsel zwischen Anspannung und Entspannung bewusst wahrnehmen; einfache Entspannungsformen); S6 LB1; NW 2.4.1 IF a, S. 20 (Körperempfindungen und Körperwahrnehmungen beschreiben)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: anspannung-entspannung
+        iCan: "Ich kann den Unterschied zwischen Anspannung und Entspannung in meinem Körper wahrnehmen und beschreiben."
+        gradeBand: "5-6"
+      # HE Kap. 5 Leitidee Gesundheit, S. 15 (Entspannungsmethoden); BY S10 LB1 (Entspannungsmethoden gezielt durchführen, z. B. Progressive Muskelrelaxation, Autogenes Training); NW Kap. 2.2 IF f, S. 17 (Methoden zur Stressreduktion)
+      # Stimmen 5-10 / 9-10 (Jg 10) / 5-10 -> 9-10 (Mehrheit)
+      - id: entspannungsmethode
+        iCan: "Ich kann eine Entspannungsmethode wie die Progressive Muskelentspannung durchführen und erklären, wie sie wirkt."
+        gradeBand: "9-10"
+        requires: [anspannung-entspannung]
+      # BY S10 LB1 (Trends im Sport beurteilen); S7 LB1 (kritisch mit der Gewichtsregulation auseinandersetzen); NW 2.5.1 IF f, S. 32 (gesundheitliche Auswirkungen unter Berücksichtigung medial vermittelter Fitnesstrends und Körperideale beurteilen)
+      # Stimmen – / 9-10 (Jg 10) / 7-10 -> 9-10 (Mehrheit)
+      - id: koerperbilder-und-trends
+        iCan: "Ich kann Fitnesstrends und Körperideale aus Medien und Werbung kritisch beurteilen."
+        gradeBand: "9-10"
+        requires: [bewegungsmangel]
+      # HE Kap. 5 Leitidee Gesundheit, S. 15 (Gefahren des Dopings); BY S10 LB1 (Sport und Doping: Formen, Folgen, gesellschaftspolitische Hintergründe)
+      # Stimmen 5-10 / 9-10 (Jg 10) / – -> 9-10 (Mehrheit)
+      - id: doping
+        iCan: "Ich kann erklären, was Doping ist, welche gesundheitlichen Folgen es hat und warum es im Sport verboten ist."
+        gradeBand: "9-10"
+        requires: [fair-play]
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (Risiken benennen, Gefahren vermeiden, Wagnisse kontrolliert eingehen); Kap. 5 Leitidee Wagnis, S. 16; BY S7 4.4 (Risiken gemäß den individuellen Leistungsvoraussetzungen selbständig einschätzen); NW 2.4.1 IF c, S. 21 (Herausforderungen im Hinblick auf Anforderung, eigenes Können und mögliche Gefahren beschreiben)
+      # Stimmen 5-10 / 7-8 (Jg 7) / 5-6 -> 5-6 (Gleichstand 5-6/7-8: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: wagnis-einschaetzen
+        iCan: "Ich kann in einer Wagnissituation einschätzen, was verlangt wird, was ich schon kann und welche Gefahren es gibt."
+        gradeBand: "5-6"
+      # HE Kap. 5 Leitidee Wagnis, S. 16 (Wagnis in Abgrenzung zum Risiko; Anreiz, Nervenkitzel); NW 2.5.1 IF c, S. 30 (Motive sportlichen Handelns in Wagnissituationen, u. a. Risiko erleben, erläutern)
+      # Stimmen 5-10 / – / 7-10 -> 7-8 (Gleichstand 7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: wagnis-und-risiko
+        iCan: "Ich kann ein Wagnis von einem Risiko unterscheiden und Gründe nennen, warum Menschen Wagnisse suchen."
+        gradeBand: "7-8"
+        requires: [wagnis-einschaetzen]
+      # HE Kap. 5 Leitidee Wagnis, S. 16 (mit Unsicherheit und Angst umgehen; Mut, zu etwas Nein zu sagen); BY S7 4.6 (Mut und Selbsteinschätzungsvermögen zeigen); S7 4.4 (Wagnissituationen bewältigen); NW 2.5.1 IF c, S. 30 (Strategien zum Umgang mit Emotionen, u. a. zur Bewältigung von Angstsituationen)
+      # Stimmen 5-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: mit-angst-umgehen
+        iCan: "Ich kann Strategien nutzen, um in einer Wagnissituation mit Angst umzugehen, und begründet auch Nein sagen."
+        gradeBand: "7-8"
+        requires: [wagnis-einschaetzen]
+  - id: leichtathletik
+    name: { de: "Laufen, Springen, Werfen – Leichtathletik", en: "Running, jumping, throwing – athletics" }
+    competencies:
+      # HE Kap. 7.1 LSW, S. 27 (Beschleunigen aus unterschiedlichen Startpositionen auf ein Signal hin); BY S5 4.1 (schnelle Läufe bis 50 m aus verschiedenen Startpositionen, auch aus dem Hochstart); NW 2.4.2 BF3, S. 24 (schnelles Laufen; Sprint auf grundlegendem Niveau)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: schnell-starten
+        iCan: "Ich kann aus verschiedenen Startpositionen und aus dem Hochstart auf ein Signal hin schnell losrennen."
+        gradeBand: "5-6"
+      # HE Kap. 7.1 LSW, S. 27 (Laufen mit hoher Schrittfrequenz, Sprint 50 m/75 m); BY S8 4.1 (Lauf-ABC, Sprints bis 75 m); S10 4.1 (laufen in Sprinttechnik); NW 2.4.2 BF3, S. 24 (Sprint auf grundlegendem Fertigkeitsniveau)
+      # Stimmen 5-6 / 7-8 (Jg 8) / 5-6 -> 5-6 (Mehrheit)
+      - id: sprinttechnik
+        iCan: "Ich kann die Merkmale eines schnellen Laufs nennen: Laufen auf dem Fußballen, Knie hoch, kräftiger Armeinsatz."
+        gradeBand: "5-6"
+        requires: [schnell-starten]
+      # HE Kap. 6 LSW, S. 22 (der regelgerechte Start); BY S6 4.1 (Tiefstart); NW 2.5.2 BF3, S. 34 (erlernte Disziplinen auf erweitertem Niveau; Tiefstart nicht ausdrücklich)
+      # Stimmen 7-10 / 5-6 (Jg 6) / 7-10 -> 7-8 (Gleichstand 7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: tiefstart
+        iCan: "Ich kann einen Tiefstart nach den Kommandos „Auf die Plätze – Fertig – Los“ regelgerecht ausführen."
+        gradeBand: "7-8"
+        requires: [schnell-starten]
+      # HE Kap. 6 Bewegungskompetenz, S. 18 (situationsbezogen in die optimale Beschleunigungsphase gelangen); BY S8 4.1 (verbinden die Phasen des Sprints weitgehend harmonisch); NW 2.5.2 BF3, S. 34 (erweitertes technisch-koordinatives Niveau); 2.5.1 IF a, S. 28 (Bewegungsmerkmale benennen)
+      # Stimmen 5-10 / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: sprint-phasen
+        iCan: "Ich kann die Phasen eines Sprints beschreiben: Reaktion, Beschleunigung, Höchstgeschwindigkeit und Zieleinlauf."
+        gradeBand: "7-8"
+        requires: [sprinttechnik, tiefstart]
+      # HE Kap. 6 LSW, S. 22 (das Staffellaufen); BY S5 4.1 (Staffeln); S8 4.1 (Sprints in Staffelformen)
+      # Stimmen 7-10 / 5-6 (Jg 5) / – -> 5-6 (Gleichstand 5-6/7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen)). NW nennt Staffeln nicht (HE und BY)
+      - id: staffelwechsel
+        iCan: "Ich kann einen Staffelstab im Wechselraum regelgerecht übergeben und annehmen."
+        gradeBand: "5-6"
+        requires: [schnell-starten]
+      # HE Kap. 7.1 LSW, S. 27 (flüssiges und akzentuiertes Überlaufen von Hindernissen); Kap. 6, S. 22 (rhythmusbetontes Überlaufen von Hürden); BY S5 4.1 (Springen über Hindernisse); S6 4.1 (schnelle Läufe über Hindernisse)
+      # Stimmen 5-6 / 5-6 (Jg 5) / – -> 5-6 (Mehrheit). NW nennt Hürden nicht (HE und BY)
+      - id: huerden-ueberlaufen
+        iCan: "Ich kann Hindernisse oder niedrige Hürden in einem gleichmäßigen Rhythmus flüssig überlaufen."
+        gradeBand: "5-6"
+        requires: [sprinttechnik]
+      # HE Kap. 7.1 LSW, S. 27 (Technik des Schrittweitsprungs, Absprung aus der Absprungzone); BY S7 4.1 (springen weit mit der Schrittsprungtechnik aus einem Absprungraum); NW 2.4.2 BF3, S. 24 (Weitsprung auf grundlegendem Fertigkeitsniveau)
+      # Stimmen 5-6 / 7-8 (Jg 7) / 5-6 -> 5-6 (Mehrheit)
+      - id: weitsprung
+        iCan: "Ich kann einen Weitsprung mit Schrittsprung aus einer Absprungzone ausführen."
+        gradeBand: "5-6"
+        requires: [sprinttechnik]
+      # HE Kap. 6 LSW, S. 22 (Anlaufgeschwindigkeit in Weite umsetzen, betonter Absprung vom Balken, Schwungbein, zweckmäßige Landung); BY S7 4.1 (Anlauf-, Flug- und Landeverhalten, Schwungbeineinsatz); S9 4.1 (Anlauf und Absprung); NW 2.5.2 BF3, S. 34 (erweitertes Niveau); 2.5.1 IF a, S. 28 (Bewegungsmerkmale benennen)
+      # Stimmen 7-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: weitsprung-phasen
+        iCan: "Ich kann die Phasen des Weitsprungs – Anlauf, Absprung, Flug und Landung – mit ihren wichtigsten Merkmalen beschreiben."
+        gradeBand: "7-8"
+        requires: [weitsprung, bewegungsmerkmale]
+      # HE Kap. 7.1 LSW, S. 27 (Springen in die Höhe, Technik des Schersprungs); BY S6 4.1 (Hochsprünge einbeinig mit kurzem Anlauf); S8 4.1 (Schersprung); NW 2.4.2 BF3, S. 24 (hohes Springen)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: schersprung
+        iCan: "Ich kann einen Schersprung über eine Latte oder Schnur mit kurzem Anlauf ausführen."
+        gradeBand: "5-6"
+      # HE Kap. 6 LSW, S. 22 (beim Hochsprung die Floptechnik); BY S8 4.1 (Flop); S10 4.1 (Flop-Technik verbessern); NW 2.5.2 BF3, S. 34 (neu erlernte Disziplin, z. B. Hochsprung, in der Grobform)
+      # Stimmen 7-10 / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: flop
+        iCan: "Ich kann den Fosbury-Flop mit Bogenanlauf, Absprung und Lattenüberquerung in Rückenlage beschreiben und in der Grobform springen."
+        gradeBand: "7-8"
+        requires: [schersprung]
+      # HE Kap. 7.1 LSW, S. 27 (Schlagwurf mit dem 80-g-Ball aus dem Anlauf im 3er-Rhythmus); BY S6 4.1 (Schlagwurf mit Anlauf); NW 2.4.2 BF3, S. 24 (Ballwurf auf grundlegendem Fertigkeitsniveau)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: schlagwurf
+        iCan: "Ich kann einen Schlagwurf mit Anlauf im Dreierrhythmus ausführen."
+        gradeBand: "5-6"
+      # HE Kap. 6 LSW, S. 22 (Schlagwurf mit dem 200-g-Ball); BY S7 4.1 (Schlagwurf mit Betonung des Impulsschritts); NW 2.5.2 BF3, S. 34 (erweitertes Niveau); 2.5.1 IF a, S. 28 (Zusammenhänge von Aktionen und Effekten erläutern)
+      # Stimmen 7-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: schlagwurf-technik
+        iCan: "Ich kann erklären, wie Impulsschritt, Bogenspannung und Abwurfwinkel einen Wurf weiter machen."
+        gradeBand: "7-8"
+        requires: [schlagwurf, bewegungsmerkmale]
+      # HE Kap. 6 LSW, S. 22 (Stoßen: Kugelstoßtechnik aus dem Stand); BY S9 4.1 (Kugelstoßen: Technik des Standstoßes); NW 2.5.2 BF3, S. 34 (neu erlernte Disziplin, z. B. Kugelstoßen, in der Grobform)
+      # Stimmen 7-10 / 9-10 (Jg 9) / 7-10 -> 9-10 (Mehrheit)
+      - id: kugelstossen
+        iCan: "Ich kann eine Kugel aus dem Stand regelgerecht stoßen und erklären, warum sie gestoßen und nicht geworfen wird."
+        gradeBand: "9-10"
+        requires: [schlagwurf-technik]
+      # HE Kap. 6 LSW, S. 22 (Kugelstoßtechnik aus dem Angleiten); BY S9 4.1 (unterschiedliche Formen der Vorbeschleunigung, z. B. Nachstell- oder Kreuzschritt, Angleiten)
+      # Stimmen 7-10 / 9-10 (Jg 9) / – -> 9-10 (Mehrheit)
+      - id: kugelstossen-angleiten
+        iCan: "Ich kann beim Kugelstoßen die Kugel mit Angleiten oder Nachstellschritt vorbeschleunigen."
+        gradeBand: "9-10"
+        requires: [kugelstossen]
+      # HE Kap. 6 Teamkompetenz, S. 19 (Regeln und Wettkampfvorschriften erläutern und einhalten); BY S6 4.1 (berücksichtigen wesentliche Wettkampfbestimmungen); NW 2.4.2 BF3, S. 24 (Wettbewerb unter Berücksichtigung grundlegenden Wettkampfverhaltens); 2.4.1 IF e, S. 22 (Regeln und Messverfahren beschreiben)
+      # Stimmen 5-10 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: leichtathletik-regeln
+        iCan: "Ich kann wichtige Wettkampfregeln der Leichtathletik nennen, zum Beispiel Fehlstart, Übertreten und Zahl der Versuche."
+        gradeBand: "5-6"
+        requires: [regeln-im-sport]
+      # HE Kap. 6 Teamkompetenz, S. 20 (sportliche Wettbewerbssituationen selbstständig organisieren und regeln); BY S5 LB2 (einfache Schieds- und Kampfrichteraufgaben, z. B. Startsignal, Messen einer Weite); NW 2.4.1 IF e, S. 22 (sportartspezifische Messverfahren beschreiben)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: messen-und-kampfrichten
+        iCan: "Ich kann Weiten und Zeiten richtig messen und als Kampfrichter einfache Aufgaben wie das Startsignal übernehmen."
+        gradeBand: "5-6"
+        requires: [leichtathletik-regeln]
+  - id: schwimmen
+    name: { de: "Bewegen im Wasser – Schwimmen", en: "Moving in water – swimming" }
+    competencies:
+      # HE Kap. 6 Bewegen im Wasser, S. 22 f. (Vortrieb im und unter Wasser erzeugen; gilt auch für Jg 5/6); BY S5 4.2 (Übungen zum Schweben, Gleiten und Fortbewegen); S7 4.2 (Auftrieb); NW 2.4.2 BF4, S. 25 (Verhalten des Körpers bei Auftrieb, Absinken, Vortrieb und Rotationen wahrnehmen)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: auftrieb-und-gleiten
+        iCan: "Ich kann beschreiben, wie mein Körper im Wasser auftreibt, absinkt und gleitet, und erklären, wie ich Vortrieb erzeuge."
+        gradeBand: "5-6"
+      # HE Kap. 6 Bewegen im Wasser, S. 23 (Einatmen über und Ausatmen unter Wasser in Kombination mit Atem- und Schwimmtechniken); BY S5 4.2 (spielerische Übungen zum Atmen); NW 2.4.2 BF4, S. 25 (grundlegende Fertigkeiten: Atmen)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: atmen-im-wasser
+        iCan: "Ich kann über Wasser einatmen und unter Wasser ausatmen und meine Atmung an die Schwimmbewegung anpassen."
+        gradeBand: "5-6"
+      # HE Kap. 6 Bewegen im Wasser, S. 23 (Tauchen: Orientierung unter Wasser); BY S5 4.2 (tauchen weit sowie bis zu einer Wassertiefe von 2 m); NW 2.4.2 BF4, S. 25 (Tauchen im Tiefwasser ohne Hilfsmittel)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: tauchen
+        iCan: "Ich kann bis zu zwei Meter tief tauchen, einen Gegenstand heraufholen und mich unter Wasser orientieren."
+        gradeBand: "5-6"
+        requires: [atmen-im-wasser]
+      # HE Kap. 6 Bewegen im Wasser, S. 23 (Fuß- und Kopfsprünge vom Beckenrand und Startblock); BY S5 4.2 (springen fuß- und kopfwärts vom Beckenrand, Startblock und ggf. 1-m-Brett); NW 2.4.2 BF4, S. 25 (in unterschiedlichen Situationen sicherheitsbewusst springen)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: ins-wasser-springen
+        iCan: "Ich kann fußwärts und kopfwärts vom Beckenrand und vom Startblock ins Wasser springen."
+        gradeBand: "5-6"
+        requires: [baderegeln]
+      # HE Kap. 6 Bewegen im Wasser, S. 23 (Baderegeln); BY S5 4.2 (Baderegeln, Hausordnung der Bäder, Maßnahmen zur Unfallverhütung); NW 2.4.2 BF4, S. 25 (sicherheitsbewusst springen und tauchen); 2.4.1 IF f, S. 23 (Sicherheitsvereinbarungen)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: baderegeln
+        iCan: "Ich kann die Baderegeln nennen und erklären, wie sie mich und andere schützen."
+        gradeBand: "5-6"
+      # HE Kap. 6 Bewegen im Wasser, S. 23 (Atem- und Schwimmtechniken, mindestens 100 m); BY S5 4.2 (Gesamtkoordination in mindestens einer Schwimmart); S6 4.2 (Fachbegriffe zur Bewegungsbeschreibung der ersten Schwimmart); NW 2.4.2 BF4, S. 25 (eine Wechselzug- oder eine Gleichzugtechnik einschließlich Atemtechnik)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit). Die Länder schreiben keine bestimmte Schwimmart vor; NW unterscheidet Gleich- und Wechselzugtechnik
+      - id: gleichzugtechnik
+        iCan: "Ich kann Brustschwimmen mit Armzug, Beinschlag, Atmung und Gleitphase koordiniert schwimmen und seine Technikmerkmale beschreiben."
+        gradeBand: "5-6"
+        requires: [auftrieb-und-gleiten, atmen-im-wasser]
+      # HE Kap. 6 Bewegen im Wasser, S. 22 f. (Vortrieb in Bauch- und/oder Rückenlage; Schwimmtechniken); BY S5 4.2 (Gesamtkoordination in mindestens einer Schwimmart); S6 4.2 (weitere Schwimmart in der Grobform); S7 4.2; NW 2.4.2 BF4, S. 25 (eine Wechselzug- oder eine Gleichzugtechnik); 2.5.2 BF4, S. 34 (eine Wechselzug- und eine Gleichzugtechnik)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit). Die erste Schwimmart wählt die Schule; beide Techniken stimmen daher für 5-6
+      - id: wechselzugtechnik
+        iCan: "Ich kann Kraulschwimmen oder Rückenkraulschwimmen mit wechselseitigem Armzug, Beinschlag und Atmung schwimmen und seine Technikmerkmale beschreiben."
+        gradeBand: "5-6"
+        requires: [auftrieb-und-gleiten, atmen-im-wasser]
+      # HE Kap. 6 Bewegen im Wasser, S. 23 (Sprünge vom Startblock); BY S6 4.2 (Startsprung und Wende einer Schwimmart regelkonform; Wettkampfbestimmungen von Start und Wende); NW 2.4.2 BF4, S. 25 (einschließlich Start und Wende)
+      # Stimmen 5-10 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: start-und-wende
+        iCan: "Ich kann in meiner Schwimmart einen Startsprung und eine Wende nach den Wettkampfregeln ausführen."
+        gradeBand: "5-6"
+        requires: [ins-wasser-springen]
+      # HE Kap. 6 Bewegen im Wasser, S. 23 (mindestens eine Strecke von 100 m bewältigen); BY S5 4.2 (Ausdauerleistung im aeroben Bereich); S6 4.2 (kontinuierliches Schwimmen); NW 2.4.2 BF1, S. 23 f. (Schwimmen 15 min, beliebige Schwimmart, mind. 200 m)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: ausdauernd-schwimmen
+        iCan: "Ich kann 15 Minuten ohne Pause schwimmen."
+        gradeBand: "5-6"
+        requires: [aerobe-ausdauer]
+      # HE Kap. 6 Bewegen im Wasser, S. 22 (vorrangig sicherstellen, dass sich die Lernenden mindestens über Wasser halten können); BY S5 4.2 (Schwimmart auch zur Selbstrettung nutzen; Verhalten in Notsituationen); S6 4.2 (Krämpfe, Erschöpfungszustand); NW 2.5.2 BF4, S. 34 (Maßnahmen und Möglichkeiten zur Selbst- und Fremdrettung nutzen)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 7-10 -> 5-6 (Gleichstand 5-6/7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: selbstrettung
+        iCan: "Ich kann mich in Notsituationen im Wasser, zum Beispiel bei einem Krampf oder bei Erschöpfung, richtig verhalten und mich selbst retten."
+        gradeBand: "5-6"
+        requires: [baderegeln]
+      # HE Kap. 6 Bewegen im Wasser, S. 23 (Kenntnisse über eine erste Hilfe); BY S8 4.2 (Rettungshilfen unter Berücksichtigung der Gefahren der Fremdrettung einsetzen); NW 2.5.2 BF4, S. 34 (Selbst- und Fremdrettung)
+      # Stimmen 5-10 / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: fremdrettung
+        iCan: "Ich kann einer Person in Not mit Rettungsstange, Rettungsring oder Rettungsball helfen, ohne mich selbst in Gefahr zu bringen."
+        gradeBand: "7-8"
+        requires: [selbstrettung]
+      # HE Kap. 6 Bewegen im Wasser, S. 23 (Kenntnisse über eine erste Hilfe); BY S10 4.2 (Rettungsschwimmen: Transportschwimmen, Kleiderschwimmen, An-Land-Bringen; Rettungsschwimmabzeichen); NW Kap. 2.3 BF4, S. 18 (inhaltlicher Kern: sicheres und ausdauerndes Schwimmen, Rettungsschwimmen)
+      # Stimmen 5-10 / 9-10 (Jg 10) / 5-10 -> 9-10 (Mehrheit)
+      - id: rettungsschwimmen
+        iCan: "Ich kann Techniken des Rettungsschwimmens wie Transportschwimmen, Kleiderschwimmen und An-Land-Bringen beschreiben."
+        gradeBand: "9-10"
+        requires: [fremdrettung]
+  - id: turnen
+    name: { de: "Bewegen an Geräten – Turnen", en: "Moving on apparatus – gymnastics" }
+    competencies:
+      # HE Kap. 7.1 Bewegen an und mit Geräten, S. 26 (Rollen, Sprünge, Landungen, Drehungen, Überschläge, Schwünge, Balancieren, Stützen, Klettern); BY S6 4.4 (Grundelemente: Rollen, Stützen, Springen, Schwingen, Hangeln, Balancieren, Klettern); S5 4.4; NW 2.4.2 BF5, S. 25 (Stützen, Balancieren, Rollen, Klettern, Springen, Hangeln, Schaukeln und Schwingen)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: turnerische-grundformen
+        iCan: "Ich kann die turnerischen Grundformen Rollen, Stützen, Springen, Schwingen, Hangeln, Balancieren und Klettern unterscheiden und an Geräten zeigen."
+        gradeBand: "5-6"
+      # HE Kap. 6 Bewegungskompetenz, S. 18 (Bewegung anforderungsgemäß steuern; nur allgemein); BY S5 4.4 (Übungen zur Körperspannung); S6 LB1 (Stützkraft und Körperspannung); NW 2.4.2 BF1, S. 23 (grundlegende Muskel- und Körperspannung aufbauen und nutzen)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: koerperspannung
+        iCan: "Ich kann erklären, warum Körperspannung beim Turnen wichtig ist, und sie in Übungen aufbauen und halten."
+        gradeBand: "5-6"
+      # HE Kap. 7.1 Bewegen an und mit Geräten, S. 26 (Sicherheits- und Hilfestellung, Hauptgriffarten); BY S5 4.4 (Helfergriffe, z. B. Klammergriff); S6 4.4 (Dreh-/Schubhilfe); NW 2.4.2 BF5, S. 25 (grundlegende turnerische Sicherheits- und Hilfestellungen ausführen)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: helfergriffe
+        iCan: "Ich kann einfache Helfergriffe wie den Klammergriff und die Drehhilfe anwenden und erklären, wann sie gebraucht werden."
+        gradeBand: "5-6"
+        requires: [sicher-in-der-sporthalle]
+      # HE Kap. 6 Bewegen an und mit Geräten, S. 21 (Boden: Rolle vorwärts/rückwärts); BY S5 4.4 (Boden: Rolle vorwärts); NW 2.4.2 BF5, S. 25 (Bewegungsverbindung aus turnerischen Grundelementen; SiLP Jg 6, UV 5.2 Rolle, Handstand, Rad)
+      # Stimmen 7-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: rolle-vorwaerts
+        iCan: "Ich kann eine Rolle vorwärts turnen und ihre Technikmerkmale nennen, zum Beispiel Kinn auf die Brust und runder Rücken."
+        gradeBand: "5-6"
+        requires: [turnerische-grundformen, koerperspannung]
+      # HE Kap. 6 Bewegen an und mit Geräten, S. 21 (Boden: Rolle vorwärts/rückwärts); BY S6 4.4 (Grundelement Rollen); S9 4.4 (Rolle rückwärts durch den hohen Hockstütz); NW 2.4.2 BF5, S. 25 (Rollen; Bewegungsverbindung am Boden)
+      # Stimmen 7-10 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: rolle-rueckwaerts
+        iCan: "Ich kann eine Rolle rückwärts turnen und ihre Technikmerkmale nennen."
+        gradeBand: "5-6"
+        requires: [rolle-vorwaerts]
+      # HE Kap. 6 Bewegen an und mit Geräten, S. 21 (Boden: Handstand); BY S6 4.4 (Boden: Aufschwingen in den flüchtigen Handstand, Handstand abrollen); NW 2.4.2 BF5, S. 25 (Stützen; SiLP Jg 6, UV 5.2)
+      # Stimmen 7-10 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: handstand
+        iCan: "Ich kann in den Handstand aufschwingen, ihn kurz halten und abrollen."
+        gradeBand: "5-6"
+        requires: [rolle-vorwaerts, koerperspannung]
+      # HE Kap. 6 Bewegen an und mit Geräten, S. 21 (Boden: Rad); BY S5 4.4 (Boden: Rad); NW 2.4.2 BF5, S. 25 (Überschläge; SiLP Jg 6, UV 5.2)
+      # Stimmen 7-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: rad
+        iCan: "Ich kann ein Rad turnen und die Reihenfolge von Händen und Füßen beschreiben."
+        gradeBand: "5-6"
+        requires: [koerperspannung]
+      # HE Kap. 7.1 Bewegen an und mit Geräten, S. 26 (Übungsverbindungen an vorgegebenen Gerätebahnen); BY S5 4.4 (einfache turnerische und gymnastische Elemente verbinden); S7 4.4 (mindestens dreiteilige Übungsverbindung); NW 2.4.2 BF5, S. 25 (Bewegungsverbindung aus turnerischen Grundelementen an einem Gerät)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: uebungsverbindung
+        iCan: "Ich kann mehrere Turnelemente zu einer flüssigen Übungsverbindung an einem Gerät oder am Boden verbinden."
+        gradeBand: "5-6"
+        requires: [rolle-vorwaerts, rad]
+      # HE Kap. 6 Bewegen an und mit Geräten, S. 21 (Reck: Felgaufschwung); BY S6 4.4 (Reck: Hüftaufschwung); NW 2.4.2 BF5, S. 25 (Reck/Barren als Gerät nach Wahl)
+      # Stimmen 7-10 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit). NW nennt das Reck nur als Gerät nach Wahl
+      - id: hueftaufschwung
+        iCan: "Ich kann am Reck einen Hüftaufschwung turnen und beschreiben, wie ich den Körper nah an der Stange halte."
+        gradeBand: "5-6"
+        requires: [turnerische-grundformen, helfergriffe]
+      # HE Kap. 6 Bewegen an und mit Geräten, S. 21 (Reck: Felgunterschwung); BY S6 4.4 (Reck: Felgunterschwung)
+      # Stimmen 7-10 / 5-6 (Jg 6) / – -> 5-6 (Gleichstand 5-6/7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen)). NW nennt den Felgunterschwung nicht (HE und BY)
+      - id: felgunterschwung
+        iCan: "Ich kann am Reck einen Felgunterschwung turnen und sicher landen."
+        gradeBand: "5-6"
+        requires: [hueftaufschwung]
+      # HE Kap. 6 Bewegen an und mit Geräten, S. 21 (Sprung: Grätsche über den Bock); BY S5 4.4 (Bock/Kasten: Grätsche über den Bock); S8 4.4; NW 2.4.2 BF5, S. 25 (Springen an Kasten/Bock)
+      # Stimmen 7-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: graetsche-ueber-den-bock
+        iCan: "Ich kann mit Anlauf und Absprung vom Brett eine Grätsche über den Bock springen."
+        gradeBand: "5-6"
+        requires: [turnerische-grundformen, helfergriffe]
+      # HE Kap. 6 Bewegen an und mit Geräten, S. 21 (Sprung: Hocke über den Kasten quer); BY S8 4.4 ((T-)Bock und/oder Kasten: Grätsche und Hocke); S5 4.4 (Hockwende)
+      # Stimmen 7-10 / 7-8 (Jg 8) / – -> 7-8 (Mehrheit). NW nennt die Hocke nicht (HE und BY)
+      - id: hocke-ueber-den-kasten
+        iCan: "Ich kann eine Hocke über den Kasten springen."
+        gradeBand: "7-8"
+        requires: [graetsche-ueber-den-bock]
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (funktionale Merkmale der gelernten Bewegung mit Fachbegriffen beschreiben); Inhaltsfeld Geräte, S. 21 (Sprung); BY S8 4.4 (Fachbegriffe verwenden; Grätsche und Hocke); NW 2.5.1 IF a, S. 28 (relevante Bewegungsmerkmale benennen, Zusammenhänge von Aktionen und Effekten)
+      # Stimmen 7-10 / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: stuetzsprung-phasen
+        iCan: "Ich kann die Phasen eines Stützsprungs beschreiben: Anlauf, Brettabsprung, erste Flugphase, Stütz, zweite Flugphase und Landung."
+        gradeBand: "7-8"
+        requires: [graetsche-ueber-den-bock, bewegungsphasen]
+      # HE Kap. 6 Bewegen an und mit Geräten, S. 21 (Balken: Aufgang, Gehen vorwärts/rückwärts, Sprünge, Drehungen, Standwaage); BY S7 4.4 (Schwebebalken: Gehen, Federn, Hüpfen, Drehen, Gleichgewichtselemente, Abgang; verbindlich für Schülerinnen); S8 4.4; NW 2.4.2 BF5, S. 25 (Bank/Balken/Slackline; Schwebebalken als Gerät nach Wahl)
+      # Stimmen 7-10 / 7-8 (Jg 7) / 5-6 -> 7-8 (Mehrheit)
+      - id: schwebebalken
+        iCan: "Ich kann auf dem Schwebebalken aufgehen, vorwärts und rückwärts gehen, mich drehen und sicher abgehen."
+        gradeBand: "7-8"
+        requires: [turnerische-grundformen]
+      # HE Kap. 6 Bewegen an und mit Geräten, S. 21 (Barren parallel: Schwingen, Aufgrätschen, Abgang); BY S7 4.4 (Barren: Schwingen, Grätschsitz, Außenquersitz, Wende; verbindlich für Schüler); S8 4.4; NW 2.4.2 BF5, S. 25 (Reck/Barren als Gerät nach Wahl)
+      # Stimmen 7-10 / 7-8 (Jg 7) / 5-6 -> 7-8 (Mehrheit)
+      - id: barren
+        iCan: "Ich kann am Barren schwingen, in den Grätschsitz aufgrätschen und sicher abgehen."
+        gradeBand: "7-8"
+        requires: [turnerische-grundformen, helfergriffe]
+      # HE Kap. 7.1 Bewegen an und mit Geräten, S. 26 (Sprünge, Landungen); BY S7 4.4 (Minitrampolin: Streck-, Hock-, Grätsch- und Drehsprung); NW 2.4.2 BF5, S. 25 (Trampolin)
+      # Stimmen 5-6 / 7-8 (Jg 7) / 5-6 -> 5-6 (Mehrheit)
+      - id: minitrampolin
+        iCan: "Ich kann vom Minitrampolin einen Streck-, Hock- und Grätschsprung springen und sicher landen."
+        gradeBand: "5-6"
+        requires: [koerperspannung, helfergriffe]
+      # HE Kap. 7.1 Bewegen an und mit Geräten, S. 26 (Klettern; realistische Einschätzung der eigenen Fähigkeiten); BY S5 4.4 (Balancier-, Turn- und Kletterarrangements); NW 2.4.2 BF5, S. 25 (Klettertaue, Sprossenwand, Boulder-/Kletterwand)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: klettern
+        iCan: "Ich kann an Kletterwand, Tau oder Sprossenwand sicher klettern und die Sicherheitsregeln beim Bouldern nennen."
+        gradeBand: "5-6"
+        requires: [turnerische-grundformen, wagnis-einschaetzen]
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (verantwortungsbewusst sichern und helfen); BY S7 4.4 (Helfergriffe und Sicherheitsstellungen zunehmend selbständig); S8 4.4 (sichern, helfen, Korrekturhilfen geben); NW 2.5.2 BF5, S. 35 (turnerische Sicherheits- und Hilfestellungen ausführen)
+      # Stimmen 5-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: sicherheitsstellung
+        iCan: "Ich kann bei schwierigen Turnelementen Sicherheitsstellung geben und anderen Hinweise zur Verbesserung geben."
+        gradeBand: "7-8"
+        requires: [helfergriffe]
+      # HE Kap. 6 Bewegen an und mit Geräten, S. 21 (Partner- und Gruppenakrobatik); BY S5 4.4 (statische Partnerakrobatik); S6 4.4 (Gruppenakrobatik, z. B. 3er-Pyramide); NW 2.5.2 BF5, S. 35 (selbst entwickelte akrobatische Gruppengestaltung; SiLP Jg 7, UV 5.3)
+      # Stimmen 7-10 / 5-6 (Jg 5) / 7-10 -> 7-8 (Gleichstand 7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: akrobatik
+        iCan: "Ich kann mit anderen eine akrobatische Figur oder Pyramide sicher bauen und dabei die Aufgaben von Unterleuten und Obermann beachten."
+        gradeBand: "7-8"
+        requires: [koerperspannung, helfergriffe]
+  - id: gestalten-tanzen
+    name: { de: "Gestalten, Tanzen, Darstellen", en: "Movement design and dance" }
+    competencies:
+      # HE Kap. 7.1 Bewegung gymnastisch, rhythmisch und tänzerisch gestalten, S. 26 f. (Synchronität von Körper und Musik); Kap. 6 Bewegungskompetenz, S. 18 (Rhythmen in Bewegung umsetzen); BY S5 4.5 (rhythmisch bewegen, auch zu Musik); NW 2.4.2 BF6, S. 26 (Grundformen ästhetisch-gestalterischen Bewegens)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: im-rhythmus-bewegen
+        iCan: "Ich kann mich im Takt einer Musik bewegen und dabei in Achterblöcken mitzählen."
+        gradeBand: "5-6"
+      # HE Kap. 7.1 Gestalten, S. 26 (Bewegungsgestaltungen mit Handgeräten); Kap. 6, S. 21 (Grundtechniken mit einem Handgerät); BY S5 4.5 (Grundtechniken und Kunststücke mit Ball und Seil, z. B. Rope-Skipping); S6 4.5; NW 2.4.2 BF6, S. 26 (mit Handgeräten Reifen, Seil oder Ball eine einfache gymnastische Gestaltung)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: handgeraete
+        iCan: "Ich kann mit einem Handgerät wie Seil, Ball oder Reifen Grundtechniken ausführen und zu einer kurzen Folge verbinden."
+        gradeBand: "5-6"
+        requires: [im-rhythmus-bewegen]
+      # HE Kap. 7.1 Gestalten, S. 27 (zwei Tänze unterschiedlicher Tanzart); BY S5 4.5 (kurze Tanzschrittkombinationen, z. B. 16 Takte); S6 4.5; NW 2.4.2 BF6, S. 26 (traditionelle oder aktuelle tänzerische Komposition präsentieren)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: tanzschritte
+        iCan: "Ich kann eine vorgegebene Tanzschrittkombination aus Gehen, Hüpfen, Federn und Drehen zur Musik tanzen."
+        gradeBand: "5-6"
+        requires: [im-rhythmus-bewegen]
+      # HE Kap. 7.1 Gestalten, S. 27 (zwei Tänze unterschiedlicher Tanzart); BY S5 4.5 (Auswahl aus unterschiedlichen Kulturen und Stilrichtungen); S9 4.5 (Gesellschaftstanz); NW 2.4.2 BF6, S. 26 (traditionelle (Volkstanz) oder aktuelle (Modetanz) Komposition)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: tanzarten
+        iCan: "Ich kann Tanzarten wie Volkstanz, Gesellschaftstanz und Hip-Hop an ihren Merkmalen unterscheiden."
+        gradeBand: "5-6"
+        requires: [tanzschritte]
+      # SCHWACH (HE nennt Aerobic nicht; NW nur als Beispiel für Ausdauer). BY S5 4.5 (Grundschritte aus dem Bereich Aerobic); S7, S8 4.5; NW 2.4.2 BF1, S. 24 (Ausdauerleistung z. B. Aerobic 15 min)
+      # Stimmen – / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: aerobic-grundschritte
+        iCan: "Ich kann Aerobic-Grundschritte wie Step-Touch, March und Grapevine ausführen und mit Armbewegungen kombinieren."
+        gradeBand: "5-6"
+        requires: [im-rhythmus-bewegen]
+      # HE Kap. 7.1 Gestalten, S. 26 f. (Synchronität mit Partner); BY S5 4.5 (choreografische Elemente in Formationen umsetzen, Raumwege); NW 2.4.1 IF b, S. 21 (grundlegende Aufstellungsformen und Formationen benennen)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: formationen
+        iCan: "Ich kann Aufstellungsformen wie Reihe, Kreis und Block benennen und in einer Gruppengestaltung wechseln."
+        gradeBand: "5-6"
+        requires: [tanzschritte]
+      # HE Kap. 7.1 Bewegen an und mit Geräten, S. 26 (Anwendung und Einhaltung von Gestaltungskriterien); Kap. 6 Gestalten, S. 21 (räumliche, zeitliche, dynamische Strukturierung); BY S8 4.5 (Gestaltung der Raumwege; Variation von Tanzschrittkombinationen); NW 2.5.1 IF b, S. 29 (Gestaltungskriterium Raum: Aufstellungsformen, Raumwege, Raumebenen, Bewegungsrichtungen)
+      # Stimmen 5-6 / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: gestaltungskriterien
+        iCan: "Ich kann die Gestaltungskriterien Raum, Zeit und Dynamik erklären und in einer eigenen Gestaltung nutzen."
+        gradeBand: "7-8"
+        requires: [formationen]
+      # HE Kap. 6 Gestalten, S. 21 f. (emotionale und kommunikative Wirkung, Körpersprache); BY S6 4.5 (Ausdrucksmittel: Kopf- und Armbewegungen); S8 4.5 (Mimik, Gestik); NW 2.5.1 IF b, S. 29 (Ausführungskriterium Ausdruck; Wirkung auf den Zuschauer)
+      # Stimmen 7-10 / 5-6 (Jg 6) / 7-10 -> 7-8 (Gleichstand 7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: ausdruck-koerpersprache
+        iCan: "Ich kann mit Mimik, Gestik und Körperhaltung Stimmungen ausdrücken und erklären, wie das auf Zuschauer wirkt."
+        gradeBand: "7-8"
+        requires: [tanzschritte]
+      # HE Kap. 6 Gestalten, S. 22 (Wissen über den Aufbau einer Choreografie); BY S8 4.5 (in Teilen selbst gestaltete Tanzsequenz); S10 4.5 (kurze Choreografie); NW 2.5.1 IF b, S. 29 (kreative Bewegungsgestaltungen entwickeln und zu einer Präsentation verbinden)
+      # Stimmen 7-10 / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: choreografie-aufbauen
+        iCan: "Ich kann eine Choreografie mit Anfang, Hauptteil und Schluss aufbauen und mit einer Gruppe einüben."
+        gradeBand: "7-8"
+        requires: [gestaltungskriterien, ausdruck-koerpersprache]
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (Bewegungsausführungen nach vereinbarten Kriterien beurteilen); NW 2.4.1 IF b, S. 21 (Präsentationen anhand grundlegender Kriterien beurteilen); 2.5.1 IF b, S. 29
+      # Stimmen 5-10 / – / 5-6 -> 5-6 (Mehrheit)
+      - id: gestaltung-beurteilen
+        iCan: "Ich kann eine Präsentation nach Kriterien wie Synchronität, Ausdruck, Schwierigkeit und Nutzung des Raums beurteilen."
+        gradeBand: "5-6"
+        requires: [formationen]
+      # SCHWACH (HE nennt Bewegungskünste nicht; NW nur als ein Bereich von drei zur Wahl). BY S5 4.4 (einfache Elemente der Bewegungskünste, z. B. Jonglieren); NW 2.5.2 BF6, S. 35 (Pantomime, Bewegungstheater oder Jonglage; SiLP Jg 7, UV 6.3)
+      # Stimmen – / 5-6 (Jg 5) / 7-10 -> 5-6 (Gleichstand 5-6/7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: jonglieren
+        iCan: "Ich kann mit Tüchern oder Bällen die Kaskade jonglieren."
+        gradeBand: "5-6"
+        requires: [im-rhythmus-bewegen]
+  - id: spielen
+    name: { de: "Spielen – Kleine Spiele und Sportspiele", en: "Games and team sports" }
+    competencies:
+      # HE Kap. 7.1 Spielen, S. 26 (Wissen über das Miteinander im Gegeneinander); BY S5 4.3 (Spielidee vom Miteinander zum Gegeneinander); NW 2.4.2 BF2, S. 24 (Spielidee als Voraussetzung, um eigene Spiele zu finden)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: spielidee
+        iCan: "Ich kann die Spielidee eines Spiels beschreiben: wer mit wem gegen wen spielt und welches Ziel es gibt."
+        gradeBand: "5-6"
+      # HE Kap. 6 Teamkompetenz, S. 19 (Regeln gezielt verändern); BY S6 4.3 (Spiele mit veränderten Regeln und Aufgaben, z. B. Überzahlspiele); S6 LB2 (Regeln an die Situation anpassen); NW 2.4.2 BF2, S. 24 (Kleine Spiele situations- und kriterienorientiert gestalten)
+      # Stimmen 5-10 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: spiele-veraendern
+        iCan: "Ich kann ein Spiel verändern, indem ich Regeln, Spielfeld, Spielerzahl oder Spielgerät anpasse."
+        gradeBand: "5-6"
+        requires: [spielidee, regeln-im-sport]
+      # HE Kap. 6 Spielen, S. 21 (Variation von Spielideen); BY S7 LB2 (Regelentwurf für ein eigenes Spiel); NW 2.4.2 BF2, S. 24 (eigene Spiele finden, gestalten und spielen); 2.4.1 IF e, S. 23 (Regeln dokumentieren); SiLP Jg 6, UV 2.4
+      # Stimmen 7-10 / 7-8 (Jg 7) / 5-6 -> 7-8 (Mehrheit)
+      - id: spiel-erfinden
+        iCan: "Ich kann ein eigenes Spiel erfinden und seine Regeln so aufschreiben, dass andere es spielen können."
+        gradeBand: "7-8"
+        requires: [spiele-veraendern]
+      # HE Kap. 7.1 Spielen, S. 25 f. (Kraft- und Winkelsteuerung, Ballsicherung, Antizipation der Zuspielrichtung); BY S5 4.3 (kontrolliertes und zielgenaues Zuspiel sowie Annahme mit Fuß, Hand/Armen und Schläger); NW 2.4.2 BF7, S. 26 (sportspielübergreifende koordinative und technische Fertigkeiten, u. a. Heidelberger Ballschule)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: ball-zuspielen-annehmen
+        iCan: "Ich kann einen Ball mit Hand, Fuß oder Schläger kontrolliert zuspielen und annehmen."
+        gradeBand: "5-6"
+      # HE Kap. 7.1 Spielen, S. 26 (gezieltes Anbieten und Nutzung von Freiräumen); BY S5 4.3 (individualtaktische Verhaltensmuster: Freilaufen, Orientieren, Anbieten); S6 4.3; NW 2.4.2 BF7, S. 26 (durch Wahrnehmung von Raum, Spielgerät und Spielern taktisch angemessen verhalten)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: freilaufen-anbieten
+        iCan: "Ich kann mich im Spiel freilaufen und anbieten, damit ich angespielt werden kann."
+        gradeBand: "5-6"
+        requires: [spielidee]
+      # HE Kap. 7.1 Spielen, S. 26 (altersgemäße Formen des Angriffs- und Abwehrverhaltens in Kleinfeldspielen); BY S6 4.3 (individualtaktische Muster, gruppentaktische Grundstrukturen); NW 2.4.2 BF7, S. 26 (in spielorientierten Handlungssituationen taktisch angemessen verhalten)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: angriff-und-abwehr
+        iCan: "Ich kann im Spiel zwischen Angriff und Abwehr umschalten und weiß, was jeweils meine Aufgabe ist."
+        gradeBand: "5-6"
+        requires: [freilaufen-anbieten]
+      # HE Kap. 7.1 Spielen, S. 26 (Zielschussspiel, Rückschlagspiel); Kap. 6, S. 20 f. (Endzonenspiel); BY S5 4.3 (Große Sportspiele, Rückschlagspiele); S7 4.3 (Rückschlagspiele, alternative Spiele); NW 2.4.2 BF7, S. 26 (Mannschaftsspiele, Partnerspiele, weitere Sportspiele)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: spielfamilien
+        iCan: "Ich kann Sportspiele in Zielschussspiele, Rückschlagspiele und Endzonenspiele einteilen und ihre Spielideen vergleichen."
+        gradeBand: "5-6"
+        requires: [spielidee]
+      # HE Kap. 6 Spielen, S. 20 (gruppenbezogene Verständigungsprozesse, festgelegte Spielpositionen); BY S7 4.3 (individualtaktische Verhaltensweisen zu gruppentaktischen Grundstrukturen zusammenfügen); NW 2.5.2 BF7, S. 36 (taktisch-kognitiv angemessen agieren; SiLP Jg 7, UV 7.5 individual-, gruppen- und mannschaftstaktisch)
+      # Stimmen 7-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: taktik-ebenen
+        iCan: "Ich kann Individualtaktik, Gruppentaktik und Mannschaftstaktik an Beispielen aus einem Sportspiel unterscheiden."
+        gradeBand: "7-8"
+        requires: [angriff-und-abwehr]
+      # HE Kap. 6 Spielen, S. 20 (adäquates spieltaktisches Verhalten im Angriff); BY S7 4.3 (Taktik Fußball: Doppelpass, Überzahlsituationen); S8 4.3 (Basketball: Überzahlspiel bis 3 : 2, Give and Go); NW 2.5.2 BF7, S. 36 (taktisch-kognitive Fähigkeiten auf fortgeschrittenem Niveau)
+      # Stimmen 7-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: ueberzahl-doppelpass
+        iCan: "Ich kann eine Überzahl im Angriff erkennen und mit Doppelpass oder „Give and Go“ ausnutzen."
+        gradeBand: "7-8"
+        requires: [taktik-ebenen]
+      # HE Kap. 6 Spielen, S. 20 (Abschlussaktionen des Gegners regelgerecht stören und verhindern, Spielpositionen ausfüllen); BY S7 4.3 (mannbezogene Verteidigung; Raumdeckung); S8 4.3 (Mann-Mann-Verteidigung); S9 4.3 (Raumdeckung 5-1, 6-0); NW 2.5.2 BF7, S. 36 (taktisch-kognitive Fähigkeiten)
+      # Stimmen 7-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: deckungsarten
+        iCan: "Ich kann Manndeckung und Raumdeckung unterscheiden und erklären, wann welche Deckung sinnvoll ist."
+        gradeBand: "7-8"
+        requires: [taktik-ebenen]
+      # HE Kap. 6 Spielen, S. 20 (einfache Täuschungen bzw. Finten); BY S7 4.3 (Handball: einfache Finten); S8 4.3 (Basketball: einfache Finten); S9 4.3 (Fußball: Finten); NW 2.5.2 BF9, S. 37 (Fintieren); BF7, S. 36 (technisch-koordinative Fertigkeiten)
+      # Stimmen 7-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: finten
+        iCan: "Ich kann eine einfache Finte einsetzen, um einen Gegner zu täuschen."
+        gradeBand: "7-8"
+        requires: [angriff-und-abwehr]
+      # HE Kap. 7.1 Spielen, S. 26 (frei zu wählendes Zielschussspiel; Kenntnisse über Regeln); BY S6 4.3 (Basketball; grundlegende Spielregeln der Sportspiele); NW 2.4.2 BF7, S. 26 (Mannschaftsspiel, u. a. Basketball, regelgerecht; SiLP Jg 6, UV 7.3)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit). HE und NW lassen das Sportspiel wählen; die Stimme gilt für jedes große Sportspiel
+      - id: basketball-regeln
+        iCan: "Ich kann die wichtigsten Basketballregeln erklären, zum Beispiel Schrittregel, Doppeldribbling und Foul."
+        gradeBand: "5-6"
+        requires: [spielfamilien, regeln-im-sport]
+      # HE Kap. 7.1 Spielen, S. 25 (individuelle Ballfertigkeiten); Kap. 6, S. 20 (regelkonformes Dribbeln, Prellen); BY S6 4.3 (Basketball: Passen, Fangen, Dribbeln, Stopp- und Sternschritt); NW 2.4.2 BF7, S. 26 (technisch-koordinative Fertigkeiten im ausgewählten Spiel)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: basketball-dribbeln-passen
+        iCan: "Ich kann im Basketball regelgerecht dribbeln, passen, fangen und mit Stopp und Sternschritt anhalten."
+        gradeBand: "5-6"
+        requires: [basketball-regeln, ball-zuspielen-annehmen]
+      # HE Kap. 6 Spielen, S. 20 (elementare Techniken des Korbwurfs); BY S8 4.3 (Basketball: Korbleger, Standwurf); NW 2.5.2 BF7, S. 36 (technisch-koordinative Fertigkeiten auf fortgeschrittenem Niveau)
+      # Stimmen 7-10 / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: basketball-korbleger
+        iCan: "Ich kann einen Korbleger im Zweierrhythmus ausführen und seine Technikmerkmale beschreiben."
+        gradeBand: "7-8"
+        requires: [basketball-dribbeln-passen]
+      # HE Kap. 7.1 Spielen, S. 26 (frei zu wählendes Zielschussspiel; Kenntnisse über Regeln); BY S6 4.3 (Fußball; grundlegende Spielregeln der Sportspiele); NW 2.4.2 BF7, S. 26 (Mannschaftsspiel, u. a. Fußball, regelgerecht)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit). HE und NW lassen das Sportspiel wählen
+      - id: fussball-regeln
+        iCan: "Ich kann die wichtigsten Fußballregeln erklären, zum Beispiel Einwurf, Eckstoß, Foul und Freistoß."
+        gradeBand: "5-6"
+        requires: [spielfamilien, regeln-im-sport]
+      # HE Kap. 7.1 Spielen, S. 25 (individuelle Ballfertigkeiten); Kap. 6, S. 20 (Annehmen, Stoppen, Passen, Torschuss); BY S6 4.3 (Fußball: Passen, Annahme, Mitnahme, Dribbling, Torschuss); S7 4.3 (Kurzpass mit der Innenseite); NW 2.4.2 BF7, S. 26 (technisch-koordinative Fertigkeiten im ausgewählten Spiel)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: fussball-passen-annehmen
+        iCan: "Ich kann im Fußball mit der Innenseite passen, den Ball annehmen und mitnehmen und aufs Tor schießen."
+        gradeBand: "5-6"
+        requires: [fussball-regeln, ball-zuspielen-annehmen]
+      # HE Kap. 7.1 Spielen, S. 26 (frei zu wählendes Zielschussspiel; Kenntnisse über Regeln); BY S6 4.3 (Handball; grundlegende Spielregeln der Sportspiele); NW 2.4.2 BF7, S. 26 (Mannschaftsspiel, u. a. Handball, regelgerecht)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit). HE und NW lassen das Sportspiel wählen
+      - id: handball-regeln
+        iCan: "Ich kann die wichtigsten Handballregeln erklären, zum Beispiel Schrittregel, Torraum und Siebenmeter."
+        gradeBand: "5-6"
+        requires: [spielfamilien, regeln-im-sport]
+      # HE Kap. 7.1 Spielen, S. 25 (individuelle Ballfertigkeiten); Kap. 6, S. 20 (Torwurf); BY S6 4.3 (Handball: Passen, Fangen, Prellen, Torwurf); S7 4.3 (Werfen und Fangen in der Bewegung); NW 2.4.2 BF7, S. 26 (technisch-koordinative Fertigkeiten im ausgewählten Spiel)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: handball-werfen-fangen
+        iCan: "Ich kann im Handball in der Bewegung werfen und fangen, prellen und mit Schlagwurf aufs Tor werfen."
+        gradeBand: "5-6"
+        requires: [handball-regeln, ball-zuspielen-annehmen, schlagwurf]
+      # HE Kap. 7.1 Spielen, S. 26 (Rückschlagspiel; Kenntnisse über Regeln); BY S6 4.3 (Volleyball; grundlegende Spielregeln der Sportspiele); NW 2.4.2 BF7, S. 26 (Mannschaftsspiel, u. a. Volleyball, regelgerecht)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit). HE und NW lassen das Sportspiel wählen
+      - id: volleyball-regeln
+        iCan: "Ich kann die wichtigsten Volleyballregeln erklären, zum Beispiel drei Ballkontakte, Rotation und Zählweise."
+        gradeBand: "5-6"
+        requires: [spielfamilien, regeln-im-sport]
+      # HE Kap. 7.1 Spielen, S. 26 (Rückschlagspiel: Formen des kontrollierten Zuspiels); BY S6 4.3 (Volleyball: oberes, unteres Zuspiel); S8 4.3; NW 2.4.2 BF7, S. 26 (technisch-koordinative Fertigkeiten im ausgewählten Spiel)
+      # Stimmen 5-6 / 5-6 (Jg 6) / 5-6 -> 5-6 (Mehrheit)
+      - id: pritschen-baggern
+        iCan: "Ich kann im Volleyball den Ball oberes Zuspiel (Pritschen) und unteres Zuspiel (Baggern) kontrolliert spielen."
+        gradeBand: "5-6"
+        requires: [volleyball-regeln, ball-zuspielen-annehmen]
+      # HE Kap. 6 Spielen, S. 20 (Rückschlagspiele: Aufschläge); BY S8 4.3 (Volleyball: Aufschlag von unten); S10 4.3 (Aufschlag von oben); NW 2.5.2 BF7, S. 36 (technisch-koordinative Fertigkeiten auf fortgeschrittenem Niveau)
+      # Stimmen 7-10 / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: volleyball-aufschlag
+        iCan: "Ich kann im Volleyball einen Aufschlag von unten regelgerecht ins gegnerische Feld spielen."
+        gradeBand: "7-8"
+        requires: [pritschen-baggern]
+      # HE Kap. 7.1 Spielen, S. 26 (am Beispiel eines Rückschlagspiels; Kenntnisse über Regeln); BY S5 4.3 (Bewegungserfahrungen im Bereich der Rückschlagspiele); S7 4.3 (z. B. Badminton); NW 2.4.2 BF7, S. 26 (Partnerspiel, Badminton, Tennis oder Tischtennis, regelgerecht)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: rueckschlagspiel-regeln
+        iCan: "Ich kann die Regeln eines Rückschlagspiels wie Badminton oder Tischtennis erklären: Aufschlag, Feldgrenzen und Zählweise."
+        gradeBand: "5-6"
+        requires: [spielfamilien, regeln-im-sport]
+      # HE Kap. 6 Spielen, S. 20 f. (Grundschläge, Angriffs- und Abwehrschläge; den Gegner ausspielen); BY S8 4.3 (Erfahrungen in Rückschlagspielen, z. B. Tischtennis); S9 4.3 (Badminton); NW 2.5.2 BF7, S. 36 (im ausgewählten Partnerspiel auf fortgeschrittenem Niveau)
+      # Stimmen 7-10 / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: gegner-ausspielen
+        iCan: "Ich kann in einem Rückschlagspiel mit Grundschlägen lange und kurze Bälle so platzieren, dass ich den Gegner ausspiele."
+        gradeBand: "7-8"
+        requires: [rueckschlagspiel-regeln, ball-zuspielen-annehmen]
+      # HE Kap. 6 Spielen, S. 20 (zur Vertiefung ein weiteres Zielschussspiel oder ein Endzonenspiel); BY S7 4.3 (alternative Spiele, z. B. Ultimate Frisbee); S10 4.3 (Flag-Football); NW 2.5.2 BF7, S. 36 (ein Endzonenspiel, z. B. Ultimate Frisbee, Rugby, Flag-Football, regelgerecht spielen)
+      # Stimmen 7-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: endzonenspiel
+        iCan: "Ich kann die Spielidee und die wichtigsten Regeln eines Endzonenspiels wie Ultimate Frisbee oder Flag-Football erklären."
+        gradeBand: "7-8"
+        requires: [spielfamilien, regeln-im-sport]
+  - id: fairness
+    name: { de: "Fairness, Regeln und Zusammenarbeit", en: "Fair play, rules and teamwork" }
+    competencies:
+      # HE Kap. 5 Leitidee Soziale Interaktion, S. 14 (Regelverständnis, -akzeptanz und Handhabung der Regeln); BY S5 LB2 (elementare Verhaltens- und Spielregeln als Voraussetzung für positive Erlebnisse); NW 2.4.1 IF e, S. 22 (Vereinbarungen und Regeln beschreiben); 2.5.1 IF e, S. 31 (Notwendigkeit und Funktion von Regeln erläutern)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: regeln-im-sport
+        iCan: "Ich kann erklären, wozu Regeln im Sport da sind und was ohne sie passieren würde."
+        gradeBand: "5-6"
+      # HE Kap. 6 Teamkompetenz, S. 19 (sich fair verhalten); BY S7 LB2 (den Fairplay-Gedanken schätzen); S7 4.3 (Fairplay-Gedanke als übergeordnetes Ziel); NW 2.4.1 IF e, S. 22 (Merkmale für faires, kooperatives und teamorientiertes Handeln benennen)
+      # Stimmen 5-10 / 7-8 (Jg 7) / 5-6 -> 5-6 (Gleichstand 5-6/7-8: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: fair-play
+        iCan: "Ich kann Merkmale für faires Verhalten im Sport nennen und erklären, was Fairplay bedeutet."
+        gradeBand: "5-6"
+        requires: [regeln-im-sport]
+      # HE Kap. 6 Teamkompetenz, S. 19 (sich fair verhalten, auch bei Erfolgs- und Misserfolgserlebnissen); BY S5 4.3 (gehen mit Sieg und Niederlage konfliktfrei um)
+      # Stimmen 5-10 / 5-6 (Jg 5) / – -> 5-6 (Mehrheit)
+      - id: sieg-und-niederlage
+        iCan: "Ich kann fair mit Sieg und Niederlage umgehen und erklären, warum das zum Sport gehört."
+        gradeBand: "5-6"
+        requires: [fair-play]
+      # HE Kap. 6 Teamkompetenz, S. 19 (Regeln einhalten, sich fair verhalten); BY S7 LB2 (Auswirkungen von Verstößen bewerten); S8 LB2 (Ursachen von Regelverstößen und deren Konsequenzen); NW 2.4.1 IF e, S. 23 (Spielsituationen hinsichtlich der Einhaltung von Regeln und Fairness bewerten)
+      # Stimmen 5-10 / 7-8 (Jg 7) / 5-6 -> 5-6 (Gleichstand 5-6/7-8: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: regelverstoesse
+        iCan: "Ich kann Regelverstöße nach ihren Ursachen unterscheiden – Versehen, Unvermögen oder Absicht – und ihre Folgen bewerten."
+        gradeBand: "5-6"
+        requires: [fair-play]
+      # HE Kap. 7.1 Spielen, S. 26 (Kenntnisse über Regeln und Schiedsrichtertätigkeiten); BY S5 LB2 (einfache Schieds- und Kampfrichteraufgaben); S6 4.3 (einfache Schiedsrichtertätigkeiten); S8, S10 LB2; NW 2.5.1 IF e, S. 31 (unter Verwendung der vereinbarten Zeichen und Signale Schiedsrichterfunktionen übernehmen)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 7-10 -> 5-6 (Mehrheit)
+      - id: schiedsrichter
+        iCan: "Ich kann in einem Spiel als Schiedsrichterin oder Schiedsrichter mit den vereinbarten Zeichen und Signalen pfeifen."
+        gradeBand: "5-6"
+        requires: [regelverstoesse]
+      # HE Kap. 6 Teamkompetenz, S. 19 (Konflikte selbstständig analysieren und konstruktiv lösen); BY S6 LB2 (an der Konfliktlösung mitwirken); S8 LB2 (Strategien zur Konfliktvermeidung und -lösung)
+      # Stimmen 5-10 / 5-6 (Jg 6) / – -> 5-6 (Mehrheit)
+      - id: konflikte-loesen
+        iCan: "Ich kann einen Streit beim Sport mit einer vereinbarten Strategie lösen, zum Beispiel mit einem Gespräch nach festen Schritten."
+        gradeBand: "5-6"
+        requires: [fair-play]
+      # HE Kap. 6 Teamkompetenz, S. 20 (Interessens- und Leistungsunterschiede auch unter Genderaspekten berücksichtigen); BY S6 LB2 (Ausgleich unterschiedlicher Leistungsvoraussetzungen); S8 LB2 (andere einbinden); NW 2.5.1 IF e, S. 32 (Partizipation, Geschlechteraspekte); Kap. 2.2 IF e, S. 16 (Bildung von Gruppen bzw. Mannschaften)
+      # Stimmen 5-10 / 5-6 (Jg 6) / 7-10 -> 5-6 (Gleichstand 5-6/7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: alle-einbinden
+        iCan: "Ich kann Mannschaften fair bilden und Unterschiede in der Leistung so ausgleichen, dass alle mitspielen können."
+        gradeBand: "5-6"
+        requires: [fair-play]
+      # SCHWACH (BY nennt nur, sich in eine Gruppe einzubringen). HE Kap. 6 Teamkompetenz, S. 19 (anforderungsgemäß Rollen einnehmen, ausfüllen und akzeptieren); BY S7 LB2 (bringen sich in eine Gruppe aktiv ein)
+      # Stimmen 5-10 / 7-8 (Jg 7) / – -> 7-8 (Mehrheit)
+      - id: rollen-im-team
+        iCan: "Ich kann in einer Mannschaft verschiedene Rollen übernehmen und erklären, warum jede Rolle für das Team wichtig ist."
+        gradeBand: "7-8"
+        requires: [fair-play]
+      # HE Kap. 6 Teamkompetenz, S. 20 (sportliche Wettbewerbssituationen selbstständig organisieren und regeln); BY S9 LB2 (Helfertätigkeiten bei Sportwettbewerben der Unterstufe); S10 LB2; NW 2.4.2 BF3, S. 24 (einen leichtathletischen Wettbewerb durchführen); 2.5.2 BF3, S. 34 (Wettkampf einzeln oder in der Gruppe)
+      # Stimmen 5-10 / 9-10 (Jg 9) / 5-6 -> 5-6 (Gleichstand 5-6/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: wettbewerb-organisieren
+        iCan: "Ich kann einen kleinen Wettbewerb oder ein Turnier mit Spielplan, Regeln und Ergebnisliste selbst organisieren."
+        gradeBand: "5-6"
+        requires: [regeln-im-sport, messen-und-kampfrichten]
+  - id: bewegungslernen
+    name: { de: "Bewegungen lernen und Leistung beurteilen", en: "Learning movements and judging performance" }
+    competencies:
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (funktionale Merkmale der gelernten Bewegung mit Fachbegriffen benennen und beschreiben); BY S5 4.1 (verwenden einfache Fachbegriffe zutreffend); S7 4.3 (einfache Bewegungsmerkmale beschreiben); NW 2.4.1 IF a, S. 20 (wesentliche Bewegungsmerkmale einfacher Bewegungsabläufe benennen)
+      # Stimmen 5-10 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: bewegungsmerkmale
+        iCan: "Ich kann wichtige Merkmale einer einfachen Bewegung mit Fachbegriffen benennen, zum Beispiel beim Werfen oder Springen."
+        gradeBand: "5-6"
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (funktionale Merkmale ansatzweise erklären); BY S8 4.3 (einfache sportliche Bewegungen anhand sportartspezifischer Bewegungsmerkmale analysieren); NW 2.5.1 IF a, S. 28 (relevante Bewegungsmerkmale benennen und Zusammenhänge von Aktionen und Effekten erläutern)
+      # Stimmen 5-10 / 7-8 (Jg 8) / 7-10 -> 7-8 (Mehrheit)
+      - id: bewegungsphasen
+        iCan: "Ich kann eine Bewegung in Vorbereitungs-, Haupt- und Endphase gliedern und erklären, was jede Phase bewirkt."
+        gradeBand: "7-8"
+        requires: [bewegungsmerkmale]
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (auf der Grundlage gezielter Beobachtungsvorgaben); BY S7 LB2 (gegenseitige Korrektur, auch mit digitalen Analysemethoden); NW 2.4.1 IF a, S. 20 (mediengestützte Bewegungsbeobachtungen zur kriteriengeleiteten Rückmeldung nutzen)
+      # Stimmen 5-10 / 7-8 (Jg 7) / 5-6 -> 5-6 (Gleichstand 5-6/7-8: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: bewegung-beobachten
+        iCan: "Ich kann eine Bewegung mit einem Beobachtungsbogen oder einem Video nach vorgegebenen Merkmalen beobachten und eine Rückmeldung geben."
+        gradeBand: "5-6"
+        requires: [bewegungsmerkmale]
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (Repertoire an Methoden und Strategien zur Gestaltung von Bewegungssituationen nutzen); BY S8 LB2 (Hilfestellung, Korrektur- und Demonstrationsaufgaben); NW 2.4.1 IF a, S. 20 (einfache Hilfen: Hilfestellungen, Geländehilfen, Visualisierungen, akustische Signale)
+      # Stimmen 5-10 / 7-8 (Jg 8) / 5-6 -> 5-6 (Gleichstand 5-6/7-8: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: lernhilfen
+        iCan: "Ich kann Hilfen beim Lernen einer Bewegung nennen und nutzen, zum Beispiel Geländehilfen, Bilder, akustische Signale und Feedback."
+        gradeBand: "5-6"
+        requires: [bewegungsmerkmale]
+      # SCHWACH (HE nennt Methoden und Strategien nur allgemein). HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (Methoden und Strategien zur Gestaltung von Bewegungssituationen selbstständig nutzen); NW 2.5.1 IF a, S. 28 (grundlegende methodische Prinzipien auf das Lernen und Üben anwenden)
+      # Stimmen 5-10 / – / 7-10 -> 7-8 (Gleichstand 7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: methodische-grundsaetze
+        iCan: "Ich kann beim Üben einer neuen Bewegung Grundsätze wie „vom Leichten zum Schweren“ und „vom Teil zum Ganzen“ anwenden."
+        gradeBand: "7-8"
+        requires: [lernhilfen]
+      # SCHWACH (BY nennt Leistungsbereitschaft nur als Verhalten). BY S8 LB2 (Leistungsbereitschaft und Durchhaltevermögen zeigen); NW 2.4.1 IF d, S. 22 (psycho-physische Leistungsfaktoren, u. a. Anstrengungsbereitschaft, Konzentrationsfähigkeit, benennen)
+      # Stimmen – / 7-8 (Jg 8) / 5-6 -> 5-6 (Gleichstand 5-6/7-8: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: leistungsfaktoren
+        iCan: "Ich kann erklären, dass neben Kraft und Ausdauer auch Konzentration, Motivation und Anstrengungsbereitschaft eine sportliche Leistung bestimmen."
+        gradeBand: "5-6"
+        requires: [motorische-grundfaehigkeiten]
+      # HE Kap. 7.1 LSW, S. 27 (Wissen über Kriterien der Leistungsbewertung; soziale oder kriterienorientierte Bezugsnormen); Kap. 5 Leitidee Leisten, S. 15; NW 2.5.1 IF d, S. 31 (Leistungsbegriff unter Berücksichtigung sozialer, personaler, kriterialer Bezugsnormen reflektieren)
+      # Stimmen 5-6 / – / 7-10 -> 5-6 (Gleichstand 5-6/7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: bezugsnormen
+        iCan: "Ich kann eine sportliche Leistung auf drei Arten beurteilen: im Vergleich mit mir selbst, mit anderen und mit einer festen Norm."
+        gradeBand: "5-6"
+        requires: [leistungsfaktoren]
+      # HE Kap. 6 Laufen, Springen, Werfen, S. 22 (individuelle Bezugsnorm); Bewegen an Geräten, S. 21 (individuelle Leistungsentwicklung); BY S7 4.1 (ermitteln ihre persönliche Leistungsentwicklung im Wurf); S9 4.1; S10 4.2; NW 2.5.1 IF d, S. 31 (sportliche Leistungen erfassen und mit graphischen Darstellungen oder Diagrammen dokumentieren)
+      # Stimmen 7-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: leistung-dokumentieren
+        iCan: "Ich kann meine Leistungen messen, in einer Tabelle oder einem Diagramm darstellen und meine Entwicklung beschreiben."
+        gradeBand: "7-8"
+        requires: [bezugsnormen, messen-und-kampfrichten]
+  - id: fahren-natur
+    name: { de: "Fahren, Rollen, Gleiten und Sport in der Natur", en: "Wheels, skis, boats and outdoor sport" }
+    competencies:
+      # HE Kap. 6 Fahren, Rollen, Gleiten, S. 23 (Antriebserzeugung, Veränderung von Geschwindigkeit und Richtung: Beschleunigen, Kurven fahren, Ausweichen; gilt auch für Jg 5/6); BY S7 4.6 (Wintersport: Gleichgewicht und Geschwindigkeit kontrollieren; Kurvenfahren); NW 2.4.2 BF8, S. 27 (mit einem Gleit-, Fahr- oder Rollgerät kontrolliert fortbewegen, gezielt die Richtung ändern)
+      # Stimmen 5-10 / 7-8 (Jg 7) / 5-6 -> 5-6 (Gleichstand 5-6/7-8: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: fahren-und-lenken
+        iCan: "Ich kann mich mit einem Roll- oder Gleitgerät wie Inlinern, Rad oder Skiern kontrolliert fortbewegen, beschleunigen und die Richtung ändern."
+        gradeBand: "5-6"
+      # HE Kap. 6 Fahren, Rollen, Gleiten, S. 23 (Bremsen und Stoppen); BY S7 4.6 (Bremsen und Anhalten, z. B. Bremspflug, Stoppschwung, Hockeystopp); NW 2.4.2 BF8, S. 27 (situations- und sicherheitsbewusst beschleunigen und bremsen)
+      # Stimmen 5-10 / 7-8 (Jg 7) / 5-6 -> 5-6 (Gleichstand 5-6/7-8: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: bremsen-und-anhalten
+        iCan: "Ich kann für mein Roll- oder Gleitgerät passende Bremstechniken erklären und sicher anhalten."
+        gradeBand: "5-6"
+        requires: [fahren-und-lenken]
+      # SCHWACH (nur HE nennt die Schutzausrüstung ausdrücklich; NW und BY allgemein sicherheitsbewusst). HE Kap. 6 Fahren, Rollen, Gleiten, S. 23 (Kenntnisse über die Verwendung der Schutzausrüstung); BY S7 4.6 (sicherheits- und umweltbewusst verhalten, um Gefahren zu vermeiden); NW 2.4.2 BF8, S. 27 (sicherheitsbewusst; Schutzausrüstung nicht ausdrücklich)
+      # Stimmen 5-10 / 7-8 (Jg 7) / 5-6 -> 5-6 (Gleichstand 5-6/7-8: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: schutzausruestung
+        iCan: "Ich kann die passende Schutzausrüstung für eine Roll- oder Gleitsportart nennen und erklären, wovor sie schützt."
+        gradeBand: "5-6"
+        requires: [sportkleidung-und-hygiene]
+      # HE Kap. 6 Fahren, Rollen, Gleiten, S. 23 (Verhaltensregeln in der Natur und im Straßenverkehr); BY S7 4.6 (Sicherheitsregeln, z. B. FIS-Regeln; Lawinenlagebericht); NW 2.5.2 BF8, S. 36 (unter Wahrnehmung von Geschwindigkeit und Umwelt situationsangemessen fortbewegen)
+      # Stimmen 5-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: verhaltensregeln-unterwegs
+        iCan: "Ich kann Verhaltensregeln im Straßenverkehr oder auf der Piste wie die FIS-Regeln nennen und begründen."
+        gradeBand: "7-8"
+        requires: [bremsen-und-anhalten]
+      # HE Kap. 6 Fahren, Rollen, Gleiten, S. 23 (witterungsabhängiger Untergrund; situative Bedingungen vor Ort); BY S6 LB3 (Umwelteinflüsse: UV-Strahlung, Ozonbelastung, Schneebeschaffenheit, Temperatur; Ausrüstung und Verhalten je nach Wetter); S5 LB3 (angemessene Kleidung); NW 2.5.2 BF8, S. 36 (Wahrnehmung von Material, Geschwindigkeit und Umwelt)
+      # Stimmen 5-10 / 5-6 (Jg 6) / 7-10 -> 5-6 (Gleichstand 5-6/7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: wetter-und-umwelt
+        iCan: "Ich kann erklären, wie Wetter, UV-Strahlung, Ozon und Temperatur den Sport im Freien beeinflussen, und mich passend ausrüsten."
+        gradeBand: "5-6"
+        requires: [sportkleidung-und-hygiene]
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (Ressourcen und Bewegungsräume, insbesondere die Natur, verantwortungsbewusst nutzen und die Zusammenhänge erklären); BY S7 LB3 (Regeln des Natur- und Umweltschutzes; DSV-Umweltregeln); S8, S9 LB3
+      # Stimmen 5-10 / 7-8 (Jg 7) / – -> 7-8 (Mehrheit)
+      - id: natur-schuetzen
+        iCan: "Ich kann Regeln für umweltschonenden Sport in der Natur nennen und begründen, warum Natur und Tiere Schutz brauchen."
+        gradeBand: "7-8"
+        requires: [wetter-und-umwelt]
+      # BY S7 LB3 (Orientierungsläufe mit Skizzen, Karten und GPS); NW 2.5.2 BF3, S. 34 (alternative leichtathletische Wettbewerbe, z. B. Orientierungslauf, Geocaching)
+      # Stimmen – / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: orientierungslauf
+        iCan: "Ich kann mich mit einer Karte im Gelände orientieren und einen Orientierungslauf bewältigen."
+        gradeBand: "7-8"
+        requires: [ausdauer-15-minuten]
+  - id: kaempfen
+    name: { de: "Ringen und Kämpfen", en: "Wrestling and fighting games" }
+    competencies:
+      # HE Kap. 7.1 Mit und gegen Partner kämpfen, S. 27 f. (Regeln für ein faires Kräftemessen, Wertschätzung und Schutz des Partners); BY S5 LB2 (Rauf- und Rangelspiele, z. B. Mattenkönig); NW 2.4.2 BF9, S. 27 (in einfachen Gruppen- und Zweikampfsituationen fair und regelgerecht kämpfen); Kap. 2.3, S. 19 (kein Schlagen, Stoßen, Treten)
+      # Stimmen 5-6 / 5-6 (Jg 5) / 5-6 -> 5-6 (Mehrheit)
+      - id: kampfregeln
+        iCan: "Ich kann Regeln für faires Kämpfen nennen, zum Beispiel ein Stoppsignal, keine Schläge und Rücksicht auf den Partner."
+        gradeBand: "5-6"
+        requires: [fair-play]
+      # HE Kap. 7.1 Mit und gegen Partner kämpfen, S. 27 (Zieh- und Schiebekämpfe); BY S7 LB2 (Zieh- und Schiebewettkämpfe); NW 2.4.2 BF9, S. 27 (um Raum und Gegenstände im Stand und am Boden kämpfen)
+      # Stimmen 5-6 / 7-8 (Jg 7) / 5-6 -> 5-6 (Mehrheit)
+      - id: kaempfen-um-raum
+        iCan: "Ich kann mit einer Partnerin oder einem Partner in Zieh- und Schiebekämpfen fair um Raum und Gegenstände kämpfen."
+        gradeBand: "5-6"
+        requires: [kampfregeln]
+      # HE Kap. 7.1 Mit und gegen Partner kämpfen, S. 27 (antizipiertes Fallen und Falltechniken); Kap. 6 Bewegungskompetenz, S. 18 (situationsbezogen fallen und landen); NW 2.5.2 BF9, S. 37 (Falltechniken)
+      # Stimmen 5-6 / – / 7-10 -> 5-6 (Gleichstand 5-6/7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: fallen
+        iCan: "Ich kann sicher rückwärts und seitwärts fallen, ohne mich zu verletzen."
+        gradeBand: "5-6"
+      # HE Kap. 7.1 Mit und gegen Partner kämpfen, S. 27 (Erspüren und Brechen des Gleichgewichts gegen Widerstand); NW 2.5.2 BF9, S. 37 (kontrolliertes Werfen; SiLP Jg 9, UV 9.3 Aus dem Gleichgewicht)
+      # Stimmen 5-6 / – / 7-10 -> 5-6 (Gleichstand 5-6/7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: gleichgewicht-brechen
+        iCan: "Ich kann erklären, wie ich das Gleichgewicht eines Gegners erspüre und breche, und es im Kampf kontrolliert anwenden."
+        gradeBand: "5-6"
+        requires: [kaempfen-um-raum, fallen]
+      # HE Kap. 6 Mit und gegen Partner kämpfen, S. 23 (Halten und Befreien im Bodenkampf); NW 2.5.2 BF9, S. 37 (Haltegriffe und Befreiungen)
+      # Stimmen 7-10 / – / 7-10 -> 7-8 (Gleichstand 7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: haltegriff-und-befreien
+        iCan: "Ich kann am Boden einen Haltegriff ansetzen und mich aus einem Haltegriff befreien."
+        gradeBand: "7-8"
+        requires: [kampfregeln]
+      # HE Kap. 6 Mit und gegen Partner kämpfen, S. 23 (grundlegende Angriffs- und Verteidigungsstrategien); NW 2.5.2 BF9, S. 37 (taktisch-kognitive Fähigkeiten: Kontern, Kombinieren, Fintieren)
+      # Stimmen 7-10 / – / 7-10 -> 7-8 (Gleichstand 7-8/9-10: requires entscheidet (früheste Stufe nach den Voraussetzungen))
+      - id: kampftaktik
+        iCan: "Ich kann einfache Taktiken im Zweikampf wie Kontern, Kombinieren und Täuschen erklären und anwenden."
+        gradeBand: "7-8"
+        requires: [haltegriff-und-befreien, gleichgewicht-brechen]
+      # HE Kap. 6 Urteils- und Entscheidungskompetenz, S. 19 (Strategien zur Affektbeherrschung und -kanalisierung bei der unmittelbaren körperlichen Auseinandersetzung); BY S7 LB2 (Aufgaben zum Kräftemessen und zur Aggressionssteuerung); NW 2.5.1 IF c, S. 30 (Strategien zum Umgang mit Emotionen anwenden)
+      # Stimmen 5-10 / 7-8 (Jg 7) / 7-10 -> 7-8 (Mehrheit)
+      - id: aggression-kontrollieren
+        iCan: "Ich kann Strategien nennen und nutzen, mit denen ich im Zweikampf Wut und Aggression kontrolliere."
+        gradeBand: "7-8"
+        requires: [kampfregeln]
