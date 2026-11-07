@@ -19,7 +19,7 @@ keywords:
   - { de: Massenerhaltung, en: conservation of mass }
 creator: { name: "Oliver", url: "https://github.com/mrsimpson" }
 source: https://github.com/lernapps/chemie-reaktionen
-commit: 9bb603eb9552b316f94dda1c11f726556ffbe538
+commit: 2756393ab43624910e9292ca44d731deec9060e1
 fitness:
   account: false
   install: false
