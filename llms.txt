@@ -22,6 +22,7 @@ Die [Lernlandkarte](https://lernapps.net/apps/map/) zeigt je Fach, was es zu ler
 „Ich kann …“), wann es dran ist (Richtstufe, Lehrpläne) und welche App es schon übt. So sieht man Lücken.
 Für dich als Daten, eine Datei je Fach (Fach, Quelle, Stränge, Bausteine mit `requires` und `practisedBy`, Lehrpläne
 mit ihren Einordnungen):
+- [biologie.json](https://lernapps.net/apps/map/biologie.json)
 - [chemie.json](https://lernapps.net/apps/map/chemie.json)
 - [mathematik.json](https://lernapps.net/apps/map/mathematik.json)
 - [musik.json](https://lernapps.net/apps/map/musik.json)
