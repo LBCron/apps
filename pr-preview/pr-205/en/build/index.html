@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" data-la-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Build an app · lernapps.net</title>
+  <meta name="description" content="Build a learning app with your AI assistant, even without programming skills. It plans with you, builds the app and checks it.">
+  <link rel="canonical" href="https://lernapps.net/apps/en/build/">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/apps/pr-preview/pr-205/lernapps-tokens.css">
+<link rel="stylesheet" href="/apps/pr-preview/pr-205/lernapps-frame.css">
+<link rel="alternate" hreflang="en" href="/apps/pr-preview/pr-205/en/build/">
+<link rel="alternate" hreflang="de" href="/apps/pr-preview/pr-205/build/">
+<script>(() => {
+  const key = "lernapps-lang", here = "en", pages = {"de":"/apps/pr-preview/pr-205/build/"};
+  const known = ["de","en"];
+  const browser = (navigator.languages || [navigator.language]).map((l) => String(l).slice(0, 2).toLowerCase()).find((l) => known.includes(l));
+  let chosen = null;
+  try { chosen = localStorage.getItem(key); } catch {}
+  const wanted = known.includes(chosen) ? chosen : browser;
+  if (wanted && wanted !== here && pages[wanted] && !/bot|crawl|spider|slurp/i.test(navigator.userAgent)) {
+    location.replace(pages[wanted] + location.search + location.hash);
+    return;
+  }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest("a[data-la-lang]");
+    if (!a) return;
+    try { a.dataset.laLang === browser ? localStorage.removeItem(key) : localStorage.setItem(key, a.dataset.laLang); } catch {}
+  });
+})();</script>
+  <link rel="stylesheet" href="/apps/pr-preview/pr-205/uno.css">
+  <link rel="stylesheet" href="/apps/pr-preview/pr-205/assets/apps.css">
+  <script src="/apps/pr-preview/pr-205/assets/bauen.js" defer></script>
+  <script src="/apps/pr-preview/pr-205/assets/kopieren.js" defer></script>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col" style="font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;">
+  <a class="la-skip" href="#main-content" lang="en">Skip to content</a>
+<p class="la-preview" lang="en">Preview of a change. The real page: <a href="https://lernapps.net/apps/en/build/">lernapps.net/apps/en/build/</a></p><header class="la-header" lang="en">
+  <div class="la-header__inner">
+    <a class="la-brand" href="/en/" aria-label="lernapps.net – home page"><img src="/brand/mark-plain.svg" alt=""><span>lernapps<span class="la-brand__tld">.net</span></span></a>
+    <nav class="la-nav la-nav--bar" aria-label="Main navigation"><ul><li><a href="/apps/pr-preview/pr-205/en/">Catalog</a></li><li><a href="/practice/en/">Practise</a></li><li><a href="/apps/pr-preview/pr-205/en/build/" aria-current="page">Build an app</a></li><li><a href="/tooling/en/">Tooling</a></li><li><a href="/en/tutor/">Tutor</a></li><li><a href="/en/features/">Features</a></li><li><a href="/docs/en/">Platform</a></li><li><a href="/en/join/">Get involved</a></li><li class="la-lang"><a href="/apps/pr-preview/pr-205/build/" hreflang="de" lang="de" data-la-lang="de" aria-label="Sprache: Deutsch">Deutsch</a></li></ul></nav>
+    <details class="la-menu"><summary>Menu</summary><nav class="la-nav la-nav--menu" aria-label="Main navigation"><div class="la-menu__group"><p class="la-menu__title" id="la-menu-0">For learners</p><ul aria-labelledby="la-menu-0"><li><a href="/apps/pr-preview/pr-205/en/">App catalog</a></li><li><a href="/practice/en/">Practise for a test</a></li></ul></div><div class="la-menu__group"><p class="la-menu__title" id="la-menu-1">For makers</p><ul aria-labelledby="la-menu-1"><li><a href="/apps/pr-preview/pr-205/en/build/" aria-current="page">Build an app</a></li><li><a href="/tooling/en/">Tooling</a></li></ul></div><div class="la-menu__group"><p class="la-menu__title" id="la-menu-2">Understand and join in</p><ul aria-labelledby="la-menu-2"><li><a href="/en/tutor/">Tutor</a></li><li><a href="/en/features/">Features</a></li><li><a href="/docs/en/">Platform</a></li><li><a href="/en/join/">Get involved</a></li></ul></div><ul class="la-menu__lang"><li class="la-lang"><a href="/apps/pr-preview/pr-205/build/" hreflang="de" lang="de" data-la-lang="de" aria-label="Sprache: Deutsch">Deutsch</a></li></ul></nav></details>
+  </div>
+</header>
+
+  <main id="main-content" tabindex="-1" class="flex-1 outline-none">
+    
+<section class="bg-slate-900 text-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 pt-10 pb-12">
+    <h1 class="m-0 font-extrabold leading-tight tracking-tight whitespace-pre-line" style="font-size: clamp(1.75rem, 5vw, 2.75rem);">Build a learning app
+with your AI assistant.</h1>
+    <p class="m-0 mt-3 text-lg text-white font-semibold max-w-2xl" data-searched="Looking for something {suche}? Then build it, for you and everyone who looks for it."
+       data-topic="on “{v}”" data-subject="in {v}" data-grade="for grade {v}" hidden></p>
+    <p class="m-0 mt-3 text-lg text-slate-300 max-w-2xl">You don&#39;t have to program. You say what the app should teach. Your assistant plans with you, builds the app and checks it.</p>
+    <p class="m-0 mt-4 text-slate-300">Already have an app? <a href="/apps/pr-preview/pr-205/en/enter/" class="text-blue-300 underline underline-offset-2 hover:text-white">Go straight to listing it <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 mt-8 grid gap-6">
+  <section aria-labelledby="mitbringen">
+    <h2 id="mitbringen" class="sr-only">Who brings what</h2>
+    <ul class="list-none p-0 m-0 grid gap-4 sm:grid-cols-3">
+      <li class="give" data-who="you"><strong class="block text-xs uppercase tracking-wider">You bring</strong><span class="block mt-1 text-slate-700">What your learners need: which content is coming up, where they struggle, which examples they know.</span></li>
+      <li class="give" data-who="ki"><strong class="block text-xs uppercase tracking-wider">The AI brings</strong><span class="block mt-1 text-slate-700">The subject knowledge and the programming. It plans with you, builds the app and checks it.</span></li>
+      <li class="give" data-who="la"><strong class="block text-xs uppercase tracking-wider">lernapps.net brings</strong><span class="block mt-1 text-slate-700">Templates, rules and checks, so that the app turns out well. And the way to share it with others.</span></li>
+    </ul>
+  </section>
+
+  <section class="panel min-w-0" aria-labelledby="start">
+    <h2 id="start" class="panel-title">Tell your assistant:</h2>
+    <p class="m-0 text-slate-700">You need an AI assistant that may run commands on your computer. Copy this task and give it to the assistant.</p>
+    <div class="mt-3">
+      <div data-prompt="Build a learning app for lernapps.net with me {suche}. First read https://lernapps.net/tooling/llms.txt and follow the quick path: start the app in a new, empty folder with npx --yes @lernapps/tooling init &lt;name&gt; (for &lt;name&gt; a short name without spaces). Then ask me what the app should teach, and write the plan with me. Only when I have confirmed the plan, create the app as the plan says.">
+      
+<div data-copy>
+  <label for="bauen-auftrag" class="block text-sm font-semibold text-slate-700">Task for your assistant</label>
+  <div class="mt-1 flex gap-2 flex-col items-start">
+    <textarea id="bauen-auftrag" readonly rows="5" class="field w-full">Build a learning app for lernapps.net with me. First read https://lernapps.net/tooling/llms.txt and follow the quick path: start the app in a new, empty folder with npx --yes @lernapps/tooling init &lt;name&gt; (for &lt;name&gt; a short name without spaces). Then ask me what the app should teach, and write the plan with me. Only when I have confirmed the plan, create the app as the plan says.</textarea>
+    <button type="button" class="btn btn-secondary" data-copy-button data-done="Copied" hidden>Copy task</button>
+  </div>
+</div>
+
+      </div>
+    </div>
+    <p class="m-0 mt-3 text-sm text-slate-600">Want to practise for a test with your own material? <a href="/practice/en/" class="text-blue-700 underline underline-offset-2">Then have a look at Practise <span aria-hidden="true">→</span></a></p>
+  </section>
+
+  <section class="panel" aria-labelledby="assistent">
+    <h2 id="assistent" class="panel-title">Which assistant?</h2>
+    <p class="m-0 text-slate-700">Any assistant works if it can use skills and change files. We build with Claude Code ourselves. Even a very cheap model already builds good apps. But what counts most is what you know about your subject and your learners. <a href="/tooling/en/assistants/" class="text-blue-700 underline underline-offset-2">Which assistants we use</a>.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="werkzeuge">
+    <h2 id="werkzeuge" class="panel-title">What lernapps.net provides for you to build</h2>
+    <p class="m-0 text-slate-700">Guides, templates for the apps and checks that help you build, easier and faster, an app that others can use well too. Your assistant uses them by itself. You can also read them yourself.</p>
+    <p class="m-0 mt-3 text-slate-700">Your app is published through GitHub: free, public and at your own address. You do not need to know GitHub. The tools do most of it, and your assistant tells you when you need to click something. <a href="/tooling/en/github/" class="text-blue-700 underline underline-offset-2">What GitHub is and what we use it for</a>.</p>
+    <a href="/tooling/en/" class="btn btn-secondary mt-4 self-start">Go to the build tools</a>
+  </section>
+
+  <section class="panel" aria-labelledby="frei">
+    <h2 id="frei" class="panel-title">Rather build freely?</h2>
+    <p class="m-0 text-slate-700">You can also build your app without our templates: by hand, with another framework or with tools such as Lovable or bolt.new. Then add <a href="https://github.com/lernapps/tooling/blob/main/skills/tooling/lernapps-cli/references/platform-rules.md" class="text-blue-700 underline underline-offset-2">the rules of lernapps.net</a> to the tool, for example as knowledge for the project. They hold for every app, whatever it is built with. What counts are <a href="/apps/pr-preview/pr-205/en/enter/#bedingungen" class="text-blue-700 underline underline-offset-2">the conditions</a>. When you list the app, we check the published app just like any other.</p>
+  </section>
+
+  <section class="scroll-mt-16 rounded-xl bg-slate-900 text-white p-6 sm:p-8 flex flex-col sm:flex-row gap-5 sm:items-center" aria-labelledby="eintragen">
+    <svg class="shrink-0 w-16 h-16 sm:w-24 sm:h-24" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+      <circle cx="10" cy="14" r="1.5" fill="#bfdbfe"/><circle cx="54" cy="52" r="1.5" fill="#bfdbfe"/><circle cx="50" cy="8" r="1" fill="#bfdbfe"/><circle cx="8" cy="44" r="1" fill="#bfdbfe"/>
+      <g transform="rotate(45 32 32)">
+        <path d="M26 46 L32 60 L38 46 Z" fill="#f59e0b"/>
+        <path d="M29 46 L32 54 L35 46 Z" fill="#fde68a"/>
+        <path d="M22 34 L13 46 L22 45 Z M42 34 L51 46 L42 45 Z" fill="#60a5fa"/>
+        <path d="M32 4 C40 12 43 22 43 33 L43 46 L21 46 L21 33 C21 22 24 12 32 4 Z" fill="#2563eb" stroke="#93c5fd" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="32" cy="24" r="5" fill="#0f172a" stroke="#bfdbfe" stroke-width="2"/>
+      </g>
+    </svg>
+    <div class="min-w-0">
+      <h2 id="eintragen" class="m-0 text-xl sm:text-2xl font-bold">And then: out into the world</h2>
+      <p class="m-0 mt-2 text-slate-300 text-lg">Your app can be really good software for you. But if you want the world to hear about it, you have to publish it!</p>
+      <a href="/apps/pr-preview/pr-205/en/enter/" class="btn btn-light btn-lg mt-4">How to publish your app <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</div>
+
+  </main>
+
+  <footer class="la-footer" lang="en">
+  <div class="la-footer__inner">
+    <p>lernapps.net is free and has no ads. It lives on your thanks.</p>
+    <nav aria-label="Footer"><ul><li><a href="/en/privacy/">Privacy</a></li><li><a href="/en/imprint/">Imprint</a></li><li><a href="/docs/en/platform-design/">Platform design</a></li><li><a href="https://github.com/lernapps/apps">Source code</a></li></ul></nav>
+  </div>
+</footer>
+</body>
+</html>
