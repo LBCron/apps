@@ -1,0 +1,1912 @@
+{
+  "id": "deutsch",
+  "name": {
+    "de": "Deutsch",
+    "en": "German"
+  },
+  "source": {
+    "title": "KMK, Bildungsstandards für das Fach Deutsch, Erster Schulabschluss (ESA) und Mittlerer Schulabschluss (MSA), Beschluss vom 15.10.2004 und vom 04.12.2003 i. d. F. vom 23.06.2022",
+    "url": "https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2022/2022_06_23-Bista-ESA-MSA-Deutsch.pdf"
+  },
+  "strands": [
+    {
+      "id": "sprechen-zuhoeren",
+      "name": {
+        "de": "Sprechen und Zuhören",
+        "en": "Speaking and listening"
+      },
+      "competencies": [
+        {
+          "id": "gespraechsregeln",
+          "iCan": "Ich kann Gesprächsregeln nennen und erklären, warum sie ein Gespräch gelingen lassen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "aktiv-zuhoeren",
+          "iCan": "Ich kann aktiv zuhören, gezielt nachfragen und das Gehörte in eigenen Worten wiedergeben.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "mitschreiben",
+          "iCan": "Ich kann beim Zuhören Notizen machen und das Wichtigste festhalten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "aktiv-zuhoeren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "meinung-begruenden-muendlich",
+          "iCan": "Ich kann im Gespräch meine Meinung sagen und sie mit Gründen und Beispielen stützen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "ueberzeugen-ueberreden",
+          "iCan": "Ich kann erklären, worin sich Überzeugen und Überreden unterscheiden, und andere mit Gründen von einem Anliegen überzeugen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "meinung-begruenden-muendlich"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "konflikte-im-gespraech-loesen",
+          "iCan": "Ich kann einen Streit im Gespräch sachlich klären und gemeinsam nach einer Lösung suchen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "gespraechsregeln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "koerpersprache-und-stimme",
+          "iCan": "Ich kann Lautstärke, Tempo, Betonung, Blickkontakt, Mimik und Gestik beim Sprechen bewusst einsetzen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "vorlesen-und-vortragen",
+          "iCan": "Ich kann einen Text sinngestaltend vorlesen und ein Gedicht auswendig vortragen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "koerpersprache-und-stimme"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "szenisch-spielen",
+          "iCan": "Ich kann eine Rolle in einer Szene mit Stimme, Mimik und Gestik spielen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "koerpersprache-und-stimme"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "buch-vorstellen",
+          "iCan": "Ich kann ein Buch vorstellen, das mir gefällt: Inhalt, Leseprobe und eine begründete Empfehlung.",
+          "gradeBand": "5-6",
+          "requires": [
+            "vorlesen-und-vortragen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kurzvortrag",
+          "iCan": "Ich kann einen kurzen Vortrag mit Stichwortzettel und Plakat halten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "koerpersprache-und-stimme"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "feedback-geben",
+          "iCan": "Ich kann nach vereinbarten Kriterien eine faire Rückmeldung zu einem Vortrag geben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "kurzvortrag"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "referat",
+          "iCan": "Ich kann ein Referat vorbereiten: Informationen sammeln, ordnen, gliedern und frei vortragen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kurzvortrag",
+            "recherchieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "praesentation-mit-folien",
+          "iCan": "Ich kann Folien so gestalten, dass sie meinen Vortrag unterstützen und nicht ablenken.",
+          "gradeBand": "9-10",
+          "requires": [
+            "referat"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "diskussion-fuehren",
+          "iCan": "Ich kann eine Diskussion vorbereiten, mich mit Argumenten beteiligen und auf Gegenargumente eingehen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "meinung-begruenden-muendlich",
+            "gespraechsregeln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gespraech-leiten",
+          "iCan": "Ich kann eine Diskussion leiten: das Wort erteilen, Impulse geben und Ergebnisse zusammenfassen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "diskussion-fuehren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "debatte",
+          "iCan": "Ich kann eine Debatte nach festen Regeln vorbereiten und führen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "diskussion-fuehren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "interview",
+          "iCan": "Ich kann ein Interview vorbereiten, führen und auswerten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "aktiv-zuhoeren",
+            "mitschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bewerbungsgespraech",
+          "iCan": "Ich kann mich auf ein Vorstellungsgespräch vorbereiten und mich darin angemessen verhalten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "sprachregister-waehlen"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "schreiben",
+      "name": {
+        "de": "Schreiben",
+        "en": "Writing"
+      },
+      "competencies": [
+        {
+          "id": "schreibziel-und-adressat",
+          "iCan": "Ich kann vor dem Schreiben klären, für wen und wozu ich schreibe, und meinen Text danach ausrichten.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "schreibplan",
+          "iCan": "Ich kann Ideen mit Cluster oder Mindmap sammeln und daraus einen Schreibplan machen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "schreibziel-und-adressat"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "texte-ueberarbeiten",
+          "iCan": "Ich kann einen Text mit einer Checkliste, der Textlupe oder in einer Schreibkonferenz überarbeiten.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "textverarbeitung",
+          "iCan": "Ich kann mit einem Textverarbeitungsprogramm einen Text schreiben, gliedern und formatieren.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "erzaehlung-aufbauen",
+          "iCan": "Ich kann eine Erzählung mit Einleitung, Hauptteil mit Höhepunkt und Schluss aufbauen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "schreibplan"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "spannend-erzaehlen",
+          "iCan": "Ich kann eine Geschichte mit Spannungsbogen, wörtlicher Rede und treffenden Wörtern lebendig erzählen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "erzaehlung-aufbauen",
+            "woertliche-rede-zeichensetzen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "erzaehlen-nach-vorgaben",
+          "iCan": "Ich kann zu Bildern, Reizwörtern oder einem Erzählkern eine eigene Geschichte erfinden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "erzaehlung-aufbauen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nacherzaehlen",
+          "iCan": "Ich kann eine Geschichte nacherzählen, auch aus der Sicht einer anderen Figur.",
+          "gradeBand": "5-6",
+          "requires": [
+            "erzaehlung-aufbauen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nach-textmuster-schreiben",
+          "iCan": "Ich kann nach dem Muster einer Fabel oder Lügengeschichte selbst eine Geschichte schreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fabel",
+            "erzaehlung-aufbauen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gedicht-schreiben",
+          "iCan": "Ich kann nach einem Muster ein eigenes Gedicht schreiben, zum Beispiel ein Elfchen oder ein Parallelgedicht.",
+          "gradeBand": "5-6",
+          "requires": [
+            "vers-strophe-reim"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schildern",
+          "iCan": "Ich kann eine Situation oder Stimmung mit Sinneseindrücken anschaulich schildern.",
+          "gradeBand": "7-8",
+          "requires": [
+            "spannend-erzaehlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gegenstand-beschreiben",
+          "iCan": "Ich kann einen Gegenstand oder ein Tier sachlich, genau und in sinnvoller Reihenfolge beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "schreibziel-und-adressat"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "personenbeschreibung",
+          "iCan": "Ich kann eine Person nach Gesamteindruck, Einzelheiten und Besonderheiten beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "gegenstand-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wegbeschreibung",
+          "iCan": "Ich kann einen Weg so beschreiben, dass andere ihn finden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "schreibziel-und-adressat"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "vorgangsbeschreibung",
+          "iCan": "Ich kann einen Vorgang wie eine Spielanleitung oder ein Rezept Schritt für Schritt beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "gegenstand-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bildbeschreibung",
+          "iCan": "Ich kann ein Bild geordnet beschreiben: vom Gesamteindruck über Vorder-, Mittel- und Hintergrund zur Wirkung.",
+          "gradeBand": "7-8",
+          "requires": [
+            "gegenstand-beschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bericht",
+          "iCan": "Ich kann über ein Ereignis sachlich und in zeitlicher Reihenfolge berichten und dabei die W-Fragen beantworten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "schreibziel-und-adressat",
+            "tempus-praesens-praeteritum"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "informierender-text-aus-material",
+          "iCan": "Ich kann aus mehreren Materialien wie Texten und Grafiken einen informierenden Text schreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "bericht",
+            "diagramme-lesen",
+            "quellen-pruefen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "basissatz",
+          "iCan": "Ich kann einen Basissatz mit Autor, Titel, Textsorte, Erscheinungsjahr und Thema eines Textes formulieren.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kernaussagen-wiedergeben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "inhaltsangabe",
+          "iCan": "Ich kann eine Inhaltsangabe zu einer Erzählung schreiben: im Präsens, sachlich und ohne wörtliche Rede.",
+          "gradeBand": "7-8",
+          "requires": [
+            "basissatz",
+            "indirekte-rede",
+            "handlung-erschliessen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sachtext-zusammenfassen",
+          "iCan": "Ich kann den Inhalt eines längeren Sachtextes knapp und mit eigenen Worten zusammenfassen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "inhaltsangabe",
+            "sachtext-aufbau"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "protokoll",
+          "iCan": "Ich kann ein Verlaufs- oder Ergebnisprotokoll einer Unterrichtsstunde oder Sitzung schreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "mitschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "exzerpt",
+          "iCan": "Ich kann aus einem Text die für meine Frage wichtigen Stellen herausschreiben (exzerpieren).",
+          "gradeBand": "9-10",
+          "requires": [
+            "markieren-und-gliedern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schriftlich-stellung-nehmen",
+          "iCan": "Ich kann schriftlich zu einer Frage Stellung nehmen und meine Meinung begründen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "meinung-begruenden-muendlich"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "argument-aufbauen",
+          "iCan": "Ich kann ein Argument aus Behauptung (These), Begründung und Beispiel aufbauen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "schriftlich-stellung-nehmen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "argumente-ordnen",
+          "iCan": "Ich kann Argumente nach ihrer Stärke ordnen und einen argumentierenden Text steigernd aufbauen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "argument-aufbauen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "formeller-brief",
+          "iCan": "Ich kann einen sachlichen Brief oder eine E-Mail mit Betreff, Anrede und Grußformel schreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "schreibziel-und-adressat"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "leserbrief",
+          "iCan": "Ich kann einen Leserbrief schreiben, in dem ich zu einem Zeitungsartikel begründet Stellung nehme.",
+          "gradeBand": "7-8",
+          "requires": [
+            "formeller-brief",
+            "argumente-ordnen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lineare-eroerterung",
+          "iCan": "Ich kann eine steigernde (lineare) Erörterung mit Einleitung, Hauptteil und Schluss schreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "argumente-ordnen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gliederung-erstellen",
+          "iCan": "Ich kann eine Erörterung oder ein Referat mit einer numerischen Gliederung planen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "schreibplan",
+            "argumente-ordnen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dialektische-eroerterung",
+          "iCan": "Ich kann eine Pro-und-Kontra-Erörterung schreiben und am Schluss abwägend urteilen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "lineare-eroerterung",
+            "gliederung-erstellen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "materialgestuetzt-argumentieren",
+          "iCan": "Ich kann auf der Grundlage von Texten und Materialien argumentierend schreiben und die Quellen einbeziehen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "dialektische-eroerterung",
+            "zitieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kommentar-schreiben",
+          "iCan": "Ich kann einen Kommentar zu einem aktuellen Thema schreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "nachricht-und-kommentar",
+            "argumente-ordnen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rezension",
+          "iCan": "Ich kann eine Buch- oder Filmkritik schreiben, die Inhalt, Eindruck und begründetes Urteil verbindet.",
+          "gradeBand": "9-10",
+          "requires": [
+            "buch-vorstellen",
+            "argument-aufbauen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lebenslauf",
+          "iCan": "Ich kann einen tabellarischen Lebenslauf schreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "textverarbeitung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bewerbungsschreiben",
+          "iCan": "Ich kann ein Bewerbungsschreiben für ein Praktikum verfassen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "formeller-brief",
+            "lebenslauf"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zitieren",
+          "iCan": "Ich kann Textstellen wörtlich zitieren und mit Anführungszeichen und Zeilenangabe richtig in meinen Text einbauen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "textbelege-angeben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "paraphrasieren",
+          "iCan": "Ich kann Aussagen aus einem Text mit eigenen Worten wiedergeben und als fremde Aussagen kennzeichnen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "indirekte-rede"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "quellen-angeben",
+          "iCan": "Ich kann angeben, aus welchen Büchern und Internetseiten meine Informationen stammen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "recherchieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "interpretation-schreiben",
+          "iCan": "Ich kann zu einem kurzen literarischen Text eine Interpretation mit Einleitung, Hauptteil und Schluss schreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "deutungshypothese",
+            "zitieren",
+            "basissatz"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sachtextanalyse-schreiben",
+          "iCan": "Ich kann eine Analyse eines Sachtextes schreiben: Inhalt, Aufbau, Absicht und sprachliche Mittel.",
+          "gradeBand": "9-10",
+          "requires": [
+            "argumentation-untersuchen",
+            "sachtext-zusammenfassen",
+            "zitieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "silben-und-wortbausteine",
+          "iCan": "Ich kann Wörter in Silben und Bausteine zerlegen, um sie richtig zu schreiben.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "verlaengern-und-ableiten",
+          "iCan": "Ich kann durch Verlängern (Hund – Hunde) und Ableiten (Bäume – Baum) entscheiden, wie ein Wort geschrieben wird.",
+          "gradeBand": "5-6",
+          "requires": [
+            "silben-und-wortbausteine",
+            "wortfamilie"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dehnung",
+          "iCan": "Ich kann Wörter mit langem Vokal richtig schreiben, auch mit Dehnungs-h, ie und Doppelvokal.",
+          "gradeBand": "5-6",
+          "requires": [
+            "silben-und-wortbausteine"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schaerfung",
+          "iCan": "Ich kann Wörter mit kurzem Vokal richtig schreiben, auch mit doppeltem Konsonanten, ck und tz.",
+          "gradeBand": "5-6",
+          "requires": [
+            "silben-und-wortbausteine"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "s-laute",
+          "iCan": "Ich kann entscheiden, ob ich s, ss oder ß schreibe.",
+          "gradeBand": "5-6",
+          "requires": [
+            "dehnung",
+            "schaerfung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "das-und-dass",
+          "iCan": "Ich kann entscheiden, ob ich das oder dass schreibe.",
+          "gradeBand": "5-6",
+          "requires": [
+            "pronomen",
+            "konjunktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "grossschreibung",
+          "iCan": "Ich kann Satzanfänge, Eigennamen und Nomen großschreiben und Nomen mit der Artikelprobe erkennen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "nomen-und-artikel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nominalisierung-grossschreiben",
+          "iCan": "Ich kann Verben und Adjektive, die als Nomen gebraucht werden, erkennen und großschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "grossschreibung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "getrennt-und-zusammen",
+          "iCan": "Ich kann entscheiden, ob Wortverbindungen getrennt oder zusammengeschrieben werden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zusammensetzung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "silbentrennung",
+          "iCan": "Ich kann Wörter am Zeilenende richtig trennen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "silben-und-wortbausteine"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fremdwoerter-schreiben",
+          "iCan": "Ich kann häufige Fremdwörter richtig schreiben und ihre Schreibung nachschlagen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "im-woerterbuch-nachschlagen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "im-woerterbuch-nachschlagen",
+          "iCan": "Ich kann die Schreibung eines Wortes im Wörterbuch und mit einer digitalen Rechtschreibhilfe nachschlagen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "alphabet-und-grundform"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "alphabet-und-grundform",
+          "iCan": "Ich kann Wörter alphabetisch ordnen und ein Wort in seine Grundform bringen, um es im Wörterbuch zu finden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "verb-konjugieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rechtschreibfehler-analysieren",
+          "iCan": "Ich kann meine Rechtschreibfehler nach Fehlerarten ordnen und gezielt üben, zum Beispiel mit einer Rechtschreibkartei.",
+          "gradeBand": "5-6",
+          "requires": [
+            "verlaengern-und-ableiten",
+            "im-woerterbuch-nachschlagen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "satzschlusszeichen",
+          "iCan": "Ich kann am Satzende Punkt, Fragezeichen oder Ausrufezeichen richtig setzen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "satzarten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "woertliche-rede-zeichensetzen",
+          "iCan": "Ich kann bei wörtlicher Rede Anführungszeichen, Doppelpunkt und Komma richtig setzen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "satzschlusszeichen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "komma-aufzaehlung",
+          "iCan": "Ich kann Kommas bei Aufzählungen richtig setzen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "komma-satzreihe-satzgefuege",
+          "iCan": "Ich kann Kommas zwischen Hauptsätzen und zwischen Haupt- und Nebensatz setzen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "satzreihe-und-satzgefuege"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "komma-apposition",
+          "iCan": "Ich kann Kommas bei Einschüben und nachgestellten Erklärungen (Appositionen) setzen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "attribut"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "komma-infinitiv-partizip",
+          "iCan": "Ich kann Kommas bei Infinitiv- und Partizipgruppen richtig setzen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "infinitiv-und-partizipgruppen"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "lesen",
+      "name": {
+        "de": "Lesen",
+        "en": "Reading"
+      },
+      "competencies": [
+        {
+          "id": "lesetechniken",
+          "iCan": "Ich kann je nach Leseziel einen Text überfliegen, gezielt nach Informationen suchen oder genau lesen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "lesen-vorbereiten",
+          "iCan": "Ich kann vor dem Lesen ein Leseziel festlegen, mein Vorwissen sammeln und Erwartungen an den Text formulieren.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "markieren-und-gliedern",
+          "iCan": "Ich kann in einem Text Schlüsselwörter markieren, Sinnabschnitte bilden und Zwischenüberschriften finden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "lesetechniken"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "unbekannte-woerter-klaeren",
+          "iCan": "Ich kann die Bedeutung unbekannter Wörter aus dem Zusammenhang erschließen oder nachschlagen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "im-woerterbuch-nachschlagen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kernaussagen-wiedergeben",
+          "iCan": "Ich kann nach dem Lesen die wichtigsten Aussagen eines Textes in eigenen Worten wiedergeben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "markieren-und-gliedern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fragen-an-den-text",
+          "iCan": "Ich kann beim Lesen Fragen an den Text stellen und prüfen, ob ich ihn verstanden habe.",
+          "gradeBand": "5-6",
+          "requires": [
+            "lesen-vorbereiten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lesetagebuch",
+          "iCan": "Ich kann zu einem Buch ein Lesetagebuch führen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "kernaussagen-wiedergeben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "textinhalt-visualisieren",
+          "iCan": "Ich kann den Inhalt eines Sachtextes in einer Mindmap oder Strukturskizze darstellen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kernaussagen-wiedergeben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zwischen-den-zeilen-lesen",
+          "iCan": "Ich kann Informationen aus verschiedenen Textstellen verknüpfen und daraus Schlüsse ziehen, die nicht wörtlich im Text stehen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kernaussagen-wiedergeben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "hypertexte-lesen",
+          "iCan": "Ich kann mich auf einer Website mit Menüs und Links orientieren und gezielt Informationen finden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "lesetechniken"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "texte-vergleichend-lesen",
+          "iCan": "Ich kann zwei Texte zum selben Thema vergleichend lesen und Gemeinsamkeiten und Unterschiede festhalten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kernaussagen-wiedergeben"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "texte-medien",
+      "name": {
+        "de": "Sich mit Texten und anderen Medien auseinandersetzen",
+        "en": "Engaging with texts and other media"
+      },
+      "competencies": [
+        {
+          "id": "fiktion-und-wirklichkeit",
+          "iCan": "Ich kann literarische Texte von Sachtexten unterscheiden und erklären, dass eine erzählte Welt erfunden ist.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "textfunktionen",
+          "iCan": "Ich kann erkennen, ob ein Text erzählt, beschreibt, informiert, anleitet oder überzeugen will.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fiktion-und-wirklichkeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "epik-lyrik-dramatik",
+          "iCan": "Ich kann erzählende, lyrische und dramatische Texte an ihren Merkmalen unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fiktion-und-wirklichkeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "handlung-erschliessen",
+          "iCan": "Ich kann in einer Erzählung Ort, Zeit, Figuren und die Handlungsschritte bis zum Höhepunkt bestimmen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "figuren-untersuchen",
+          "iCan": "Ich kann beschreiben, wie eine Figur ist, was sie fühlt und warum sie so handelt.",
+          "gradeBand": "5-6",
+          "requires": [
+            "handlung-erschliessen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "figurenverhalten-bewerten",
+          "iCan": "Ich kann das Verhalten einer Figur bewerten und meine Meinung mit dem Text begründen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "figuren-untersuchen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fortsetzen-und-umschreiben",
+          "iCan": "Ich kann eine Geschichte fortsetzen, Leerstellen füllen oder sie aus der Sicht einer anderen Figur neu schreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "figuren-untersuchen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "maerchen",
+          "iCan": "Ich kann typische Merkmale von Märchen nennen und an einem Märchen zeigen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "handlung-erschliessen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fabel",
+          "iCan": "Ich kann Merkmale einer Fabel nennen und ihre Lehre formulieren.",
+          "gradeBand": "5-6",
+          "requires": [
+            "handlung-erschliessen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sage",
+          "iCan": "Ich kann Merkmale einer Sage nennen und sie von einem Märchen unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "maerchen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "jugendbuch-lesen",
+          "iCan": "Ich kann ein Kinder- oder Jugendbuch als Ganzschrift lesen und Handlung und Figuren im Überblick darstellen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "handlung-erschliessen",
+            "figuren-untersuchen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "erzaehler-und-autor",
+          "iCan": "Ich kann zwischen der Autorin oder dem Autor und der Erzählerin oder dem Erzähler eines Textes unterscheiden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "fiktion-und-wirklichkeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "erzaehlform",
+          "iCan": "Ich kann bestimmen, ob ein Ich-Erzähler oder ein Er- bzw. Sie-Erzähler erzählt, und die Wirkung beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "erzaehler-und-autor"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "erzaehlverhalten",
+          "iCan": "Ich kann auktoriales, personales und neutrales Erzählverhalten unterscheiden.",
+          "gradeBand": "9-10",
+          "requires": [
+            "erzaehlform"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "erzaehlzeit-und-erzaehlte-zeit",
+          "iCan": "Ich kann Erzählzeit und erzählte Zeit unterscheiden und Zeitraffung, Zeitdehnung und Rückblende erkennen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "erzaehlform"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "innerer-monolog",
+          "iCan": "Ich kann zu einer Figur einen inneren Monolog schreiben, der ihre Gedanken und Gefühle zeigt.",
+          "gradeBand": "7-8",
+          "requires": [
+            "figuren-untersuchen",
+            "fortsetzen-und-umschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "figurenkonstellation",
+          "iCan": "Ich kann die Beziehungen zwischen den Figuren eines Textes in einem Schaubild darstellen und erklären.",
+          "gradeBand": "7-8",
+          "requires": [
+            "figuren-untersuchen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "figur-charakterisieren",
+          "iCan": "Ich kann eine literarische Figur mit Belegen aus dem Text charakterisieren.",
+          "gradeBand": "7-8",
+          "requires": [
+            "figuren-untersuchen",
+            "textbelege-angeben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "textbelege-angeben",
+          "iCan": "Ich kann eine Aussage über einen Text mit einer Textstelle und Zeilenangabe belegen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kernaussagen-wiedergeben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kurzgeschichte",
+          "iCan": "Ich kann typische Merkmale einer Kurzgeschichte nennen, zum Beispiel unvermittelten Anfang, Wendepunkt und offenes Ende.",
+          "gradeBand": "7-8",
+          "requires": [
+            "handlung-erschliessen",
+            "epik-lyrik-dramatik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "novelle",
+          "iCan": "Ich kann Merkmale einer Novelle nennen, zum Beispiel unerhörte Begebenheit, Wendepunkt und Rahmenhandlung.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kurzgeschichte"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "motiv-erkennen",
+          "iCan": "Ich kann ein Motiv wie Freundschaft oder Reise in literarischen Texten erkennen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "handlung-erschliessen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fiktionalitaetssignale",
+          "iCan": "Ich kann Signale im Text erkennen, die zeigen, dass erzählt und erfunden wird.",
+          "gradeBand": "7-8",
+          "requires": [
+            "fiktion-und-wirklichkeit",
+            "erzaehler-und-autor"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "deutungshypothese",
+          "iCan": "Ich kann zu einem literarischen Text eine Deutungshypothese formulieren und am Text überprüfen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "textbelege-angeben",
+            "figur-charakterisieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "text-und-kontext",
+          "iCan": "Ich kann einen literarischen Text mit seiner Entstehungszeit und dem Leben der Autorin oder des Autors in Beziehung setzen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "deutungshypothese"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "vers-strophe-reim",
+          "iCan": "Ich kann in einem Gedicht Verse, Strophen und Reime bestimmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "epik-lyrik-dramatik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "reimformen",
+          "iCan": "Ich kann Paarreim, Kreuzreim und umarmenden Reim unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "vers-strophe-reim"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "metrum",
+          "iCan": "Ich kann das Versmaß eines Gedichts bestimmen: Jambus, Trochäus, Daktylus und Anapäst.",
+          "gradeBand": "9-10",
+          "requires": [
+            "vers-strophe-reim"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "vergleich-und-metapher",
+          "iCan": "Ich kann Vergleich und Metapher in einem Text erkennen und ihre Wirkung beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "personifikation",
+          "iCan": "Ich kann Personifikationen erkennen und erklären, was sie bewirken.",
+          "gradeBand": "5-6",
+          "requires": [
+            "vergleich-und-metapher"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lyrisches-ich",
+          "iCan": "Ich kann das lyrische Ich vom Autor unterscheiden und die Sprechsituation eines Gedichts beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "vers-strophe-reim",
+            "erzaehler-und-autor"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ballade",
+          "iCan": "Ich kann Merkmale einer Ballade nennen und zeigen, wie sie Erzählung, Gedicht und Drama verbindet.",
+          "gradeBand": "7-8",
+          "requires": [
+            "vers-strophe-reim",
+            "epik-lyrik-dramatik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "symbol",
+          "iCan": "Ich kann ein Symbol in einem Text erkennen und erklären, wofür es steht.",
+          "gradeBand": "9-10",
+          "requires": [
+            "vergleich-und-metapher"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rhetorische-figuren",
+          "iCan": "Ich kann rhetorische Figuren wie Anapher, Alliteration, Klimax, Antithese und rhetorische Frage erkennen und ihre Wirkung erklären.",
+          "gradeBand": "9-10",
+          "requires": [
+            "vergleich-und-metapher"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gedicht-form-und-inhalt",
+          "iCan": "Ich kann erklären, wie Form und Sprache eines Gedichts seine Aussage unterstützen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "metrum",
+            "rhetorische-figuren",
+            "lyrisches-ich"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gedichte-vergleichen",
+          "iCan": "Ich kann zwei Gedichte mit gleichem Motiv aus verschiedenen Zeiten vergleichen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "gedicht-form-und-inhalt",
+            "motiv-erkennen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "spielszene-untersuchen",
+          "iCan": "Ich kann in einer Spielszene herausarbeiten, was die Figuren im Dialog wollen und wie sie sich verhalten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "figuren-untersuchen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "szene-schreiben",
+          "iCan": "Ich kann aus einer Erzählung eine Spielszene mit Dialogen und Regieanweisungen machen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "spielszene-untersuchen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "drama-aufbau",
+          "iCan": "Ich kann in einem Drama Akt, Szene, Dialog, Monolog und Regieanweisung unterscheiden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "spielszene-untersuchen",
+            "epik-lyrik-dramatik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "geschlossenes-drama",
+          "iCan": "Ich kann den Aufbau eines klassischen Dramas in fünf Akten beschreiben: Exposition, steigende Handlung, Höhepunkt, retardierendes Moment, Katastrophe.",
+          "gradeBand": "9-10",
+          "requires": [
+            "drama-aufbau"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dialog-analysieren",
+          "iCan": "Ich kann einen Dramendialog untersuchen: Gesprächsverlauf, Absichten und Beziehung der Figuren.",
+          "gradeBand": "9-10",
+          "requires": [
+            "drama-aufbau",
+            "figurenkonstellation"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sachtext-aufbau",
+          "iCan": "Ich kann einem Sachtext Informationen entnehmen und seinen Aufbau mit Überschrift, Absätzen und Abbildungen beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "markieren-und-gliedern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "diagramme-lesen",
+          "iCan": "Ich kann Tabellen sowie Balken- und Kreisdiagramme lesen und ihnen Informationen entnehmen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "infografiken-auswerten",
+          "iCan": "Ich kann eine Infografik mit Text, Bild und Zahlen auswerten und ihre Aussage zusammenfassen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "diagramme-lesen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nachricht-und-kommentar",
+          "iCan": "Ich kann Nachricht und Kommentar unterscheiden und erkennen, wo ein Text informiert und wo er wertet.",
+          "gradeBand": "7-8",
+          "requires": [
+            "textfunktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "reportage",
+          "iCan": "Ich kann eine Reportage an ihren Merkmalen erkennen und von einer Nachricht unterscheiden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "nachricht-und-kommentar"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zeitung-aufbau",
+          "iCan": "Ich kann den Aufbau einer gedruckten und einer Online-Zeitung beschreiben: Ressorts, Schlagzeile, Aufmachung.",
+          "gradeBand": "7-8",
+          "requires": [
+            "nachricht-und-kommentar"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "argumentation-untersuchen",
+          "iCan": "Ich kann in einem argumentierenden Sachtext These, Argumente und Absicht der Verfasserin oder des Verfassers herausarbeiten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "argument-aufbauen",
+            "nachricht-und-kommentar"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "werbung-untersuchen",
+          "iCan": "Ich kann Werbeanzeigen und Werbespots auf ihre Mittel und ihre Wirkung untersuchen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "textfunktionen",
+            "vergleich-und-metapher"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "recherchieren",
+          "iCan": "Ich kann mit Suchmaschinen und in der Bibliothek gezielt Informationen zu einem Thema finden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "quellen-pruefen",
+          "iCan": "Ich kann prüfen, ob eine Internetseite verlässlich ist, zum Beispiel am Impressum, an der Autorin oder dem Autor und an Belegen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "recherchieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "falschmeldungen-erkennen",
+          "iCan": "Ich kann Falschmeldungen erkennen und prüfen, ob eine Nachricht vertrauenswürdig ist.",
+          "gradeBand": "9-10",
+          "requires": [
+            "quellen-pruefen",
+            "nachricht-und-kommentar"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "eigene-mediennutzung",
+          "iCan": "Ich kann beschreiben, wie lange und wozu ich Medien nutze, und darüber nachdenken, was mir guttut.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "privatsphaere-im-netz",
+          "iCan": "Ich kann erklären, was in sozialen Netzwerken öffentlich ist, und meine Daten und die Rechte anderer schützen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "eigene-mediennutzung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "algorithmen-und-soziale-medien",
+          "iCan": "Ich kann erklären, wie Suchmaschinen und soziale Medien mit Nutzerprofilen und Algorithmen auswählen, was ich sehe.",
+          "gradeBand": "9-10",
+          "requires": [
+            "privatsphaere-im-netz"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "hoerspiel",
+          "iCan": "Ich kann beschreiben, wie ein Hörspiel mit Stimmen, Geräuschen und Musik eine Stimmung erzeugt.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "comic-und-graphic-novel",
+          "iCan": "Ich kann beschreiben, wie in einem Comic oder einer Graphic Novel Bild und Text zusammen erzählen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "einstellungsgroessen-und-perspektive",
+          "iCan": "Ich kann in einem Film Einstellungsgrößen und Kameraperspektiven bestimmen und ihre Wirkung beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "schnitt-montage-ton",
+          "iCan": "Ich kann beschreiben, wie Schnitt, Montage, Musik und Geräusche in einem Film wirken.",
+          "gradeBand": "7-8",
+          "requires": [
+            "einstellungsgroessen-und-perspektive"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "buch-und-film-vergleichen",
+          "iCan": "Ich kann ein Buch mit seiner Verfilmung vergleichen und Unterschiede begründet bewerten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "einstellungsgroessen-und-perspektive",
+            "jugendbuch-lesen"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "sprache",
+      "name": {
+        "de": "Sprache und Sprachgebrauch untersuchen",
+        "en": "Examining language and language use"
+      },
+      "competencies": [
+        {
+          "id": "nomen-und-artikel",
+          "iCan": "Ich kann Nomen und Artikel erkennen und bestimmte und unbestimmte Artikel unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "genus-und-numerus",
+          "iCan": "Ich kann bei Nomen das grammatische Geschlecht (Genus) und die Zahl (Numerus) bestimmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "nomen-und-artikel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kasus",
+          "iCan": "Ich kann die vier Fälle mit der Frageprobe bestimmen und Nomen richtig deklinieren.",
+          "gradeBand": "5-6",
+          "requires": [
+            "genus-und-numerus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "verb-konjugieren",
+          "iCan": "Ich kann Verben konjugieren und Grundform (Infinitiv) und Personalform unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "starke-und-schwache-verben",
+          "iCan": "Ich kann starke und schwache Verben unterscheiden und ihre Vergangenheitsformen richtig bilden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "verb-konjugieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "tempus-praesens-praeteritum",
+          "iCan": "Ich kann Präsens und Präteritum bilden und weiß, wofür man sie verwendet.",
+          "gradeBand": "5-6",
+          "requires": [
+            "starke-und-schwache-verben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "tempus-perfekt-plusquamperfekt",
+          "iCan": "Ich kann Perfekt und Plusquamperfekt mit haben oder sein bilden und richtig verwenden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "tempus-praesens-praeteritum"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "tempus-futur",
+          "iCan": "Ich kann Futur I und Futur II bilden und erklären, was sie ausdrücken.",
+          "gradeBand": "5-6",
+          "requires": [
+            "verb-konjugieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zeitverhaeltnisse",
+          "iCan": "Ich kann mit den Zeitformen ausdrücken, was vorher und was gleichzeitig geschieht, und ein Tempus im Text durchhalten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "tempus-perfekt-plusquamperfekt"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "adjektiv-und-steigerung",
+          "iCan": "Ich kann Adjektive erkennen und mit Positiv, Komparativ und Superlativ steigern.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "pronomen",
+          "iCan": "Ich kann Personal-, Possessiv-, Demonstrativ- und Relativpronomen unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "nomen-und-artikel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "praepositionen",
+          "iCan": "Ich kann Präpositionen erkennen und den Fall bestimmen, den sie verlangen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "kasus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "adverb",
+          "iCan": "Ich kann Adverbien erkennen und von Adjektiven unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "adjektiv-und-steigerung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "konjunktionen",
+          "iCan": "Ich kann nebenordnende und unterordnende Konjunktionen unterscheiden und Sätze damit verbinden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "aktiv-und-passiv",
+          "iCan": "Ich kann Aktiv- und Passivsätze bilden und erklären, wann man das Passiv verwendet.",
+          "gradeBand": "7-8",
+          "requires": [
+            "tempus-perfekt-plusquamperfekt",
+            "subjekt-und-praedikat"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "modalverben",
+          "iCan": "Ich kann mit Modalverben wie können, müssen und sollen ausdrücken, wie sicher oder notwendig etwas ist.",
+          "gradeBand": "7-8",
+          "requires": [
+            "verb-konjugieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "konjunktiv-zwei",
+          "iCan": "Ich kann den Konjunktiv II bilden und für Wünsche, Bedingungen und höfliche Bitten verwenden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "tempus-praesens-praeteritum"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "indirekte-rede",
+          "iCan": "Ich kann wörtliche Rede mit dem Konjunktiv I in indirekte Rede umwandeln.",
+          "gradeBand": "7-8",
+          "requires": [
+            "konjunktiv-zwei",
+            "woertliche-rede-zeichensetzen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "satzarten",
+          "iCan": "Ich kann Aussage-, Frage- und Aufforderungssätze unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "grammatische-proben",
+          "iCan": "Ich kann mit Umstell-, Ersatz-, Weglass- und Erweiterungsprobe Sätze untersuchen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "subjekt-und-praedikat",
+          "iCan": "Ich kann in einem Satz Subjekt und Prädikat bestimmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "grammatische-proben",
+            "verb-konjugieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "objekte",
+          "iCan": "Ich kann Akkusativ-, Dativ- und Genitivobjekt bestimmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "subjekt-und-praedikat",
+            "kasus"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "adverbiale",
+          "iCan": "Ich kann adverbiale Bestimmungen der Zeit, des Ortes, der Art und Weise und des Grundes bestimmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "subjekt-und-praedikat"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "attribut",
+          "iCan": "Ich kann Attribute als Teil eines Satzglieds erkennen, zum Beispiel Adjektiv-, Genitiv- und Präpositionalattribut.",
+          "gradeBand": "5-6",
+          "requires": [
+            "objekte",
+            "adjektiv-und-steigerung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "hauptsatz-und-nebensatz",
+          "iCan": "Ich kann Hauptsätze und Nebensätze an der Stellung des Verbs unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "subjekt-und-praedikat",
+            "konjunktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "satzreihe-und-satzgefuege",
+          "iCan": "Ich kann Satzreihen und Satzgefüge unterscheiden und selbst bilden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "hauptsatz-und-nebensatz"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "relativsatz",
+          "iCan": "Ich kann Relativsätze erkennen und mit ihnen ein Nomen genauer beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "attribut",
+            "pronomen",
+            "hauptsatz-und-nebensatz"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "adverbialsaetze",
+          "iCan": "Ich kann Adverbialsätze nach ihrer Bedeutung unterscheiden, zum Beispiel temporal, kausal, final, konditional und konzessiv.",
+          "gradeBand": "7-8",
+          "requires": [
+            "adverbiale",
+            "satzreihe-und-satzgefuege"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "subjektsatz-und-objektsatz",
+          "iCan": "Ich kann Subjekt- und Objektsätze erkennen und Satzglieder in Gliedsätze umformen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "objekte",
+            "satzreihe-und-satzgefuege"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "infinitiv-und-partizipgruppen",
+          "iCan": "Ich kann Infinitiv- und Partizipgruppen erkennen und in Sätzen verwenden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "satzreihe-und-satzgefuege"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "feldermodell",
+          "iCan": "Ich kann mit dem Feldermodell (Vorfeld, Satzklammer, Mittelfeld, Nachfeld) die Wortstellung im Satz beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "hauptsatz-und-nebensatz"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nominalstil-und-verbalstil",
+          "iCan": "Ich kann Nominalstil und Verbalstil unterscheiden und Sätze in den jeweils anderen Stil umformen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "nominalisierung-grossschreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zusammensetzung",
+          "iCan": "Ich kann zusammengesetzte Wörter in Grund- und Bestimmungswort zerlegen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "nomen-und-artikel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ableitung",
+          "iCan": "Ich kann mit Präfixen und Suffixen neue Wörter bilden und erkennen, zu welcher Wortart sie gehören.",
+          "gradeBand": "5-6",
+          "requires": [
+            "silben-und-wortbausteine"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wortfamilie",
+          "iCan": "Ich kann Wörter mit demselben Wortstamm zu einer Wortfamilie ordnen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "silben-und-wortbausteine"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wortfeld-und-synonyme",
+          "iCan": "Ich kann Wörter mit ähnlicher Bedeutung zu einem Wortfeld ordnen und Synonyme und Gegenwörter passend einsetzen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "mehrdeutige-woerter",
+          "iCan": "Ich kann erkennen, dass ein Wort mehrere Bedeutungen haben kann, und die passende aus dem Zusammenhang bestimmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "wortfeld-und-synonyme"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "redewendungen",
+          "iCan": "Ich kann Redewendungen und Sprichwörter erklären und ihre übertragene Bedeutung nennen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "mehrdeutige-woerter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "erbwort-lehnwort-fremdwort",
+          "iCan": "Ich kann Erbwörter, Lehnwörter und Fremdwörter unterscheiden und Wörter aus anderen Sprachen erkennen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "ableitung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bedeutungswandel",
+          "iCan": "Ich kann an Beispielen zeigen, wie sich die Bedeutung von Wörtern im Lauf der Zeit verändert hat.",
+          "gradeBand": "7-8",
+          "requires": [
+            "mehrdeutige-woerter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sprachwandel",
+          "iCan": "Ich kann Gründe für Sprachwandel nennen, etwa Kontakt mit anderen Sprachen oder digitale Kommunikation, und an Beispielen erklären.",
+          "gradeBand": "9-10",
+          "requires": [
+            "bedeutungswandel",
+            "erbwort-lehnwort-fremdwort"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "muendlich-und-schriftlich",
+          "iCan": "Ich kann Merkmale gesprochener und geschriebener Sprache unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "naehe-und-distanzsprache",
+          "iCan": "Ich kann erklären, warum ein Chat oft wie gesprochen wirkt und ein Brief wie geschrieben (konzeptionelle Mündlichkeit und Schriftlichkeit).",
+          "gradeBand": "7-8",
+          "requires": [
+            "muendlich-und-schriftlich"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "standard-und-bildungssprache",
+          "iCan": "Ich kann Alltagssprache, Standardsprache und Bildungssprache unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "muendlich-und-schriftlich"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sprachregister-waehlen",
+          "iCan": "Ich kann je nach Gesprächspartner und Situation die passende Sprache wählen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "standard-und-bildungssprache"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "jugendsprache",
+          "iCan": "Ich kann Merkmale von Jugendsprache beschreiben und sie mit der Standardsprache vergleichen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "standard-und-bildungssprache"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dialekt",
+          "iCan": "Ich kann Merkmale eines Dialekts beschreiben und mit der Standardsprache vergleichen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "standard-und-bildungssprache"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fachsprache",
+          "iCan": "Ich kann Merkmale einer Fachsprache in Wortschatz und Satzbau beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "standard-und-bildungssprache",
+            "nominalstil-und-verbalstil"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sprachen-vergleichen",
+          "iCan": "Ich kann Wörter und Sätze im Deutschen mit anderen Sprachen vergleichen, die ich kenne.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "kommunikationsmodell",
+          "iCan": "Ich kann mit einem einfachen Kommunikationsmodell (Sender, Nachricht, Empfänger) erklären, wie Missverständnisse entstehen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "gespraechsregeln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sach-und-beziehungsebene",
+          "iCan": "Ich kann in einem Gespräch Sach- und Beziehungsebene unterscheiden und Störungen damit erklären.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kommunikationsmodell"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "netiquette",
+          "iCan": "Ich kann in digitalen Nachrichten und Foren höflich und angemessen schreiben (Netiquette).",
+          "gradeBand": "7-8",
+          "requires": [
+            "muendlich-und-schriftlich"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "textzusammenhang",
+          "iCan": "Ich kann Sätze mit Verweiswörtern und Verknüpfungswörtern zu einem zusammenhängenden Text verbinden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "pronomen",
+            "konjunktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "manipulation-durch-sprache",
+          "iCan": "Ich kann sprachliche Mittel der Beeinflussung erkennen, etwa Schlagwörter, beschönigende Wörter und suggestive Fragen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "rhetorische-figuren",
+            "nachricht-und-kommentar"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "diskriminierende-sprache",
+          "iCan": "Ich kann diskriminierenden Sprachgebrauch und Klischees erkennen und vermeiden.",
+          "gradeBand": "9-10",
+          "requires": [
+            "manipulation-durch-sprache"
+          ],
+          "practisedBy": []
+        }
+      ]
+    }
+  ],
+  "curricula": []
+}
