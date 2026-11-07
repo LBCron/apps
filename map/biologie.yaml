@@ -1,0 +1,583 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# Vorschlag. Quellenkürzel: KMK = Weiterentwickelte Bildungsstandards Biologie (MSA) 2024, verbindliche inhaltliche Aspekte
+# (Z/V/M/U = Inhaltsbereich, Ziffer = Zeile der Liste auf S. 15);
+# HE = Kerncurriculum Hessen Sek I Gymnasium Biologie (2011), Stufen "5/6" und "nach 9/10" (Kap. 7.3, S. 41-48);
+# BY = LehrplanPLUS Bayern Gymnasium, online (NT5, NT6, Biologie 8-10; LB = Lernbereich);
+# NW = Kernlehrplan NRW Sek I Gymnasium Biologie (2019), Stufe 1 (bis Jg 6) und Stufe 2 (bis Jg 10); SiLP = Jahrgang
+# im Schulbeispiel, nur Hinweis.
+# Richtstufe: eine Stimme je Land (HE / BY / NW). "7-10" = zweite Stufe von HE oder NW ohne Jahrgang, zählt für 7-8 und
+# 9-10; ein Gleichstand wird über requires entschieden. Genaue Titel, Ausgaben und URLs: .vibe/research-biologie.md.
+name: { de: Biologie, en: Biology }                # the file name is the subject's id: biologie
+source:
+  title: KMK, Weiterentwickelte Bildungsstandards in den Naturwissenschaften für das Fach Biologie (MSA), Beschluss vom 16.12.2004 i.d.F. vom 13.06.2024
+  url: https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2024/2024_06_13-WeBiS_Biologie_MSA.pdf
+strands:
+  - id: zellen
+    name: { de: "Lebewesen bestehen aus Zellen", en: "Cells" }
+    competencies:
+      # KMK Z1 Kennzeichen des Lebendigen; HE –; BY NT5 2.2 (Jg 5): grundlegende Anforderungen an Lebewesen; NW IF1 (Stufe 1): Kennzeichen des Lebendigen. Stimmen – / 5-6 / 5-6: Mehrheit
+      - id: kennzeichen-des-lebendigen
+        iCan: "Ich kann an den Kennzeichen des Lebendigen erklären, ob etwas ein Lebewesen ist."
+        gradeBand: "5-6"
+      # KMK Z2 Zellen (Erkenntnisgewinnung); HE 9/10: Mikroskopieren und Zeichnen (KC 7.3, S. 41); BY NT5 2.1 (Jg 5): Mikroskopieren, Teile des Lichtmikroskops; NW IF1 (Stufe 1): Präparate mikroskopisch untersuchen. Stimmen 7-10 / 5-6 / 5-6: Mehrheit
+      - id: mikroskopieren
+        iCan: "Ich kann die Teile eines Lichtmikroskops benennen und ein Präparat damit scharf einstellen."
+        gradeBand: "5-6"
+      # KMK Z2 Zellen; HE 9/10: Anfertigen von Präparaten, Zeichnen von Zellen (S. 41); BY NT5 2.1 (Jg 5): einfache Präparate, beschriftete Zeichnungen; NW IF1 (Stufe 1): Zellen nach Vorgaben zeichnen. Stimmen 7-10 / 5-6 / 5-6: Mehrheit
+      - id: praeparat-und-zeichnung
+        iCan: "Ich kann ein einfaches Frischpräparat herstellen und davon eine beschriftete Zeichnung anfertigen."
+        gradeBand: "5-6"
+        requires: [mikroskopieren]
+      # KMK Z2 Zellen; HE 9/10: Zellaufbau ausgewählter Zellen (S. 41); BY NT5 2.2 (Jg 5): tierische und pflanzliche Zellen, Zellbestandteile; NW IF1 (Stufe 1): Zellen anhand lichtmikroskopischer Strukturen unterscheiden. Stimmen 7-10 / 5-6 / 5-6: Mehrheit
+      - id: tierzelle-pflanzenzelle
+        iCan: "Ich kann Tier- und Pflanzenzellen an Zellmembran, Zellplasma, Zellkern, Zellwand, Vakuole und Chloroplasten unterscheiden."
+        gradeBand: "5-6"
+        requires: [kennzeichen-des-lebendigen, praeparat-und-zeichnung]
+      # KMK Z2 Zellen; M1 Organsysteme; HE 5/6: Aufgabenteilung im Organismus; 9/10: Gewebe, Vernetzung zum System (S. 43); BY NT5 2.2 (Jg 5): Gewebe mikroskopieren; NT5 2.3: Organisationsebenen; NW IF1/IF2 (Stufe 1), Basiskonzept System: Zelle – Gewebe – Organ – Organismus. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: organisationsebenen
+        iCan: "Ich kann an einem Beispiel die Ebenen Zelle, Gewebe, Organ, Organsystem und Organismus ordnen."
+        gradeBand: "5-6"
+        requires: [tierzelle-pflanzenzelle]
+      # KMK Z3 Fotosynthese; HE 5/6: grundlegende phänomenologische Aspekte der Fotosynthese (S. 44); BY NT6 1.2 (Jg 6): Photosynthese, Bedeutung für das Leben auf der Erde; NW IF1 (Stufe 1): Fotosynthese als Reaktionsschema in Worten, Bedeutung. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: fotosynthese
+        iCan: "Ich kann die Fotosynthese als Wortgleichung angeben und erklären, warum Pflanzen, Tiere und Menschen auf sie angewiesen sind."
+        gradeBand: "5-6"
+        requires: [tierzelle-pflanzenzelle, pflanzenorgane]
+      # KMK Z3 Zellatmung; HE 5/6: grundlegende phänomenologische Aspekte zur Atmung (S. 44); BY NT5 2.3 (Jg 5): Zellatmung, einfaches Reaktionsschema; NW IF4 (Stufe 2; SiLP 8.8): Grundprinzip der Zellatmung. Stimmen 5-6 / 5-6 / 7-10: Mehrheit
+      - id: zellatmung
+        iCan: "Ich kann die Zellatmung als Wortgleichung angeben und erklären, wozu Zellen Sauerstoff und Nährstoffe brauchen."
+        gradeBand: "5-6"
+        requires: [tierzelle-pflanzenzelle]
+      # KMK Z3 Fotosynthese und Zellatmung; HE 9/10: Vernetzung zu auf- und abbauenden Stoffwechselprozessen (S. 44); BY NT6 1.2 (Jg 6): Zusammenhang stofflich und energetisch; NW IF4 (Stufe 2; SiLP 8.8): Fotosynthese der Zellatmung gegenüberstellen. Stimmen 7-10 / 5-6 / 7-10: Gleichstand 7-8/9-10; requires entscheidet (klimawandel)
+      - id: fotosynthese-und-zellatmung
+        iCan: "Ich kann Fotosynthese und Zellatmung als Stoff- und Energieumwandlungen vergleichen und erklären, wie sie zusammenhängen."
+        gradeBand: "7-8"
+        requires: [fotosynthese, zellatmung]
+      # KMK Z3 Zellatmung; HE 9/10: Stoff- und Energieumwandlung (S. 30); BY B10 3.4 (Jg 10): Glucoseabbau, ATP, aerob/anaerob; NW IF7 (Stufe 2; SiLP 10.2): Bedeutung der Glucose für den Energiehaushalt der Zelle. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: zellatmung-energie
+        iCan: "Ich kann erklären, wie Zellen bei der Zellatmung Energie aus Glucose für Bewegung, Wachstum und Körperwärme bereitstellen."
+        gradeBand: "9-10"
+        requires: [fotosynthese-und-zellatmung, naehrstoffe]
+      # KMK Z4 Enzymreaktion (Voraussetzung); HE –; BY B9 3.1 (Jg 9): Vielfalt der Proteine; B10 3.1: Aufbau aus Aminosäuren; NW IF6 (Stufe 2; SiLP 10.4): funktionelle Vielfalt der Proteine. Stimmen – / 9-10 / 7-10: Mehrheit
+      - id: proteine
+        iCan: "Ich kann beschreiben, dass Proteine aus Aminosäuren bestehen und im Körper als Baustoffe, Enzyme, Hormone oder Antikörper viele Aufgaben haben."
+        gradeBand: "9-10"
+        requires: [naehrstoffe]
+      # KMK Z4 Enzymreaktion; HE 9/10: Schlüssel-Schloss-Prinzip (S. 41); BY B10 3.2 (Jg 10): Enzyme als Biokatalysatoren, Schlüssel-Schloss-Modell, Substrat- und Wirkungsspezifität; NW IF2 (Stufe 1): Wirkungsweise von Verdauungsenzymen mit einfachen Modellvorstellungen; IF6/IF7 (Stufe 2): Schlüssel-Schloss-Modell. Stimmen 7-10 / 9-10 / 5-6: Mehrheit. Hinweis: NW führt das Enzymmodell schon in Stufe 1 ein
+      - id: enzyme
+        iCan: "Ich kann mit dem Schlüssel-Schloss-Modell erklären, wie ein Enzym einen bestimmten Stoff umsetzt."
+        gradeBand: "9-10"
+        requires: [proteine, verdauungsorgane]
+      # SCHWACH BELEGT. KMK Z4 Enzymreaktion; HE –; BY B10 3.2 (Jg 10): Abhängigkeit der Enzymaktivität von Substratkonzentration, pH-Wert und Temperatur, Denaturierung; NW –. Stimmen – / 9-10 / –: festgelegt: nur BY stimmt (Jg 10), keine Mehrheit; requires enzyme (9-10). Hinweis: nur BY; aufgenommen, weil die KMK die Enzymreaktion verbindlich nennt
+      - id: enzymaktivitaet
+        iCan: "Ich kann an einem Versuch erklären, wie Temperatur und pH-Wert die Aktivität eines Enzyms beeinflussen."
+        gradeBand: "9-10"
+        requires: [enzyme]
+      # KMK Z2 Zellen; HE 9/10: Zellaufbau ausgewählter Zellen (allgemein, S. 41); BY B9 LB2 (Jg 9): Bau einer prokaryotischen Zelle, Abgrenzung zu eukaryotischen Mikroorganismen; NW IF7 (Stufe 2; SiLP 10.1): Bau der Bakterienzelle. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: bakterienzelle
+        iCan: "Ich kann den Bau einer Bakterienzelle beschreiben und sie von Tier- und Pflanzenzellen abgrenzen."
+        gradeBand: "9-10"
+        requires: [tierzelle-pflanzenzelle]
+      # KMK (Z2 Zellen); HE 9/10: Vermehrung bei Bakterien und Viren (S. 45); BY B9 LB2 (Jg 9): ungeschlechtliche Fortpflanzung durch Zweiteilung, exponentielles Populationswachstum; NW IF7 (Stufe 2; SiLP 10.1): Bau und Vermehrung von Bakterien. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: vermehrung-der-bakterien
+        iCan: "Ich kann erklären, wie sich Bakterien durch Zweiteilung vermehren und warum ihre Zahl dabei sehr schnell wächst."
+        gradeBand: "9-10"
+        requires: [bakterienzelle]
+      # KMK Z1 Kennzeichen des Lebendigen (Grenzfall); M2; HE 9/10: Vermehrung bei Viren (S. 45); BY B10 LB2 (Jg 10): Bau und lytischer Vermehrungszyklus; NW IF7 (Stufe 2; SiLP 10.1): Aufbau und Vermehrung von Viren. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: viren
+        iCan: "Ich kann den Bau eines Virus beschreiben und erklären, warum sich Viren nur in Wirtszellen vermehren können."
+        gradeBand: "9-10"
+        requires: [bakterienzelle, kennzeichen-des-lebendigen]
+      # KMK Z2 Zellen; V2 Vererbung; HE 9/10: vereinfachtes DNA-Modell (S. 41, 45); BY B9 3.1 (Jg 9): einfaches DNA-Modell; NW IF6 (Stufe 2; SiLP 10.4): DNA. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: dna-modell
+        iCan: "Ich kann mit einem einfachen DNA-Modell erklären, wie die Erbinformation in der DNA gespeichert ist."
+        gradeBand: "9-10"
+        requires: [tierzelle-pflanzenzelle]
+      # KMK Z2 Mitose, Meiose (Voraussetzung); HE 9/10: Chromosomenmodell (S. 41); BY B9 3.2 (Jg 9): Chromosomen, Replikation, Ein-/Zwei-Chromatid-Chromosomen; NW IF6 (Stufe 2; SiLP 10.4): Chromosomen. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: chromosomen
+        iCan: "Ich kann den Bau eines Chromosoms beschreiben und Ein-Chromatid-, Zwei-Chromatid- und homologe Chromosomen unterscheiden."
+        gradeBand: "9-10"
+        requires: [dna-modell]
+      # KMK Z2 Mitose; HE 9/10: Zellteilungsprozesse, Mitose (S. 45); BY B9 3.2 (Jg 9): Zellzyklus, Mitose; NW IF6 (Stufe 2; SiLP 10.4): Zellzyklus, Mitose. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: mitose
+        iCan: "Ich kann den Zellzyklus mit der Mitose beschreiben und erklären, warum dabei erbgleiche Tochterzellen entstehen."
+        gradeBand: "9-10"
+        requires: [chromosomen]
+      # KMK Z2 Meiose; V2 genetische Variabilität; HE 9/10: Keimzellbildung, Meiose (S. 45); BY B9 3.3 (Jg 9): Meiose, Neukombination; NW IF6 (Stufe 2; SiLP 10.4): Meiose und Befruchtung. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: meiose
+        iCan: "Ich kann das Prinzip der Meiose beschreiben und erklären, warum Keimzellen einen einfachen Chromosomensatz haben und Geschwister verschieden sind."
+        gradeBand: "9-10"
+        requires: [mitose, befruchtung]
+  - id: vielfalt
+    name: { de: "Vielfalt und Veränderung von Lebewesen", en: "Diversity and change of living things" }
+    competencies:
+      # KMK V3 Verwandtschaft; U2 Artenkenntnis; HE 5/6: Bau und Funktion von Organen von Wirbeltieren, Körperformen (S. 41); BY NT6 1.4 (Jg 6): charakteristische Eigenschaften der Wirbeltierklassen; NW IF1 (Stufe 1): Wirbeltierklassen vergleichen und zuordnen. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: wirbeltierklassen
+        iCan: "Ich kann die fünf Wirbeltierklassen an Körperbedeckung, Atmung, Körpertemperatur und Fortpflanzung unterscheiden und ein Tier einer Klasse zuordnen."
+        gradeBand: "5-6"
+      # KMK V3 Angepasstheit; HE 5/6: Körperbau, Lebensweise und Lebensraum (S. 47); BY NT6 1.3 (Jg 6): Fortbewegung im Wasser, an Land, in der Luft; NW IF1 (Stufe 1): Angepasstheit von Säugetieren und Vögeln (Skelett, Fortbewegung). Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: angepasstheit-fortbewegung
+        iCan: "Ich kann an Beispielen erklären, wie der Körperbau von Fischen, Vögeln und Säugetieren an die Fortbewegung im Wasser, in der Luft oder an Land angepasst ist."
+        gradeBand: "5-6"
+        requires: [wirbeltierklassen]
+      # KMK V3 Angepasstheit; HE 5/6: Körperbau und artspezifische Lebensweise (S. 47); BY NT6 1.3 (Jg 6): Fleisch- und Pflanzenfresser, Nahrungserwerb; NW IF1 (Stufe 1): Angepasstheit beim Nahrungserwerb. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: angepasstheit-ernaehrung
+        iCan: "Ich kann an Gebiss und Verdauung von Pflanzenfressern und Fleischfressern erklären, wie Tiere an ihre Nahrung angepasst sind."
+        gradeBand: "5-6"
+        requires: [wirbeltierklassen]
+      # KMK V3 Angepasstheit; HE 5/6: Regelung der Körpertemperatur (S. 44); BY NT6 1.3 (Jg 6): Temperaturregulation, Winterschlaf, Winterruhe, Vogelzug; NW IF4 (Stufe 2): Einfluss der Jahreszeiten. Stimmen 5-6 / 5-6 / 7-10: Mehrheit
+      - id: ueberwinterung
+        iCan: "Ich kann erklären, wie wechselwarme und gleichwarme Tiere mit Kältestarre, Winterschlaf, Winterruhe oder Vogelzug den Winter überstehen."
+        gradeBand: "5-6"
+        requires: [wirbeltierklassen]
+      # KMK V3 Angepasstheit; HE 5/6: Fortpflanzungsstrategien bei Wirbeltieren (S. 45); BY NT6 1.3 (Jg 6): Fortpflanzung im Wasser/an Land, Metamorphose, Nesthocker; NW IF1 (Stufe 1): Fortpflanzung oder Individualentwicklung. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: fortpflanzung-wirbeltiere
+        iCan: "Ich kann Fortpflanzung und Entwicklung von Wirbeltieren vergleichen, zum Beispiel äußere und innere Befruchtung, Metamorphose, Nesthocker und Nestflüchter."
+        gradeBand: "5-6"
+        requires: [wirbeltierklassen]
+      # KMK V3 Verwandtschaft (Beispiel); HE 5/6: Abstammung und Züchtung, Wild- und Nutzformen (S. 47); BY NT6 1.4 (Jg 6): Züchtungsvorgänge, Nutz- und Heimtiere; NW IF1 (Stufe 1): Wild- und Nutztiere durch gezielte Züchtung, Rückführung auf Vererbung. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: zuechtung
+        iCan: "Ich kann erklären, wie der Mensch aus Wildtieren durch Züchtung Haus- und Nutztiere mit gewünschten Merkmalen gemacht hat."
+        gradeBand: "5-6"
+        requires: [wirbeltierklassen]
+      # KMK –; HE 5/6: Recherche zur artgerechten Haltung; Bewertung von Züchtung, Haltung und Nutzung (S. 47); BY NT6 1.4 (Jg 6): verantwortliche und tiergerechte Haltung; NT6 1.1: Tierschutz bei Heim- und Nutztieren; NW IF1 (Stufe 1): Formen der Nutztierhaltung erörtern, Tierschutz. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: nutztierhaltung
+        iCan: "Ich kann Formen der Nutztierhaltung beschreiben und danach bewerten, ob sie tiergerecht sind."
+        gradeBand: "5-6"
+        requires: [zuechtung]
+      # KMK M1 Organsysteme (übertragen); Z3; HE 5/6: Körperformen von Blütenpflanzen, Struktur und Zusammenspiel der Elemente (S. 36, 41); BY NT6 1.2 (Jg 6): Aufgaben der Pflanzenteile; NW IF1 (Stufe 1): Zusammenwirken der Organe einer Samenpflanze. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: pflanzenorgane
+        iCan: "Ich kann Wurzel, Sprossachse und Blatt einer Samenpflanze benennen und ihre Aufgaben erklären."
+        gradeBand: "5-6"
+      # KMK V3 Angepasstheit; HE 5/6: Fortpflanzungsstrategien bei Blütenpflanzen (S. 45); BY NT5 2.4 (Jg 5): Blütenbau, Bestäubung und Befruchtung; NW IF1 (Stufe 1): Blüten präparieren, Fortpflanzung. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: bluete-und-bestaeubung
+        iCan: "Ich kann den Aufbau einer Blüte beschreiben und erklären, wie es durch Bestäubung zur Befruchtung kommt."
+        gradeBand: "5-6"
+        requires: [pflanzenorgane]
+      # KMK V3 Angepasstheit; HE 5/6: Fortpflanzungsstrategien bei Blütenpflanzen (allgemein, S. 45); BY NT6 1.2 (Jg 6): Frucht als Ausbreitungseinheit; NW IF1 (Stufe 1): Struktur und Funktion von Früchten und Samen. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: fruechte-und-samen
+        iCan: "Ich kann erklären, wie Früchte und Samen durch Wind, Wasser oder Tiere verbreitet werden."
+        gradeBand: "5-6"
+        requires: [bluete-und-bestaeubung]
+      # KMK (Erkenntnisgewinnung); HE –; BY NT6 1.2 (Jg 6): Einfluss von Außenfaktoren auf Keimung und Wachstum; NW IF1 (Stufe 1): Experiment nach Variablenkontrolle zu Keimung und Wachstum. Stimmen – / 5-6 / 5-6: Mehrheit
+      - id: keimung-experiment
+        iCan: "Ich kann ein Experiment zur Keimung planen, bei dem ich nur einen Faktor wie Wasser, Licht oder Temperatur verändere."
+        gradeBand: "5-6"
+        requires: [fruechte-und-samen]
+      # KMK (V2 genetische Variabilität, Voraussetzung); HE 5/6: geschlechtliche und ungeschlechtliche Vermehrung (S. 45); BY NT6 1.2 (Jg 6): ungeschlechtliche Fortpflanzung, Ausläufer; NW IF1 (Stufe 1), Basiskonzept Entwicklung: ungeschlechtliche Vermehrung. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: ungeschlechtliche-vermehrung
+        iCan: "Ich kann geschlechtliche Fortpflanzung und ungeschlechtliche Vermehrung bei Pflanzen, zum Beispiel durch Ausläufer, unterscheiden."
+        gradeBand: "5-6"
+        requires: [bluete-und-bestaeubung]
+      # KMK U2 Artenkenntnis; HE –; BY B9 LB5 (Jg 9): ausgewählte Vertreter der Wirbellosen, Formenkenntnis; NW IF4 (Stufe 2; SiLP 8.1): Merkmale im äußeren Körperbau ausgewählter Wirbellosen-Taxa. Stimmen – / 9-10 / 7-10: Mehrheit
+      - id: wirbellose
+        iCan: "Ich kann wichtige Gruppen der Wirbellosen wie Insekten, Spinnen, Weichtiere und Ringelwürmer am Körperbau unterscheiden und Tiere zuordnen."
+        gradeBand: "9-10"
+        requires: [wirbeltierklassen]
+      # KMK U2 Artenkenntnis; HE –; BY B9 LB5 (Jg 9): Außenskelett aus Chitin, Tracheensystem, Metamorphoseformen; NW IF4 (Stufe 2; SiLP 8.1): Entwicklungsstadien von Insekten; Eingriffe in Lebensräume am Beispiel der Insekten. Stimmen – / 9-10 / 7-10: Mehrheit
+      - id: insekten
+        iCan: "Ich kann Körperbau, Atmung und Verwandlung (Metamorphose) von Insekten beschreiben."
+        gradeBand: "9-10"
+        requires: [wirbellose]
+      # KMK V1 Evolutionstheorie; HE 9/10: Evolutionsmechanismen (S. 47); BY B9 LB4 (Jg 9): erweiterte Evolutionstheorie; vereinfacht schon NT6 1.4; NW IF5 (Stufe 2; SiLP 8.4): Darwin'sche Evolutionstheorie. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: evolutionstheorie-darwin
+        iCan: "Ich kann die Grundgedanken von Darwins Evolutionstheorie wiedergeben: Vielfalt, Überproduktion, natürliche Selektion und Fortpflanzungserfolg."
+        gradeBand: "9-10"
+        requires: [zuechtung]
+      # KMK V3 Angepasstheit; HE 9/10: Angepasstheit als Resultat der Evolutionsmechanismen (S. 32); BY B9 LB4 (Jg 9): Angepasstheiten als Selektionsvorteil; NW IF5 (Stufe 2; SiLP 8.4): Angepasstheit vor dem Hintergrund der Selektionstheorie. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: angepasstheit-selektion
+        iCan: "Ich kann Angepasstheiten von Lebewesen als Ergebnis natürlicher Selektion erklären."
+        gradeBand: "9-10"
+        requires: [evolutionstheorie-darwin, angepasstheit-fortbewegung]
+      # SCHWACH BELEGT. KMK V2 genetische Variabilität; HE 9/10: Mutation und Modifikation (S. 31, 47); 5/6: individuelle Veränderungen durch äußere Einflüsse; BY B9 3.3 (Jg 9): nur Genommutation; NW IF6 (Stufe 2): nur Genommutation. Stimmen 7-10 / 9-10 / 7-10: Mehrheit. Hinweis: Modifikation nennt nur HE; BY und NW nennen nur Mutationen
+      - id: mutation-und-modifikation
+        iCan: "Ich kann an Beispielen unterscheiden, ob ein Merkmal durch eine Mutation (erblich) oder durch Umwelteinflüsse (Modifikation, nicht erblich) verändert ist."
+        gradeBand: "9-10"
+        requires: [dna-modell]
+      # KMK V1 Evolutionstheorie; V2 genetische Variabilität; HE 9/10: Mutation, Rekombination, Selektion (S. 47); BY B9 LB4 (Jg 9): genetische Variabilität, Selektion, Isolation; NW IF5 (Stufe 2; SiLP 8.4): Variabilität, natürliche Selektion. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: evolutionsfaktoren
+        iCan: "Ich kann erklären, wie Mutation, Rekombination, Selektion und Isolation zusammen Arten verändern."
+        gradeBand: "9-10"
+        requires: [angepasstheit-selektion, meiose, mutation-und-modifikation]
+      # KMK V3 Artbildung; HE 9/10: Erläuterung des Artbegriffs (S. 47); BY –; NW IF5 (Stufe 2; SiLP 8.5): biologischen Artbegriff anwenden. Stimmen 7-10 / – / 7-10: Gleichstand 7-8/9-10; requires lassen beide zu: frühere Stufe
+      - id: artbegriff
+        iCan: "Ich kann mit dem biologischen Artbegriff entscheiden, ob zwei Lebewesen zur selben Art gehören."
+        gradeBand: "7-8"
+        requires: [fortpflanzung-wirbeltiere]
+      # KMK V3 Artbildung; HE 9/10: Veränderung von Arten über längere Zeiträume (S. 47); BY B9 LB4 (Jg 9): Isolation (geographische Isolation), Entstehung der biologischen Vielfalt; NW IF5 (Stufe 2; SiLP 8.4): Artenwandel durch natürliche Selektion (allgemein). Stimmen 7-10 / 9-10 / 7-10: Mehrheit. Hinweis: Isolation nennt nur BY; HE und NW nennen den Artenwandel allgemein
+      - id: artbildung
+        iCan: "Ich kann erklären, wie aus einer Art durch geografische Isolation und Selektion neue Arten entstehen können."
+        gradeBand: "9-10"
+        requires: [artbegriff, evolutionsfaktoren]
+      # KMK V1 Evolutionstheorie; HE 9/10: Forschungsmethoden zur Evolution (S. 47); BY B9 LB4 (Jg 9): fossile Abstammungsreihe, Brückentiere; NW IF5 (Stufe 2; SiLP 8.5): Fossilfunde, Leitfossilien. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: fossilien
+        iCan: "Ich kann erklären, wie Fossilien entstehen und wie sie, zum Beispiel als Brückentiere, die Evolution belegen."
+        gradeBand: "9-10"
+        requires: [evolutionstheorie-darwin]
+      # KMK V4 Stammesgeschichte (Voraussetzung); HE 9/10: Eroberung von Wasser, Land oder Luft als Lebensraum (S. 47); BY B10 LB4 (Jg 10): Verlauf der Geschichte des Lebens; NW IF5 (Stufe 2; SiLP 8.5): Erdzeitalter, Evolution der Landwirbeltiere. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: erdzeitalter
+        iCan: "Ich kann die Geschichte des Lebens auf einer Zeitleiste der Erdzeitalter darstellen, auch den Übergang vom Leben im Wasser zum Leben an Land."
+        gradeBand: "9-10"
+        requires: [fossilien]
+      # KMK V3 Verwandtschaft; HE 9/10: Stammbäume; Darstellung der Abstammung mit phylogenetischen Stammbäumen (S. 47); BY –; NW IF5 (Stufe 2; SiLP 8.5): abgestufte Ähnlichkeit und Verwandtschaft; Hypothesen zur stammesgeschichtlichen Verwandtschaft. Stimmen 7-10 / – / 7-10: Gleichstand 7-8/9-10; requires entscheidet (evolutionstheorie-darwin)
+      - id: stammbaum
+        iCan: "Ich kann aus abgestuften Ähnlichkeiten im Körperbau auf Verwandtschaft schließen und sie in einem Stammbaum darstellen."
+        gradeBand: "9-10"
+        requires: [evolutionstheorie-darwin, wirbeltierklassen]
+      # KMK V3 Verwandtschaft; HE –; BY B10 LB4 (Jg 10): systematische Gruppen des natürlichen Systems: Reich, Stamm, Klasse; NW IF5 (Stufe 2; SiLP 8.5): natürliches System der Lebewesen. Stimmen – / 9-10 / 7-10: Mehrheit
+      - id: natuerliches-system
+        iCan: "Ich kann Lebewesen in die Gruppen des natürlichen Systems wie Reich, Stamm und Klasse einordnen und erklären, dass das System Verwandtschaft abbildet."
+        gradeBand: "9-10"
+        requires: [stammbaum]
+      # KMK V4 Stammesgeschichte des Menschen; HE 9/10: Abstammung des Menschen (S. 47); BY B10 LB4 (Jg 10): Fossilfunde, Einordnung des Homo sapiens; NW IF5 (Stufe 2; SiLP 8.6): Hominidenevolution. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: evolution-des-menschen
+        iCan: "Ich kann anhand von Fossilfunden beschreiben, wie sich Merkmale in der Evolution des Menschen verändert haben."
+        gradeBand: "9-10"
+        requires: [natuerliches-system, fossilien]
+      # KMK V2 Vererbung; HE 9/10: Grundlagen der Vererbung, Ausprägung von Merkmalen, klassische Genetik (S. 31, 45); BY –; NW IF6 (Stufe 2; SiLP 10.5): Gen- und Allelbegriff. Stimmen 7-10 / – / 7-10: Gleichstand 7-8/9-10; requires entscheidet (meiose)
+      - id: gen-und-allel
+        iCan: "Ich kann die Begriffe Gen, Allel, dominant, rezessiv, Genotyp und Phänotyp an einem Beispiel erklären."
+        gradeBand: "9-10"
+        requires: [meiose]
+      # KMK V2 Vererbung; HE 9/10: klassische Genetik (S. 31); BY –; NW IF6 (Stufe 2; SiLP 10.5): Gesetzmäßigkeiten der Vererbung, Rekombinationswahrscheinlichkeiten. Stimmen 7-10 / – / 7-10: Gleichstand 7-8/9-10; requires entscheidet (gen-und-allel)
+      - id: erbgaenge
+        iCan: "Ich kann mit einem Kreuzungsschema vorhersagen, wie ein Merkmal nach den mendelschen Regeln vererbt wird."
+        gradeBand: "9-10"
+        requires: [gen-und-allel]
+      # KMK V2 Vererbung; HE 9/10: individuelle Stammbäume (S. 47); BY –; NW IF6 (Stufe 2; SiLP 10.5): Familienstammbäume. Stimmen 7-10 / – / 7-10: Gleichstand 7-8/9-10; requires entscheidet (erbgaenge)
+      - id: familienstammbaum
+        iCan: "Ich kann einen Familienstammbaum mit einem eindeutigen Erbgang auswerten."
+        gradeBand: "9-10"
+        requires: [erbgaenge]
+      # KMK V2 Vererbung; HE –; BY B9 3.1 (Jg 9): Grundprinzip der Proteinbiosynthese; NW IF6 (Stufe 2; SiLP 10.4): grundlegendes Prinzip der Proteinbiosynthese. Stimmen – / 9-10 / 7-10: Mehrheit. Hinweis: HE nennt nur die Ausprägung von Merkmalen (S. 45)
+      - id: proteinbiosynthese
+        iCan: "Ich kann in einfachen Schritten beschreiben, wie eine Zelle nach der Information eines Gens ein Protein herstellt (Proteinbiosynthese)."
+        gradeBand: "9-10"
+        requires: [dna-modell, proteine]
+      # KMK V2 Vererbung; HE 9/10: Ausprägung von Merkmalen (S. 45); BY B9 3.1 (Jg 9): Rolle der Proteine bei der Merkmalsausbildung (u. a. als Enzyme), Genwirkkette; NW IF6 (Stufe 2; SiLP 10.4): Bedeutung von Proteinen bei der Merkmalsausprägung. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: vom-gen-zum-merkmal
+        iCan: "Ich kann an einem Beispiel erklären, wie ein Protein, etwa ein Enzym, ein Merkmal hervorbringt (Genwirkkette)."
+        gradeBand: "9-10"
+        requires: [proteinbiosynthese, enzyme]
+      # KMK V2 genetische Variabilität; HE –; BY B9 3.3 (Jg 9): Karyogramm des Menschen; B9 3.2: Autosomen, Gonosomen; NW IF6 (Stufe 2; SiLP 10.4): Karyogramme analysieren, Abweichungen vom Chromosomensatz ermitteln. Stimmen – / 9-10 / 7-10: Mehrheit
+      - id: karyogramm
+        iCan: "Ich kann in einem Karyogramm des Menschen die Chromosomen nach Paaren ordnen, die Geschlechtschromosomen erkennen und eine abweichende Chromosomenzahl finden."
+        gradeBand: "9-10"
+        requires: [chromosomen]
+      # KMK V2 genetische Variabilität; HE 9/10: Veränderung genetischer Information, Erbkrankheiten (S. 45 f.); BY B9 3.3 (Jg 9): Meiosefehler, z. B. Trisomie 21; NW IF6 (Stufe 2; SiLP 10.4): Ursachen und Auswirkungen einer Genommutation am Beispiel der Trisomie 21. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: trisomie-21
+        iCan: "Ich kann erklären, wie eine Trisomie 21 durch einen Fehler in der Meiose entsteht und welche Folgen sie hat."
+        gradeBand: "9-10"
+        requires: [meiose, karyogramm]
+      # KMK V2 genetische Variabilität (Bewertung); HE 9/10: Bewertung von Handlungsoptionen bei Erbkrankheiten; Reproduktionsmedizin (allgemein, S. 46); BY B9 3.3 (Jg 9): reproduktionsmedizinische Diagnostik, pränatale Diagnostik; NW IF6 (Stufe 2; SiLP 10.4): Möglichkeiten und Grenzen der Pränataldiagnostik. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: praenataldiagnostik
+        iCan: "Ich kann Methoden der Pränataldiagnostik nennen und ihre Möglichkeiten und Grenzen abwägen."
+        gradeBand: "9-10"
+        requires: [trisomie-21]
+      # KMK (V2 Vererbung, Bewertung); HE 9/10: gentechnische Veränderungen, Bewertung (S. 31, 46); BY B9 3.3 (Jg 9): Einbau von Fremd-DNA, Bewertung; NW –. Stimmen 7-10 / 9-10 / –: Mehrheit
+      - id: gentechnik
+        iCan: "Ich kann das Prinzip der Gentechnik (Einbau fremder DNA) beschreiben und Chancen und Risiken bewerten."
+        gradeBand: "9-10"
+        requires: [dna-modell, bakterienzelle]
+  - id: mensch
+    name: { de: "Der Mensch als Lebewesen", en: "The human being as a living thing" }
+    competencies:
+      # KMK M1 Organsysteme; HE 5/6: Bau und Funktion von Organsystemen des Menschen (allgemein, S. 41); BY NT5 2.3 (Jg 5): wichtige Teile des Skeletts und ihre Funktionen (Stütze, Schutz, Bewegung); NW IF2 (Stufe 1): Abschnitte des Skeletts und ihre Funktionen. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: skelett
+        iCan: "Ich kann wichtige Teile des Skeletts wie Schädel, Wirbelsäule und Gliedmaßen benennen und ihre Aufgaben für Stütze, Schutz und Bewegung erklären."
+        gradeBand: "5-6"
+      # SCHWACH BELEGT. KMK M1 Organsysteme; HE 5/6: Steuerung von Körperbewegungen (allgemein, S. 44); BY NT5 2.3 (Jg 5): Bau und Funktion der Gelenke, Gelenktypen; NW IF2 (Stufe 1): Grundprinzip von Bewegungen, Bau und Funktion des Bewegungssystems (allgemein). Stimmen 5-6 / 5-6 / 5-6: Mehrheit. Hinweis: Gelenke nennt ausdrücklich nur BY; HE und NW nennen das Bewegungssystem allgemein; direkte Voraussetzung von gegenspielerprinzip
+      - id: gelenke
+        iCan: "Ich kann den Bau eines Gelenks beschreiben und Kugelgelenk und Scharniergelenk am eigenen Körper zeigen."
+        gradeBand: "5-6"
+        requires: [skelett]
+      # KMK M1 Organsysteme; HE 5/6: Gegenspielerprinzip an der Skelettmuskulatur (S. 41); BY NT5 2.3 (Jg 5): Gegenspielerprinzip; NW IF2 (Stufe 1): Zusammenwirken von Skelett und Muskulatur. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: gegenspielerprinzip
+        iCan: "Ich kann erklären, wie Muskeln als Gegenspieler zusammen mit Sehnen und Gelenken eine Bewegung ermöglichen."
+        gradeBand: "5-6"
+        requires: [gelenke]
+      # KMK M3 Ernährung; HE 5/6: Aspekte zur ausgewogenen Ernährung (S. 44); BY NT5 2.3 (Jg 5): Nahrungsbestandteile und ihre Bedeutung; B10 3.1; NW IF2 (Stufe 1): Nahrungsbestandteile und ihre Bedeutung. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: naehrstoffe
+        iCan: "Ich kann Kohlenhydrate, Fette, Eiweiße, Vitamine, Mineralstoffe und Ballaststoffe unterscheiden und ihre Aufgaben im Körper nennen."
+        gradeBand: "5-6"
+      # KMK M3 Ernährung (Erkenntnisgewinnung); HE 5/6: physiologische Untersuchungen zu einem Stoffwechselprozess (allgemein, S. 44); BY NT5 2.1 (Jg 5): einfache Nachweisreaktionen: Stärkenachweis, Fettfleckprobe; NW IF2 (Stufe 1): einfache Nährstoffnachweise planen, durchführen und dokumentieren. Stimmen 5-6 / 5-6 / 5-6: Mehrheit. Hinweis: HE nennt Nachweise nicht ausdrücklich
+      - id: naehrstoffnachweise
+        iCan: "Ich kann Stärke mit Iodlösung und Fett mit der Fettfleckprobe in Lebensmitteln nachweisen und das Ergebnis festhalten."
+        gradeBand: "5-6"
+        requires: [naehrstoffe]
+      # KMK M3 Ernährung; HE 5/6: Zusammenhänge zwischen Stoff- und Energieumwandlungen (S. 44); BY NT5 2.3 (Jg 5): Beispiele für den Energiebedarf des Körpers, Energieinhalt verschiedener Nahrungsmittel; NW IF2 (Stufe 1): Zusammenhang zwischen Nahrungsaufnahme, Energiebedarf und Belastung. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: energiebedarf
+        iCan: "Ich kann an Beispielen erklären, wofür der Körper Energie braucht, etwa für Bewegung, Wachstum und Körperwärme, und warum der Bedarf bei Anstrengung steigt."
+        gradeBand: "5-6"
+        requires: [naehrstoffe]
+      # KMK M3 Gesundheitsbildung, Ernährung; HE 5/6: Aspekte zur ausgewogenen Ernährung (S. 44); BY NT5 2.3 (Jg 5): Gesundheitsvorsorge durch ausgewogene Ernährung; B10 3.1; NW IF2 (Stufe 1): ausgewogene Ernährung; Lebensmittel nach Qualitätsmerkmalen beurteilen. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: ausgewogene-ernaehrung
+        iCan: "Ich kann eine ausgewogene Mahlzeit zusammenstellen und begründen, warum sie gesund ist."
+        gradeBand: "5-6"
+        requires: [energiebedarf, naehrstoffe]
+      # KMK M1 Organsysteme; HE 5/6: Verdauungssystem (S. 43); BY NT5 2.3 (Jg 5): Verdauungsorgane, Resorption; B10 3.2; NW IF2 (Stufe 1): Verdauungsorgane und -vorgänge. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: verdauungsorgane
+        iCan: "Ich kann den Weg der Nahrung durch die Verdauungsorgane beschreiben und erklären, was in jedem Organ geschieht."
+        gradeBand: "5-6"
+        requires: [naehrstoffe, organisationsebenen]
+      # KMK M1 Organsysteme; HE 5/6: Herz-Lungen-System (S. 43); BY NT5 2.3 (Jg 5): Gasaustausch; B10 3.3; NW IF2 (Stufe 1): Atmungsorgane, Gasaustausch in der Lunge. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: atmung-und-gasaustausch
+        iCan: "Ich kann den Weg der Atemluft beschreiben und erklären, wie in den Lungenbläschen Sauerstoff und Kohlenstoffdioxid ausgetauscht werden."
+        gradeBand: "5-6"
+        requires: [organisationsebenen]
+      # KMK M1 Organsysteme; HE 5/6: Prinzip der Oberflächenvergrößerung an Lunge oder Darm (S. 41); BY NT5 2.3 (Jg 5): Oberflächenvergrößerung; NW IF2 (Stufe 1): Oberflächenvergrößerung an Dünndarm und Lunge. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: oberflaechenvergroesserung
+        iCan: "Ich kann an Lungenbläschen und Darmzotten erklären, warum eine große Oberfläche den Stoffaustausch verbessert."
+        gradeBand: "5-6"
+        requires: [verdauungsorgane, atmung-und-gasaustausch]
+      # KMK M1 Organsysteme; HE 5/6: Herz-Lungen-System (allgemein, S. 43); BY NT5 2.3 (Jg 5): Blutkreislauf als Transportsystem, Austausch der Atemgase zwischen Blut und Lungenbläschen; B10 3.3: Hämoglobin; NW IF2 (Stufe 1): Zusammensetzung und Aufgaben des Blutes, Blut als Transportmittel. Stimmen 5-6 / 5-6 / 5-6: Mehrheit. Hinweis: die Zusammensetzung des Blutes nennt nur NW
+      - id: blut
+        iCan: "Ich kann beschreiben, woraus Blut besteht, und erklären, wie es Nährstoffe, Sauerstoff und Kohlenstoffdioxid im Körper transportiert."
+        gradeBand: "5-6"
+        requires: [atmung-und-gasaustausch, verdauungsorgane]
+      # KMK M1 Organsysteme; HE 5/6: Herz-Lungen-System (S. 43); BY NT5 2.3 (Jg 5): Blutkreislauf: Herz, Arterien, Venen, Kapillaren; B10 3.3; NW IF2 (Stufe 1): Blutkreislauf, Bau und Funktion des Herzens. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: herz-und-blutkreislauf
+        iCan: "Ich kann den Bau des Herzens beschreiben und den Weg des Blutes durch Körper- und Lungenkreislauf mit Arterien, Venen und Kapillaren verfolgen."
+        gradeBand: "5-6"
+        requires: [blut]
+      # KMK M1 Organsysteme (Erkenntnisgewinnung); HE 5/6: physiologische Untersuchungen am eigenen Körper (S. 43); BY NT5 2.3 (Jg 5): Messwerte zu Atem- und Herzschlagfrequenz; NW IF2 (Stufe 1): quantitatives Experiment zu Herzschlag- oder Atemfrequenz. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: koerperliche-belastung
+        iCan: "Ich kann Puls und Atemfrequenz in Ruhe und bei Belastung messen und die Unterschiede mit dem Bedarf der Zellen an Sauerstoff und Nährstoffen erklären."
+        gradeBand: "5-6"
+        requires: [herz-und-blutkreislauf, zellatmung]
+      # KMK M3 Suchtprävention; HE 9/10: Drogen als Störfaktoren (S. 30); BY NT5 2.3 (Jg 5): Schädigung der Lunge, Suchtgefahr durch Rauchen; NW IF2 (Stufe 1): Folgen des Tabakkonsums. Stimmen 7-10 / 5-6 / 5-6: Mehrheit
+      - id: rauchen
+        iCan: "Ich kann beschreiben, wie Rauchen Lunge und Kreislauf schädigt und warum Nikotin abhängig macht."
+        gradeBand: "5-6"
+        requires: [atmung-und-gasaustausch]
+      # KMK M1 Organsysteme; HE 5/6: Informationswege, Reiz-Reaktions-Mechanismen bei Tier und Mensch (S. 42); BY NT5 2.3 (Jg 5): Reiz-Reaktions-Kette; NW IF7 (Stufe 2; SiLP 10.6): Reiz-Reaktions-Schema. Stimmen 5-6 / 5-6 / 7-10: Mehrheit
+      - id: reiz-reaktion
+        iCan: "Ich kann an einem Alltagsbeispiel die Kette von der Sinneszelle über Nerven und Gehirn bis zum Muskel darstellen."
+        gradeBand: "5-6"
+      # KMK M1 Organsysteme; M3 Gesundheitsbildung; HE 9/10: Leistungsstärke und Gesundheitsschutz von Auge oder Ohr (S. 42); BY B8 LB2 (Jg 8): Auge, Sehfehler, Hörvorgang; NT5: Gehörschutz; NW –. Stimmen 7-10 / 7-8 / –: Mehrheit
+      - id: auge-und-ohr
+        iCan: "Ich kann erklären, wie Auge oder Ohr Reize aufnehmen, wie Sehfehler oder Hörschäden entstehen und wie ich meine Sinnesorgane schütze."
+        gradeBand: "7-8"
+        requires: [reiz-reaktion]
+      # KMK M1 Organsysteme; HE 9/10: Erregung und Erregungsweiterleitung zum Gehirn an Zellstrukturen (Sinneszelle, Nervenzelle) (S. 28, 42); BY B8 LB2 (Jg 8): Aufbau einer Nervenzelle; NW IF7 (Stufe 2; SiLP 10.6): einfache Modellvorstellungen zu Neuron und Synapse. Stimmen 7-10 / 7-8 / 7-10: Mehrheit
+      - id: nervenzelle
+        iCan: "Ich kann den Bau einer Nervenzelle mit Zellkörper, Dendriten, Axon und Endknöpfchen beschreiben und erklären, wie sie Signale weiterleitet."
+        gradeBand: "7-8"
+        requires: [reiz-reaktion]
+      # KMK M1 Organsysteme; HE –; BY B8 LB2 (Jg 8): grundlegende Funktionsweise einer chemischen Synapse; NW IF7 (Stufe 2; SiLP 10.6): Informationsübertragung an chemischen Synapsen. Stimmen – / 7-8 / 7-10: Mehrheit. Hinweis: HE nennt nur die Erregungsweiterleitung an Zellstrukturen (S. 28)
+      - id: synapse
+        iCan: "Ich kann mit einem einfachen Modell erklären, wie eine chemische Synapse ein Signal mit Botenstoffen an die nächste Zelle weitergibt."
+        gradeBand: "7-8"
+        requires: [nervenzelle]
+      # KMK M1 Organsysteme; HE 9/10: Hormone als Botenstoffe im Organismus (S. 28, 42); BY B8 LB2 (Jg 8): zellulärer Wirkungsmechanismus, Rezeptorbindung nach dem Schlüssel-Schloss-Modell; NW IF7 (Stufe 2; SiLP 10.2): Schlüssel-Schloss-Modell bei Hormonen. Stimmen 7-10 / 7-8 / 7-10: Mehrheit
+      - id: hormone
+        iCan: "Ich kann erklären, wie Hormone als Botenstoffe mit dem Blut zu ihren Zielzellen gelangen und dort nach dem Schlüssel-Schloss-Prinzip wirken."
+        gradeBand: "7-8"
+        requires: [herz-und-blutkreislauf]
+      # KMK M1 Organsysteme; HE 9/10: weitere Informationswege durch Hormone als Botenstoffe (allgemein, S. 28); BY B8 LB2 (Jg 8): Vergleich der Informationsübertragungssysteme (Geschwindigkeit, Weg); NW IF7 (Stufe 2; SiLP 10.6): Informationsübertragung im Nervensystem mit der durch Hormone vergleichen. Stimmen 7-10 / 7-8 / 7-10: Mehrheit. Hinweis: HE nennt den Vergleich nicht ausdrücklich
+      - id: hormon-und-nervensystem
+        iCan: "Ich kann Hormonsystem und Nervensystem nach Weg und Geschwindigkeit der Signalübertragung vergleichen."
+        gradeBand: "7-8"
+        requires: [hormone, synapse]
+      # KMK M1 Organsysteme; HE 9/10: Regelmechanismen physiologischer Prozesse, hormonelle Steuerungen, Regelkreisschema (S. 44 f.); BY B8 LB2 (Jg 8): Blutzuckerregulation durch Hormone; NW IF7 (Stufe 2; SiLP 10.2): Blutzuckerregulation durch negatives Feedback und antagonistisch wirkende Hormone. Stimmen 7-10 / 7-8 / 7-10: Mehrheit
+      - id: blutzuckerregulation
+        iCan: "Ich kann die Regelung des Blutzuckers durch Insulin und Glukagon als Regelkreis erklären."
+        gradeBand: "7-8"
+        requires: [hormone]
+      # KMK M1 Organsysteme; M3 Gesundheitsbildung; HE 9/10: Wirkung von Störfaktoren auf Regelmechanismen (allgemein, S. 44); BY B8 LB2 (Jg 8): Diabetes, auch als Zivilisationskrankheit; NW IF7 (Stufe 2; SiLP 10.2): Diabetes Typ I und II vergleichen, Vorbeugung von Typ II. Stimmen 7-10 / 7-8 / 7-10: Mehrheit
+      - id: diabetes
+        iCan: "Ich kann Ursachen und Folgen von Diabetes Typ 1 und Typ 2 vergleichen und erklären, wie man Typ 2 vorbeugen kann."
+        gradeBand: "7-8"
+        requires: [blutzuckerregulation]
+      # KMK M3 Gesundheitsbildung; HE –; BY B8 LB2 (Jg 8): Stressreaktion, Stressbewältigung; NW IF7 (Stufe 2; SiLP 10.6): Reaktionen des Körpers auf Stress. Stimmen – / 7-8 / 7-10: Mehrheit
+      - id: stressreaktion
+        iCan: "Ich kann erklären, wie Nerven und Hormone bei Stress zusammenwirken, und Wege nennen, gut mit Stress umzugehen."
+        gradeBand: "7-8"
+        requires: [hormon-und-nervensystem]
+      # KMK M3 Suchtprävention; HE 9/10: Drogen als Störfaktoren (S. 30); BY B8 LB5 (Jg 8): Genuss und Sucht, Suchtentstehung; NW IF7 (Stufe 2; SiLP 10.6): Auswirkungen von Drogenkonsum. Stimmen 7-10 / 7-8 / 7-10: Mehrheit
+      - id: sucht
+        iCan: "Ich kann Genuss, Gewöhnung und Sucht unterscheiden und beschreiben, wie Suchtmittel und Verhaltenssüchte Körper und Psyche verändern."
+        gradeBand: "7-8"
+        requires: [synapse, rauchen]
+      # KMK M3 Gesundheitsbildung; M2 Immunabwehr; HE 5/6: Bewertung von Maßnahmen zur Vermeidung von Infektionen (S. 46); BY NT5 2.3 (Jg 5): Gesundheitsvorsorge (Körperhygiene, Infektionsschutz); B10 LB2: Hygiene und Körperpflege; NW IF3 (Stufe 1): Körperpflege und Hygiene; IF7 (Stufe 2): Bedeutung hygienischer Maßnahmen. Stimmen 5-6 / 5-6 / 5-6: Mehrheit. Hinweis: BY B10 und NW IF7 greifen Hygiene bei den Infektionskrankheiten wieder auf
+      - id: hygiene
+        iCan: "Ich kann erklären, warum Körperpflege und Hygiene im Alltag und in der Pubertät wichtig sind und wie sie vor Ansteckung schützen."
+        gradeBand: "5-6"
+        requires: [pubertaet]
+      # KMK M2 Immunabwehr; HE 9/10: Infektionskrankheiten (AIDS und Hepatitis) (S. 43); BY B10 LB2 (Jg 10): Bakterien und Viren als Krankheitserreger, Übertragungswege, Schutzmaßnahmen; NW IF7 (Stufe 2; SiLP 10.1): virale und bakterielle Infektionskrankheiten, hygienische Maßnahmen. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: infektionskrankheiten
+        iCan: "Ich kann bakterielle und virale Infektionskrankheiten an Beispielen unterscheiden, ihre Übertragungswege nennen und passende Schutzmaßnahmen ableiten."
+        gradeBand: "9-10"
+        requires: [vermehrung-der-bakterien, viren, hygiene]
+      # KMK M2 Mechanismen der Immunabwehr; HE 9/10: Immunsystem, Immunität (S. 43); BY B10 LB2 (Jg 10): unspezifische Abwehr; NW IF7 (Stufe 2; SiLP 10.1): unspezifische Immunreaktion. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: unspezifische-abwehr
+        iCan: "Ich kann beschreiben, wie Haut, Schleimhäute, Magensäure und Fresszellen Krankheitserreger unspezifisch abwehren."
+        gradeBand: "9-10"
+        requires: [infektionskrankheiten]
+      # KMK M2 Mechanismen der Immunabwehr; HE 9/10: Immunsystem, Immunität (S. 43); BY B10 LB2 (Jg 10): spezifische Abwehr, Bildung von Antikörpern; NW IF7 (Stufe 2; SiLP 10.1): spezifische Immunreaktion. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: spezifische-abwehr
+        iCan: "Ich kann erklären, wie Antikörper und Gedächtniszellen einen bestimmten Erreger erkennen und unschädlich machen."
+        gradeBand: "9-10"
+        requires: [unspezifische-abwehr, proteine]
+      # KMK M2 Mechanismen der Immunabwehr; HE –; BY B10 LB2 (Jg 10): Fehlreaktion des Immunsystems (Allergie); NW IF7 (Stufe 2; SiLP 10.1): allergische Reaktion mit der Immunantwort bei Infektionen vergleichen. Stimmen – / 9-10 / 7-10: Mehrheit
+      - id: allergie
+        iCan: "Ich kann eine Allergie als Fehlreaktion des Immunsystems beschreiben und mit der Abwehr eines Krankheitserregers vergleichen."
+        gradeBand: "9-10"
+        requires: [spezifische-abwehr]
+      # KMK M2 Impfung; HE 9/10: Immunisierung (S. 29); BY B10 LB2 (Jg 10): aktive und passive Immunisierung, Impfempfehlungen; NW IF7 (Stufe 2; SiLP 10.1): passive und aktive Immunisierung, STIKO. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: impfung
+        iCan: "Ich kann aktive und passive Immunisierung unterscheiden und begründen, warum Schutzimpfungen sinnvoll sind."
+        gradeBand: "9-10"
+        requires: [spezifische-abwehr]
+      # KMK M2 Immunabwehr; M3 Gesundheitsbildung; HE –; BY B10 LB2 (Jg 10): Antibiotika, Resistenzbildung; NW IF7 (Stufe 2; SiLP 10.1): Einsatz von Antibiotika, Resistenzen. Stimmen – / 9-10 / 7-10: Mehrheit
+      - id: antibiotika
+        iCan: "Ich kann erklären, wie Antibiotika gegen Bakterien wirken, warum sie gegen Viren nicht helfen und wie Resistenzen entstehen."
+        gradeBand: "9-10"
+        requires: [infektionskrankheiten]
+      # KMK M4 Pubertät; HE 5/6: Veränderung während der Pubertät (S. 46); BY NT5 2.3 (Jg 5): Pubertät; B8 LB3; NW IF3 (Stufe 1): Veränderungen in der Pubertät. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: pubertaet
+        iCan: "Ich kann körperliche und seelische Veränderungen in der Pubertät bei Mädchen und Jungen beschreiben."
+        gradeBand: "5-6"
+      # KMK M4 Fortpflanzung; HE 5/6: äußere Geschlechtsmerkmale (S. 46); BY NT5 2.3 (Jg 5): Bau und Funktion der weiblichen und männlichen Geschlechtsorgane; NW IF3 (Stufe 1): Bau und Funktion der Geschlechtsorgane. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: geschlechtsorgane
+        iCan: "Ich kann Bau und Aufgaben der weiblichen und männlichen Geschlechtsorgane beschreiben."
+        gradeBand: "5-6"
+        requires: [pubertaet]
+      # KMK M4 Fortpflanzung; HE –; BY NT5 2.3 (Jg 5): vereinfachter weiblicher Zyklus (keine hormonelle Regulation); NW IF3 (Stufe 1): weiblichen Zyklus in Grundzügen erklären. Stimmen – / 5-6 / 5-6: Mehrheit. Hinweis: HE nennt den Zyklus erst in 9/10 mit den Hormonen (siehe zyklus-und-hormone)
+      - id: menstruationszyklus
+        iCan: "Ich kann in Grundzügen erklären, was während eines Menstruationszyklus mit Eizelle und Gebärmutterschleimhaut geschieht."
+        gradeBand: "5-6"
+        requires: [geschlechtsorgane]
+      # KMK M4 Fortpflanzung; HE 5/6: Zeugung (S. 46); BY NT5 2.3 (Jg 5): Befruchtung, Eizelle, Spermienzelle; Zeugung; NW IF3 (Stufe 1): Eizelle und Spermium vergleichen, Befruchtung beschreiben. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: befruchtung
+        iCan: "Ich kann Eizelle und Spermienzelle vergleichen und beschreiben, wie es zur Befruchtung kommt."
+        gradeBand: "5-6"
+        requires: [geschlechtsorgane]
+      # KMK M4 Fortpflanzung; HE 5/6: Schwangerschaft und Geburt (S. 46); BY B8 LB3 (Jg 8): Schwangerschaft, Gesundheitsvorsorge, Austausch von Stoffen durch die Plazenta; NW IF3 (Stufe 1): Schwangerschaft und Geburt, Vermeidung von Gesundheitsrisiken für Embryo und Fötus. Stimmen 5-6 / 7-8 / 5-6: Mehrheit
+      - id: schwangerschaft-und-geburt
+        iCan: "Ich kann die Entwicklung vom Embryo zum Fötus und die Geburt beschreiben und begründen, wie eine Schwangere ihr Kind vor Gesundheitsrisiken schützt."
+        gradeBand: "5-6"
+        requires: [befruchtung]
+      # KMK M4 Sexualbildung; HE 5/6: Empfängnisverhütung (S. 46); BY B8 LB3 (Jg 8): Empfängnisregulation; NW IF3 (Stufe 1): Methoden der Empfängnisverhütung. Stimmen 5-6 / 7-8 / 5-6: Mehrheit
+      - id: verhuetung
+        iCan: "Ich kann Methoden der Empfängnisverhütung beschreiben und erklären, warum Kondome auch vor Infektionen schützen."
+        gradeBand: "5-6"
+        requires: [befruchtung]
+      # KMK M4 Sexualbildung; HE 5/6: sexuelle Selbstbestimmung, Rollenverhalten (S. 46); BY NT5 2.3 (Jg 5): Intimsphäre, Prävention von Missbrauch; B8 LB3; NW IF3 (Stufe 1): respektvoller Sprachgebrauch; IF8 (Stufe 2): Verantwortung. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: sexuelle-selbstbestimmung
+        iCan: "Ich kann eigene Grenzen benennen, die Grenzen anderer achten und erwünschte Nähe von Übergriffen unterscheiden."
+        gradeBand: "5-6"
+        requires: [pubertaet]
+      # KMK M4 Fortpflanzung; HE 9/10: Hormone, biologische Grundlagen der Empfängnisverhütung (S. 46); BY B8 LB3 (Jg 8): Steuerung des Zyklus durch Hormone; NW IF8 (Stufe 2; SiLP 10.3): hormonelle Steuerung des Zyklus. Stimmen 7-10 / 7-8 / 7-10: Mehrheit
+      - id: zyklus-und-hormone
+        iCan: "Ich kann erklären, wie Hormone den Menstruationszyklus steuern und wie hormonelle Verhütungsmittel wirken."
+        gradeBand: "7-8"
+        requires: [menstruationszyklus, hormone]
+      # KMK M4 Sexualbildung; HE 9/10: Abwägung von Handlungsoptionen (S. 46); BY B8 LB3 (Jg 8): Vor- und Nachteile abwägen; NW IF8 (Stufe 2; SiLP 10.3): Pearl-Index, Methoden vergleichen. Stimmen 7-10 / 7-8 / 7-10: Mehrheit
+      - id: verhuetung-vergleichen
+        iCan: "Ich kann Verhütungsmethoden nach Sicherheit (Pearl-Index), Handhabung und Nebenwirkungen vergleichen und begründet auswählen."
+        gradeBand: "7-8"
+        requires: [zyklus-und-hormone, verhuetung]
+      # KMK M2 Immunabwehr; M4 Sexualbildung; HE 9/10: AIDS, Hepatitis (S. 43); 5/6: Vermeidung von Infektionen (S. 46); BY B8 LB3 (Jg 8): sexuell übertragbare Erkrankungen, HIV; NW IF7 (Stufe 2): virale Infektionskrankheiten (allgemein). Stimmen 7-10 / 7-8 / 7-10: Mehrheit
+      - id: sexuell-uebertragbare-infektionen
+        iCan: "Ich kann Übertragungswege sexuell übertragbarer Infektionen wie HIV nennen und erklären, wie ich mich und andere schütze."
+        gradeBand: "7-8"
+        requires: [verhuetung]
+      # KMK M4 Sexualbildung und Diversität; HE 9/10: heterosexuelle und homosexuelle Partnerschaften (S. 46); BY B8 LB3 (Jg 8): Geschlechtsidentität, sexuelle Orientierung; NW IF8 (Stufe 2; SiLP 8.10): sexuelle Orientierung, geschlechtliche Identität. Stimmen 7-10 / 7-8 / 7-10: Mehrheit
+      - id: sexuelle-vielfalt
+        iCan: "Ich kann sexuelle Orientierungen und geschlechtliche Identitäten sachlich beschreiben und Sachinformationen von Wertungen unterscheiden."
+        gradeBand: "7-8"
+        requires: [pubertaet]
+      # KMK M4 Sexualbildung; HE 9/10: Schwangerschaftsabbruch (S. 46); BY B8 LB3 (Jg 8): ungewollte Schwangerschaft, Schwangerschaftsabbruch; NW IF8 (Stufe 2; SiLP 10.3): Schwangerschaftsabbruch. Stimmen 7-10 / 7-8 / 7-10: Mehrheit
+      - id: schwangerschaftsabbruch
+        iCan: "Ich kann die gesetzlichen Regeln zum Schwangerschaftsabbruch beschreiben und unterschiedliche Positionen dazu sachlich abwägen."
+        gradeBand: "7-8"
+        requires: [schwangerschaft-und-geburt]
+  - id: umwelt
+    name: { de: "Lebewesen in ihrer Umwelt", en: "Living things in their environment" }
+    competencies:
+      # KMK U1 Ökosysteme; HE 5/6: Tiere und Pflanzen eines ausgewählten Ökosystems (S. 43); BY NT5 2.5 (Jg 5): Lebensraum, Lebensgemeinschaft; NT6 1.5; NW IF4 (Stufe 2; SiLP 8.1): Biotop und Biozönose. Stimmen 5-6 / 5-6 / 7-10: Mehrheit
+      - id: oekosystem-grundbegriffe
+        iCan: "Ich kann an einem heimischen Ökosystem wie Wiese, Wald oder Gewässer beschreiben, was Lebensraum (Biotop) und Lebensgemeinschaft (Biozönose) sind."
+        gradeBand: "5-6"
+      # KMK U2 Artenkenntnis; HE 9/10: Erweiterung der Artenkenntnis (S. 44); BY NT5 2.1, 2.5 (Jg 5): Bestimmen von Samenpflanzen; B8 LB1; NW IF1 (Stufe 1): Bestimmungsschlüssel für Samenpflanzen; IF4: Taxa bestimmen. Stimmen 7-10 / 5-6 / 5-6: Mehrheit
+      - id: arten-bestimmen
+        iCan: "Ich kann Pflanzen und Tiere mit einem Bestimmungsschlüssel oder einer Bestimmungs-App bestimmen."
+        gradeBand: "5-6"
+        requires: [pflanzenorgane]
+      # KMK U3 Trophiestufen; HE 5/6: Nahrungsketten und -netze; Produzenten, Konsumenten, Destruenten (S. 43 f.); BY NT6 1.5 (Jg 6): Nahrungsnetz; B9 LB6; NW IF4 (Stufe 2; SiLP 8.8): Nahrungsbeziehungen und Nahrungsnetze. Stimmen 5-6 / 5-6 / 7-10: Mehrheit
+      - id: nahrungsbeziehungen
+        iCan: "Ich kann Nahrungsketten und Nahrungsnetze zeichnen und darin Produzenten, Konsumenten und Destruenten zuordnen."
+        gradeBand: "5-6"
+        requires: [oekosystem-grundbegriffe, fotosynthese]
+      # KMK U1 Naturschutz; HE 5/6: Auswirkungen von Eingriffen des Menschen (S. 45); 9/10: Gefährdung von Ökosystemen; BY NT5 2.5 (Jg 5): Bewirtschaftungsmethoden; NT6 1.5; B8 LB6; B9 LB6; NW IF4 (Stufe 2; SiLP 8.9): Eingriffe des Menschen. Stimmen 5-6 / 5-6 / 7-10: Mehrheit
+      - id: eingriffe-des-menschen
+        iCan: "Ich kann an einem Beispiel beschreiben, wie Eingriffe des Menschen wie Düngung, Versiegelung oder Begradigung ein Ökosystem verändern."
+        gradeBand: "5-6"
+        requires: [nahrungsbeziehungen]
+      # KMK U2 Wechselbeziehungen zwischen Lebewesen; HE 5/6: einfache Beispiele für Verhaltensweisen aus der Tierwelt (S. 42); 9/10: intra- und interspezifisch; BY NT6 1.3 (Jg 6): innerartliche Kommunikation; B9 5.4: Signale bei Insekten; NW –. Stimmen 5-6 / 5-6 / –: Mehrheit
+      - id: tierkommunikation
+        iCan: "Ich kann an Beispielen beschreiben, wie Tiere mit Lauten, Duftstoffen, Farben oder Bewegungen miteinander kommunizieren."
+        gradeBand: "5-6"
+        requires: [wirbeltierklassen]
+      # KMK U2 Wechselbeziehungen mit der Umwelt; HE 9/10: abiotische und biotische Faktoren (S. 43); BY NT5 2.5 (Jg 5) und NT6 1.5 (Jg 6): Umweltfaktoren im Freiland; NW IF4 (Stufe 2; SiLP 8.1): abiotische Faktoren messen. Stimmen 7-10 / 5-6 / 7-10: Gleichstand 7-8/9-10; requires lassen beide zu: frühere Stufe
+      - id: abiotische-faktoren
+        iCan: "Ich kann Umweltfaktoren wie Licht, Temperatur und Feuchtigkeit in einem Lebensraum messen und mit dem Vorkommen von Arten in Beziehung setzen."
+        gradeBand: "7-8"
+        requires: [oekosystem-grundbegriffe]
+      # KMK U1 Ökosysteme; HE –; BY B8 LB6 (Jg 8): Sukzession; NW IF4 (Stufe 2; SiLP 8.9/10.6): natürliche Sukzession, anthropogene Einflüsse. Stimmen – / 7-8 / 7-10: Mehrheit
+      - id: sukzession
+        iCan: "Ich kann beschreiben, wie sich ein Ökosystem im Lauf der Zeit verändert (Sukzession), und natürliche von menschengemachten Veränderungen unterscheiden."
+        gradeBand: "7-8"
+        requires: [oekosystem-grundbegriffe, eingriffe-des-menschen]
+      # KMK U1 Biodiversität, Naturschutz; HE 9/10: Artenvielfalt und Artensterben, Gefährdung (S. 44, 47); BY NT5 2.5 (Jg 5): Biodiversität; NT6 1.5 (Jg 6): Schutz der biologischen Vielfalt; NW IF4 (Stufe 2; SiLP 8.9): Biotop- und Artenschutz. Stimmen 7-10 / 5-6 / 7-10: Gleichstand 7-8/9-10; requires lassen beide zu: frühere Stufe
+      - id: biodiversitaet-und-naturschutz
+        iCan: "Ich kann erklären, was Biodiversität ist, warum sie gefährdet ist und wie Biotopschutz Arten schützt."
+        gradeBand: "7-8"
+        requires: [eingriffe-des-menschen, arten-bestimmen]
+      # KMK U4 Nachhaltigkeit; HE 9/10: Handlungsoptionen im Sinne der Nachhaltigkeit (S. 30, 45); BY B8 LB6 (Jg 8): nachhaltige Entwicklung, ökologischer Fußabdruck; NW IF4 (Stufe 2; SiLP 8.9): Handlungsoptionen Naturschutz und Nachhaltigkeit. Stimmen 7-10 / 7-8 / 7-10: Mehrheit
+      - id: nachhaltigkeit
+        iCan: "Ich kann am ökologischen Fußabdruck erklären, was nachhaltige Entwicklung bedeutet, und Handlungsmöglichkeiten im Alltag bewerten."
+        gradeBand: "7-8"
+        requires: [eingriffe-des-menschen]
+      # KMK (U2 Wechselbeziehungen); HE 9/10: Verhaltensweisen von Tieren, intra- und interspezifisch (S. 28, 42); BY B8 LB4 (Jg 8): reaktionsauslösende Reize, Attrappenversuche, genetisch bedingtes Verhalten, Prägung; NW –. Stimmen 7-10 / 7-8 / –: Mehrheit
+      - id: angeborenes-verhalten
+        iCan: "Ich kann an Beispielen wie Prägung oder Attrappenversuchen erklären, woran man überwiegend angeborenes Verhalten erkennt."
+        gradeBand: "7-8"
+        requires: [tierkommunikation, reiz-reaktion]
+      # SCHWACH BELEGT. KMK (U2 Wechselbeziehungen); HE 9/10: Lernvorgänge, Speicherung und Leistungen des Gehirns (allgemein, S. 28); BY B8 LB4 (Jg 8): klassische und operante Konditionierung; NW –. Stimmen 7-10 / 7-8 / –: Mehrheit. Hinweis: Konditionierung nennt ausdrücklich nur BY; HE nennt Lernvorgänge allgemein
+      - id: konditionierung
+        iCan: "Ich kann an Beispielen erklären, wie Tiere und Menschen durch klassische und operante Konditionierung lernen."
+        gradeBand: "7-8"
+        requires: [angeborenes-verhalten]
+      # KMK U2 Wechselbeziehungen zwischen Lebewesen; HE 5/6: Räuber-Beute-Wechselwirkungen (S. 38); 9/10: ökologische Funktion der Art; BY B10 LB2 (Jg 10): Symbionten, Parasiten (Ökosystem Mensch); NW IF4 (Stufe 2; SiLP 8.1): Parasitismus, Symbiose, Koexistenz. Stimmen 5-6 / 9-10 / 7-10: Mehrheit
+      - id: beziehungen-zwischen-arten
+        iCan: "Ich kann Konkurrenz, Räuber-Beute-Beziehung, Symbiose und Parasitismus an Beispielen unterscheiden."
+        gradeBand: "9-10"
+        requires: [nahrungsbeziehungen]
+      # KMK U2 Wechselbeziehungen; V3 Angepasstheit; HE 9/10: abiotische Faktoren, ökologische Funktion der Art (S. 43); BY B9 LB4 (Jg 9): Angepasstheiten an biotische und abiotische Umweltfaktoren; NW IF4 (Stufe 2; SiLP 8.7): Angepasstheiten an abiotische Faktoren. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: angepasstheit-an-umweltfaktoren
+        iCan: "Ich kann an Beispielen erklären, wie Pflanzen und Tiere an Licht, Wasser oder Temperatur in ihrem Lebensraum angepasst sind."
+        gradeBand: "9-10"
+        requires: [abiotische-faktoren]
+      # KMK U3 Energiefluss und Trophiestufen; HE 9/10: Trophieebenen, Energiefluss (S. 29 f., 43); BY B9 LB6 (Jg 9): Nahrungsnetz, Energiefluss im Boden; NW IF4 (Stufe 2; SiLP 8.8): Energieentwertung. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: energiefluss
+        iCan: "Ich kann erklären, wie Energie durch die Trophiestufen fließt und warum auf jeder Stufe nur ein kleiner Teil weitergegeben wird."
+        gradeBand: "9-10"
+        requires: [nahrungsbeziehungen, fotosynthese-und-zellatmung]
+      # KMK U3 Kohlenstoffkreislauf; HE 9/10: Stoffkreisläufe, Kohlenstoffkreislauf (S. 44); BY B9 LB6 (Jg 9): einfacher Kohlenstoffatomkreislauf; NW IF4 (Stufe 2; SiLP 8.8): Grundprinzip des Kohlenstoffkreislaufs. Stimmen 7-10 / 9-10 / 7-10: Mehrheit
+      - id: kohlenstoffkreislauf
+        iCan: "Ich kann einen einfachen Kohlenstoffkreislauf mit Fotosynthese, Zellatmung, Zersetzung und Verbrennung darstellen."
+        gradeBand: "9-10"
+        requires: [nahrungsbeziehungen, fotosynthese-und-zellatmung]
+      # KMK U2 Wechselbeziehungen; U3 Kohlenstoffkreislauf; HE –; BY B9 LB2 (Jg 9): Pilze, Hefen; B9 LB6: Humusbildung, Mineralisierung; NW IF4 (Stufe 2; SiLP 8.2/8.3): Pilze und ihre Rolle im Ökosystem. Stimmen – / 9-10 / 7-10: Mehrheit
+      - id: pilze-und-zersetzer
+        iCan: "Ich kann Pilze von Pflanzen und Tieren unterscheiden und erklären, welche Rolle Pilze, Bakterien und Bodentiere als Zersetzer spielen."
+        gradeBand: "9-10"
+        requires: [kohlenstoffkreislauf, bakterienzelle]
+      # Siehe auch: erdkunde/klimawandel-ursachen, erdkunde/klimawandel-folgen (Biologie: Treibhauseffekt und Folgen für Lebewesen).
+      # SCHWACH BELEGT. KMK U4 Klimawandel, Klimafolgen; HE 9/10: globale Stoffkreisläufe, Eingriffe des Menschen, Prognosen (S. 30; Klima nicht genannt); BY B8 LB6 (Jg 8): globale Stoffströme (Klima nicht genannt); NW –. Stimmen 7-10 / 7-8 / –: Mehrheit
+      - id: klimawandel
+        iCan: "Ich kann erklären, wie mehr Kohlenstoffdioxid in der Luft den Treibhauseffekt verstärkt und welche Folgen der Klimawandel für Lebewesen und Ökosysteme hat."
+        gradeBand: "7-8"
+        requires: [fotosynthese-und-zellatmung, nachhaltigkeit]
