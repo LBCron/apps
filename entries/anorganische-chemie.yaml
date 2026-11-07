@@ -18,7 +18,7 @@ creator:
   name: Oliver (@mrsimpson)
 keywords: [Atome, Periodensystem, Stoffe, Formeln]
 source: https://github.com/lernapps/anorganische-chemie
-commit: 6a8c936ae3ae782934f165db0fb1917c6a7424a0
+commit: 99bf3fd6b9dddd6e92269a1e2a48314e8cb656e9
 fitness:
   account: false
   install: false
