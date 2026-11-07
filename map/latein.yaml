@@ -1,0 +1,918 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# Vorschlag. Latein als zweite Fremdsprache, Gymnasium Sekundarstufe I. Es gibt keine KMK-Bildungsstandards Latein (weder MSA
+# noch Abitur, nur die EPA Latein von 1980 i. d. F. 2005); gemeinsamer Bezug der Länder ist die KMK-Vereinbarung über das Latinum.
+# Quellenkürzel in den Kommentaren:
+#   HE = Lehrplan Latein, Gymnasialer Bildungsgang (G9), Hessen, Teil B 2 Latein als 2. Fremdsprache, Jahrgang 7 bis 10;
+#        Zahl = Jahrgang, dann der Abschnitt (1.1 Phonetik, 1.2 Lexik, 1.3 Syntax, 1.4 Morphologie, 2 Text, 3 Inhalte, 4 Methoden)
+#   KC = Kerncurriculum Hessen Sek I Gymnasium Latein (2011): 7.1 Spracherwerbsphase, 7.2 Übergangsphase, Kap. 6 Abschluss Latinum
+#   BY = LehrplanPLUS Gymnasium Bayern, Latein 6 bis 8 (2. Fremdsprache), Latein 9 und 10 (1./2. Fremdsprache); L6 = Jahrgang 6,
+#        LB = Lernbereich, 2.1 Wortschatz, 2.2 Formenlehre, 2.3 Satzlehre, LB3 Kultureller Kontext, LB4 Methodik
+#   NW = Kernlehrplan Latein Sek I Gymnasium G9 NRW (2019), Kap. 2.2 Latein als 2. Fremdsprache; St1 = erste Stufe, St2 = zweite Stufe;
+#        IF1 Antike Welt, IF2 Textgestaltung, IF3 Sprachsystem
+# Richtstufe = Drittel des Lehrgangs, nicht Jahrgang (Skill map-research, Fremdsprachen): Lernjahr y von n -> Teil
+# floor(3(y - 1/2)/n) + 1, Teil 1 -> 5-6, 2 -> 7-8, 3 -> 9-10. Stimmen: HE L2 ab Jg 7 (n = 4): 7 -> 5-6, 8 und 9 -> 7-8,
+# 10 -> 9-10; KC ohne Jahrgang: Spracherwerbsphase (Lernjahre 1-3) -> 5-6/7-8, Latinum (Lernjahr 4) -> 9-10.
+# BY L2 ab Jg 6 (n = 5): 6 und 7 -> 5-6, 8 -> 7-8, 9 und 10 -> 9-10. NW L2 ab Jg 7 (n = 4): St1 (Lernjahre 1-2) -> 5-6/7-8,
+# St2 (Lernjahre 3-4) -> 7-8/9-10. Das SiLP stimmt nicht mit. Gleichstand -> frühere Stufe, außer requires erzwingt die spätere.
+# Klumpen: Hält eine Stufe mehr als die Hälfte eines Strangs, ist der Strang entlang requires in Drittel geteilt (Reihenfolge:
+# requires, dann Stufe der Stimmen, dann Median der Lage im Lehrgang, dann Reihenfolge in der Datei); "Klumpen verteilt: Rang r/N"
+# im Kommentar. Genaue Titel, Ausgaben, URLs und Entscheidungen: .vibe/research-latein.md.
+# SCHWACH BELEGT = nur knapp oder nur allgemein belegt.
+name: { de: Latein, en: Latin }                    # the file name is the subject's id: latein
+source:
+  title: KMK, Vereinbarung über das Latinum und das Graecum, Beschluss vom 22.09.2005 (gemeinsamer Bezug der Länder; KMK-Bildungsstandards Latein gibt es nicht)
+  url: https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2005/2005_09_22_VB_Latinum_Graecum.pdf
+strands:
+  - id: wortschatz
+    name: { de: "Wortschatz, Wortbildung und Aussprache", en: "Vocabulary, word formation and pronunciation" }
+    competencies:
+      # HE 7 1.1 Phonetik (Aussprache, Quantitäten, Paenultimagesetz); BY L6 2.1 (quantitätsgerecht, korrekte Betonung); NW St2 Textkompetenz (lateinische Texte sinngemäß lesen); KC 7.1 Phonetik (Aussprache- und Betonungsregeln). Stimmen HE/BY/NW 5-6 | 5-6 | 7-8/9-10 -> 5-6 (Mehrheit). NW nennt nur das sinngemäße Lesen
+      - id: aussprache-und-betonung
+        iCan: "Ich kann lateinische Wörter richtig aussprechen und nach der Paenultima-Regel betonen."
+        gradeBand: "5-6"
+      # HE 7 4.2 Lexik (Vokabelkartei mit vollständiger Vokabelangabe); BY L6 2.1 (ca. 450 Wörter), LB4 (Vokabelkartei, Lerntechniken); NW St1 Sprachkompetenz (grundlegender Wortschatz; Strategien des Sprachenlernens); KC 7.1 Lexik (Grundwortschatz, Mnemotechniken). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: vokabeln-lernen
+        iCan: "Ich kann Vokabeln mit allen Lernangaben, zum Beispiel Genitiv, Genus und Stammformen, lernen und regelmäßig wiederholen."
+        gradeBand: "5-6"
+      # HE 7 1.2 Lexik (flektierbare und nichtflektierbare Wortarten); BY L6 2.1 (nach Wortarten ordnen), 2.2 (Grundbegriffe); NW St1 IF3 Wortarten. Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: wortarten
+        iCan: "Ich kann die Wortarten Substantiv, Adjektiv, Verb, Pronomen, Adverb, Präposition und Konjunktion unterscheiden."
+        gradeBand: "5-6"
+      # HE 7 1.2 Lexik (Wortfamilien, Wortfelder, Sachfelder); BY L6 2.1 (Wort- und Sachfelder, Wortfamilien); NW St1 IF2 Textstruktur (Sachfelder); KC 7.1 Sprachkompetenz (Wortschatz nach Sach- und Wortfeldern strukturieren). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: wortfelder-und-sachfelder
+        iCan: "Ich kann Vokabeln nach Wortfamilien, Wortfeldern und Sachfeldern ordnen."
+        gradeBand: "5-6"
+        requires: [wortarten]
+      # SCHWACH BELEGT (nur HE; aufgenommen als direkte Voraussetzung von wortbildung-praefixe). HE 7 1.1 Lautgesetze (Assimilation, Rhotazismus, Vokalschwächung). Stimmen HE/BY/NW 5-6 | – | – -> 5-6 (einzige Stimme). BY L9/L10 2.2 nennt nur allgemein Besonderheiten der Lautlehre
+      - id: lautgesetze
+        iCan: "Ich kann Lautveränderungen wie die Assimilation (ad-ferre wird zu afferre), den Rhotazismus und die Vokalschwächung erkennen."
+        gradeBand: "5-6"
+      # HE 7 1.2 Grundlagen der Wortbildung (Zusammensetzung); BY L6 2.1 (einfache Regeln der Wortbildungslehre); NW St1 Sprachkompetenz (ausgewählte Prinzipien der Wortbildungslehre). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 6/15 im Strang -> 7-8). Richtstufe 7-8
+      - id: wortbildung-praefixe
+        iCan: "Ich kann zusammengesetzte Wörter in Präfix und Grundwort zerlegen und so ihre Bedeutung erschließen, zum Beispiel ab-ire und ad-esse."
+        gradeBand: "7-8"
+        requires: [wortfelder-und-sachfelder, lautgesetze]
+      # HE 7 1.2 Grundlagen der Wortbildung (Ableitung); BY L7 2.1 (weitere Regeln der Wortbildung); NW St2 Sprachkompetenz (grundlegende Prinzipien der Wortbildungslehre). Stimmen HE/BY/NW 5-6 | 5-6 | 7-8/9-10 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 12/15 im Strang -> 9-10). Richtstufe 9-10
+      - id: wortbildung-suffixe
+        iCan: "Ich kann abgeleitete Wörter an ihren Suffixen erkennen, zum Beispiel -tor, -tas, -io und -osus, und ihre Bedeutung erschließen."
+        gradeBand: "9-10"
+        requires: [wortfelder-und-sachfelder]
+      # HE 7 2.4 Texterschließung auf Wortebene (Bedeutung aus Kontext und Syntax); BY L6 2.1 (kontextspezifische Bedeutung mehrdeutiger Wörter, unter Anleitung); NW St1 IF3 (Wörter des Grundwortschatzes angemessen monosemieren); KC 7.1 Sprachkompetenz (polyseme Vokabeln kontextgerecht unterscheiden). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 7/15 im Strang -> 7-8). Richtstufe 7-8
+      - id: bedeutung-im-kontext
+        iCan: "Ich kann bei einem Wort mit mehreren Bedeutungen die passende Bedeutung aus dem Zusammenhang wählen."
+        gradeBand: "7-8"
+        requires: [vokabeln-lernen]
+      # HE 10 4.2 Lexik (Wortbedeutung aus der Wortfamilie erschließen); BY L6 2.1 (Ableitung aus Bekanntem, einfacher Kontext, Wortbildungsregeln); NW St1 Sprachkompetenz (Bedeutung unbekannter Wörter mit der Wortbildungslehre erschließen). Stimmen HE/BY/NW 9-10 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 13/15 im Strang -> 9-10). Richtstufe 9-10
+      - id: unbekannte-woerter-erschliessen
+        iCan: "Ich kann die Bedeutung eines unbekannten Wortes aus verwandten Wörtern, der Wortbildung und dem Zusammenhang erschließen."
+        gradeBand: "9-10"
+        requires: [wortbildung-praefixe, wortbildung-suffixe, bedeutung-im-kontext]
+      # HE 7 1.2 Rezeption in anderen Sprachen (Lehn- und Fremdwörter im Deutschen); BY L6 2.1 (Lehn- und Fremdwörter); NW St1 IF3 (Bedeutung von Lehn- und Fremdwörtern erläutern); KC 7.1 Sprachkompetenz (Fremd- und Lehnwörter zurückführen). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 8/15 im Strang -> 7-8). Richtstufe 7-8
+      - id: lehn-und-fremdwoerter
+        iCan: "Ich kann deutsche Lehn- und Fremdwörter auf ihr lateinisches Ursprungswort zurückführen und ihre Bedeutung erklären."
+        gradeBand: "7-8"
+        requires: [vokabeln-lernen]
+      # HE 7 1.2 Rezeption in anderen Sprachen (Parallelen in Englisch und den romanischen Sprachen); BY L6 2.1 (Verwandtschaft im Lateinischen, Deutschen, Englischen und in den romanischen Sprachen); NW St1 Sprachkompetenz (mit Einsichten in Semantik Wörter anderer Sprachen erschließen). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 9/15 im Strang -> 7-8). Richtstufe 7-8
+      - id: latein-und-moderne-sprachen
+        iCan: "Ich kann lateinische Wörter im Englischen und in romanischen Sprachen wie Französisch, Italienisch oder Spanisch wiedererkennen."
+        gradeBand: "7-8"
+        requires: [lehn-und-fremdwoerter]
+      # HE 8 2.3 Textgattungen (Sentenzen, Sprichwörter); BY L6 2.1 (lateinische Wendungen wörtlich und übertragen), LB3 (Sentenzen, geflügelte Worte). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 10/15 im Strang -> 7-8). Richtstufe 7-8. NW nennt Wendungen nicht eigens
+      - id: lateinische-wendungen
+        iCan: "Ich kann bekannte lateinische Wendungen und Sprichwörter wie „carpe diem“ wörtlich und im übertragenen Sinn verstehen."
+        gradeBand: "7-8"
+        requires: [bedeutung-im-kontext]
+      # HE 8 2.3 Textgattungen (Inschriften); BY L6 2.1 (Inschriften, Abkürzungen), weiter in L7 und L8. Stimmen HE/BY/NW 7-8 | 5-6 | – -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 11/15 im Strang -> 9-10). Richtstufe 9-10. NW nennt Inschriften nicht
+      - id: inschriften-und-abkuerzungen
+        iCan: "Ich kann einfache lateinische Inschriften und Abkürzungen in meiner Umgebung lesen und erklären, zum Beispiel etc., e. g. oder n. Chr."
+        gradeBand: "9-10"
+        requires: [vokabeln-lernen]
+      # HE 10 1.2 Lexik (Einführung einer Wortkunde und/oder eines Lexikons), 4.2 (Umgang mit dem Wörterbuch); BY L9 2.1 (mithilfe des Wörterbuchs die kontextspezifische Bedeutung), LB3 (Ordnungsprinzipien des Schulwörterbuchs); NW St2 IF3 (Wörter mit einem zweisprachigen Wörterbuch kontextbezogen monosemieren); KC 7.2 Übergangsphase (Wörterbuch und Wortkunde unter Anleitung nutzen). Stimmen HE/BY/NW 9-10 | 9-10 | 7-8/9-10 -> 9-10 (Mehrheit)
+      - id: woerterbuch-benutzen
+        iCan: "Ich kann in einem lateinisch-deutschen Wörterbuch die Grundform eines Wortes nachschlagen und die passende Bedeutung auswählen."
+        gradeBand: "9-10"
+        requires: [bedeutung-im-kontext, stammformen]
+      # HE 10 1.2 Lexik (Erweiterung autorenbezogen, lektürebezogene Vokabelkartei); BY L9 2.1 (lektürebegleitender Wortschatz); NW St2 IF3 (autoren- und themenspezifisch erweiterter Grundwortschatz); KC Kap. 6 Lexik (autoren- und textspezifische Vokabeln). Stimmen HE/BY/NW 9-10 | 9-10 | 7-8/9-10 -> 9-10 (Mehrheit)
+      - id: lektuerewortschatz
+        iCan: "Ich kann meinen Grundwortschatz um die typischen Wörter eines Autors oder Themas erweitern, zum Beispiel um Militärwörter bei Caesar."
+        gradeBand: "9-10"
+        requires: [vokabeln-lernen, wortfelder-und-sachfelder]
+  - id: formenlehre
+    name: { de: "Formenlehre", en: "Morphology" }
+    competencies:
+      # HE 7 1.4 Morphologie (Stamm und Endung), 1.3 (Funktion der Kasus: Einführung); BY L6 2.2 (Grundbegriffe Deklination, Kasus, Numerus, Genus); NW St1 IF3 (Morpheme der Kasus). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: kasus-numerus-genus
+        iCan: "Ich kann bei einem Nomen Kasus, Numerus und Genus bestimmen und die sechs lateinischen Kasus nennen."
+        gradeBand: "5-6"
+        requires: [wortarten]
+      # HE 7 1.4 Nominale Flexion (a- und o-Deklination); BY L6 2.2 (1. bis 3. Deklinationsklasse in allen Kasus); NW St1 IF3 (Kasus in der a-, o- und dritten Deklination). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: a-deklination
+        iCan: "Ich kann Substantive der a-Deklination in allen Kasus bilden und bestimmen."
+        gradeBand: "5-6"
+        requires: [kasus-numerus-genus]
+      # HE 7 1.4 Nominale Flexion (a- und o-Deklination); BY L6 2.2 (1. bis 3. Deklinationsklasse); NW St1 IF3 (a-, o- und dritte Deklination). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: o-deklination
+        iCan: "Ich kann Substantive der o-Deklination auf -us, -er und -um in allen Kasus bilden und bestimmen."
+        gradeBand: "5-6"
+        requires: [kasus-numerus-genus]
+      # HE 7 1.4 Substantive und Adjektive (a- und o-Deklination); BY L6 2.2 (Substantive und Adjektive der 1. bis 3. Deklination); NW St1 IF3 Wortarten (Adjektiv). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: adjektive-a-o-deklination
+        iCan: "Ich kann Adjektive der a- und o-Deklination wie bonus, bona, bonum bilden und dem passenden Substantiv zuordnen."
+        gradeBand: "5-6"
+        requires: [a-deklination, o-deklination]
+      # HE 7 1.4 Nominale Flexion (3. Deklination: Einführung); BY L6 2.2 (Substantive der 3. Deklinationsklasse); NW St1 IF3 (dritte Deklination). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: dritte-deklination
+        iCan: "Ich kann Substantive der 3. Deklination bilden und bestimmen und dabei Nominativ und Stamm zusammen lernen, zum Beispiel rex, regis."
+        gradeBand: "5-6"
+        requires: [kasus-numerus-genus]
+      # HE 8 1.4 Nominale Flexion (3. Deklination: Ergänzung); BY L7 2.2 (weitere Substantive v. a. der 3. Deklination); NW St1 IF3 (dritte Deklination). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 25/54 im Strang -> 7-8). Richtstufe 7-8. NW nennt die dritte Deklination nur als Ganzes
+      - id: dritte-deklination-i-staemme
+        iCan: "Ich kann die Besonderheiten der i-Stämme und Mischstämme der 3. Deklination erkennen, zum Beispiel mare, mari und urbs, urbium."
+        gradeBand: "7-8"
+        requires: [dritte-deklination]
+      # HE 9 1.4 Adjektive und Partizip Präsens (3. Deklination: Ergänzung); BY L6 2.2 (Adjektive der 1. bis 3. Deklination); NW St1 IF3 Wortarten (Adjektiv in der dritten Deklination). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 26/54 im Strang -> 7-8). Richtstufe 7-8
+      - id: adjektive-dritte-deklination
+        iCan: "Ich kann ein-, zwei- und dreiendige Adjektive der 3. Deklination wie felix, fortis und acer bilden und bestimmen."
+        gradeBand: "7-8"
+        requires: [dritte-deklination-i-staemme, adjektive-a-o-deklination]
+      # HE 8 1.4 Nominale Flexion (u- und e-Deklination); BY L7 2.2 (Substantive der 4. Deklination); NW St2 IF3 (ausgewählte Substantive der e- und u-Deklination). Stimmen HE/BY/NW 7-8 | 5-6 | 7-8/9-10 -> 7-8 (Mehrheit)
+      - id: u-deklination
+        iCan: "Ich kann Substantive der u-Deklination wie portus und manus bilden und bestimmen."
+        gradeBand: "7-8"
+        requires: [kasus-numerus-genus]
+      # HE 8 1.4 Nominale Flexion (u- und e-Deklination); BY L7 2.2 (Substantive der 5. Deklination); NW St2 IF3 (ausgewählte Substantive der e- und u-Deklination). Stimmen HE/BY/NW 7-8 | 5-6 | 7-8/9-10 -> 7-8 (Mehrheit)
+      - id: e-deklination
+        iCan: "Ich kann Substantive der e-Deklination wie res und dies bilden und bestimmen."
+        gradeBand: "7-8"
+        requires: [kasus-numerus-genus]
+      # HE 7 1.4 Adverb (Ableitung von Adjektiven der a- und o-Deklination); 9 (der 3. Deklination); BY L8 2.2 Adverbien (Adverbbildung); NW St1 IF3 Wortarten (Adverb). Stimmen HE/BY/NW 5-6 | 7-8 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 27/54 im Strang -> 7-8). Richtstufe 7-8
+      - id: adverbien-bilden
+        iCan: "Ich kann Adverbien aus Adjektiven bilden, zum Beispiel laete aus laetus und fortiter aus fortis."
+        gradeBand: "7-8"
+        requires: [adjektive-a-o-deklination, adjektive-dritte-deklination]
+      # HE 9 1.4 Adjektiv und Adverb (Komparation, Bildung und Deklination der Steigerungsformen); BY L8 2.2 Nomina (Steigerung der Adjektive); NW St2 IF3 (Komparation). Stimmen HE/BY/NW 7-8 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 50/54 im Strang -> 9-10). Richtstufe 9-10
+      - id: komparation-adjektive
+        iCan: "Ich kann Komparativ und Superlativ von Adjektiven bilden und erkennen, auch bei unregelmäßigen wie bonus, melior, optimus."
+        gradeBand: "9-10"
+        requires: [adjektive-dritte-deklination]
+      # HE 9 1.4 Adjektiv und Adverb (Komparation); BY L8 2.2 Adverbien (Steigerung); NW St2 IF3 (Komparation). Stimmen HE/BY/NW 7-8 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 51/54 im Strang -> 9-10). Richtstufe 9-10
+      - id: komparation-adverbien
+        iCan: "Ich kann gesteigerte Adverbien bilden und erkennen, zum Beispiel celerius und celerrime."
+        gradeBand: "9-10"
+        requires: [komparation-adjektive, adverbien-bilden]
+      # SCHWACH BELEGT (NW nennt Zahlwörter nicht; HE und BY stufen sehr verschieden ein). HE 9 1.4 Numeralia (unus, duo, tres; Rest fakultativ); BY L6 2.2 Numeralia (Kardinalia und Ordinalia 1 bis 12). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 33/54 im Strang -> 7-8). Richtstufe 7-8. Gleichstand 5-6/9-10, 5-6 nicht möglich wegen requires
+      - id: zahlwoerter
+        iCan: "Ich kann die lateinischen Grundzahlen bis zehn und die häufigsten Ordnungszahlen erkennen und unus, duo, tres deklinieren."
+        gradeBand: "7-8"
+        requires: [adjektive-a-o-deklination, dritte-deklination]
+      # HE 7 1.4 Pronomina (Personal- und Possessivpronomen); BY L6 2.2 Pronomina (Personalpronomen); NW St1 IF3 (Personalpronomina). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: personalpronomen
+        iCan: "Ich kann die Personalpronomen ego, tu, nos und vos in allen Kasus erkennen und übersetzen."
+        gradeBand: "5-6"
+        requires: [kasus-numerus-genus]
+      # HE 7 1.4 Pronomina (Possessivpronomen); BY L6 2.2 Pronomina (Possessivpronomen). Stimmen HE/BY/NW 5-6 | 5-6 | – -> 5-6 (Mehrheit). NW nennt Possessivpronomina nicht eigens
+      - id: possessivpronomen
+        iCan: "Ich kann die Possessivpronomen meus, tuus, noster und vester erkennen und dem Bezugswort zuordnen."
+        gradeBand: "5-6"
+        requires: [personalpronomen, adjektive-a-o-deklination]
+      # HE 7 1.3 Nomen (nichtreflexiv, direkt und indirekt reflexiv); BY L6 2.2 Pronomina (Reflexivpronomen); NW St1 IF3 (Reflexivpronomina). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: reflexivpronomen
+        iCan: "Ich kann die Reflexivpronomen se, sibi und suus erkennen und richtig übersetzen."
+        gradeBand: "5-6"
+        requires: [personalpronomen, possessivpronomen]
+      # HE 7 1.4 Pronomina (is, ea, id), 1.3 (Gebrauch von is, ea, id); BY L6 2.2 Pronomina (Pronomen is); NW St1 IF3 (Demonstrativpronomina). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: is-ea-id
+        iCan: "Ich kann das Pronomen is, ea, id in allen Formen erkennen und je nach Satz mit „er, sie, es“ oder „dieser“ übersetzen."
+        gradeBand: "5-6"
+        requires: [a-deklination, o-deklination]
+      # HE 8 1.4 Pronomina (Demonstrativpronomina); BY L7 2.2 Pronomina (hic, ille, iste); NW St1 IF3 (Demonstrativpronomina). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 28/54 im Strang -> 7-8). Richtstufe 7-8
+      - id: demonstrativpronomen
+        iCan: "Ich kann die Demonstrativpronomen hic, ille und iste erkennen und ihre Bedeutung unterscheiden."
+        gradeBand: "7-8"
+        requires: [is-ea-id]
+      # HE 8 1.4 Pronomina (Demonstrativpronomina, allgemein); BY L7 2.2 Pronomina (idem, ipse); NW St1 IF3 (Demonstrativpronomina, allgemein). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 29/54 im Strang -> 7-8). Richtstufe 7-8. nur BY nennt ipse und idem ausdrücklich
+      - id: ipse-und-idem
+        iCan: "Ich kann die Pronomen ipse (selbst) und idem (derselbe) erkennen und übersetzen."
+        gradeBand: "7-8"
+        requires: [is-ea-id]
+      # HE 8 1.4 Pronomina (Relativpronomen); BY L6 2.2 Pronomina (Relativpronomen qui); NW St1 IF3 (Relativpronomina). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 22/54 im Strang -> 7-8). Richtstufe 7-8
+      - id: relativpronomen
+        iCan: "Ich kann das Relativpronomen qui, quae, quod in allen Formen erkennen."
+        gradeBand: "7-8"
+        requires: [kasus-numerus-genus]
+      # HE 7 1.4 Pronomina (Interrogativpronomen); BY L7 2.2 Pronomina (substantivisches und adjektivisches Interrogativpronomen); NW St1 IF3 (Interrogativpronomina). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 23/54 im Strang -> 7-8). Richtstufe 7-8
+      - id: interrogativpronomen
+        iCan: "Ich kann die Fragepronomen quis, quid und qui, quae, quod erkennen und übersetzen."
+        gradeBand: "7-8"
+        requires: [relativpronomen]
+      # HE 8 1.4 Pronomina (Indefinitpronomina); BY L8 2.2 Pronomina (aliquis, aliqui, quidam, quisque). Stimmen HE/BY/NW 7-8 | 7-8 | – -> 7-8 (Mehrheit; Klumpen verteilt: Rang 46/54 im Strang -> 9-10). Richtstufe 9-10. NW nennt Indefinitpronomina nicht
+      - id: indefinitpronomen
+        iCan: "Ich kann die Indefinitpronomen aliquis, quidam und quisque erkennen und übersetzen."
+        gradeBand: "9-10"
+        requires: [interrogativpronomen]
+      # HE 7 1.3 Verbum (Subjekt im Prädikat enthalten); 1.4 Verbale Flexion; BY L6 2.2 Verben (in allen Personen), Grundbegriffe Person, Numerus; NW St1 IF3 Personalendungen. Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: personalendungen
+        iCan: "Ich kann an der Personalendung eines Verbs erkennen, wer handelt, und Person und Numerus bestimmen."
+        gradeBand: "5-6"
+        requires: [wortarten]
+      # HE 7 1.4 „unregelmäßige“ Verben (esse und Komposita, posse); BY L6 2.2 Verben (esse, posse); NW St1 IF3 (esse und ausgewählte Komposita von esse). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: esse-und-posse
+        iCan: "Ich kann die Formen von esse und posse im Präsens, Imperfekt und Perfekt bilden und übersetzen."
+        gradeBand: "5-6"
+        requires: [personalendungen]
+      # HE 7 1.4 Verbale Flexion (vier Konjugationsklassen, Indikativ Präsens aktiv); BY L6 2.2 Verben (alle Konjugationsklassen, Indikativ Aktiv); NW St1 IF3 (a-, e- und dritte Konjugation). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: praesens-a-e-konjugation
+        iCan: "Ich kann Verben der a- und e-Konjugation im Präsens bilden und bestimmen."
+        gradeBand: "5-6"
+        requires: [personalendungen]
+      # HE 7 1.4 Verbale Flexion (Unterscheidung der vier Konjugationsklassen); BY L6 2.2 Verben (aus allen Konjugationsklassen); NW St1 IF3 (dritte Konjugation, ausgewählte Verben der i-Konjugation). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: praesens-konsonantische-und-i-konjugation
+        iCan: "Ich kann Verben der konsonantischen und der i-Konjugation im Präsens bilden und bestimmen, auch die gemischte wie capere."
+        gradeBand: "5-6"
+        requires: [praesens-a-e-konjugation]
+      # HE 7 1.4 infinite Formen (Infinitiv Präsens aktiv); 1.3 (unpersönlicher Ausdruck mit Infinitiv); BY L6 2.2 Verben (Infinitive). Stimmen HE/BY/NW 5-6 | 5-6 | – -> 5-6 (Mehrheit). NW nennt Infinitive nicht eigens, setzt sie aber mit dem AcI voraus
+      - id: infinitiv-praesens
+        iCan: "Ich kann den Infinitiv Präsens Aktiv bilden und erkennen und ihn zusammen mit Verben wie posse oder debere übersetzen."
+        gradeBand: "5-6"
+        requires: [praesens-konsonantische-und-i-konjugation, esse-und-posse]
+      # HE 7 1.4 finite Formen (Imperativ I aktiv); BY L6 2.2 Verben (Imperative I); NW St1 IF3 (Imperativ). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: imperativ
+        iCan: "Ich kann den Imperativ im Singular und Plural bilden und erkennen, zum Beispiel voca und vocate."
+        gradeBand: "5-6"
+        requires: [praesens-konsonantische-und-i-konjugation]
+      # HE 7 1.4 finite Formen (Indikativ Imperfekt aktiv); BY L6 2.2 Verben (alle Tempora des Indikativs Aktiv); NW St1 IF3 (Indikativ Imperfekt). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: imperfekt
+        iCan: "Ich kann das Imperfekt Aktiv an seinem Kennzeichen -ba- erkennen und bilden."
+        gradeBand: "5-6"
+        requires: [praesens-konsonantische-und-i-konjugation]
+      # HE 8 1.4 finite Formen (Futur aktiv und passiv); BY L6 2.2 Verben (alle Tempora des Indikativs Aktiv); NW St2 IF3 (Futur I). Stimmen HE/BY/NW 7-8 | 5-6 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 37/54 im Strang -> 9-10). Richtstufe 9-10
+      - id: futur-i
+        iCan: "Ich kann das Futur I Aktiv in allen Konjugationen erkennen und bilden, mit -bi- oder mit -e- wie in vocabit und mittet."
+        gradeBand: "9-10"
+        requires: [imperfekt]
+      # HE 7 1.4 Verbale Flexion (Bildeweisen der Verbformen des Perfektstammes; Indikativ Perfekt aktiv); BY L6 2.2 Verben (alle Arten der Perfektbildung); NW St1 IF3 (Indikativ Perfekt). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: perfekt-v-und-u
+        iCan: "Ich kann das Perfekt mit v- und u-Kennzeichen erkennen und bilden und kenne die Personalendungen des Perfekts."
+        gradeBand: "5-6"
+        requires: [praesens-konsonantische-und-i-konjugation]
+      # HE 7 1.4 Verbale Flexion (Bildeweisen der Verbformen des Perfektstammes); BY L6 2.2 Verben (alle Arten der Perfektbildung); NW St1 IF3 (Indikativ Perfekt). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 19/54 im Strang -> 7-8). Richtstufe 7-8
+      - id: perfekt-weitere-bildungen
+        iCan: "Ich kann das s-Perfekt, das Dehnungsperfekt, das Reduplikationsperfekt und das Perfekt ohne Stammveränderung erkennen."
+        gradeBand: "7-8"
+        requires: [perfekt-v-und-u]
+      # HE 7 1.4 (Bildeweisen der Verbformen des Präsens- und Perfektstammes); 10 (Stammformen, Wiederholung); BY L6 2.2 Verben (Stammformen einiger Verben). Stimmen HE/BY/NW 5-6 | 5-6 | – -> 5-6 (Mehrheit; Klumpen verteilt: Rang 20/54 im Strang -> 7-8). Richtstufe 7-8. NW nennt Stammformen nicht eigens
+      - id: stammformen
+        iCan: "Ich kann die Stammformen eines Verbs nennen und aus einer Verbform die Grundform erschließen."
+        gradeBand: "7-8"
+        requires: [perfekt-weitere-bildungen]
+      # HE 8 1.4 finite Formen (Plusquamperfekt aktiv); BY L6 2.2 Verben (alle Tempora des Indikativs Aktiv); NW St1 IF3 (Indikativ Plusquamperfekt). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 24/54 im Strang -> 7-8). Richtstufe 7-8
+      - id: plusquamperfekt
+        iCan: "Ich kann das Plusquamperfekt Aktiv bilden und erkennen und seine Bedeutung als Vorvergangenheit erklären."
+        gradeBand: "7-8"
+        requires: [perfekt-v-und-u]
+      # SCHWACH BELEGT (NW nennt nur das Futur I; HE nennt „Futur“ ohne Unterscheidung). HE 8 1.4 finite Formen (Futur aktiv und passiv, ohne Unterscheidung); BY L6 2.2 Verben (alle Tempora des Indikativs Aktiv). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 38/54 im Strang -> 9-10). Richtstufe 9-10
+      - id: futur-ii
+        iCan: "Ich kann das Futur II (vocavero) erkennen und es im Nebensatz meist mit dem Präsens oder Perfekt übersetzen."
+        gradeBand: "9-10"
+        requires: [perfekt-v-und-u, futur-i]
+      # HE 7 1.4 infinite Formen (Infinitiv Perfekt aktiv); BY L6 2.2 Verben (Infinitive). Stimmen HE/BY/NW 5-6 | 5-6 | – -> 5-6 (Mehrheit). NW nennt Infinitive nicht eigens (AcI vorzeitig setzt ihn voraus)
+      - id: infinitiv-perfekt
+        iCan: "Ich kann den Infinitiv Perfekt Aktiv wie vocavisse bilden und erkennen."
+        gradeBand: "5-6"
+        requires: [infinitiv-praesens, perfekt-v-und-u]
+      # HE 8 1.4 „unregelmäßige“ Verben (ire, ferre); BY L6 2.2 Verben (ire). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 21/54 im Strang -> 7-8). Richtstufe 7-8. NW nennt unregelmäßige Verben außer esse nicht
+      - id: ire
+        iCan: "Ich kann die Formen von ire und seinen Komposita wie redire bilden und erkennen."
+        gradeBand: "7-8"
+        requires: [praesens-konsonantische-und-i-konjugation, perfekt-v-und-u]
+      # HE 8 1.4 „unregelmäßige“ Verben (ire, ferre); BY L7 2.2 Verben (ferre). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 32/54 im Strang -> 7-8). Richtstufe 7-8. NW nennt unregelmäßige Verben außer esse nicht
+      - id: ferre
+        iCan: "Ich kann die Formen von ferre und seinen Komposita wie auferre erkennen."
+        gradeBand: "7-8"
+        requires: [praesens-konsonantische-und-i-konjugation, stammformen, lautgesetze]
+      # HE 9 1.4 „unregelmäßige“ Verben (velle, nolle, malle; fieri); BY L6 2.2 Verben (velle, nolle, malle). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 34/54 im Strang -> 7-8). Richtstufe 7-8. NW nennt unregelmäßige Verben außer esse nicht; Gleichstand 5-6/9-10, 5-6 nicht möglich wegen requires
+      - id: velle-nolle-malle
+        iCan: "Ich kann die Formen von velle, nolle und malle erkennen und übersetzen."
+        gradeBand: "7-8"
+        requires: [esse-und-posse, infinitiv-praesens]
+      # HE 8 1.4 finite Formen (Präsens und Imperfekt passiv; Futur passiv); BY L7 2.2 Verben (alle Tempora im Passiv; Passivendungen); NW St1 IF3 (Aktiv und Passiv). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 39/54 im Strang -> 9-10). Richtstufe 9-10
+      - id: passiv-praesensstamm
+        iCan: "Ich kann das Passiv im Präsens, Imperfekt und Futur I an den Passivendungen erkennen und bilden."
+        gradeBand: "9-10"
+        requires: [imperfekt, futur-i]
+      # HE 8 1.4 infinite Formen (Partizip Perfekt); BY L7 2.2 Verben (Partizip Perfekt); NW St1 IF3 (Participium coniunctum). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 30/54 im Strang -> 7-8). Richtstufe 7-8
+      - id: ppp
+        iCan: "Ich kann das Partizip Perfekt Passiv (PPP) bilden und als Adjektiv der a- und o-Deklination erkennen, zum Beispiel vocatus, -a, -um."
+        gradeBand: "7-8"
+        requires: [stammformen, adjektive-a-o-deklination]
+      # HE 8 1.4 finite Formen (Perfekt passiv; Plusquamperfekt passiv); BY L7 2.2 Verben (alle Tempora im Passiv); NW St1 IF3 (Aktiv und Passiv in Perfekt und Plusquamperfekt). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 40/54 im Strang -> 9-10). Richtstufe 9-10
+      - id: passiv-perfektstamm
+        iCan: "Ich kann Perfekt, Plusquamperfekt und Futur II Passiv aus PPP und esse bilden und erkennen."
+        gradeBand: "9-10"
+        requires: [ppp, esse-und-posse, passiv-praesensstamm]
+      # HE 8 1.4 infinite Formen (Infinitiv Präsens und Perfekt passiv); BY L7 2.2 Verben (Infinitive Präsens Passiv und Perfekt Passiv). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 43/54 im Strang -> 9-10). Richtstufe 9-10. NW nennt Infinitive nicht eigens
+      - id: infinitive-passiv
+        iCan: "Ich kann den Infinitiv Präsens Passiv (vocari, mitti) und den Infinitiv Perfekt Passiv (vocatum esse) erkennen."
+        gradeBand: "9-10"
+        requires: [passiv-praesensstamm, passiv-perfektstamm, infinitiv-perfekt]
+      # HE 9 1.4 infinite Formen (Partizip Präsens); BY L7 2.2 Verben (Partizip Präsens); NW St1 IF3 (Participium coniunctum). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 31/54 im Strang -> 7-8). Richtstufe 7-8
+      - id: partizip-praesens
+        iCan: "Ich kann das Partizip Präsens Aktiv (PPA) wie vocans, vocantis bilden und erkennen."
+        gradeBand: "7-8"
+        requires: [adjektive-dritte-deklination, praesens-konsonantische-und-i-konjugation]
+      # HE 8 1.4 infinite Formen (Partizip Futur, Infinitiv Futur aktiv); BY L8 2.2 Verben (Partizip und Infinitiv Futur Aktiv). Stimmen HE/BY/NW 7-8 | 7-8 | – -> 7-8 (Mehrheit; Klumpen verteilt: Rang 47/54 im Strang -> 9-10). Richtstufe 9-10. NW nennt das Partizip Futur nicht
+      - id: partizip-futur
+        iCan: "Ich kann das Partizip Futur Aktiv (PFA) wie vocaturus und den Infinitiv Futur Aktiv wie vocaturum esse erkennen."
+        gradeBand: "9-10"
+        requires: [ppp]
+      # HE 8 1.4 finite Formen (Indikativ und Konjunktiv; Hauptsatz im Konjunktiv); BY L7 2.2 Verben (Konjunktiv Präsens im Aktiv und Passiv); NW St2 IF3 (Konjunktiv Präsens). Stimmen HE/BY/NW 7-8 | 5-6 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 44/54 im Strang -> 9-10). Richtstufe 9-10
+      - id: konjunktiv-praesens
+        iCan: "Ich kann den Konjunktiv Präsens Aktiv und Passiv an seinem Kennzeichen erkennen, zum Beispiel vocet und mittat."
+        gradeBand: "9-10"
+        requires: [passiv-praesensstamm]
+      # HE 8 1.4 finite Formen (Präsens, Imperfekt und Perfekt passiv im Indikativ und Konjunktiv); BY L7 2.2 Verben (Konjunktiv Imperfekt); NW St1 IF3 (Konjunktiv Imperfekt). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 41/54 im Strang -> 9-10). Richtstufe 9-10
+      - id: konjunktiv-imperfekt
+        iCan: "Ich kann den Konjunktiv Imperfekt Aktiv und Passiv bilden und erkennen, zum Beispiel vocaret und vocaretur."
+        gradeBand: "9-10"
+        requires: [infinitiv-praesens, passiv-praesensstamm]
+      # HE 8 1.4 finite Formen (Perfekt passiv im Indikativ und Konjunktiv); BY L7 2.2 Verben (Konjunktiv Perfekt im Aktiv und Passiv); NW St2 IF3 (Konjunktiv Perfekt). Stimmen HE/BY/NW 7-8 | 5-6 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 45/54 im Strang -> 9-10). Richtstufe 9-10
+      - id: konjunktiv-perfekt
+        iCan: "Ich kann den Konjunktiv Perfekt Aktiv und Passiv bilden und erkennen, zum Beispiel vocaverit und vocatus sit."
+        gradeBand: "9-10"
+        requires: [perfekt-v-und-u, passiv-perfektstamm, konjunktiv-praesens]
+      # HE 8 1.4 finite Formen (Plusquamperfekt aktiv und passiv im Indikativ und Konjunktiv); BY L7 2.2 Verben (Konjunktiv Plusquamperfekt); NW St1 IF3 (Konjunktiv Plusquamperfekt). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 42/54 im Strang -> 9-10). Richtstufe 9-10
+      - id: konjunktiv-plusquamperfekt
+        iCan: "Ich kann den Konjunktiv Plusquamperfekt Aktiv und Passiv bilden und erkennen, zum Beispiel vocavisset und vocatus esset."
+        gradeBand: "9-10"
+        requires: [infinitiv-perfekt, passiv-perfektstamm]
+      # HE 9 1.4 Deponentia (alle Konjugationsklassen); BY L8 2.2 Verben (Deponentien); NW St2 IF3 (ausgewählte Deponentien). Stimmen HE/BY/NW 7-8 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 52/54 im Strang -> 9-10). Richtstufe 9-10
+      - id: deponentien
+        iCan: "Ich kann Deponentien erkennen, die passive Formen, aber aktive Bedeutung haben, zum Beispiel hortatur „er ermahnt“."
+        gradeBand: "9-10"
+        requires: [passiv-praesensstamm, passiv-perfektstamm]
+      # HE 9 1.4 Deponentia / Semideponentia; BY L8 2.2 Verben (Semideponentien). Stimmen HE/BY/NW 7-8 | 7-8 | – -> 7-8 (Mehrheit; Klumpen verteilt: Rang 53/54 im Strang -> 9-10). Richtstufe 9-10. NW nennt Semideponentien nicht
+      - id: semideponentien
+        iCan: "Ich kann Semideponentien wie audere, ausus sum erkennen und richtig übersetzen."
+        gradeBand: "9-10"
+        requires: [deponentien]
+      # HE 9 1.4 „unregelmäßige“ Verben (fieri); BY L8 2.2 Verben (fieri). Stimmen HE/BY/NW 7-8 | 7-8 | – -> 7-8 (Mehrheit; Klumpen verteilt: Rang 48/54 im Strang -> 9-10). Richtstufe 9-10. NW nennt fieri nicht
+      - id: fieri
+        iCan: "Ich kann die Formen von fieri erkennen und je nach Satz mit „werden“, „geschehen“ oder „gemacht werden“ übersetzen."
+        gradeBand: "9-10"
+        requires: [passiv-praesensstamm]
+      # HE 9 1.4 Verba defectiva; BY L8 2.2 Verben (Perfektopräsentien). Stimmen HE/BY/NW 7-8 | 7-8 | – -> 7-8 (Mehrheit; Klumpen verteilt: Rang 49/54 im Strang -> 9-10). Richtstufe 9-10. NW nennt sie nicht
+      - id: defektive-verben
+        iCan: "Ich kann Verben wie memini, odi und coepi erkennen, die nur Perfektformen haben, und sie richtig übersetzen."
+        gradeBand: "9-10"
+        requires: [perfekt-weitere-bildungen]
+      # HE 9 1.4 infinite Formen (Gerundium und Gerundivum); BY L8 2.2 Verben (Gerund, Gerundiv; Infix -nd-); NW St2 IF3 (Gerundium, Gerundivum). Stimmen HE/BY/NW 7-8 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 54/54 im Strang -> 9-10). Richtstufe 9-10
+      - id: nd-formen
+        iCan: "Ich kann Gerundium und Gerundivum am Kennzeichen -nd- erkennen und ihre Formen bilden."
+        gradeBand: "9-10"
+        requires: [adjektive-a-o-deklination, partizip-praesens]
+  - id: satzlehre
+    name: { de: "Satzlehre", en: "Syntax" }
+    competencies:
+      # HE 7 1.3 Satzglieder (Benennung; Subjekt im Prädikat enthalten; Kongruenz von Subjekt und Prädikat); BY L6 2.3 Satzglieder (Prädikat, Subjekt); NW St1 IF3 Satzglieder (Subjekt, Prädikat). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: subjekt-und-praedikat
+        iCan: "Ich kann in einem lateinischen Satz Subjekt und Prädikat bestimmen und erkennen, wenn das Subjekt im Prädikat steckt."
+        gradeBand: "5-6"
+        requires: [personalendungen, kasus-numerus-genus]
+      # HE 7 1.3 Satzglieder (Ergänzungen; Funktion der Kasus); BY L6 2.3 Satzglieder (Objekt); NW St1 IF3 (Dativ als Objekt, Akkusativ als Objekt). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: objekte
+        iCan: "Ich kann Akkusativ- und Dativobjekte erkennen und übersetzen."
+        gradeBand: "5-6"
+        requires: [subjekt-und-praedikat]
+      # HE 7 1.3 Satzglieder (freie Angaben); BY L6 2.3 Satzglieder (Adverbiale); NW St1 IF3 Satzglieder (adverbiale Bestimmung). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: adverbiale-bestimmung
+        iCan: "Ich kann adverbiale Bestimmungen erkennen und sagen, ob sie Ort, Zeit, Art und Weise oder Grund angeben."
+        gradeBand: "5-6"
+        requires: [subjekt-und-praedikat]
+      # HE 7 1.3 Kongruenz (Prädikatsnomen zum Bezugswort); BY L6 2.3 Satzglieder (Prädikatsnomen); NW St1 IF3 (Nominativ als Prädikatsnomen). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: praedikatsnomen
+        iCan: "Ich kann ein Prädikatsnomen bei esse erkennen und übersetzen, zum Beispiel Marcus servus est."
+        gradeBand: "5-6"
+        requires: [subjekt-und-praedikat, esse-und-posse]
+      # HE 7 1.3 Kongruenz (Attribut); BY L6 2.3 Satzglieder (Attribut); NW St1 IF3 Satzglieder (Attribut). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: attribut
+        iCan: "Ich kann Attribute erkennen und dem Wort zuordnen, das sie näher bestimmen."
+        gradeBand: "5-6"
+        requires: [subjekt-und-praedikat]
+      # HE 7 1.3 Kongruenz (KNG); BY L6 2.3 Kongruenzregeln (KNG-Kongruenz). Stimmen HE/BY/NW 5-6 | 5-6 | – -> 5-6 (Mehrheit). NW nennt die Kongruenz nicht eigens
+      - id: kng-kongruenz
+        iCan: "Ich kann mit der KNG-Regel (Kasus, Numerus, Genus) erkennen, welches Adjektiv zu welchem Substantiv gehört, auch wenn sie weit auseinander stehen."
+        gradeBand: "5-6"
+        requires: [adjektive-a-o-deklination, attribut]
+      # HE 7 1.3 Kongruenz (Prädikativum zum Bezugswort); BY L7 2.3 Satzglieder (Prädikativum). Stimmen HE/BY/NW 5-6 | 5-6 | – -> 5-6 (Mehrheit; Klumpen verteilt: Rang 19/49 im Strang -> 7-8). Richtstufe 7-8. NW nennt das Prädikativum nicht
+      - id: praedikativum
+        iCan: "Ich kann ein Prädikativum erkennen und übersetzen, zum Beispiel laetus venit „er kam fröhlich“ oder „als fröhlicher Mensch“."
+        gradeBand: "7-8"
+        requires: [kng-kongruenz, adverbiale-bestimmung]
+      # HE 7 1.3 Funktion der Kasus (Einführung); BY L6 2.3 Kasusfunktionen (Genitiv der Zugehörigkeit); NW St1 IF3 (Genitiv als Attribut). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: genitiv-attribut
+        iCan: "Ich kann einen Genitiv als Attribut erkennen und übersetzen, zum Beispiel villa domini „das Landhaus des Herrn“."
+        gradeBand: "5-6"
+        requires: [attribut]
+      # SCHWACH BELEGT (HE nennt nur allgemein die „Erweiterung“ der Kasusfunktionen; NW nennt sie nicht). HE 8 1.3 Funktion der Kasus (Erweiterung); BY L7 2.3 Kasusfunktionen (genitivus subiectivus, obiectivus); L8 (Genitiv des geteilten Ganzen). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 20/49 im Strang -> 7-8). Richtstufe 7-8
+      - id: genitiv-weitere-funktionen
+        iCan: "Ich kann den Genitivus subiectivus, obiectivus und partitivus unterscheiden und passend übersetzen."
+        gradeBand: "7-8"
+        requires: [genitiv-attribut]
+      # SCHWACH BELEGT (HE nennt nur allgemein die Funktion der Kasus; NW nennt nur den Dativ als Objekt). HE 7 1.3 Funktion der Kasus (Einführung, nach Satzglied); BY L6 2.3 Kasusfunktionen (Dativ des Besitzers); L7 (Dativ des Zwecks, des Vorteils). Stimmen HE/BY/NW 5-6 | 5-6 | – -> 5-6 (Mehrheit)
+      - id: dativ-weitere-funktionen
+        iCan: "Ich kann den Dativ des Besitzers, des Zwecks und des Vorteils erkennen und übersetzen, zum Beispiel mihi liber est „ich habe ein Buch“."
+        gradeBand: "5-6"
+        requires: [objekte]
+      # HE 7 1.3 Funktion der Kasus (nach Präpositionen); BY L6 2.3 (Rektion von Präpositionen); NW St1 IF3 Wortarten (Präposition). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: praepositionen
+        iCan: "Ich kann Präpositionen mit Akkusativ und mit Ablativ unterscheiden und Präpositionalausdrücke übersetzen."
+        gradeBand: "5-6"
+        requires: [kasus-numerus-genus, adverbiale-bestimmung]
+      # HE 7 1.3 Funktion der Kasus (der Ablativ als „Mischkasus“); BY L6 2.3 Kasusfunktionen (Ablativ des Mittels, des Grundes, der Trennung, der Zeit); NW St1 IF3 (Ablativ als Adverbiale: instrumentalis, separativus, locativus, temporis). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: ablativ-funktionen
+        iCan: "Ich kann den Ablativ ohne Präposition als Mittel, Grund, Trennung, Ort oder Zeit erkennen und passend übersetzen."
+        gradeBand: "5-6"
+        requires: [adverbiale-bestimmung, praepositionen]
+      # SCHWACH BELEGT (HE nennt nur allgemein die „Erweiterung“; NW nennt sie nicht). HE 8 1.3 Funktion der Kasus (Erweiterung; Ablativ als „Mischkasus“); BY L8 2.3 Kasusfunktionen (Ablativ der Beschaffenheit, Ablativ des Vergleichs). Stimmen HE/BY/NW 7-8 | 7-8 | – -> 7-8 (Mehrheit)
+      - id: ablativ-weitere-funktionen
+        iCan: "Ich kann den Ablativ der Beschaffenheit und des Vergleichs erkennen und übersetzen."
+        gradeBand: "7-8"
+        requires: [ablativ-funktionen]
+      # HE 7 1.3 Hauptsatz (Behauptungssatz, Begehrsatz, Ergänzungsfrage, Entscheidungsfrage); BY L6 2.3 Satzarten (Aussagesatz, Fragesatz, Aufforderungssatz); NW St1 IF3 Hauptsatzarten (Aussagesatz, Fragesatz, Befehlssatz). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: satzarten
+        iCan: "Ich kann Aussagesatz, Fragesatz und Aufforderungssatz unterscheiden."
+        gradeBand: "5-6"
+        requires: [subjekt-und-praedikat, imperativ]
+      # HE 7 1.3 Hauptsatz (Ergänzungsfrage, Entscheidungsfrage); BY L6 2.3 Satzarten (Fragesatz); NW St1 IF3 Hauptsatzarten (Fragesatz). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 21/49 im Strang -> 7-8). Richtstufe 7-8
+      - id: fragesaetze
+        iCan: "Ich kann Wortfragen und Satzfragen mit -ne, nonne und num erkennen und übersetzen."
+        gradeBand: "7-8"
+        requires: [satzarten, interrogativpronomen]
+      # HE 7 1.3 Funktion der Tempora (Zeitstufe, Aktionsart und Verbalaspekt); 2.4 (Reliefgebung); BY L6 2.3 (Verwendung der Tempora, v. a. Imperfekt und Perfekt); NW St1 IF2 Textstruktur (Tempusrelief). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: imperfekt-und-perfekt-gebrauch
+        iCan: "Ich kann erklären, warum in einer Erzählung Imperfekt (Hintergrund) und Perfekt (Handlung im Vordergrund) stehen."
+        gradeBand: "5-6"
+        requires: [imperfekt, perfekt-v-und-u]
+      # HE 8 1.3 Funktion der Tempora (historisches Präsens); BY L9 2.2 Tempora (historisches Präsens). Stimmen HE/BY/NW 7-8 | 9-10 | – -> 7-8 (Gleichstand 7-8/9-10, ohne Bindung durch requires: frühere Stufe). NW nennt es nicht
+      - id: historisches-praesens
+        iCan: "Ich kann das historische Präsens in einer Erzählung erkennen und entscheiden, ob ich es mit Präsens oder Präteritum übersetze."
+        gradeBand: "7-8"
+        requires: [imperfekt-und-perfekt-gebrauch]
+      # HE 7 1.3 Satz (Hauptsatz, Nebensatz); 2.4 (Parataxe, Hypotaxe); BY L6 2.3 Satzebenen mit Konjunktionen und Subjunktionen; NW St1 IF3 Satzgefüge; Wortarten (Konjunktion). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: hauptsatz-und-nebensatz
+        iCan: "Ich kann Hauptsätze und Nebensätze an Konjunktionen und Subjunktionen unterscheiden."
+        gradeBand: "5-6"
+        requires: [subjekt-und-praedikat]
+      # HE 7 1.3 Nebensatz im Indikativ (Einführung der Adverbialsätze); BY L6 2.3 Nebensätze (Adverbialsätze: temporal, kausal, konditional, konzessiv); NW St1 IF3 indikativische Nebensätze (Kausalsatz, Temporalsatz, Konzessivsatz). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: adverbialsaetze-indikativ
+        iCan: "Ich kann Nebensätze mit Subjunktionen wie postquam, dum, quod, quia und quamquam als temporal, kausal oder konzessiv bestimmen und übersetzen."
+        gradeBand: "5-6"
+        requires: [hauptsatz-und-nebensatz]
+      # HE 7 1.3 Nebensatz im Indikativ (Adverbialsätze); 8 (konditionales Satzgefüge); BY L6 2.3 Nebensätze (konditional); NW St1 IF3 (konditionales Satzgefüge). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: konditionalsaetze
+        iCan: "Ich kann ein Bedingungsgefüge mit si oder nisi im Indikativ (Realis) erkennen und übersetzen."
+        gradeBand: "5-6"
+        requires: [adverbialsaetze-indikativ]
+      # HE 8 1.3 Nebensatz (Attributsatz im Indikativ); BY L6 2.3 Nebensätze (Relativsatz); NW St1 IF3 indikativische Nebensätze (Relativsatz). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 22/49 im Strang -> 7-8). Richtstufe 7-8
+      - id: relativsatz
+        iCan: "Ich kann einen Relativsatz erkennen, das Bezugswort finden und den Satz übersetzen."
+        gradeBand: "7-8"
+        requires: [relativpronomen, hauptsatz-und-nebensatz, kng-kongruenz]
+      # HE 8 1.3 Verknüpfung (relativischer Satzanschluss); BY L6 2.3 Nebensätze (Relativsatz mit relativem Satzanschluss). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 23/49 im Strang -> 7-8). Richtstufe 7-8. NW nennt ihn nicht
+      - id: relativischer-satzanschluss
+        iCan: "Ich kann einen relativischen Satzanschluss am Satzanfang erkennen und mit einem Demonstrativpronomen übersetzen, zum Beispiel quod ubi audivit „als er dies hörte“."
+        gradeBand: "7-8"
+        requires: [relativsatz]
+      # HE 8 1.3 Nebensatz (Adverbialsatz im Konjunktiv); BY L7 2.3 Nebensätze (Adverbialsätze: final); NW St1 IF3 konjunktivische Nebensätze (Finalsatz). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; angehoben auf 9-10 wegen requires). Richtstufe 9-10
+      - id: finalsatz
+        iCan: "Ich kann einen Finalsatz mit ut oder ne erkennen und als Absicht („damit“, „um zu“) übersetzen."
+        gradeBand: "9-10"
+        requires: [konjunktiv-praesens, konjunktiv-imperfekt, hauptsatz-und-nebensatz]
+      # HE 8 1.3 Nebensatz (Adverbialsatz im Konjunktiv); BY L7 2.3 Nebensätze (Adverbialsätze: konsekutiv); NW St1 IF3 konjunktivische Nebensätze (Konsekutivsatz). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; angehoben auf 9-10 wegen requires). Richtstufe 9-10
+      - id: konsekutivsatz
+        iCan: "Ich kann einen Konsekutivsatz mit ut oder ut non an Signalwörtern wie tam oder ita erkennen und als Folge übersetzen."
+        gradeBand: "9-10"
+        requires: [finalsatz]
+      # HE 8 1.3 Nebensatz (Adverbialsatz im Konjunktiv); BY L7 2.3 Nebensätze (Subjunktionen mit Indikativ und mit Konjunktiv, u. a. cum); NW St1 IF3 konjunktivische Nebensätze (Kausalsatz, Temporalsatz). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 36/49 im Strang -> 9-10). Richtstufe 9-10
+      - id: cum-mit-konjunktiv
+        iCan: "Ich kann einen cum-Satz mit Konjunktiv als temporal, kausal oder konzessiv deuten und passend übersetzen."
+        gradeBand: "9-10"
+        requires: [konjunktiv-imperfekt, konjunktiv-plusquamperfekt, adverbialsaetze-indikativ]
+      # HE 8 1.3 Nebensatz (Subjekt- und Objektsatz, begehrend); BY L7 2.3 Nebensätze (Subjunktionen mit Konjunktiv, u. a. ut); L8 Satzarten (weitere Begehrsätze). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 34/49 im Strang -> 9-10). Richtstufe 9-10. NW nennt sie nicht eigens
+      - id: abhaengige-begehrsaetze
+        iCan: "Ich kann einen ut- oder ne-Satz nach Verben des Bittens, Forderns und Fürchtens erkennen und übersetzen."
+        gradeBand: "9-10"
+        requires: [finalsatz]
+      # HE 8 1.3 Nebensatz (Subjekt- und Objektsatz, fragend); BY L7 2.3 Modi (Konjunktiv in indirekten Fragesätzen). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 39/49 im Strang -> 9-10). Richtstufe 9-10. NW nennt ihn nicht
+      - id: indirekter-fragesatz
+        iCan: "Ich kann einen indirekten Fragesatz mit Konjunktiv erkennen und im Deutschen meist mit dem Indikativ übersetzen."
+        gradeBand: "9-10"
+        requires: [interrogativpronomen, konjunktiv-praesens, konjunktiv-perfekt, konjunktiv-imperfekt, konjunktiv-plusquamperfekt]
+      # HE 8 1.3 Funktion der Tempora (consecutio temporum); BY L7 2.3 Modi (Konjunktiv im Nebensatz mit consecutio temporum). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 40/49 im Strang -> 9-10). Richtstufe 9-10. NW nennt sie nicht
+      - id: consecutio-temporum
+        iCan: "Ich kann mit der Zeitenfolge (consecutio temporum) bestimmen, ob ein konjunktivischer Nebensatz gleichzeitig oder vorzeitig ist."
+        gradeBand: "9-10"
+        requires: [indirekter-fragesatz, cum-mit-konjunktiv]
+      # HE 8 1.3 Konjunktiv im Hauptsatz (Irrealis); konditionales Satzgefüge; BY L7 2.3 Modi (Konjunktiv im Hauptsatz: Irrealis); NW St1 IF3 (konditionales Satzgefüge; Konjunktiv Imperfekt und Plusquamperfekt). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 37/49 im Strang -> 9-10). Richtstufe 9-10
+      - id: irrealis
+        iCan: "Ich kann einen Irrealis der Gegenwart und der Vergangenheit erkennen und mit „würde“ oder „hätte“ übersetzen."
+        gradeBand: "9-10"
+        requires: [konditionalsaetze, konjunktiv-imperfekt, konjunktiv-plusquamperfekt]
+      # HE 8 1.3 Konjunktiv im Hauptsatz (Voluntativ: Adhortativ, Iussiv, Prohibitiv); BY L8 2.3 Modi (Hortativ, Jussiv, Prohibitiv); NW St2 IF3 (konjunktivische Hauptsätze). Stimmen HE/BY/NW 7-8 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 43/49 im Strang -> 9-10). Richtstufe 9-10
+      - id: aufforderung-im-konjunktiv
+        iCan: "Ich kann Aufforderungen und Verbote im Konjunktiv (Hortativ, Jussiv, Prohibitiv) erkennen und übersetzen."
+        gradeBand: "9-10"
+        requires: [konjunktiv-praesens, konjunktiv-perfekt, satzarten]
+      # HE 8 1.3 Konjunktiv im Hauptsatz (Optativ); BY L8 2.3 Modi (Optativ); NW St2 IF3 (konjunktivische Hauptsätze). Stimmen HE/BY/NW 7-8 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 44/49 im Strang -> 9-10). Richtstufe 9-10
+      - id: wunschsaetze
+        iCan: "Ich kann erfüllbare und unerfüllbare Wünsche mit utinam (Optativ) erkennen und übersetzen."
+        gradeBand: "9-10"
+        requires: [konjunktiv-praesens, konjunktiv-imperfekt, konjunktiv-plusquamperfekt]
+      # HE 8 1.3 Konjunktiv im Hauptsatz (Potentialis; Deliberativ/Dubitativ); BY L8 2.3 Modi (Deliberativ, Potentialis der Gegenwart); NW St2 IF3 (konjunktivische Hauptsätze). Stimmen HE/BY/NW 7-8 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 45/49 im Strang -> 9-10). Richtstufe 9-10
+      - id: potentialis-und-deliberativ
+        iCan: "Ich kann den Potentialis („man könnte sagen“) und den Deliberativ („was soll ich tun?“) erkennen und übersetzen."
+        gradeBand: "9-10"
+        requires: [konjunktiv-praesens, konjunktiv-perfekt]
+      # HE 8 1.3 Nebensatz (Attributsatz im Konjunktiv); BY L8 2.3 Modi (Konjunktiv im Relativsatz). Stimmen HE/BY/NW 7-8 | 7-8 | – -> 7-8 (Mehrheit; Klumpen verteilt: Rang 35/49 im Strang -> 9-10). Richtstufe 9-10. NW nennt ihn nicht
+      - id: konjunktiv-im-relativsatz
+        iCan: "Ich kann einen Relativsatz mit Konjunktiv erkennen und seine Sinnrichtung bestimmen, zum Beispiel final oder kausal."
+        gradeBand: "9-10"
+        requires: [relativsatz, finalsatz]
+      # HE 10 1.3 oratio obliqua (funktionale Anwendung); BY L9 2.2 Modi (Konjunktiv in der oratio obliqua); AcI in der oratio obliqua. Stimmen HE/BY/NW 9-10 | 9-10 | – -> 9-10 (Mehrheit). NW nennt sie nicht
+      - id: oratio-obliqua
+        iCan: "Ich kann eine indirekte Rede (oratio obliqua) mit AcI und Konjunktiv erkennen und in direkte Rede zurückverwandeln."
+        gradeBand: "9-10"
+        requires: [aci-vorzeitig, consecutio-temporum, reflexiv-im-aci]
+      # HE 7 1.3 Satzwertige Konstruktionen (AcI gleichzeitig); BY L6 2.3 satzwertige Konstruktion (AcI gleichzeitig, aktiv); NW St1 IF3 (AcI); KC 7.1 Sprachkompetenz (satzwertige Konstruktionen unterscheiden). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: aci-gleichzeitig
+        iCan: "Ich kann einen AcI nach Verben des Sagens, Denkens und Wahrnehmens erkennen und mit einem dass-Satz übersetzen."
+        gradeBand: "5-6"
+        requires: [infinitiv-praesens, objekte]
+      # HE 7 1.3 Satzwertige Konstruktionen (AcI vorzeitig); BY L6 2.3 satzwertige Konstruktion (AcI vorzeitig, aktiv); NW St1 IF3 (AcI). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: aci-vorzeitig
+        iCan: "Ich kann einen AcI mit Infinitiv Perfekt erkennen und die Vorzeitigkeit richtig übersetzen."
+        gradeBand: "5-6"
+        requires: [aci-gleichzeitig, infinitiv-perfekt]
+      # HE 7 1.3 Nomen (direkt und indirekt reflexiv); BY L6 2.2 Pronomina (Reflexivpronomen); NW St1 IF3 (Reflexivpronomina). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 18/49 im Strang -> 7-8). Richtstufe 7-8
+      - id: reflexiv-im-aci
+        iCan: "Ich kann erklären, auf wen sich se oder suus in einem AcI bezieht (indirekt reflexiv)."
+        gradeBand: "7-8"
+        requires: [reflexivpronomen, aci-gleichzeitig]
+      # HE 8 1.4 infinite Formen (Infinitiv Präsens und Perfekt passiv); BY L7 2.3 satzwertige Konstruktionen (AcI gleichzeitig, vorzeitig; passiv); NW St1 IF3 (AcI). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 38/49 im Strang -> 9-10). Richtstufe 9-10. HE nennt nur die passiven Infinitive, NW nur den AcI
+      - id: aci-passiv
+        iCan: "Ich kann einen AcI mit passivem Infinitiv erkennen und übersetzen."
+        gradeBand: "9-10"
+        requires: [aci-vorzeitig, infinitive-passiv]
+      # HE 8 1.4 infinite Formen (Infinitiv Futur aktiv und passiv); BY L8 2.3 satzwertige Konstruktionen (AcI nachzeitig; aktiv). Stimmen HE/BY/NW 7-8 | 7-8 | – -> 7-8 (Mehrheit; Klumpen verteilt: Rang 41/49 im Strang -> 9-10). Richtstufe 9-10. NW nennt die Zeitverhältnisse nicht
+      - id: aci-nachzeitig
+        iCan: "Ich kann einen AcI mit Infinitiv Futur erkennen und die Nachzeitigkeit mit „werde“ übersetzen."
+        gradeBand: "9-10"
+        requires: [aci-vorzeitig, partizip-futur]
+      # HE 8 1.3 Partizipialkonstruktion (vorzeitig; prädikativ-adverbiales Partizip, PC); BY L7 2.3 satzwertige Konstruktionen (participium coniunctum); NW St1 IF3 (Participium coniunctum). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 24/49 im Strang -> 7-8). Richtstufe 7-8
+      - id: participium-coniunctum
+        iCan: "Ich kann ein Participium coniunctum mit PPP erkennen, sein Bezugswort finden und es als vorzeitig übersetzen."
+        gradeBand: "7-8"
+        requires: [ppp, kng-kongruenz]
+      # HE 9 1.3 Satzwertige Konstruktionen (PC gleichzeitig); BY L7 2.3 satzwertige Konstruktionen (Partizip gleichzeitig); NW St1 IF3 (Participium coniunctum). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 26/49 im Strang -> 7-8). Richtstufe 7-8
+      - id: pc-gleichzeitig
+        iCan: "Ich kann ein Participium coniunctum mit PPA erkennen und als gleichzeitig übersetzen."
+        gradeBand: "7-8"
+        requires: [participium-coniunctum, partizip-praesens]
+      # HE 8 1.3 Partizipialkonstruktion (nachzeitig); coniugatio periphrastica activa; BY L8 2.3 satzwertige Konstruktionen (participium coniunctum als Adverbiale mit PFA). Stimmen HE/BY/NW 7-8 | 7-8 | – -> 7-8 (Mehrheit; Klumpen verteilt: Rang 42/49 im Strang -> 9-10). Richtstufe 9-10. NW nennt das PFA nicht
+      - id: pc-nachzeitig
+        iCan: "Ich kann ein Participium coniunctum mit PFA erkennen und als Absicht oder Nachzeitigkeit übersetzen."
+        gradeBand: "9-10"
+        requires: [participium-coniunctum, partizip-futur]
+      # HE 8 1.3 Partizipialkonstruktion (attributives Partizip); BY L7 2.3 satzwertige Konstruktionen (participium coniunctum auch als Attribut). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 27/49 im Strang -> 7-8). Richtstufe 7-8. NW nennt es nicht eigens
+      - id: attributives-partizip
+        iCan: "Ich kann ein Partizip als Attribut erkennen und mit einem Relativsatz übersetzen."
+        gradeBand: "7-8"
+        requires: [ppp, attribut]
+      # HE 9 4.1 Syntax (Umformen von Nebensätzen bzw. Partizipialkonstruktionen); BY L7 2.3 (Funktion im Satzganzen; Unterschiede lateinischer und deutscher Satzbau); NW St1 IF3 (angemessene Übersetzungsmöglichkeiten grundlegender Elemente auswählen). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 25/49 im Strang -> 7-8). Richtstufe 7-8
+      - id: partizip-uebersetzen
+        iCan: "Ich kann ein Partizip auf verschiedene Weisen übersetzen: wörtlich, als Relativsatz, als Adverbialsatz, mit Präposition oder beigeordnet."
+        gradeBand: "7-8"
+        requires: [participium-coniunctum, adverbialsaetze-indikativ]
+      # HE 9 1.3 Satzwertige Konstruktionen (Ablativus absolutus partizipial: gleichzeitig, vorzeitig); BY L7 2.3 satzwertige Konstruktionen (ablativus absolutus); NW St2 IF3 (Ablativus absolutus). Stimmen HE/BY/NW 7-8 | 5-6 | 7-8/9-10 -> 7-8 (Mehrheit)
+      - id: ablativus-absolutus
+        iCan: "Ich kann einen Ablativus absolutus erkennen, das Zeitverhältnis bestimmen und ihn mit einem Nebensatz oder einer Präposition übersetzen."
+        gradeBand: "7-8"
+        requires: [partizip-uebersetzen, pc-gleichzeitig, ablativ-funktionen]
+      # SCHWACH BELEGT (nur HE nennt den nominalen Ablativus absolutus ausdrücklich; NW nicht). HE 9 1.3 Ablativus absolutus (nominal); BY L7 2.3 satzwertige Konstruktionen (ablativus absolutus, ohne Unterscheidung). Stimmen HE/BY/NW 7-8 | 5-6 | – -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires)
+      - id: nominaler-ablativus-absolutus
+        iCan: "Ich kann einen nominalen Ablativus absolutus wie Cicerone consule erkennen und übersetzen."
+        gradeBand: "7-8"
+        requires: [ablativus-absolutus]
+      # HE 9 1.3 Satzwertige Konstruktionen (Gerundium); BY L8 2.2 (Gerund); NW St2 IF3 (Gerundium). Stimmen HE/BY/NW 7-8 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 46/49 im Strang -> 9-10). Richtstufe 9-10
+      - id: gerundium
+        iCan: "Ich kann ein Gerundium wie ars scribendi erkennen und als substantiviertes Verb übersetzen."
+        gradeBand: "9-10"
+        requires: [nd-formen]
+      # HE 9 1.3 Gerundivum (ohne Bedeutung der Notwendigkeit); BY L8 2.3 (attributives Gerundiv; Gerundivkonstruktionen); NW St2 IF3 (Gerundivum). Stimmen HE/BY/NW 7-8 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 47/49 im Strang -> 9-10). Richtstufe 9-10
+      - id: gerundivum-attributiv
+        iCan: "Ich kann ein attributives Gerundivum wie ad urbem defendendam erkennen und übersetzen."
+        gradeBand: "9-10"
+        requires: [gerundium, kng-kongruenz]
+      # HE 9 1.3 Gerundivum (mit Bedeutung der Notwendigkeit: Ge- und Verbot); BY L8 2.3 (prädikatives Gerundiv; Dativ des Urhebers); NW St2 IF3 (Gerundivum). Stimmen HE/BY/NW 7-8 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 48/49 im Strang -> 9-10). Richtstufe 9-10
+      - id: gerundivum-praedikativ
+        iCan: "Ich kann ein Gerundivum mit esse erkennen und als Notwendigkeit übersetzen, auch mit Dativ des Urhebers wie mihi laborandum est."
+        gradeBand: "9-10"
+        requires: [gerundivum-attributiv, dativ-weitere-funktionen]
+  - id: texte
+    name: { de: "Texte erschließen, übersetzen und deuten", en: "Reading, translating and interpreting texts" }
+    competencies:
+      # HE 7 4.1 Phonetik (lautes korrektes Lesen, Hinführen zu sinnvollem Lesen); BY L6 LB1 (Texte verständnisgeleitet vortragen); NW St2 Textkompetenz (lateinische Texte sinngemäß lesen). Stimmen HE/BY/NW 5-6 | 5-6 | 7-8/9-10 -> 5-6 (Mehrheit)
+      - id: sinnbetont-vorlesen
+        iCan: "Ich kann einen lateinischen Text so vorlesen, dass man Sinnabschnitte und Satzgrenzen hört."
+        gradeBand: "5-6"
+        requires: [aussprache-und-betonung]
+      # HE 7 2.4 Texterschließung auf Textebene (Schlüsselwörter; Hypothesenbildung); BY L6 LB4 (mithilfe von Erschließungsfragen Inhalte herausarbeiten); NW St1 IF2 (Texte unter Berücksichtigung der Textstruktur erschließen: Sachfelder, Personenkonstellation); KC 7.1 Textkompetenz (Bilder und Textsignale zur Texterschließung nutzen). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: text-vorerschliessen
+        iCan: "Ich kann vor dem Übersetzen aus Überschrift, Bildern, Namen und Sachfeldern Vermutungen über den Inhalt eines Textes aufstellen."
+        gradeBand: "5-6"
+        requires: [wortfelder-und-sachfelder]
+      # HE 7 4.5 Texterschließung (Methoden der Texterschließung: Einführung); BY L6 LB4 (Übersetzungstechniken, u. a. Abfragen von Sätzen, Konstruktionsmethode); NW St1 Textkompetenz (didaktisierte Texte auf formaler Ebene erschließen). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: satz-konstruieren
+        iCan: "Ich kann einen Satz mit der Konstruktionsmethode übersetzen: erst das Prädikat, dann das Subjekt, dann die übrigen Satzglieder."
+        gradeBand: "5-6"
+        requires: [subjekt-und-praedikat, objekte]
+      # HE 7 4.3 Syntax (Satzbilder erstellen, Sätze segmentieren); 2.4 (Segmentierung von Sätzen); BY L6 LB4 (Visualisierungstechniken; sprachliche Einheiten analysieren); NW St1 IF3 (syntaktische Strukturen auch digital visualisieren); KC 7.2 (Satz- und Satzperiodengraphiken angeleitet nutzen). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: satzbild-zeichnen
+        iCan: "Ich kann einen langen Satz in Hauptsatz, Nebensätze und satzwertige Konstruktionen gliedern und als Satzbild darstellen."
+        gradeBand: "5-6"
+        requires: [hauptsatz-und-nebensatz, aci-gleichzeitig]
+      # HE 9 4.3 Texterschließung (Übersetzungstechniken); 10 (Methodenvergleich); BY L9 LB3 (verschiedene Übersetzungsstrategien); NW St2 Textkompetenz (unterschiedliche Texterschließungsverfahren anwenden); KC Kap. 6 Texterschließung (transphrastisch, linear, kolometrisch). Stimmen HE/BY/NW 7-8 | 9-10 | 7-8/9-10 -> 7-8 (Gleichstand 7-8/9-10, ohne Bindung durch requires: frühere Stufe)
+      - id: lineares-dekodieren
+        iCan: "Ich kann einen Satz Wort für Wort von links nach rechts lesen und dabei Erwartungen bilden und prüfen, wie der Satz weitergeht."
+        gradeBand: "7-8"
+        requires: [satz-konstruieren, satzbild-zeichnen]
+      # HE 7 2.4 Übersetzung (Arbeitsübersetzung; Übertragung in angemessenes Deutsch); BY L6 LB1 (Lehrbuchtexte in angemessenes Deutsch übersetzen); NW St1 Textkompetenz (zielsprachengerecht übersetzen). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: zielsprachengerecht-uebersetzen
+        iCan: "Ich kann eine wörtliche Übersetzung in gutes Deutsch umformen, zum Beispiel durch eine andere Wortstellung oder einen Artikel."
+        gradeBand: "5-6"
+        requires: [satz-konstruieren]
+      # HE 7 2.4 Texterschließung (Hypothesenbildung); 4.6 (eigene Übersetzungsleistungen kommentieren); BY L6 LB4 (Übersetzungsergebnisse überprüfen, Fehler analysieren); KC 7.1 Textkompetenz (Sinnerwartungen anhand von Lexemen und Morphemen überprüfen). Stimmen HE/BY/NW 5-6 | 5-6 | – -> 5-6 (Mehrheit). NW nennt es nicht eigens
+      - id: uebersetzung-pruefen
+        iCan: "Ich kann meine Übersetzung mit dem lateinischen Text vergleichen und Fehler finden und verbessern."
+        gradeBand: "5-6"
+        requires: [zielsprachengerecht-uebersetzen]
+      # HE 9 2.4 Übersetzung (verschiedene Übersetzungsvarianten vergleichen und begründet auswählen); BY L9 LB1.3 (verschiedene Übersetzungen vergleichen), LB3; NW St1 IF2 (verschiedene Übersetzungen vergleichen). Stimmen HE/BY/NW 7-8 | 9-10 | 5-6/7-8 -> 7-8 (Mehrheit)
+      - id: uebersetzungen-vergleichen
+        iCan: "Ich kann verschiedene Übersetzungen eines lateinischen Textes vergleichen und begründen, welche besser passt."
+        gradeBand: "7-8"
+        requires: [zielsprachengerecht-uebersetzen]
+      # HE 7 2.3 Textgattungen (Erzählung, Dialog, Bericht, Fabel, Gedicht); BY L8 LB1 (Literatur: Fabel); L9 (Gattungen zuweisen); NW St1 IF2 Textsorten (Erzähltext, Dialog, Rede, Brief); KC 7.1 Textkompetenz (Textgattungen unterscheiden). Stimmen HE/BY/NW 5-6 | 7-8 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe)
+      - id: textsorten-erkennen
+        iCan: "Ich kann Erzählung, Dialog, Brief und Rede an ihren Merkmalen unterscheiden."
+        gradeBand: "5-6"
+      # HE 7 4.5 Texterschließung (Gliedern von Texten); 2.4 (Paraphrasierung); BY L6 LB1 (Aufbau und wesentliche Inhalte herausarbeiten); L8 (Gliederung, paraphrasieren); NW St1 IF2 Textstruktur (gedankliche Struktur). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: text-gliedern
+        iCan: "Ich kann einen Text in Abschnitte gliedern und seinen Inhalt mit eigenen Worten wiedergeben."
+        gradeBand: "5-6"
+        requires: [text-vorerschliessen]
+      # HE 8 2.4 auf inhaltlicher Ebene (Textintention; begründete Einschätzung und Stellungnahme); BY L6 LB1 (zu Sachverhalten und Textinhalten Stellung nehmen); NW St1 Textkompetenz (in Ansätzen interpretieren); Kulturkompetenz (wertend Stellung nehmen); KC 7.1 Textkompetenz (Textaussagen mit heutigen Lebens- und Denkweisen vergleichen). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe)
+      - id: text-deuten
+        iCan: "Ich kann zu einer Aussage eines lateinischen Textes begründet Stellung nehmen und sie mit heutigen Vorstellungen vergleichen."
+        gradeBand: "5-6"
+        requires: [text-gliedern]
+      # HE 7 2.3 Textgattungen (Fabel); BY L8 LB1 (Literatur: Fabel, Phaedrus); LB3 (Lebensweisheit in Phaedrus’ Fabeln); NW St2 IF2 Textsorten (Fabel). Stimmen HE/BY/NW 5-6 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit)
+      - id: fabel
+        iCan: "Ich kann eine lateinische Fabel, zum Beispiel von Phaedrus, verstehen und ihre Lehre in eigenen Worten formulieren."
+        gradeBand: "7-8"
+        requires: [textsorten-erkennen, text-deuten]
+      # HE 9 2.4 auf stilistischer Ebene (Alliteration, Anapher, Antithese, Klimax ...); BY L9 LB1.1 (rhetorische Stilmittel benennen); NW St1 IF2 Stilmittel (Alliteration, Anapher, Antithese, Klimax, Metapher); KC 7.2 Übergangsphase (Stilmittel identifizieren). Stimmen HE/BY/NW 7-8 | 9-10 | 5-6/7-8 -> 7-8 (Mehrheit)
+      - id: stilmittel-wort-und-klang
+        iCan: "Ich kann die Stilmittel Alliteration, Anapher, Antithese, Klimax und Metapher erkennen und benennen."
+        gradeBand: "7-8"
+        requires: [text-gliedern]
+      # HE 9 2.4 auf stilistischer Ebene (Chiasmus, Ellipse, Hyperbaton, Parallelismus ...); BY L9 LB1.1 (rhetorische Stilmittel benennen); NW St2 IF2 Stilmittel (Parallelismus, Chiasmus, Ellipse, Trikolon, Hyperbaton). Stimmen HE/BY/NW 7-8 | 9-10 | 7-8/9-10 -> 7-8 (Gleichstand 7-8/9-10, ohne Bindung durch requires: frühere Stufe). HE nennt das Trikolon nicht
+      - id: stilmittel-satzbau
+        iCan: "Ich kann die Stilmittel Parallelismus, Chiasmus, Ellipse, Trikolon und Hyperbaton erkennen und benennen."
+        gradeBand: "7-8"
+        requires: [stilmittel-wort-und-klang, kng-kongruenz]
+      # HE 9 2.4 auf stilistischer Ebene (Funktion von stilistischen Mitteln im Textzusammenhang); BY L9 LB1.1 (Funktion im Bezug zum Inhalt beschreiben); NW St2 IF2 (Funktionen und Wirkungen sprachlich-stilistischer Gestaltungsmittel erläutern). Stimmen HE/BY/NW 7-8 | 9-10 | 7-8/9-10 -> 7-8 (Gleichstand 7-8/9-10, ohne Bindung durch requires: frühere Stufe)
+      - id: stilmittel-deuten
+        iCan: "Ich kann erklären, welche Wirkung ein Stilmittel an einer Textstelle hat und wie es die Aussage unterstützt."
+        gradeBand: "7-8"
+        requires: [stilmittel-satzbau, text-deuten]
+      # HE 10 2.4 auf inhaltlicher Ebene (Beziehung zwischen antikem Sender und Empfänger); BY L9 LB1.2 (Darstellungsarten und -absichten analysieren; Selbstdarstellung Caesars); NW St2 IF2 Textstruktur (Erzählperspektive, Leserlenkung); KC Kap. 6 Textkompetenz (Sprech- und Erzählsituation unterscheiden). Stimmen HE/BY/NW 9-10 | 9-10 | 7-8/9-10 -> 9-10 (Mehrheit)
+      - id: erzaehlperspektive-und-leserlenkung
+        iCan: "Ich kann an einem Text zeigen, aus wessen Sicht erzählt wird und wie der Autor die Leser lenkt."
+        gradeBand: "9-10"
+        requires: [text-deuten]
+      # HE 10 2.1 Textauswahl (Autorenlektüre im Hinblick auf das Latinum); 4.3 (Schülerkommentare); BY L9 LB1.1 Übergangslektüre ((ggf. adaptierte) Originaltexte übersetzen); NW St2 Textkompetenz (leichtere und mittelschwere Originaltexte übersetzen); KC 7.2 Übergangsphase (Sprach- und Sachkommentare nutzen). Stimmen HE/BY/NW 9-10 | 9-10 | 7-8/9-10 -> 9-10 (Mehrheit)
+      - id: originaltext-mit-hilfen
+        iCan: "Ich kann einen leichten Originaltext mit Vokabelangaben, Sachkommentar und Wörterbuch übersetzen."
+        gradeBand: "9-10"
+        requires: [woerterbuch-benutzen, lineares-dekodieren, lektuerewortschatz]
+      # HE 10 1.1 Phonetik (Quantitäten im Hinblick auf metrisches Lesen); 2.4 Metrik (Einführung); BY L9 LB1.3 (Grundbegriffe der Metrik und Prosodie, wichtigste Versfüße); NW St2 Textkompetenz (lateinische Verse nach metrischer Analyse). Stimmen HE/BY/NW 9-10 | 9-10 | 7-8/9-10 -> 9-10 (Mehrheit)
+      - id: metrik-grundbegriffe
+        iCan: "Ich kann lange und kurze Silben bestimmen und die Versfüße Daktylus und Spondeus erkennen."
+        gradeBand: "9-10"
+        requires: [aussprache-und-betonung]
+      # HE 10 2.4 Metrik (Versformen und Versmaß je nach Lektüre); 4.1 (Skandieren); BY L9 LB1.3 (lateinische Verse analysieren und vortragen; elegisches Distichon); NW St2 Textkompetenz (lateinische Verse im Lesevortrag darbieten); KC Kap. 6 Phonetik (metrische Analyse des Hexameters, Abschluss Latinum). Stimmen HE/BY/NW 9-10 | 9-10 | 7-8/9-10 -> 9-10 (Mehrheit). das Versmaß nennen ausdrücklich nur HE KC (Hexameter) und BY (Distichon)
+      - id: hexameter
+        iCan: "Ich kann einen Hexameter skandieren und laut vortragen."
+        gradeBand: "9-10"
+        requires: [metrik-grundbegriffe]
+      # SCHWACH BELEGT (nur BY nennt das elegische Distichon ausdrücklich; HE und NW nennen Verse allgemein). HE 10 2.4 Metrik (Versformen und Versmaß je nach Lektüre); BY L9 LB1.3 (elegisches Distichon); L10 LB1.2; NW St2 Textkompetenz (lateinische Verse nach metrischer Analyse). Stimmen HE/BY/NW 9-10 | 9-10 | 7-8/9-10 -> 9-10 (Mehrheit)
+      - id: elegisches-distichon
+        iCan: "Ich kann ein elegisches Distichon aus Hexameter und Pentameter erkennen und skandieren."
+        gradeBand: "9-10"
+        requires: [hexameter]
+      # HE 9 2.3 Textgattung (Epigramm); BY L9 LB1.3 (Martials Epigramme; Gattung Epigramm); NW St2 IF2 Textsorten (Gedicht). Stimmen HE/BY/NW 7-8 | 9-10 | 7-8/9-10 -> 9-10 (Gleichstand 7-8/9-10, entschieden durch requires)
+      - id: epigramm
+        iCan: "Ich kann an einem Epigramm, zum Beispiel von Martial, den Aufbau mit überraschender Pointe zeigen."
+        gradeBand: "9-10"
+        requires: [elegisches-distichon, text-deuten]
+      # HE 10 2.3 Textgattung (Rede); Sachthema Rhetorik, politische Einflussnahme und Macht; BY L10 LB1.1 (Ciceros Prozessreden, rhetorisches System); NW St2 IF2 (Argumentationsstrategien; Textsorte politische Rede); KC Kap. 6 Politik und Geschichte (Einführung in die Rhetorik). Stimmen HE/BY/NW 9-10 | 9-10 | 7-8/9-10 -> 9-10 (Mehrheit)
+      - id: rede-und-argumentation
+        iCan: "Ich kann in einer lateinischen Rede die Gliederung und die Mittel erkennen, mit denen der Redner überzeugen will."
+        gradeBand: "9-10"
+        requires: [stilmittel-deuten, textsorten-erkennen]
+  - id: antike-kultur
+    name: { de: "Antike Kultur und ihr Fortwirken", en: "Ancient culture and its legacy" }
+    competencies:
+      # HE 7 3.1 Privates und öffentliches Leben (öffentliche Einrichtungen); BY L6 LB3 (Topografie Roms); NW St1 IF1 privates und öffentliches Leben (Weltstadt Rom); KC 7.1 Geographie, Geschichte und politisches Leben (Topographie). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: stadt-rom
+        iCan: "Ich kann wichtige Orte der Stadt Rom wie Forum, Kapitol, Kolosseum und Circus Maximus nennen und ihre Aufgabe erklären."
+        gradeBand: "5-6"
+      # HE 7 3.1 Privates und öffentliches Leben (Familie); BY L6 LB3 (Familie, Namensgebung); NW St1 IF1 Gesellschaft (römische Familie); KC 7.1 Römischer Alltag und Privatleben (Familia Romana). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      # Siehe auch: geschichte/roemische-familie
+      - id: roemische-familie
+        iCan: "Ich kann die römische familia mit pater familias, Frau, Kindern und Sklaven beschreiben und mit Familien heute vergleichen."
+        gradeBand: "5-6"
+      # HE 7 3.1 Privates und öffentliches Leben (Alltagsleben, Freizeitgestaltung); BY L6 LB3 (Alltags- und Privatleben, Gladiatoren, Kleidung); NW St1 IF1 privates und öffentliches Leben (Alltag und Freizeit); KC 7.1 Römischer Alltag und Privatleben (Freizeitaktivitäten). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: alltag-und-freizeit
+        iCan: "Ich kann beschreiben, wie Römer ihren Alltag und ihre Freizeit verbrachten, zum Beispiel in den Thermen, im Circus und bei Gladiatorenkämpfen."
+        gradeBand: "5-6"
+        requires: [stadt-rom]
+      # HE 8 3.6 Spuren der Römer (domus, insula, villa rustica); NW St1 IF1 privates und öffentliches Leben (Weltstadt Rom, Landleben); KC 7.1 Römischer Alltag und Privatleben (Wohnen und Essen). Stimmen HE/BY/NW 7-8 | – | 5-6/7-8 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 25/36 im Strang -> 9-10). Richtstufe 9-10. BY nennt die Wohnformen nicht eigens
+      - id: wohnen-in-rom
+        iCan: "Ich kann domus, insula und villa rustica als römische Wohnformen beschreiben und vergleichen."
+        gradeBand: "9-10"
+        requires: [roemische-familie]
+      # SCHWACH BELEGT (HE nennt es nur im KC (ohne Jahrgang), NW nicht). KC 7.1 Römischer Alltag und Privatleben (Schule und Erziehung), Spracherwerbsphase ohne Jahrgang; BY L6 LB3 (Schule und Ausbildung, Schreibmaterial und Bücher). Stimmen HE/BY/NW 5-6/7-8 | 5-6 | – -> 5-6 (Mehrheit; Klumpen verteilt: Rang 15/36 im Strang -> 7-8). Richtstufe 7-8
+      - id: schule-und-erziehung
+        iCan: "Ich kann beschreiben, wie römische Kinder erzogen wurden und was sie in der Schule lernten."
+        gradeBand: "7-8"
+        requires: [roemische-familie]
+      # BY L6 LB3 (Sklaven); NW St1 IF1 Gesellschaft (Sklaverei). Stimmen HE/BY/NW – | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 13/36 im Strang -> 7-8). Richtstufe 7-8. HE nennt die Sklaverei nicht eigens
+      - id: sklaverei
+        iCan: "Ich kann die Lage von Sklaven in Rom beschreiben und beurteilen, zum Beispiel ihre Arbeit und die Freilassung."
+        gradeBand: "7-8"
+        requires: [roemische-familie]
+      # HE 7 3.2 Staat und Gesellschaft (Stände); BY L6 LB3 (Ständekämpfe); L7 (Funktion des Klientelwesens); NW St2 IF1 Gesellschaft (Stände, soziale Spannungen); KC 7.1 Römischer Alltag und Privatleben (Klientelwesen). Stimmen HE/BY/NW 5-6 | 5-6 | 7-8/9-10 -> 5-6 (Mehrheit)
+      - id: patrone-und-klienten
+        iCan: "Ich kann das Verhältnis von Patron und Klient und die Stände der Patrizier und Plebejer erklären."
+        gradeBand: "5-6"
+        requires: [roemische-familie]
+      # HE 7 3.5 Antike Mythologie (Götterhimmel der Griechen und Römer); BY L6 LB3 (Olympier, Zuständigkeitsbereiche); NW St1 IF1 Mythos und Religion (Göttervorstellungen); KC 7.1 Kulturkompetenz (wichtigste Götter, Mythen und Kulte benennen). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: roemische-goetter
+        iCan: "Ich kann die wichtigsten griechischen und römischen Götter mit ihren Aufgaben und Kennzeichen nennen, zum Beispiel Jupiter und Zeus."
+        gradeBand: "5-6"
+      # HE 8 3.1 Privates und öffentliches Leben (Kulte); BY L6 LB3 (Tempel, Orakel, Auspizien, Opfer); NW St1 IF1 Mythos und Religion (Götterverehrung); KC 7.1 Mythologie und Religion (rituelle Kulthandlungen). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 16/36 im Strang -> 7-8). Richtstufe 7-8
+      - id: religion-und-kult
+        iCan: "Ich kann beschreiben, wie die Römer ihre Götter verehrten, zum Beispiel mit Opfern, Tempeln, Orakeln und Vorzeichen."
+        gradeBand: "7-8"
+        requires: [roemische-goetter]
+      # HE 7 3.5 Antike Mythologie (Gründungssage Roms); BY L6 LB3 (Gründungsmythos: Aeneas, Romulus und Remus); NW St1 IF1 Staat und Politik (Frühgeschichte); Mythos (griechisch-römische Mythen). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      # Siehe auch: geschichte/gruendungssage-roms
+      - id: gruendungsmythos
+        iCan: "Ich kann die Sage von Aeneas sowie von Romulus und Remus erzählen und erklären, was sie für das Selbstbild der Römer bedeutet."
+        gradeBand: "5-6"
+        requires: [trojanischer-krieg]
+      # HE 7 3.5 Antike Mythologie (trojanischer Sagenkreis); BY L6 LB3 (Trojanischer Krieg bis zur Heimkehr des Odysseus); NW St1 IF1 Mythos und Religion (griechisch-römische Mythen; Männer- und Frauengestalten). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: trojanischer-krieg
+        iCan: "Ich kann die Sage vom Trojanischen Krieg und den Irrfahrten des Odysseus in ihren wichtigsten Stationen wiedergeben."
+        gradeBand: "5-6"
+        requires: [roemische-goetter]
+      # HE 8 3.5 Antike Mythologie (thebanischer Sagenkreis); 7 (Halbgötter); BY L7 LB3 (Europa, Theseus, Daedalus und Ikarus, Orpheus, Ödipus und Antigone); L6 (Herakles); NW St1 IF1 Mythos und Religion (griechisch-römische Mythen; Männer- und Frauengestalten). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 21/36 im Strang -> 7-8). Richtstufe 7-8
+      - id: griechische-sagen
+        iCan: "Ich kann griechische Sagen wie die von Herakles, Theseus, Daedalus und Ikarus oder Ödipus wiedergeben und deuten."
+        gradeBand: "7-8"
+        requires: [roemische-goetter]
+      # HE 7 3.3 Gestalten der Geschichte (Könige); BY L6 LB3 (Königszeit, Vertreibung des Tarquinius Superbus, frühe Republik); NW St1 IF1 Staat und Politik (Frühgeschichte, Republik). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      # Siehe auch: geschichte/roemische-republik
+      - id: koenigszeit-und-republik
+        iCan: "Ich kann erzählen, wie Rom nach der Sage von Königen regiert wurde und warum die Römer die Republik gründeten."
+        gradeBand: "5-6"
+        requires: [gruendungsmythos]
+      # HE 7 3.2 Staat und Gesellschaft (Stände; cursus honorum); BY L6 LB3 (Senat und Senatoren, Volksversammlung und Volkstribunat); L7 (römische „Mischverfassung“); NW St1 IF1 (grundlegende Strukturen der römischen Gesellschaft und Politik darstellen); KC 7.1 Kulturkompetenz (Grundelemente der Verfassung Roms). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      # Siehe auch: geschichte/roemische-republik
+      - id: senat-und-magistrate
+        iCan: "Ich kann die Aufgaben von Senat, Volksversammlung, Konsuln und Volkstribunen in der Republik erklären."
+        gradeBand: "5-6"
+        requires: [koenigszeit-und-republik, patrone-und-klienten]
+      # HE 7 3.2 Staat und Gesellschaft (cursus honorum); BY L7 LB3 (politische Karriere als cursus honorum); NW St1 IF1 Staat und Politik (Republik). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 17/36 im Strang -> 7-8). Richtstufe 7-8
+      - id: cursus-honorum
+        iCan: "Ich kann die Ämterlaufbahn (cursus honorum) von der Quästur bis zum Konsulat beschreiben."
+        gradeBand: "7-8"
+        requires: [senat-und-magistrate]
+      # HE 7 3.2 Staat und Gesellschaft (Heerwesen); BY L7 LB3 (Grundzüge des römischen Militärwesens, Triumphzüge). Stimmen HE/BY/NW 5-6 | 5-6 | – -> 5-6 (Mehrheit; Klumpen verteilt: Rang 14/36 im Strang -> 7-8). Richtstufe 7-8. NW nennt das Militär nicht
+      - id: roemisches-militaer
+        iCan: "Ich kann das römische Heer mit Legion, Lager und Triumphzug beschreiben."
+        gradeBand: "7-8"
+        requires: [senat-und-magistrate]
+      # HE 7 3.3 Gestalten der Geschichte (Feldherrn, allgemein); BY L7 LB3 (Auseinandersetzung mit Hannibal im 2. Punischen Krieg); NW St1 IF1 (Entwicklung des Imperium Romanum bis zum Ende der Republik). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 18/36 im Strang -> 7-8). Richtstufe 7-8. HE nennt die Punischen Kriege nicht eigens
+      - id: punische-kriege
+        iCan: "Ich kann die Auseinandersetzung zwischen Rom und Karthago, besonders den Krieg gegen Hannibal, in Grundzügen darstellen."
+        gradeBand: "7-8"
+        requires: [roemisches-militaer]
+      # HE 7 3.3 Gestalten der Geschichte (Feldherrn, Reformer); BY L7 LB3 (späte Republik, Bürgerkriege; Cicero, Caesar); NW St1 IF1 (Entwicklung des Imperium Romanum bis zum Ende der Republik). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 19/36 im Strang -> 7-8). Richtstufe 7-8
+      - id: ende-der-republik
+        iCan: "Ich kann erklären, wie die Republik durch Bürgerkriege und Männer wie Caesar in eine Krise geriet."
+        gradeBand: "7-8"
+        requires: [cursus-honorum]
+      # HE 7 3.3 Gestalten der Geschichte (Kaiser); 10 (pax Romana); BY L7 LB3 (Augusteische Zeit, Restaurationsbestrebungen, pax Augusta); NW St2 IF1 Staat und Politik (Republik und Prinzipat). Stimmen HE/BY/NW 5-6 | 5-6 | 7-8/9-10 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 22/36 im Strang -> 7-8). Richtstufe 7-8
+      # Siehe auch: geschichte/caesar-und-augustus
+      - id: augustus-und-prinzipat
+        iCan: "Ich kann erklären, wie Augustus die Herrschaft eines Einzelnen (Prinzipat) begründete und was die pax Augusta war."
+        gradeBand: "7-8"
+        requires: [ende-der-republik]
+      # HE 9 3.2 Staat und Gesellschaft (Rom und die Christen); BY L8 LB3 (frühe, mittlere und späte Kaiserzeit; Aufkommen und Verbreitung des Christentums); KC 7.1 Mythologie und Religion (christliche Religion). Stimmen HE/BY/NW 7-8 | 7-8 | – -> 7-8 (Mehrheit; Klumpen verteilt: Rang 28/36 im Strang -> 9-10). Richtstufe 9-10. NW nennt das Christentum nicht
+      # Siehe auch: geschichte/christen-im-roemischen-reich
+      - id: kaiserzeit-und-christentum
+        iCan: "Ich kann Grundzüge der Kaiserzeit beschreiben und erklären, wie sich das Christentum im Römischen Reich ausbreitete."
+        gradeBand: "9-10"
+        requires: [augustus-und-prinzipat, religion-und-kult]
+      # KC 7.1 Kulturkompetenz (Grundelemente der politischen Geschichte Roms), Spracherwerbsphase ohne Jahrgang; BY L6 LB3 (nach Epochen gegliederter historischer Überblick), erweitert in L7 und L8; NW St2 IF1 (Hauptphasen römischer Geschichte historisch einordnen). Stimmen HE/BY/NW 5-6/7-8 | 5-6 | 7-8/9-10 -> 7-8 (Gleichstand 5-6/7-8, entschieden durch requires; Klumpen verteilt: Rang 29/36 im Strang -> 9-10). Richtstufe 9-10
+      - id: epochen-der-roemischen-geschichte
+        iCan: "Ich kann die Epochen der römischen Geschichte von der Königszeit bis zur Kaiserzeit in die richtige Reihenfolge bringen und Ereignisse zuordnen."
+        gradeBand: "9-10"
+        requires: [kaiserzeit-und-christentum]
+      # HE 7 3.2 Staat und Gesellschaft (Leben in den Provinzen); BY L7 LB3 (Ausdehnung des Imperium Romanum; provincia, Verwaltungsstrukturen); NW St1 IF1 privates und öffentliches Leben (Provinzen); KC 7.1 Geographie, Geschichte und politisches Leben (Provinzen). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit; Klumpen verteilt: Rang 20/36 im Strang -> 7-8). Richtstufe 7-8
+      # Siehe auch: geschichte/expansion-roms, geschichte/romanisierung
+      - id: provinzen-und-imperium
+        iCan: "Ich kann die Ausdehnung des Imperium Romanum auf einer Karte zeigen und erklären, wie Rom seine Provinzen verwaltete."
+        gradeBand: "7-8"
+        requires: [punische-kriege]
+      # HE 7 3.7 Spuren der Römer in Hessen und Deutschland (Limes, Saalburg, römische Städte); BY L8 LB3 (Limes; Römer und Germanen in der Kaiserzeit). Stimmen HE/BY/NW 5-6 | 7-8 | – -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 24/36 im Strang -> 7-8). Richtstufe 7-8. NW nennt nur allgemein die Provinzen
+      # Siehe auch: geschichte/limes
+      - id: roemer-in-germanien
+        iCan: "Ich kann Spuren der Römer in Deutschland nennen, zum Beispiel den Limes und römische Städte, und das Verhältnis von Römern und Germanen beschreiben."
+        gradeBand: "7-8"
+        requires: [provinzen-und-imperium]
+      # HE 8 3.7 Römische Grundbegriffe (familia, fides, virtus); 9 (iustitia, humanitas); BY L6 LB3 (römische Werte, v. a. pietas); L7 (fides, virtus); L8 (iustitia); NW St2 IF1 (Perspektive Werte und Normen); KC 7.2 Kulturkompetenz (römische Wertbegriffe erläutern). Stimmen HE/BY/NW 7-8 | 5-6 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 26/36 im Strang -> 9-10). Richtstufe 9-10
+      - id: roemische-werte
+        iCan: "Ich kann römische Wertbegriffe wie pietas, fides, virtus und iustitia erklären und mit heutigen Werten vergleichen."
+        gradeBand: "9-10"
+        requires: [roemische-familie]
+      # HE 8 3.2 Staat und Gesellschaft (Grundlagen der Rechtsprechung, Kläger und Angeklagte); 9 (Rechtsvorstellungen); BY L8 LB3 (Grundzüge des römischen Rechtswesens; Fortwirken römischen Rechts). Stimmen HE/BY/NW 7-8 | 7-8 | – -> 7-8 (Mehrheit; Klumpen verteilt: Rang 27/36 im Strang -> 9-10). Richtstufe 9-10. NW nennt das Recht nur als Perspektive „Macht und Recht“
+      - id: roemisches-recht
+        iCan: "Ich kann Grundzüge des römischen Rechts beschreiben und an Beispielen zeigen, wie es bis heute weiterwirkt."
+        gradeBand: "9-10"
+        requires: [senat-und-magistrate, roemische-werte]
+      # KC Kap. 6 Privates und öffentliches Leben (Römische Lebens- und Wertvorstellungen: Philosophie), Abschluss Latinum; BY L8 LB3 (Epikureer, Stoiker; Cicero und Seneca als Vermittler); NW St2 IF1 Philosophie (Grundzüge der Stoa, Grundzüge des Epikureismus). Stimmen HE/BY/NW 9-10 | 7-8 | 7-8/9-10 -> 7-8 (Gleichstand 7-8/9-10, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 32/36 im Strang -> 9-10). Richtstufe 9-10. HE nennt die Philosophie nur im KC für den Abschluss Latinum; G9 9 nur Gestalten wie Sokrates
+      - id: philosophie-stoa-und-epikur
+        iCan: "Ich kann Grundgedanken der Stoa und des Epikureismus erklären und prüfen, was sie für mein Leben bedeuten könnten."
+        gradeBand: "9-10"
+        requires: [roemische-werte]
+      # HE 10 2.1 Textauswahl (Caesar im Hinblick auf das Latinum); BY L9 LB1.2 Macht und Politik (Caesar, De bello Gallico; propagandistisch-manipulative Rechtfertigungsschrift); NW St2 IF1 (zentrale Autoren und Werke; Herrschaftsanspruch und Expansion). Stimmen HE/BY/NW 9-10 | 9-10 | 7-8/9-10 -> 9-10 (Mehrheit)
+      - id: caesar-und-gallien
+        iCan: "Ich kann an Texten aus Caesars Bericht über den Gallischen Krieg zeigen, wie Caesar sich selbst darstellt und sein Vorgehen rechtfertigt."
+        gradeBand: "9-10"
+        requires: [ende-der-republik, originaltext-mit-hilfen, erzaehlperspektive-und-leserlenkung]
+      # HE 10 Sachthema bellum iustum-Gedanke (verbindlich); 3.3 (bellum iustum, Umgang mit Besiegten); BY L9 LB1.2 (Problematik römischer Eroberungspolitik; Macht und Recht); NW St2 IF1 Staat und Politik (Herrschaftsanspruch und Expansion). Stimmen HE/BY/NW 9-10 | 9-10 | 7-8/9-10 -> 9-10 (Mehrheit)
+      - id: roemischer-herrschaftsanspruch
+        iCan: "Ich kann den römischen Herrschaftsanspruch und die Idee des „gerechten Krieges“ (bellum iustum) erklären und kritisch beurteilen."
+        gradeBand: "9-10"
+        requires: [provinzen-und-imperium, roemische-werte]
+      # HE 9 3.2 Staat und Gesellschaft (civis Romanus und peregrinus, Xenophilia und Xenophobia); BY L8 LB3 (Elemente europäischer Identität mit fremden Kulturkreisen vergleichen); L9 (römische Sicht auf andere Völker); NW St2 IF1 (Perspektive Umgang mit Fremdem); KC 7.2 Kulturkompetenz (literarische Darstellung fremder Völker; Bild des Fremden und Eigenbild). Stimmen HE/BY/NW 7-8 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 30/36 im Strang -> 9-10). Richtstufe 9-10
+      - id: umgang-mit-fremden
+        iCan: "Ich kann zeigen, wie lateinische Texte fremde Völker darstellen, und das Bild vom Fremden mit dem Selbstbild der Römer vergleichen."
+        gradeBand: "9-10"
+        requires: [provinzen-und-imperium, text-deuten]
+      # HE 10 2.1 Textauswahl (Ovid); Sachthema Mensch und Mythos (verbindlich); BY L7 LB3 (Ovid als bedeutende Quelle zu Mythenstoffen); L10 LB1.2 (Ovid); NW St2 IF1 Literatur (zentrale Autoren und Werke); IF2 Textsorten (Gedicht); KC Kap. 6 Mensch und Mythos (Metamorphosen des Ovid). Stimmen HE/BY/NW 9-10 | 5-6 | 7-8/9-10 -> 9-10 (Mehrheit)
+      - id: ovid-und-der-mythos
+        iCan: "Ich kann an Verwandlungssagen aus Ovids Metamorphosen zeigen, wie Ovid Mythen erzählt und deutet."
+        gradeBand: "9-10"
+        requires: [griechische-sagen, hexameter]
+      # HE 10 2.1 Textauswahl (Caesar, Ovid, Plinius; Nepos, Phaedrus u. a.); BY L9 LB1 (Autoren und Werke in einen literaturgeschichtlichen Zusammenhang einordnen); L10; NW St2 IF1 Literatur (zentrale Autoren und Werke im historischen Kontext darstellen). Stimmen HE/BY/NW 9-10 | 9-10 | 7-8/9-10 -> 9-10 (Mehrheit)
+      - id: autoren-und-werke
+        iCan: "Ich kann wichtige lateinische Autoren wie Caesar, Cicero, Ovid und Plinius mit ihren Werken in ihre Zeit einordnen."
+        gradeBand: "9-10"
+        requires: [epochen-der-roemischen-geschichte]
+      # HE 7 3.6 Fortwirken römischer Kultur (römische Zahlen); BY L6 2.1 (Verwendung römischer Zahlen); L7 Numeralia (Zahlzeichen bis 1000). Stimmen HE/BY/NW 5-6 | 5-6 | – -> 5-6 (Mehrheit). NW nennt römische Zahlen nicht; Gleichstand 5-6/7-8 ohne requires: frühere Stufe
+      - id: roemische-zahlen
+        iCan: "Ich kann römische Zahlen lesen und schreiben, zum Beispiel auf Uhren, Inschriften und in Jahreszahlen."
+        gradeBand: "5-6"
+      # HE 7 3.6 Fortwirken römischer Kultur (Kalender); BY L6 LB3 (Zeitrechnung und Kalender). Stimmen HE/BY/NW 5-6 | 5-6 | – -> 5-6 (Mehrheit). NW nennt den Kalender nicht; Gleichstand 5-6/7-8 ohne requires: frühere Stufe
+      - id: kalender-und-zeitrechnung
+        iCan: "Ich kann erklären, woher unser Kalender stammt, und römische Monatsnamen und Datumsangaben wie „ab urbe condita“ verstehen."
+        gradeBand: "5-6"
+      # HE 7 3.6 Fortwirken römischer Kultur (Antikenrezeption im Alltag, in der Werbung); BY L6 LB3 (Rezeptionsdokumente im Alltag: Produktnamen, Abbildungen, Architektur); NW St1 IF1 (Nachwirken der antiken Kultur; Rezeptionsdokumente); KC 7.1 Kulturkompetenz (Elemente der römischen Kultur, die sich bis heute erhalten haben). Stimmen HE/BY/NW 5-6 | 5-6 | 5-6/7-8 -> 5-6 (Mehrheit)
+      - id: antike-im-alltag
+        iCan: "Ich kann in meinem Alltag Spuren der Antike entdecken, zum Beispiel in Produktnamen, Werbung und Gebäuden, und ihre Herkunft erklären."
+        gradeBand: "5-6"
+        requires: [roemische-goetter]
+      # HE 8 3.8 Fortwirken römischer Kultur (Bearbeitungen griechischer und römischer Stoffe in Musik, Malerei, Tanz); BY L7 LB3 (Inhalte aus Mythos und Geschichte in bildlichen Darstellungen mit Texten vergleichen); NW St1 IF1 (Textinhalte mit Rezeptionsdokumenten aspektbezogen interpretieren); Stufe 2 (Literatur, Film, Kunst, Musik); KC 7.1 Textkompetenz (Rezeptionsdokumente vergleichend nutzen). Stimmen HE/BY/NW 7-8 | 5-6 | 5-6/7-8 -> 5-6 (Gleichstand 5-6/7-8, ohne Bindung durch requires: frühere Stufe; Klumpen verteilt: Rang 23/36 im Strang -> 7-8). Richtstufe 7-8
+      - id: rezeption-in-kunst-und-film
+        iCan: "Ich kann eine Darstellung eines antiken Stoffes in Kunst, Musik oder Film mit dem lateinischen Text vergleichen."
+        gradeBand: "7-8"
+        requires: [griechische-sagen, text-deuten]
+      # HE 9 3.6 Fortwirken römischer Kultur (Latein als Sprache der Wissenschaft, als Wurzel romanischer Sprachen, als Kirchensprache; karolingische Renaissance); BY L8 LB3 (Verbreitung der lateinischen Sprache: Karolingische Renaissance, Humanismus, Reformation, Vatikan); NW St2 IF1 (Nachwirkungen römischer Geschichte und Kultur in Europa darstellen); KC 7.1 Kulturkompetenz (Latein als Kultursprache Europas). Stimmen HE/BY/NW 7-8 | 7-8 | 7-8/9-10 -> 7-8 (Mehrheit; Klumpen verteilt: Rang 31/36 im Strang -> 9-10). Richtstufe 9-10
+      - id: latein-in-europa
+        iCan: "Ich kann erklären, wie Latein nach der Antike als Sprache der Kirche, der Wissenschaft und der Bildung in Europa weiterlebte."
+        gradeBand: "9-10"
+        requires: [kaiserzeit-und-christentum, latein-und-moderne-sprachen]
