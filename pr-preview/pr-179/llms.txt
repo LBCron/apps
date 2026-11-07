@@ -22,10 +22,25 @@ Die [Lernlandkarte](https://lernapps.net/apps/pr-preview/pr-179/map/) zeigt je F
 „Ich kann …“), wann es dran ist (Richtstufe, Lehrpläne) und welche App es schon übt. So sieht man Lücken.
 Für dich als Daten, eine Datei je Fach (Fach, Quelle, Stränge, Bausteine mit `requires` und `practisedBy`, Lehrpläne
 mit ihren Einordnungen):
+- [biologie.json](https://lernapps.net/apps/pr-preview/pr-179/map/biologie.json)
 - [chemie.json](https://lernapps.net/apps/pr-preview/pr-179/map/chemie.json)
+- [deutsch.json](https://lernapps.net/apps/pr-preview/pr-179/map/deutsch.json)
+- [englisch.json](https://lernapps.net/apps/pr-preview/pr-179/map/englisch.json)
+- [erdkunde.json](https://lernapps.net/apps/pr-preview/pr-179/map/erdkunde.json)
+- [ethik.json](https://lernapps.net/apps/pr-preview/pr-179/map/ethik.json)
+- [evangelische-religion.json](https://lernapps.net/apps/pr-preview/pr-179/map/evangelische-religion.json)
+- [franzoesisch.json](https://lernapps.net/apps/pr-preview/pr-179/map/franzoesisch.json)
+- [geschichte.json](https://lernapps.net/apps/pr-preview/pr-179/map/geschichte.json)
+- [informatik.json](https://lernapps.net/apps/pr-preview/pr-179/map/informatik.json)
+- [katholische-religion.json](https://lernapps.net/apps/pr-preview/pr-179/map/katholische-religion.json)
+- [kunst.json](https://lernapps.net/apps/pr-preview/pr-179/map/kunst.json)
+- [latein.json](https://lernapps.net/apps/pr-preview/pr-179/map/latein.json)
 - [mathematik.json](https://lernapps.net/apps/pr-preview/pr-179/map/mathematik.json)
 - [musik.json](https://lernapps.net/apps/pr-preview/pr-179/map/musik.json)
 - [physik.json](https://lernapps.net/apps/pr-preview/pr-179/map/physik.json)
+- [politik-wirtschaft.json](https://lernapps.net/apps/pr-preview/pr-179/map/politik-wirtschaft.json)
+- [spanisch.json](https://lernapps.net/apps/pr-preview/pr-179/map/spanisch.json)
+- [sport.json](https://lernapps.net/apps/pr-preview/pr-179/map/sport.json)
 
 Plant jemand mit dir eine App, wähle einen Strang und Bausteine daraus; eine App bleibt in einem Strang.
 Das Format beschreibt der [Vertrag der Lernlandkarte](https://github.com/lernapps/apps/blob/main/docs/learning-map-contract.md).
