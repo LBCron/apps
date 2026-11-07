@@ -290,7 +290,7 @@
         {
           "id": "past-progressive",
           "iCan": "Ich kann im past progressive sagen, was gerade im Gang war, als etwas anderes passierte (I was reading when …).",
-          "gradeBand": "5-6",
+          "gradeBand": "7-8",
           "requires": [
             "simple-past",
             "present-progressive"
@@ -335,7 +335,7 @@
         {
           "id": "present-perfect-oder-simple-past",
           "iCan": "Ich kann entscheiden, ob ich present perfect oder simple past brauche, und Signalwörter dafür nutzen.",
-          "gradeBand": "5-6",
+          "gradeBand": "7-8",
           "requires": [
             "present-perfect",
             "simple-past"
@@ -393,7 +393,7 @@
         {
           "id": "future-progressive-perfect",
           "iCan": "Ich kann mit „will be doing“ und „will have done“ über Abläufe und Ergebnisse in der Zukunft sprechen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "will-future",
             "present-perfect"
@@ -413,7 +413,7 @@
         {
           "id": "dynamic-stative",
           "iCan": "Ich kann Zustandsverben wie know, like und belong erkennen, die man meist nicht in der Verlaufsform verwendet.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "simple-oder-progressive"
           ],
@@ -442,7 +442,7 @@
         {
           "id": "modale-ersatzformen",
           "iCan": "Ich kann die Ersatzformen have to, be able to und be allowed to verwenden, auch in anderen Zeiten.",
-          "gradeBand": "5-6",
+          "gradeBand": "7-8",
           "requires": [
             "can-must",
             "will-future"
@@ -524,7 +524,7 @@
         {
           "id": "adverbien-steigern",
           "iCan": "Ich kann Adverbien steigern und damit Handlungen vergleichen (She runs faster than I do.).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "adverbien-art-und-weise",
             "adjektive-steigern"
@@ -635,7 +635,7 @@
         {
           "id": "contact-clauses",
           "iCan": "Ich kann Relativsätze ohne Relativpronomen bilden, wenn das Pronomen Objekt ist (the book I read).",
-          "gradeBand": "5-6",
+          "gradeBand": "7-8",
           "requires": [
             "relativsaetze"
           ],
@@ -662,7 +662,7 @@
         {
           "id": "konjunktionen-although",
           "iCan": "Ich kann Gegensätze und Absichten mit although, while, whereas und so that ausdrücken.",
-          "gradeBand": "5-6",
+          "gradeBand": "7-8",
           "requires": [
             "konjunktionen"
           ],
@@ -730,7 +730,7 @@
         {
           "id": "passiv-zwei-objekte",
           "iCan": "Ich kann bei Verben mit zwei Objekten das persönliche Passiv bilden (I was given a book.).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "passiv-zeiten"
           ],
@@ -842,7 +842,7 @@
         {
           "id": "nomen-kongruenz",
           "iCan": "Ich kann bei Nomen wie news, information, advice und police das Verb richtig anpassen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "simple-present",
             "much-many"
@@ -852,7 +852,7 @@
         {
           "id": "substantivierte-adjektive",
           "iCan": "Ich kann Adjektive als Nomen für Gruppen von Menschen verwenden (the rich, the elderly).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "adjektive",
             "artikel"
@@ -958,7 +958,7 @@
         {
           "id": "sport-musik",
           "iCan": "Ich kann über Sportarten, Musik und Fernsehen sprechen und sagen, was ich mag.",
-          "gradeBand": "5-6",
+          "gradeBand": "7-8",
           "requires": [
             "freizeit-hobbys"
           ],
@@ -987,7 +987,7 @@
         {
           "id": "reisen-verkehr",
           "iCan": "Ich kann Verkehrsmittel benennen und mich am Bahnhof oder Flughafen verständigen, zum Beispiel eine Fahrkarte kaufen.",
-          "gradeBand": "5-6",
+          "gradeBand": "7-8",
           "requires": [],
           "practisedBy": []
         },
@@ -1001,7 +1001,7 @@
         {
           "id": "gefuehle-freundschaft",
           "iCan": "Ich kann über Gefühle, Freundschaft und Streit sprechen, auch über Mobbing.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
@@ -1078,7 +1078,7 @@
         {
           "id": "wortfamilien",
           "iCan": "Ich kann Wörter einer Wortfamilie erkennen und mit Vor- und Nachsilben neue Wörter erschließen (help, helpful, helpless).",
-          "gradeBand": "5-6",
+          "gradeBand": "7-8",
           "requires": [],
           "practisedBy": []
         },
@@ -1106,7 +1106,7 @@
         {
           "id": "formell-informell",
           "iCan": "Ich kann formelle und informelle Wörter und Wendungen unterscheiden und passend zur Situation wählen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "kurzformen"
           ],
@@ -1182,7 +1182,7 @@
         {
           "id": "laut-buchstabe",
           "iCan": "Ich kann typische Buchstabenverbindungen wie ee, ea und igh lesen und gleich klingende Wörter wie see und sea unterscheiden.",
-          "gradeBand": "5-6",
+          "gradeBand": "7-8",
           "requires": [
             "vokale"
           ],
@@ -1198,7 +1198,7 @@
         {
           "id": "intonation-question-tags",
           "iCan": "Ich kann an der Satzmelodie eines question tags erkennen und zeigen, ob ich wirklich frage oder nur Zustimmung erwarte.",
-          "gradeBand": "5-6",
+          "gradeBand": "7-8",
           "requires": [
             "question-tags",
             "intonation-fragen"
@@ -1417,7 +1417,7 @@
         {
           "id": "london-sehenswuerdigkeiten",
           "iCan": "Ich kann wichtige Sehenswürdigkeiten Londons nennen und beschreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "britische-inseln"
           ],
@@ -1540,7 +1540,7 @@
         {
           "id": "kanada",
           "iCan": "Ich kann Kanada vorstellen: Geographie, zwei Amtssprachen und die First Nations und Inuit.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "usa-ueberblick"
           ],
@@ -1731,7 +1731,7 @@
         {
           "id": "personen-orte-beschreiben",
           "iCan": "Ich kann in einem Text eine Person oder einen Ort anschaulich beschreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "familie-personen",
             "adjektive"
@@ -1779,7 +1779,7 @@
         {
           "id": "geschichte-fortsetzen",
           "iCan": "Ich kann eine Geschichte fortsetzen oder ein anderes Ende dafür schreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "geschichte-erzaehlen"
           ],
@@ -1862,7 +1862,7 @@
         {
           "id": "leserbrief",
           "iCan": "Ich kann einen Leserbrief schreiben, der sich auf einen Artikel bezieht.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "meinung-begruenden"
           ],
@@ -1957,7 +1957,7 @@
         {
           "id": "setting-atmosphaere",
           "iCan": "Ich kann beschreiben, wo und wann eine Geschichte spielt und wie die Sprache eine Stimmung erzeugt.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "figuren-ort-handlung"
           ],
@@ -1994,7 +1994,7 @@
         {
           "id": "textsorte-umwandeln",
           "iCan": "Ich kann einen Text in eine andere Textsorte umschreiben, zum Beispiel eine Geschichte in einen Zeitungsbericht.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "perspektive-wechseln",
             "bericht-artikel"
