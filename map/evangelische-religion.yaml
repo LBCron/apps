@@ -1,0 +1,862 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# Vorschlag. Es gibt keine KMK-Bildungsstandards Evangelische Religion für die Sek I (EPA nur für das Abitur).
+# Stränge: die Inhaltsbereiche, die die Länder teilen (HE Inhaltsfelder; NW Inhaltsfelder; Bibel nach NW IF5 und BY ER5 LB2).
+# Die Karte beschreibt Wissen über Inhalte des christlichen Glaubens in evangelischer Prägung, kein Bekenntnis.
+# Quellenkürzel:
+#   HE = Kerncurriculum Hessen Sek I Gymnasium, Evangelische Religion, Ausgabe 2026 (Stand Juni 2026): Inhaltsfelder
+#        am Ende Jg 6 (Kap. 7.1, S. 23 f.) -> 5-6, Ende Jg 8 (Kap. 7.2, S. 26-28) -> 7-8, Ende Jg 9/10 (Kap. 6, S. 19-21) -> 9-10;
+#        Synopse Kap. 8.3 (S. 34 f.)
+#   BY = LehrplanPLUS Bayern Gymnasium, Evangelische Religionslehre, Jg 5-10 (ER5 bis ER10, LB = Lernbereich)
+#   NW = Kernlehrplan NRW Sek I Gymnasium (G9), Evangelische Religionslehre, Heft 3414 (2019): Stufe 1 = Ende Jg 6 -> 5-6,
+#        Stufe 2 = Ende Sek I -> zählt für 7-8 und 9-10
+# Genaue Titel, Ausgaben und URLs: .vibe/research-evangelische-religion.md
+name: { de: Evangelische Religion, en: Protestant religious education }
+source:
+  title: Kerncurriculum Hessen, Sekundarstufe I - Gymnasium, Evangelische Religion, Ausgabe 2026 (Hessisches Ministerium für Kultus, Bildung und Chancen), verglichen mit LehrplanPLUS Bayern und Kernlehrplan NRW
+  url: https://kultus.hessen.de/sites/kultus.hessen.de/files/2026-10/web_kc_evangelische_religion_sek1_gymnasium.pdf
+strands:
+  - id: mensch
+    name: { de: "Mensch und Welt", en: "Human being and world" }
+    competencies:
+      # HE Jg 6 Mensch und Welt: 1. Mose 1 und 2 (S. 23); BY ER5 LB4: biblische Schöpfungstexte Gen 1,1–2,4a und Gen 2,4b–3,24; NW IF1 Stufe 1: biblische Schöpfungstexte (S. 18). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/schoepfungserzaehlungen
+      - id: schoepfungserzaehlungen
+        iCan: { de: "Ich kann die beiden Schöpfungserzählungen am Anfang der Bibel (1. Mose 1 und 2) wiedergeben und ihre wichtigsten Aussagen nennen." }
+        gradeBand: "5-6"
+        requires: [bibelstellen-finden]
+      # BY ER8 LB3: Reden von der Schöpfung als Glaubensperspektive im Unterschied zu Fragen nach der Weltentstehung; NW IF1 Stufe 1: identifizieren die biblischen Schöpfungstexte als Glaubensaussagen (S. 18). Stimmen HE/BY/NW – / 7-8 / 5-6 -> 5-6 (Gleichstand 5-6/7-8; requires entscheidet)
+      - id: schoepfungstexte-als-glaubensaussagen
+        iCan: { de: "Ich kann erklären, warum die Schöpfungserzählungen Glaubensaussagen sind und keine naturwissenschaftlichen Berichte." }
+        gradeBand: "5-6"
+        requires: [schoepfungserzaehlungen, bibel-textsorten]
+      # HE Jg 6 Mensch und Welt: Welt als Schöpfung, Mensch als Geschöpf (S. 23); BY ER5 LB4: der Mensch als Geschöpf und Teil der Schöpfung; Gott als Bewahrer und Vollender; NW IF1 Stufe 1: Verantwortung in der Welt als Gottes Schöpfung (S. 18). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: mensch-als-geschoepf
+        iCan: { de: "Ich kann erklären, was Christen meinen, wenn sie den Menschen und die Welt als Gottes Schöpfung bezeichnen." }
+        gradeBand: "5-6"
+        requires: [schoepfungserzaehlungen]
+      # HE Jg 6 Mensch und Welt: Mensch als Geschöpf und Ebenbild Gottes, 1. Mose 1,26 f. (S. 23); BY ER5 LB4: Ebenbildlichkeit des Menschen, Würde jedes Menschen; NW IF1 Stufe 2: Menschenwürde als Konsequenz der Gottesebenbildlichkeit (S. 28). Stimmen HE/BY/NW 5-6 / 5-6 / 7-10 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/gottebenbildlichkeit
+      - id: ebenbild-gottes
+        iCan: { de: "Ich kann erklären, was die Bibel meint, wenn sie den Menschen „Ebenbild Gottes“ nennt, und was Christen daraus für die Würde jedes Menschen ableiten." }
+        gradeBand: "5-6"
+        requires: [mensch-als-geschoepf]
+      # HE Jg 6 Mensch und Welt: Selbstwahrnehmung / Fremdwahrnehmung (Identität) (S. 23, 34); BY ER5 LB1: Rollenerwartungen, eigene und fremde Ansprüche. Stimmen HE/BY/NW 5-6 / 5-6 / – -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/identitaet-jugendalter
+      - id: identitaet
+        iCan: { de: "Ich kann erklären, was „Identität“ bedeutet und wie das Bild, das ich von mir habe, und das Bild, das andere von mir haben, zusammenhängen." }
+        gradeBand: "5-6"
+      # HE Jg 6 Mensch und Welt: biblische Sicht des Menschen (S. 23); Gott: Lk 15,11–32 (S. 23); BY ER5 LB1: Geschichten von der liebenden Zuwendung Gottes (Mk 10,13–16, Lk 15,11–32, Lk 19,1–10). Stimmen HE/BY/NW 5-6 / 5-6 / – -> 5-6 (Mehrheit)
+      - id: gottes-zuwendung
+        iCan: { de: "Ich kann an biblischen Geschichten wie Zachäus oder dem verlorenen Sohn zeigen, wie die Bibel von Gottes Zuwendung zu jedem Menschen erzählt." }
+        gradeBand: "5-6"
+        requires: [identitaet, bibelstellen-finden]
+      # HE Jg 8 Mensch und Welt: Begrenztheit und Fehlbarkeit, Frage nach gelingendem Leben (S. 26); BY ER10 LB3: biblisch-christliche Vorstellungen gelingenden Lebens. Stimmen HE/BY/NW 7-8 / 9-10 / – -> 7-8 (Gleichstand 7-8/9-10; requires entscheidet)
+      # Siehe auch: katholische-religion/glueck-und-sinn
+      - id: gelingendes-leben
+        iCan: { de: "Ich kann erklären, was Christen unter gelingendem Leben verstehen, obwohl Menschen begrenzt sind und Fehler machen." }
+        gradeBand: "7-8"
+        requires: [gottes-zuwendung]
+      # HE Jg 8 Mensch und Welt: Rechtfertigungslehre Martin Luthers, Röm 3,21–28 (S. 26); BY ER8 LB1: reformatorische Entdeckungen zu Gott und Mensch; NW IF2 Stufe 2: Gedanke der Rechtfertigung als Grundlage evangelischen Glaubens (S. 28). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: rechtfertigung
+        iCan: { de: "Ich kann erklären, was die evangelische Lehre von der Rechtfertigung meint: Nach ihr nimmt Gott den Menschen ohne Vorbedingung an, nicht wegen seiner Leistungen." }
+        gradeBand: "7-8"
+        requires: [gottes-zuwendung, luther-leben]
+      # BY ER8 LB1: Gedanke der Freiheit eines Christenmenschen; NW IF2 Stufe 2: reformatorische Zuordnung von Freiheit und Verantwortung des Einzelnen vor Gott (S. 28 f.). Stimmen HE/BY/NW – / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: freiheit-eines-christenmenschen
+        iCan: { de: "Ich kann Luthers Gedanken von der „Freiheit eines Christenmenschen“ erklären: frei vor Gott und zugleich verantwortlich für andere." }
+        gradeBand: "7-8"
+        requires: [rechtfertigung]
+      # HE Jg 9/10 Mensch und Welt: Wahrheitsansprüche verschiedener Weltverständnisse (S. 19, 35); BY ER8 LB3: Begriff Weltbild, verschiedene Vorstellungsmodelle von Welt; NW IF6 Stufe 2: Vorstellungen von Welt und Wirklichkeit in Religionen und Weltanschauungen (S. 32). Stimmen HE/BY/NW 9-10 / 7-8 / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires entscheidet)
+      - id: weltbilder
+        iCan: { de: "Ich kann verschiedene Vorstellungen von der Welt beschreiben, zum Beispiel als Schöpfung, als Kreislauf oder als Zufall, und vergleichen, was sie für das Leben bedeuten." }
+        gradeBand: "7-8"
+        requires: [mensch-als-geschoepf]
+      # HE Jg 9/10 Gott: Glauben und Wissen (S. 19, 35); BY ER8 LB3: Zugänge von Naturwissenschaft und Glauben, Sachfragen und Sinnfragen; NW IF1 Stufe 1: Verhältnis von Erklärungsansätzen zur Weltentstehung und biblischem Schöpfungsgedanken (in Ansätzen) (S. 18). Stimmen HE/BY/NW 9-10 / 7-8 / 5-6 -> 7-8 (dreifach uneins: Mitte)
+      # Siehe auch: katholische-religion/schoepfung-und-naturwissenschaft
+      - id: glaube-und-naturwissenschaft
+        iCan: { de: "Ich kann erklären, wie Naturwissenschaft und Glaube auf verschiedene Fragen antworten: Wie ist die Welt entstanden? Und: Welchen Sinn hat sie?" }
+        gradeBand: "7-8"
+        requires: [schoepfungstexte-als-glaubensaussagen]
+      # HE Jg 9/10 Mensch und Welt: Vergänglichkeit des Lebens, Ps 90 (S. 19); BY ER8 LB4: Zeit, Endlichkeit und Ewigkeit; Lebenszeit als Gabe Gottes; NW IF7 Stufe 2: Bewältigung von Endlichkeitserfahrungen (S. 33). Stimmen HE/BY/NW 9-10 / 7-8 / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires entscheidet)
+      - id: zeit-und-endlichkeit
+        iCan: { de: "Ich kann erklären, wie biblische Texte wie Psalm 90 über die Vergänglichkeit und die begrenzte Lebenszeit des Menschen sprechen." }
+        gradeBand: "7-8"
+        requires: [psalmen]
+      # HE Jg 9/10 Mensch und Welt: Vergänglichkeit des Lebens (S. 19, 35); BY ER10 LB4: Abschied und Trauer; NW IF7 Stufe 2: religiöse und säkulare Symbole und Rituale im Umgang mit Tod und Trauer (S. 33). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/tod-und-trauer
+      - id: tod-und-trauer
+        iCan: { de: "Ich kann beschreiben, wie Menschen Abschied nehmen und trauern, und dabei religiöse und nichtreligiöse Rituale unterscheiden." }
+        gradeBand: "9-10"
+        requires: [lebenswenden-feiern]
+      # HE Jg 9/10 Mensch und Welt: Vergänglichkeit; Offb 21,1–7 (S. 19); BY ER10 LB4: religiöse und philosophische Vorstellungen von Sterben und Tod; NW IF3 und IF7 Stufe 2: christliche und andere Vorstellungen von einem Leben nach dem Tod (S. 30, 33). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/auferstehung-und-jenseits
+      - id: vorstellungen-vom-leben-nach-dem-tod
+        iCan: { de: "Ich kann verschiedene religiöse und nichtreligiöse Vorstellungen von einem Leben nach dem Tod beschreiben und vergleichen." }
+        gradeBand: "9-10"
+        requires: [tod-und-trauer]
+      # HE Jg 9/10 Mensch und Welt: Offb 21,1–7 (Das neue Jerusalem); Jesus Christus: Kreuz und Auferstehung (S. 19 f.); BY ER10 LB4: christlicher Auferstehungsglaube (Joh 11, Röm 8, 1 Kor 15), Sprachbilder wie Gericht, Paradies, ewiges Leben; NW IF3 Stufe 2: Auferstehung Jesu als Grundlage christlicher Hoffnung (S. 30). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/christliche-hoffnung
+      - id: auferstehungshoffnung
+        iCan: { de: "Ich kann erklären, was Christen meinen, wenn sie auf die Auferstehung der Toten und ein ewiges Leben hoffen." }
+        gradeBand: "9-10"
+        requires: [auferstehung-im-neuen-testament, vorstellungen-vom-leben-nach-dem-tod]
+  - id: gott
+    name: { de: "Gott", en: "God" }
+    competencies:
+      # HE Jg 6 Gott: Gottesvorstellungen, Rede über Gott (S. 23); BY ER5 LB3: eigene Glaubensfragen und Gottesvorstellungen; NW IF2 Stufe 1: subjektive Gottesvorstellungen (S. 19). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/gottesbilder
+      - id: gottesvorstellungen
+        iCan: { de: "Ich kann verschiedene Vorstellungen beschreiben, die Menschen von Gott haben, und sie mit meinen eigenen vergleichen." }
+        gradeBand: "5-6"
+      # HE Jg 6 Gott: Beziehung zu Gott verändert sich im Laufe des Lebens (S. 23); BY ER5 LB3: veränderte Vorstellungen und Redeweisen von Gott; NW IF2 Stufe 1: lebensgeschichtliche Veränderungen von Gottesvorstellungen (S. 19). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: gottesvorstellungen-veraendern-sich
+        iCan: { de: "Ich kann an Beispielen erklären, wie und warum sich Vorstellungen von Gott im Laufe eines Lebens verändern können." }
+        gradeBand: "5-6"
+        requires: [gottesvorstellungen]
+      # HE Jg 6 Gott: Gottesvorstellungen der Bibel in Erfahrungen, Bildern und Symbolen; Ps 23 (S. 23); BY ER5 LB3: Gott als Befreier, Begleiter, Wegweiser; NW IF2 Stufe 1: in biblischen Erzählungen Erfahrungen mit Gott (S. 19). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/biblische-gottesbilder
+      - id: gottesbilder-der-bibel
+        iCan: { de: "Ich kann Bilder nennen, in denen die Bibel von Gott spricht, zum Beispiel Hirte, Vater oder Befreier, und erklären, warum sie in Bildern von Gott spricht." }
+        gradeBand: "5-6"
+        requires: [gottesvorstellungen, bibel-erfahrungen-mit-gott]
+      # HE Jg 8 Ethik: 1. Mose in Auswahl, Abraham und Lot (S. 28); BY ER5 LB3: Abrahamserzählungen (eine Geschichtstradition zur Wahl); NW IF2 Stufe 1: Glaube in biblischen Erzählungen als Vertrauen (S. 19); IF6 Stufe 1: Berufung auf Abraham (S. 22). Stimmen HE/BY/NW 7-8 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/abraham
+      - id: abraham
+        iCan: { de: "Ich kann die Geschichte von Abraham in Grundzügen erzählen und erklären, warum sie vom Vertrauen auf Gott handelt." }
+        gradeBand: "5-6"
+        requires: [bibelstellen-finden]
+      # HE Jg 6 Gott: 2. Mose 3,1–14 (S. 23); BY ER5 LB3: Exodustradition; Gott sucht die Beziehung zu den Menschen (Offenbarung). Stimmen HE/BY/NW 5-6 / 5-6 / – -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/gottesname
+      - id: dornbusch
+        iCan: { de: "Ich kann die Erzählung vom brennenden Dornbusch wiedergeben und erklären, was der Gottesname „Ich bin, der ich bin“ bedeuten kann." }
+        gradeBand: "5-6"
+        requires: [bibelstellen-finden]
+      # HE Jg 6 Gott: 2. Mose 3; Ethik: 2. Mose 20 (S. 23 f.); Jg 8 Religionen: 2. Mose 12 (S. 28); BY ER5 LB3: Exodustradition, Gott als Befreier; NW IF2 Stufe 1: in biblischen Erzählungen Erfahrungen mit Gott (S. 19). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/gott-der-befreiung, katholische-religion/exodus
+      - id: exodus
+        iCan: { de: "Ich kann die Erzählung vom Auszug aus Ägypten in Grundzügen wiedergeben und erklären, warum sie Gott als Befreier zeigt." }
+        gradeBand: "5-6"
+        requires: [dornbusch]
+      # BY ER5 LB3: Gott als Begleiter; Glaubensgewissheit und -zweifel; NW IF2 Stufe 1: Grundhaltung des Glaubens an Gott als Vertrauen (S. 19). Stimmen HE/BY/NW – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: glaube-als-vertrauen
+        iCan: { de: "Ich kann erklären, warum „glauben“ in der Bibel vor allem bedeutet, Gott zu vertrauen." }
+        gradeBand: "5-6"
+        requires: [abraham]
+      # HE Jg 6 Gott: Formen der Gottesbeziehung (Gebet); Ps 23, Ps 104 (S. 23); BY ER5 LB3: Sprache der Psalmen; ER7 LB1: Psalmen und Gebete als Sprachformen; NW Stufe 1 übergeordnet: Formen religiöser Sprache (Psalm, Gebet) (S. 17). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/psalmen
+      - id: psalmen
+        iCan: { de: "Ich kann erklären, wie Menschen in den Psalmen mit Gott sprechen: Sie loben, danken, klagen und bitten." }
+        gradeBand: "5-6"
+        requires: [bibel-textsorten]
+      # HE Jg 6 Gott: Gestaltungsformen der Gottesbeziehung (Gebet) (S. 23); BY ER7 LB1: Psalmen und Gebete als Sprachformen (Lob, Dank, Klage, Bitte); NW Stufe 1 übergeordnet: einfache religiöse Handlungen (u. a. Gebet) (S. 17). Stimmen HE/BY/NW 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/gebet
+      - id: gebet
+        iCan: { de: "Ich kann erklären, was ein Gebet ist und welche Formen des Gebets es im Christentum gibt." }
+        gradeBand: "5-6"
+        requires: [psalmen]
+      # HE Jg 8 Gott: Mt 6,9–13 (S. 27); BY ER7 LB1: das Vaterunser als grundlegendes Gebet (Memoriertext). Stimmen HE/BY/NW 7-8 / 7-8 / – -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/vaterunser
+      - id: vaterunser
+        iCan: { de: "Ich kann das Vaterunser wiedergeben und erklären, worum Christen darin bitten." }
+        gradeBand: "7-8"
+        requires: [gebet]
+      # HE Jg 8 Gott: Jesus eröffnet Menschen die Möglichkeit einer Gottesbeziehung; Mk 1,9–11 (S. 27); BY ER9 LB2: Bedeutung Jesu für den christlichen Gottesglauben. Stimmen HE/BY/NW 7-8 / 9-10 / – -> 7-8 (Gleichstand 7-8/9-10; requires entscheidet)
+      - id: jesus-und-die-gottesbeziehung
+        iCan: { de: "Ich kann erklären, warum Jesus für Christen zeigt, wer Gott ist und wie Menschen mit Gott in Beziehung kommen." }
+        gradeBand: "7-8"
+        requires: [gottesbilder-der-bibel, reich-gottes]
+      # HE Jg 9/10 Jesus Christus: alte und neue Glaubensbekenntnisse (S. 35); BY ER7 LB1: die drei Artikel des Apostolischen Glaubensbekenntnisses (ER5 LB4, ER6 LB3: 1. und 2. Artikel); NW IF2 Stufe 2: Bekenntnisse des Glaubens an Gott (S. 28 f.). Stimmen HE/BY/NW 9-10 / 7-8 / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires entscheidet)
+      # Siehe auch: katholische-religion/glaubensbekenntnis
+      - id: glaubensbekenntnis
+        iCan: { de: "Ich kann die drei Teile des Apostolischen Glaubensbekenntnisses nennen und sagen, wovon jeder handelt: Gott der Schöpfer, Jesus Christus und der Heilige Geist." }
+        gradeBand: "7-8"
+        requires: [mensch-als-geschoepf, messias]
+      # HE Jg 9/10 Jesus Christus: alte und neue Glaubensbekenntnisse (S. 35); BY ER7 LB1: unterscheiden das Bekenntnis von anderen Sprachformen; NW IF2 Stufe 2: unterscheiden Aussagen über Gott von Bekenntnissen des Glaubens an Gott (S. 29). Stimmen HE/BY/NW 9-10 / 7-8 / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires entscheidet)
+      - id: bekenntnis-und-aussage
+        iCan: { de: "Ich kann erklären, worin sich ein Bekenntnis („Ich glaube an …“) von einer Aussage über Gott unterscheidet." }
+        gradeBand: "7-8"
+        requires: [glaubensbekenntnis]
+      # HE Jg 8 Gott: andere Vorstellungen von Gott fordern Christen zum Gespräch heraus; Mk 1,9–11 (S. 27); BY ER7 LB1: die drei Artikel als grundlegendes Bekenntnis des christlichen Gottesglaubens; NW IF6 Stufe 2: Merkmale des Gottesglaubens in Judentum, Christentum und Islam vergleichen (S. 32). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit). Schwach belegt: kein Land nennt die Dreieinigkeit als eigenen Inhalt; aufgenommen als direkte Voraussetzung von gottesglaube-vergleichen
+      # Siehe auch: katholische-religion/dreieiner-gott
+      - id: dreieinigkeit
+        iCan: { de: "Ich kann erklären, was Christen meinen, wenn sie von Gott als Vater, Sohn und Heiligem Geist sprechen." }
+        gradeBand: "7-8"
+        requires: [glaubensbekenntnis, pfingsten]
+      # HE Jg 9/10 Religionen: 2. Mose 20,1–6 (S. 21); BY ER8 LB2: Kritik der Propheten an der Götzenverehrung; ER7 LB4: das 1. Gebot in seiner kritischen Funktion; NW IF2 Stufe 2: Funktionalisierung Gottes (S. 29). Stimmen HE/BY/NW 9-10 / 7-8 / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires entscheidet)
+      # Siehe auch: katholische-religion/gott-und-goetze
+      - id: erstes-gebot
+        iCan: { de: "Ich kann erklären, was das erste Gebot meint und warum Propheten gegen die Verehrung anderer Götter auftraten." }
+        gradeBand: "7-8"
+        requires: [zehn-gebote, propheten]
+      # HE Jg 9/10 Gott: Tragfähigkeit des Redens von Gott angesichts von Widerfahrnissen; Hiob, Ps 22 (S. 19); BY ER9 LB2: Anfragen an den Gottesglauben angesichts von Leidenserfahrungen (schon ER5 LB4: Frage nach dem Warum von Leid); NW IF2 Stufe 2: Argumente für und gegen den Glauben an Gott (S. 29). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/theodizee
+      - id: theodizee
+        iCan: { de: "Ich kann die Frage erklären, wie ein guter und mächtiger Gott Leid zulassen kann, und an Hiob zeigen, wie die Bibel mit dieser Frage umgeht." }
+        gradeBand: "9-10"
+        requires: [gottesbilder-der-bibel, psalmen]
+      # HE Jg 9/10 Gott: Angemessenheit und Tragfähigkeit des menschlichen Redens von Gott (S. 19); BY ER5 LB3: Spannungen im Gottesbild der Bibel, Fragen, die offenbleiben; NW IF2 Stufe 2: Rede von der Unverfügbarkeit Gottes (S. 29). Stimmen HE/BY/NW 9-10 / 5-6 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/analoge-rede-von-gott
+      - id: unverfuegbarkeit-gottes
+        iCan: { de: "Ich kann erklären, warum nach christlichem Verständnis menschliche Worte und Bilder Gott nie ganz erfassen können." }
+        gradeBand: "9-10"
+        requires: [gottesbilder-der-bibel]
+      # HE Jg 9/10 Gott: Der Glaube an Gott wird hinterfragt und erfährt Kritik (S. 19); BY ER9 LB2: Anfragen an den Gottesglauben angesichts von Vernunft und Autonomie; NW IF2 Stufe 2: Formen der Bestreitung oder Infragestellung Gottes (S. 29). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/kritik-am-gottesglauben
+      - id: gottesbestreitung
+        iCan: { de: "Ich kann Formen beschreiben, wie Menschen den Glauben an Gott bestreiten oder in Frage stellen, zum Beispiel Atheismus oder Gleichgültigkeit." }
+        gradeBand: "9-10"
+        requires: [gottesvorstellungen-veraendern-sich]
+      # HE Jg 9/10 Gott: Glauben und Wissen (S. 19, 35); BY ER9 LB2: eigene Anfragen an den Gottesglauben; NW IF2 Stufe 2: erörtern Argumente für und gegen den Glauben an Gott (S. 29). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: argumente-zur-gottesfrage
+        iCan: { de: "Ich kann Argumente für und gegen den Glauben an Gott nennen und prüfen." }
+        gradeBand: "9-10"
+        requires: [gottesbestreitung, glaube-und-naturwissenschaft]
+  - id: bibel
+    name: { de: "Bibel", en: "The Bible" }
+    competencies:
+      # BY ER5 LB2: Grundzüge des Aufbaus der Bibel, AT und NT und ihre Unterteilungen; NW IF5 Stufe 1: Entstehung und Aufbau der Bibel (S. 21). Stimmen HE/BY/NW – / 5-6 / 5-6 -> 5-6 (Mehrheit). HE: Bibel ist kein eigenes Inhaltsfeld, sondern Bezugsgröße aller Inhaltsfelder (Kap. 5, S. 16)
+      # Siehe auch: katholische-religion/aufbau-der-bibel
+      - id: bibel-aufbau
+        iCan: { de: "Ich kann den Aufbau der Bibel erklären: das Alte und das Neue Testament und ihre Teile." }
+        gradeBand: "5-6"
+      # BY ER5 LB2: Einteilung in Bücher, Kapitel, Verse; Inhaltsverzeichnis; NW Stufe 1 Methodenkompetenz: finden zielgerichtet Texte in der Bibel (S. 17). Stimmen HE/BY/NW – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/bibelstellen-finden
+      - id: bibelstellen-finden
+        iCan: { de: "Ich kann eine Bibelstelle wie „Lk 15,11–32“ lesen und in der Bibel finden." }
+        gradeBand: "5-6"
+        requires: [bibel-aufbau]
+      # BY ER5 LB2: Vielfalt und Vielstimmigkeit biblischer Texte; NW IF5 Stufe 1: Bibel als Bibliothek mit Büchern unterschiedlicher Herkunft (S. 21). Stimmen HE/BY/NW – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: bibel-als-bibliothek
+        iCan: { de: "Ich kann erklären, warum man die Bibel eine Bibliothek nennt: viele Bücher von verschiedenen Verfassern aus verschiedenen Zeiten." }
+        gradeBand: "5-6"
+        requires: [bibel-aufbau]
+      # HE Jg 8 Deuten und verstehen: biblische Texte vor dem Hintergrund ihrer Entstehungszeit (S. 25); BY ER5 LB2: einfacher Überblick über die Geschichte der Bibel; NW IF5 Stufe 1: erläutern in Grundzügen die Entstehung der Bibel (S. 21). Stimmen HE/BY/NW 7-8 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/entstehung-der-bibel
+      - id: bibel-entstehung
+        iCan: { de: "Ich kann in Grundzügen erzählen, wie die Bibel über viele Jahrhunderte entstanden ist." }
+        gradeBand: "5-6"
+        requires: [bibel-als-bibliothek]
+      # HE Jg 6 Deuten und verstehen: religiöse Sprach- und Ausdrucksformen bestimmen (S. 22); BY ER5 LB2: Vielfalt und Vielstimmigkeit biblischer Texte; NW IF5 Stufe 1: Texte unterschiedlicher Gattung (S. 21). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/literarische-gattungen
+      - id: bibel-textsorten
+        iCan: { de: "Ich kann wichtige Textsorten der Bibel unterscheiden, zum Beispiel Erzählung, Psalm, Gleichnis, Brief und Evangelium." }
+        gradeBand: "5-6"
+        requires: [bibel-als-bibliothek]
+      # HE Jg 6 Gott: Gottesvorstellungen der Bibel in überlieferten Erfahrungen (S. 23); BY ER5 LB3: ausgewählte Erzählungen als Nachdenken über Gottes Wegbegleitung; NW IF5 Stufe 1: biblische Erzählungen drücken Erfahrungen aus, die Menschen mit Gott gemacht haben (S. 21). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: bibel-erfahrungen-mit-gott
+        iCan: { de: "Ich kann erklären, dass biblische Erzählungen Erfahrungen weitergeben, die Menschen mit Gott gemacht haben." }
+        gradeBand: "5-6"
+        requires: [bibel-als-bibliothek]
+      # BY ER5 LB2: Bibel als Glaubensbuch in der Spannung von Menschenwort und Gotteswort; NW IF5 Stufe 1: besondere Bedeutung der Bibel für Menschen christlichen Glaubens (S. 21); Stufe 2: Verständnisweisen der Bibel als Wort Gottes (S. 32). Stimmen HE/BY/NW – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/gotteswort-in-menschenwort
+      - id: bibel-gottes-wort
+        iCan: { de: "Ich kann erklären, warum Christen die Bibel als Gottes Wort verstehen, obwohl Menschen sie geschrieben haben." }
+        gradeBand: "5-6"
+        requires: [bibel-erfahrungen-mit-gott]
+      # HE Jg 6 Wahrnehmen und beschreiben: elementare religiöse Motive in der Lebenswelt (S. 22); BY ER5 LB2: kulturelle Bedeutung der Bibel (Werbung, Musik, Film, Redewendungen); NW IF5 Stufe 2: Rezeption biblischer Texte in der Medienkultur (S. 32). Stimmen HE/BY/NW 5-6 / 5-6 / 7-10 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/bibel-in-der-kultur
+      - id: bibel-in-der-kultur
+        iCan: { de: "Ich kann Spuren der Bibel in unserer Kultur finden, zum Beispiel in Redewendungen, Musik, Filmen oder Werbung." }
+        gradeBand: "5-6"
+        requires: [bibel-aufbau]
+      # HE Jg 6 Jesus Christus: Leben Jesu, wie es in den Evangelien überliefert ist (S. 24); BY ER6 LB3: Evangelien als historisch bedingte Glaubenszeugnisse; NW IF5 Stufe 2: unterscheiden zwischen historischen Ereignissen und deren Deutung (S. 31). Stimmen HE/BY/NW 5-6 / 5-6 / 7-10 -> 5-6 (Mehrheit)
+      - id: evangelien-als-glaubenszeugnisse
+        iCan: { de: "Ich kann erklären, warum die Evangelien keine Lebensbeschreibungen im heutigen Sinn sind, sondern vom Glauben an Jesus erzählen." }
+        gradeBand: "5-6"
+        requires: [bibel-textsorten]
+      # HE Jg 9/10 Jesus Christus: Verhältnis von historischem Jesus und verkündigtem Christus (S. 20); BY ER9 LB2: Evangelien als nachösterliche Glaubenszeugnisse; NW IF5 Stufe 2: beschreiben in Grundzügen den Entstehungsprozess der Evangelien (S. 31). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/synoptische-frage
+      - id: entstehung-der-evangelien
+        iCan: { de: "Ich kann beschreiben, wie die vier Evangelien nacheinander entstanden sind und warum sie sich unterscheiden." }
+        gradeBand: "9-10"
+        requires: [evangelien-als-glaubenszeugnisse, bibel-entstehung]
+      # HE Jg 8 Deuten und verstehen: biblische Texte vor dem Hintergrund ihrer Entstehungszeit und im Kontext der Bibel deuten (S. 25); NW IF5 Stufe 2: Formen der Auslegung, insbesondere der historisch-kritische Zugang (S. 31). Stimmen HE/BY/NW 7-8 / – / 7-10 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/bibel-auslegen
+      - id: historisch-kritische-auslegung
+        iCan: { de: "Ich kann erklären, wie man einen biblischen Text mit Blick auf seine Entstehungszeit auslegt (historisch-kritischer Zugang)." }
+        gradeBand: "7-8"
+        requires: [bibel-entstehung, bibel-textsorten]
+      # BY ER8 LB2: Merkmale prophetischer Existenz und Verkündigung; eine prophetische Tradition im Überblick; NW IF1 Stufe 2: prophetische Rede und prophetische Aktionen (S. 27). Stimmen HE/BY/NW – / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/propheten
+      - id: propheten
+        iCan: { de: "Ich kann an einem Beispiel wie Amos oder Jeremia erklären, was einen Propheten in der Bibel ausmacht: Berufung, Botschaft und Zeichenhandlungen." }
+        gradeBand: "7-8"
+        requires: [bibel-textsorten]
+      # HE Jg 8 Kirche: Ursprünge der christlichen Gemeinde (S. 27); Jg 9/10 Jesus Christus: 1. Kor 15,3–10 (S. 20); BY ER7 LB2: Leben und Wirken des Paulus; NW IF5 Stufe 2: Briefe als Textgattung (S. 31). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/paulus
+      - id: paulus
+        iCan: { de: "Ich kann Leben und Wirken des Paulus in Grundzügen beschreiben und erklären, warum er für die Ausbreitung des Christentums wichtig war." }
+        gradeBand: "7-8"
+        requires: [pfingsten]
+  - id: jesus-christus
+    name: { de: "Jesus Christus", en: "Jesus Christ" }
+    competencies:
+      # HE Jg 6 Jesus Christus: Leben Jesu (S. 24); BY ER6 LB2: geographische, politische und soziale Lebensbedingungen zur Zeit Jesu; NW IF3 Stufe 1: ordnen Jesus in seine Zeit und Umwelt ein (S. 20). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/umwelt-jesu
+      - id: land-zur-zeit-jesu
+        iCan: { de: "Ich kann beschreiben, wie die Menschen im Land Jesu lebten: Landschaft, römische Herrschaft und Alltag." }
+        gradeBand: "5-6"
+      # BY ER6 LB2: verschiedene Gruppen des Judentums zur Zeit Jesu und ihre Überzeugungen; NW IF3 Stufe 1: Jesus in seiner Zeit und Umwelt (S. 20). Stimmen HE/BY/NW – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/gruppen-zur-zeit-jesu
+      - id: gruppen-zur-zeit-jesu
+        iCan: { de: "Ich kann wichtige Gruppen zur Zeit Jesu nennen, zum Beispiel Pharisäer, Sadduzäer und Zeloten, und ihre Überzeugungen beschreiben." }
+        gradeBand: "5-6"
+        requires: [land-zur-zeit-jesu]
+      # BY ER6 LB2: wichtige Elemente des jüdischen Glaubens, um Jesus im Kontext des Judentums seiner Zeit zu verstehen; NW IF3 Stufe 1: Jesu Auftreten und Handeln als Auseinandersetzung mit der jüdischen Tradition (S. 20). Stimmen HE/BY/NW – / 5-6 / 5-6 -> 5-6 (Mehrheit). HE: Das Verhältnis zur jüdischen Religion ist in allen Inhaltsfeldern wichtig (Kap. 5, S. 16)
+      # Siehe auch: katholische-religion/jesus-der-jude
+      - id: jesus-der-jude
+        iCan: { de: "Ich kann erklären, dass Jesus Jude war, und an Beispielen zeigen, wie er sich mit der jüdischen Tradition auseinandersetzte." }
+        gradeBand: "5-6"
+        requires: [gruppen-zur-zeit-jesu, judentum-grundlagen]
+      # HE Jg 6 Jesus Christus: Leben Jesu (S. 24, 34); BY ER6 LB3: Jesu Botschaft und Leben; NW IF3 Stufe 1: benennen wesentliche Stationen im Leben Jesu (S. 20). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: stationen-im-leben-jesu
+        iCan: { de: "Ich kann wichtige Stationen im Leben Jesu nennen und in die richtige Reihenfolge bringen." }
+        gradeBand: "5-6"
+        requires: [land-zur-zeit-jesu]
+      # HE Jg 6 Jesus Christus: Lk 2,1–20 (S. 24); BY ER6 LB3: Evangelien als Glaubenszeugnisse am Beispiel der Weihnachtsgeschichten; NW IF7 Stufe 1: Herkunft und Bedeutung christlicher Feiertage (S. 23). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/weihnachtsevangelium
+      - id: weihnachtsgeschichte
+        iCan: { de: "Ich kann die Weihnachtsgeschichte nach Lukas wiedergeben und erklären, was sie über Jesus aussagen will." }
+        gradeBand: "5-6"
+        requires: [stationen-im-leben-jesu, bibelstellen-finden]
+      # HE Jg 6 Jesus Christus: historischer Jesus – verkündigter Christus (S. 24, 34); BY ER6 LB2: Hoffnung auf den Messias; ER6 LB3: bekenntnishafte Aussagen: Jesus, der Christus; NW IF3 Stufe 1: für Christen ist Jesus der im Alten Testament verheißene Messias (S. 20). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/messiaserwartung
+      - id: messias
+        iCan: { de: "Ich kann erklären, was der Titel „Messias“ oder „Christus“ bedeutet und warum Christen ihn für Jesus verwenden." }
+        gradeBand: "5-6"
+        requires: [stationen-im-leben-jesu]
+      # HE Jg 6 Jesus Christus: Jesu Botschaft vom Reich Gottes (S. 24); BY ER6 LB3: Botschaft vom anbrechenden Reich Gottes als Mitte der Verkündigung Jesu; NW IF3 Stufe 2: Rede vom Reich Gottes (S. 29). Stimmen HE/BY/NW 5-6 / 5-6 / 7-10 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/reich-gottes
+      - id: reich-gottes
+        iCan: { de: "Ich kann erklären, was Jesus mit dem „Reich Gottes“ meinte." }
+        gradeBand: "5-6"
+        requires: [stationen-im-leben-jesu]
+      # HE Jg 6 Jesus Christus: Gleichnisse (S. 24, 34); BY ER6 LB3: ausgewählte Gleichnisse; NW IF5 Stufe 2: Merkmale parabolischer Erzählungen in den Evangelien (S. 31). Stimmen HE/BY/NW 5-6 / 5-6 / 7-10 -> 5-6 (Mehrheit)
+      - id: gleichnisse-aufbau
+        iCan: { de: "Ich kann erklären, was ein Gleichnis ist und wie es aufgebaut ist: Bildhälfte und Sachhälfte." }
+        gradeBand: "5-6"
+        requires: [bibel-textsorten]
+      # HE Jg 6 Jesus Christus: Mt 20,1–16 (S. 24); Jg 8 Gott: Mk 4,30–34 (S. 27); BY ER6 LB3: Gleichnisse als Vergegenwärtigung des Reiches Gottes; NW IF3 Stufe 2: Gleichnisse als Rede vom Reich Gottes (S. 29). Stimmen HE/BY/NW 5-6 / 5-6 / 7-10 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/gleichnisse
+      - id: gleichnisse-deuten
+        iCan: { de: "Ich kann ein Gleichnis Jesu, zum Beispiel vom Senfkorn oder von den Arbeitern im Weinberg, als Rede vom Reich Gottes deuten." }
+        gradeBand: "5-6"
+        requires: [gleichnisse-aufbau, reich-gottes]
+      # HE Jg 6 Jesus Christus: Wunder; Mk 2,1–12 (S. 24); BY ER6 LB3: Wundererzählungen als Vergegenwärtigung des Reiches Gottes; NW IF3 Stufe 2: Wundererzählungen als Rede vom Reich Gottes (S. 29). Stimmen HE/BY/NW 5-6 / 5-6 / 7-10 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/wundererzaehlungen
+      - id: wundererzaehlungen
+        iCan: { de: "Ich kann an einer Wundererzählung wie der Heilung des Gelähmten erklären, wie sie vom Reich Gottes erzählt." }
+        gradeBand: "5-6"
+        requires: [reich-gottes]
+      # HE Jg 6 Jesus Christus: Mk 14,1–16,8 (S. 24); BY ER6 LB3: Erzählungen von Passion und Ostern im Überblick; NW IF3 Stufe 1: wesentliche Stationen im Leben Jesu (S. 20). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/passion
+      - id: passion-und-ostern
+        iCan: { de: "Ich kann die Erzählungen von Leiden, Tod und Auferstehung Jesu in Grundzügen wiedergeben." }
+        gradeBand: "5-6"
+        requires: [stationen-im-leben-jesu]
+      # HE Jg 9/10 Jesus Christus: Bedeutung von Kreuz und Auferstehung (S. 20, 35); BY ER6 LB3: Leiden und Sterben als Konsequenz seiner Botschaft; Reaktionen auf Jesus; NW IF3 Stufe 2: historische Hintergründe der Kreuzigung; Zusammenhang von Leben und Tod Jesu (S. 29). Stimmen HE/BY/NW 9-10 / 5-6 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/konflikte-um-jesus
+      - id: warum-jesus-sterben-musste
+        iCan: { de: "Ich kann erklären, warum Jesus gekreuzigt wurde: die historischen Hintergründe und den Zusammenhang mit seiner Botschaft." }
+        gradeBand: "9-10"
+        requires: [passion-und-ostern, gruppen-zur-zeit-jesu, reich-gottes]
+      # HE Jg 8 Jesus Christus: Nachfolge im NT; Mk 1,14–20, Mk 10,17–27 (S. 27); BY ER9 LB2: Texte der Evangelien wie Geschichten von Umkehr und Nachfolge; NW IF4 Stufe 1: Kirche als Nachfolgegemeinschaft (S. 20). Stimmen HE/BY/NW 7-8 / 9-10 / 5-6 -> 7-8 (dreifach uneins: Mitte)
+      # Siehe auch: katholische-religion/nachfolge
+      - id: nachfolge
+        iCan: { de: "Ich kann erklären, was „Nachfolge“ im Neuen Testament bedeutet, zum Beispiel an der Berufung der Jünger." }
+        gradeBand: "7-8"
+        requires: [stationen-im-leben-jesu]
+      # HE Jg 8 Ethik: Mt 5,3–10, Mt 5,38–47 (S. 28); Jg 9/10 Ethik: Mt 5–7 (S. 20); NW IF3 Stufe 2: Passagen der Bergpredigt als Rede vom Reich Gottes und Orientierungsangebot (S. 29). Stimmen HE/BY/NW 7-8 / – / 7-10 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/bergpredigt
+      - id: bergpredigt
+        iCan: { de: "Ich kann wichtige Inhalte der Bergpredigt nennen, zum Beispiel die Seligpreisungen und die Feindesliebe, und erklären, was Jesus damit fordert." }
+        gradeBand: "7-8"
+        requires: [reich-gottes, jesus-der-jude]
+      # HE Jg 9/10 Ethik: Mt 5–7 (S. 20); NW IF3 Stufe 2: Umsetzbarkeit ethischer Orientierungen in der Bergpredigt (S. 30). Stimmen HE/BY/NW 9-10 / – / 7-10 -> 9-10 (Mehrheit)
+      - id: bergpredigt-im-alltag
+        iCan: { de: "Ich kann an einem Beispiel prüfen, ob und wie sich die Forderungen der Bergpredigt im Alltag umsetzen lassen." }
+        gradeBand: "9-10"
+        requires: [bergpredigt]
+      # HE Jg 9/10 Jesus Christus: Verhältnis von historischem Jesus und verkündigtem Christus (S. 20; in allen Stufen genannt); BY ER9 LB2: Unterscheidung zwischen historischem Jesus und geglaubtem Christus; NW IF3 Stufe 2: theologische Differenzierung zwischen „Jesus“ und „Christus“ (S. 29). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: historischer-jesus-und-christus
+        iCan: { de: "Ich kann den Unterschied zwischen dem historischen Jesus und dem Christus, an den Christen glauben, erklären." }
+        gradeBand: "9-10"
+        requires: [messias, entstehung-der-evangelien]
+      # HE Jg 9/10 Jesus Christus: Kreuzestod und Auferweckung als Gottes erlösendes Handeln; Joh 3,16 (S. 20); BY ER9 LB2: Deutungen von Tod und Auferstehung Jesu „für uns“; NW IF3 Stufe 2: Zusammenhang von Leben und Handeln Jesu und seinem Tod (S. 29). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/fuer-uns-gestorben
+      - id: deutungen-des-todes-jesu
+        iCan: { de: "Ich kann verschiedene Deutungen erklären, die Christen dem Tod Jesu geben, zum Beispiel Stellvertretung, Versöhnung oder Mitleiden Gottes." }
+        gradeBand: "9-10"
+        requires: [warum-jesus-sterben-musste]
+      # HE Jg 9/10 Jesus Christus: Lk 24,13–35, 1. Kor 15,3–10 (S. 20); BY ER9 LB2: Deutungen der Auferstehung Jesu; NW IF3 Stufe 2: unterscheiden historische von bekenntnishafter Rede von der Auferstehung (S. 29). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: auferstehung-im-neuen-testament
+        iCan: { de: "Ich kann erklären, wie das Neue Testament von der Auferstehung Jesu spricht, zum Beispiel in der Emmaus-Geschichte, und warum das ein Bekenntnis ist und kein Bericht." }
+        gradeBand: "9-10"
+        requires: [passion-und-ostern, bekenntnis-und-aussage]
+      # HE Jg 9/10 Jesus Christus: Deutungen des Gekreuzigten und Auferstandenen in Kunst und Kultur (S. 20, 35); BY ER9 LB2: Jesus-Deutungen in der Gegenwartskultur (Film, Popmusik, Werbung). Stimmen HE/BY/NW 9-10 / 9-10 / – -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/jesus-in-den-medien
+      - id: jesus-in-kunst-und-kultur
+        iCan: { de: "Ich kann Darstellungen von Jesus in Kunst, Musik oder Film beschreiben und erklären, wie sie ihn deuten." }
+        gradeBand: "9-10"
+        requires: [deutungen-des-todes-jesu]
+  - id: kirche
+    name: { de: "Kirche", en: "The Church" }
+    competencies:
+      # HE Jg 6 Kirche: Kirche vor Ort; Röm 12,4–6a (Ein Leib, viele Glieder) (S. 24); BY ER5 LB5: Grundzüge einer Kirchengemeinde: Gebäude, Personen, Gemeindeleben; NW IF4 Stufe 1: Kirche als Gebäude und als Glaubensgemeinschaft (S. 21). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: kirche-gebaeude-und-gemeinschaft
+        iCan: { de: "Ich kann erklären, dass „Kirche“ ein Gebäude und eine Gemeinschaft von Menschen meint." }
+        gradeBand: "5-6"
+      # HE Jg 6 Religionen: Gotteshäuser (S. 34); BY ER5 LB5: Gebäude einer Kirchengemeinde; ggf. Kirchenexkursion; NW IF4 Stufe 1: Gotteshäuser als Orte gelebten Glaubens (S. 21). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/kirchenraum
+      - id: kirchengebaeude
+        iCan: { de: "Ich kann die wichtigsten Teile einer Kirche benennen, zum Beispiel Altar, Kanzel und Taufbecken, und ihre Bedeutung erklären." }
+        gradeBand: "5-6"
+        requires: [kirche-gebaeude-und-gemeinschaft]
+      # HE Jg 6 Kirche: Kirche vor Ort (S. 24); BY ER5 LB5: Personen und Aspekte von Gemeindeleben; NW IF4 Stufe 1: evangelische Ortsgemeinde als Konkretion von Kirche (S. 21). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/pfarrgemeinde
+      - id: kirchengemeinde
+        iCan: { de: "Ich kann beschreiben, wer in einer evangelischen Kirchengemeinde arbeitet und was dort geschieht." }
+        gradeBand: "5-6"
+        requires: [kirche-gebaeude-und-gemeinschaft]
+      # HE Jg 6 Kirche: Handlungsfelder Gottesdienst, Seelsorge, Bildung, Diakonie (S. 24); BY ER5 LB5: Aktivitäten und Gemeindeleben. Stimmen HE/BY/NW 5-6 / 5-6 / – -> 5-6 (Mehrheit)
+      - id: aufgaben-der-kirche
+        iCan: { de: "Ich kann wichtige Aufgaben der Kirche nennen und erklären: Gottesdienst, Seelsorge, Bildung und Diakonie." }
+        gradeBand: "5-6"
+        requires: [kirchengemeinde]
+      # HE Jg 6 Kirche: Gottesdienst (S. 24); BY ER7 LB1: wichtige Elemente des Gottesdienstes (Gebete, Predigt, Sakramente, Musik); NW IF4 Stufe 1: religiöse Praxis (S. 21). Stimmen HE/BY/NW 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      - id: gottesdienst
+        iCan: { de: "Ich kann den Ablauf eines evangelischen Gottesdienstes beschreiben und seine wichtigsten Teile erklären." }
+        gradeBand: "5-6"
+        requires: [kirchengemeinde, gebet]
+      # HE Jg 6 Kirche: kirchliche Feiern strukturieren das Leben des Einzelnen (S. 24); BY ER5 LB5: Taufe im Gemeindeleben; NW IF7 Stufe 1: Übergangsrituale im Lebenslauf (S. 23). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/taufe-und-firmung
+      - id: taufe
+        iCan: { de: "Ich kann erklären, was bei einer Taufe geschieht und was sie für Christen bedeutet." }
+        gradeBand: "5-6"
+        requires: [kirchengemeinde]
+      # BY ER5 LB5: Abendmahl im Gemeindeleben (ER8 LB5: Unterschiede beim Abendmahl); NW IF4 Stufe 1: religiöse Praxis der Konfessionen (S. 21). Stimmen HE/BY/NW – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: abendmahl
+        iCan: { de: "Ich kann erklären, woran das Abendmahl erinnert und was es für evangelische Christen bedeutet." }
+        gradeBand: "5-6"
+        requires: [passion-und-ostern, gottesdienst]
+      # HE Jg 6 Kirche: kirchliche Feste und Feiern strukturieren das Leben des Einzelnen (S. 24); BY ER5 LB5: Konfirmation, Kasualien; ER6 LB4: einmalige Feste; NW IF7 Stufe 1: Übergangsrituale im Lebenslauf von Menschen christlichen Glaubens (S. 23). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: lebenswenden-feiern
+        iCan: { de: "Ich kann christliche Feiern an Wendepunkten des Lebens erklären: Taufe, Konfirmation, Trauung und Beerdigung." }
+        gradeBand: "5-6"
+        requires: [taufe]
+      # HE Jg 6 Kirche: Kirchenjahr; kirchliche Feste und Feiern (S. 24, 34); BY ER6 LB4: Aufbau des Kirchenjahrs, Weihnachtsfestkreis, Osterfestkreis, Trinitatiszeit; NW IF7 Stufe 1: christliche Feiertage im Jahreskreis (S. 23). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/kirchenjahr
+      - id: kirchenjahr
+        iCan: { de: "Ich kann den Aufbau des Kirchenjahres erklären und die großen christlichen Feste darin einordnen." }
+        gradeBand: "5-6"
+      # HE Jg 6 Kirche: kirchliche Feste (S. 24); BY ER6 LB4: Weihnachtsfestkreis; Feste in Bezug zum Glaubensbekenntnis; NW IF7 Stufe 1: Herkunft und Bedeutung christlicher Feiertage (S. 23). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: weihnachtsfestkreis
+        iCan: { de: "Ich kann erklären, was Christen im Advent, an Weihnachten und an Epiphanias feiern." }
+        gradeBand: "5-6"
+        requires: [kirchenjahr, weihnachtsgeschichte]
+      # HE Jg 6 Kirche: kirchliche Feste (S. 24); BY ER6 LB4: Osterfestkreis; Ostern und Himmelfahrt in Bezug zum Glaubensbekenntnis; NW IF7 Stufe 1: Herkunft und Bedeutung christlicher Feiertage (S. 23). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: osterfestkreis
+        iCan: { de: "Ich kann erklären, was Christen in der Passionszeit, an Karfreitag, Ostern, Himmelfahrt und Pfingsten feiern." }
+        gradeBand: "5-6"
+        requires: [kirchenjahr, passion-und-ostern]
+      # BY ER6 LB4: Unterschiede religiös/weltlich beim Feiern; NW IF7 Stufe 1: am Beispiel eines christlichen Festes religiöse und säkulare Ausdrucksformen (S. 23). Stimmen HE/BY/NW – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: feste-religioes-und-weltlich
+        iCan: { de: "Ich kann an einem Fest wie Weihnachten religiöse und nichtreligiöse Bräuche unterscheiden." }
+        gradeBand: "5-6"
+        requires: [weihnachtsfestkreis]
+      # HE Jg 6 Gott: Gottesvorstellungen in Bildern und Symbolen (S. 23); BY ER5 LB5: Symbole und Zeichen wie Kreuz, Taube, Weg, Licht; NW IF4 Stufe 1: Symbole des christlichen Glaubens (S. 21). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/zeichen-und-symbole
+      - id: christliche-symbole
+        iCan: { de: "Ich kann wichtige christliche Symbole wie Kreuz, Fisch, Taube und Licht erklären." }
+        gradeBand: "5-6"
+      # HE Jg 9/10 Wahrnehmen und beschreiben: religiöse Motive in Gesellschaft und Kultur (S. 17); BY ER5 LB5: Spuren und Ausdrucksformen von Glaube und Religion im Umfeld; NW IF7 Stufe 2: religiöse Symbole in Kultur und Gesellschaft, Verwendung in nichtreligiösen Zusammenhängen (S. 33). Stimmen HE/BY/NW 9-10 / 5-6 / 7-10 -> 9-10 (Mehrheit)
+      - id: symbole-in-der-kultur
+        iCan: { de: "Ich kann religiöse Symbole in Werbung, Mode oder Musik erkennen und beschreiben, wie sie dort verwendet werden." }
+        gradeBand: "9-10"
+        requires: [christliche-symbole]
+      # HE Jg 8 Kirche: Apg 2 (Pfingsten) (S. 27); BY ER7 LB1: Symbole für den Heiligen Geist; ER7 LB2: Pfingsten als „Geburtsstunde der Kirche“; NW IF4 Stufe 1: Entstehung der Kirche aus dem Glauben an Jesus Christus (S. 20). Stimmen HE/BY/NW 7-8 / 7-8 / 5-6 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/pfingsten
+      - id: pfingsten
+        iCan: { de: "Ich kann die Pfingstgeschichte wiedergeben und erklären, warum Pfingsten als Geburtstag der Kirche gilt." }
+        gradeBand: "7-8"
+        requires: [osterfestkreis, kirche-gebaeude-und-gemeinschaft]
+      # HE Jg 8 Kirche: Ursprünge der christlichen Gemeinde (S. 27); BY ER7 LB2: Leben und Konflikte in den ersten Gemeinden; NW IF4 Stufe 1: Entstehung der Kirche, Nachfolgegemeinschaft (S. 20). Stimmen HE/BY/NW 7-8 / 7-8 / 5-6 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/urgemeinde
+      - id: erste-gemeinden
+        iCan: { de: "Ich kann beschreiben, wie die ersten christlichen Gemeinden lebten und welche Konflikte es in ihnen gab." }
+        gradeBand: "7-8"
+        requires: [pfingsten]
+      # HE Jg 8 Kirche: Ursprünge der christlichen Gemeinde; Mt 28,16–20 (S. 27); BY ER7 LB2: Ausbreitung, Christenverfolgung, Konstantinische Wende; NW IF4 Stufe 2: Beziehung von Kirche, Staat und Gesellschaft im Verlauf der Geschichte (S. 30). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/ausbreitung-des-christentums
+      - id: ausbreitung-des-christentums
+        iCan: { de: "Ich kann beschreiben, wie sich das Christentum ausbreitete, warum Christen verfolgt wurden und was sich unter Kaiser Konstantin änderte." }
+        gradeBand: "7-8"
+        requires: [erste-gemeinden, paulus]
+      # HE Jg 8 Kirche: Reformation (S. 27, 34); BY ER8 LB1: Voraussetzungen der Reformation (Frömmigkeit, Papsttum, Ablasswesen); NW IF4 Stufe 2: Grundzüge der Reformation (S. 30). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/kirche-im-mittelalter
+      - id: kirche-vor-der-reformation
+        iCan: { de: "Ich kann beschreiben, wie Menschen im späten Mittelalter glaubten und was am Ablasshandel kritisiert wurde." }
+        gradeBand: "7-8"
+        requires: [ausbreitung-des-christentums]
+      # HE Jg 8 Kirche: Reformation (S. 27, 34); BY ER8 LB1: Aspekte des Lebens Luthers (Kloster, Bibelstudium, „Thesenanschlag“, Worms); NW IF4 Stufe 2: Grundzüge der Reformation (S. 30). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/reformation
+      - id: luther-leben
+        iCan: { de: "Ich kann wichtige Stationen im Leben Martin Luthers nennen, zum Beispiel Kloster, Thesen und Reichstag in Worms." }
+        gradeBand: "7-8"
+        requires: [kirche-vor-der-reformation]
+      # HE Jg 8 Mensch und Welt: Rechtfertigung allein durch den Glauben, Röm 3,21–28 (S. 26); BY ER8 LB1: „allein durch Christus, allein aus Gnade, allein durch Glauben, allein die Schrift“; NW IF2 Stufe 2: reformatorische Grundeinsichten (S. 28). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: reformatorische-grundsaetze
+        iCan: { de: "Ich kann die vier Grundsätze der Reformation erklären: allein Christus, allein aus Gnade, allein durch den Glauben, allein die Schrift." }
+        gradeBand: "7-8"
+        requires: [rechtfertigung, bibel-gottes-wort]
+      # HE Jg 8 Kirche: Reformation; evangelisches Verständnis von Kirche (S. 27); BY ER8 LB1: Gedanke des allgemeinen Priestertums; NW IF4 Stufe 2: protestantisches Selbstverständnis (S. 30). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: priestertum-aller-getauften
+        iCan: { de: "Ich kann erklären, was das „Priestertum aller Getauften“ bedeutet und wie es evangelische Kirchen prägt." }
+        gradeBand: "7-8"
+        requires: [reformatorische-grundsaetze, taufe]
+      # HE Jg 8 Kirche: Reformation (S. 27, 34); BY ER8 LB1: Einflüsse der Reformation (Bibelübersetzung, Bildung für alle); NW IF4 Stufe 2: Grundzüge der Reformation und das daraus entwickelte protestantische Selbstverständnis (S. 30). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: folgen-der-reformation
+        iCan: { de: "Ich kann Folgen der Reformation für Sprache, Bildung und Gesellschaft nennen, zum Beispiel Luthers Bibelübersetzung." }
+        gradeBand: "7-8"
+        requires: [luther-leben]
+      # HE Jg 8 Kirche: konfessionelle Vielfalt (S. 27); BY ER8 LB5: Vielfalt christlicher Konfessionen im Überblick; NW IF4 Stufe 1: unterschiedliche christliche Konfessionen und Denominationen (S. 21). Stimmen HE/BY/NW 7-8 / 7-8 / 5-6 -> 7-8 (Mehrheit)
+      - id: konfessionen
+        iCan: { de: "Ich kann christliche Konfessionen wie evangelisch, katholisch, orthodox und Freikirchen nennen und an Gebäuden, Personen und Glaubenspraxis unterscheiden." }
+        gradeBand: "7-8"
+        requires: [kirchengebaeude, folgen-der-reformation]
+      # HE Jg 8 Kirche: konfessionelle Vielfalt (S. 27); BY ER8 LB5: Unterschiede im Kirchenverständnis, Ämter, Abendmahl; NW IF4 Stufe 1: vergleichen evangelische und katholische Kirche (S. 21). Stimmen HE/BY/NW 7-8 / 7-8 / 5-6 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/katholisch-und-evangelisch
+      - id: evangelisch-und-katholisch
+        iCan: { de: "Ich kann Gemeinsamkeiten und Unterschiede zwischen evangelischer und katholischer Kirche beschreiben, zum Beispiel bei Ämtern und Abendmahl." }
+        gradeBand: "7-8"
+        requires: [konfessionen, abendmahl, priestertum-aller-getauften]
+      # HE Jg 8 Kirche: Ökumene (S. 27); BY ER8 LB5: ökumenische Bestrebungen; NW IF4 Stufe 1: Beispiele ökumenischer Zusammenarbeit (S. 21). Stimmen HE/BY/NW 7-8 / 7-8 / 5-6 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/oekumene
+      - id: oekumene
+        iCan: { de: "Ich kann erklären, was Ökumene bedeutet, und Beispiele für die Zusammenarbeit der Kirchen nennen." }
+        gradeBand: "7-8"
+        requires: [evangelisch-und-katholisch]
+      # HE Jg 6 Kirche: Handlungsfeld Diakonie (S. 24); BY ER7 LB5: Nächstenliebe im diakonischen Handeln der Kirche (Wichern, Löhe, Bodelschwingh); NW IF1 Stufe 2: Zielgruppen und Formen diakonischen Handelns (S. 27 f.). Stimmen HE/BY/NW 5-6 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/caritas
+      - id: diakonie
+        iCan: { de: "Ich kann erklären, was Diakonie ist, und Beispiele für diakonische Arbeit in Geschichte und Gegenwart nennen." }
+        gradeBand: "7-8"
+        requires: [aufgaben-der-kirche, naechstenliebe]
+      # HE Jg 9/10 Kirche: Verhältnis von Kirche und Staat (S. 20, 35); BY ER9 LB4: Ausprägungen des Miteinanders (Religionsunterricht, Kirchensteuer, Militärseelsorge; Laizismus); NW IF4 Stufe 2: Beziehung von Kirche, Staat und Gesellschaft in der Gegenwart (S. 30). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: kirche-und-staat
+        iCan: { de: "Ich kann beschreiben, wie Kirche und Staat in Deutschland zusammenarbeiten, zum Beispiel beim Religionsunterricht und der Kirchensteuer, und das mit einer strengen Trennung vergleichen." }
+        gradeBand: "9-10"
+        requires: [aufgaben-der-kirche, ausbreitung-des-christentums]
+      # HE Jg 9/10 Kirche: Röm 13,1–7 (S. 20); BY ER9 LB4: Haltungen von Christen zwischen Mitwirkung und Widerstand; NW IF4 Stufe 2: Recht und Pflicht von Christen, totalitären Strukturen Widerstand entgegenzusetzen (S. 31). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: obrigkeit-und-widerstand
+        iCan: { de: "Ich kann erklären, was Paulus in Römer 13 über die staatliche Gewalt schreibt, und warum Christen trotzdem über Widerstand gegen Unrecht nachdenken." }
+        gradeBand: "9-10"
+        requires: [kirche-und-staat, paulus]
+      # HE Jg 9/10 Kirche: kritischer Blick auf die Geschichte der Kirche; Kirche und Staat (S. 20); BY ER9 LB4: Konflikte der evangelischen Kirche im Nationalsozialismus; Deutsche Christen, Bekennende Kirche; NW IF4 Stufe 2: „Deutsche Christen“ und „Bekennende Kirche“ (S. 30). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/kirche-im-nationalsozialismus
+      - id: kirche-im-nationalsozialismus
+        iCan: { de: "Ich kann erklären, wie sich die evangelische Kirche im Nationalsozialismus spaltete: „Deutsche Christen“ und „Bekennende Kirche“." }
+        gradeBand: "9-10"
+        requires: [obrigkeit-und-widerstand]
+      # HE Jg 9/10 Kirche: kritischer Blick auf die Geschichte der Kirche (S. 20); BY ER9 LB4: christlich motivierter politischer Widerstand; Umgang mit Schuld nach 1945; NW IF4 Stufe 2: Biografien zwischen Anpassung und Widerstand (S. 30). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: christen-im-widerstand
+        iCan: { de: "Ich kann an der Lebensgeschichte eines Christen wie Dietrich Bonhoeffer Haltungen zwischen Anpassung und Widerstand beschreiben." }
+        gradeBand: "9-10"
+        requires: [kirche-im-nationalsozialismus]
+      # BY ER9 LB4: Kirche und Christen in der DDR; Rolle der Kirche bei der friedlichen Revolution 1989; NW IF4 Stufe 2: Kirche in totalitären Systemen (S. 30). Stimmen HE/BY/NW – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: kirche-in-der-ddr
+        iCan: { de: "Ich kann die Rolle der Kirche in der DDR beschreiben, auch bei der friedlichen Revolution 1989." }
+        gradeBand: "9-10"
+        requires: [kirche-und-staat]
+      # HE Jg 9/10 Kirche: Verantwortung der Kirche für die Gesellschaft (S. 20, 35); BY ER9 LB4: politisches Engagement der Kirche vor Ort; NW IF4 Stufe 2: Verantwortung von Kirche für Staat und Gesellschaft (S. 31). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: kirche-in-der-gesellschaft
+        iCan: { de: "Ich kann an Beispielen beschreiben, wie sich Kirchen heute in Gesellschaft und Politik einsetzen, etwa für Geflüchtete oder den Umweltschutz." }
+        gradeBand: "9-10"
+        requires: [kirche-und-staat]
+  - id: religionen
+    name: { de: "Religionen und Weltanschauungen", en: "Religions and worldviews" }
+    competencies:
+      # HE Jg 6 Religionen: Glaubenspraxis in nichtchristlichen Religionen (Feste, heilige Schriften, Gotteshäuser) (S. 24, 34); BY ER5 LB5: Spuren von Glaube und Religion im Umfeld; ER7 LB3: Spuren islamischer Religion; NW Stufe 1 übergeordnet: religiöse Phänomene identifizieren und beschreiben (S. 16). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/religionen-in-der-umgebung
+      - id: religionen-in-der-umgebung
+        iCan: { de: "Ich kann Spuren verschiedener Religionen in meiner Umgebung entdecken und beschreiben, zum Beispiel Gebäude, Feste oder Kleidung." }
+        gradeBand: "5-6"
+      # HE Jg 6 Religionen: Glaubenspraxis, heilige Schriften (S. 34); BY ER6 LB2: Hoffnung auf den Messias, Tora (ER9 LB3: Sch’ma Israel, Tora als Orientierung); NW IF6 Stufe 1: Glaube und Lebensgestaltung von Menschen jüdischen Glaubens (S. 22). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: judentum-grundlagen
+        iCan: { de: "Ich kann wichtige Elemente des jüdischen Glaubens erklären: den Glauben an den einen Gott (Schma Israel) und die Tora." }
+        gradeBand: "5-6"
+        requires: [religionen-in-der-umgebung]
+      # HE Jg 6 Religionen: Glaubenspraxis, Feste (S. 34); BY ER6 LB2: Sabbat; NW IF6 Stufe 1: zentrale Rituale in Judentum, Christentum und Islam (S. 22). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: sabbat
+        iCan: { de: "Ich kann erklären, wie Juden den Sabbat feiern und warum er ihnen wichtig ist." }
+        gradeBand: "5-6"
+        requires: [judentum-grundlagen]
+      # HE Jg 6 Religionen: Feste (S. 34); Jg 8: 2. Mose 12, Einsetzung des Passahfestes (S. 28); BY ER6 LB2: Pessach; NW IF7 Stufe 1: jüdische Feiertage, Herkunft und Bedeutung (S. 23). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/juedische-feste
+      - id: juedische-feste
+        iCan: { de: "Ich kann wichtige jüdische Feste nennen, zum Beispiel Pessach, Jom Kippur und Chanukka, und erklären, woran sie erinnern." }
+        gradeBand: "5-6"
+        requires: [judentum-grundlagen, exodus]
+      # HE Jg 6 Religionen: Gotteshäuser (S. 34); NW IF6 Stufe 1: Ausstattung und Funktionen einer Synagoge (S. 22). Stimmen HE/BY/NW 5-6 / – / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/synagoge
+      - id: synagoge
+        iCan: { de: "Ich kann beschreiben, wie eine Synagoge eingerichtet ist und was dort geschieht." }
+        gradeBand: "5-6"
+        requires: [judentum-grundlagen]
+      # HE Jg 6 Religionen: Gotteshäuser (S. 34); BY ER7 LB3: Spuren islamischer Religion bei Gebäuden (insbesondere Moscheen); NW IF6 Stufe 1: Ausstattung und Funktionen einer Moschee (S. 22). Stimmen HE/BY/NW 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/moschee
+      - id: moschee
+        iCan: { de: "Ich kann beschreiben, wie eine Moschee eingerichtet ist und was dort geschieht." }
+        gradeBand: "5-6"
+        requires: [religionen-in-der-umgebung]
+      # HE Jg 6 Religionen: Feste (S. 34); BY ER7 LB3: Fünf Säulen und ihre Bedeutung im Alltag; NW IF7 Stufe 1: muslimische Feiertage, Herkunft und Bedeutung (S. 23). Stimmen HE/BY/NW 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/islamische-feste
+      - id: islamische-feste
+        iCan: { de: "Ich kann wichtige islamische Feste nennen, zum Beispiel das Fest des Fastenbrechens nach dem Ramadan und das Opferfest, und ihre Bedeutung erklären." }
+        gradeBand: "5-6"
+        requires: [religionen-in-der-umgebung]
+      # HE Jg 6 Religionen: Gotteshäuser (S. 34); NW IF6 Stufe 1: vergleichen Ausstattung und Funktionen einer Synagoge, einer Kirche und einer Moschee (S. 22). Stimmen HE/BY/NW 5-6 / – / 5-6 -> 5-6 (Mehrheit)
+      - id: gotteshaeuser-vergleichen
+        iCan: { de: "Ich kann Synagoge, Kirche und Moschee in ihrer Ausstattung und ihren Aufgaben vergleichen." }
+        gradeBand: "5-6"
+        requires: [synagoge, moschee, kirchengebaeude]
+      # HE Jg 6 Religionen: Glaubenspraxis, Feste (S. 24, 34); BY ER6 LB4: Unterschiede und Gemeinsamkeiten des Feierns (christlich / aus einer anderen Religion); NW IF7 Stufe 1: christliche mit jüdischen und muslimischen Feiertagen vergleichen (S. 23). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: feste-der-religionen-vergleichen
+        iCan: { de: "Ich kann Feste in Judentum, Christentum und Islam vergleichen und Ähnlichkeiten und Unterschiede nennen." }
+        gradeBand: "5-6"
+        requires: [juedische-feste, islamische-feste, osterfestkreis]
+      # HE Jg 8 Religionen: 1. Mose 16 und 21,1–21 (Ismael) (S. 28); BY ER7 LB3: Bedeutung Abrahams; NW IF6 Stufe 1: gemeinsame Berufung auf Abraham in Judentum, Christentum und Islam (S. 22). Stimmen HE/BY/NW 7-8 / 7-8 / 5-6 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/abraham-in-drei-religionen
+      - id: abraham-in-drei-religionen
+        iCan: { de: "Ich kann erklären, warum sich Judentum, Christentum und Islam auf Abraham berufen." }
+        gradeBand: "7-8"
+        requires: [abraham, islam-gott-und-koran]
+      # BY ER7 LB3: Anfänge des Islam: Mohammed in Mekka und Medina, Mohammed als Prophet. Stimmen HE/BY/NW – / 7-8 / – -> 7-8 (nur eine Stimme). Schwach belegt: nur BY; aufgenommen als direkte Voraussetzung von islam-gott-und-koran (Offenbarung an Mohammed)
+      # Siehe auch: katholische-religion/muhammad
+      - id: anfaenge-des-islam
+        iCan: { de: "Ich kann die Anfänge des Islam mit Mohammed in Mekka und Medina in Grundzügen erzählen." }
+        gradeBand: "7-8"
+        requires: [religionen-in-der-umgebung]
+      # HE Jg 8 Religionen: Glaubensaussagen im Islam (S. 28, 34); BY ER7 LB3: Gottesverständnis des Islam; Offenbarung des Koran, Schriftverständnis; NW IF6 Stufe 1: Glaube und Lebensgestaltung von Menschen islamischen Glaubens (S. 22). Stimmen HE/BY/NW 7-8 / 7-8 / 5-6 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/koran
+      - id: islam-gott-und-koran
+        iCan: { de: "Ich kann erklären, wie Muslime an Gott glauben und welche Bedeutung der Koran für sie hat." }
+        gradeBand: "7-8"
+        requires: [anfaenge-des-islam]
+      # HE Jg 8 Religionen: Glaubensaussagen im Islam (S. 28); BY ER7 LB3: die Fünf Säulen, ihre Glaubensbedeutung und ihre Bedeutung im Alltag; NW IF6 Stufe 1: zentrale Rituale und religiöse Handlungen im Islam (S. 22). Stimmen HE/BY/NW 7-8 / 7-8 / 5-6 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/fuenf-saeulen
+      - id: fuenf-saeulen
+        iCan: { de: "Ich kann die Fünf Säulen des Islam nennen und erklären, was sie im Alltag von Muslimen bedeuten." }
+        gradeBand: "7-8"
+        requires: [islam-gott-und-koran]
+      # BY ER7 LB3: Vielgestaltigkeit des Islam (Sunnismus, Schiismus, Alevitentum); NW IF6 Stufe 1: Stellung nehmen zu einseitigen Darstellungen von Menschen islamischen Glaubens (S. 22). Stimmen HE/BY/NW – / 7-8 / 5-6 -> 7-8 (Gleichstand 5-6/7-8; requires entscheidet). Schwach belegt: NW nennt nur die Stellungnahme zu einseitigen Darstellungen, nicht die Richtungen des Islam
+      - id: vielfalt-des-islam
+        iCan: { de: "Ich kann erklären, dass es „den“ Islam nicht gibt, und Richtungen wie Sunniten, Schiiten und Aleviten unterscheiden." }
+        gradeBand: "7-8"
+        requires: [islam-gott-und-koran]
+      # HE Jg 6 Religionen: heilige Schriften (S. 34); BY ER7 LB3: Schriftverständnis im Vergleich von christlichem und islamischem Glauben; NW IF5 Stufe 2: Bedeutung der Bibel im Christentum mit dem Stellenwert heiliger Schriften in anderen Religionen vergleichen (S. 31). Stimmen HE/BY/NW 5-6 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: heilige-schriften-vergleichen
+        iCan: { de: "Ich kann vergleichen, welche Bedeutung die Bibel im Christentum, die Tora im Judentum und der Koran im Islam haben." }
+        gradeBand: "7-8"
+        requires: [bibel-gottes-wort, judentum-grundlagen, islam-gott-und-koran]
+      # HE Jg 8 Religionen: unterschiedliche Glaubensaussagen in Judentum und Islam (S. 28); BY ER7 LB3: Gemeinsamkeiten und Unterschiede zwischen christlichem und islamischem Glauben; NW IF6 Stufe 2: Merkmale des Gottesglaubens in Judentum, Christentum und Islam vergleichen (S. 32). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/judentum-christentum-islam-vergleichen
+      - id: gottesglaube-vergleichen
+        iCan: { de: "Ich kann vergleichen, wie Judentum, Christentum und Islam an Gott glauben, und Gemeinsamkeiten und Unterschiede nennen." }
+        gradeBand: "7-8"
+        requires: [dreieinigkeit, islam-gott-und-koran, judentum-grundlagen]
+      # HE Jg 8 und 9/10 Religionen: interreligiöser Dialog (S. 21, 28, 34 f.); BY ER7 LB3: Begegnung und Gespräch mit Muslimen; ER10 LB2: Dialog; NW IF6 Stufe 2: Möglichkeiten und Grenzen interreligiöser Begegnung und Verständigung (S. 33). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/dialog-der-religionen
+      - id: interreligioeser-dialog
+        iCan: { de: "Ich kann erklären, wozu ein Gespräch zwischen Menschen verschiedener Religionen dient und was für ein respektvolles Gespräch wichtig ist." }
+        gradeBand: "7-8"
+        requires: [gottesglaube-vergleichen]
+      # HE Jg 9/10 Religionen: Verhältnis von Judentum und Christentum als Kernpunkt im interreligiösen Dialog (S. 21); BY ER9 LB3: Verhältnis von Judentum und Christentum (Nähe und Differenz); NW IF6 Stufe 2: Gottesglaube in Judentum und Christentum vergleichen (S. 32). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/christentum-und-judentum
+      - id: judentum-und-christentum
+        iCan: { de: "Ich kann erklären, was Judentum und Christentum verbindet und was sie unterscheidet, zum Beispiel im Blick auf Jesus." }
+        gradeBand: "9-10"
+        requires: [jesus-der-jude, gottesglaube-vergleichen]
+      # BY ER9 LB3: Motive und Formen von Antisemitismus (religiöser Antijudaismus, rassistischer Antisemitismus); NW IF6 Stufe 2: Formen und Ursachen von Antisemitismus und Antijudaismus (S. 32). Stimmen HE/BY/NW – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/antisemitismus
+      - id: antisemitismus
+        iCan: { de: "Ich kann Formen von Judenfeindschaft wie religiösen Antijudaismus und Antisemitismus erkennen und ihre Ursachen erklären." }
+        gradeBand: "9-10"
+        requires: [judentum-und-christentum, vorurteile]
+      # BY ER8 LB5: religiöses bzw. religionsähnliches Sinnangebot außerhalb der Kirche; NW IF6 Stufe 2: Welt- und Menschenbilder in neuen religiösen Gruppierungen (S. 32). Stimmen HE/BY/NW – / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      # Siehe auch: katholische-religion/religioese-angebote-pruefen
+      - id: sinnangebote
+        iCan: { de: "Ich kann eine religiöse oder religionsähnliche Gemeinschaft außerhalb der großen Kirchen beschreiben und erklären, was sie Menschen verspricht." }
+        gradeBand: "7-8"
+        requires: [konfessionen]
+      # HE Jg 9/10 Religionen: Funktion und kulturelle Prägekraft von Religion(en) (S. 21); BY ER10 LB1: verschiedene Begriffsbestimmungen von Religion; Religion, Kirche und Glauben; NW Stufe 2 übergeordnet: religiöse Weltanschauungen von anderen Wirklichkeitskonzepten unterscheiden (S. 24). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: was-ist-religion
+        iCan: { de: "Ich kann verschiedene Antworten auf die Frage „Was ist Religion?“ erklären und Religion, Kirche und Glaube unterscheiden." }
+        gradeBand: "9-10"
+        requires: [religionen-in-der-umgebung, kirche-gebaeude-und-gemeinschaft]
+      # HE Jg 9/10 Mensch und Welt: verschiedene Weltverständnisse (S. 19); BY ER10 LB1: Religion bzw. Weltanschauung als zum Menschen gehörend; NW IF6 Stufe 2: religiöse bzw. säkulare Weltanschauungen und die Frage nach Sinn (S. 32). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: weltanschauungen
+        iCan: { de: "Ich kann eine nichtreligiöse Weltanschauung, zum Beispiel den Humanismus, beschreiben und mit einer religiösen Sicht vergleichen." }
+        gradeBand: "9-10"
+        requires: [was-ist-religion, weltbilder]
+      # HE Jg 9/10 Gott: Der Glaube an Gott wird hinterfragt und erfährt Kritik (S. 19); BY ER10 LB1: unterschiedliche Bewertungen von Religion; NW Stufe 2 übergeordnet: setzen sich mit Kritik an Religion auseinander (S. 25). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: religionskritik
+        iCan: { de: "Ich kann an einem Beispiel erklären, welche Kritik an Religion geübt wird, und prüfen, ob sie berechtigt ist." }
+        gradeBand: "9-10"
+        requires: [was-ist-religion, gottesbestreitung]
+      # BY ER10 LB2: Grundzüge des Hinduismus (Atman, Brahman, Samsara, Karma, Moksha); NW IF6 Stufe 2: Vorstellungen von Welt und Wirklichkeit in fernöstlichen Religionen (S. 32). Stimmen HE/BY/NW – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/hinduismus
+      - id: hinduismus-grundbegriffe
+        iCan: { de: "Ich kann Grundbegriffe des Hinduismus erklären: Brahman, Atman, Karma und Samsara." }
+        gradeBand: "9-10"
+        requires: [religionen-in-der-umgebung]
+      # BY ER10 LB2: Legenden zu Buddhas Leben im Überblick; Entstehung des Buddhismus; NW IF6 Stufe 2: fernöstliche Religionen (S. 32). Stimmen HE/BY/NW – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: buddha
+        iCan: { de: "Ich kann die Lebensgeschichte des Buddha in Grundzügen erzählen." }
+        gradeBand: "9-10"
+        requires: [hinduismus-grundbegriffe]
+      # BY ER10 LB2: Lehre und Ethik des Buddhismus, Grundsätze der Lebensführung; NW IF6 Stufe 2: Vorstellungen von Welt und Wirklichkeit in fernöstlichen Religionen und ihre Konsequenzen für die Lebensgestaltung (S. 32). Stimmen HE/BY/NW – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/buddhismus
+      - id: buddhismus-lehre
+        iCan: { de: "Ich kann die Vier Edlen Wahrheiten und den Achtfachen Pfad als Kern der Lehre des Buddhismus erklären." }
+        gradeBand: "9-10"
+        requires: [buddha]
+      # HE Jg 9/10 Religionen: Funktion und kulturelle Prägekraft von Religionen (S. 21); BY ER10 LB2: buddhistische und christliche Glaubensvorstellungen zueinander in Beziehung setzen; NW IF6 Stufe 2: Gemeinsamkeiten und Unterschiede des Selbst- und Weltverständnisses der großen Weltreligionen (S. 32). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: weltreligionen-vergleichen
+        iCan: { de: "Ich kann Gemeinsamkeiten und Unterschiede im Welt- und Menschenbild der großen Weltreligionen beschreiben." }
+        gradeBand: "9-10"
+        requires: [buddhismus-lehre, gottesglaube-vergleichen]
+  - id: ethik
+    name: { de: "Ethik und Verantwortung", en: "Ethics and responsibility" }
+    competencies:
+      # HE Jg 6 Ethik: Verabredungen und Regeln menschlichen Zusammenlebens (S. 24); BY ER6 LB1: Regeln in Gruppen und Familie; NW IF1 Stufe 1: biblische und außerbiblische Regeln für ein gutes Miteinander (S. 18). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: regeln-fuer-das-zusammenleben
+        iCan: { de: "Ich kann erklären, warum Menschen für ihr Zusammenleben Regeln brauchen, und biblische mit anderen Regeln vergleichen." }
+        gradeBand: "5-6"
+      # HE Jg 6 Ethik: 2. Mose 20,1–17 (S. 24); BY ER5 LB1: Zehn Gebote als Hilfe für ein gutes Leben in Freiheit (Memoriertext); NW IF1 Stufe 1: biblische Regeln für ein gutes Miteinander (S. 18). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/zehn-gebote
+      - id: zehn-gebote
+        iCan: { de: "Ich kann die Zehn Gebote wiedergeben und erklären, warum sie mit der Erinnerung an die Befreiung aus Ägypten beginnen." }
+        gradeBand: "5-6"
+        requires: [exodus, regeln-fuer-das-zusammenleben]
+      # HE Jg 6 Ethik: Mt 22,34–40; Mensch und Welt: Doppelgebot der Liebe (S. 23 f.); BY ER5 LB1: das Doppelgebot der Liebe als höchstes Gebot (Memoriertext); NW IF1 Stufe 2: biblische Verbindung von Selbst- und Nächstenliebe (S. 27). Stimmen HE/BY/NW 5-6 / 5-6 / 7-10 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/naechstenliebe
+      - id: doppelgebot-der-liebe
+        iCan: { de: "Ich kann das Doppelgebot der Liebe wiedergeben und erklären, wie darin Liebe zu Gott, zum Nächsten und zu sich selbst zusammenhängen." }
+        gradeBand: "5-6"
+        requires: [zehn-gebote]
+      # HE Jg 6 Ethik: Lk 10,25–37 (S. 24); BY ER7 LB5: biblische Überlieferungen zur Nächstenliebe (Lk 10,25–27). Stimmen HE/BY/NW 5-6 / 7-8 / – -> 5-6 (Gleichstand 5-6/7-8; requires entscheidet)
+      - id: barmherziger-samariter
+        iCan: { de: "Ich kann das Gleichnis vom barmherzigen Samariter wiedergeben und erklären, wer nach Jesus mein Nächster ist." }
+        gradeBand: "5-6"
+        requires: [doppelgebot-der-liebe, gleichnisse-aufbau]
+      # HE Jg 8 Jesus Christus: Mt 25,31–46 (Werke der Barmherzigkeit) (S. 27); BY ER7 LB5: zentrale Bedeutung von Nächstenliebe (Lev 19,18, Lk 10, Mt 25,31–46); NW IF1 Stufe 2: christlich motivierte Nächstenliebe (S. 28). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: naechstenliebe
+        iCan: { de: "Ich kann an biblischen Texten erklären, warum Nächstenliebe im Christentum so wichtig ist, zum Beispiel an den Werken der Barmherzigkeit." }
+        gradeBand: "7-8"
+        requires: [barmherziger-samariter]
+      # HE Jg 6 Ethik: Zusammenleben in unterschiedlichen Bezügen (S. 24); BY ER6 LB1: Zusammenleben in der Familie, Familienformen; Merkmale von Freundschaft; NW IF1 Stufe 1: Leben in Gemeinschaft (S. 18). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: familie-und-freundschaft
+        iCan: { de: "Ich kann beschreiben, was Familie und Freundschaft ausmacht, und verschiedene Formen von Familie nennen." }
+        gradeBand: "5-6"
+      # BY ER6 LB1: Prozesse in Gruppen; Freundschaft im digitalen Bereich; NW IF1 Stufe 1: gemeinschaftsförderliches und -hinderliches Verhalten, auch in sozialen Medien (S. 18). Stimmen HE/BY/NW – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: gemeinschaft-und-soziale-medien
+        iCan: { de: "Ich kann beschreiben, was Gemeinschaft fördert oder stört, auch in sozialen Medien." }
+        gradeBand: "5-6"
+        requires: [familie-und-freundschaft]
+      # HE Jg 6 Ethik: Regeln, insbesondere für Konfliktlösungen (S. 24); BY ER6 LB1: Umgang mit Konflikten (Perspektivenwechsel, Mediation); NW IF1 Stufe 1: konstruktiver Umgang mit Konflikten (S. 18). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: konflikte-loesen
+        iCan: { de: "Ich kann Möglichkeiten nennen, wie man Konflikte fair lösen kann, zum Beispiel durch Perspektivwechsel oder Streitschlichtung." }
+        gradeBand: "5-6"
+        requires: [regeln-fuer-das-zusammenleben]
+      # HE Jg 8 Ethik: Abraham und Lot, Jakob und Esau (S. 28); BY ER6 LB1: typische menschliche Konflikte in biblischen Geschichten; NW IF1 Stufe 1: biblische Texte zum Gelingen oder Nichtgelingen von Gemeinschaft (S. 18). Stimmen HE/BY/NW 7-8 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: konflikte-in-biblischen-geschichten
+        iCan: { de: "Ich kann an biblischen Geschichten wie Jakob und Esau zeigen, wie Gemeinschaft gelingt oder misslingt und wie mit Streit umgegangen wird." }
+        gradeBand: "5-6"
+        requires: [konflikte-loesen, bibelstellen-finden]
+      # BY ER6 LB5: Vorurteile, Ursachen und Folgen; NW IF6 Stufe 1: Stellung nehmen zu einseitigen Darstellungen von Menschen jüdischen, christlichen und islamischen Glaubens (S. 22). Stimmen HE/BY/NW – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/vorurteile-gegenueber-religionen
+      - id: vorurteile
+        iCan: { de: "Ich kann erklären, wie Vorurteile gegenüber anderen Menschen entstehen und welche Folgen sie haben." }
+        gradeBand: "5-6"
+      # HE Jg 6 Mensch und Welt: Verantwortung des Menschen für die Schöpfung (S. 34); BY ER5 LB4: Auftrag zur Sorge für die Welt und zur Mitgestaltung; NW IF1 Stufe 1: Übernahme von Verantwortung als Konsequenz aus dem Verständnis der Welt als Schöpfung (S. 18). Stimmen HE/BY/NW 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: katholische-religion/schoepfungsverantwortung
+      - id: verantwortung-fuer-die-schoepfung
+        iCan: { de: "Ich kann erklären, warum Christen aus dem Glauben an die Schöpfung eine Verantwortung für Natur und Umwelt ableiten." }
+        gradeBand: "5-6"
+        requires: [mensch-als-geschoepf]
+      # HE Jg 8 Ethik: Bewahrung der Schöpfung (S. 34); BY ER8 LB3: Konsequenzen des Schöpfungsglaubens für die Weltgestaltung (Bildung für nachhaltige Entwicklung); NW IF1 Stufe 1: nachhaltiger Umgang mit den Ressourcen der Erde (S. 18). Stimmen HE/BY/NW 7-8 / 7-8 / 5-6 -> 7-8 (Mehrheit)
+      - id: nachhaltig-leben
+        iCan: { de: "Ich kann an meinem Alltag zeigen, wie man nachhaltig mit den Ressourcen der Erde umgehen kann." }
+        gradeBand: "7-8"
+        requires: [verantwortung-fuer-die-schoepfung]
+      # HE Jg 8 Jesus Christus: Nachfolge in der Kirchengeschichte; Ethik: Beispiele modellhafter Lebensgestaltung (S. 27 f.); BY ER7 LB4: eine Vision, die die Geschichte beeinflusst hat (Martin Luther King); ER8 LB2: Personen, die sich für Gerechtigkeit einsetzen; NW IF1 Stufe 2: gesellschaftliches Engagement ausgewählter Personen (S. 28). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: vorbilder-im-glauben
+        iCan: { de: "Ich kann an einer Person wie Martin Luther King zeigen, wie sie ihr Leben an ihrem christlichen Glauben ausgerichtet hat." }
+        gradeBand: "7-8"
+        requires: [nachfolge]
+      # HE Jg 8 Ethik: Gerechtigkeit (S. 28, 34); BY ER8 LB2: unterschiedliche Vorstellungen von Gerechtigkeit (ER10 LB5: Dimensionen des Begriffs); NW IF1 Stufe 2: biblischer Gerechtigkeitsbegriff (S. 28). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: gerechtigkeit
+        iCan: { de: "Ich kann verschiedene Vorstellungen von Gerechtigkeit unterscheiden, zum Beispiel jedem das Gleiche oder jedem, was er braucht." }
+        gradeBand: "7-8"
+        requires: [regeln-fuer-das-zusammenleben]
+      # HE Jg 8 Ethik: Frage nach Frieden und Gerechtigkeit; Mt 5,3–10 (S. 28); BY ER8 LB2: prophetisches Verständnis von Gerechtigkeit auf der Basis der Tora, Orientierung an den Schwachen; NW IF1 Stufe 2: Kritik aus der Perspektive der Gerechtigkeit Gottes (S. 27). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: gerechtigkeit-in-der-bibel
+        iCan: { de: "Ich kann erklären, was die Bibel unter Gerechtigkeit versteht, besonders den Einsatz für die Schwachen." }
+        gradeBand: "7-8"
+        requires: [gerechtigkeit, zehn-gebote]
+      # BY ER8 LB2: wie Propheten sich im Namen Gottes für Gerechtigkeit einsetzen; NW IF1 Stufe 2: prophetische Rede und Aktionen als Kritik an gesellschaftlichen Unrechtsstrukturen (S. 27). Stimmen HE/BY/NW – / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: prophetischer-protest
+        iCan: { de: "Ich kann erklären, wie Propheten im Namen Gottes Ungerechtigkeit in ihrer Gesellschaft kritisiert haben." }
+        gradeBand: "7-8"
+        requires: [propheten, gerechtigkeit-in-der-bibel]
+      # HE Jg 8 Ethik: Gerechtigkeit, Frieden (S. 28, 34); BY ER8 LB2: Hoffnung auf Schalom; ER10 LB5: Zusammenhänge zwischen Gerechtigkeit und Frieden; NW IF1 Stufe 2: Einsatz für Frieden als Konsequenz des biblischen Gerechtigkeitsverständnisses (S. 27). Stimmen HE/BY/NW 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: frieden
+        iCan: { de: "Ich kann erklären, was das biblische Wort „Schalom“ meint und wie Frieden und Gerechtigkeit zusammenhängen." }
+        gradeBand: "7-8"
+        requires: [gerechtigkeit-in-der-bibel]
+      # HE Jg 9/10 Ethik: Umgang mit Schuld; 1. Mose 4,1–16, Joh 8,1–11 (S. 20); BY ER9 LB2: Geschichten von Sündenvergebung und Umkehr; ER9 LB4: Umgang mit Schuld nach 1945. Stimmen HE/BY/NW 9-10 / 9-10 / – -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/schuld-und-vergebung
+      - id: schuld-und-vergebung
+        iCan: { de: "Ich kann erklären, wie die Bibel von Schuld und Vergebung erzählt, zum Beispiel bei Kain und Abel oder bei Jesus und der Ehebrecherin." }
+        gradeBand: "9-10"
+        requires: [gottes-zuwendung, konflikte-in-biblischen-geschichten]
+      # HE Jg 9/10 Ethik: Konfliktsituationen in der Gesellschaft und im individuellen Erfahrungsbereich (S. 20); BY ER9 LB1: Konsequenzen aus dem christlichen Verständnis von Menschenwürde (Cybermobbing, digitaler Pranger); NW IF1 Stufe 2: Einsatz für Menschenwürde und Freiheit als Konsequenz der Gottesebenbildlichkeit (S. 28). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: menschenwuerde-heute
+        iCan: { de: "Ich kann an einem Beispiel von heute, etwa Cybermobbing, erklären, was aus dem christlichen Verständnis der Menschenwürde für den Umgang miteinander folgt." }
+        gradeBand: "9-10"
+        requires: [ebenbild-gottes, gemeinschaft-und-soziale-medien]
+      # BY ER9 LB1: Freiheiten und Handlungsmöglichkeiten, Abhängigkeiten und Zwänge durch digitale Vernetzung; NW IF1 Stufe 2: Herausforderungen durch den digitalen Wandel der Gesellschaft (S. 28). Stimmen HE/BY/NW – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: digitale-freiheit
+        iCan: { de: "Ich kann beschreiben, welche Freiheiten und welche Abhängigkeiten die digitale Vernetzung mit sich bringt." }
+        gradeBand: "9-10"
+        requires: [gemeinschaft-und-soziale-medien, freiheit-eines-christenmenschen]
+      # BY ER9 LB5: Vorstellungen von Liebe und Partnerschaft; Bedeutungen von Liebe im Verhältnis von Gott und Mensch; NW IF1 Stufe 2: Gefühle und Erwartungen im Hinblick auf Partnerschaft; Regeln für gelingende Partnerschaft (S. 27 f.). Stimmen HE/BY/NW – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/freundschaft-und-partnerschaft
+      - id: liebe-und-partnerschaft
+        iCan: { de: "Ich kann verschiedene Vorstellungen von Liebe und Partnerschaft beschreiben und erklären, was die Bibel über Liebe sagt." }
+        gradeBand: "9-10"
+        requires: [doppelgebot-der-liebe, familie-und-freundschaft]
+      # BY ER9 LB5: Konsequenzen wie Verantwortlichkeit, Handeln in beiderseitigem Einverständnis; Kritik an herabwürdigenden Umgangsformen; NW IF1 Stufe 2: sexuelle Gemeinschaft unter der Perspektive wechselseitiger Verantwortung (S. 28). Stimmen HE/BY/NW – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: sexualitaet-und-verantwortung
+        iCan: { de: "Ich kann erklären, warum in Partnerschaft und Sexualität gegenseitige Verantwortung, Achtung und Einverständnis wichtig sind." }
+        gradeBand: "9-10"
+        requires: [liebe-und-partnerschaft]
+      # BY ER9 LB5: Angenommensein in sexueller Identität und Orientierung; Kritik an Sexismus und Homophobie; NW IF1 Stufe 2: biblische Bilder vom Menschen und Geschlechterbeziehungen heute (S. 27 f.). Stimmen HE/BY/NW – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/geschlechterrollen
+      - id: geschlechterrollen
+        iCan: { de: "Ich kann biblische Bilder vom Menschen beschreiben und mit heutigen Vorstellungen von Geschlechterrollen vergleichen." }
+        gradeBand: "9-10"
+        requires: [ebenbild-gottes, liebe-und-partnerschaft]
+      # HE Jg 9/10 Ethik: Konfliktsituationen in der Gesellschaft (S. 20, 35); BY ER10 LB5: Gerechtigkeit und Frieden in der einen Welt; kirchliche Initiativen; NW IF1 Stufe 2: gerechte Gestaltung der Lebensverhältnisse aller Menschen (S. 27); Stufe 2 übergeordnet: Aktionen für Menschenwürde, Gerechtigkeit und Frieden (S. 26). Stimmen HE/BY/NW 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/solidaritaet
+      - id: weltweite-gerechtigkeit
+        iCan: { de: "Ich kann an einem Beispiel erklären, wie weltweite Ungerechtigkeit entsteht und wie sich Kirchen für Gerechtigkeit, Frieden und Menschenrechte einsetzen." }
+        gradeBand: "9-10"
+        requires: [frieden, kirche-in-der-gesellschaft]
+      # HE Jg 9/10 Ethik: Konfliktsituationen in der Gesellschaft und im individuellen Erfahrungsbereich (S. 20); BY ER10 LB4: konfliktethisches Thema (Organspende, Sterbehilfe, pränatale Diagnostik); christliche Perspektiven. Stimmen HE/BY/NW 9-10 / 9-10 / – -> 9-10 (Mehrheit)
+      # Siehe auch: katholische-religion/schutz-des-lebens
+      - id: lebensanfang-und-lebensende
+        iCan: { de: "Ich kann eine ethische Frage am Anfang oder Ende des Lebens, zum Beispiel Organspende oder Sterbehilfe, beschreiben und christliche Argumente dazu nennen." }
+        gradeBand: "9-10"
+        requires: [menschenwuerde-heute, tod-und-trauer]
