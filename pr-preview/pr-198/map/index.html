@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="de" data-la-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Lernlandkarte · lernapps.net</title>
+  <meta name="description" content="Die Lernlandkarte zeigt für jedes Fach, was es zu lernen gibt, wie es aufeinander aufbaut und welche App es schon übt.">
+  <link rel="canonical" href="https://lernapps.net/apps/map/">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/apps/pr-preview/pr-198/lernapps-tokens.css">
+<link rel="stylesheet" href="/apps/pr-preview/pr-198/lernapps-frame.css">
+<link rel="alternate" hreflang="de" href="/apps/pr-preview/pr-198/map/">
+<link rel="alternate" hreflang="en" href="/apps/pr-preview/pr-198/en/map/">
+<script>(() => {
+  const key = "lernapps-lang", here = "de", pages = {"en":"/apps/pr-preview/pr-198/en/map/"};
+  const known = ["de","en"];
+  const browser = (navigator.languages || [navigator.language]).map((l) => String(l).slice(0, 2).toLowerCase()).find((l) => known.includes(l));
+  let chosen = null;
+  try { chosen = localStorage.getItem(key); } catch {}
+  const wanted = known.includes(chosen) ? chosen : browser;
+  if (wanted && wanted !== here && pages[wanted] && !/bot|crawl|spider|slurp/i.test(navigator.userAgent)) {
+    location.replace(pages[wanted] + location.search + location.hash);
+    return;
+  }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest("a[data-la-lang]");
+    if (!a) return;
+    try { a.dataset.laLang === browser ? localStorage.removeItem(key) : localStorage.setItem(key, a.dataset.laLang); } catch {}
+  });
+})();</script>
+  <link rel="stylesheet" href="/apps/pr-preview/pr-198/uno.css">
+  <link rel="stylesheet" href="/apps/pr-preview/pr-198/assets/apps.css">
+  <script src="/apps/pr-preview/pr-198/assets/map.js" defer></script>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col" style="font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;">
+  <a class="la-skip" href="#main-content" lang="de">Zum Inhalt springen</a>
+<p class="la-preview" lang="de">Vorschau einer Änderung. Die echte Seite: <a href="https://lernapps.net/apps/map/">lernapps.net/apps/map/</a></p><header class="la-header" lang="de">
+  <div class="la-header__inner">
+    <a class="la-brand" href="/" aria-label="lernapps.net – Startseite"><img src="/brand/mark-plain.svg" alt=""><span>lernapps<span class="la-brand__tld">.net</span></span></a>
+    <nav class="la-nav la-nav--bar" aria-label="Hauptnavigation"><ul><li><a href="/apps/pr-preview/pr-198/" aria-current="page">Katalog</a></li><li><a href="/practice/">Üben</a></li><li><a href="/apps/pr-preview/pr-198/build/">App bauen</a></li><li><a href="/tooling/">Tooling</a></li><li><a href="/tutor/">Tutor</a></li><li><a href="/features/">Features</a></li><li><a href="/docs/">Plattform</a></li><li><a href="/join/">Mitmachen</a></li><li class="la-lang"><a href="/apps/pr-preview/pr-198/en/map/" hreflang="en" lang="en" data-la-lang="en" aria-label="Language: English">English</a></li></ul></nav>
+    <details class="la-menu"><summary>Menü</summary><nav class="la-nav la-nav--menu" aria-label="Hauptnavigation"><div class="la-menu__group"><p class="la-menu__title" id="la-menu-0">Für Lernende</p><ul aria-labelledby="la-menu-0"><li><a href="/apps/pr-preview/pr-198/" aria-current="page">App Katalog</a></li><li><a href="/practice/">Üben für eine Prüfung</a></li></ul></div><div class="la-menu__group"><p class="la-menu__title" id="la-menu-1">Für Macher</p><ul aria-labelledby="la-menu-1"><li><a href="/apps/pr-preview/pr-198/build/">App bauen</a></li><li><a href="/tooling/">Tooling</a></li></ul></div><div class="la-menu__group"><p class="la-menu__title" id="la-menu-2">Verstehen und mitmachen</p><ul aria-labelledby="la-menu-2"><li><a href="/tutor/">Tutor</a></li><li><a href="/features/">Features</a></li><li><a href="/docs/">Plattform</a></li><li><a href="/join/">Mitmachen</a></li></ul></div><ul class="la-menu__lang"><li class="la-lang"><a href="/apps/pr-preview/pr-198/en/map/" hreflang="en" lang="en" data-la-lang="en" aria-label="Language: English">English</a></li></ul></nav></details>
+  </div>
+</header>
+
+  <main id="main-content" tabindex="-1" class="flex-1 outline-none">
+    
+
+<div class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-12 flex flex-col gap-10">
+  <div class="flex flex-col gap-3">
+    <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">Lernlandkarten</h1>
+    <p class="m-0 max-w-3xl text-xl text-slate-700">Eine Lernlandkarte zeigt, was es in einem Fach zu lernen gibt und was worauf aufbaut. Und sie zeigt, welche App etwas schon übt – und wo noch eine fehlt.</p>
+  </div>
+
+  <section aria-labelledby="karten" class="flex flex-col gap-4">
+    <h2 id="karten" class="m-0 text-2xl font-bold text-slate-900">Diese Karten gibt es schon</h2>
+    <ul class="map-cards">
+      <li>
+        <a href="/apps/pr-preview/pr-198/map/chemie/" class="map-card">
+          <b>Chemie</b>
+          <span class="map-mini" aria-hidden="true"><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">3 Stränge · 75 Bausteine<br>19 davon übt schon eine App</span>
+          <span class="map-card-go">Karte öffnen <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+      <li>
+        <a href="/apps/pr-preview/pr-198/map/mathematik/" class="map-card">
+          <b>Mathematik</b>
+          <span class="map-mini" aria-hidden="true"><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">5 Stränge · 127 Bausteine<br>16 davon übt schon eine App · 1 Lehrplan erfasst</span>
+          <span class="map-card-go">Karte öffnen <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+      <li>
+        <a href="/apps/pr-preview/pr-198/map/musik/" class="map-card">
+          <b>Musik</b>
+          <span class="map-mini" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">9 Stränge · 187 Bausteine<br>0 davon übt schon eine App</span>
+          <span class="map-card-go">Karte öffnen <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+      <li>
+        <a href="/apps/pr-preview/pr-198/map/physik/" class="map-card">
+          <b>Physik</b>
+          <span class="map-mini" aria-hidden="true"><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i class="map-mini-covered"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="map-card-meta">5 Stränge · 108 Bausteine<br>21 davon übt schon eine App</span>
+          <span class="map-card-go">Karte öffnen <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+    </ul>
+    <p class="m-0 text-slate-600">Weitere Fächer folgen.</p>
+  </section>
+
+  <section aria-labelledby="apps" class="flex flex-col gap-4">
+    <h2 id="apps" class="m-0 text-2xl font-bold text-slate-900">Karte und Apps</h2>
+    <ol class="map-steps"><li>Die Karte zerlegt ein Fach in <b>Bausteine</b>. Jeder ist ein Satz: „Ich kann …“.</li><li>Jede App sagt, welche Bausteine ihre Seiten üben.</li><li>Auf der Karte ist ein Baustein dann <b>blau</b>. Gestrichelt heißt: Hier fehlt noch eine App.</li>
+    </ol>
+    <p class="m-0"><a href="/apps/pr-preview/pr-198/build/" class="btn btn-secondary">Eine App für eine Lücke bauen</a></p>
+  </section>
+  <section aria-labelledby="methode" class="map-honest">
+    <p class="map-honest-tag">Ehrlich gesagt</p>
+    <h2 id="methode" class="m-0 text-2xl font-bold text-slate-900">Die Karte ist unsere eigene Methode</h2>
+    <p>Es gibt keine fertige Vorlage, die zeigt, wie das Wissen eines Fachs zusammenhängt. Deshalb haben wir uns selbst eine Methode überlegt.</p>
+    <ul><li><b>Lehrpläne</b> legen fest, in welcher Reihenfolge unterrichtet wird. Jedes Bundesland hat eigene. Wie das Wissen logisch zusammenhängt, zeigen sie nur zum Teil.</li><li><b>Bildungsstandards der KMK</b> beschreiben, was Kinder können sollen. Die gibt es aber nicht für jedes Fach.</li>
+    </ul>
+    <p>Wir ordnen das Wissen darum nach seinem logischen Zusammenhang: Was baut worauf auf? Jedes Land bekommt darin seine eigene Reihenfolge. Wählst du auf einer Karte einen Lehrplan, siehst du dessen Klassen.</p>
+    <p>Etwas fehlt oder ist falsch eingeordnet? <a href="https://github.com/lernapps/apps/issues/new?title=Lernlandkarte%3A%20" class="text-blue-700 underline underline-offset-2">Sag uns Bescheid</a> <span class="text-slate-600">(GitHub-Issue, braucht ein GitHub-Konto)</span></p>
+  </section>
+
+  <hr class="map-rule">
+
+  <section aria-labelledby="bild" class="flex flex-col gap-3">
+    <h2 id="bild" class="m-0 text-2xl font-bold text-slate-900">Wie die Karte aufgebaut ist</h2>
+    <p class="m-0 text-slate-600">Klicke auf ein Kästchen im Bild. Dann bekommst du den Begriff erklärt.</p>
+    <figure class="m-0 flex flex-col gap-3">
+      <div class="map-scroll" role="region" aria-label="Bild: wie die Teile der Karte zusammenhängen" tabindex="0">
+        <div class="map-model">
+          <div class="map-loop" style="grid-column: 5; grid-row: 1;"><a href="#baut-auf" class="map-edge-link" data-opens="baut-auf">baut auf</a></div>
+          <div style="grid-column: 1; grid-row: 2;" class="grid"><a href="#fach" class="map-node " data-opens="fach"><b>Fach</b><span>z. B. Mathematik</span></a></div>
+          <div style="grid-column: 2; grid-row: 2;" class="map-edge map-edge-h" aria-hidden="true">hat mehrere</div>
+          <div style="grid-column: 3; grid-row: 2;" class="grid"><a href="#strang" class="map-node " data-opens="strang"><b>Strang</b><span>z. B. Stochastik</span></a></div>
+          <div style="grid-column: 4; grid-row: 2;" class="map-edge map-edge-h" aria-hidden="true">hat mehrere</div>
+          <div style="grid-column: 5; grid-row: 2;" class="grid"><a href="#baustein" class="map-node map-node-main" data-opens="baustein"><b>Baustein</b><span>„Ich kann …“</span></a></div>
+          <div style="grid-column: 6; grid-row: 2;" class="map-edge map-edge-h" aria-hidden="true">Einordnung</div>
+          <div style="grid-column: 7; grid-row: 2;" class="grid"><a href="#lehrplan" class="map-node " data-opens="lehrplan"><b>Lehrplan und Einordnung</b><span>z. B. Hessen, Gymnasium</span></a></div>
+          <div style="grid-column: 1; grid-row: 3;" class="map-edge map-edge-v map-edge-down" aria-hidden="true">stammt aus</div>
+          <div style="grid-column: 3; grid-row: 3;" class="map-edge map-edge-v map-edge-up" aria-hidden="true">bleibt in einem</div>
+          <div style="grid-column: 5; grid-row: 3;" class="map-edge map-edge-v map-edge-up map-edge-blue" aria-hidden="true">übt</div>
+          <div style="grid-column: 1; grid-row: 4;" class="grid"><a href="#quelle" class="map-node map-node-source" data-opens="quelle"><b>Quelle</b><span>z. B. KMK-Standards</span></a></div>
+          <div style="grid-column: 3; grid-row: 4;" class="grid"><a href="#app" class="map-node map-node-app" data-opens="app"><b>App</b><span>auf lernapps.net</span></a></div>
+          <div style="grid-column: 4; grid-row: 4;" class="map-edge map-edge-h" aria-hidden="true">hat mehrere</div>
+          <div style="grid-column: 5; grid-row: 4;" class="grid"><a href="#seite" class="map-node map-node-app" data-opens="seite"><b>Seite</b><span>einer App</span></a></div>
+        </div>
+      </div>
+      <figcaption class="text-slate-600">
+        <p class="m-0">Lies jeden Pfeil als Satz:</p>
+        <ul class="m-0 mt-1 pl-5 grid gap-x-6 sm:grid-cols-2"><li>Ein Fach hat mehrere Stränge.</li><li>Ein Strang hat mehrere Bausteine.</li><li>Ein Baustein baut auf anderen Bausteinen auf.</li><li>Ein Lehrplan ordnet einen Baustein in Klassen ein (Einordnung).</li><li>Ein Fach stammt aus einer Quelle.</li><li>Eine App bleibt in einem Strang.</li><li>Eine App hat mehrere Seiten.</li><li>Eine Seite übt Bausteine.</li>
+        </ul>
+      </figcaption>
+    </figure>
+  </section>
+
+  <details class="map-terms" open data-map-terms>
+    <summary><h2 id="begriffe" class="m-0 text-xl font-bold text-slate-900">Alle Begriffe als Liste</h2></summary>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      <article id="fach" class="panel scroll-mt-4" data-kind="Begriff" aria-labelledby="fach-titel">
+        <h3 id="fach-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Fach</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">Ein Schulfach. Für jedes Fach gibt es eine eigene Lernlandkarte.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Beispiel:</b> Mathematik, Physik, Musik.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">Im Bild:</b> Ein Fach hat mehrere Stränge. Seine Stränge und Bausteine stammen aus einer Quelle.</p>
+        </div>
+      </article>
+      <article id="strang" class="panel scroll-mt-4" data-kind="Begriff" aria-labelledby="strang-titel">
+        <h3 id="strang-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Strang</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">Ein Teilgebiet des Fachs, das sich über mehrere Schuljahre zieht. Was darin vorkommt, baut aufeinander auf.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Beispiel:</b> Algebra, Geometrie, Stochastik.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">Im Bild:</b> Ein Strang hat mehrere Bausteine. Eine App bleibt in einem Strang.</p>
+        </div>
+      </article>
+      <article id="baustein" class="panel scroll-mt-4" data-kind="Begriff" aria-labelledby="baustein-titel">
+        <h3 id="baustein-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Baustein</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">Eine Sache, die ein Kind lernen kann, als Satz „Ich kann …“. Jeder Baustein gehört zu genau einem Strang.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Beispiel:</b> „Ich kann den Prozentwert berechnen.“</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">Im Bild:</b> Ein Baustein baut auf anderen Bausteinen auf. Ein Lehrplan ordnet ihn in Klassen ein. Seiten von Apps üben ihn.</p>
+        </div>
+      </article>
+      <article id="baut-auf" class="panel scroll-mt-4" data-kind="Begriff" aria-labelledby="baut-auf-titel">
+        <h3 id="baut-auf-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>baut auf</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">Baustein B braucht Baustein A vorher. Das gilt auch über Stränge hinweg. So entsteht der Lernweg. Eine feste Reihenfolge innerhalb eines Strangs gibt es nicht.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Beispiel:</b> Exponentielles Wachstum (Strang Funktionen) baut auf der Prozentrechnung (Strang Arithmetik) auf.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">Im Bild:</b> Der Pfeil führt von einem Baustein zu einem anderen.</p>
+        </div>
+      </article>
+      <article id="richtstufe" class="panel scroll-mt-4" data-kind="Begriff" aria-labelledby="richtstufe-titel">
+        <h3 id="richtstufe-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Richtstufe</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">Ungefähr, in welchen zwei Schuljahren ein Baustein dran ist: Klasse 5/6, 7/8 oder 9/10. Jeder Baustein hat eine. Die Karte zeigt sie, wenn kein Lehrplan gewählt ist oder ein Lehrplan den Baustein nicht einordnet.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Beispiel:</b> Baumdiagramm: Richtstufe 7/8.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">Im Bild:</b> Die Richtstufe ist eine Angabe des Bausteins. Im Bild hat sie kein eigenes Kästchen.</p>
+        </div>
+      </article>
+      <article id="lehrplan" class="panel scroll-mt-4" data-kind="Begriff" aria-labelledby="lehrplan-titel">
+        <h3 id="lehrplan-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Lehrplan und Einordnung</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">Ein Lehrplan gilt für ein Bundesland und eine Schulform. Die Einordnung sagt, in welcher Klasse dieser Lehrplan einen Baustein vorsieht. Das können mehrere Klassen sein. Wir erfassen die Lehrpläne nach und nach.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Beispiel:</b> Baumdiagramm: Lehrplan Hessen, Gymnasium: Klasse 7 und 10.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">Im Bild:</b> Ein Lehrplan ordnet Bausteine in Klassen ein.</p>
+        </div>
+      </article>
+      <article id="quelle" class="panel scroll-mt-4" data-kind="Begriff" aria-labelledby="quelle-titel">
+        <h3 id="quelle-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Quelle</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">Woher die Stränge und Bausteine eines Fachs stammen. Die Quelle sagt, wie verbindlich die Karte ist.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Beispiel:</b> KMK-Bildungsstandards Mathematik (2022). Für Fächer ohne Standards ein Fachverband oder der Lehrplan eines Landes.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">Im Bild:</b> Ein Fach stammt aus einer Quelle.</p>
+        </div>
+      </article>
+      <article id="app" class="panel scroll-mt-4" data-kind="Begriff" aria-labelledby="app-titel">
+        <h3 id="app-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>App</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">Eine Lern-App auf lernapps.net. Sie bleibt in einem Strang und wächst mit neuen Versionen entlang des Lernwegs.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Beispiel:</b> Eine App „Stochastik 5–10“.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">Im Bild:</b> Eine App bleibt in einem Strang und hat mehrere Seiten.</p>
+        </div>
+      </article>
+      <article id="seite" class="panel scroll-mt-4" data-kind="Begriff" aria-labelledby="seite-titel">
+        <h3 id="seite-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>Seite</h3>
+        <div class="mt-2 flex flex-col gap-3" data-dialog-body>
+          <p class="m-0">Eine Seite einer App. Sie übt einen oder mehrere Bausteine. Daran sieht die Karte, welche Bausteine schon geübt werden und wo Lücken sind.</p>
+          <p class="m-0 p-3 rounded-lg bg-slate-100 text-slate-800"><b>Beispiel:</b> Die Seite „Prozentwert“ einer App zur Prozentrechnung.</p>
+          <p class="m-0 text-slate-600"><b class="text-slate-800">Im Bild:</b> Eine Seite gehört zu einer App und übt einen oder mehrere Bausteine.</p>
+        </div>
+      </article>
+    </div>
+  </details>
+
+  <section aria-labelledby="regeln">
+    <h2 id="regeln" class="m-0 text-2xl font-bold text-slate-900">Drei Regeln</h2>
+    <ol class="m-0 mt-3 pl-6 flex flex-col gap-2 text-lg"><li>Jeder Baustein gehört zu genau einem Strang.</li><li>Jede App bleibt in einem Strang und wächst mit neuen Versionen entlang der Pfeile „baut auf“.</li><li>Wann ein Baustein dran ist, legt der Lehrplan fest. Ohne Lehrplan gilt die Richtstufe.</li>
+    </ol>
+  </section>
+
+  <p class="m-0 text-sm text-slate-600">Für KI-Assistenten gibt es jede Karte auch als Daten: <a href="/apps/pr-preview/pr-198/map/chemie.json" class="text-blue-700 underline underline-offset-2">chemie.json</a>, <a href="/apps/pr-preview/pr-198/map/mathematik.json" class="text-blue-700 underline underline-offset-2">mathematik.json</a>, <a href="/apps/pr-preview/pr-198/map/musik.json" class="text-blue-700 underline underline-offset-2">musik.json</a>, <a href="/apps/pr-preview/pr-198/map/physik.json" class="text-blue-700 underline underline-offset-2">physik.json</a></p>
+</div>
+
+
+<dialog class="map-dialog" data-map-dialog aria-labelledby="map-dialog-title">
+  <div class="map-dialog-inner">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex flex-col gap-2 items-start">
+        <p class="map-badge m-0" data-dialog-kind></p>
+        <h2 id="map-dialog-title" class="m-0 text-xl font-bold leading-tight text-slate-900" data-dialog-heading></h2>
+      </div>
+      <button type="button" class="btn btn-secondary map-close" data-dialog-close aria-label="Schließen"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="mt-4 flex flex-col gap-4" data-dialog-content></div>
+  </div>
+</dialog>
+
+
+  </main>
+
+  <footer class="la-footer" lang="de">
+  <div class="la-footer__inner">
+    <p>lernapps.net ist kostenlos und ohne Werbung. Es lebt von deinem Danke.</p>
+    <nav aria-label="Fußzeile"><ul><li><a href="/privacy/">Datenschutz</a></li><li><a href="/imprint/">Impressum</a></li><li><a href="/docs/platform-design/">Plattform-Design</a></li><li><a href="https://github.com/lernapps/apps">Quellcode</a></li></ul></nav>
+  </div>
+</footer>
+</body>
+</html>
