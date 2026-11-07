@@ -1,0 +1,508 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# Vorschlag. Keine KMK-Bildungsstandards Informatik (Stand 11/2026). Gemeinsamer Bezug für die Stränge:
+# GI = Gesellschaft für Informatik, Bildungsstandards Informatik für die Sekundarstufe I (Januar 2025), Inhaltsbereiche
+#      ID, AL, SA, IS, IMG mit Nummer und Stufe (5-6 oder 7-10). Kein Ländertext; zählt nicht als Stimme.
+# HE = Kerncurriculum Informatik für den Wahlunterricht, Sek I gymnasialer Bildungsgang, Hessen (August 2021): ab Jg 7,
+#      Erwartungen am Ende 9/10, Stimme "7-10" (zählt für 7-8 und 9-10). I1-I5 = Inhaltsbereiche, TF = Themenfeld.
+# BY = LehrplanPLUS Bayern Gymnasium: NT6 und NT7 (Natur und Technik, Schwerpunkt Informatik, alle Schüler),
+#      Inf9 und Inf10 (Informatik im NTG). LB = Lernbereich.
+# NW = Kernlehrplan NRW: "5/6" = Informatik Klasse 5 und 6 (Pflicht, Heft 5028, 2021), Stimme 5-6;
+#      "WP" = Wahlpflichtfach Informatik Gymnasium (2023, G9 ab Klasse 9), Stimme 9-10.
+# Stimmen: HE / BY / NW. Gleichstand: früheste Stufe, die die requires erlauben. "schwach" = nur ein Land (mit GI)
+# oder nur als Voraussetzung aufgenommen. Titel, Ausgaben und URLs: .vibe/research-informatik.md.
+name: { de: Informatik, en: Computer science }      # the file name is the subject's id: informatik
+source:
+  title: "Gesellschaft für Informatik: Bildungsstandards Informatik für die Sekundarstufe I, Empfehlungen (Januar 2025), doi:10.18420/rec2025_052"
+  url: https://www.mnu.de/images/fachbereiche/Informatik/Bildungsstandards_Sek_I_2025__pdf-A_.pdf
+strands:
+  - id: daten
+    name: { de: "Information und Daten", en: "Information and data" }
+    competencies:
+      # GI ID-3 (5-6); HE I3: unterscheiden die Begriffe Information und Daten; NW 5/6 IuD: erläutern den Zusammenhang und die Bedeutung von Information und Daten. Stimmen 7-10 / – / 5-6 → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: information-und-daten
+        iCan: "Ich kann Information und Daten unterscheiden und erklären, dass Daten erst durch ihre Deutung zu Information werden."
+        gradeBand: "5-6"
+      # GI ID-3 (5-6); HE I3: interpretieren Daten in Bezug auf die dargestellte Information; BY NT6 2.1: interpretieren ... Darstellungen von Informationen; NW 5/6 IuD: interpretieren ausgewählte Daten als Information im gegebenen Kontext. Stimmen 7-10 / 5-6 / 5-6 → 5-6 (Mehrheit)
+      - id: daten-interpretieren
+        iCan: "Ich kann Daten in ihrem Zusammenhang deuten, zum Beispiel erkennen, ob die Zahl 21 ein Alter, eine Temperatur oder eine Uhrzeit ist."
+        gradeBand: "5-6"
+        requires: [information-und-daten]
+      # GI ID-2 (5-6); HE I3: unterschiedliche Darstellungsformen von Daten; BY NT6 2.1: Darstellungsformen von Information; vergleichen und bewerten Darstellungen; NW 5/6 IuD: stellen eine Information in geeigneter Form als Daten formalsprachlich oder graphisch dar. Stimmen 7-10 / 5-6 / 5-6 → 5-6 (Mehrheit)
+      - id: darstellungsformen-von-information
+        iCan: "Ich kann eine Information in verschiedenen Formen darstellen, zum Beispiel als Text, Tabelle, Bild oder Diagramm, und eine passende Form wählen."
+        gradeBand: "5-6"
+        requires: [information-und-daten]
+      # GI ID-1 (5-6); HE I3: führen Codierungen durch; NW 5/6 IuD: nennen Beispiele für die Codierung von Daten aus ihrer Erfahrungswelt. Stimmen 7-10 / – / 5-6 → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: codierung-im-alltag
+        iCan: "Ich kann Beispiele für Codierungen aus dem Alltag nennen und eine Nachricht mit einer vorgegebenen Codierung codieren und decodieren."
+        gradeBand: "5-6"
+        requires: [information-und-daten]
+      # GI ID-1 (5-6): Codierungen für Zahlen; HE TF Hardware: Stellenwertsystem, Konvertierung von Dezimal- und Binärzahlen; NW 5/6 IuD: codieren und decodieren Daten unter Verwendung des Binärsystems. Stimmen 7-10 / – / 5-6 → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: binaersystem
+        iCan: "Ich kann erklären, wie das Binärsystem als Stellenwertsystem mit den Ziffern 0 und 1 funktioniert, und eine Binärzahl in eine Dezimalzahl umrechnen."
+        gradeBand: "5-6"
+        requires: [codierung-im-alltag]
+      # GI ID-1 (5-6); HE TF Hardware: Konvertierung, Horner-Schema; NW 5/6 IuD: codieren Daten unter Verwendung des Binärsystems. Stimmen 7-10 / – / 5-6 → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: dezimal-in-binaer
+        iCan: "Ich kann eine Dezimalzahl in eine Binärzahl umrechnen, zum Beispiel durch fortgesetztes Teilen durch 2."
+        gradeBand: "5-6"
+        requires: [binaersystem]
+      # SCHWACH (nur NW; aufgenommen als direkte Voraussetzung von zeichencodierung). GI –; NW 5/6 IuD: erläutern Einheiten von Datenmengen; vergleichen Datenmengen hinsichtlich ihrer Größe. Stimmen – / – / 5-6 → 5-6 (einzige Stimme)
+      - id: bit-und-byte
+        iCan: "Ich kann die Einheiten Bit, Byte, Kilobyte, Megabyte und Gigabyte erklären und Datenmengen damit vergleichen."
+        gradeBand: "5-6"
+        requires: [binaersystem]
+      # SCHWACH (nur HE und GI). GI ID-1 (5-6): Codierungen für Texte; HE TF Hardware: Darstellung von Zeichen: ASCII-Code, Ausblick auf Unicode. Stimmen 7-10 / – / – → 7-8 (Gleichstand 7-8/9-10 → früheste nach requires)
+      - id: zeichencodierung
+        iCan: "Ich kann erklären, wie Buchstaben und Zeichen mit einem Code wie ASCII oder Unicode als Binärzahlen gespeichert werden."
+        gradeBand: "7-8"
+        requires: [bit-und-byte, binaersystem]
+      # GI ID-1 (5-6): Codierungen für Grafiken; BY NT6 2.1: Vektor- und Pixelgrafik als unterschiedliche Grafikarten; NW WP IuD: beschreiben das Codierungsprinzip von Pixel- und Vektorgrafiken. Stimmen – / 5-6 / 9-10 → 5-6 (Gleichstand 5-6/9-10 → früheste nach requires)
+      - id: pixelgrafik
+        iCan: "Ich kann erklären, wie ein Bild als Raster aus Pixeln mit Farbwerten gespeichert wird."
+        gradeBand: "5-6"
+        requires: [codierung-im-alltag]
+      # GI ID-1 (5-6); BY NT6 2.1: beurteilen, ob sich eine Vektor- oder Pixelgrafik besser eignet; NW WP IuD: Codierungsprinzip von Pixel- und Vektorgrafiken. Stimmen – / 5-6 / 9-10 → 5-6 (Gleichstand 5-6/9-10 → früheste nach requires)
+      - id: pixel-und-vektorgrafik
+        iCan: "Ich kann Pixel- und Vektorgrafiken unterscheiden und begründen, welche Grafikart für einen Zweck besser passt."
+        gradeBand: "5-6"
+        requires: [pixelgrafik]
+      # SCHWACH (nur HE und GI). GI ID-4 (7-10); HE TF Hardware: analoge und digitale Darstellung von Information. Stimmen 7-10 / – / – → 7-8 (Gleichstand 7-8/9-10 → früheste nach requires)
+      - id: analog-und-digital
+        iCan: "Ich kann den Unterschied zwischen analoger und digitaler Darstellung erklären und Beispiele für das Digitalisieren nennen."
+        gradeBand: "7-8"
+        requires: [binaersystem]
+      # GI ID-7 (7-10); HE I3: verwenden die Datentypen Text, Zahl und Wahrheitswert; BY Inf9 LB3: Datentypen ganze Zahlen, Gleitkommazahlen, Wahrheitswerte, Zeichen, Zeichenketten; NW WP IuD: wählen geeignete Datentypen im Kontext eines Anwendungsbeispiels aus. Stimmen 7-10 / 9-10 / 9-10 → 9-10 (Mehrheit)
+      - id: datentypen
+        iCan: "Ich kann die Datentypen ganze Zahl, Kommazahl, Text und Wahrheitswert unterscheiden und für eine Angabe den passenden Datentyp wählen."
+        gradeBand: "9-10"
+        requires: [daten-interpretieren]
+      # GI ID-7 (7-10): zugehörige Operationen; HE TF Programmierung: Operationen auf Daten; BY Inf9 LB1: Formel, Funktion (Tabellenkalkulation); NW WP IuD: verarbeiten Daten ... unter Berücksichtigung logischer und arithmetischer Operationen. Stimmen 7-10 / 9-10 / 9-10 → 9-10 (Mehrheit)
+      - id: rechnen-und-vergleichen
+        iCan: "Ich kann mit Daten in einem Programm rechnen und Werte vergleichen, zum Beispiel mit +, -, *, /, < und =."
+        gradeBand: "9-10"
+        requires: [datentypen]
+      # GI ID-7 (7-10); HE TF Programmierung: Datentyp Wahrheitswert, Operationen auf Daten; BY Inf9 LB2: Verknüpfung von Bedingungen (SQL); NW WP IuD: logische Operationen; WP IS: logische Schaltungen. Stimmen 7-10 / 9-10 / 9-10 → 9-10 (Mehrheit)
+      - id: logische-verknuepfungen
+        iCan: "Ich kann Bedingungen mit und, oder und nicht verknüpfen und den Wahrheitswert des Ergebnisses bestimmen."
+        gradeBand: "9-10"
+        requires: [rechnen-und-vergleichen]
+      # SCHWACH (nur BY und GI). GI ID-7 (7-10): strukturierte Datentypen; BY Inf10 LB2: eindimensional indizierte Datenstruktur (Array/Feld). Stimmen – / 9-10 / – → 9-10 (einzige Stimme)
+      - id: feld-array
+        iCan: "Ich kann gleichartige Daten in einem Feld (Array) speichern und über den Index auf einzelne Elemente zugreifen."
+        gradeBand: "9-10"
+        requires: [datentypen, variable]
+      # GI –; HE I3: wenden Bäume als Strukturierungsprinzip an (Hypertexte, Dateisysteme, DNS); BY NT6 2.3: stellen baumartige Informationsstrukturen mithilfe von Baumdiagrammen dar. Stimmen 7-10 / 5-6 / – → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: baum
+        iCan: "Ich kann hierarchische Informationen als Baum mit Wurzel, Knoten, Kanten und Blättern darstellen."
+        gradeBand: "5-6"
+        requires: [darstellungsformen-von-information]
+      # GI –; HE TF Internet: Struktur von Hypertexten und deren grafische Darstellung; BY NT7 2.1: Darstellung der Objektstruktur einer Hypertextstruktur: Graph aus Knoten und Kanten. Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: graph
+        iCan: "Ich kann vernetzte Informationen, zum Beispiel verlinkte Webseiten, als Graph aus Knoten und Kanten darstellen."
+        gradeBand: "7-8"
+        requires: [baum]
+      # GI ID-6 (7-10); HE TF Internet: Struktur von Hypertexten; stellen Hypertextstrukturen grafisch dar; BY NT7 2.1: modellieren Hypertextstrukturen; Erstellung mit WYSIWYG-Editor. Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: hypertext
+        iCan: "Ich kann den Aufbau eines Hypertexts aus Seiten und Verweisen beschreiben und einen einfachen Hypertext erstellen."
+        gradeBand: "7-8"
+        requires: [graph]
+      # SCHWACH (nur BY und GI). GI ID-9 (7-10): Datenflüsse mit Tabellenkalkulationssystemen; BY Inf9 LB1: Tabellenblatt, Zelle, Formel, Zellbezug. Stimmen – / 9-10 / – → 9-10 (einzige Stimme)
+      - id: tabellenkalkulation-formeln
+        iCan: "Ich kann in einer Tabellenkalkulation Formeln mit Zellbezügen schreiben, damit Ergebnisse automatisch neu berechnet werden."
+        gradeBand: "9-10"
+        requires: [rechnen-und-vergleichen]
+      # SCHWACH (nur BY und GI). GI ID-9 (7-10); BY Inf9 LB1: Zellbezug (relative und absolute Adressierung). Stimmen – / 9-10 / – → 9-10 (einzige Stimme)
+      - id: relative-und-absolute-bezuege
+        iCan: "Ich kann relative und absolute Zellbezüge unterscheiden und beim Kopieren einer Formel richtig einsetzen."
+        gradeBand: "9-10"
+        requires: [tabellenkalkulation-formeln]
+      # SCHWACH (nur BY und GI). GI ID-9 (7-10): modellieren Datenflüsse; BY Inf9 LB1: Datenflussdiagramm: Funktion, Datenfluss, Ein- und Ausgabe. Stimmen – / 9-10 / – → 9-10 (einzige Stimme)
+      - id: datenflussdiagramm
+        iCan: "Ich kann darstellen, wie Daten durch Funktionen fließen, und dazu ein Datenflussdiagramm zeichnen."
+        gradeBand: "9-10"
+        requires: [tabellenkalkulation-formeln]
+      # SCHWACH (nur BY und GI). GI ID-9 (7-10); BY Inf9 LB1: vordefinierte Funktionen (u. a. bedingte Funktion), Verkettung von Funktionen. Stimmen – / 9-10 / – → 9-10 (einzige Stimme)
+      - id: funktionen-verketten
+        iCan: "Ich kann vordefinierte Funktionen einer Tabellenkalkulation, auch die WENN-Funktion, nutzen und mehrere Funktionen verketten."
+        gradeBand: "9-10"
+        requires: [datenflussdiagramm, logische-verknuepfungen]
+      # GI ID-10 (7-10); HE TF Datenbanken: Datenbanken im Alltag; Datenbank versus Tabelle; BY Inf9 LB2: analysieren Datenbestände einfacher Beispiele aus der Praxis. Stimmen 7-10 / 9-10 / – → 9-10 (Mehrheit)
+      - id: datenbanken-im-alltag
+        iCan: "Ich kann Beispiele nennen, wo im Alltag Datenbanken große Datenbestände verwalten, und erklären, wozu man sie braucht."
+        gradeBand: "9-10"
+        requires: [darstellungsformen-von-information]
+      # GI ID-10 (7-10): modellieren Datenbanktabellen; HE TF Datenbanken: Entity-Relationship-Diagramm: Entity, Attribute; BY Inf9 LB2: objektorientiertes Datenmodell: Objekt, Klasse, Attribut. Stimmen 7-10 / 9-10 / – → 9-10 (Mehrheit)
+      - id: datenmodell
+        iCan: "Ich kann einen Ausschnitt der Wirklichkeit mit Objekttypen (Entitäten oder Klassen) und ihren Attributen modellieren und als Diagramm darstellen."
+        gradeBand: "9-10"
+        requires: [datenbanken-im-alltag]
+      # GI ID-10 (7-10); HE TF Datenbanken: Struktur einer Tabelle: Datenfelder mit Datentypen, Datensatz; BY Inf9 LB2: Tabellenschema, Datentyp, Datensatz. Stimmen 7-10 / 9-10 / – → 9-10 (Mehrheit)
+      - id: tabellenschema
+        iCan: "Ich kann ein Datenmodell in ein Tabellenschema mit Datenfeldern und Datentypen überführen und Datensatz und Datenfeld unterscheiden."
+        gradeBand: "9-10"
+        requires: [datenmodell, datentypen]
+      # GI ID-10 (7-10); HE TF Datenbanken: ER-Diagramm: Schlüssel; BY Inf9 LB2: Primärschlüssel. Stimmen 7-10 / 9-10 / – → 9-10 (Mehrheit)
+      - id: primaerschluessel
+        iCan: "Ich kann erklären, wozu ein Primärschlüssel dient, und für eine Tabelle einen geeigneten Schlüssel wählen."
+        gradeBand: "9-10"
+        requires: [tabellenschema]
+      # GI ID-10 (7-10); HE TF Datenbanken: Implementierung einer Datenbank; Bearbeitung von Datensätzen; BY Inf9 LB2: setzen Tabellenschemata in einem Datenbanksystem um. Stimmen 7-10 / 9-10 / – → 9-10 (Mehrheit)
+      - id: datenbank-anlegen
+        iCan: "Ich kann eine Datenbanktabelle in einem Datenbanksystem anlegen und Datensätze eingeben, ändern und löschen."
+        gradeBand: "9-10"
+        requires: [primaerschluessel]
+      # GI ID-10 (7-10); HE TF Datenbanken: einfache Abfragen mit Selektion und Projektion; BY Inf9 LB2: SQL: select, from, where; Verknüpfung von Bedingungen. Stimmen 7-10 / 9-10 / – → 9-10 (Mehrheit)
+      - id: sql-abfrage
+        iCan: "Ich kann mit SQL (SELECT, FROM, WHERE) gezielt Spalten und Datensätze aus einer Tabelle abfragen."
+        gradeBand: "9-10"
+        requires: [datenbank-anlegen, logische-verknuepfungen]
+      # GI ID-10 (7-10); HE TF Datenbanken: ER-Diagramm: Beziehung; Datenbank mit mehreren Tabellen; BY Inf10 LB1: Beziehung, Kardinalität, Primär- und Fremdschlüssel. Stimmen 7-10 / 9-10 / – → 9-10 (Mehrheit)
+      - id: beziehungen-und-fremdschluessel
+        iCan: "Ich kann Beziehungen zwischen Objekttypen modellieren und sie in verknüpften Tabellen mit Fremdschlüsseln umsetzen."
+        gradeBand: "9-10"
+        requires: [primaerschluessel]
+      # GI ID-10 (7-10); HE TF Datenbanken: erkennen Redundanz und Inkonsistenz ... Aufteilung auf verknüpfte Tabellen; BY Inf10 LB1: Redundanz und Konsistenz von Datenbeständen, Anomalien. Stimmen 7-10 / 9-10 / – → 9-10 (Mehrheit)
+      - id: redundanz-und-konsistenz
+        iCan: "Ich kann an einem Beispiel erklären, warum doppelt gespeicherte Daten (Redundanz) zu Widersprüchen führen und wie verknüpfte Tabellen das vermeiden."
+        gradeBand: "9-10"
+        requires: [beziehungen-und-fremdschluessel]
+      # GI ID-12 (7-10); HE TF Kryptologie: symmetrische Verfahren; NW 5/6 IuD: erläutern ein einfaches Transpositionsverfahren als Möglichkeit der Verschlüsselung. Stimmen 7-10 / – / 5-6 → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: verschluesselung-grundidee
+        iCan: "Ich kann an einem einfachen Verfahren, zum Beispiel einer Skytale, erklären, wie man einen Text mit einem Schlüssel ver- und entschlüsselt."
+        gradeBand: "5-6"
+        requires: [codierung-im-alltag]
+      # GI ID-12 (7-10); HE TF Kryptologie: vergleichen und bewerten Verfahren; bewerten kryptografische Verfahren; NW 5/6 IuD: vergleichen verschiedene Verschlüsselungsverfahren unter Berücksichtigung von Sicherheitsaspekten; WP: beurteilen. Stimmen 7-10 / – / 5-6 → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: verschluesselung-bewerten
+        iCan: "Ich kann Verschlüsselungsverfahren vergleichen und beurteilen, wie sicher sie sind, zum Beispiel wie viele Schlüssel ein Angreifer ausprobieren müsste."
+        gradeBand: "5-6"
+        requires: [verschluesselung-grundidee]
+      # GI ID-12 (7-10); HE TF Kryptologie: Algorithmus eines symmetrischen Verfahrens, zum Beispiel Caesar-Chiffre; NW WP IuD: verwenden Substitutionsverfahren als Möglichkeit der Verschlüsselung. Stimmen 7-10 / – / 9-10 → 9-10 (Mehrheit)
+      - id: caesar-verschluesselung
+        iCan: "Ich kann einen Text mit einem Ersetzungsverfahren wie der Caesar-Verschlüsselung ver- und entschlüsseln."
+        gradeBand: "9-10"
+        requires: [verschluesselung-grundidee]
+      # SCHWACH (nur NW und GI (BY und HE Sek I ohne KI; HE-Entwurf KI und Digitale Welt 5/6 nennt es)). GI AL-9 (7-10); IMG-8 (7-10); NW 5/6 AuKI: benennen Anwendungsbeispiele künstlicher Intelligenz aus ihrer Lebenswelt; WP KI. Stimmen – / – / 5-6 → 5-6 (einzige Stimme)
+      - id: ki-im-alltag
+        iCan: "Ich kann Beispiele für künstliche Intelligenz aus meinem Alltag nennen, zum Beispiel Empfehlungen, Sprach- oder Bilderkennung."
+        gradeBand: "5-6"
+        requires: [informatiksysteme-im-alltag]
+      # SCHWACH (nur NW und GI). GI ID-11 (7-10); AL-9; NW 5/6 AuKI: Entscheidungsbaum enaktiv als Prinzip des maschinellen Lernens; Funktionsweise künstlicher neuronaler Netze; WP KI. Stimmen – / – / 5-6 → 5-6 (einzige Stimme)
+      - id: maschinelles-lernen
+        iCan: "Ich kann an einem Beispiel erklären, dass ein KI-System aus Beispieldaten Muster lernt, statt dass jemand jede Regel programmiert."
+        gradeBand: "5-6"
+        requires: [ki-im-alltag, daten-interpretieren]
+      # SCHWACH (nur NW und GI). GI ID-11 (7-10); ID-8; NW WP KI: analysieren den Einfluss von Trainingsdaten auf die Ergebnisse eines Verfahrens maschinellen Lernens. Stimmen – / – / 9-10 → 9-10 (einzige Stimme)
+      - id: trainingsdaten
+        iCan: "Ich kann an einem Beispiel zeigen, wie die Auswahl der Trainingsdaten die Ergebnisse eines lernenden Systems beeinflusst, auch durch Verzerrungen."
+        gradeBand: "9-10"
+        requires: [maschinelles-lernen]
+  - id: algorithmen
+    name: { de: "Algorithmen", en: "Algorithms" }
+    competencies:
+      # GI AL-1, AL-2 (5-6); HE I1: erkennen algorithmische Eigenschaften in Handlungsvorschriften; BY NT7 2.3: Algorithmus: Definition des Begriffs; entwickeln Algorithmen; NW 5/6 Alg: formulieren zu Abläufen aus dem Alltag eindeutige Handlungsvorschriften. Stimmen 7-10 / 7-8 / 5-6 → 7-8 (Mehrheit)
+      - id: algorithmus-begriff
+        iCan: "Ich kann erklären, was ein Algorithmus ist, und für einen Ablauf aus dem Alltag eine eindeutige Handlungsvorschrift aufschreiben."
+        gradeBand: "7-8"
+      # GI AL-1 (5-6); HE TF Programmierung: Eigenschaften von Algorithmen; prüfen Handlungsvorschriften; BY NT7 2.3: Algorithmus: Definition des Begriffs; NW WP Alg: überprüfen algorithmische Eigenschaften (Endlichkeit, Eindeutigkeit, Terminierung). Stimmen 7-10 / 7-8 / 9-10 → 7-8 (Gleichstand 7-8/9-10 → früheste nach requires)
+      - id: algorithmische-eigenschaften
+        iCan: "Ich kann prüfen, ob eine Handlungsvorschrift ein Algorithmus ist: endlich beschrieben, eindeutig und nach endlich vielen Schritten fertig."
+        gradeBand: "7-8"
+        requires: [algorithmus-begriff]
+      # GI AL-2 (5-6): algorithmische Grundbausteine; HE TF Programmierung: Anweisungen, Sequenzen; BY NT7 2.3: Strukturelemente Anweisung, Sequenz; NW 5/6 Alg: identifizieren Anweisungen und die Grundstruktur Sequenz. Stimmen 7-10 / 7-8 / 5-6 → 7-8 (Mehrheit)
+      - id: sequenz
+        iCan: "Ich kann Anweisungen in der richtigen Reihenfolge zu einer Sequenz anordnen."
+        gradeBand: "7-8"
+        requires: [algorithmus-begriff]
+      # GI AL-2 (5-6); HE TF Programmierung: Kontrollstrukturen: Verzweigungen; BY NT7 2.3: ein- und zweiseitig bedingte Anweisung; NW 5/6 Alg: Grundstruktur Verzweigung. Stimmen 7-10 / 7-8 / 5-6 → 7-8 (Mehrheit)
+      - id: verzweigung
+        iCan: "Ich kann mit einer Verzweigung (wenn – dann – sonst) festlegen, dass ein Algorithmus abhängig von einer Bedingung verschiedene Anweisungen ausführt."
+        gradeBand: "7-8"
+        requires: [sequenz]
+      # GI AL-2 (5-6); HE TF Programmierung: Kontrollstrukturen: Wiederholungen; BY NT7 2.3: Wiederholung mit fester Anzahl; NW 5/6 Alg: Grundstruktur Schleife. Stimmen 7-10 / 7-8 / 5-6 → 7-8 (Mehrheit)
+      - id: wiederholung-feste-anzahl
+        iCan: "Ich kann mit einer Wiederholung mit fester Anzahl Anweisungen mehrmals ausführen lassen."
+        gradeBand: "7-8"
+        requires: [sequenz]
+      # GI AL-2 (5-6); HE TF Programmierung: Kontrollstrukturen: Wiederholungen; BY NT7 2.3: Wiederholung mit Bedingung; NW 5/6 Alg: Grundstruktur Schleife. Stimmen 7-10 / 7-8 / 5-6 → 7-8 (Mehrheit)
+      - id: wiederholung-mit-bedingung
+        iCan: "Ich kann mit einer Wiederholung mit Bedingung Anweisungen so lange ausführen lassen, bis eine Bedingung erfüllt ist."
+        gradeBand: "7-8"
+        requires: [wiederholung-feste-anzahl, verzweigung]
+      # GI AL-3 (5-6); HE I1: implementieren Algorithmen in einer Programmiersprache ... innerhalb einer Programmierumgebung; BY NT7 2.3: setzen einfache Algorithmen mithilfe geeigneter Programmierwerkzeuge um; NW 5/6 Alg: implementieren Algorithmen in einer visuellen Programmiersprache. Stimmen 7-10 / 7-8 / 5-6 → 7-8 (Mehrheit)
+      - id: visuelle-programmierung
+        iCan: "Ich kann einen Algorithmus in einer blockbasierten (visuellen) Programmiersprache als Programm umsetzen und ausführen."
+        gradeBand: "7-8"
+        requires: [sequenz]
+      # GI AL-1 (5-6); AL-5 (7-10); HE I1: analysieren, interpretieren und entwerfen Algorithmen; BY Inf9 LB3: analysieren, interpretieren und modifizieren Algorithmen; NW 5/6 Alg: führen Handlungsvorschriften schrittweise aus; ermitteln durch Analyse eines Algorithmus dessen Ergebnis. Stimmen 7-10 / 9-10 / 5-6 → 9-10 (Mehrheit)
+      - id: algorithmus-ausfuehren
+        iCan: "Ich kann einen Algorithmus Schritt für Schritt von Hand ausführen und so sein Ergebnis ermitteln."
+        gradeBand: "9-10"
+        requires: [verzweigung, wiederholung-mit-bedingung]
+      # GI AL-1 (5-6): altersangemessene Darstellung; HE TF Programmierung: grafische Darstellung (Struktogramm u. a.); BY Inf9 LB3: Algorithmus: grafische Darstellung; NW 5/6 Alg: überführen Handlungsvorschriften in einen PAP oder ein Struktogramm. Stimmen 7-10 / 9-10 / 5-6 → 9-10 (Mehrheit)
+      - id: struktogramm
+        iCan: "Ich kann einen Algorithmus als Struktogramm darstellen und ein Struktogramm lesen."
+        gradeBand: "9-10"
+        requires: [verzweigung, wiederholung-mit-bedingung]
+      # GI AL-1 (5-6); HE TF Programmierung: grafische Darstellung (Programmablaufplan u. a.); BY Inf9 LB3: Algorithmus: grafische Darstellung; NW 5/6 Alg: überführen Handlungsvorschriften in einen PAP oder ein Struktogramm. Stimmen 7-10 / 9-10 / 5-6 → 9-10 (Mehrheit)
+      - id: programmablaufplan
+        iCan: "Ich kann einen Algorithmus als Programmablaufplan (PAP) darstellen und einen PAP lesen."
+        gradeBand: "9-10"
+        requires: [verzweigung, wiederholung-mit-bedingung]
+      # GI –; HE TF Programmierung: Pseudocode; BY Inf9 LB3: Algorithmus: Pseudocode. Stimmen 7-10 / 9-10 / – → 9-10 (Mehrheit)
+      - id: pseudocode
+        iCan: "Ich kann einen Algorithmus in Pseudocode aufschreiben."
+        gradeBand: "9-10"
+        requires: [verzweigung, wiederholung-mit-bedingung]
+      # GI AL-6 (7-10); HE I1: überführen verschiedene Beschreibungsformen von Algorithmen ineinander; NW WP Alg: stellen Algorithmen in verschiedenen Repräsentationen dar. Stimmen 7-10 / – / 9-10 → 9-10 (Mehrheit)
+      - id: darstellungen-ueberfuehren
+        iCan: "Ich kann einen Algorithmus von einer Darstellungsform in eine andere übertragen, zum Beispiel vom Struktogramm in Programmcode."
+        gradeBand: "9-10"
+        requires: [struktogramm, programmablaufplan, pseudocode]
+      # GI AL-7 (7-10); HE I1: implementieren Algorithmen in einer Programmiersprache; Programm-Quellcode; BY Inf9 LB3: implementieren Methoden in einer objektorientierten Programmiersprache; NW WP Alg: entwerfen und implementieren Algorithmen. Stimmen 7-10 / 9-10 / 9-10 → 9-10 (Mehrheit)
+      - id: textbasierte-programmierung
+        iCan: "Ich kann einen Algorithmus in einer textbasierten Programmiersprache als Programm schreiben und ausführen."
+        gradeBand: "9-10"
+        requires: [visuelle-programmierung]
+      # GI ID-7 (7-10); HE TF Programmierung: Variablen; BY Inf9 LB3: Variablenkonzept; Wertzuweisung zur Änderung von Variablenwerten; NW WP Alg: Variablen verschiedener Typen. Stimmen 7-10 / 9-10 / 9-10 → 9-10 (Mehrheit)
+      - id: variable
+        iCan: "Ich kann in einem Programm Variablen anlegen, ihnen mit einer Wertzuweisung Werte geben und diese Werte ändern."
+        gradeBand: "9-10"
+        requires: [sequenz, datentypen]
+      # GI AL-6 (7-10): zerlegen in Teilprobleme; BY Inf9 LB3: Methodendefinition und Methodenaufruf; NW 5/6 Alg: implementieren Algorithmen unter Berücksichtigung des Prinzips der Modularisierung; WP Alg. Stimmen – / 9-10 / 5-6 → 9-10 (Gleichstand 5-6/9-10 → 9-10 wegen requires)
+      - id: unterprogramme
+        iCan: "Ich kann ein Programm in Teile zerlegen und wiederkehrende Abläufe als Unterprogramm (Methode, Funktion) definieren und aufrufen."
+        gradeBand: "9-10"
+        requires: [visuelle-programmierung]
+      # GI –; BY Inf9 LB3: Parameter, Übergabewert, Rückgabewert; NW WP Alg: erläutern die Möglichkeit der Werteübergabe mithilfe von Parametern. Stimmen – / 9-10 / 9-10 → 9-10 (Mehrheit)
+      - id: parameter
+        iCan: "Ich kann einem Unterprogramm über Parameter Werte übergeben."
+        gradeBand: "9-10"
+        requires: [unterprogramme, variable]
+      # GI AL-5 (7-10); BY Inf9 LB3: analysieren, interpretieren und modifizieren Algorithmen; NW WP Alg: kommentieren, modifizieren und ergänzen Quelltexte von Programmen nach Vorgaben. Stimmen – / 9-10 / 9-10 → 9-10 (Mehrheit)
+      - id: quelltext-aendern
+        iCan: "Ich kann fremden Quelltext lesen, kommentieren, verändern und ergänzen."
+        gradeBand: "9-10"
+        requires: [textbasierte-programmierung, algorithmus-ausfuehren]
+      # GI AL-4 (5-6); AL-8 (7-10); HE I1: implementieren ... und testen diese innerhalb einer Programmierumgebung; BY Inf10 LB3: testen das entwickelte Programm hinsichtlich der Anforderungen; NW 5/6 Alg: überprüfen die Wirkungsweise eines Algorithmus durch zielgerichtetes Testen. Stimmen 7-10 / 9-10 / 5-6 → 9-10 (Mehrheit)
+      - id: programm-testen
+        iCan: "Ich kann mit gezielt gewählten Testfällen prüfen, ob ein Programm eine Aufgabe richtig löst."
+        gradeBand: "9-10"
+        requires: [visuelle-programmierung, algorithmus-ausfuehren]
+  - id: sprachen-automaten
+    name: { de: "Sprachen und Automaten", en: "Languages and automata" }
+    competencies:
+      # GI SA-1 (5-6); SA-2 (7-10); HE I2: unterscheiden die Begriffe Syntax und Semantik und erläutern sie an Beispielen; NW WP AfS: erläutern die Begriffe Syntax und Semantik einer Programmiersprache an Beispielen. Stimmen 7-10 / – / 9-10 → 9-10 (Mehrheit)
+      - id: syntax-und-semantik
+        iCan: "Ich kann an Beispielen erklären, was Syntax (die Schreibregeln) und Semantik (die Bedeutung) einer formalen Sprache sind."
+        gradeBand: "9-10"
+        requires: [textbasierte-programmierung]
+      # GI AL-8 (7-10); HE TF Programmierung: Fehleranalyse; interpretieren Fehlermeldungen; NW WP AfS: analysieren Quelltexte auf syntaktische Korrektheit. Stimmen 7-10 / – / 9-10 → 9-10 (Mehrheit)
+      - id: syntaxfehler-finden
+        iCan: "Ich kann Syntaxfehler in einem Quelltext finden, Fehlermeldungen deuten und die Fehler beheben."
+        gradeBand: "9-10"
+        requires: [syntax-und-semantik]
+      # GI ID-6 (7-10): Auszeichnungssprachen; HE TF Internet: Syntax und Semantik von HTML-Elementen; implementieren Quellcode in HTML; NW WP AfS: erstellen syntaktisch korrekte Quelltexte in einer Dokumentenbeschreibungssprache. Stimmen 7-10 / – / 9-10 → 9-10 (Mehrheit)
+      - id: html-grundgeruest
+        iCan: "Ich kann eine einfache Webseite in HTML schreiben und dabei Elemente mit Start- und End-Tags richtig verschachteln."
+        gradeBand: "9-10"
+        requires: [hypertext, syntax-und-semantik]
+      # GI ID-6 (7-10); HE TF Internet: HTML-Elemente mit ihren Tags und Attributen; NW WP AfS: Dokumentenbeschreibungssprache. Stimmen 7-10 / – / 9-10 → 9-10 (Mehrheit)
+      - id: html-attribute-und-links
+        iCan: "Ich kann HTML-Elemente mit Attributen ergänzen, zum Beispiel einen Verweis mit href oder ein Bild mit src einbinden."
+        gradeBand: "9-10"
+        requires: [html-grundgeruest]
+      # SCHWACH (nur HE und GI). GI ID-6 (7-10): Trennung von Inhalt und Darstellung; HE TF Internet: CSS-Dateien; implementieren CSS-Dateien zur Formatierung. Stimmen 7-10 / – / – → 9-10 (Gleichstand 7-8/9-10 → 9-10 wegen requires)
+      - id: css
+        iCan: "Ich kann das Aussehen einer Webseite mit CSS festlegen und erklären, warum man Inhalt und Darstellung trennt."
+        gradeBand: "9-10"
+        requires: [html-attribute-und-links]
+      # SCHWACH (nur NW und GI). GI SA-3 (7-10); NW 5/6 AuKI: erläutern die Funktionsweise eines Automaten aus ihrer Lebenswelt. Stimmen – / – / 5-6 → 5-6 (einzige Stimme)
+      - id: automaten-im-alltag
+        iCan: "Ich kann an einem Automaten aus dem Alltag, zum Beispiel einem Getränkeautomaten, erklären, wie er abhängig von Eingabe und Zustand reagiert."
+        gradeBand: "5-6"
+        requires: [eva-prinzip]
+      # SCHWACH (nur NW und GI). GI SA-3 (7-10); NW 5/6 AuKI: stellen Abläufe in Automaten graphisch dar; WP AfS: Zustandsübergangsdiagramm. Stimmen – / – / 5-6 → 5-6 (einzige Stimme)
+      - id: zustandsdiagramm
+        iCan: "Ich kann das Verhalten eines Automaten mit Zuständen und Übergängen in einem Zustandsdiagramm darstellen und ein solches Diagramm lesen."
+        gradeBand: "5-6"
+        requires: [automaten-im-alltag]
+      # SCHWACH (nur NW und GI). GI SA-4 (7-10): modellieren Sachverhalte zustandsorientiert; NW WP AfS: entwickeln einen Automaten für eine konkrete Problemstellung. Stimmen – / – / 9-10 → 9-10 (einzige Stimme)
+      - id: automat-entwerfen
+        iCan: "Ich kann für eine konkrete Aufgabe, zum Beispiel eine Ampelsteuerung, einen Automaten mit Zuständen und Übergängen entwerfen."
+        gradeBand: "9-10"
+        requires: [zustandsdiagramm]
+  - id: informatiksysteme
+    name: { de: "Informatiksysteme", en: "Computer systems" }
+    competencies:
+      # SCHWACH (nur NW und GI; Voraussetzung von hardware-und-software). GI IS-1 (5-6); NW 5/6 IS: benennen Beispiele für (vernetzte) Informatiksysteme aus ihrer Erfahrungswelt. Stimmen – / – / 5-6 → 5-6 (einzige Stimme)
+      - id: informatiksysteme-im-alltag
+        iCan: "Ich kann Informatiksysteme in meinem Alltag erkennen, zum Beispiel Smartphone, Spielkonsole oder Kasse."
+        gradeBand: "5-6"
+      # GI IS-2 (5-6); HE I4: erläutern Funktionsweisen und das Zusammenwirken von Hardware-, Software- und Netzwerkkomponenten; NW 5/6 IS: benennen Grundkomponenten von Informatiksystemen und beschreiben ihre Funktionen. Stimmen 7-10 / – / 5-6 → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: hardware-und-software
+        iCan: "Ich kann Hardware und Software unterscheiden und erklären, wie sie in einem Informatiksystem zusammenwirken."
+        gradeBand: "5-6"
+        requires: [informatiksysteme-im-alltag]
+      # GI IS-2 (5-6); HE TF Hardware: Bestandteile eines Computers; Prozessor, Register, Arbeitsspeicher, Hardware zur Ein- und Ausgabe; NW 5/6 IS: benennen Grundkomponenten ... und beschreiben ihre Funktionen. Stimmen 7-10 / – / 5-6 → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: computer-bestandteile
+        iCan: "Ich kann die wichtigsten Bestandteile eines Computers wie Prozessor, Arbeitsspeicher, Festspeicher sowie Ein- und Ausgabegeräte benennen und ihre Aufgaben beschreiben."
+        gradeBand: "5-6"
+        requires: [hardware-und-software]
+      # GI IS-2 (5-6); HE I2/I4: erläutern das EVA-Prinzip; ordnen Bestandteile den Phasen zu; NW 5/6 IS: beschreiben das EVA-Prinzip als grundlegendes Prinzip der Datenverarbeitung. Stimmen 7-10 / – / 5-6 → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: eva-prinzip
+        iCan: "Ich kann das EVA-Prinzip (Eingabe, Verarbeitung, Ausgabe) erklären und Geräte und Vorgänge den drei Phasen zuordnen."
+        gradeBand: "5-6"
+        requires: [computer-bestandteile]
+      # GI IS-10 (7-10); HE I4: wählen Hardwarekomponenten und Anwenderprogramme problemadäquat aus; NW 5/6 übergeordnet A: begründen die Auswahl eines Informatiksystems. Stimmen 7-10 / – / 5-6 → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: informatiksystem-auswaehlen
+        iCan: "Ich kann für eine Aufgabe ein passendes Gerät oder Programm auswählen und meine Wahl begründen."
+        gradeBand: "5-6"
+        requires: [computer-bestandteile]
+      # GI IS-3 (5-6); BY NT6 2.1: grundlegende Funktionen von Standardsoftware (Speichern, Öffnen, Schließen, Kopieren, Einfügen); NW 5/6 IS: setzen zielgerichtet Informatiksysteme zur Verarbeitung von Daten ein. Stimmen – / 5-6 / 5-6 → 5-6 (Mehrheit)
+      - id: programme-bedienen
+        iCan: "Ich kann Grundfunktionen von Programmen wie Öffnen, Speichern, Kopieren und Einfügen sicher nutzen."
+        gradeBand: "5-6"
+        requires: [hardware-und-software]
+      # GI IS-3 (5-6); HE TF Internet: baumartige Strukturen, unter anderem Dateisysteme; BY NT6 2.3: nutzen einen Dateimanager, um Dateien und Ordner hierarchisch zu organisieren; NW 5/6 IS: erläutern Prinzipien der strukturierten Dateiverwaltung. Stimmen 7-10 / 5-6 / 5-6 → 5-6 (Mehrheit)
+      - id: ordner-und-dateien
+        iCan: "Ich kann Dateien in einer sinnvollen Ordnerstruktur ablegen und wiederfinden."
+        gradeBand: "5-6"
+        requires: [programme-bedienen, baum]
+      # GI IS-3 (5-6); HE TF Internet: Dateisysteme als Baumstruktur; BY NT6 2.3: geben die Lage von Dateien durch Pfade an. Stimmen 7-10 / 5-6 / – → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: dateipfad
+        iCan: "Ich kann den Ort einer Datei als Pfad angeben und einen Pfad lesen."
+        gradeBand: "5-6"
+        requires: [ordner-und-dateien]
+      # SCHWACH (nur NW und GI). GI IS-3 (5-6): verschiedene, bewusst gewählte Orte; NW 5/6 IS: vergleichen Möglichkeiten der Datenverwaltung (Speicherort, Kapazität, Datensicherheit). Stimmen – / – / 5-6 → 5-6 (einzige Stimme)
+      - id: speicherorte-vergleichen
+        iCan: "Ich kann Speicherorte wie Gerät, USB-Stick und Cloud nach Kapazität, Erreichbarkeit und Sicherheit vergleichen."
+        gradeBand: "5-6"
+        requires: [ordner-und-dateien, bit-und-byte]
+      # GI IS-5 (7-10); HE TF Internet: Netzstruktur des Internet; Unterschied zwischen lokalen und globalen Netzen; BY NT7 2.1: Struktur und Funktionsweise des Internets: Vermittlungsrechner (Router). Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: internet-aufbau
+        iCan: "Ich kann erklären, dass das Internet ein Netz aus vielen Netzen ist, in dem Router Daten weiterleiten, und lokale und globale Netze unterscheiden."
+        gradeBand: "7-8"
+        requires: [hardware-und-software]
+      # GI IS-5 (7-10); HE TF Internet: Client und Webserver; BY NT7 2.1: Client, Server. Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: client-und-server
+        iCan: "Ich kann die Rollen von Client und Server beschreiben und Beispiele dafür nennen."
+        gradeBand: "7-8"
+        requires: [internet-aufbau]
+      # GI IS-5 (7-10); HE TF Internet: Netzwerkdienste und -protokolle; DNS; BY NT7 2.1: Adressierung im Internet (IP-Adresse). Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: ip-adresse-und-dns
+        iCan: "Ich kann erklären, dass jeder Rechner im Internet eine IP-Adresse hat und das DNS Namen wie schule.de in IP-Adressen übersetzt."
+        gradeBand: "7-8"
+        requires: [internet-aufbau]
+      # GI –; HE TF Internet: Aufbau einer URL; BY NT7 2.1: Adressierung im Internet (URL). Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: url-aufbau
+        iCan: "Ich kann die Bestandteile einer URL wie Protokoll, Domain und Pfad benennen."
+        gradeBand: "7-8"
+        requires: [ip-adresse-und-dns, dateipfad]
+      # GI IS-5 (7-10): beispielhafte Protokolle; HE TF Internet: Netzwerkdienste und -protokolle; BY NT7 2.1: Dienste (u. a. World Wide Web). Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: internetdienste
+        iCan: "Ich kann Dienste des Internets wie das World Wide Web und E-Mail unterscheiden und erklären, dass sie nach festen Regeln (Protokollen) kommunizieren."
+        gradeBand: "7-8"
+        requires: [client-und-server]
+      # GI IS-5 (7-10); HE TF Internet: Funktionsweise eines Browsers; Client und Webserver; BY NT7 2.1: beschreiben den prinzipiellen Mechanismus für die Übermittlung elektronischer Dokumente. Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: webseite-abrufen
+        iCan: "Ich kann beschreiben, was passiert, wenn ein Browser eine Webseite von einem Webserver abruft."
+        gradeBand: "7-8"
+        requires: [url-aufbau, internetdienste]
+      # GI IS-4 (5-6); HE I5: erkennen Gefahren für die Datensicherheit ... und wenden geeignete Maßnahmen an; BY NT7 2.2: Verwendung sicherer Passwörter; NW 5/6 IMG: beschreiben Maßnahmen zum Schutz von Daten. Stimmen 7-10 / 7-8 / 5-6 → 7-8 (Mehrheit)
+      - id: sicheres-passwort
+        iCan: "Ich kann ein sicheres Passwort bilden und erklären, wie ich meine Zugänge schütze."
+        gradeBand: "7-8"
+        requires: [informatiksysteme-im-alltag]
+      # GI IS-9 (7-10); HE I5: erkennen Gefahren für die Datensicherheit in selbst genutzten Informatiksystemen; BY NT7 2.2: Gefahrenpotenziale (z. B. Viren, Trojaner). Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: schadsoftware
+        iCan: "Ich kann Arten von Schadsoftware wie Viren und Trojaner beschreiben und erklären, wie sie auf ein Gerät gelangen."
+        gradeBand: "7-8"
+        requires: [hardware-und-software]
+      # GI IS-9 (7-10): Sicherheitsfunktionen; HE TF Internet: Maßnahmen zum sicheren Arbeiten, unter anderem Browsereinstellungen, Sicherheitssoftware; BY NT7 2.2: Schutz eigener Endgeräte durch Software (z. B. Firewall und Virenschutz). Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: schutzsoftware
+        iCan: "Ich kann erklären, wie Firewall, Virenschutz und Updates ein Gerät schützen, und Sicherheitseinstellungen nutzen."
+        gradeBand: "7-8"
+        requires: [schadsoftware]
+      # GI IS-8 (7-10): Versionierung, Redundanz; HE I5: wenden geeignete Maßnahmen für die Datensicherheit an; BY NT7 2.4: nutzen ihre Informatikkenntnisse zur Sicherung von Zwischenständen; NW 5/6 IS: Aspekte der Datensicherheit bei der Datenverwaltung. Stimmen 7-10 / 7-8 / 5-6 → 7-8 (Mehrheit)
+      - id: datensicherung
+        iCan: "Ich kann meine Daten durch Sicherungskopien und gespeicherte Zwischenstände vor Verlust schützen."
+        gradeBand: "7-8"
+        requires: [speicherorte-vergleichen]
+  - id: gesellschaft
+    name: { de: "Informatik, Mensch und Gesellschaft", en: "Computing, people and society" }
+    competencies:
+      # GI IMG-3 (5-6); IMG-8 (7-10); HE I5: beschreiben und bewerten Wechselwirkungen ... in den Bereichen Arbeitswelt, Informations- und Kommunikationsmedien; NW 5/6 IMG: beschreiben die Bedeutung von Informatiksystemen in der Lebens- und Arbeitswelt; erläutern Auswirkungen. Stimmen 7-10 / – / 5-6 → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: informatik-in-alltag-und-beruf
+        iCan: "Ich kann an Beispielen beschreiben, wie Informatiksysteme mein Leben und die Arbeitswelt verändern."
+        gradeBand: "5-6"
+        requires: [informatiksysteme-im-alltag]
+      # GI IMG-4 (7-10); HE TF Internet / Datenbanken: Datenschutz; personenbezogene Daten; BY NT7 2.2: Persönlichkeitsrecht und Datenschutz, u. a. personenbezogene Daten; NW 5/6 IMG: beschreiben die Verarbeitung und Nutzung personenbezogener Daten. Stimmen 7-10 / 7-8 / 5-6 → 7-8 (Mehrheit)
+      - id: personenbezogene-daten
+        iCan: "Ich kann erklären, was personenbezogene Daten sind, und an Beispielen beschreiben, wo sie gesammelt und genutzt werden."
+        gradeBand: "7-8"
+        requires: [information-und-daten]
+      # GI IMG-2 (5-6): Datensparsamkeit; IMG-4; HE I5: wenden Grundsätze des Datenschutzrechts an; BY NT7 2.2: Datenschutz im Rahmen der digitalen Kommunikation; Inf9 LB4: Schutz persönlicher Daten erhöhen; NW 5/6 IMG: erläutern Nutzen und Risiken beim Umgang mit eigenen und fremden Daten. Stimmen 7-10 / 7-8 / 5-6 → 7-8 (Mehrheit)
+      - id: eigene-daten-schuetzen
+        iCan: "Ich kann sparsam mit meinen Daten umgehen und Einstellungen wählen, die meine Privatsphäre schützen."
+        gradeBand: "7-8"
+        requires: [personenbezogene-daten]
+      # GI IMG-2, IS-9; HE TF Internet / Kryptologie: Datenschutz, Datensicherheit; NW 5/6 IMG: Datensicherheit und Sicherheitsregeln; WP IMG: Datenschutz und Datensicherheit. Stimmen 7-10 / – / 5-6 → 7-8 (Gleichstand 5-6/7-8/9-10 → 7-8 wegen requires)
+      - id: datenschutz-und-datensicherheit
+        iCan: "Ich kann Datenschutz (Schutz von Personen) und Datensicherheit (Schutz der Daten vor Verlust und Zugriff) unterscheiden."
+        gradeBand: "7-8"
+        requires: [personenbezogene-daten, datensicherung]
+      # GI IMG-4 (7-10); HE TF Internet: entscheiden, ob personenbezogene Daten gewonnen, verarbeitet und genutzt werden dürfen; BY Inf9 LB4: bewerten Regelungen zum Datenschutz im Spannungsfeld zwischen Persönlichkeitsrechten und Interessen. Stimmen 7-10 / 9-10 / – → 9-10 (Mehrheit)
+      - id: datenschutzrecht
+        iCan: "Ich kann Grundsätze des Datenschutzrechts nennen und beurteilen, ob personenbezogene Daten in einem Fall erhoben und genutzt werden dürfen."
+        gradeBand: "9-10"
+        requires: [eigene-daten-schuetzen]
+      # GI IMG-4, IMG-8 (7-10); HE TF Datenbanken: Personenbezogene Daten in Datenbanken; Nutzen und Risiken; BY Inf9 LB4: wägen ihren Umgang mit datenbankgestützten Diensten und Portalen ab. Stimmen 7-10 / 9-10 / – → 9-10 (Mehrheit)
+      - id: daten-in-datenbanken
+        iCan: "Ich kann Nutzen und Risiken beurteilen, wenn personenbezogene Daten in Datenbanken gespeichert und ausgewertet werden."
+        gradeBand: "9-10"
+        requires: [datenbanken-im-alltag, datenschutzrecht]
+      # GI IMG-6, IMG-8 (7-10); HE TF Internet: Chancen und Gefahren von Big Data; BY Inf9 LB4: Data-Mining; Inf10 LB1: automatisierte Analyse verknüpfter Datenbestände. Stimmen 7-10 / 9-10 / – → 9-10 (Mehrheit)
+      - id: big-data
+        iCan: "Ich kann Chancen und Gefahren beurteilen, wenn sehr große Datenmengen gesammelt, verknüpft und automatisch ausgewertet werden."
+        gradeBand: "9-10"
+        requires: [daten-in-datenbanken]
+      # GI –; HE TF Internet: Urheberrecht und Persönlichkeitsrecht; BY NT7 2.2: Persönlichkeitsrecht ..., Recht am eigenen Bild. Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: recht-am-eigenen-bild
+        iCan: "Ich kann erklären, was das Recht am eigenen Bild bedeutet, und beachten, wann ich Fotos anderer veröffentlichen darf."
+        gradeBand: "7-8"
+        requires: [personenbezogene-daten]
+      # GI IMG-7 (7-10); HE TF Internet: Urheberrecht; wenden Grundsätze des Urheberrechts an; BY NT6 2.2: Urheberrecht, Quellenangabe; NT7 2.1. Stimmen 7-10 / 5-6 / – → 5-6 (Gleichstand 5-6/7-8/9-10 → früheste nach requires)
+      - id: urheberrecht
+        iCan: "Ich kann erklären, was das Urheberrecht schützt, und fremde Texte, Bilder und Musik nur mit Erlaubnis und Quellenangabe verwenden."
+        gradeBand: "5-6"
+      # SCHWACH (nur NW und GI). GI IMG-7 (7-10); NW WP IMG: bewerten verschiedene Lizenzmodelle im Hinblick auf Weiterentwicklung und Nutzung digitaler Produkte. Stimmen – / – / 9-10 → 9-10 (einzige Stimme)
+      - id: lizenzmodelle
+        iCan: "Ich kann Lizenzmodelle wie proprietäre Software, freie Software und Creative-Commons-Lizenzen vergleichen."
+        gradeBand: "9-10"
+        requires: [urheberrecht]
+      # GI IMG-3 (5-6); HE I5: bewerten Chancen und Risiken der Internetnutzung; BY NT7 2.2: bewerten verschiedene digitale Kommunikationsmöglichkeiten hinsichtlich Chancen und Risiken. Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: digitale-kommunikation
+        iCan: "Ich kann Möglichkeiten der digitalen Kommunikation wie E-Mail, Messenger und soziale Netzwerke nach Chancen und Risiken vergleichen."
+        gradeBand: "7-8"
+        requires: [internetdienste]
+      # GI IMG-5 (7-10): Manipulierbarkeit, Sorglosigkeit; HE TF Internet: bewerten Risiken der Internetnutzung; BY NT7 2.2: Gefahrenpotenziale (gefälschte virtuelle Identität, Abofallen, Fake News), Cybermobbing. Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: gefahren-im-netz
+        iCan: "Ich kann Gefahren im Netz wie Phishing, Abofallen, gefälschte Identitäten und Cybermobbing erkennen und weiß, wie ich mich verhalte."
+        gradeBand: "7-8"
+        requires: [digitale-kommunikation]
+      # GI –; HE TF Internet: bewerten Chancen der Internetnutzung (Recherche); BY NT7 2.1: nutzen effektive Strategien zur Informationsbeschaffung und bewerten Suchergebnisse kritisch. Stimmen 7-10 / 7-8 / – → 7-8 (Mehrheit)
+      - id: informationen-bewerten
+        iCan: "Ich kann im Internet gezielt suchen und die Glaubwürdigkeit von Quellen und Suchergebnissen prüfen."
+        gradeBand: "7-8"
+        requires: [webseite-abrufen]
+      # SCHWACH (nur HE und GI). GI IMG-8 (7-10): Nachhaltigkeit; HE TF Hardware: Umweltbilanz analoger und digitaler Medien. Stimmen 7-10 / – / – → 7-8 (Gleichstand 7-8/9-10 → früheste nach requires)
+      - id: umweltbilanz-digitaler-geraete
+        iCan: "Ich kann beschreiben, wie Herstellung, Nutzung und Entsorgung digitaler Geräte die Umwelt belasten, und das mit Papier vergleichen."
+        gradeBand: "7-8"
+        requires: [computer-bestandteile]
+      # SCHWACH (nur NW und GI). GI IMG-8 (7-10); NW 5/6 Inhaltsfeld AuKI: gesellschaftliche Folgen des Einsatzes der künstlichen Intelligenz; IMG: erläutern Auswirkungen. Stimmen – / – / 5-6 → 5-6 (einzige Stimme)
+      - id: ki-chancen-und-risiken
+        iCan: "Ich kann an Beispielen Chancen und Risiken künstlicher Intelligenz für mich und die Gesellschaft beschreiben."
+        gradeBand: "5-6"
+        requires: [ki-im-alltag]
