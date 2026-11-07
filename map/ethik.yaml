@@ -1,0 +1,730 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# Vorschlag. Keine KMK-Bildungsstandards für Ethik; die Stränge sind die Inhaltsbereiche, die die drei Länder teilen
+# (Fragenkreise NRW = Inhaltsfelder Hessen, Gegenstandsbereiche Bayern). Quellenkürzel:
+# HE = Lehrplan Ethik, Gymnasialer Bildungsgang, Hessen (G9, Jg 5-13): Rahmenthema x.y = Jahrgang x (verbindlich);
+#      KC6 / KC8 / KC10 = Kerncurriculum Hessen Sek I Gymnasium Ethik (2011), Inhaltsfelder am Ende von Jg 6 / 8 / 9/10
+#      (Kap. 7.1 S. 22-23, 7.2 S. 26-27, Kap. 6 S. 18-19); KC zählt nur, wo der Lehrplan G9 nichts nennt.
+# BY = LehrplanPLUS Bayern Gymnasium Ethik, online (Eth5 bis Eth10, LB = Lernbereich).
+# NW = Kernlehrplan Praktische Philosophie Sek I NRW (Heft 5017, 2008), Gymnasium: "5/6" (Kap. 4.1) und "7-9" (Kap. 4.2);
+#      FK = Fragenkreis, K = Kompetenzerwartung. NRW hat kein Fach Ethik; Praktische Philosophie ist das Ersatzfach.
+# Richtstufe: eine Stimme je Land (HE / BY / NW). NW "7-10" = Kap. 4.2 ohne Jahrgang, zählt für 7-8 und 9-10.
+# Gleichstand: die früheste Stufe, die requires zulässt. Drei verschiedene Stimmen: die mittlere.
+# "schwach" = schwach belegt (Grund im Kommentar). Genaue Titel, Ausgaben und URLs: .vibe/research-ethik.md.
+name: { de: Ethik, en: Ethics }                    # the file name is the subject's id: ethik
+source:
+  title: Kerncurriculum Hessen, Sekundarstufe I – Gymnasium, Ethik (Hessisches Kultusministerium, 2011), Inhaltsfelder; abgeglichen mit den Fragenkreisen des Kernlehrplans Praktische Philosophie NRW (2008) und dem LehrplanPLUS Ethik Bayern
+  url: https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-06/kerncurriculum_ethik_gymnasium.pdf
+strands:
+  - id: ich-und-identitaet
+    name: { de: "Ich und Identität", en: "Self and identity" }
+    competencies:
+      # HE KC6 Selbst und Welt: eigene und fremde Gefühle (S. 22); BY Eth5 LB1: grundlegende Gefühle wahrnehmen und benennen; eigene und fremde Gefühle; NW 5/6 FK1 Ich und mein Leben; K: erkennen und benennen ihre Gefühle (S. 27). Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: gefuehle-benennen
+        iCan: "Ich kann grundlegende Gefühle bei mir und bei anderen erkennen und benennen."
+        gradeBand: "5-6"
+      # HE 5.1 Freiheit I: Nahrung, Kleidung, Wohnung; persönliche Zuwendung und soziale Einbindung; BY Eth5 LB1: Grundbedürfnisse, materielle und soziale Bedürfnisse; NW 5/6 FK1 Ich und mein Leben. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: beduerfnisse-unterscheiden
+        iCan: "Ich kann materielle und soziale Grundbedürfnisse des Menschen unterscheiden und Beispiele nennen."
+        gradeBand: "5-6"
+      # HE 6.4 Menschenbilder I: Selbstdisziplin gegen Instinkt, Verzicht aus freier Entscheidung; BY Eth5 LB1: Genuss und Bedürfnisaufschub; NW –. Stimmen 5-6 / 5-6 / –: Mehrheit
+      - id: beduerfnisaufschub
+        iCan: "Ich kann abwägen, wann es sich lohnt, auf die sofortige Erfüllung eines Wunsches zu verzichten."
+        gradeBand: "5-6"
+        requires: [beduerfnisse-unterscheiden]
+      # HE 5.4 Wahrheit I: Selbst- und Fremdwahrnehmung; KC8 Selbst- und Fremdwahrnehmung; BY Eth5 LB1: Fremd- und Selbstwahrnehmung; Eth7 LB3; Eth9 LB4: Selbstbild und Fremdbild; NW 5/6 FK1 Ich und mein Leben; K: beschreiben die eigene Rolle in sozialen Kontexten (S. 27). Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: selbstbild-und-fremdbild
+        iCan: "Ich kann mein Bild von mir selbst mit dem Bild vergleichen, das andere von mir haben."
+        gradeBand: "5-6"
+        requires: [gefuehle-benennen]
+      # HE 6.4 Menschenbilder I: Wo liegen meine Stärken? Wo kann ich besser werden?; 8.1: Umgang mit Schwächen und Stärken; BY Eth7 LB3: eigene Stärken und Schwächen, angemessenes Selbstwertgefühl; NW 5/6 FK1 Ich und mein Leben; K: benennen die eigenen Stärken (S. 27). Stimmen 5-6 / 7-8 / 5-6: Mehrheit
+      - id: staerken-und-schwaechen
+        iCan: "Ich kann meine Stärken und Schwächen benennen und überlegen, worin ich besser werden kann."
+        gradeBand: "5-6"
+        requires: [selbstbild-und-fremdbild]
+      # HE –; BY Eth6 LB4: vielfältige Freizeitgestaltung, reale Begegnung, Freizeit mit wenig Geld; NW 5/6 FK1 Freizeit, freie Zeit. Stimmen – / 5-6 / 5-6: Mehrheit
+      - id: freizeit-gestalten
+        iCan: "Ich kann beurteilen, wie ich meine freie Zeit sinnvoll und abwechslungsreich gestalten kann."
+        gradeBand: "5-6"
+        requires: [beduerfnisse-unterscheiden]
+      # HE KC8 Selbst und Welt: Genderthematik, Entwicklung des Ichbewusstseins (S. 26); BY Eth7 LB3: Veränderungen in der Pubertät, Entwicklung der Sexualität; NW 7-9 FK1 Geschlechtlichkeit und Pubertät. Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: pubertaet
+        iCan: "Ich kann körperliche, seelische und soziale Veränderungen in der Pubertät beschreiben."
+        gradeBand: "7-8"
+      # HE 8.1 Gewissen und Identität II: Anerkennungen und Abgrenzungen, Unterscheidung des Ich von den anderen; BY Eth7 LB3: Identitätsbildung und Unsicherheit; NW 7-9 FK2 Rollen- und Gruppenverhalten; K: reflektieren den Wert der eigenen Persönlichkeit in Beziehung zu anderen (S. 30). Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: identitaet
+        iCan: "Ich kann erklären, wie sich meine Identität im Jugendalter durch Anerkennung und Abgrenzung bildet."
+        gradeBand: "7-8"
+        requires: [selbstbild-und-fremdbild, pubertaet]
+      # HE 6.4 Menschenbilder I: Rollenverhalten von Mädchen und Jungen; KC8 Genderthematik; BY Eth8 LB3: Geschlechterrollen in Freundschaft und Partnerschaft; NW 7-9 FK1 Geschlechtlichkeit und Pubertät. Stimmen 5-6 / 7-8 / 7-10: Mehrheit
+      - id: geschlechterrollen
+        iCan: "Ich kann Rollenbilder von Mädchen und Jungen erkennen und prüfen, ob sie Menschen einengen."
+        gradeBand: "7-8"
+        requires: [pubertaet]
+      # HE 6.2 Liebe I: Freundschaft im Zwiespalt zwischen Vernunft und Gefühl; BY Eth7 LB2: Strategien zur Selbstkontrolle von Wut; Eth9 LB3: Ursachen von Wut; NW 7-9 FK1 Gefühl und Verstand; K: entwickeln bei starken Gefühlen einen rationalen Standpunkt (S. 30). Stimmen 5-6 / 7-8 / 7-10: Mehrheit
+      - id: gefuehl-und-verstand
+        iCan: "Ich kann beschreiben, wie Gefühl und Verstand mein Handeln lenken, und bei starken Gefühlen wie Wut überlegt reagieren."
+        gradeBand: "7-8"
+        requires: [gefuehle-benennen]
+      # HE 6.4 Menschenbilder I: Bedeutung von Idolen und Vorbildern; 8.1: Idole, Vorbilder, Autoritäten; BY Eth7 LB3: Ideale, Idole; Eth8 LB2: Vorbilder im Einsatz für andere; NW 7-9 FK2 Rollen- und Gruppenverhalten. Stimmen 5-6 / 7-8 / 7-10: Mehrheit
+      - id: vorbilder-und-idole
+        iCan: "Ich kann beurteilen, welchen Einfluss Idole und Vorbilder auf mich haben."
+        gradeBand: "7-8"
+        requires: [identitaet]
+      # HE 9.1 Freiheit III: Selbstfindung und Selbstbestimmung, Individualität und Konformitätsdruck; BY Eth7 LB3: eigene und fremde Lebensentwürfe; NW 5/6 FK1 Ich und mein Leben. Stimmen 9-10 / 7-8 / 5-6: dreifach uneins: Mitte
+      - id: lebensentwuerfe
+        iCan: "Ich kann eigene und fremde Lebensentwürfe vergleichen und überlegen, wer ich werden will."
+        gradeBand: "7-8"
+        requires: [staerken-und-schwaechen]
+      # HE 8.1 Gewissen und Identität II: Sucht, Selbstzweifel und Selbstakzeptanz, Umgang mit Drogen; BY Eth8 LB1: Sinnfindung als Prävention von Sucht; Eth6 LB2: Suchtgefahr digitaler Medien; NW –. Stimmen 7-8 / 7-8 / –: Mehrheit
+      - id: sucht
+        iCan: "Ich kann Ursachen und Folgen von Sucht beschreiben und Wege nennen, mich davor zu schützen."
+        gradeBand: "7-8"
+        requires: [identitaet]
+      # HE 5.1 Freiheit I: Der Mensch lebt in Abhängigkeiten (von natürlichen Ressourcen, anderen Menschen, Tradition); BY Eth5 LB2: fundamentale Bedeutung der Familie für Entwicklung; NW 5/6 FK2 Der Mensch in der Gemeinschaft. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: abhaengigkeit-des-menschen
+        iCan: "Ich kann zeigen, wie ein Mensch zum Leben auf andere Menschen und auf die Natur angewiesen ist."
+        gradeBand: "5-6"
+        requires: [beduerfnisse-unterscheiden]
+      # HE 7.1 Freiheit II: Freiheit hat ihre Grenze an der Freiheit des anderen (GG Art. 2); KC8 Perspektiven und Grenzen von Freiheit; BY Eth7 LB3: Zusammenhang von Freiheit und moralischer Verantwortung; Eth6 LB3: Selbstentfaltung und Selbstbegrenzung; NW 7-9 FK1 Freiheit und Unfreiheit. Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: freiheit-und-ihre-grenzen
+        iCan: "Ich kann erklären, warum meine Freiheit an der Freiheit der anderen ihre Grenze findet."
+        gradeBand: "7-8"
+        requires: [abhaengigkeit-des-menschen]
+      # HE 9.1 Freiheit III: Freiheit gründet in der Personalität; KC10 Freiheit und Würde: Handlungs- und Willensfreiheit (S. 19); BY –; NW 7-9 FK1 Freiheit und Unfreiheit. Stimmen 9-10 / – / 7-10: Mehrheit
+      - id: handlungsfreiheit-und-willensfreiheit
+        iCan: "Ich kann Handlungsfreiheit und Willensfreiheit unterscheiden und fragen, ob der Mensch wirklich frei entscheidet."
+        gradeBand: "9-10"
+        requires: [freiheit-und-ihre-grenzen]
+  - id: zusammenleben
+    name: { de: "Die Anderen und das Zusammenleben", en: "Others and living together" }
+    competencies:
+      # HE 5.1 Freiheit I: Familie (Geburt, Kindheit, Erwachsenwerden, Alter); KC6 Familie und Schule; BY Eth5 LB2: verschiedene Familienformen, Bedeutung der Familie; NW 5/6 FK2 Der Mensch in der Gemeinschaft. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: familienformen
+        iCan: "Ich kann verschiedene Familienformen beschreiben und erklären, was eine Familie für Kinder leistet."
+        gradeBand: "5-6"
+        requires: [abhaengigkeit-des-menschen]
+      # HE 5.2 Würde I: Pflichten in Familie und Schule; BY Eth5 LB2: Rechte und Pflichten von Eltern und Kindern, Aufgabenverteilung; NW 5/6 FK2 Der Mensch in der Gemeinschaft. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: rechte-und-pflichten-in-der-familie
+        iCan: "Ich kann Rechte und Pflichten von Eltern und Kindern nennen und eine faire Aufgabenverteilung in der Familie begründen."
+        gradeBand: "5-6"
+        requires: [familienformen]
+      # HE 6.2 Liebe I: Einfühlung, Empathie; BY Eth5 LB2: versetzen sich in das Erleben anderer Familienangehöriger; NW 5/6 K: unterscheiden verschiedene Perspektiven (S. 28); FK2 Der Mensch in der Gemeinschaft. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: perspektivwechsel
+        iCan: "Ich kann mich in die Lage eines anderen Menschen versetzen und beschreiben, wie er eine Situation erlebt."
+        gradeBand: "5-6"
+        requires: [gefuehle-benennen]
+      # HE 6.2 Liebe I: Streit, Konflikt und Friedensschluss; BY Eth5 LB2: gutes Zuhören und Ich-Botschaften; Eth7 LB2: konstruktive Kommunikation in Konflikten; NW 5/6 FK2 Umgang mit Konflikten; K: hören anderen im Gespräch zu (S. 28). Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: zuhoeren-und-ich-botschaften
+        iCan: "Ich kann gut zuhören und in einem Streit Ich-Botschaften verwenden."
+        gradeBand: "5-6"
+        requires: [perspektivwechsel]
+      # HE 6.2 Liebe I: Freund, Gegner, Feind; Bekannte, Spielkameraden, Freunde; falsche Freundschaften; BY Eth6 LB3: Toleranz, Solidarität und Freundschaft; NW 7-9 FK2 Freundschaft, Liebe und Partnerschaft. Stimmen 5-6 / 5-6 / 7-10: Mehrheit
+      - id: freundschaft
+        iCan: "Ich kann Merkmale einer echten Freundschaft nennen und sie von Bekanntschaft und falscher Freundschaft unterscheiden."
+        gradeBand: "5-6"
+        requires: [perspektivwechsel]
+      # HE 6.2 Liebe I: eigennützige und uneigennützige Freundschaft; BY Eth8 LB3: Aristoteles, die drei Arten der Freundschaft; NW 7-9 FK2 Freundschaft, Liebe und Partnerschaft. Stimmen 5-6 / 7-8 / 7-10: Mehrheit
+      - id: arten-der-freundschaft
+        iCan: "Ich kann mit Aristoteles Freundschaften um des Nutzens, der Freude oder des Guten willen unterscheiden."
+        gradeBand: "7-8"
+        requires: [freundschaft]
+      # HE 8.2 Liebe II: Liebe bezieht sich auf die ganze Person; Achtung der geliebten Person; BY Eth8 LB3: Verliebtheit und Liebe, Bindung und Verantwortung; NW 7-9 FK2 Freundschaft, Liebe und Partnerschaft. Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: liebe-und-partnerschaft
+        iCan: "Ich kann Verliebtheit und Liebe unterscheiden und erklären, welche Verantwortung zu einer Partnerschaft gehört."
+        gradeBand: "7-8"
+        requires: [arten-der-freundschaft, pubertaet]
+      # HE 8.2 Liebe II: Liebe, Eros, Agape, Karitas; BY Eth8 LB3: Merkmale von Liebe, Erich Fromm: Die Kunst des Liebens; NW 7-9 FK2 Freundschaft, Liebe und Partnerschaft. Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: formen-der-liebe
+        iCan: "Ich kann verschiedene Formen der Liebe unterscheiden, zum Beispiel Eros, Freundesliebe und Nächstenliebe (Agape)."
+        gradeBand: "7-8"
+        requires: [liebe-und-partnerschaft]
+      # HE 8.2 Liebe II: Sexualität bedarf einer auf freier Entscheidung, Respekt und Verantwortung beruhenden Partnerschaft; BY Eth8 LB3: Sexualität als menschliches Grundbedürfnis und Ausdruck erfüllter Liebe; NW 7-9 FK1 Geschlechtlichkeit und Pubertät. Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: sexualitaet-und-verantwortung
+        iCan: "Ich kann erklären, warum Sexualität auf freier Entscheidung, Respekt und Verantwortung beruhen muss."
+        gradeBand: "7-8"
+        requires: [liebe-und-partnerschaft]
+      # HE 8.2 Liebe II: Heterosexualität und Homosexualität; BY Eth8 LB3: Arten von sexueller Orientierung; NW 7-9 FK1 Geschlechtlichkeit und Pubertät. Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: sexuelle-orientierung
+        iCan: "Ich kann verschiedene sexuelle Orientierungen benennen und begründen, warum jeder Mensch darin Respekt verdient."
+        gradeBand: "7-8"
+        requires: [sexualitaet-und-verantwortung, menschenwuerde]
+      # HE 10.2 Liebe III: Ehe/Partnerschaft als Lebens- und Rechtsform; nichteheliche und gleichgeschlechtliche Partnerschaften; BY Eth8 LB3: partnerschaftliche Lebensformen heute; NW 7-9 FK2 Freundschaft, Liebe und Partnerschaft. Stimmen 9-10 / 7-8 / 7-10: Gleichstand 7-8/9-10; requires (liebe-und-partnerschaft, recht-und-moral: 7-8): früheste passende Stufe 7-8
+      - id: ehe-und-lebensformen
+        iCan: "Ich kann Ehe und andere Formen der Partnerschaft als Lebens- und Rechtsformen vergleichen."
+        gradeBand: "7-8"
+        requires: [liebe-und-partnerschaft, recht-und-moral]
+      # HE 8.1 Gewissen und Identität II: Wir-Gefühl und Außenseitertum; BY Eth6 LB3: Gründe für Außenseiter, Möglichkeiten, Außenseiter zu integrieren; NW 5/6 FK2 Der Mensch in der Gemeinschaft. Stimmen 7-8 / 5-6 / 5-6: Mehrheit
+      - id: aussenseiter
+        iCan: "Ich kann Gründe nennen, warum jemand zum Außenseiter wird, und Wege zeigen, ihn in die Gruppe einzubeziehen."
+        gradeBand: "5-6"
+        requires: [perspektivwechsel]
+      # HE 8.1 Gewissen und Identität II: Wahrnehmung der eigenen Rolle in Familie, Schule und unter Freunden; BY –; NW 7-9 FK2 Rollen- und Gruppenverhalten; 5/6 K: beschreiben die eigene Rolle in sozialen Kontexten. Stimmen 7-8 / – / 7-10: Mehrheit
+      - id: soziale-rollen
+        iCan: "Ich kann die Rollen beschreiben, die ich in Familie, Schule und Freundeskreis einnehme, und Erwartungen an diese Rollen prüfen."
+        gradeBand: "7-8"
+        requires: [selbstbild-und-fremdbild]
+      # HE 8.1 Gewissen und Identität II: Chancen und Gefährdungen durch die Gruppe; 9.1: Konformitätsdruck; BY Eth7 LB3: Peergroup, Gruppenzwang; Eth6 LB4: Gruppenzwang beim Konsum; NW 7-9 FK2 Rollen- und Gruppenverhalten. Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: gruppendruck
+        iCan: "Ich kann erklären, wie Gruppendruck wirkt, und Möglichkeiten nennen, ihm zu widerstehen."
+        gradeBand: "7-8"
+        requires: [soziale-rollen, identitaet]
+      # HE 8.1 Gewissen und Identität II: Merkmale, Entstehung, Folgen und Abbau von Vorurteilen und Ausgrenzungen; BY Eth5 LB1: Vorurteil und Stereotyp; NW 7-9 FK2 Begegnung mit Fremden; FK6 Vorurteil, Urteil, Wissen. Stimmen 7-8 / 5-6 / 7-10: Mehrheit
+      - id: vorurteile
+        iCan: "Ich kann an Beispielen erklären, wie Vorurteile und Stereotype entstehen und was sie bei den Betroffenen bewirken."
+        gradeBand: "7-8"
+        requires: [urteil-und-vorurteil]
+      # HE 7.4 Wahrheit II: Toleranz als Gleichgültigkeit oder als Wertschätzung der Verschiedenheit; Grenzen der Toleranzbereitschaft; BY Eth6 LB3: Toleranz; NW 7-9 FK2 Begegnung mit Fremden, Interkulturalität; K: gehen tolerant damit um (S. 31). Stimmen 7-8 / 5-6 / 7-10: Mehrheit
+      - id: toleranz
+        iCan: "Ich kann erklären, was Toleranz bedeutet und wo die Grenzen der Toleranz liegen."
+        gradeBand: "7-8"
+        requires: [vorurteile]
+      # HE 8.1 Gewissen und Identität II: das Fremde als Belastung und als Bereicherung; KC6 Wahrnehmung der eigenen sowie fremder Kulturen; BY Eth6 LB3: der Andere als der Unbekannte, der Andere als Bereicherung; NW 5/6 K: beschreiben Beispiele interkulturellen Zusammenlebens (S. 28); 7-9 FK2 Interkulturalität. Stimmen 7-8 / 5-6 / 5-6: Mehrheit
+      - id: interkulturelles-zusammenleben
+        iCan: "Ich kann Beispiele für das Zusammenleben von Menschen verschiedener Kulturen beschreiben und Chancen und Probleme dabei erörtern."
+        gradeBand: "5-6"
+        requires: [perspektivwechsel]
+      # HE 7.1 Freiheit II: Normalität von Interessenkonflikten in Schule und Gesellschaft; BY Eth7 LB2: Ursachen von Konflikten, Konflikte als Chance; NW 5/6 FK2 Umgang mit Konflikten. Stimmen 7-8 / 7-8 / 5-6: Mehrheit
+      - id: konfliktursachen
+        iCan: "Ich kann Ursachen von Konflikten benennen, zum Beispiel unterschiedliche Interessen, Wahrnehmungen und Erwartungen."
+        gradeBand: "7-8"
+        requires: [wahrnehmung-ist-subjektiv]
+      # HE 7.1 Freiheit II: gewaltfreie Konfliktlösungen, Kompromissbereitschaft; KC10 Konflikte verantwortungsvoll lösen; BY Eth7 LB2: ein Konfliktlösungsmodell; Scheinlösungen; NW 5/6 FK2 Umgang mit Konflikten; K: üben Wege gewaltfreier Konfliktlösung ein (S. 28). Stimmen 7-8 / 7-8 / 5-6: Mehrheit
+      - id: konflikte-gewaltfrei-loesen
+        iCan: "Ich kann einen Konflikt Schritt für Schritt mit einem Konfliktlösungsmodell gewaltfrei lösen."
+        gradeBand: "7-8"
+        requires: [konfliktursachen, zuhoeren-und-ich-botschaften]
+      # HE 7.2 Würde II: Diskriminierung und Ausgrenzung; 8.1: Ausgrenzungen; BY Eth7 LB2: Mobbing, Rollenverteilung, Cybermobbing; NW 7-9 FK3 Gewalt und Aggression. Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: mobbing
+        iCan: "Ich kann erklären, wie Mobbing und Cybermobbing auf Betroffene wirken, welche Rollen es dabei gibt und wie man Mobbing beendet."
+        gradeBand: "7-8"
+        requires: [aussenseiter, konflikte-gewaltfrei-loesen]
+      # HE 7.1 Freiheit II: Ursachen von und Umgang mit Gewalt; Gewalt als Eingriff in Würde und Freiheit; BY Eth9 LB3: Ursachen und Wahrnehmung aggressiver Verhaltensweisen, verbale Deeskalation; NW 7-9 FK3 Gewalt und Aggression. Stimmen 7-8 / 9-10 / 7-10: Gleichstand 7-8/9-10; requires (konfliktursachen, gefuehl-und-verstand: 7-8): früheste passende Stufe 7-8
+      - id: gewalt-und-aggression
+        iCan: "Ich kann Ursachen von Gewalt und aggressivem Verhalten beschreiben und Wege zur Deeskalation nennen."
+        gradeBand: "7-8"
+        requires: [konfliktursachen, gefuehl-und-verstand]
+      # HE 5.1 Freiheit I: Kooperations- und Solidargemeinschaft, Kranken- und Altersfürsorge; BY Eth8 LB2: Engagement in Schule, vor Ort und global; Ehrenamt; NW 7-9 K: lernen Bereiche sozialer Verantwortung kennen (S. 31); FK3 Freiheit und Verantwortung. Stimmen 5-6 / 7-8 / 7-10: Mehrheit
+      - id: soziales-engagement
+        iCan: "Ich kann Formen sozialen Engagements in Schule, Wohnort und Welt beschreiben und ihren Nutzen beurteilen."
+        gradeBand: "7-8"
+        requires: [abhaengigkeit-des-menschen]
+  - id: gutes-handeln
+    name: { de: "Gutes Handeln: Werte, Normen und Gewissen", en: "Acting well: values, norms and conscience" }
+    competencies:
+      # HE 6.1 Gewissen und Identität I: Das Gute und das Böse; Gut und Böse im Urteil der Schülerinnen und Schüler; BY –; NW 5/6 FK3 „Gut“ und „böse“. Stimmen 5-6 / – / 5-6: Mehrheit
+      - id: gut-und-boese
+        iCan: "Ich kann an Beispielen erklären, was Menschen gut oder böse nennen und warum sie das tun."
+        gradeBand: "5-6"
+      # HE 5.2 Würde I: Pflichten gegen andere: Wahrhaftigkeit, Wohlwollen, Achtung, Fairness, Dankbarkeit; BY Eth5 LB2: Entscheidungskriterien (z. B. Verantwortlichkeit, Gerechtigkeit); NW 5/6 K: erfassen den Handlungen zugrunde liegenden Werte und vergleichen diese (S. 28). Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: werte-erkennen
+        iCan: "Ich kann erkennen, welche Werte hinter einer Handlung stehen, zum Beispiel Ehrlichkeit, Hilfsbereitschaft oder Gerechtigkeit."
+        gradeBand: "5-6"
+        requires: [gut-und-boese]
+      # HE 8.4 Menschenbilder II: Unterscheidung von Regeln und ethischen Normen; KC: Recht basiert auf Normen, Moral bezieht sich auf Werte; BY Eth5 LB1: Zusammenhang von Bedürfnissen und Regeln; NW 7-9 K: erfassen ethische und politische Grundbegriffe; begründen kriteriengeleitet Werthaltungen (S. 31). Stimmen 7-8 / 5-6 / 7-10: Mehrheit
+      - id: werte-und-normen
+        iCan: "Ich kann Werte und Normen unterscheiden und erklären, wie Normen aus Werten folgen."
+        gradeBand: "7-8"
+        requires: [werte-erkennen, regeln-und-fairness]
+      # schwach (nur BY nennt die Goldene Regel ausdrücklich). HE 6.1 Gewissen und Identität I: Allgemeinheit des Guten (das Gute als etwas, das für alle gut sein soll); den Religionen gemeinsame Gebote; BY Eth5 LB1: Zusammenhang von Bedürfnissen und Regeln, Goldene Regel; NW 5/6 FK3 „Gut“ und „böse“; 7-9 FK7 Ethische Grundsätze in Religionen. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: goldene-regel
+        iCan: "Ich kann die Goldene Regel erklären und auf eine Situation aus meinem Alltag anwenden."
+        gradeBand: "5-6"
+        requires: [perspektivwechsel, gut-und-boese]
+      # HE 5.2 Würde I: Pflichten gegen sich selbst und Pflichten gegen andere; BY Eth5 LB2: Pflichten und Aufgaben innerhalb der Familie; NW 7-9 FK3 Lust und Pflicht. Stimmen 5-6 / 5-6 / 7-10: Mehrheit
+      - id: pflichten-gegen-sich-und-andere
+        iCan: "Ich kann Pflichten gegen mich selbst und Pflichten gegen andere unterscheiden und Beispiele für beide nennen."
+        gradeBand: "5-6"
+        requires: [werte-erkennen]
+      # HE 5.2 Würde I: Pflicht und Neigung; BY Eth5 LB1: Genuss und Bedürfnisaufschub; NW 7-9 FK3 Lust und Pflicht. Stimmen 5-6 / 5-6 / 7-10: Mehrheit
+      - id: neigung-und-pflicht
+        iCan: "Ich kann erklären, was es heißt, aus Lust oder Neigung und was es heißt, aus Pflicht zu handeln, und Konflikte zwischen beidem beschreiben."
+        gradeBand: "5-6"
+        requires: [pflichten-gegen-sich-und-andere, beduerfnisaufschub]
+      # HE 5.4 Wahrheit I: Wahrhaftigkeit und Lüge, Gründe für unwahre Mitteilungen; KC6 Umgang mit Wahrheit und Lüge (S. 23); BY Eth5 LB3: Ehrlichkeit beim Spielen; NW 5/6 FK3 Wahrhaftigkeit und Lüge. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: luegen-und-wahrhaftigkeit
+        iCan: "Ich kann Gründe nennen, warum Menschen lügen, und erklären, warum Vertrauen Wahrhaftigkeit braucht."
+        gradeBand: "5-6"
+      # HE 5.4 Wahrheit I: Notlüge, Rücksichtnahme (verletzende Wahrheit), mitleidige Lüge; BY –; NW 5/6 FK3 Wahrhaftigkeit und Lüge. Stimmen 5-6 / – / 5-6: Mehrheit
+      - id: notluege
+        iCan: "Ich kann beurteilen, ob eine Notlüge in einer bestimmten Situation erlaubt sein kann."
+        gradeBand: "5-6"
+        requires: [luegen-und-wahrhaftigkeit]
+      # HE 6.1 Gewissen und Identität I: gutes und schlechtes Gewissen, innere Stimme; KC6 Gewissenskonflikte im Alltag; BY Eth9 LB2: Erfahrungen mit dem Gewissen im eigenen Leben; NW 7-9 FK3 Entscheidung und Gewissen. Stimmen 5-6 / 9-10 / 7-10: Mehrheit
+      - id: gewissen
+        iCan: "Ich kann beschreiben, wie sich das Gewissen als gutes oder schlechtes Gewissen meldet."
+        gradeBand: "9-10"
+        requires: [gut-und-boese]
+      # HE 8.1 Gewissen und Identität II: Ausbildung eines eigenen Gewissens; KC8 Gewissensbildung; 6.1/10.1: Gewissensirrtum; BY Eth9 LB2: Entstehung des Gewissens, Sozialisation; NW 7-9 FK3 Entscheidung und Gewissen. Stimmen 7-8 / 9-10 / 7-10: Gleichstand 7-8/9-10; requires (gewissen: 9-10): früheste passende Stufe 9-10
+      - id: gewissensbildung
+        iCan: "Ich kann erklären, wie sich das Gewissen durch Erziehung und Erfahrung bildet und dass es irren kann."
+        gradeBand: "9-10"
+        requires: [gewissen]
+      # HE 10.1 Gewissen und Identität III: Deutungen des Gewissens (theologisch, anthropologisch, soziologisch); 6.1: Stimme Gottes, der Natur, der Erzieher; BY Eth9 LB2: Innerer Gerichtshof (Kant), lex aeterna (Thomas von Aquin), Über-Ich (Freud), Sozialisation; NW 7-9 FK3 Entscheidung und Gewissen. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: deutungen-des-gewissens
+        iCan: "Ich kann Deutungen des Gewissens vergleichen, zum Beispiel als Stimme Gottes, als innerer Gerichtshof (Kant) oder als Über-Ich (Freud)."
+        gradeBand: "9-10"
+        requires: [gewissensbildung]
+      # HE 10.1 Gewissen und Identität III: Konflikt, Norm, Wert; Dilemma (Sokrates, Kant, Kohlberg); BY Eth9 LB2: Gewissenskonflikte vor Entscheidungen; ein schülernahes moralisches Dilemma; NW 7-9 FK3 Entscheidung und Gewissen; K: analysieren in moralischen Dilemmata konfligierende Werte (S. 32). Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: moralisches-dilemma
+        iCan: "Ich kann in einem moralischen Dilemma die Werte benennen, die sich widersprechen, und eine begründete Entscheidung treffen."
+        gradeBand: "9-10"
+        requires: [gewissen, werte-und-normen]
+      # HE 10.1 Gewissen und Identität III: Situation, Tun, Lassen; Handeln, Unterlassen; KC10 Konsequenzen eigenen und fremden Handelns und Unterlassens (S. 17); BY Eth9 LB2: Absicht, Mittel, Umstände und Folgen einer Handlung; NW 7-9 FK3 Freiheit und Verantwortung; 5/6 K: erörtern Konsequenzen von Handlungen (S. 28). Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: absicht-mittel-folgen
+        iCan: "Ich kann bei einer Handlung Absicht, Mittel, Umstände und Folgen unterscheiden und auch ein Unterlassen als Handlung beurteilen."
+        gradeBand: "9-10"
+        requires: [werte-und-normen]
+      # HE 10.1 Gewissen und Identität III: Handlungsraum als Verantwortungsraum; KC: Verantwortung für etwas, gegenüber jemandem, im Hinblick auf eine Instanz (S. 18); BY Eth9 LB2: Begriff und Dimensionen der Verantwortung; NW 7-9 FK3 Freiheit und Verantwortung. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: verantwortung
+        iCan: "Ich kann erklären, wofür, wem gegenüber und vor welcher Instanz ein Mensch Verantwortung trägt."
+        gradeBand: "9-10"
+        requires: [absicht-mittel-folgen, freiheit-und-ihre-grenzen]
+      # schwach (kein Land nennt den kategorischen Imperativ ausdrücklich; Kant steht in HE 9.2/10.1 und BY Eth9 LB2). HE 10.1 Gewissen und Identität III: Dilemma (Kant); 9.2 Würde III: Autonomie (Kant); BY Eth9 LB2: Innerer Gerichtshof (I. Kant); NW 7-9 FK3 Lust und Pflicht. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: kategorischer-imperativ
+        iCan: "Ich kann den kategorischen Imperativ von Kant in einfachen Worten wiedergeben und eine Handlungsregel damit prüfen."
+        gradeBand: "9-10"
+        requires: [neigung-und-pflicht, goldene-regel, mensch-als-zweck]
+      # schwach (kein Land nennt den Utilitarismus ausdrücklich; belegt sind die Folgen einer Handlung (BY) und Glück und Gemeinwohl (HE)). HE 10.3 Recht und Gerechtigkeit III: Persönliches Glück und Gemeinwohl; 6.1: das Gute als das, was allen nützt; BY Eth9 LB2: Folgen einer Handlung; Eth8 LB1: Stellenwert von Spaß und Freude; NW 7-9 FK3 Lust und Pflicht. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: utilitarismus
+        iCan: "Ich kann erklären, wie der Utilitarismus eine Handlung nach ihren Folgen für das Wohl aller Betroffenen beurteilt."
+        gradeBand: "9-10"
+        requires: [absicht-mittel-folgen, glueck]
+      # schwach (direkte Anwendung der beiden schwach belegten Positionen; kein Land nennt den Vergleich). HE 10.1 Gewissen und Identität III: Dilemma (Kant); 10.3 Glück und Gemeinwohl; BY Eth9 LB2: Absicht, Mittel, Umstände und Folgen; moralisches Dilemma; NW 7-9 FK3 Lust und Pflicht; K: analysieren in moralischen Dilemmata konfligierende Werte. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: pflicht-und-folgen-vergleichen
+        iCan: "Ich kann an einem Fall vergleichen, wie Kants Pflichtethik und der Utilitarismus zu einem Urteil kommen."
+        gradeBand: "9-10"
+        requires: [kategorischer-imperativ, utilitarismus, moralisches-dilemma]
+  - id: recht-und-gerechtigkeit
+    name: { de: "Recht, Staat und Gerechtigkeit", en: "Law, state and justice" }
+    competencies:
+      # HE 5.2 Würde I: Spielregeln; Konventionen und Regeln; Wege zur Regelfindung und Regelvereinbarung; BY Eth5 LB3: Spielregeln, Fairness, Ehrlichkeit; Eth5 LB1: Bedürfnisse und Regeln; NW 5/6 FK4 Regeln und Gesetze. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: regeln-und-fairness
+        iCan: "Ich kann erklären, wozu Regeln da sind, und Regeln für ein faires Miteinander, etwa beim Spielen, begründen."
+        gradeBand: "5-6"
+        requires: [beduerfnisse-unterscheiden]
+      # HE 8.3 Recht und Gerechtigkeit II: Gesetze als Form des Rechts, Gesetzgeber und Gesetzgebungsverfahren; 8.4: Regeln und ethische Normen; BY Eth7 LB3: Rechte und Pflichten im Jugendalter, Jugendschutzgesetz; NW 5/6 FK4 Regeln und Gesetze. Stimmen 7-8 / 7-8 / 5-6: Mehrheit
+      - id: regeln-und-gesetze
+        iCan: "Ich kann Regeln, Gesetze und moralische Normen unterscheiden und erklären, wer Gesetze macht."
+        gradeBand: "7-8"
+        requires: [regeln-und-fairness, werte-und-normen]
+      # HE 6.3 Recht und Gerechtigkeit I: subjektiv verletzende Erfahrungen evidenter Ungerechtigkeiten; KC6 Erfahrungen von Gerechtigkeit und Ungerechtigkeit (S. 22); BY Eth5 LB2: Entscheidungskriterien in der Familie, z. B. Gerechtigkeit; NW 5/6 FK4 Regeln und Gesetze. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: gerechtigkeit-erfahren
+        iCan: "Ich kann Erfahrungen von Gerechtigkeit und Ungerechtigkeit beschreiben und begründen, warum ich etwas ungerecht finde."
+        gradeBand: "5-6"
+        requires: [regeln-und-fairness]
+      # HE 6.3 Recht und Gerechtigkeit I: die austeilende und die ausgleichende Gerechtigkeit; KC10 Arten der Gerechtigkeit (S. 18); BY –; NW 7-9 FK4 Recht und Gerechtigkeit. Stimmen 5-6 / – / 7-10: Gleichstand 5-6/7-8/9-10; requires: früheste passende Stufe 5-6
+      - id: austeilende-und-ausgleichende-gerechtigkeit
+        iCan: "Ich kann austeilende und ausgleichende Gerechtigkeit unterscheiden und Beispiele für beide nennen."
+        gradeBand: "5-6"
+        requires: [gerechtigkeit-erfahren]
+      # HE 6.3 Recht und Gerechtigkeit I: Jedem das Seine, das Gleiche, nach Leistungen, nach Bedürfnissen …; BY Eth9 LB4: Gerechtigkeit (z. B. hinsichtlich der Löhne); Eth10 LB3: soziale Gerechtigkeit; NW 7-9 FK4 Recht und Gerechtigkeit. Stimmen 5-6 / 9-10 / 7-10: Mehrheit
+      - id: gerechtigkeitsgrundsaetze
+        iCan: "Ich kann Gerechtigkeitsgrundsätze wie „jedem das Gleiche“, „jedem nach seiner Leistung“ und „jedem nach seinen Bedürfnissen“ unterscheiden und auf Fälle anwenden."
+        gradeBand: "9-10"
+        requires: [austeilende-und-ausgleichende-gerechtigkeit]
+      # HE 6.3 Recht und Gerechtigkeit I: Relativität der Leistungen, Notengebung; BY Eth9 LB4: Wert und Grenzen des Leistungsprinzips; NW 7-9 FK4 Arbeits- und Wirtschaftswelt. Stimmen 5-6 / 9-10 / 7-10: Mehrheit
+      - id: leistungsprinzip
+        iCan: "Ich kann Wert und Grenzen des Leistungsprinzips in Schule und Arbeitswelt beurteilen."
+        gradeBand: "9-10"
+        requires: [gerechtigkeitsgrundsaetze]
+      # HE 8.3 Recht und Gerechtigkeit II: Rechtsverstöße von Jugendlichen; KC8 Rechte und Pflichten, Schuld und Strafe (S. 26); BY Eth7 LB3: Rechte und Pflichten im Jugendalter, Jugendschutzgesetz, Strafmündigkeit; NW 5/6 FK4 Regeln und Gesetze. Stimmen 7-8 / 7-8 / 5-6: Mehrheit
+      - id: rechte-und-pflichten-jugendlicher
+        iCan: "Ich kann wichtige Rechte und Pflichten von Jugendlichen nennen, zum Beispiel aus dem Jugendschutzgesetz und zur Strafmündigkeit."
+        gradeBand: "7-8"
+        requires: [regeln-und-gesetze]
+      # HE 8.3 Recht und Gerechtigkeit II: Rechtsgefühl und kodifiziertes Recht; KC: Recht und Moral sind nicht identisch (S. 18, 22, 26); BY –; NW 7-9 FK4 Recht und Gerechtigkeit. Stimmen 7-8 / – / 7-10: Mehrheit
+      - id: recht-und-moral
+        iCan: "Ich kann erklären, warum Recht und Moral nicht dasselbe sind und wann Rechtsgefühl und Gesetz sich widersprechen können."
+        gradeBand: "7-8"
+        requires: [regeln-und-gesetze]
+      # HE 8.3 Recht und Gerechtigkeit II: Zweck und Sinn der Strafe, Rache und Vergeltung, Sühne, Resozialisierung, Abschreckung; KC8 Schuld und Strafe; BY Eth7 LB3: Strafmündigkeit; NW 7-9 FK4 Recht und Gerechtigkeit. Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: zweck-der-strafe
+        iCan: "Ich kann verschiedene Zwecke der Strafe unterscheiden: Vergeltung, Abschreckung und Resozialisierung."
+        gradeBand: "7-8"
+        requires: [rechte-und-pflichten-jugendlicher]
+      # HE 8.3 Recht und Gerechtigkeit II: Gleichheit der Rechte und Chancen in der Schule, vor Gericht, in der Gesellschaft; BY Eth9 LB4: Gleichberechtigung der Geschlechter in der Arbeitswelt; NW 7-9 FK4 Recht und Gerechtigkeit. Stimmen 7-8 / 9-10 / 7-10: Gleichstand 7-8/9-10; requires (recht-und-moral: 7-8): früheste passende Stufe 7-8
+      - id: rechtsgleichheit-und-chancengleichheit
+        iCan: "Ich kann Gleichheit vor dem Gesetz und Chancengleichheit unterscheiden und an Beispielen aus Schule und Gesellschaft prüfen."
+        gradeBand: "7-8"
+        requires: [recht-und-moral, gerechtigkeit-erfahren]
+      # HE 5.2 Würde I: Der Mensch hat Würde, weil er Pflichten aus Freiheit übernehmen kann; KC Freiheit und Würde (S. 19, 23); 9.2: Art. 1 GG; BY –; NW 7-9 K: formulieren Anerkennung und Achtung des anderen als notwendige Grundlage einer pluralen Gesellschaft (S. 31); FK4 Recht und Gerechtigkeit. Stimmen 5-6 / – / 7-10: Gleichstand 5-6/7-8/9-10; requires: früheste passende Stufe 5-6
+      - id: menschenwuerde
+        iCan: "Ich kann erklären, was Menschenwürde bedeutet und warum sie jedem Menschen unabhängig von Herkunft, Geschlecht oder Alter zukommt."
+        gradeBand: "5-6"
+        requires: [pflichten-gegen-sich-und-andere]
+      # schwach (nur HE nennt die Zweckformel; NW nur über den Fragenkreis). HE 7.2 Würde II: Der Mensch als Mittel und als Zweck; Sklaverei, Kinderarbeit, Folter, Diskriminierung; BY –; NW 7-9 FK3 Lust und Pflicht; FK4 Recht und Gerechtigkeit. Stimmen 7-8 / – / 7-10: Mehrheit
+      - id: mensch-als-zweck
+        iCan: "Ich kann mit Kant erklären, warum man einen Menschen nie nur als Mittel für fremde Zwecke benutzen darf, und Beispiele für Verletzungen der Würde nennen."
+        gradeBand: "7-8"
+        requires: [menschenwuerde]
+      # HE 9.2 Würde III: Menschenrechte und ihre geschichtliche Entwicklung, Universalitätsanspruch; KC10 Grundlage der Menschenrechte (S. 18); BY –; NW 7-9 FK4 Völkergemeinschaft und Frieden; Recht und Gerechtigkeit. Stimmen 9-10 / – / 7-10: Mehrheit
+      - id: menschenrechte
+        iCan: "Ich kann die Entstehung der Menschenrechte in Grundzügen beschreiben und ihren Anspruch erklären, für alle Menschen zu gelten."
+        gradeBand: "9-10"
+        requires: [menschenwuerde]
+      # HE 7.1 Freiheit II: Gewaltmonopol des Staats, Polizei, Bindung an Recht und Gesetz; 10.1: Gewaltmonopol und Widerstand; BY –; NW 7-9 FK4 Recht und Gerechtigkeit (Fragenkreis „Recht, Staat und Wirtschaft“). Stimmen 7-8 / – / 7-10: Mehrheit
+      - id: gewaltmonopol-des-staates
+        iCan: "Ich kann erklären, warum nur der Staat Gewalt ausüben darf und warum er dabei an Recht und Gesetz gebunden ist."
+        gradeBand: "7-8"
+        requires: [regeln-und-gesetze, gewalt-und-aggression]
+      # HE 10.3 Recht und Gerechtigkeit III: Gesellschaftsvertrag (Hobbes, Locke, Rousseau, Kant, Rawls); BY –; NW 7-9 FK4 Recht und Gerechtigkeit; Utopien und ihre politische Funktion. Stimmen 9-10 / – / 7-10: Mehrheit
+      - id: gesellschaftsvertrag
+        iCan: "Ich kann die Idee des Gesellschaftsvertrags erklären: Menschen geben einen Teil ihrer Freiheit ab, damit der Staat sie schützt."
+        gradeBand: "9-10"
+        requires: [gewaltmonopol-des-staates, freiheit-und-ihre-grenzen]
+      # HE 5.1 Freiheit I: Obdachlosigkeit, Not, Kranken- und Altersfürsorge; BY Eth5 LB2: spezifische Situationen in der Familie: Arbeitslosigkeit und Armut; NW 5/6 FK4 Armut und Wohlstand. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: armut-und-wohlstand
+        iCan: "Ich kann beschreiben, wie Armut das Leben von Kindern und Familien einschränkt, und Möglichkeiten der Hilfe nennen."
+        gradeBand: "5-6"
+        requires: [beduerfnisse-unterscheiden]
+      # HE 10.3 Recht und Gerechtigkeit III: Eigentum, gerechte Güterverteilung, Sozialbindung des Eigentums im Grundgesetz; BY Eth10 LB3: ein Problemfeld, z. B. soziale Gerechtigkeit; NW 7-9 FK4 Arbeits- und Wirtschaftswelt. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: eigentum-und-gemeinwohl
+        iCan: "Ich kann begründen, warum Eigentum nach dem Grundgesetz auch dem Gemeinwohl dienen soll, und eine gerechte Verteilung von Gütern erörtern."
+        gradeBand: "9-10"
+        requires: [gerechtigkeitsgrundsaetze, armut-und-wohlstand]
+      # HE 10.3 Recht und Gerechtigkeit III: Gerechtigkeit und Arbeitswelt; 5.1: Arbeit, Arbeitsteilung; BY Eth9 LB4: Stellenwert von Arbeit: Status, Selbstwert, persönliche Entwicklung, Sinn; NW 7-9 FK4 Arbeits- und Wirtschaftswelt. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: bedeutung-der-arbeit
+        iCan: "Ich kann beschreiben, welche Bedeutung Arbeit für Lebensunterhalt, Selbstwert und Sinn eines Menschen hat."
+        gradeBand: "9-10"
+        requires: [abhaengigkeit-des-menschen]
+      # HE 10.3 Recht und Gerechtigkeit III: Gerechtigkeit und Arbeitswelt; BY Eth9 LB4: Arbeitsbedingungen: Gesundheit, Gerechtigkeit der Löhne, Gleichberechtigung; NW 7-9 FK4 Arbeits- und Wirtschaftswelt. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: gerechte-arbeitsbedingungen
+        iCan: "Ich kann Arbeitsbedingungen danach beurteilen, ob sie gerecht und gesund sind, zum Beispiel bei Löhnen und Gleichberechtigung."
+        gradeBand: "9-10"
+        requires: [bedeutung-der-arbeit, gerechtigkeitsgrundsaetze]
+      # schwach (nur BY nennt Smith; NW nur über den Schwerpunkt Arbeits- und Wirtschaftswelt). HE –; BY Eth10 LB3: A. Smith, die „unsichtbare Hand“, Grundprinzipien des Liberalismus; NW 7-9 FK4 Arbeits- und Wirtschaftswelt. Stimmen – / 9-10 / 7-10: Mehrheit
+      - id: unsichtbare-hand
+        iCan: "Ich kann die Idee der „unsichtbaren Hand“ von Adam Smith erklären: Eigennutz soll über den Markt allen nützen."
+        gradeBand: "9-10"
+        requires: [eigentum-und-gemeinwohl]
+      # HE 10.4 Menschenbilder III: Menschenbild des Marxismus (Arbeit); BY Eth10 LB3: K. Marx: entfremdete Arbeit, Warenfetischismus; NW 7-9 FK4 Arbeits- und Wirtschaftswelt. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: entfremdete-arbeit
+        iCan: "Ich kann mit Karl Marx erklären, was entfremdete Arbeit ist, und seine Kritik an der Marktwirtschaft wiedergeben."
+        gradeBand: "9-10"
+        requires: [bedeutung-der-arbeit, unsichtbare-hand]
+      # HE –; BY Eth9 LB3: die Frage nach dem gerechten Krieg (Bellum-iustum-Theorie und deren Instrumentalisierung); NW 7-9 FK4 Völkergemeinschaft und Frieden. Stimmen – / 9-10 / 7-10: Mehrheit
+      - id: gerechter-krieg
+        iCan: "Ich kann die Lehre vom gerechten Krieg erklären und zeigen, wie sie missbraucht werden kann."
+        gradeBand: "9-10"
+        requires: [gewalt-und-aggression, menschenrechte]
+      # HE –; BY Eth9 LB3: Pazifismus, z. B. M. Gandhi, M. L. King; NW 7-9 FK4 Völkergemeinschaft und Frieden. Stimmen – / 9-10 / 7-10: Mehrheit
+      - id: pazifismus
+        iCan: "Ich kann den Pazifismus am Beispiel von Gandhi oder Martin Luther King erklären und mit der Lehre vom gerechten Krieg vergleichen."
+        gradeBand: "9-10"
+        requires: [gerechter-krieg]
+      # HE KC10 Recht und Gerechtigkeit: Menschenrechte und Gerechtigkeitsgrundsätze (S. 18); BY Eth9 LB3: Konfliktprävention, -schlichtung und -nachsorge; ein aktuelles Beispiel einer kriegerischen Auseinandersetzung; NW 7-9 FK4 Völkergemeinschaft und Frieden. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: frieden-sichern
+        iCan: "Ich kann an einem aktuellen Konflikt beschreiben, wie Kriege verhindert, beendet und Frieden danach gesichert werden können."
+        gradeBand: "9-10"
+        requires: [pazifismus, konflikte-gewaltfrei-loesen]
+  - id: natur-und-technik
+    name: { de: "Natur, Kultur und Technik", en: "Nature, culture and technology" }
+    competencies:
+      # HE 5.1 Freiheit I: Jeder Mensch braucht eine gesunde Umwelt; Abhängigkeit von natürlichen Ressourcen; BY Eth8 LB4: Zusammenhänge zwischen Lebensgewohnheiten und Umweltproblemen; NW 5/6 FK5 Leben von und mit der Natur. Stimmen 5-6 / 7-8 / 5-6: Mehrheit
+      - id: mensch-braucht-natur
+        iCan: "Ich kann beschreiben, wie Menschen von der Natur leben und warum sie eine gesunde Umwelt brauchen."
+        gradeBand: "5-6"
+        requires: [abhaengigkeit-des-menschen]
+      # HE KC6 Mensch, Natur und Technik: umweltethische Probleme des Alltags, Initiativen vor Ort (S. 23); BY Eth6 LB4: konkrete Handlungsmöglichkeiten, weniger Lebensmittelverschwendung; Eth8 LB4: umweltbewusstes Verhalten im Alltag; NW 5/6 FK5 Leben von und mit der Natur. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: umwelt-schuetzen-im-alltag
+        iCan: "Ich kann Möglichkeiten nennen und begründen, wie ich im Alltag Natur und Umwelt schonen kann."
+        gradeBand: "5-6"
+        requires: [mensch-braucht-natur]
+      # HE KC6 Mensch, Natur und Technik: umwelt- und technikethische Probleme des Alltags (S. 23); BY Eth8 LB4: Zusammenhänge zwischen modernen Lebensgewohnheiten und Umweltproblemen; NW 5/6 FK5 Leben von und mit der Natur. Stimmen 5-6 / 7-8 / 5-6: Mehrheit
+      - id: lebensstil-und-umwelt
+        iCan: "Ich kann Zusammenhänge zwischen unseren Lebensgewohnheiten und Umweltproblemen beschreiben, zum Beispiel bei Plastik, Ernährung und Energie."
+        gradeBand: "5-6"
+        requires: [mensch-braucht-natur]
+      # HE KC6 Mensch, Natur und Technik: umweltethische Probleme des Alltags (S. 23); BY Eth6 LB4: verantwortungsbewusster Konsum: Billigprodukte, Arbeitsbedingungen, Tierhaltung, ökologischer Fußabdruck; NW 5/6 FK4 Armut und Wohlstand; FK5 Leben von und mit der Natur. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: verantwortungsvoller-konsum
+        iCan: "Ich kann beim Einkaufen auf verantwortungsvollen Konsum achten, etwa auf Arbeitsbedingungen, Tierhaltung und den ökologischen Fußabdruck."
+        gradeBand: "5-6"
+        requires: [lebensstil-und-umwelt]
+      # HE 6.4 Menschenbilder I: Konsum- und Medienwelt kritisch auswählen; wer bestimmt über die eigenen Konsumgewohnheiten?; BY Eth6 LB4: Einfluss der Werbung, Kauflust und Kaufsucht; Marken als Statussymbole; NW 5/6 FK6 Medienwelten. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: werbung-und-konsum
+        iCan: "Ich kann erklären, wie Werbung, Marken und Gruppendruck mein Kaufverhalten beeinflussen."
+        gradeBand: "5-6"
+        requires: [beduerfnisaufschub]
+      # HE 5.2 Würde I: Pflicht und Fürsorge: Umgang mit Tieren; BY Eth8 LB4: Haustierhaltung; Tierschutz; NW 5/6 FK5 Tiere als Mit-Lebewesen. Stimmen 5-6 / 7-8 / 5-6: Mehrheit
+      - id: tiere-als-mitlebewesen
+        iCan: "Ich kann begründen, welche Verantwortung Menschen für die Tiere haben, mit denen sie leben."
+        gradeBand: "5-6"
+      # HE 8.4 Menschenbilder II: Vergleich Tier – Mensch, der Mensch als biologischer Sonderfall; 6.4: physische Möglichkeiten von Mensch und Tier; BY Eth8 LB4: Kriterien für den moralischen Status von Mensch und Tier; NW 7-9 FK5 Der Mensch als kulturelles Wesen; K: entwickeln verschiedene Menschen- und Weltbilder (S. 31). Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: mensch-und-tier
+        iCan: "Ich kann vergleichen, was Menschen und Tiere können, und erklären, was den Menschen besonders macht."
+        gradeBand: "7-8"
+        requires: [tiere-als-mitlebewesen]
+      # HE 8.4 Menschenbilder II: Hand und Werkzeug, Prometheus-Mythos; 10.4: Mängelwesen, symbolbildendes Wesen; BY –; NW 7-9 FK5 Der Mensch als kulturelles Wesen. Stimmen 7-8 / – / 7-10: Mehrheit
+      - id: mensch-als-kulturwesen
+        iCan: "Ich kann erklären, warum der Mensch ein Kulturwesen ist, das sich mit Sprache, Werkzeug und Technik seine Welt schafft."
+        gradeBand: "7-8"
+        requires: [mensch-und-tier]
+      # HE 8.4 Menschenbilder II: Vergleich Tier – Mensch; Regeln, Normen, Verhaltensmuster bei Tieren und Menschen; BY Eth8 LB4: Vernunftbegabtheit, Empfindungsfähigkeit; P. Singer: „Speziesismus“; NW 5/6 FK5 Tiere als Mit-Lebewesen. Stimmen 7-8 / 7-8 / 5-6: Mehrheit
+      - id: moralischer-status-der-tiere
+        iCan: "Ich kann Kriterien für den moralischen Status von Mensch und Tier vergleichen, zum Beispiel Vernunft und Leidensfähigkeit."
+        gradeBand: "7-8"
+        requires: [mensch-und-tier]
+      # HE –; BY Eth8 LB4: Tiere als Nahrungsmittel, Tierversuche, Haustier- und Massentierhaltung; NW 5/6 FK5 Tiere als Mit-Lebewesen. Stimmen – / 7-8 / 5-6: Gleichstand 5-6/7-8; requires (moralischer-status-der-tiere: 7-8): früheste passende Stufe 7-8
+      - id: tiere-nutzen
+        iCan: "Ich kann den Umgang mit Tieren als Nahrungsmittel, in der Massentierhaltung und in Tierversuchen ethisch beurteilen."
+        gradeBand: "7-8"
+        requires: [moralischer-status-der-tiere]
+      # HE 8.4 Menschenbilder II: Technik als Gefährdung der Zukunft, Überleben nachfolgender Generationen; KC10 Verantwortung für zukünftige Generationen (S. 19); BY Eth8 LB4: Konzept der Nachhaltigkeit; NW 7-9 FK5 Ökologie versus Ökonomie. Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: nachhaltigkeit
+        iCan: "Ich kann das Konzept der Nachhaltigkeit erklären und begründen, warum wir Verantwortung für künftige Generationen haben."
+        gradeBand: "7-8"
+        requires: [lebensstil-und-umwelt]
+      # HE 8.4 Menschenbilder II: Unterscheiden zwischen Überlebensinteressen der Menschen und Schutz der Natur; BY Eth8 LB4: wesentliche Begründungsansätze für den Umweltschutz; NW 7-9 FK5 Ökologie versus Ökonomie. Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: begruendungen-fuer-umweltschutz
+        iCan: "Ich kann Begründungen für den Umweltschutz unterscheiden: Schutz der Natur für den Menschen oder um ihrer selbst willen."
+        gradeBand: "7-8"
+        requires: [nachhaltigkeit]
+      # HE KC10 Mensch, Natur und Technik: Verfügungsanspruch des Menschen über Natur und Technik (S. 19); BY Eth10 LB3: Problemfeld Wachstum und Ökologie; NW 7-9 FK5 Ökologie versus Ökonomie. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: oekologie-und-oekonomie
+        iCan: "Ich kann einen Konflikt zwischen Umweltschutz und wirtschaftlichen Interessen beschreiben und die Interessen gegeneinander abwägen."
+        gradeBand: "9-10"
+        requires: [begruendungen-fuer-umweltschutz]
+      # HE 8.4 Menschenbilder II: Nutzen und Gefahren der Technik; KC8 Auswirkungen technischer Entwicklungen auf den Einzelnen und die Gemeinschaft (S. 27); BY –; NW 7-9 FK5 Technik – Nutzen und Risiko. Stimmen 7-8 / – / 7-10: Mehrheit
+      - id: technik-nutzen-und-risiko
+        iCan: "Ich kann an einem Beispiel Nutzen und Gefahren einer Technik abwägen."
+        gradeBand: "7-8"
+        requires: [mensch-als-kulturwesen]
+      # HE KC10 Mensch, Natur und Technik: naturwissenschaftliche Erkenntnisse und Ansätze angewandter Ethik (S. 19); 10.4: Humangenetik; BY –; NW 7-9 FK5 Wissenschaft und Verantwortung. Stimmen 9-10 / – / 7-10: Mehrheit
+      - id: wissenschaft-und-verantwortung
+        iCan: "Ich kann an einem Beispiel aus Forschung oder Medizin erklären, warum Wissenschaft Verantwortung für ihre Folgen trägt."
+        gradeBand: "9-10"
+        requires: [technik-nutzen-und-risiko, verantwortung]
+  - id: wahrheit-und-medien
+    name: { de: "Wahrheit, Wirklichkeit und Medien", en: "Truth, reality and media" }
+    competencies:
+      # HE 5.4 Wahrheit I: Wir nehmen nur wahr, wofür wir Sinnesorgane besitzen; Weltwahrnehmung einer Fledermaus, Biene; BY Eth5 LB1: Wahrnehmung durch die Sinnesorgane; NW 5/6 K: beschreiben und deuten ihre Sinneswahrnehmungen (S. 28). Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: sinneswahrnehmung
+        iCan: "Ich kann erklären, dass wir die Welt über unsere Sinne wahrnehmen und dass andere Lebewesen sie anders wahrnehmen."
+        gradeBand: "5-6"
+      # HE 5.4 Wahrheit I: Optische Täuschungen, Kippbilder; BY Eth5 LB1: Bedingungen der Wahrnehmung: Täuschung; NW 5/6 K: beschreiben und deuten ihre Sinneswahrnehmungen mit Blick auf deren Voraussetzungen (S. 28). Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: taeuschungen
+        iCan: "Ich kann an optischen Täuschungen und Kippbildern zeigen, dass unsere Wahrnehmung uns täuschen kann."
+        gradeBand: "5-6"
+        requires: [sinneswahrnehmung]
+      # HE 7.4 Wahrheit II: „Jeder sieht alles anders“; KC8 vielfältige Zugänge zur Wahrnehmung (S. 27); BY Eth5 LB1: Bedingungen der Wahrnehmung: Erfahrung, Information, Subjektivität; NW 5/6 K: unterscheiden verschiedene Perspektiven (S. 28); 7-9 K: beschreiben Komplexität und Perspektivität von Wahrnehmung. Stimmen 7-8 / 5-6 / 5-6: Mehrheit
+      - id: wahrnehmung-ist-subjektiv
+        iCan: "Ich kann erklären, warum verschiedene Menschen dieselbe Situation unterschiedlich wahrnehmen."
+        gradeBand: "5-6"
+        requires: [taeuschungen]
+      # HE 8.1 Gewissen und Identität II: Vorurteile; BY Eth5 LB1: erste Urteile darauf prüfen, ob es Vorurteile sind; NW 5/6 K: unterscheiden zwischen Urteilen und Vorurteilen (S. 28); 7-9 FK6 Vorurteil, Urteil, Wissen. Stimmen 7-8 / 5-6 / 5-6: Mehrheit
+      - id: urteil-und-vorurteil
+        iCan: "Ich kann ein vorschnelles Vorurteil von einem begründeten Urteil unterscheiden."
+        gradeBand: "5-6"
+        requires: [wahrnehmung-ist-subjektiv]
+      # HE –; BY Eth5 LB1: Wahrnehmung als Erlebnis (Bilder, Musik); Eth8 LB3: Schönheitsideal in den Medien; NW 5/6 FK6 „Schön“ und „hässlich“. Stimmen – / 5-6 / 5-6: Mehrheit
+      - id: schoen-und-haesslich
+        iCan: "Ich kann darüber nachdenken, was Menschen schön oder hässlich finden und wie Schönheitsideale entstehen."
+        gradeBand: "5-6"
+        requires: [wahrnehmung-ist-subjektiv]
+      # HE 7.4 Wahrheit II: Unterscheiden lernen zwischen Wahrheit und Wahrhaftigkeit; BY Eth10 LB4: einfache Wahrheitstheorien; NW 7-9 FK6 „Wahr“ und „falsch“. Stimmen 7-8 / 9-10 / 7-10: Gleichstand 7-8/9-10; requires: früheste passende Stufe 7-8
+      - id: wahrheit-und-wahrhaftigkeit
+        iCan: "Ich kann Wahrheit (stimmt eine Aussage mit der Wirklichkeit überein?) von Wahrhaftigkeit (meint jemand, was er sagt?) unterscheiden."
+        gradeBand: "7-8"
+        requires: [luegen-und-wahrhaftigkeit]
+      # HE 7.4 Wahrheit II: Methoden der Tatsachenfeststellung, Verlässlichkeit von Zeugenaussagen; BY Eth10 LB4: Bewertung von Informationen; NW 7-9 FK6 „Wahr“ und „falsch“; Quellen der Erkenntnis. Stimmen 7-8 / 9-10 / 7-10: Gleichstand 7-8/9-10; requires (wahrheit-und-wahrhaftigkeit: 7-8): früheste passende Stufe 7-8
+      - id: aussagen-pruefen
+        iCan: "Ich kann prüfen, ob eine Behauptung wahr ist, zum Beispiel durch eigene Beobachtung, Zeugenaussagen oder Quellen."
+        gradeBand: "7-8"
+        requires: [wahrheit-und-wahrhaftigkeit, taeuschungen]
+      # HE 7.4 Wahrheit II: Unterscheiden zwischen Sachverhalten und Wertungen; BY Eth10 LB4: Unterschied zwischen Information und Meinung; NW 7-9 FK6 Vorurteil, Urteil, Wissen. Stimmen 7-8 / 9-10 / 7-10: Gleichstand 7-8/9-10; requires: früheste passende Stufe 7-8
+      - id: tatsache-und-wertung
+        iCan: "Ich kann Tatsachenaussagen von Wertungen und Meinungen unterscheiden."
+        gradeBand: "7-8"
+        requires: [urteil-und-vorurteil]
+      # HE 9.4 Wahrheit III: Irrtum und Fehlbarkeit, gültige Aussagen; KC10 unterschiedliche Wege zur Wahrheitsfindung (S. 19); BY Eth10 LB1: Zweifeln (Sokrates, Descartes); Skeptizismus; NW 7-9 FK6 Vorurteil, Urteil, Wissen; Quellen der Erkenntnis. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: meinen-glauben-wissen
+        iCan: "Ich kann Meinen, Glauben und Wissen unterscheiden und erklären, wann wir etwas wirklich wissen."
+        gradeBand: "9-10"
+        requires: [tatsache-und-wertung, aussagen-pruefen]
+      # HE 9.4 Wahrheit III: wissenschaftliche Erkenntnisse zwischen Verifikation und Falsifikation, begrenzte Gültigkeit; BY Eth10 LB4: Warnsignale für Pseudowissenschaftlichkeit; NW 7-9 FK6 Quellen der Erkenntnis. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: wissenschaftliche-erkenntnis
+        iCan: "Ich kann erklären, wie die Wissenschaft Vermutungen überprüft und warum wissenschaftliches Wissen vorläufig ist."
+        gradeBand: "9-10"
+        requires: [meinen-glauben-wissen]
+      # HE 9.4 Wahrheit III: Wahrheit zwischen Relativismus und verantworteter Pluralität; BY Eth10 LB1: Protagoras' „homo-mensura“-Satz und seine Deutungen; NW 7-9 FK6 Quellen der Erkenntnis. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: wahrheit-und-relativismus
+        iCan: "Ich kann den Satz des Protagoras „Der Mensch ist das Maß aller Dinge“ erklären und prüfen, ob es eine Wahrheit für alle gibt."
+        gradeBand: "9-10"
+        requires: [meinen-glauben-wissen]
+      # HE KC10 Wahrheit und Wirklichkeit: erkenntnistheoretische Ansätze (S. 19); BY Eth10 LB1: Skeptizismus, Gorgias, Hume; Gedankenexperiment „Gehirn im Tank“; NW 7-9 FK6 Quellen der Erkenntnis; Virtualität und Schein. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: skeptizismus
+        iCan: "Ich kann skeptische Zweifel daran darstellen, ob wir die Welt erkennen können, zum Beispiel mit dem Gedankenexperiment „Gehirn im Tank“."
+        gradeBand: "9-10"
+        requires: [meinen-glauben-wissen]
+      # HE 10.1 Gewissen und Identität III: Dilemma (Sokrates); BY Eth10 LB1: Sokrates, Auseinandersetzung mit den Sophisten, sokratischer Dialog; NW 7-9 K: führen eine Diskussion im Sinne des sokratischen Philosophierens (S. 32). Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: sokrates
+        iCan: "Ich kann erklären, wie Sokrates im Gespräch durch Fragen nach Wahrheit suchte und was sein Satz „Ich weiß, dass ich nichts weiß“ bedeutet."
+        gradeBand: "9-10"
+        requires: [meinen-glauben-wissen]
+      # HE 6.4 Menschenbilder I: Fernsehen: Wer bestimmt über die eigenen Konsumgewohnheiten?; BY Eth6 LB2: Analyse der eigenen Mediennutzung; NW 5/6 FK6 Medienwelten; K: beschreiben und bewerten den eigenen Umgang mit Medien (S. 28). Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: eigene-mediennutzung
+        iCan: "Ich kann meine eigene Mediennutzung beschreiben und bewerten."
+        gradeBand: "5-6"
+      # HE –; BY Eth6 LB2: Auswirkungen exzessiver Nutzung digitaler Medien; Techniken der Selbstkontrolle; NW 5/6 FK6 Medienwelten. Stimmen – / 5-6 / 5-6: Mehrheit
+      - id: digitale-medien-massvoll-nutzen
+        iCan: "Ich kann Folgen zu häufiger Nutzung digitaler Medien beschreiben und einfache Regeln zur Selbstkontrolle anwenden."
+        gradeBand: "5-6"
+        requires: [eigene-mediennutzung]
+      # HE 7.4 Wahrheit II: Täuschungen in Wirklichkeit und Medien; BY Eth6 LB2: Mechanismen der Täuschung und Manipulation in Medien; NW 5/6 FK6 Medienwelten; 7-9 Virtualität und Schein. Stimmen 7-8 / 5-6 / 5-6: Mehrheit
+      - id: taeuschung-in-medien
+        iCan: "Ich kann Täuschung und Manipulation in Medien erkennen, zum Beispiel gefälschte Bilder und unglaubwürdige Nachrichten."
+        gradeBand: "5-6"
+        requires: [eigene-mediennutzung, taeuschungen]
+      # HE 7.2 Würde II: Recht auf Integrität der Person und Schutz der Privatsphäre; BY Eth6 LB2: private Daten im Netz, Umgang mit Bildern; Chancen und Gefahren von sozialen Netzwerken; NW 5/6 FK6 Medienwelten. Stimmen 7-8 / 5-6 / 5-6: Mehrheit
+      - id: private-daten
+        iCan: "Ich kann erklären, warum ich private Daten und Bilder im Netz schützen sollte, und Chancen und Gefahren sozialer Netzwerke nennen."
+        gradeBand: "5-6"
+        requires: [eigene-mediennutzung]
+      # HE 7.2 Würde II: Medien und Würde, Recht auf Integrität der Person, Selbstpreisgabe in der Medienöffentlichkeit; BY Eth10 LB4: Persönlichkeitsrechte, verletzendes Online-Verhalten, Datenschutz und Urheberrecht; NW 7-9 FK6 Virtualität und Schein. Stimmen 7-8 / 9-10 / 7-10: Gleichstand 7-8/9-10; requires: früheste passende Stufe 7-8
+      - id: persoenlichkeitsrechte-online
+        iCan: "Ich kann erklären, wie verletzendes Verhalten im Netz die Rechte und die Würde anderer verletzt, und Grundgedanken von Datenschutz und Urheberrecht nennen."
+        gradeBand: "7-8"
+        requires: [private-daten, menschenwuerde]
+      # HE KC10 Wahrheit und Wirklichkeit: mediale Wahrnehmung (S. 19); BY Eth10 LB4: verschiedene Wirklichkeiten (Realität, Fiktionalität, Virtualität), Einfluss auf die Wahrnehmung; NW 7-9 FK6 Virtualität und Schein. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: virtualitaet-und-wirklichkeit
+        iCan: "Ich kann Realität, Fiktion und virtuelle Welten unterscheiden und beschreiben, wie sie meinen Blick auf die Wirklichkeit beeinflussen."
+        gradeBand: "9-10"
+        requires: [taeuschung-in-medien, wahrnehmung-ist-subjektiv]
+      # HE KC10 Wahrheit und Wirklichkeit: mediale Wahrnehmung, Wege zur Wahrheitsfindung (S. 19); BY Eth10 LB4: Bewertung von Informationen, Anzeichen für Fälschungen, Instrumente gezielter Beeinflussung; NW 7-9 FK6 Virtualität und Schein; Quellen der Erkenntnis. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: informationen-bewerten
+        iCan: "Ich kann Informationen im Netz bewerten und Warnzeichen für Fälschungen, Pseudowissenschaft und gezielte Beeinflussung erkennen."
+        gradeBand: "9-10"
+        requires: [taeuschung-in-medien, aussagen-pruefen, tatsache-und-wertung]
+      # HE 7.2 Würde II: Presserecht, Recht auf Information; BY Eth10 LB4: Bedeutung und Verantwortung von Medien in einer demokratisch-pluralistischen Gesellschaft; NW 7-9 K: reflektieren die Bedeutung der Medien und medialen Kulturtechniken (S. 31). Stimmen 7-8 / 9-10 / 7-10: Gleichstand 7-8/9-10; requires (tatsache-und-wertung: 7-8): früheste passende Stufe 7-8
+      - id: medien-in-der-demokratie
+        iCan: "Ich kann die Aufgaben der Medien in einer Demokratie beschreiben: informieren, zur Meinungsbildung beitragen und die Macht kontrollieren."
+        gradeBand: "7-8"
+        requires: [tatsache-und-wertung]
+      # HE KC8 Mensch, Natur und Technik: ethische Reflexion von Informations- und Kommunikationsmedien (S. 27); BY Eth10 LB4: medienethische Verantwortung von Produzenten und Konsumenten, Pressekodex; NW 7-9 K: gehen kritisch mit neuen Medien um (S. 31). Stimmen 7-8 / 9-10 / 7-10: Gleichstand 7-8/9-10; requires (medien-in-der-demokratie: 7-8): früheste passende Stufe 7-8
+      - id: verantwortung-in-den-medien
+        iCan: "Ich kann beschreiben, welche Verantwortung Journalisten, Produzenten und Nutzer von Medien tragen."
+        gradeBand: "7-8"
+        requires: [medien-in-der-demokratie]
+  - id: religionen-und-sinn
+    name: { de: "Religionen, Weltbilder und Sinn", en: "Religions, worldviews and meaning" }
+    competencies:
+      # HE 5.3 Religion I: griechische Mythologie, Schöpfung im Judentum, Schöpfungsmythen; KC6 Mythen und große Erzählungen (S. 23); BY Eth6 LB1: Schöpfungsgeschichte (Gen 1–2); NW 5/6 FK7 Vom Anfang der Welt. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: schoepfungserzaehlungen
+        iCan: "Ich kann Schöpfungserzählungen verschiedener Religionen und Kulturen vergleichen."
+        gradeBand: "5-6"
+      # HE 5.3 Religion I: mythische Erzählungen und Realgeschichte; Bild, Symbol und Bedeutung; BY Eth6 LB1: Schöpfungsgeschichte im Vergleich mit Urknall- und Evolutionstheorie; NW 5/6 FK7 Vom Anfang der Welt. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: mythos-und-wissenschaft
+        iCan: "Ich kann eine Schöpfungserzählung mit der wissenschaftlichen Erklärung vom Anfang der Welt vergleichen und erklären, was Mythen deuten wollen."
+        gradeBand: "5-6"
+        requires: [schoepfungserzaehlungen]
+      # HE 9.3 Religion III: jüdischer, christlicher, muslimischer Jahresfestkreis; BY Eth5 LB4: Fest des Fastenbrechens, Laubhüttenfest, Weihnachten, Ostern; NW 5/6 FK7 Leben und Feste in unterschiedlichen Religionen. Stimmen 9-10 / 5-6 / 5-6: Mehrheit
+      - id: feste-der-religionen
+        iCan: "Ich kann wichtige Feste von Judentum, Christentum und Islam nennen und ihre Bedeutung erklären."
+        gradeBand: "5-6"
+      # HE 7.3 Religion II: Riten, Funktion von Riten, Taufe, Hochzeit, Beerdigung; KC8 Rituale und Riten (S. 27); BY Eth5 LB4: wesentliche Rituale und Symbole; NW 5/6 K: erläutern religiöse Rituale in verschiedenen Weltreligionen (S. 28); FK7 Leben und Feste. Stimmen 7-8 / 5-6 / 5-6: Mehrheit
+      - id: riten-und-rituale
+        iCan: "Ich kann erklären, welche Aufgaben Riten in den Religionen haben, zum Beispiel bei Geburt, Hochzeit und Tod."
+        gradeBand: "5-6"
+        requires: [feste-der-religionen]
+      # HE 5.3 Religion I: Das Judentum erzählt von Schöpfung, Bund Gottes mit dem Volk Israel, Erwartung des Messias; BY Eth6 LB1: Selbstverständnis des Judentums: Abrams Landzuweisung, Bund, Sabbat; NW 5/6 FK7 Leben und Feste in unterschiedlichen Religionen. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: judentum
+        iCan: "Ich kann Grundlagen des Judentums beschreiben, zum Beispiel die Tora, den Bund Gottes mit Abraham und den Sabbat."
+        gradeBand: "5-6"
+      # HE 5.3 Religion I: Leben, Lehre und Heilsdeutung des Jesus von Nazaret; BY Eth6 LB1: Bergpredigt, Doppelgebot, Barmherziger Samariter, Tod und Auferstehung; NW 5/6 FK7 Leben und Feste in unterschiedlichen Religionen. Stimmen 5-6 / 5-6 / 5-6: Mehrheit
+      - id: christentum
+        iCan: "Ich kann Grundlagen des Christentums beschreiben, zum Beispiel das Leben Jesu, das Gebot der Nächstenliebe und den Glauben an die Auferstehung."
+        gradeBand: "5-6"
+        requires: [judentum]
+      # HE 5.3 Religion I: Der Islam nimmt die jüdische und christliche Botschaft im Koran auf; Leben Muhammads; BY Eth7 LB1: Bedeutung und Leben Mohammeds, Koran, die Fünf Säulen; NW 5/6 FK7 Leben und Feste in unterschiedlichen Religionen. Stimmen 5-6 / 7-8 / 5-6: Mehrheit
+      - id: islam
+        iCan: "Ich kann Grundlagen des Islam beschreiben: das Leben Mohammeds, den Koran und die Fünf Säulen."
+        gradeBand: "5-6"
+        requires: [judentum, christentum]
+      # HE KC8 Religionen, Weltbilder und Kulturen: mögliche Probleme des Zusammenlebens (S. 27); 6.1: Speisevorschriften; BY Eth7 LB1: Alltagsfragen von Muslimen in Deutschland, Kopftuch-Debatte, Integration; NW 7-9 FK2 Interkulturalität; K: nehmen gesellschaftliche Entwicklungen in ihrer interkulturellen Prägung wahr (S. 31). Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: religion-und-zusammenleben
+        iCan: "Ich kann Fragen des Zusammenlebens von Menschen verschiedener Religionen in Deutschland erörtern, zum Beispiel zum Kopftuch oder zu Speisevorschriften."
+        gradeBand: "7-8"
+        requires: [islam, toleranz]
+      # HE 9.3 Religion III: Heilswege und Weisungen: Dekalog, Bergpredigt; 6.1: den Religionen gemeinsame Gebote; BY Eth6 LB1: 10 Gebote (Ex 20); Doppelgebot (Mk 12); NW 7-9 FK7 Ethische Grundsätze in Religionen. Stimmen 9-10 / 5-6 / 7-10: Mehrheit
+      - id: zehn-gebote-und-naechstenliebe
+        iCan: "Ich kann die Zehn Gebote und das Gebot der Nächstenliebe als ethische Weisungen von Judentum und Christentum erklären."
+        gradeBand: "9-10"
+        requires: [christentum, werte-und-normen]
+      # HE 5.3 Religion I: Bhagavadgita; 6.1: Weisungen von Hinduismus und Buddhismus; BY Eth9 LB1: Samsara, Atman, Brahman, Moksha, Dharma, Karma, Kastenwesen; NW 7-9 FK7 Ethische Grundsätze in Religionen; Menschen- und Gottesbilder in Religionen. Stimmen 5-6 / 9-10 / 7-10: Mehrheit
+      - id: hinduismus
+        iCan: "Ich kann Grundgedanken des Hinduismus erklären, zum Beispiel Karma, Samsara und Dharma."
+        gradeBand: "9-10"
+      # HE 9.3 Religion III: Buddhismus (achtfacher Pfad); 5.3: das Leben Siddharta Gautamas; BY Eth9 LB1: Vier Edle Wahrheiten, Mittlerer Weg, Achtfacher Pfad; NW 7-9 FK7 Ethische Grundsätze in Religionen. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: buddhismus
+        iCan: "Ich kann die Vier Edlen Wahrheiten und den Achtfachen Pfad des Buddhismus erklären."
+        gradeBand: "9-10"
+        requires: [hinduismus]
+      # HE 9.3 Religion III: Religionen setzen ethische Postulate; 6.1: den Religionen gemeinsame Gebote und Verbote; BY Eth9 LB1: gemeinsames ethisches Fundament der Abrahamsreligionen im Vergleich mit Hinduismus und Buddhismus; Eth10 LB2; NW 7-9 FK7 Ethische Grundsätze in Religionen. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: ethik-der-religionen-vergleichen
+        iCan: "Ich kann ethische Grundsätze verschiedener Weltreligionen vergleichen und Gemeinsamkeiten wie die Goldene Regel finden."
+        gradeBand: "9-10"
+        requires: [zehn-gebote-und-naechstenliebe, islam, buddhismus, goldene-regel]
+      # HE 5.3 Religion I: Gottesvorstellungen, Götter und Halbgötter; 9.3: Offenbarung und Heilshandeln Gottes; BY Eth9 LB1: Brahman; Offenbarung und Mystik in den Weltreligionen; NW 7-9 FK7 Menschen- und Gottesbilder in Religionen. Stimmen 5-6 / 9-10 / 7-10: Mehrheit
+      - id: gottesvorstellungen
+        iCan: "Ich kann verschiedene Gottesvorstellungen unterscheiden, zum Beispiel den Glauben an einen Gott, an viele Götter oder an ein göttliches Prinzip."
+        gradeBand: "9-10"
+        requires: [hinduismus, islam]
+      # HE KC10 Religionen, Weltbilder und Kulturen: divergierende Glaubensüberzeugungen, Weltbilder (S. 19); BY Eth10 LB2: Atheismus, Agnostizismus; NW 7-9 FK7 Menschen- und Gottesbilder in Religionen. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: theismus-atheismus-agnostizismus
+        iCan: "Ich kann Theismus, Atheismus und Agnostizismus unterscheiden."
+        gradeBand: "9-10"
+        requires: [gottesvorstellungen]
+      # HE 9.3 Religion III: Heilsvorstellungen; Sublimation; Projektion; BY Eth10 LB2: Religionskritik: L. Feuerbach; K. Marx, F. Nietzsche; NW 7-9 FK7 Menschen- und Gottesbilder in Religionen. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: religionskritik
+        iCan: "Ich kann Feuerbachs Religionskritik wiedergeben, nach der Gott ein Spiegelbild der Wünsche des Menschen ist, und sie beurteilen."
+        gradeBand: "9-10"
+        requires: [theismus-atheismus-agnostizismus]
+      # HE 9.3 Religion III: Ereignisse zwischen Zufall und Fügung, das Warum des Leids; BY Eth10 LB2: Theodizee-Problem; NW 7-9 FK7 Menschen- und Gottesbilder in Religionen. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: theodizee
+        iCan: "Ich kann das Theodizee-Problem erklären: Wie kann ein guter und allmächtiger Gott das Leid in der Welt zulassen?"
+        gradeBand: "9-10"
+        requires: [gottesvorstellungen]
+      # HE 9.3 Religion III: Ich als Frage, Welt als Frage; Wer bin ich, was ist mir die Welt?; BY Eth10 LB1: Anstöße zum Philosophieren (Staunen, Zweifeln), philosophisches Fragen, die vier Fragen nach I. Kant; NW 5/6 K: identifizieren Grundfragen der menschlichen Existenz als philosophische Fragen (S. 28). Stimmen 9-10 / 9-10 / 5-6: Mehrheit
+      - id: philosophische-fragen
+        iCan: "Ich kann philosophische Fragen erkennen und mit Kants vier Fragen ordnen: Was kann ich wissen? Was soll ich tun? Was darf ich hoffen? Was ist der Mensch?"
+        gradeBand: "9-10"
+      # HE 10.4 Menschenbilder III: Menschenbilder aus philosophischen Perspektiven (Darwinismus, Freud, Sartre, Gehlen), christliches Menschenbild und Menschenbild der Aufklärung; KC10 Menschen- und Weltbilder (S. 18); BY Eth10 LB3: Vorstellung vom homo oeconomicus; NW 7-9 FK7 Menschen- und Gottesbilder in Religionen; K: entwickeln verschiedene Menschen- und Weltbilder (S. 31). Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: menschenbilder
+        iCan: "Ich kann verschiedene Menschenbilder vergleichen, zum Beispiel den Menschen als Geschöpf Gottes, als Naturwesen oder als freies Wesen, das sich selbst entwirft."
+        gradeBand: "9-10"
+        requires: [mensch-als-kulturwesen, philosophische-fragen]
+      # HE 6.4 Menschenbilder I: Glück oder Erfolg?; 10.3: persönliches Glück; BY Eth8 LB1: Stellenwert von Spaß und Freude im Leben; NW 7-9 FK7 Glück und Sinn des Lebens. Stimmen 5-6 / 7-8 / 7-10: Mehrheit
+      - id: glueck
+        iCan: "Ich kann verschiedene Vorstellungen vom Glück unterscheiden, zum Beispiel Glück als Zufall, als Freude und Genuss oder als gelungenes Leben."
+        gradeBand: "7-8"
+        requires: [beduerfnisaufschub]
+      # schwach (nur BY nennt die Erlebnismaschine; NW über Fragenkreis und Gedankenexperiment). HE –; BY Eth8 LB1: Gedankenexperiment „Erlebnismaschine“ nach R. Nozick; NW 7-9 FK7 Glück und Sinn des Lebens; K: führen Gedankenexperimente zur Lösung philosophischer Probleme durch (S. 32). Stimmen – / 7-8 / 7-10: Mehrheit
+      - id: erlebnismaschine
+        iCan: "Ich kann am Gedankenexperiment der „Erlebnismaschine“ prüfen, ob ein glückliches Leben nur aus angenehmen Erlebnissen besteht."
+        gradeBand: "7-8"
+        requires: [glueck]
+      # HE 9.3 Religion III: Suche nach sinnstiftender Selbst- und Weltdeutung; Leben woraufhin?; BY Eth8 LB1: Sinn durch Selbsttranszendenz: Liebe, Dienst an der Gesellschaft, religiöse Erfahrungen; NW 7-9 FK7 Glück und Sinn des Lebens; K: erörtern Antworten der Religionen und der Philosophie auf die Frage nach einem sinnerfüllten Leben (S. 31). Stimmen 9-10 / 7-8 / 7-10: Gleichstand 7-8/9-10; requires (glueck: 7-8): früheste passende Stufe 7-8
+      - id: sinn-des-lebens
+        iCan: "Ich kann Antworten auf die Frage nach dem Sinn des Lebens vergleichen, etwa Sinn durch Liebe, Einsatz für andere oder Glauben."
+        gradeBand: "7-8"
+        requires: [glueck]
+      # HE 9.3 Religion III: Angst, Einsamkeit, Leid versus Liebe, Freude, Glück; BY Eth8 LB1: Sinnfrage in Ausnahmesituationen; Sinnfindung als Prävention von Sucht, Depression, Suizid; NW 7-9 FK7 Sterben und Tod; Glück und Sinn des Lebens. Stimmen 9-10 / 7-8 / 7-10: Gleichstand 7-8/9-10; requires (sinn-des-lebens: 7-8): früheste passende Stufe 7-8
+      - id: sinn-in-krisen
+        iCan: "Ich kann beschreiben, wie Menschen in Krisen wie Krankheit, Unfall oder Scheitern nach Sinn suchen und wo sie Hilfe finden."
+        gradeBand: "7-8"
+        requires: [sinn-des-lebens]
+      # HE 7.3 Religion II: Beerdigung; 9.3: die Brechung in Schuld und Tod; BY Eth8 LB1: Sinnfrage in Ausnahmesituationen, z. B. Tod; NW 7-9 FK7 Sterben und Tod. Stimmen 7-8 / 7-8 / 7-10: Mehrheit
+      - id: tod-und-trauer
+        iCan: "Ich kann beschreiben, wie Menschen Abschied nehmen und trauern, und wie Religionen den Tod mit Ritualen begleiten."
+        gradeBand: "7-8"
+        requires: [riten-und-rituale]
+      # HE 9.3 Religion III: vor dem Anfang und nach dem Ende; Heilsvorstellungen; BY Eth9 LB1: Samsara, Moksha; der Achtfache Pfad; NW 7-9 FK7 Sterben und Tod; Menschen- und Gottesbilder in Religionen. Stimmen 9-10 / 9-10 / 7-10: Mehrheit
+      - id: vorstellungen-vom-jenseits
+        iCan: "Ich kann Vorstellungen der Religionen davon vergleichen, was nach dem Tod kommt, zum Beispiel Auferstehung oder Wiedergeburt."
+        gradeBand: "9-10"
+        requires: [tod-und-trauer, christentum, buddhismus]
+      # HE 9.2 Würde III: Anspruch auf würdevolle Behandlung bei Krankheit und Sterben (Euthanasie); BY –; NW 7-9 FK7 Sterben und Tod. Stimmen 9-10 / – / 7-10: Mehrheit
+      - id: sterbehilfe
+        iCan: "Ich kann Argumente für und gegen Sterbehilfe darstellen und mit der Würde des Menschen in Beziehung setzen."
+        gradeBand: "9-10"
+        requires: [tod-und-trauer, menschenwuerde]
