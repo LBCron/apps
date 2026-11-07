@@ -281,7 +281,7 @@
         {
           "id": "schalenbau",
           "iCan": "Ich kann den Schalenbau der Erde mit Kruste, Mantel und Kern beschreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "gestalt-der-erde"
           ],
@@ -1178,7 +1178,7 @@
         {
           "id": "bevoelkerungswachstum",
           "iCan": "Ich kann beschreiben, wie die Weltbevölkerung wächst, und das Wachstum mit Geburtenrate und Sterberate erklären.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "bevoelkerungsverteilung"
           ],
@@ -1187,7 +1187,7 @@
         {
           "id": "altersstruktur",
           "iCan": "Ich kann eine Bevölkerungspyramide lesen und daraus Schlüsse für die Zukunft eines Landes ziehen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "bevoelkerungswachstum"
           ],
@@ -1196,7 +1196,7 @@
         {
           "id": "tragfaehigkeit",
           "iCan": "Ich kann erklären, was Tragfähigkeit eines Raumes bedeutet und warum Hunger oft andere Ursachen hat als zu wenig Nahrung.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "bevoelkerungswachstum",
             "naturfaktoren-landwirtschaft"
