@@ -19,14 +19,14 @@
         {
           "id": "artikel-und-genus",
           "iCan": "Ich kann den bestimmten und unbestimmten Artikel (el, la, un, una) richtig verwenden und das Genus eines Nomens erkennen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "plural",
           "iCan": "Ich kann den Plural von Nomen und Artikeln bilden (los amigos, unas casas).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "artikel-und-genus"
           ],
@@ -35,14 +35,14 @@
         {
           "id": "subjektpronomen",
           "iCan": "Ich kann die Subjektpronomen (yo, tú, él, nosotros, ustedes …) verwenden und weiß, dass man sie oft weglässt.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "aussagesatz",
           "iCan": "Ich kann einfache spanische Aussagesätze in der richtigen Wortstellung bilden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjektpronomen"
           ],
@@ -51,7 +51,7 @@
         {
           "id": "verneinung",
           "iCan": "Ich kann Sätze mit no, nunca, nada, nadie und tampoco verneinen und weiß, wann man zwei Verneinungswörter braucht.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "aussagesatz"
           ],
@@ -60,7 +60,7 @@
         {
           "id": "fragesaetze",
           "iCan": "Ich kann Fragen mit und ohne Fragewort stellen (¿Quién?, ¿Dónde?, ¿Cuándo?, ¿Qué?, ¿Cuál?).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "aussagesatz"
           ],
@@ -69,7 +69,7 @@
         {
           "id": "possessivbegleiter",
           "iCan": "Ich kann mit mi, tu, su, nuestro und vuestro sagen, wem etwas gehört.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjektpronomen",
             "plural"
@@ -79,7 +79,7 @@
         {
           "id": "demonstrativbegleiter",
           "iCan": "Ich kann mit este, ese und aquel auf Nahes und Fernes zeigen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "artikel-und-genus"
           ],
@@ -88,7 +88,7 @@
         {
           "id": "possessivpronomen",
           "iCan": "Ich kann die betonten Possessivformen (mío, tuyo, suyo) verwenden, zum Beispiel in „Es mío“.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "possessivbegleiter"
           ],
@@ -97,7 +97,7 @@
         {
           "id": "indefinitbegleiter",
           "iCan": "Ich kann algún, ningún, cada, cualquier und otro richtig verwenden.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "verneinung"
           ],
@@ -106,7 +106,7 @@
         {
           "id": "adjektiv-angleichung",
           "iCan": "Ich kann Adjektive in Genus und Numerus an das Nomen angleichen (un chico alto, unas chicas altas).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "plural"
           ],
@@ -115,7 +115,7 @@
         {
           "id": "adjektiv-stellung",
           "iCan": "Ich kann Adjektive richtig stellen und die Kurzformen buen, gran und primer vor dem Nomen verwenden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "adjektiv-angleichung"
           ],
@@ -124,7 +124,7 @@
         {
           "id": "muy-und-mucho",
           "iCan": "Ich kann muy und mucho richtig unterscheiden (muy bien, mucho tiempo, trabaja mucho).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "adjektiv-angleichung"
           ],
@@ -133,7 +133,7 @@
         {
           "id": "adverbien-auf-mente",
           "iCan": "Ich kann Adverbien auf -mente bilden und Adverb und Adjektiv richtig unterscheiden.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "adjektiv-angleichung"
           ],
@@ -142,7 +142,7 @@
         {
           "id": "komparativ",
           "iCan": "Ich kann mit más … que, menos … que und tan … como vergleichen, auch mit mejor und peor.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "adjektiv-angleichung"
           ],
@@ -169,7 +169,7 @@
         {
           "id": "praesens-regelmaessig",
           "iCan": "Ich kann regelmäßige Verben auf -ar, -er und -ir im Präsens konjugieren.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjektpronomen"
           ],
@@ -178,7 +178,7 @@
         {
           "id": "ser",
           "iCan": "Ich kann ser im Präsens konjugieren und damit sagen, wer jemand ist, woher er kommt und wie er ist.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjektpronomen"
           ],
@@ -187,7 +187,7 @@
         {
           "id": "estar",
           "iCan": "Ich kann estar im Präsens konjugieren und damit sagen, wo etwas ist und wie es jemandem geht.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjektpronomen"
           ],
@@ -196,7 +196,7 @@
         {
           "id": "hay",
           "iCan": "Ich kann mit hay sagen, dass es etwas gibt, und hay von está unterscheiden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "estar",
             "artikel-und-genus"
@@ -206,7 +206,7 @@
         {
           "id": "ser-oder-estar",
           "iCan": "Ich kann entscheiden, ob ich ser oder estar brauche (es alto, está cansado).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "ser",
             "estar",
@@ -217,7 +217,7 @@
         {
           "id": "tener",
           "iCan": "Ich kann tener im Präsens konjugieren und damit Besitz und Alter angeben (Tengo catorce años).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-regelmaessig"
           ],
@@ -226,7 +226,7 @@
         {
           "id": "ir-praesens",
           "iCan": "Ich kann ir im Präsens konjugieren und mit a und de Ziel und Herkunft angeben (voy a Madrid, vengo de casa).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-regelmaessig"
           ],
@@ -235,7 +235,7 @@
         {
           "id": "verben-mit-unregelmaessiger-ich-form",
           "iCan": "Ich kann Verben mit unregelmäßiger ich-Form im Präsens konjugieren (hago, pongo, salgo, digo, conozco).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-regelmaessig"
           ],
@@ -244,7 +244,7 @@
         {
           "id": "gruppenverben-diphthong",
           "iCan": "Ich kann Verben mit Stammwechsel e → ie und o → ue im Präsens konjugieren (quiero, puedo, juego).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-regelmaessig"
           ],
@@ -253,7 +253,7 @@
         {
           "id": "gruppenverben-e-i",
           "iCan": "Ich kann Verben mit Stammwechsel e → i im Präsens konjugieren (pido, repito, sigo).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "gruppenverben-diphthong"
           ],
@@ -262,7 +262,7 @@
         {
           "id": "reflexive-verben",
           "iCan": "Ich kann reflexive Verben konjugieren und das Reflexivpronomen richtig stellen (me levanto, se llama).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-regelmaessig"
           ],
@@ -271,7 +271,7 @@
         {
           "id": "querer-poder-infinitiv",
           "iCan": "Ich kann mit querer, poder und preferir und einem Infinitiv sagen, was ich will, kann oder lieber mache.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "gruppenverben-diphthong"
           ],
@@ -280,7 +280,7 @@
         {
           "id": "tener-que",
           "iCan": "Ich kann mit tener que und einem Infinitiv sagen, was jemand tun muss.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "tener"
           ],
@@ -289,7 +289,7 @@
         {
           "id": "gustar",
           "iCan": "Ich kann mit gustar, encantar und parecer sagen, was mir und anderen gefällt (me gusta, a él le gustan).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-regelmaessig"
           ],
@@ -298,7 +298,7 @@
         {
           "id": "estar-gerundio",
           "iCan": "Ich kann mit estar und dem gerundio sagen, was gerade passiert (estoy comiendo).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "estar"
           ],
@@ -307,7 +307,7 @@
         {
           "id": "praepositionen-a-und-de",
           "iCan": "Ich kann die Präpositionen a und de verwenden und mit dem Artikel zu al und del verbinden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "artikel-und-genus"
           ],
@@ -316,7 +316,7 @@
         {
           "id": "ortsangaben",
           "iCan": "Ich kann mit Präpositionen und Adverbien des Ortes sagen, wo etwas ist (encima de, al lado de, aquí, allí).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "estar",
             "praepositionen-a-und-de"
@@ -326,7 +326,7 @@
         {
           "id": "konjunktionen",
           "iCan": "Ich kann Sätze mit y, o, pero, porque, cuando und si verbinden und dabei y zu e und o zu u verändern.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "aussagesatz"
           ],
@@ -335,7 +335,7 @@
         {
           "id": "relativsatz-mit-que",
           "iCan": "Ich kann einfache Relativsätze mit que bilden (el chico que vive aquí).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "aussagesatz"
           ],
@@ -344,7 +344,7 @@
         {
           "id": "relativpronomen-lo-que-donde",
           "iCan": "Ich kann Relativsätze mit lo que und donde bilden.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "relativsatz-mit-que"
           ],
@@ -353,7 +353,7 @@
         {
           "id": "relativpronomen-mit-praeposition",
           "iCan": "Ich kann Relativsätze mit el que, la que und quien bilden, auch nach einer Präposition (la chica con la que hablo).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "relativpronomen-lo-que-donde"
           ],
@@ -362,7 +362,7 @@
         {
           "id": "direkte-objektpronomen",
           "iCan": "Ich kann die direkten Objektpronomen lo, la, los und las verwenden und richtig stellen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-regelmaessig",
             "artikel-und-genus"
@@ -372,7 +372,7 @@
         {
           "id": "indirekte-objektpronomen",
           "iCan": "Ich kann die indirekten Objektpronomen me, te, le, nos, os und les verwenden und richtig stellen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-regelmaessig"
           ],
@@ -381,7 +381,7 @@
         {
           "id": "betonte-pronomen",
           "iCan": "Ich kann die betonten Pronomen nach Präpositionen verwenden (para mí, con él, conmigo, contigo).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjektpronomen"
           ],
@@ -400,7 +400,7 @@
         {
           "id": "zwei-objektpronomen",
           "iCan": "Ich kann zwei Objektpronomen in einem Satz verwenden und le zu se verändern (se lo doy).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "pronomen-bei-infinitiv-und-gerundio"
           ],
@@ -409,7 +409,7 @@
         {
           "id": "imperativ-tu-vosotros",
           "iCan": "Ich kann den bejahten Imperativ für tú und vosotros bilden (¡habla!, ¡comed!).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-regelmaessig"
           ],
@@ -438,7 +438,7 @@
         {
           "id": "imperativ-verneint",
           "iCan": "Ich kann den verneinten Imperativ mit den Formen des subjuntivo bilden (¡no hables!, ¡no me digas!).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "subjuntivo-praesens-unregelmaessig",
             "imperativ-mit-pronomen"
@@ -448,7 +448,7 @@
         {
           "id": "imperativ-usted",
           "iCan": "Ich kann den Imperativ für usted und ustedes bilden (¡pase!, ¡siéntense!).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "subjuntivo-praesens-unregelmaessig"
           ],
@@ -457,7 +457,7 @@
         {
           "id": "futuro-inmediato",
           "iCan": "Ich kann mit ir a und einem Infinitiv sagen, was ich vorhabe (voy a viajar).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "ir-praesens"
           ],
@@ -466,7 +466,7 @@
         {
           "id": "futuro-simple",
           "iCan": "Ich kann das futuro simple regelmäßiger Verben bilden und verwenden (hablaré, viviremos).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "praesens-regelmaessig"
           ],
@@ -475,7 +475,7 @@
         {
           "id": "futuro-simple-unregelmaessig",
           "iCan": "Ich kann die unregelmäßigen Formen des futuro simple bilden (tendré, haré, diré, podré).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "futuro-simple"
           ],
@@ -502,7 +502,7 @@
         {
           "id": "indefinido-gruppenverben",
           "iCan": "Ich kann das indefinido von Verben mit Stammwechsel e → i und o → u bilden (pidió, durmieron).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "indefinido-unregelmaessig",
             "gruppenverben-e-i"
@@ -512,7 +512,7 @@
         {
           "id": "perfecto-regelmaessig",
           "iCan": "Ich kann das pretérito perfecto mit haber und dem Partizip regelmäßiger Verben bilden (he hablado, has comido).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "praesens-regelmaessig"
           ],
@@ -521,7 +521,7 @@
         {
           "id": "partizip-unregelmaessig",
           "iCan": "Ich kann die unregelmäßigen Partizipien verwenden (hecho, dicho, puesto, escrito, abierto, visto, vuelto, roto).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "perfecto-regelmaessig"
           ],
@@ -530,7 +530,7 @@
         {
           "id": "perfecto-oder-indefinido",
           "iCan": "Ich kann entscheiden, ob ich das perfecto oder das indefinido brauche, und nutze dafür Signalwörter wie hoy, ayer und el año pasado.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "perfecto-regelmaessig",
             "indefinido-unregelmaessig"
@@ -540,7 +540,7 @@
         {
           "id": "imperfecto-formen",
           "iCan": "Ich kann das pretérito imperfecto bilden, auch die unregelmäßigen Formen von ser, ir und ver.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "praesens-regelmaessig"
           ],
@@ -549,7 +549,7 @@
         {
           "id": "imperfecto-gebrauch",
           "iCan": "Ich kann mit dem imperfecto Zustände, Gewohnheiten und Hintergründe in der Vergangenheit beschreiben (de niño jugaba …).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "imperfecto-formen"
           ],
@@ -558,7 +558,7 @@
         {
           "id": "indefinido-oder-imperfecto",
           "iCan": "Ich kann in einer Erzählung entscheiden, ob ich das indefinido oder das imperfecto brauche.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "imperfecto-gebrauch",
             "indefinido-unregelmaessig"
@@ -568,7 +568,7 @@
         {
           "id": "pluscuamperfecto",
           "iCan": "Ich kann das pluscuamperfecto bilden und damit ausdrücken, was vor einem Ereignis in der Vergangenheit geschah.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "imperfecto-formen",
             "partizip-unregelmaessig"
@@ -589,7 +589,7 @@
         {
           "id": "periphrasen-mit-infinitiv",
           "iCan": "Ich kann Verbalperiphrasen mit Infinitiv verwenden (acabar de, volver a, empezar a, dejar de).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "futuro-inmediato"
           ],
@@ -598,7 +598,7 @@
         {
           "id": "periphrasen-mit-gerundio",
           "iCan": "Ich kann Verbalperiphrasen mit gerundio verwenden (seguir, continuar, llevar + gerundio).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "estar-gerundio"
           ],
@@ -607,7 +607,7 @@
         {
           "id": "infinitivkonstruktionen",
           "iCan": "Ich kann Nebensätze mit Präposition und Infinitiv verkürzen (antes de salir, después de comer, al llegar, para aprender).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "praepositionen-a-und-de"
           ],
@@ -616,7 +616,7 @@
         {
           "id": "gerundio-als-adverb",
           "iCan": "Ich kann das gerundio verwenden, um zu sagen, wie oder wodurch etwas geschieht (Aprendo escuchando canciones).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "estar-gerundio"
           ],
@@ -625,7 +625,7 @@
         {
           "id": "subjuntivo-praesens-formen",
           "iCan": "Ich kann die Formen des presente de subjuntivo regelmäßiger Verben bilden (hable, coma, viva).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "praesens-regelmaessig",
             "verben-mit-unregelmaessiger-ich-form"
@@ -635,7 +635,7 @@
         {
           "id": "subjuntivo-praesens-unregelmaessig",
           "iCan": "Ich kann die unregelmäßigen Formen des presente de subjuntivo bilden (sea, vaya, tenga, haga, esté, pueda).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "subjuntivo-praesens-formen",
             "gruppenverben-diphthong"
@@ -645,7 +645,7 @@
         {
           "id": "subjuntivo-nach-wuenschen",
           "iCan": "Ich kann den subjuntivo nach Wünschen und Aufforderungen verwenden (Quiero que vengas).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "subjuntivo-praesens-unregelmaessig"
           ],
@@ -654,7 +654,7 @@
         {
           "id": "subjuntivo-nach-gefuehlen-und-wertungen",
           "iCan": "Ich kann den subjuntivo nach Gefühlen und Wertungen verwenden (Me alegra que …, Es importante que …).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "subjuntivo-nach-wuenschen"
           ],
@@ -663,7 +663,7 @@
         {
           "id": "subjuntivo-oder-indikativ",
           "iCan": "Ich kann nach Verben des Sagens und Denkens entscheiden, ob ich den subjuntivo brauche (Creo que viene – No creo que venga).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "subjuntivo-nach-wuenschen"
           ],
@@ -672,7 +672,7 @@
         {
           "id": "subjuntivo-nach-konjunktionen",
           "iCan": "Ich kann den subjuntivo nach para que, antes de que und sin que verwenden.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "subjuntivo-nach-wuenschen",
             "konjunktionen"
@@ -682,7 +682,7 @@
         {
           "id": "subjuntivo-nach-cuando",
           "iCan": "Ich kann nach cuando, hasta que und aunque entscheiden, ob ich den subjuntivo oder den indicativo brauche (Cuando llegue, te llamo).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "subjuntivo-nach-konjunktionen"
           ],
@@ -691,7 +691,7 @@
         {
           "id": "bedingungssatz-real",
           "iCan": "Ich kann reale Bedingungssätze mit si bilden (Si tengo tiempo, voy al cine).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "konjunktionen",
             "futuro-inmediato"
@@ -780,7 +780,7 @@
         {
           "id": "voseo",
           "iCan": "Ich kann die Verbformen des voseo verstehen (vos tenés, vos sos).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "praesens-regelmaessig"
           ],
@@ -798,14 +798,14 @@
         {
           "id": "sich-vorstellen",
           "iCan": "Ich kann jemanden begrüßen, mich vorstellen und nach Name, Alter und Herkunft fragen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "familie",
           "iCan": "Ich kann meine Familie vorstellen und Verwandte benennen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "possessivbegleiter"
           ],
@@ -814,7 +814,7 @@
         {
           "id": "personen-beschreiben",
           "iCan": "Ich kann Aussehen und Charakter einer Person beschreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "ser-oder-estar",
             "adjektiv-angleichung"
@@ -824,14 +824,14 @@
         {
           "id": "schule",
           "iCan": "Ich kann über meine Schule, Fächer und den Stundenplan sprechen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "wohnen",
           "iCan": "Ich kann mein Zuhause, meine Wohnung und mein Zimmer beschreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "hay",
             "ortsangaben"
@@ -841,7 +841,7 @@
         {
           "id": "tagesablauf",
           "iCan": "Ich kann meinen Tagesablauf beschreiben (me levanto, desayuno, voy al instituto).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "reflexive-verben",
             "uhrzeit"
@@ -851,7 +851,7 @@
         {
           "id": "freizeit-und-hobbys",
           "iCan": "Ich kann über meine Freizeit und Hobbys sprechen und sagen, was ich gern mache.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "gustar"
           ],
@@ -860,7 +860,7 @@
         {
           "id": "einkaufen",
           "iCan": "Ich kann einkaufen, nach Preisen fragen und Mengen angeben (un kilo de, un poco de).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "zahlen-bis-100"
           ],
@@ -869,7 +869,7 @@
         {
           "id": "essen-und-trinken",
           "iCan": "Ich kann Speisen und Getränke benennen und im Restaurant oder Café bestellen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "querer-poder-infinitiv"
           ],
@@ -878,7 +878,7 @@
         {
           "id": "stadt-und-verkehr",
           "iCan": "Ich kann Orte in der Stadt und Verkehrsmittel benennen und einen Weg beschreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "ortsangaben",
             "imperativ-tu-vosotros"
@@ -888,14 +888,14 @@
         {
           "id": "wetter-und-jahreszeiten",
           "iCan": "Ich kann über das Wetter und die Jahreszeiten sprechen (hace calor, llueve).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "zahlen-bis-100",
           "iCan": "Ich kann die Zahlen bis 100 verstehen, sprechen und schreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
@@ -911,7 +911,7 @@
         {
           "id": "uhrzeit",
           "iCan": "Ich kann nach der Uhrzeit fragen und sie angeben (Son las tres y media).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "zahlen-bis-100",
             "ser"
@@ -930,14 +930,14 @@
         {
           "id": "unterrichtssprache",
           "iCan": "Ich kann Arbeitsanweisungen und Sätze im Unterricht verstehen und selbst verwenden (¿Cómo se dice …?, ¿Puedes repetir?).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "gespraechswoerter",
           "iCan": "Ich kann mit Wörtern wie bueno, vale, pues und mira ein Gespräch in Gang halten.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
@@ -953,7 +953,7 @@
         {
           "id": "bildbeschreibung",
           "iCan": "Ich kann ein Bild beschreiben (En la foto hay …, al fondo, en el centro).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "hay",
             "ortsangaben"
@@ -963,14 +963,14 @@
         {
           "id": "wortschatz-textarbeit",
           "iCan": "Ich kann über einen Text sprechen und seinen Inhalt zusammenfassen (El texto trata de …, el párrafo, resumir).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "meinung-aeussern",
           "iCan": "Ich kann meine Meinung sagen, begründen und auf andere reagieren (creo que, en mi opinión, estoy de acuerdo).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "konjunktionen"
           ],
@@ -979,7 +979,7 @@
         {
           "id": "konnektoren",
           "iCan": "Ich kann Gedanken in einem Text mit además, sin embargo, por un lado … por otro lado und por lo tanto verbinden.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "konjunktionen"
           ],
@@ -1018,7 +1018,7 @@
         {
           "id": "umgangssprache-und-standardsprache",
           "iCan": "Ich kann umgangssprachliche Wendungen und Jugendsprache von der Standardsprache unterscheiden.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [],
           "practisedBy": []
         },
@@ -1032,7 +1032,7 @@
         {
           "id": "freundschaft-und-gefuehle",
           "iCan": "Ich kann über Freundschaft, Gefühle und Probleme unter Jugendlichen sprechen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "gustar",
             "estar"
@@ -1049,7 +1049,7 @@
         {
           "id": "reisen-und-urlaub",
           "iCan": "Ich kann über Reisen und Urlaub sprechen und von einer Reise erzählen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "indefinido-oder-imperfecto"
           ],
@@ -1058,7 +1058,7 @@
         {
           "id": "berufe-und-zukunft",
           "iCan": "Ich kann Berufe benennen und über meine Pläne für Ausbildung und Beruf sprechen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "futuro-simple"
           ],
@@ -1076,7 +1076,7 @@
         {
           "id": "vokale",
           "iCan": "Ich kann die fünf spanischen Vokale klar und offen aussprechen, auch in unbetonten Silben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
@@ -1092,21 +1092,21 @@
         {
           "id": "r-und-rr",
           "iCan": "Ich kann das einfache r und das gerollte rr aussprechen und richtig schreiben (pero – perro).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "ll-n-ch",
           "iCan": "Ich kann ll, ñ und ch richtig aussprechen und schreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "c-g-j-aussprache",
           "iCan": "Ich kann c, g, j und z je nach folgendem Vokal richtig aussprechen (casa – cine, gato – gente, jamón).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "vokale"
           ],
@@ -1115,7 +1115,7 @@
         {
           "id": "h-b-v",
           "iCan": "Ich kann Wörter mit h, b und v richtig aussprechen: Das h ist stumm, b und v klingen gleich.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
@@ -1131,7 +1131,7 @@
         {
           "id": "betonung",
           "iCan": "Ich kann nach den Regeln erkennen, welche Silbe eines Wortes betont wird.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "vokale"
           ],
@@ -1158,7 +1158,7 @@
         {
           "id": "frage-und-ausrufezeichen",
           "iCan": "Ich kann die umgedrehten Frage- und Ausrufezeichen am Satzanfang setzen (¿Cuánto vale? ¡Qué calor!).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
@@ -1166,7 +1166,9 @@
           "id": "kleinschreibung",
           "iCan": "Ich kann Nomen klein schreiben und weiß, dass auch Wochentage, Monate und Nationalitäten klein geschrieben werden.",
           "gradeBand": "7-8",
-          "requires": [],
+          "requires": [
+            "datum"
+          ],
           "practisedBy": []
         },
         {
@@ -1174,7 +1176,8 @@
           "iCan": "Ich kann Aussagen, Fragen und Aufforderungen mit der passenden Satzmelodie sprechen.",
           "gradeBand": "7-8",
           "requires": [
-            "fragesaetze"
+            "fragesaetze",
+            "betonung"
           ],
           "practisedBy": []
         },
@@ -1210,21 +1213,21 @@
         {
           "id": "spanisch-als-weltsprache",
           "iCan": "Ich kann sagen, wo auf der Welt Spanisch gesprochen wird und warum es eine Weltsprache ist.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "geografie-spaniens",
           "iCan": "Ich kann auf einer Karte wichtige Regionen, Städte, Flüsse und Gebirge Spaniens zeigen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "laender-lateinamerikas",
           "iCan": "Ich kann die spanischsprachigen Länder Lateinamerikas und ihre Hauptstädte nennen und auf einer Karte zeigen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "spanisch-als-weltsprache"
           ],
@@ -1233,7 +1236,7 @@
         {
           "id": "madrid",
           "iCan": "Ich kann Madrid als Hauptstadt mit einigen Sehenswürdigkeiten vorstellen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "geografie-spaniens"
           ],
@@ -1260,28 +1263,28 @@
         {
           "id": "tagesrhythmus-in-spanien",
           "iCan": "Ich kann den Tagesablauf in Spanien mit Deutschland vergleichen, zum Beispiel Essenszeiten und Öffnungszeiten.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "schulalltag-in-spanien",
           "iCan": "Ich kann den Schulalltag Jugendlicher in Spanien oder Lateinamerika mit meinem vergleichen, auch das Notensystem.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "feste-und-braeuche",
           "iCan": "Ich kann wichtige Feste in Spanien und Lateinamerika beschreiben (Navidad, Nochevieja, los Reyes Magos, Día de Muertos).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "tu-oder-usted",
           "iCan": "Ich kann entscheiden, ob ich jemanden duze oder sieze, und Menschen höflich begrüßen (dos besos, señor, señora).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
@@ -1297,7 +1300,7 @@
         {
           "id": "region-galicien",
           "iCan": "Ich kann Galicien als Region mit eigener Sprache vorstellen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "sprachen-spaniens"
           ],
@@ -1315,14 +1318,14 @@
         {
           "id": "klischees-hinterfragen",
           "iCan": "Ich kann Klischees über Spanien und Lateinamerika erkennen und hinterfragen (España es sol, playa y fiesta).",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "mexiko",
           "iCan": "Ich kann Mexiko mit seiner Geografie, Geschichte und Kultur vorstellen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "laender-lateinamerikas"
           ],
@@ -1331,7 +1334,7 @@
         {
           "id": "ein-land-lateinamerikas",
           "iCan": "Ich kann ein Land Südamerikas wie Argentinien oder Peru mit seiner Geografie und seinen Menschen vorstellen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "laender-lateinamerikas"
           ],
@@ -1349,7 +1352,7 @@
         {
           "id": "schulsystem-und-ausbildung",
           "iCan": "Ich kann das Schulsystem und die Ausbildung in Spanien mit Deutschland vergleichen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "schulalltag-in-spanien"
           ],
@@ -1358,7 +1361,7 @@
         {
           "id": "vorkolumbische-kulturen",
           "iCan": "Ich kann die Kulturen der Azteken, Maya und Inka beschreiben und Orte wie Tenochtitlan und Machu Picchu zuordnen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "laender-lateinamerikas"
           ],
@@ -1367,7 +1370,7 @@
         {
           "id": "conquista",
           "iCan": "Ich kann erklären, was 1492 geschah und was die Eroberung Amerikas für die Menschen dort bedeutete.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "vorkolumbische-kulturen"
           ],
@@ -1396,6 +1399,297 @@
           "iCan": "Ich kann über Auswanderung und Einwanderung in Spanien und Lateinamerika sprechen.",
           "gradeBand": "9-10",
           "requires": [],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "texte",
+      "name": {
+        "de": "Texte und Medien",
+        "en": "Texts and media"
+      },
+      "competencies": [
+        {
+          "id": "fragen-zum-text",
+          "iCan": "Ich kann Fragen zu einem Text stellen und beantworten (¿Quién? ¿Qué? ¿Dónde? ¿Cuándo? ¿Por qué?).",
+          "gradeBand": "5-6",
+          "requires": [
+            "fragesaetze"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gebrauchstexte",
+          "iCan": "Ich kann Alltagstexten wie Speisekarten, Fahrplänen, Prospekten und Schildern gezielt Informationen entnehmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "essen-und-trinken",
+            "stadt-und-verkehr"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "filmszenen",
+          "iCan": "Ich kann einer kurzen Filmszene entnehmen, wer mitspielt, wo sie spielt und was passiert.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fragen-zum-text"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lieder-und-gedichte",
+          "iCan": "Ich kann ein spanisches Lied oder ein kurzes Gedicht verstehen und vortragen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "wirkung-eines-textes",
+          "iCan": "Ich kann sagen, wie ein Lied, ein Text oder ein Film auf mich wirkt und welche Gefühle er bei mir auslöst.",
+          "gradeBand": "5-6",
+          "requires": [
+            "gustar",
+            "lieder-und-gedichte"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sachtext-oder-erzaehlung",
+          "iCan": "Ich kann Sachtexte und erzählende Texte unterscheiden und typische Merkmale nennen.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "zeitungsartikel",
+          "iCan": "Ich kann einem kurzen Zeitungsartikel entnehmen, was wann, wo und warum passiert ist.",
+          "gradeBand": "7-8",
+          "requires": [
+            "fragen-zum-text",
+            "indefinido-unregelmaessig"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "interview",
+          "iCan": "Ich kann einem Interview entnehmen, was die befragte Person über sich erzählt und was sie meint.",
+          "gradeBand": "7-8",
+          "requires": [
+            "fragen-zum-text"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "werbung",
+          "iCan": "Ich kann erkennen, wie eine Anzeige oder ein Werbetext mit Bild und Sprache überzeugen will.",
+          "gradeBand": "7-8",
+          "requires": [
+            "gebrauchstexte"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lektuere",
+          "iCan": "Ich kann eine vereinfachte Lektüre oder einen Auszug aus einem Jugendroman lesen und die Handlung verstehen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "nacherzaehlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "textgliederung",
+          "iCan": "Ich kann einen Text in Abschnitte gliedern und jedem Abschnitt eine Überschrift geben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zusammenfassen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "diagramme",
+          "iCan": "Ich kann ein einfaches Diagramm oder eine Statistik beschreiben und sagen, was sie zeigt.",
+          "gradeBand": "9-10",
+          "requires": [
+            "grosse-zahlen",
+            "komparativ"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gestaltungsmittel",
+          "iCan": "Ich kann auffällige sprachliche Mittel in einem Text erkennen, zum Beispiel Wiederholungen, Vergleiche oder Fragen an die Leser, und sagen, was sie bewirken.",
+          "gradeBand": "9-10",
+          "requires": [
+            "wirkung-eines-textes"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "figuren-charakterisieren",
+          "iCan": "Ich kann eine Figur aus einem Text beschreiben und ihr Verhalten mit Stellen aus dem Text erklären.",
+          "gradeBand": "9-10",
+          "requires": [
+            "personen-beschreiben",
+            "lektuere"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kurze-nachricht",
+          "iCan": "Ich kann eine kurze Nachricht schreiben, zum Beispiel eine Verabredung oder eine Absage im Chat.",
+          "gradeBand": "5-6",
+          "requires": [
+            "uhrzeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "brief-und-e-mail",
+          "iCan": "Ich kann einen persönlichen Brief oder eine E-Mail mit passender Anrede und passendem Gruß schreiben (Querida Ana: … Un abrazo).",
+          "gradeBand": "5-6",
+          "requires": [
+            "sich-vorstellen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dialog-schreiben",
+          "iCan": "Ich kann einen kurzen Dialog oder eine Spielszene schreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fragesaetze"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "tagebucheintrag",
+          "iCan": "Ich kann einen Tagebucheintrag über meinen Tag oder ein Erlebnis schreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "tagesablauf"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bildergeschichte",
+          "iCan": "Ich kann zu einer Bildergeschichte erzählen oder aufschreiben, was passiert.",
+          "gradeBand": "5-6",
+          "requires": [
+            "bildbeschreibung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "geschichte-schreiben",
+          "iCan": "Ich kann eine kurze Geschichte oder ein Erlebnis mit Anfang, Mitte und Ende aufschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "konjunktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nacherzaehlen",
+          "iCan": "Ich kann den Inhalt einer Geschichte in eigenen Worten nacherzählen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fragen-zum-text"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zusammenfassen",
+          "iCan": "Ich kann das Wichtigste eines kurzen Textes in wenigen Sätzen zusammenfassen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fragen-zum-text"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "vortrag",
+          "iCan": "Ich kann einen kurzen Vortrag zu einem Thema mit einem Stichwortzettel gliedern und halten.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "bericht-schreiben",
+          "iCan": "Ich kann einen kurzen Bericht über ein Ereignis schreiben: wer, was, wann und wo.",
+          "gradeBand": "7-8",
+          "requires": [
+            "indefinido-regelmaessig"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "inhaltsangabe",
+          "iCan": "Ich kann eine Inhaltsangabe (resumen) schreiben: Thema, Hauptpersonen und wichtigste Handlung im Präsens.",
+          "gradeBand": "7-8",
+          "requires": [
+            "zusammenfassen",
+            "wortschatz-textarbeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "geschichte-fortsetzen",
+          "iCan": "Ich kann eine Geschichte fortsetzen oder ein anderes Ende dafür schreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "geschichte-schreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "perspektivwechsel",
+          "iCan": "Ich kann eine Geschichte aus der Sicht einer anderen Figur erzählen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "nacherzaehlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "textsorte-wechseln",
+          "iCan": "Ich kann einen Text in eine andere Textsorte umschreiben, zum Beispiel eine Geschichte in einen Dialog.",
+          "gradeBand": "7-8",
+          "requires": [
+            "dialog-schreiben",
+            "geschichte-schreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stellungnahme",
+          "iCan": "Ich kann in einer kurzen Stellungnahme meine Meinung zu einem Text oder Thema schreiben und mit Gründen stützen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "meinung-aeussern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "blog-und-forum",
+          "iCan": "Ich kann einen Blogbeitrag oder einen Kommentar in einem Online-Forum schreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "meinung-aeussern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "formelle-e-mail",
+          "iCan": "Ich kann eine förmliche E-Mail schreiben, zum Beispiel eine Anfrage oder eine Reservierung (Estimados señores: …).",
+          "gradeBand": "9-10",
+          "requires": [
+            "brief-und-e-mail",
+            "tu-oder-usted",
+            "condicional-simple"
+          ],
           "practisedBy": []
         }
       ]
