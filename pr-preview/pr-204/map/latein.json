@@ -19,28 +19,28 @@
         {
           "id": "aussprache-und-betonung",
           "iCan": "Ich kann lateinische Wörter richtig aussprechen und nach der Paenultima-Regel betonen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "vokabeln-lernen",
           "iCan": "Ich kann Vokabeln mit allen Lernangaben, zum Beispiel Genitiv, Genus und Stammformen, lernen und regelmäßig wiederholen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "wortarten",
           "iCan": "Ich kann die Wortarten Substantiv, Adjektiv, Verb, Pronomen, Adverb, Präposition und Konjunktion unterscheiden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "wortfelder-und-sachfelder",
           "iCan": "Ich kann Vokabeln nach Wortfamilien, Wortfeldern und Sachfeldern ordnen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "wortarten"
           ],
@@ -49,7 +49,7 @@
         {
           "id": "lautgesetze",
           "iCan": "Ich kann Lautveränderungen wie die Assimilation (ad-ferre wird zu afferre), den Rhotazismus und die Vokalschwächung erkennen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
@@ -66,7 +66,7 @@
         {
           "id": "wortbildung-suffixe",
           "iCan": "Ich kann abgeleitete Wörter an ihren Suffixen erkennen, zum Beispiel -tor, -tas, -io und -osus, und ihre Bedeutung erschließen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "wortfelder-und-sachfelder"
           ],
@@ -84,7 +84,7 @@
         {
           "id": "unbekannte-woerter-erschliessen",
           "iCan": "Ich kann die Bedeutung eines unbekannten Wortes aus verwandten Wörtern, der Wortbildung und dem Zusammenhang erschließen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "wortbildung-praefixe",
             "wortbildung-suffixe",
@@ -122,7 +122,7 @@
         {
           "id": "inschriften-und-abkuerzungen",
           "iCan": "Ich kann einfache lateinische Inschriften und Abkürzungen in meiner Umgebung lesen und erklären, zum Beispiel etc., e. g. oder n. Chr.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "vokabeln-lernen"
           ],
@@ -160,7 +160,7 @@
         {
           "id": "kasus-numerus-genus",
           "iCan": "Ich kann bei einem Nomen Kasus, Numerus und Genus bestimmen und die sechs lateinischen Kasus nennen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "wortarten"
           ],
@@ -169,7 +169,7 @@
         {
           "id": "a-deklination",
           "iCan": "Ich kann Substantive der a-Deklination in allen Kasus bilden und bestimmen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "kasus-numerus-genus"
           ],
@@ -178,7 +178,7 @@
         {
           "id": "o-deklination",
           "iCan": "Ich kann Substantive der o-Deklination auf -us, -er und -um in allen Kasus bilden und bestimmen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "kasus-numerus-genus"
           ],
@@ -187,7 +187,7 @@
         {
           "id": "adjektive-a-o-deklination",
           "iCan": "Ich kann Adjektive der a- und o-Deklination wie bonus, bona, bonum bilden und dem passenden Substantiv zuordnen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "a-deklination",
             "o-deklination"
@@ -197,7 +197,7 @@
         {
           "id": "dritte-deklination",
           "iCan": "Ich kann Substantive der 3. Deklination bilden und bestimmen und dabei Nominativ und Stamm zusammen lernen, zum Beispiel rex, regis.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "kasus-numerus-genus"
           ],
@@ -272,7 +272,7 @@
         {
           "id": "zahlwoerter",
           "iCan": "Ich kann die lateinischen Grundzahlen bis zehn und die häufigsten Ordnungszahlen erkennen und unus, duo, tres deklinieren.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "adjektive-a-o-deklination",
             "dritte-deklination"
@@ -282,7 +282,7 @@
         {
           "id": "personalpronomen",
           "iCan": "Ich kann die Personalpronomen ego, tu, nos und vos in allen Kasus erkennen und übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "kasus-numerus-genus"
           ],
@@ -291,7 +291,7 @@
         {
           "id": "possessivpronomen",
           "iCan": "Ich kann die Possessivpronomen meus, tuus, noster und vester erkennen und dem Bezugswort zuordnen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "personalpronomen",
             "adjektive-a-o-deklination"
@@ -301,7 +301,7 @@
         {
           "id": "reflexivpronomen",
           "iCan": "Ich kann die Reflexivpronomen se, sibi und suus erkennen und richtig übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "personalpronomen",
             "possessivpronomen"
@@ -311,7 +311,7 @@
         {
           "id": "is-ea-id",
           "iCan": "Ich kann das Pronomen is, ea, id in allen Formen erkennen und je nach Satz mit „er, sie, es“ oder „dieser“ übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "a-deklination",
             "o-deklination"
@@ -357,7 +357,7 @@
         {
           "id": "indefinitpronomen",
           "iCan": "Ich kann die Indefinitpronomen aliquis, quidam und quisque erkennen und übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "interrogativpronomen"
           ],
@@ -366,7 +366,7 @@
         {
           "id": "personalendungen",
           "iCan": "Ich kann an der Personalendung eines Verbs erkennen, wer handelt, und Person und Numerus bestimmen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "wortarten"
           ],
@@ -375,7 +375,7 @@
         {
           "id": "esse-und-posse",
           "iCan": "Ich kann die Formen von esse und posse im Präsens, Imperfekt und Perfekt bilden und übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "personalendungen"
           ],
@@ -384,7 +384,7 @@
         {
           "id": "praesens-a-e-konjugation",
           "iCan": "Ich kann Verben der a- und e-Konjugation im Präsens bilden und bestimmen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "personalendungen"
           ],
@@ -393,7 +393,7 @@
         {
           "id": "praesens-konsonantische-und-i-konjugation",
           "iCan": "Ich kann Verben der konsonantischen und der i-Konjugation im Präsens bilden und bestimmen, auch die gemischte wie capere.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-a-e-konjugation"
           ],
@@ -402,7 +402,7 @@
         {
           "id": "infinitiv-praesens",
           "iCan": "Ich kann den Infinitiv Präsens Aktiv bilden und erkennen und ihn zusammen mit Verben wie posse oder debere übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-konsonantische-und-i-konjugation",
             "esse-und-posse"
@@ -412,7 +412,7 @@
         {
           "id": "imperativ",
           "iCan": "Ich kann den Imperativ im Singular und Plural bilden und erkennen, zum Beispiel voca und vocate.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-konsonantische-und-i-konjugation"
           ],
@@ -421,7 +421,7 @@
         {
           "id": "imperfekt",
           "iCan": "Ich kann das Imperfekt Aktiv an seinem Kennzeichen -ba- erkennen und bilden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-konsonantische-und-i-konjugation"
           ],
@@ -430,7 +430,7 @@
         {
           "id": "futur-i",
           "iCan": "Ich kann das Futur I Aktiv in allen Konjugationen erkennen und bilden, mit -bi- oder mit -e- wie in vocabit und mittet.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "imperfekt"
           ],
@@ -439,7 +439,7 @@
         {
           "id": "perfekt-v-und-u",
           "iCan": "Ich kann das Perfekt mit v- und u-Kennzeichen erkennen und bilden und kenne die Personalendungen des Perfekts.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praesens-konsonantische-und-i-konjugation"
           ],
@@ -475,7 +475,7 @@
         {
           "id": "futur-ii",
           "iCan": "Ich kann das Futur II (vocavero) erkennen und es im Nebensatz meist mit dem Präsens oder Perfekt übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "perfekt-v-und-u",
             "futur-i"
@@ -485,7 +485,7 @@
         {
           "id": "infinitiv-perfekt",
           "iCan": "Ich kann den Infinitiv Perfekt Aktiv wie vocavisse bilden und erkennen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "infinitiv-praesens",
             "perfekt-v-und-u"
@@ -516,7 +516,7 @@
         {
           "id": "velle-nolle-malle",
           "iCan": "Ich kann die Formen von velle, nolle und malle erkennen und übersetzen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "esse-und-posse",
             "infinitiv-praesens"
@@ -526,7 +526,7 @@
         {
           "id": "passiv-praesensstamm",
           "iCan": "Ich kann das Passiv im Präsens, Imperfekt und Futur I an den Passivendungen erkennen und bilden.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "imperfekt",
             "futur-i"
@@ -546,7 +546,7 @@
         {
           "id": "passiv-perfektstamm",
           "iCan": "Ich kann Perfekt, Plusquamperfekt und Futur II Passiv aus PPP und esse bilden und erkennen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "ppp",
             "esse-und-posse",
@@ -557,7 +557,7 @@
         {
           "id": "infinitive-passiv",
           "iCan": "Ich kann den Infinitiv Präsens Passiv (vocari, mitti) und den Infinitiv Perfekt Passiv (vocatum esse) erkennen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "passiv-praesensstamm",
             "passiv-perfektstamm",
@@ -578,7 +578,7 @@
         {
           "id": "partizip-futur",
           "iCan": "Ich kann das Partizip Futur Aktiv (PFA) wie vocaturus und den Infinitiv Futur Aktiv wie vocaturum esse erkennen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "ppp"
           ],
@@ -587,7 +587,7 @@
         {
           "id": "konjunktiv-praesens",
           "iCan": "Ich kann den Konjunktiv Präsens Aktiv und Passiv an seinem Kennzeichen erkennen, zum Beispiel vocet und mittat.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "passiv-praesensstamm"
           ],
@@ -596,7 +596,7 @@
         {
           "id": "konjunktiv-imperfekt",
           "iCan": "Ich kann den Konjunktiv Imperfekt Aktiv und Passiv bilden und erkennen, zum Beispiel vocaret und vocaretur.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "infinitiv-praesens",
             "passiv-praesensstamm"
@@ -606,7 +606,7 @@
         {
           "id": "konjunktiv-perfekt",
           "iCan": "Ich kann den Konjunktiv Perfekt Aktiv und Passiv bilden und erkennen, zum Beispiel vocaverit und vocatus sit.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "perfekt-v-und-u",
             "passiv-perfektstamm",
@@ -617,7 +617,7 @@
         {
           "id": "konjunktiv-plusquamperfekt",
           "iCan": "Ich kann den Konjunktiv Plusquamperfekt Aktiv und Passiv bilden und erkennen, zum Beispiel vocavisset und vocatus esset.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "infinitiv-perfekt",
             "passiv-perfektstamm"
@@ -646,7 +646,7 @@
         {
           "id": "fieri",
           "iCan": "Ich kann die Formen von fieri erkennen und je nach Satz mit „werden“, „geschehen“ oder „gemacht werden“ übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "passiv-praesensstamm"
           ],
@@ -655,7 +655,7 @@
         {
           "id": "defektive-verben",
           "iCan": "Ich kann Verben wie memini, odi und coepi erkennen, die nur Perfektformen haben, und sie richtig übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "perfekt-weitere-bildungen"
           ],
@@ -683,7 +683,7 @@
         {
           "id": "subjekt-und-praedikat",
           "iCan": "Ich kann in einem lateinischen Satz Subjekt und Prädikat bestimmen und erkennen, wenn das Subjekt im Prädikat steckt.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "personalendungen",
             "kasus-numerus-genus"
@@ -693,7 +693,7 @@
         {
           "id": "objekte",
           "iCan": "Ich kann Akkusativ- und Dativobjekte erkennen und übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjekt-und-praedikat"
           ],
@@ -702,7 +702,7 @@
         {
           "id": "adverbiale-bestimmung",
           "iCan": "Ich kann adverbiale Bestimmungen erkennen und sagen, ob sie Ort, Zeit, Art und Weise oder Grund angeben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjekt-und-praedikat"
           ],
@@ -711,7 +711,7 @@
         {
           "id": "praedikatsnomen",
           "iCan": "Ich kann ein Prädikatsnomen bei esse erkennen und übersetzen, zum Beispiel Marcus servus est.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjekt-und-praedikat",
             "esse-und-posse"
@@ -721,7 +721,7 @@
         {
           "id": "attribut",
           "iCan": "Ich kann Attribute erkennen und dem Wort zuordnen, das sie näher bestimmen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjekt-und-praedikat"
           ],
@@ -730,7 +730,7 @@
         {
           "id": "kng-kongruenz",
           "iCan": "Ich kann mit der KNG-Regel (Kasus, Numerus, Genus) erkennen, welches Adjektiv zu welchem Substantiv gehört, auch wenn sie weit auseinander stehen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "adjektive-a-o-deklination",
             "attribut"
@@ -750,7 +750,7 @@
         {
           "id": "genitiv-attribut",
           "iCan": "Ich kann einen Genitiv als Attribut erkennen und übersetzen, zum Beispiel villa domini „das Landhaus des Herrn“.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "attribut"
           ],
@@ -768,7 +768,7 @@
         {
           "id": "dativ-weitere-funktionen",
           "iCan": "Ich kann den Dativ des Besitzers, des Zwecks und des Vorteils erkennen und übersetzen, zum Beispiel mihi liber est „ich habe ein Buch“.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "objekte"
           ],
@@ -777,7 +777,7 @@
         {
           "id": "praepositionen",
           "iCan": "Ich kann Präpositionen mit Akkusativ und mit Ablativ unterscheiden und Präpositionalausdrücke übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "kasus-numerus-genus",
             "adverbiale-bestimmung"
@@ -787,7 +787,7 @@
         {
           "id": "ablativ-funktionen",
           "iCan": "Ich kann den Ablativ ohne Präposition als Mittel, Grund, Trennung, Ort oder Zeit erkennen und passend übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "adverbiale-bestimmung",
             "praepositionen"
@@ -806,7 +806,7 @@
         {
           "id": "satzarten",
           "iCan": "Ich kann Aussagesatz, Fragesatz und Aufforderungssatz unterscheiden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjekt-und-praedikat",
             "imperativ"
@@ -826,7 +826,7 @@
         {
           "id": "imperfekt-und-perfekt-gebrauch",
           "iCan": "Ich kann erklären, warum in einer Erzählung Imperfekt (Hintergrund) und Perfekt (Handlung im Vordergrund) stehen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "imperfekt",
             "perfekt-v-und-u"
@@ -845,7 +845,7 @@
         {
           "id": "hauptsatz-und-nebensatz",
           "iCan": "Ich kann Hauptsätze und Nebensätze an Konjunktionen und Subjunktionen unterscheiden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjekt-und-praedikat"
           ],
@@ -854,7 +854,7 @@
         {
           "id": "adverbialsaetze-indikativ",
           "iCan": "Ich kann Nebensätze mit Subjunktionen wie postquam, dum, quod, quia und quamquam als temporal, kausal oder konzessiv bestimmen und übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "hauptsatz-und-nebensatz"
           ],
@@ -863,7 +863,7 @@
         {
           "id": "konditionalsaetze",
           "iCan": "Ich kann ein Bedingungsgefüge mit si oder nisi im Indikativ (Realis) erkennen und übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "adverbialsaetze-indikativ"
           ],
@@ -892,7 +892,7 @@
         {
           "id": "finalsatz",
           "iCan": "Ich kann einen Finalsatz mit ut oder ne erkennen und als Absicht („damit“, „um zu“) übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "konjunktiv-praesens",
             "konjunktiv-imperfekt",
@@ -903,7 +903,7 @@
         {
           "id": "konsekutivsatz",
           "iCan": "Ich kann einen Konsekutivsatz mit ut oder ut non an Signalwörtern wie tam oder ita erkennen und als Folge übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "finalsatz"
           ],
@@ -912,7 +912,7 @@
         {
           "id": "cum-mit-konjunktiv",
           "iCan": "Ich kann einen cum-Satz mit Konjunktiv als temporal, kausal oder konzessiv deuten und passend übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "konjunktiv-imperfekt",
             "konjunktiv-plusquamperfekt",
@@ -923,7 +923,7 @@
         {
           "id": "abhaengige-begehrsaetze",
           "iCan": "Ich kann einen ut- oder ne-Satz nach Verben des Bittens, Forderns und Fürchtens erkennen und übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "finalsatz"
           ],
@@ -932,7 +932,7 @@
         {
           "id": "indirekter-fragesatz",
           "iCan": "Ich kann einen indirekten Fragesatz mit Konjunktiv erkennen und im Deutschen meist mit dem Indikativ übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "interrogativpronomen",
             "konjunktiv-praesens",
@@ -945,7 +945,7 @@
         {
           "id": "consecutio-temporum",
           "iCan": "Ich kann mit der Zeitenfolge (consecutio temporum) bestimmen, ob ein konjunktivischer Nebensatz gleichzeitig oder vorzeitig ist.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "indirekter-fragesatz",
             "cum-mit-konjunktiv"
@@ -955,7 +955,7 @@
         {
           "id": "irrealis",
           "iCan": "Ich kann einen Irrealis der Gegenwart und der Vergangenheit erkennen und mit „würde“ oder „hätte“ übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "konditionalsaetze",
             "konjunktiv-imperfekt",
@@ -966,7 +966,7 @@
         {
           "id": "aufforderung-im-konjunktiv",
           "iCan": "Ich kann Aufforderungen und Verbote im Konjunktiv (Hortativ, Jussiv, Prohibitiv) erkennen und übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "konjunktiv-praesens",
             "konjunktiv-perfekt",
@@ -977,7 +977,7 @@
         {
           "id": "wunschsaetze",
           "iCan": "Ich kann erfüllbare und unerfüllbare Wünsche mit utinam (Optativ) erkennen und übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "konjunktiv-praesens",
             "konjunktiv-imperfekt",
@@ -988,7 +988,7 @@
         {
           "id": "potentialis-und-deliberativ",
           "iCan": "Ich kann den Potentialis („man könnte sagen“) und den Deliberativ („was soll ich tun?“) erkennen und übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "konjunktiv-praesens",
             "konjunktiv-perfekt"
@@ -998,7 +998,7 @@
         {
           "id": "konjunktiv-im-relativsatz",
           "iCan": "Ich kann einen Relativsatz mit Konjunktiv erkennen und seine Sinnrichtung bestimmen, zum Beispiel final oder kausal.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "relativsatz",
             "finalsatz"
@@ -1019,7 +1019,7 @@
         {
           "id": "aci-gleichzeitig",
           "iCan": "Ich kann einen AcI nach Verben des Sagens, Denkens und Wahrnehmens erkennen und mit einem dass-Satz übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "infinitiv-praesens",
             "objekte"
@@ -1029,7 +1029,7 @@
         {
           "id": "aci-vorzeitig",
           "iCan": "Ich kann einen AcI mit Infinitiv Perfekt erkennen und die Vorzeitigkeit richtig übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "aci-gleichzeitig",
             "infinitiv-perfekt"
@@ -1049,7 +1049,7 @@
         {
           "id": "aci-passiv",
           "iCan": "Ich kann einen AcI mit passivem Infinitiv erkennen und übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "aci-vorzeitig",
             "infinitive-passiv"
@@ -1059,7 +1059,7 @@
         {
           "id": "aci-nachzeitig",
           "iCan": "Ich kann einen AcI mit Infinitiv Futur erkennen und die Nachzeitigkeit mit „werde“ übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "aci-vorzeitig",
             "partizip-futur"
@@ -1089,7 +1089,7 @@
         {
           "id": "pc-nachzeitig",
           "iCan": "Ich kann ein Participium coniunctum mit PFA erkennen und als Absicht oder Nachzeitigkeit übersetzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "participium-coniunctum",
             "partizip-futur"
@@ -1119,7 +1119,7 @@
         {
           "id": "ablativus-absolutus",
           "iCan": "Ich kann einen Ablativus absolutus erkennen, das Zeitverhältnis bestimmen und ihn mit einem Nebensatz oder einer Präposition übersetzen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "partizip-uebersetzen",
             "pc-gleichzeitig",
@@ -1130,7 +1130,7 @@
         {
           "id": "nominaler-ablativus-absolutus",
           "iCan": "Ich kann einen nominalen Ablativus absolutus wie Cicerone consule erkennen und übersetzen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "ablativus-absolutus"
           ],
@@ -1177,7 +1177,7 @@
         {
           "id": "sinnbetont-vorlesen",
           "iCan": "Ich kann einen lateinischen Text so vorlesen, dass man Sinnabschnitte und Satzgrenzen hört.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "aussprache-und-betonung"
           ],
@@ -1186,7 +1186,7 @@
         {
           "id": "text-vorerschliessen",
           "iCan": "Ich kann vor dem Übersetzen aus Überschrift, Bildern, Namen und Sachfeldern Vermutungen über den Inhalt eines Textes aufstellen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "wortfelder-und-sachfelder"
           ],
@@ -1195,7 +1195,7 @@
         {
           "id": "satz-konstruieren",
           "iCan": "Ich kann einen Satz mit der Konstruktionsmethode übersetzen: erst das Prädikat, dann das Subjekt, dann die übrigen Satzglieder.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjekt-und-praedikat",
             "objekte"
@@ -1205,7 +1205,7 @@
         {
           "id": "satzbild-zeichnen",
           "iCan": "Ich kann einen langen Satz in Hauptsatz, Nebensätze und satzwertige Konstruktionen gliedern und als Satzbild darstellen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "hauptsatz-und-nebensatz",
             "aci-gleichzeitig"
@@ -1215,7 +1215,7 @@
         {
           "id": "lineares-dekodieren",
           "iCan": "Ich kann einen Satz Wort für Wort von links nach rechts lesen und dabei Erwartungen bilden und prüfen, wie der Satz weitergeht.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "satz-konstruieren",
             "satzbild-zeichnen"
@@ -1225,7 +1225,7 @@
         {
           "id": "zielsprachengerecht-uebersetzen",
           "iCan": "Ich kann eine wörtliche Übersetzung in gutes Deutsch umformen, zum Beispiel durch eine andere Wortstellung oder einen Artikel.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "satz-konstruieren"
           ],
@@ -1234,7 +1234,7 @@
         {
           "id": "uebersetzung-pruefen",
           "iCan": "Ich kann meine Übersetzung mit dem lateinischen Text vergleichen und Fehler finden und verbessern.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "zielsprachengerecht-uebersetzen"
           ],
@@ -1243,7 +1243,7 @@
         {
           "id": "uebersetzungen-vergleichen",
           "iCan": "Ich kann verschiedene Übersetzungen eines lateinischen Textes vergleichen und begründen, welche besser passt.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "zielsprachengerecht-uebersetzen"
           ],
@@ -1252,14 +1252,14 @@
         {
           "id": "textsorten-erkennen",
           "iCan": "Ich kann Erzählung, Dialog, Brief und Rede an ihren Merkmalen unterscheiden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "text-gliedern",
           "iCan": "Ich kann einen Text in Abschnitte gliedern und seinen Inhalt mit eigenen Worten wiedergeben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "text-vorerschliessen"
           ],
@@ -1268,7 +1268,7 @@
         {
           "id": "text-deuten",
           "iCan": "Ich kann zu einer Aussage eines lateinischen Textes begründet Stellung nehmen und sie mit heutigen Vorstellungen vergleichen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "text-gliedern"
           ],
@@ -1287,7 +1287,7 @@
         {
           "id": "stilmittel-wort-und-klang",
           "iCan": "Ich kann die Stilmittel Alliteration, Anapher, Antithese, Klimax und Metapher erkennen und benennen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "text-gliedern"
           ],
@@ -1296,7 +1296,7 @@
         {
           "id": "stilmittel-satzbau",
           "iCan": "Ich kann die Stilmittel Parallelismus, Chiasmus, Ellipse, Trikolon und Hyperbaton erkennen und benennen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "stilmittel-wort-und-klang",
             "kng-kongruenz"
@@ -1306,7 +1306,7 @@
         {
           "id": "stilmittel-deuten",
           "iCan": "Ich kann erklären, welche Wirkung ein Stilmittel an einer Textstelle hat und wie es die Aussage unterstützt.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "stilmittel-satzbau",
             "text-deuten"
@@ -1392,21 +1392,21 @@
         {
           "id": "stadt-rom",
           "iCan": "Ich kann wichtige Orte der Stadt Rom wie Forum, Kapitol, Kolosseum und Circus Maximus nennen und ihre Aufgabe erklären.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "roemische-familie",
           "iCan": "Ich kann die römische familia mit pater familias, Frau, Kindern und Sklaven beschreiben und mit Familien heute vergleichen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "alltag-und-freizeit",
           "iCan": "Ich kann beschreiben, wie Römer ihren Alltag und ihre Freizeit verbrachten, zum Beispiel in den Thermen, im Circus und bei Gladiatorenkämpfen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "stadt-rom"
           ],
@@ -1415,7 +1415,7 @@
         {
           "id": "wohnen-in-rom",
           "iCan": "Ich kann domus, insula und villa rustica als römische Wohnformen beschreiben und vergleichen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "roemische-familie"
           ],
@@ -1442,7 +1442,7 @@
         {
           "id": "patrone-und-klienten",
           "iCan": "Ich kann das Verhältnis von Patron und Klient und die Stände der Patrizier und Plebejer erklären.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "roemische-familie"
           ],
@@ -1451,7 +1451,7 @@
         {
           "id": "roemische-goetter",
           "iCan": "Ich kann die wichtigsten griechischen und römischen Götter mit ihren Aufgaben und Kennzeichen nennen, zum Beispiel Jupiter und Zeus.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
@@ -1467,7 +1467,7 @@
         {
           "id": "gruendungsmythos",
           "iCan": "Ich kann die Sage von Aeneas sowie von Romulus und Remus erzählen und erklären, was sie für das Selbstbild der Römer bedeutet.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "trojanischer-krieg"
           ],
@@ -1476,7 +1476,7 @@
         {
           "id": "trojanischer-krieg",
           "iCan": "Ich kann die Sage vom Trojanischen Krieg und den Irrfahrten des Odysseus in ihren wichtigsten Stationen wiedergeben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "roemische-goetter"
           ],
@@ -1494,7 +1494,7 @@
         {
           "id": "koenigszeit-und-republik",
           "iCan": "Ich kann erzählen, wie Rom nach der Sage von Königen regiert wurde und warum die Römer die Republik gründeten.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "gruendungsmythos"
           ],
@@ -1503,7 +1503,7 @@
         {
           "id": "senat-und-magistrate",
           "iCan": "Ich kann die Aufgaben von Senat, Volksversammlung, Konsuln und Volkstribunen in der Republik erklären.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "koenigszeit-und-republik",
             "patrone-und-klienten"
@@ -1558,7 +1558,7 @@
         {
           "id": "kaiserzeit-und-christentum",
           "iCan": "Ich kann Grundzüge der Kaiserzeit beschreiben und erklären, wie sich das Christentum im Römischen Reich ausbreitete.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "augustus-und-prinzipat",
             "religion-und-kult"
@@ -1595,7 +1595,7 @@
         {
           "id": "roemische-werte",
           "iCan": "Ich kann römische Wertbegriffe wie pietas, fides, virtus und iustitia erklären und mit heutigen Werten vergleichen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "roemische-familie"
           ],
@@ -1604,7 +1604,7 @@
         {
           "id": "roemisches-recht",
           "iCan": "Ich kann Grundzüge des römischen Rechts beschreiben und an Beispielen zeigen, wie es bis heute weiterwirkt.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "senat-und-magistrate",
             "roemische-werte"
@@ -1687,7 +1687,7 @@
         {
           "id": "antike-im-alltag",
           "iCan": "Ich kann in meinem Alltag Spuren der Antike entdecken, zum Beispiel in Produktnamen, Werbung und Gebäuden, und ihre Herkunft erklären.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "roemische-goetter"
           ],
