@@ -1,0 +1,1033 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# Lernlandkarte Deutsch, Gymnasium Sekundarstufe I (Jg 5-10). Quellen, Entscheidungen, offene Punkte: .vibe/research-deutsch.md
+# Quellenkürzel in den Kommentaren:
+#   KMK = Bildungsstandards Deutsch ESA/MSA, i. d. F. vom 23.06.2022; Abschnitt 4.1-4.5 = Kompetenzbereich, Seite der PDF
+#   HE  = Hessen: Lehrplan Deutsch, Gymnasialer Bildungsgang, Jg 5-13 (G9); "5.3" = Jahrgangsstufe 5, Arbeitsbereich III;
+#         KC = Kerncurriculum Sek I Gymnasium Deutsch (2011): Kap. 6 (Ende 9/10), 7.1 (Ende 6), 7.2 (Ende 8),
+#         "Schwerpunkt 5/6, 7/8, 9/10" = Hervorhebung in den Inhaltsfeldern. Stimme HE = Jahrgang des Lehrplans, sonst KC.
+#   BY  = LehrplanPLUS Bayern Gymnasium Deutsch; "D7 3.2" = Jahrgangsstufe 7, Lernbereich 3.2
+#   NW  = Kernlehrplan NRW Sek I Gymnasium Deutsch (G9), Heft 3409 (2019); E = bis Ende Erprobungsstufe (5-6),
+#         S1 = erste Stufe (7-8), S2 = zweite Stufe (9-10); IF = Inhaltsfeld; Aufgabentyp = Kap. 3
+# Richtstufe: zwei von drei Stimmen; drei verschiedene: die mittlere; Gleichstand: die frühere Stufe, außer eine direkte
+# Voraussetzung liegt in derselben oder einer späteren Stufe (dann die spätere). "SCHWACH BELEGT" = weniger als zwei Länder.
+name: { de: Deutsch, en: German }
+source:
+  title: KMK, Bildungsstandards für das Fach Deutsch, Erster Schulabschluss (ESA) und Mittlerer Schulabschluss (MSA), Beschluss vom 15.10.2004 und vom 04.12.2003 i. d. F. vom 23.06.2022
+  url: https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2022/2022_06_23-Bista-ESA-MSA-Deutsch.pdf
+strands:
+  - id: sprechen-zuhoeren
+    name: { de: "Sprechen und Zuhören", en: "Speaking and listening" }
+    competencies:
+      # KMK 4.1 Mit anderen sprechen: Gesprächsregeln (S. 18 f.); HE 5.1 Gespräche führen: Gesprächsregeln entwickeln (Jg 5); BY D5 1.3 Gesprächsregeln befolgen; NW E IF3 Gesprächsregeln entwickeln | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: gespraechsregeln
+        iCan: "Ich kann Gesprächsregeln nennen und erklären, warum sie ein Gespräch gelingen lassen."
+        gradeBand: "5-6"
+      # KMK 4.1 Verstehend zuhören (S. 17 f.); HE 5.1 zuhören lernen, aufeinander eingehen (Jg 5); KC 7.1 Zuhören; BY D5 1.1 Verstehend zuhören; NW E IF3 aktiv zuhören, gezielt nachfragen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: aktiv-zuhoeren
+        iCan: "Ich kann aktiv zuhören, gezielt nachfragen und das Gehörte in eigenen Worten wiedergeben."
+        gradeBand: "5-6"
+      # KMK 4.1 Verstehend zuhören: Informationen sichern, Notizen (S. 18); HE KC 7.1 selbst verfasste Notizen strukturieren (Ende Jg 6); BY D8 3.1 strukturierte Mitschriften (Jg 8); NW E IF3 Gehörtes wiedergeben unter Nutzung eigener Notizen | Stimmen HE/BY/NW 5-6/7-8/5-6 → 5-6 (Mehrheit)
+      - id: mitschreiben
+        iCan: "Ich kann beim Zuhören Notizen machen und das Wichtigste festhalten."
+        gradeBand: "5-6"
+        requires: [aktiv-zuhoeren]
+      # KMK 4.1 Zu anderen sprechen: argumentieren (S. 17); HE 5.1 Diskutieren und Argumentieren (Jg 5); BY D5 1.3 Position beziehen, Meinungen einfach begründen; NW E IF3 eigene Standpunkte begründen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: meinung-begruenden-muendlich
+        iCan: "Ich kann im Gespräch meine Meinung sagen und sie mit Gründen und Beispielen stützen."
+        gradeBand: "5-6"
+      # KMK 4.1 Zu anderen sprechen: appellieren (S. 17); HE 6.1 Diskutieren und Argumentieren: Überzeugung, Überredung (Jg 6); BY D6 1.3 Appelle argumentativ absichern; NW E IF3 Anliegen angemessen vortragen und begründen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: ueberzeugen-ueberreden
+        iCan: "Ich kann erklären, worin sich Überzeugen und Überreden unterscheiden, und andere mit Gründen von einem Anliegen überzeugen."
+        gradeBand: "5-6"
+        requires: [meinung-begruenden-muendlich]
+      # KMK 4.1 Mit anderen sprechen: wertschätzende Gesprächsatmosphäre (S. 19); HE KC 7.1 Anliegen und Konflikte lösungsorientiert besprechen (Ende Jg 6); BY D6 1.3 Mittel der Konfliktlösung; NW E IF3 Verletzungen von Gesprächsregeln, Lösungsansatz | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: konflikte-im-gespraech-loesen
+        iCan: "Ich kann einen Streit im Gespräch sachlich klären und gemeinsam nach einer Lösung suchen."
+        gradeBand: "5-6"
+        requires: [gespraechsregeln]
+      # KMK 4.1 Zu anderen sprechen: Lautstärke, Betonung, Sprechtempo, Körpersprache (S. 17); HE 5.2 Leseförderung: Betonung, Blickkontakt (Jg 5); KC 7.1 verbale und nonverbale Ausdrucksmöglichkeiten; BY D6 1.2 stimmliche und nonverbale Mittel; NW E IF3 nonverbale und paraverbale Mittel | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: koerpersprache-und-stimme
+        iCan: "Ich kann Lautstärke, Tempo, Betonung, Blickkontakt, Mimik und Gestik beim Sprechen bewusst einsetzen."
+        gradeBand: "5-6"
+      # KMK 4.1 Vor anderen sprechen: Gedicht (S. 19); 4.4 literarische Texte sinngestaltend vortragen (S. 35); HE 5.2 Lesen, Auswendiglernen, freies Sprechen von Texten (Jg 5); BY D5 1.2 Gedichte frei und sinnbetont vortragen; NW S1 IF2 Texte sinngestaltend vortragen | Stimmen HE/BY/NW 5-6/5-6/7-8 → 5-6 (Mehrheit)
+      - id: vorlesen-und-vortragen
+        iCan: "Ich kann einen Text sinngestaltend vorlesen und ein Gedicht auswendig vortragen."
+        gradeBand: "5-6"
+        requires: [koerpersprache-und-stimme]
+      # KMK 4.1 Vor anderen sprechen: szenisches Sprechen und Spielen (S. 20); HE 5.1 Darstellendes Spiel: Rollen- und Stegreifspiel (Jg 5); BY D5 1.4 Szenisch spielen; NW E IF4 Texte medial umformen (szenisches Spiel) | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: szenisch-spielen
+        iCan: "Ich kann eine Rolle in einer Szene mit Stimme, Mimik und Gestik spielen."
+        gradeBand: "5-6"
+        requires: [koerpersprache-und-stimme]
+      # KMK 4.4 Medienangebot: Empfehlungen (S. 33 f.); HE 6.2 Buchvorstellungen (Jg 6); BY D5 2.2 Lieblingsbücher vorstellen und Wahl begründen; NW E IF2 Urteil über einen Text begründen (Leseempfehlung) | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: buch-vorstellen
+        iCan: "Ich kann ein Buch vorstellen, das mir gefällt: Inhalt, Leseprobe und eine begründete Empfehlung."
+        gradeBand: "5-6"
+        requires: [vorlesen-und-vortragen]
+      # KMK 4.1 Vor anderen sprechen: Stichwortzettel, Plakat, Kurzreferat (S. 19 f.); HE 5.1 Informationen präsentieren (Jg 5); KC Schwerpunkt 5/6: Vortragen, Stichwortzettel, Plakate; BY D5 1.2 informieren mit Plakaten; D6 1.2 Kurzreferat; NW S1 IF3 Kommunikationssituation Präsentation | Stimmen HE/BY/NW 5-6/5-6/7-8 → 5-6 (Mehrheit)
+      - id: kurzvortrag
+        iCan: "Ich kann einen kurzen Vortrag mit Stichwortzettel und Plakat halten."
+        gradeBand: "5-6"
+        requires: [koerpersprache-und-stimme]
+      # KMK 4.1 Zu anderen sprechen: Feedback nach Kriterien (S. 17); HE KC 7.1 Vorträge kriterienorientiert beobachten und besprechen; KC Schwerpunkt 5/6: Rückmeldungen geben; BY D5 1.1 Rückmeldung zu längeren Gesprächsbeiträgen; NW – | Stimmen HE/BY/NW 5-6/5-6/– → 5-6 (Mehrheit) | SCHWACH BELEGT: NW nennt Feedback nicht ausdrücklich
+      - id: feedback-geben
+        iCan: "Ich kann nach vereinbarten Kriterien eine faire Rückmeldung zu einem Vortrag geben."
+        gradeBand: "5-6"
+        requires: [kurzvortrag]
+      # KMK 4.1 Vor anderen sprechen: Referat (S. 19); HE 9.1 Referat (Jg 9); BY D7 1.2 Referate; NW S1 IF3 Präsentation | Stimmen HE/BY/NW 9-10/7-8/7-8 → 7-8 (Mehrheit)
+      - id: referat
+        iCan: "Ich kann ein Referat vorbereiten: Informationen sammeln, ordnen, gliedern und frei vortragen."
+        gradeBand: "7-8"
+        requires: [kurzvortrag, recherchieren]
+      # KMK 4.1 Vor anderen sprechen: Präsentationssoftware (S. 20); HE KC Schwerpunkt 9/10: Folien, Präsentationsprogramme; BY D9 3.1 Präsentationsprogramme zielgerichtet einsetzen; NW S1 IF4 Präsentationsprogramme | Stimmen HE/BY/NW 9-10/9-10/7-8 → 9-10 (Mehrheit)
+      - id: praesentation-mit-folien
+        iCan: "Ich kann Folien so gestalten, dass sie meinen Vortrag unterstützen und nicht ablenken."
+        gradeBand: "9-10"
+        requires: [referat]
+      # KMK 4.1 Mit anderen sprechen: Diskussionen (S. 19); HE 8.1 Diskussion vorbereiten, durchführen und auswerten (Jg 8); BY D8 1.3 kürzere Diskussionen vorbereiten und auswerten; NW S1 IF3 Kommunikationssituation Diskussion | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: diskussion-fuehren
+        iCan: "Ich kann eine Diskussion vorbereiten, mich mit Argumenten beteiligen und auf Gegenargumente eingehen."
+        gradeBand: "7-8"
+        requires: [meinung-begruenden-muendlich, gespraechsregeln]
+      # KMK 4.1 Mit anderen sprechen: Rollen (Moderation), Gespräche steuern (S. 19); HE 8.1 Gespräche leiten (Jg 8); BY D9 1.3 Möglichkeiten der Gesprächssteuerung; NW S2 IF3 Rolle moderierend | Stimmen HE/BY/NW 7-8/9-10/9-10 → 9-10 (Mehrheit)
+      - id: gespraech-leiten
+        iCan: "Ich kann eine Diskussion leiten: das Wort erteilen, Impulse geben und Ergebnisse zusammenfassen."
+        gradeBand: "9-10"
+        requires: [diskussion-fuehren]
+      # KMK 4.1 Mit anderen sprechen: Debatten (MSA, S. 19); HE 10.1 Pro-und-Kontra-Diskussion, Debatte (Jg 10); BY D9 1.3 Debatten vorbereiten; NW S2 IF3 formalisierte Diskussionsformen, Debatte | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: debatte
+        iCan: "Ich kann eine Debatte nach festen Regeln vorbereiten und führen."
+        gradeBand: "9-10"
+        requires: [diskussion-fuehren]
+      # KMK 4.1 Mit anderen sprechen: Interviews (S. 19); HE 8.1 Interviews durchführen und auswerten (Jg 8); BY –; NW S1 IF3 Informationsgespräch | Stimmen HE/BY/NW 7-8/–/7-8 → 7-8 (Mehrheit) | SCHWACH BELEGT: NW nennt nur das Informationsgespräch, BY nichts
+      - id: interview
+        iCan: "Ich kann ein Interview vorbereiten, führen und auswerten."
+        gradeBand: "7-8"
+        requires: [aktiv-zuhoeren, mitschreiben]
+      # KMK 4.1 Zu anderen sprechen: Bewerbungsgespräch; Mit anderen sprechen: Vorstellungsgespräche (S. 17, 19); HE KC Schwerpunkt 7/8: Vorstellen, Bewerben; BY D9 1.3 ggf. Bewerbungsgespräch; NW S2 IF3 Bewerbungsgespräch | Stimmen HE/BY/NW 7-8/9-10/9-10 → 9-10 (Mehrheit)
+      - id: bewerbungsgespraech
+        iCan: "Ich kann mich auf ein Vorstellungsgespräch vorbereiten und mich darin angemessen verhalten."
+        gradeBand: "9-10"
+        requires: [sprachregister-waehlen]
+  - id: schreiben
+    name: { de: "Schreiben", en: "Writing" }
+    competencies:
+      # KMK 4.2 Texte planen: Schreibabsicht, Adressaten (S. 25); HE KC 7.1 Schreibabsicht und Adressaten klären (Ende Jg 6); BY D5 3.1 dem Schreibanlass angemessene Schreibform; NW E IF2 Schreibziel benennen, Adressaten einschätzen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: schreibziel-und-adressat
+        iCan: "Ich kann vor dem Schreiben klären, für wen und wozu ich schreibe, und meinen Text danach ausrichten."
+        gradeBand: "5-6"
+      # KMK 4.2 Texte planen: Cluster, Mindmap, Gliederung, Schreibplan (S. 24 f.); HE KC 7.1 Schreibprozess mit Schreibstrategien organisieren; KC Schwerpunkt 5/6: Sammeln; BY D5 3.2 Brainstorming, Cluster, Mindmap, Schreibplan; NW E IF2 eigene Texte mit Hilfen planen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: schreibplan
+        iCan: "Ich kann Ideen mit Cluster oder Mindmap sammeln und daraus einen Schreibplan machen."
+        gradeBand: "5-6"
+        requires: [schreibziel-und-adressat]
+      # KMK 4.2 Texte überarbeiten (S. 27 f.); HE KC 7.1 Texte kriterienorientiert überprüfen; KC Schwerpunkt 5/6: Schreibkonferenz; BY D5 3.3 Textlupe, Schreibkonferenz; NW E IF1 Texte angeleitet überarbeiten; Aufgabentyp 5 | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: texte-ueberarbeiten
+        iCan: "Ich kann einen Text mit einer Checkliste, der Textlupe oder in einer Schreibkonferenz überarbeiten."
+        gradeBand: "5-6"
+      # KMK 4.2 digitale Schreibwerkzeuge (S. 26); HE KC 7.1 mit Hilfestellung Textverarbeitungsprogramme einsetzen (Ende Jg 6); BY D6 3.1 Textverarbeitungsprogramme; NW E IF4 grundlegende Funktionen der Textverarbeitung | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: textverarbeitung
+        iCan: "Ich kann mit einem Textverarbeitungsprogramm einen Text schreiben, gliedern und formatieren."
+        gradeBand: "5-6"
+      # KMK 4.2 Texte formulieren: Ausdrücken, Erlebtes und Erdachtes (S. 26); HE 5.1 Aufbau und sprachliche Mittel der einfachen Erzählung (Jg 5); BY D5 3.2 Handlungsverlauf Erzählsituation – Ereignis – Ausgang; NW E IF2 Geschichten erzählen; Aufgabentyp 1 | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: erzaehlung-aufbauen
+        iCan: "Ich kann eine Erzählung mit Einleitung, Hauptteil mit Höhepunkt und Schluss aufbauen."
+        gradeBand: "5-6"
+        requires: [schreibplan]
+      # KMK 4.2 Texte formulieren: Ausdrücken (S. 26); HE 6.1 Aufbau, Spannungsbogen, sprachliche Gestaltungsmittel (Jg 6); BY D5 3.1 treffende Verben, anschauliche Adjektive, wörtliche Rede; NW E IF2 Gestaltungsmittel Steigerung, Vorausdeutung, Pointierung | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: spannend-erzaehlen
+        iCan: "Ich kann eine Geschichte mit Spannungsbogen, wörtlicher Rede und treffenden Wörtern lebendig erzählen."
+        gradeBand: "5-6"
+        requires: [erzaehlung-aufbauen, woertliche-rede-zeichensetzen]
+      # KMK 4.2 Texte formulieren: kreative Schreibformen, Schreiben zu Bildern (S. 26); HE 5.1 Reizwortkette, Phantasie- und Bildergeschichten (Jg 5); BY D5 3.2 erzählen zu unterschiedlichen Impulsen; NW Aufgabentyp 1: auf der Basis von Materialien erzählen (E) | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: erzaehlen-nach-vorgaben
+        iCan: "Ich kann zu Bildern, Reizwörtern oder einem Erzählkern eine eigene Geschichte erfinden."
+        gradeBand: "5-6"
+        requires: [erzaehlung-aufbauen]
+      # KMK 4.2 Schreibformen: Umschreiben (S. 26); HE 5.1 Nacherzählen (Jg 5); 6.1 Nacherzählen mit veränderter Perspektive (Jg 6); BY D5 2.2 Umschreibungen aus anderen Perspektiven; NW Aufgabentyp 6: umschreiben (E) | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: nacherzaehlen
+        iCan: "Ich kann eine Geschichte nacherzählen, auch aus der Sicht einer anderen Figur."
+        gradeBand: "5-6"
+        requires: [erzaehlung-aufbauen]
+      # KMK 4.2 produktive Schreibformen (S. 26); HE 6.1 Erzählen nach literarischen Mustern: Fabeln, Lügengeschichten (Jg 6); BY D5 3.2 literarische Texte (Fabeln) variieren oder nachahmen; NW Aufgabentyp 6: Texte nach Textmustern verfassen (E) | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: nach-textmuster-schreiben
+        iCan: "Ich kann nach dem Muster einer Fabel oder Lügengeschichte selbst eine Geschichte schreiben."
+        gradeBand: "5-6"
+        requires: [fabel, erzaehlung-aufbauen]
+      # KMK 4.2 Ausdrücken: Gedicht (S. 26); 4.4 Parallelgedicht (S. 35); HE 5.2 Schreibwerkstatt: Elfchen, Haiku (Jg 5); BY D5 3.2 Gedichte variieren oder nachahmen; NW E IF2 Paralleltexte | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: gedicht-schreiben
+        iCan: "Ich kann nach einem Muster ein eigenes Gedicht schreiben, zum Beispiel ein Elfchen oder ein Parallelgedicht."
+        gradeBand: "5-6"
+        requires: [vers-strophe-reim]
+      # KMK 4.2 Ausdrücken: Gedanken und Gefühle (S. 26); HE 7.1 Beschreiben und Schildern: Gefühle, Stimmungen (Jg 7); BY D7 3.2 schildernde und beschreibende Elemente; NW – | Stimmen HE/BY/NW 7-8/7-8/– → 7-8 (Mehrheit)
+      - id: schildern
+        iCan: "Ich kann eine Situation oder Stimmung mit Sinneseindrücken anschaulich schildern."
+        gradeBand: "7-8"
+        requires: [spannend-erzaehlen]
+      # KMK 4.2 Darstellen: Beschreiben, Funktionsbeschreibung (S. 26); HE 6.1 Gegenstands-, Tierbeschreibung (Jg 6); BY D5 3.2 informieren mit sachlogischem Aufbau; NW E IF2 Textfunktion beschreiben; Aufgabentyp 2 | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: gegenstand-beschreiben
+        iCan: "Ich kann einen Gegenstand oder ein Tier sachlich, genau und in sinnvoller Reihenfolge beschreiben."
+        gradeBand: "5-6"
+        requires: [schreibziel-und-adressat]
+      # KMK 4.2 Darstellen: Beschreiben (S. 26); HE 6.1 Personenbeschreibung (Jg 6); BY D6 3.2 Figuren durch Beschreibungen gestalten; NW Aufgabentyp 2: beschreiben (E) | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: personenbeschreibung
+        iCan: "Ich kann eine Person nach Gesamteindruck, Einzelheiten und Besonderheiten beschreiben."
+        gradeBand: "5-6"
+        requires: [gegenstand-beschreiben]
+      # KMK 4.2 Darstellen: Ortsbeschreibung (S. 26); HE 6.1 Wegbeschreibung (Jg 6); BY –; NW Aufgabentyp 2: beschreiben (E) | Stimmen HE/BY/NW 5-6/–/5-6 → 5-6 (Mehrheit) | SCHWACH BELEGT: BY nennt keine Wegbeschreibung; NW nur allgemein „beschreiben“
+      - id: wegbeschreibung
+        iCan: "Ich kann einen Weg so beschreiben, dass andere ihn finden."
+        gradeBand: "5-6"
+        requires: [schreibziel-und-adressat]
+      # KMK 4.2 Darstellen: Instruieren, Gebrauchsanweisung, Spielanleitung (S. 26); HE 6.1 Vorgangsbeschreibung, Spielanleitung, Kochrezepte (Jg 6); BY D5 3.2 über einfache Vorgänge informieren; NW E IF2 Textfunktion beschreiben, erklären | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: vorgangsbeschreibung
+        iCan: "Ich kann einen Vorgang wie eine Spielanleitung oder ein Rezept Schritt für Schritt beschreiben."
+        gradeBand: "5-6"
+        requires: [gegenstand-beschreiben]
+      # KMK 4.2 Darstellen: Bildbeschreibung (S. 26); HE 7.1 Beschreiben: Raum, Bild (Jg 7); BY –; NW – | Stimmen HE/BY/NW 7-8/–/– → 7-8 (eine Stimme) | SCHWACH BELEGT: nur KMK und HE; aufgenommen, weil die KMK die Bildbeschreibung nennt
+      - id: bildbeschreibung
+        iCan: "Ich kann ein Bild geordnet beschreiben: vom Gesamteindruck über Vorder-, Mittel- und Hintergrund zur Wirkung."
+        gradeBand: "7-8"
+        requires: [gegenstand-beschreiben]
+      # KMK 4.2 Darstellen: Berichten, Bericht (S. 26); HE 6.1 Berichten (Jg 6); BY D5 3.2 über Ereignisse informieren; NW E IF2 Textfunktion berichten; Aufgabentyp 2 | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: bericht
+        iCan: "Ich kann über ein Ereignis sachlich und in zeitlicher Reihenfolge berichten und dabei die W-Fragen beantworten."
+        gradeBand: "5-6"
+        requires: [schreibziel-und-adressat, tempus-praesens-praeteritum]
+      # KMK 4.2 informierend materialgestützt schreiben (S. 26); HE 7.1 Berichten: Informationen verarbeiten, auswählen, ordnen (Jg 7); BY D7 3.2 informierende Texte aus Materialien; NW S1 IF2 Informationen aus verschiedenen Quellen nutzen; Aufgabentyp 2 | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: informierender-text-aus-material
+        iCan: "Ich kann aus mehreren Materialien wie Texten und Grafiken einen informierenden Text schreiben."
+        gradeBand: "7-8"
+        requires: [bericht, diagramme-lesen, quellen-pruefen]
+      # KMK 4.2 Darstellen von Textbearbeitungen: Inhaltsangabe (S. 26); HE 8.1 Inhaltsangabe: Thema erfassen und benennen (Jg 8); BY D8 3.2 informieren über literarische Texte, Thema formulieren; NW – | Stimmen HE/BY/NW 7-8/7-8/– → 7-8 (Mehrheit)
+      - id: basissatz
+        iCan: "Ich kann einen Basissatz mit Autor, Titel, Textsorte, Erscheinungsjahr und Thema eines Textes formulieren."
+        gradeBand: "7-8"
+        requires: [kernaussagen-wiedergeben]
+      # KMK 4.2 Darstellen von Textbearbeitungen: Inhaltsangabe (S. 26); HE 7.1 Inhaltsangabe, von Nacherzählung unterscheiden (Jg 7); 8.1 Klassenarbeit; BY D7 3.2 über Thema und Handlungsschritte informieren; NW – | Stimmen HE/BY/NW 7-8/7-8/– → 7-8 (Mehrheit) | NW nennt die Inhaltsangabe nicht (nur „Texte zusammenfassen“ am Ende der Sek I)
+      - id: inhaltsangabe
+        iCan: "Ich kann eine Inhaltsangabe zu einer Erzählung schreiben: im Präsens, sachlich und ohne wörtliche Rede."
+        gradeBand: "7-8"
+        requires: [basissatz, indirekte-rede, handlung-erschliessen]
+      # KMK 4.2 Darstellen: Zusammenfassung (S. 26); HE 9.1 Inhalt von längeren Sachtexten zusammenfassen (Jg 9); BY D10 3.2 informieren über Inhalt und Struktur pragmatischer Texte; NW – | Stimmen HE/BY/NW 9-10/9-10/– → 9-10 (Mehrheit)
+      - id: sachtext-zusammenfassen
+        iCan: "Ich kann den Inhalt eines längeren Sachtextes knapp und mit eigenen Worten zusammenfassen."
+        gradeBand: "9-10"
+        requires: [inhaltsangabe, sachtext-aufbau]
+      # KMK 4.2 Darstellen: Protokoll (S. 26); 4.1 Notizen, Protokoll (S. 18); HE 10.1 Protokoll (Jg 10); BY D10 3.1 Mitschriften in formalisierter Form; NW – | Stimmen HE/BY/NW 9-10/9-10/– → 9-10 (Mehrheit)
+      - id: protokoll
+        iCan: "Ich kann ein Verlaufs- oder Ergebnisprotokoll einer Unterrichtsstunde oder Sitzung schreiben."
+        gradeBand: "9-10"
+        requires: [mitschreiben]
+      # KMK 4.2 Texte planen: Exzerpieren aus digitalen Informationsressourcen (S. 25); HE 9.1 Referat: exzerpieren und zitieren (Jg 9); BY D10 3.1 Texte exzerpieren; NW – | Stimmen HE/BY/NW 9-10/9-10/– → 9-10 (Mehrheit)
+      - id: exzerpt
+        iCan: "Ich kann aus einem Text die für meine Frage wichtigen Stellen herausschreiben (exzerpieren)."
+        gradeBand: "9-10"
+        requires: [markieren-und-gliedern]
+      # KMK 4.2 Appellieren: Begründen, Stellungnahme (S. 26); HE 6.1 Diskutieren und Argumentieren (Jg 6); BY D6 3.2 Meinung einfach begründet darstellen; NW Aufgabentyp 3: begründet Stellung nehmen (E) | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: schriftlich-stellung-nehmen
+        iCan: "Ich kann schriftlich zu einer Frage Stellung nehmen und meine Meinung begründen."
+        gradeBand: "5-6"
+        requires: [meinung-begruenden-muendlich]
+      # KMK 4.2 Appellieren: Argumentieren (S. 26); HE 9.1 Erörterung: These, Argument, Beispiel, Beleg (Jg 9); BY D7 3.2 Behauptungen mit Begründungen stützen und durch Beispiele veranschaulichen; NW S1 IF3 eigene Standpunkte begründen | Stimmen HE/BY/NW 9-10/7-8/7-8 → 7-8 (Mehrheit)
+      - id: argument-aufbauen
+        iCan: "Ich kann ein Argument aus Behauptung (These), Begründung und Beispiel aufbauen."
+        gradeBand: "7-8"
+        requires: [schriftlich-stellung-nehmen]
+      # KMK 4.2 Appellieren: Argumentieren (S. 26); HE KC Schwerpunkt 7/8: Argumentieren; BY D7 3.2 Argumente nach Stichhaltigkeit ordnen, linearer Aufbau; NW S1 IF3 Lösungsvarianten entwickeln und erörtern | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: argumente-ordnen
+        iCan: "Ich kann Argumente nach ihrer Stärke ordnen und einen argumentierenden Text steigernd aufbauen."
+        gradeBand: "7-8"
+        requires: [argument-aufbauen]
+      # KMK 4.2 Appellieren: Antrag (S. 26); HE 8.2 Leserbrief als E-Mail formulieren (Jg 8); BY D7 3.2 sachlicher Brief; NW S1 IF4 offizieller Brief | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: formeller-brief
+        iCan: "Ich kann einen sachlichen Brief oder eine E-Mail mit Betreff, Anrede und Grußformel schreiben."
+        gradeBand: "7-8"
+        requires: [schreibziel-und-adressat]
+      # KMK 4.2 Appellieren: Leserbrief (MSA, S. 26); HE 8.2 Leserbrief an die Tageszeitung (Jg 8); BY D8 3.2 argumentierender Text als Leserbrief; NW – | Stimmen HE/BY/NW 7-8/7-8/– → 7-8 (Mehrheit)
+      - id: leserbrief
+        iCan: "Ich kann einen Leserbrief schreiben, in dem ich zu einem Zeitungsartikel begründet Stellung nehme."
+        gradeBand: "7-8"
+        requires: [formeller-brief, argumente-ordnen]
+      # KMK 4.2 Appellieren: Erörterung (S. 26); HE 9.1 Erörterung (Jg 9); BY D8 3.2 argumentierenden Text linear aufbauen; D9 3.2 Erörterung; NW S2 IF2 Positionen abwägen, eigenes Urteil begründen | Stimmen HE/BY/NW 9-10/7-8/9-10 → 9-10 (Mehrheit)
+      - id: lineare-eroerterung
+        iCan: "Ich kann eine steigernde (lineare) Erörterung mit Einleitung, Hauptteil und Schluss schreiben."
+        gradeBand: "9-10"
+        requires: [argumente-ordnen]
+      # KMK 4.2 Texte planen: numerische Gliederung (S. 24); HE 9.1 Stoffsammlung und Gliederung (Jg 9); BY D9 3.2 formales Gliederungssystem; NW – | Stimmen HE/BY/NW 9-10/9-10/– → 9-10 (Mehrheit)
+      - id: gliederung-erstellen
+        iCan: "Ich kann eine Erörterung oder ein Referat mit einer numerischen Gliederung planen."
+        gradeBand: "9-10"
+        requires: [schreibplan, argumente-ordnen]
+      # KMK 4.2 Appellieren: Erörterung (S. 26); HE 9.1 gegensätzliche Standpunkte mit dem Ziel der Stellungnahme (Jg 9); BY D9 3.2 antithetisch strukturieren, Gegenargumente; NW S2 IF2 unterschiedliche Positionen abwägen | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: dialektische-eroerterung
+        iCan: "Ich kann eine Pro-und-Kontra-Erörterung schreiben und am Schluss abwägend urteilen."
+        gradeBand: "9-10"
+        requires: [lineare-eroerterung, gliederung-erstellen]
+      # KMK 4.2 argumentierend materialgestützt schreiben (S. 26); HE KC Kap. 6 einen oder mehrere Ausgangstexte zu einem eigenen Text verarbeiten; BY D9 3.2 erörtern unter Bezugnahme auf Material; NW S2 IF2 Informationen aus Texten nutzen; Aufgabentyp 3 | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: materialgestuetzt-argumentieren
+        iCan: "Ich kann auf der Grundlage von Texten und Materialien argumentierend schreiben und die Quellen einbeziehen."
+        gradeBand: "9-10"
+        requires: [dialektische-eroerterung, zitieren]
+      # KMK 4.2 Appellieren: Kommentieren, Kommentar (MSA, S. 26); HE KC Schwerpunkt 9/10: Kommentieren; BY D9 3.2 Kommentar; NW – | Stimmen HE/BY/NW 9-10/9-10/– → 9-10 (Mehrheit)
+      - id: kommentar-schreiben
+        iCan: "Ich kann einen Kommentar zu einem aktuellen Thema schreiben."
+        gradeBand: "9-10"
+        requires: [nachricht-und-kommentar, argumente-ordnen]
+      # KMK 4.2 Appellieren: Buch-, Spiel- oder Filmkritik (S. 26); HE 9.2 Buch- und Theaterkritik (Jg 9); BY D9 2.2 Buchbewertungen, eigene Werturteile begründen; NW E IF2 Urteil in Buchkritik erläutern | Stimmen HE/BY/NW 9-10/9-10/5-6 → 9-10 (Mehrheit)
+      - id: rezension
+        iCan: "Ich kann eine Buch- oder Filmkritik schreiben, die Inhalt, Eindruck und begründetes Urteil verbindet."
+        gradeBand: "9-10"
+        requires: [buch-vorstellen, argument-aufbauen]
+      # KMK 4.2 Darstellen: Lebenslauf (MSA, S. 26); HE 9.2 Lebenslauf, Bewerbung (Jg 9); BY –; NW S2 IF2 Bewerbungen verfassen (Lebenslauf) | Stimmen HE/BY/NW 9-10/–/9-10 → 9-10 (Mehrheit)
+      - id: lebenslauf
+        iCan: "Ich kann einen tabellarischen Lebenslauf schreiben."
+        gradeBand: "9-10"
+        requires: [textverarbeitung]
+      # KMK 4.2 Ausdrücken/Appellieren: Bewerbungsanschreiben (S. 26); HE 9.2 Lebenslauf, Bewerbung (Jg 9); BY –; NW S2 IF2 Bewerbungsschreiben | Stimmen HE/BY/NW 9-10/–/9-10 → 9-10 (Mehrheit)
+      - id: bewerbungsschreiben
+        iCan: "Ich kann ein Bewerbungsschreiben für ein Praktikum verfassen."
+        gradeBand: "9-10"
+        requires: [formeller-brief, lebenslauf]
+      # KMK 4.2 Textbelege formal richtig integrieren (zitieren) (S. 26); HE 9.1 exzerpieren und zitieren (Jg 9); BY D8 4.3 Zeichensetzung beim Zitieren; D9 3.1 Zitate sprachlich und formal richtig; NW S2 IF1 Zeichensetzung beim Zitieren | Stimmen HE/BY/NW 9-10/7-8/9-10 → 9-10 (Mehrheit)
+      - id: zitieren
+        iCan: "Ich kann Textstellen wörtlich zitieren und mit Anführungszeichen und Zeilenangabe richtig in meinen Text einbauen."
+        gradeBand: "9-10"
+        requires: [textbelege-angeben]
+      # KMK 4.2 Quellen integrieren (paraphrasieren, MSA, S. 26); HE 7.1 Inhaltsangabe; 7.3 Funktionen der indirekten Rede (Jg 7); BY D7 3.1 Paraphrasen und indirekte Rede, Übernahmen kennzeichnen; NW S2 IF1 paraphrasieren | Stimmen HE/BY/NW 7-8/7-8/9-10 → 7-8 (Mehrheit)
+      - id: paraphrasieren
+        iCan: "Ich kann Aussagen aus einem Text mit eigenen Worten wiedergeben und als fremde Aussagen kennzeichnen."
+        gradeBand: "7-8"
+        requires: [indirekte-rede]
+      # KMK 4.2 Quellen nachweisen und kennzeichnen (S. 22); HE 6.2 einfache bibliographische Angaben (Jg 6); BY D9 3.1 unter Angabe der Quellen; D10 Quellen korrekt nachweisen; NW S2 IF4 Quellen konventionskonform dokumentieren | Stimmen HE/BY/NW 5-6/9-10/9-10 → 9-10 (Mehrheit)
+      - id: quellen-angeben
+        iCan: "Ich kann angeben, aus welchen Büchern und Internetseiten meine Informationen stammen."
+        gradeBand: "9-10"
+        requires: [recherchieren]
+      # KMK 4.2 Darstellen von Textbearbeitungen; Interpretation (MSA, S. 26 f.); HE KC Schwerpunkt 9/10: Analysieren, Interpretieren; BY D9 3.2 informieren über Inhalt, Aufbau und Gestaltungsmittel, erste Deutungshypothesen; NW S1 IF2 Ergebnisse der Textanalyse strukturiert darstellen; Aufgabentyp 4a | Stimmen HE/BY/NW 9-10/9-10/7-8 → 9-10 (Mehrheit)
+      - id: interpretation-schreiben
+        iCan: "Ich kann zu einem kurzen literarischen Text eine Interpretation mit Einleitung, Hauptteil und Schluss schreiben."
+        gradeBand: "9-10"
+        requires: [deutungshypothese, zitieren, basissatz]
+      # KMK 4.2 Ergebnisdarstellung einer Textuntersuchung (S. 26); HE 10.2 Absicht, Wirkung, gedanklicher Aufbau und sprachliche Mittel analysieren (Jg 10); BY D10 3.2 informieren über Inhalt, Struktur, argumentative und sprachliche Gestaltung pragmatischer Texte; NW S2 IF2 Sachtexte analysieren; Aufgabentyp 4a | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: sachtextanalyse-schreiben
+        iCan: "Ich kann eine Analyse eines Sachtextes schreiben: Inhalt, Aufbau, Absicht und sprachliche Mittel."
+        gradeBand: "9-10"
+        requires: [argumentation-untersuchen, sachtext-zusammenfassen, zitieren]
+      # KMK 4.2 Orthografisch schreiben: gliedern in Silben und Wortbestandteile (S. 23); HE 5.3 Wortbau: Wörter zerlegen (Jg 5); BY D5 4.2 Laute, Buchstaben, Silben, Wortstamm, Präfix, Suffix; NW E IF1 silbierendes Sprechen, Wörter zerlegen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: silben-und-wortbausteine
+        iCan: "Ich kann Wörter in Silben und Bausteine zerlegen, um sie richtig zu schreiben."
+        gradeBand: "5-6"
+      # KMK 4.2 Orthografisch schreiben: verlängern, ableiten (S. 23); HE 5.3 Morphologisches Prinzip: Wortverwandtschaften (Jg 5); BY D5 4.3 Ableitungsverfahren, Verlängern; NW E IF1 Verlängern, Ableiten | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: verlaengern-und-ableiten
+        iCan: "Ich kann durch Verlängern (Hund – Hunde) und Ableiten (Bäume – Baum) entscheiden, wie ein Wort geschrieben wird."
+        gradeBand: "5-6"
+        requires: [silben-und-wortbausteine, wortfamilie]
+      # KMK 4.2 Orthografisch schreiben: Kernwörter, Merkwörter (S. 23); HE 5.3 Phonologisches Prinzip (Jg 5); BY D5 4.3 Regeln der Dehnung; NW E IF1 Rechtschreibstrategien auf Laut-Buchstaben-Ebene | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: dehnung
+        iCan: "Ich kann Wörter mit langem Vokal richtig schreiben, auch mit Dehnungs-h, ie und Doppelvokal."
+        gradeBand: "5-6"
+        requires: [silben-und-wortbausteine]
+      # KMK 4.2 Orthografisch schreiben: Kernwörter (S. 23); HE 5.3 Phonologisches Prinzip (Jg 5); BY D5 4.3 Regeln der Schärfung; NW E IF1 Rechtschreibstrategien auf Laut-Buchstaben-Ebene | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: schaerfung
+        iCan: "Ich kann Wörter mit kurzem Vokal richtig schreiben, auch mit doppeltem Konsonanten, ck und tz."
+        gradeBand: "5-6"
+        requires: [silben-und-wortbausteine]
+      # KMK 4.2 Orthografisch schreiben: Kernwörter richtig schreiben (S. 23); HE 5.3 Phonologisches Prinzip (Jg 5); BY D5 4.3 Schreibung der s-Laute; NW E IF1 Laut-Buchstaben-Ebene | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit) | SCHWACH BELEGT: nur BY nennt die s-Laute ausdrücklich; HE und NW nur das Prinzip
+      - id: s-laute
+        iCan: "Ich kann entscheiden, ob ich s, ss oder ß schreibe."
+        gradeBand: "5-6"
+        requires: [dehnung, schaerfung]
+      # KMK 4.2 Orthografisch schreiben: satzbezogene Strategien (S. 23); HE 5.3 Grammatisches Prinzip; 6.3 Relativpronomen, unterordnende Konjunktionen (Jg 6); BY D6 4.3 das/dass-Schreibung; NW S1 IF1 Rechtschreibung auf Satzebene | Stimmen HE/BY/NW 5-6/5-6/7-8 → 5-6 (Mehrheit) | SCHWACH BELEGT: nur BY nennt das/dass ausdrücklich; HE und NW nur die grammatische Grundlage
+      - id: das-und-dass
+        iCan: "Ich kann entscheiden, ob ich das oder dass schreibe."
+        gradeBand: "5-6"
+        requires: [pronomen, konjunktionen]
+      # KMK 4.2 Orthografisch schreiben: Satzanfänge, Eigennamen, Kerne von Nominalgruppen groß (S. 24); HE 5.3 Substantive/Nomen erkennen (Artikelprobe) (Jg 5); BY D5 4.3 Groß- und Kleinschreibung; Artikelprobe; NW E IF1 Rechtschreibstrategien auf Wortebene | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: grossschreibung
+        iCan: "Ich kann Satzanfänge, Eigennamen und Nomen großschreiben und Nomen mit der Artikelprobe erkennen."
+        gradeBand: "5-6"
+        requires: [nomen-und-artikel]
+      # KMK 4.2 Orthografisch schreiben: Kerne von Nominalgruppen groß (S. 24); HE 7.3 Nominalisierung von Verben und Adjektiven (Jg 7); BY D7 4.3 Groß- und Kleinschreibung; NW S1 IF1 orthografische Korrektheit auf Wortebene | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: nominalisierung-grossschreiben
+        iCan: "Ich kann Verben und Adjektive, die als Nomen gebraucht werden, erkennen und großschreiben."
+        gradeBand: "7-8"
+        requires: [grossschreibung]
+      # KMK 4.2 Orthografisch schreiben (S. 23 f.); HE 6.3 Zusammen- und Getrenntschreibung (Jg 6); KC Schwerpunkt 7/8: Getrennt- und Zusammenschreibung; BY D7 4.3 Getrennt- und Zusammenschreibung; NW – | Stimmen HE/BY/NW 5-6/7-8/– → 7-8 (Gleichstand, requires) | Gleichstand; die Voraussetzung zusammensetzung liegt in 5-6, daher 7-8 (wie der KC-Schwerpunkt HE)
+      - id: getrennt-und-zusammen
+        iCan: "Ich kann entscheiden, ob Wortverbindungen getrennt oder zusammengeschrieben werden."
+        gradeBand: "7-8"
+        requires: [zusammensetzung]
+      # KMK 4.2 Orthografisch schreiben: gliedern in Silben (S. 23); HE KC Schwerpunkt 5/6: Silbentrennung; BY D5 4.3 Silbentrennung; NW – | Stimmen HE/BY/NW 5-6/5-6/– → 5-6 (Mehrheit)
+      - id: silbentrennung
+        iCan: "Ich kann Wörter am Zeilenende richtig trennen."
+        gradeBand: "5-6"
+        requires: [silben-und-wortbausteine]
+      # KMK 4.2 Orthografisch schreiben: Fremdwörter richtig schreiben (S. 23); HE 8.3 Fremdwörter, Fremdwörterbuch (Jg 8); BY D6 4.3 häufig gebrauchte Fremdwörter; NW S1 IF1 Fremdwörter | Stimmen HE/BY/NW 7-8/5-6/7-8 → 7-8 (Mehrheit)
+      - id: fremdwoerter-schreiben
+        iCan: "Ich kann häufige Fremdwörter richtig schreiben und ihre Schreibung nachschlagen."
+        gradeBand: "7-8"
+        requires: [im-woerterbuch-nachschlagen]
+      # KMK 4.2 Rechtschreibhilfen nutzen (S. 24); HE 5.3 Gebrauch des Wörterbuchs (Jg 5); BY D5 4.3 Methoden der Fehleranalyse; NW E IF1 Nachschlagen; E IF4 Rechtschreibprogramme beurteilen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: im-woerterbuch-nachschlagen
+        iCan: "Ich kann die Schreibung eines Wortes im Wörterbuch und mit einer digitalen Rechtschreibhilfe nachschlagen."
+        gradeBand: "5-6"
+        requires: [alphabet-und-grundform]
+      # KMK 4.2 Rechtschreibhilfen nutzen (S. 24); Fachausdrücke: Alphabet, Grundform (S. 42); HE 5.3 Gebrauch des Wörterbuchs (Jg 5); BY D5 4.3 Methoden der Fehleranalyse; NW E IF1 Nachschlagen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit) | direkte Voraussetzung von im-woerterbuch-nachschlagen
+      - id: alphabet-und-grundform
+        iCan: "Ich kann Wörter alphabetisch ordnen und ein Wort in seine Grundform bringen, um es im Wörterbuch zu finden."
+        gradeBand: "5-6"
+        requires: [verb-konjugieren]
+      # KMK 4.2 Fehleraufmerksamkeit, Texte korrigieren (S. 24); HE 5.3 Fehlerarten, Rechtschreibkartei (Jg 5); BY D5 4.3 Methoden der Fehleranalyse; NW E IF1 zu Fehlerschwerpunkten passende Rechtschreibstrategien | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: rechtschreibfehler-analysieren
+        iCan: "Ich kann meine Rechtschreibfehler nach Fehlerarten ordnen und gezielt üben, zum Beispiel mit einer Rechtschreibkartei."
+        gradeBand: "5-6"
+        requires: [verlaengern-und-ableiten, im-woerterbuch-nachschlagen]
+      # KMK 4.2 Interpunktionszeichen (S. 24); HE 5.3 Zeichensetzung: Satzschlusszeichen (Jg 5); BY D5 4.3 Satzschlusszeichen; NW – | Stimmen HE/BY/NW 5-6/5-6/– → 5-6 (Mehrheit)
+      - id: satzschlusszeichen
+        iCan: "Ich kann am Satzende Punkt, Fragezeichen oder Ausrufezeichen richtig setzen."
+        gradeBand: "5-6"
+        requires: [satzarten]
+      # KMK 4.2 Interpunktionszeichen: Anführungszeichen, Doppelpunkt (S. 24); HE 5.1 Erzählen, sprachliche Mittel (Jg 5); BY D5 4.3 Zeichensetzung bei wörtlicher Rede; NW E IF1 Zeichensetzung wörtliche Rede | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: woertliche-rede-zeichensetzen
+        iCan: "Ich kann bei wörtlicher Rede Anführungszeichen, Doppelpunkt und Komma richtig setzen."
+        gradeBand: "5-6"
+        requires: [satzschlusszeichen]
+      # KMK 4.2 Interpunktionszeichen: Komma (S. 24); HE 5.3 Komma bei Aufzählungen (Jg 5); BY D5 4.3 Kommas bei Aufzählungen; NW E IF1 Zeichensetzung Aufzählung | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: komma-aufzaehlung
+        iCan: "Ich kann Kommas bei Aufzählungen richtig setzen."
+        gradeBand: "5-6"
+      # KMK 4.2 Interpunktionszeichen: Komma (S. 24); HE 6.3 Komma in Satzreihen und Satzgefügen (Jg 6); BY D6 4.3 Kommas in Satzreihen und Satzgefügen; NW E IF1 Haupt- und Nebensatzverknüpfung | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: komma-satzreihe-satzgefuege
+        iCan: "Ich kann Kommas zwischen Hauptsätzen und zwischen Haupt- und Nebensatz setzen."
+        gradeBand: "5-6"
+        requires: [satzreihe-und-satzgefuege]
+      # KMK 4.2 Interpunktionszeichen: Komma, Gedankenstrich, Klammern (S. 24); HE –; BY D7 4.3 Kommas bei Apposition und nachgestellter Bestimmung; NW E IF1 Zeichensetzung Apposition; S1 IF1 Parenthesen | Stimmen HE/BY/NW –/7-8/5-6 → 7-8 (Gleichstand, requires) | Gleichstand; die Voraussetzung attribut liegt in 5-6, daher 7-8
+      - id: komma-apposition
+        iCan: "Ich kann Kommas bei Einschüben und nachgestellten Erklärungen (Appositionen) setzen."
+        gradeBand: "7-8"
+        requires: [attribut]
+      # KMK 4.2 Interpunktionszeichen: Komma (S. 24); HE 7.3 Komma: Wiederholung und Festigung (Jg 7); BY D7 4.3 Kommas bei Infinitiv- und Partizipialkonstruktionen; NW S1 IF1 Infinitiv- und Partizipialgruppen | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: komma-infinitiv-partizip
+        iCan: "Ich kann Kommas bei Infinitiv- und Partizipgruppen richtig setzen."
+        gradeBand: "7-8"
+        requires: [infinitiv-und-partizipgruppen]
+  - id: lesen
+    name: { de: "Lesen", en: "Reading" }
+    competencies:
+      # KMK 4.3 Über Lesetechniken verfügen: überfliegendes, selegierendes, navigierendes Lesen (S. 30); HE KC Schwerpunkt 5/6: Feststellen von Schlüsselinformationen; BY D7 2.1 punktuell oder sequenziell lesen; NW E IF4 orientierendes, selektives, intensives Lesen | Stimmen HE/BY/NW 5-6/7-8/5-6 → 5-6 (Mehrheit)
+      - id: lesetechniken
+        iCan: "Ich kann je nach Leseziel einen Text überfliegen, gezielt nach Informationen suchen oder genau lesen."
+        gradeBand: "5-6"
+      # KMK 4.3 Lesestrategien: Lesen vorbereiten (S. 31); HE KC 7.1 Lese-/Rezeptionserwartungen klären (Ende Jg 6); BY D5 2.1 Erwartungen an den Text formulieren; NW – | Stimmen HE/BY/NW 5-6/5-6/– → 5-6 (Mehrheit)
+      - id: lesen-vorbereiten
+        iCan: "Ich kann vor dem Lesen ein Leseziel festlegen, mein Vorwissen sammeln und Erwartungen an den Text formulieren."
+        gradeBand: "5-6"
+      # KMK 4.3 Lesestrategien: organisierend lesen, markieren (S. 31); HE 5.2 thematische Abschnitte erkennen (Jg 5); BY D5 2.1 Markieren, Erkennen von Einschnitten, Kerngedanken; NW E IF4 intensives Lesen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: markieren-und-gliedern
+        iCan: "Ich kann in einem Text Schlüsselwörter markieren, Sinnabschnitte bilden und Zwischenüberschriften finden."
+        gradeBand: "5-6"
+        requires: [lesetechniken]
+      # KMK 4.3 Lesestrategien: unbekannte Wörter nachschlagen (S. 31); HE 5.2 Fachausdrücke verstehen, Nachschlagewerke benutzen (Jg 5); BY D5 4.2 Wortbedeutungen ermitteln; NW E IF1 Wortbedeutungen aus dem Kontext erschließen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: unbekannte-woerter-klaeren
+        iCan: "Ich kann die Bedeutung unbekannter Wörter aus dem Zusammenhang erschließen oder nachschlagen."
+        gradeBand: "5-6"
+        requires: [im-woerterbuch-nachschlagen]
+      # KMK 4.3 Lesestrategien: zentrale Textaussagen wiedergeben (S. 31); HE 5.2 Inhalt erfassen und wiedergeben (Jg 5); BY D6 2.1 Formulieren von Kerngedanken; NW E IF2 zentrale Aussagen identifizieren | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: kernaussagen-wiedergeben
+        iCan: "Ich kann nach dem Lesen die wichtigsten Aussagen eines Textes in eigenen Worten wiedergeben."
+        gradeBand: "5-6"
+        requires: [markieren-und-gliedern]
+      # KMK 4.3 Lesestrategien: elaborierend und reflektierend lesen (S. 31); HE 6.2 Fragen an den Text formulieren (Jg 6); BY D5 2.1 Formulieren von Fragen an einen Text; NW – | Stimmen HE/BY/NW 5-6/5-6/– → 5-6 (Mehrheit)
+      - id: fragen-an-den-text
+        iCan: "Ich kann beim Lesen Fragen an den Text stellen und prüfen, ob ich ihn verstanden habe."
+        gradeBand: "5-6"
+        requires: [lesen-vorbereiten]
+      # KMK 4.3 Lesen nachbereiten: wertende Einschätzung (S. 31); HE 6.2 ein Lesetagebuch erstellen (Jg 6); BY D5 2.1 vorstrukturierte Lesetagebücher; NW – | Stimmen HE/BY/NW 5-6/5-6/– → 5-6 (Mehrheit)
+      - id: lesetagebuch
+        iCan: "Ich kann zu einem Buch ein Lesetagebuch führen."
+        gradeBand: "5-6"
+        requires: [kernaussagen-wiedergeben]
+      # KMK 4.3 Lesestrategien: Informationen ordnen (S. 31); HE KC Schwerpunkt 7/8: Strukturierung von Text-/Medieninformationen; BY D5 2.1 Erstellen von Clustern; NW S1 IF4 Lektüreergebnisse grafisch darstellen | Stimmen HE/BY/NW 7-8/5-6/7-8 → 7-8 (Mehrheit)
+      - id: textinhalt-visualisieren
+        iCan: "Ich kann den Inhalt eines Sachtextes in einer Mindmap oder Strukturskizze darstellen."
+        gradeBand: "7-8"
+        requires: [kernaussagen-wiedergeben]
+      # KMK 4.3 Leseverstehen: durch Schließen zu gewinnende Informationen, Schlussfolgerungen (S. 30); HE –; BY D7 2.1 Zusatzinformationen und eigene Erfahrungen nutzen; NW E IF2 Informationen aus Sachtexten aufeinander beziehen | Stimmen HE/BY/NW –/7-8/5-6 → 7-8 (Gleichstand, requires) | Gleichstand; die Voraussetzung liegt in 5-6, daher 7-8
+      - id: zwischen-den-zeilen-lesen
+        iCan: "Ich kann Informationen aus verschiedenen Textstellen verknüpfen und daraus Schlüsse ziehen, die nicht wörtlich im Text stehen."
+        gradeBand: "7-8"
+        requires: [kernaussagen-wiedergeben]
+      # KMK 4.3 Leseverstehen: Navigationsstrukturen (Hyperlinks) nutzen (S. 30); HE 7.2 PC als Informationslieferant (Internet) (Jg 7); KC Schwerpunkt 9/10: Hypertext; BY D8 2.1 bei digitalen Texten geeignete Lesetechniken; NW E IF4 Lesestrategien u. a. bei Hypertexten | Stimmen HE/BY/NW 7-8/7-8/5-6 → 7-8 (Mehrheit)
+      - id: hypertexte-lesen
+        iCan: "Ich kann mich auf einer Website mit Menüs und Links orientieren und gezielt Informationen finden."
+        gradeBand: "7-8"
+        requires: [lesetechniken]
+      # KMK 4.3 Lesestrategien beim vergleichenden Lesen mehrerer Texte (S. 31); HE KC 7.1 Unterschiede und Gemeinsamkeiten von Texten beschreiben (Ende Jg 6); BY D9 2.3 informierende und argumentierende Texte vergleichend untersuchen; NW S1 IF4 vergleichendes Lesen | Stimmen HE/BY/NW 5-6/9-10/7-8 → 7-8 (Mitte)
+      - id: texte-vergleichend-lesen
+        iCan: "Ich kann zwei Texte zum selben Thema vergleichend lesen und Gemeinsamkeiten und Unterschiede festhalten."
+        gradeBand: "7-8"
+        requires: [kernaussagen-wiedergeben]
+  - id: texte-medien
+    name: { de: "Sich mit Texten und anderen Medien auseinandersetzen", en: "Engaging with texts and other media" }
+    competencies:
+      # KMK 4.4 Textwissen: Wirklichkeit und Fiktion (S. 33); HE KC 7.1 zwischen Wirklichkeit und fiktionalen Welten unterscheiden (Ende Jg 6); BY D5 2.1 literarische und pragmatische Texte unterscheiden; D5 2.2 fiktionale Welten; NW E IF4 Merkmale virtueller Welten | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: fiktion-und-wirklichkeit
+        iCan: "Ich kann literarische Texte von Sachtexten unterscheiden und erklären, dass eine erzählte Welt erfunden ist."
+        gradeBand: "5-6"
+      # KMK 4.4 zentrale Textmuster (S. 33); 4.5 Textfunktionen (S. 40); HE KC Schwerpunkt 5/6: beschreibend, anleitend, erzählend, informierend; BY D5 3.1 Grundformen Erzählen, Informieren, Argumentieren; NW E IF2 grundlegende Textfunktionen unterscheiden | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: textfunktionen
+        iCan: "Ich kann erkennen, ob ein Text erzählt, beschreibt, informiert, anleitet oder überzeugen will."
+        gradeBand: "5-6"
+        requires: [fiktion-und-wirklichkeit]
+      # KMK 4.4 Textwissen: epische, lyrische, dramatische Texte (S. 32); HE KC 7.1 grundlegende Textsorten begründet unterscheiden (Ende Jg 6); BY D6 2.2 literarische Grundformen unterscheiden; NW S1 IF2 epische, lyrische, dramatische Gestaltungsweisen | Stimmen HE/BY/NW 5-6/5-6/7-8 → 5-6 (Mehrheit)
+      - id: epik-lyrik-dramatik
+        iCan: "Ich kann erzählende, lyrische und dramatische Texte an ihren Merkmalen unterscheiden."
+        gradeBand: "5-6"
+        requires: [fiktion-und-wirklichkeit]
+      # KMK 4.4 Literatur: Raum- und Zeitdarstellung, Handlungsverlauf (S. 34); HE 5.2 Ort, Zeit, Haupt- und Nebenpersonen, Erzählschritte, Höhepunkt (Jg 5); BY D5 2.2 Aufbau, Figuren; NW E IF2 Ort, Zeit, Konflikt, Handlungsschritte | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: handlung-erschliessen
+        iCan: "Ich kann in einer Erzählung Ort, Zeit, Figuren und die Handlungsschritte bis zum Höhepunkt bestimmen."
+        gradeBand: "5-6"
+      # KMK 4.4 Literatur: Figuren (S. 34); HE 6.2 Verhaltensweisen und Beweggründe, Charakterzüge (Jg 6); BY D5 2.2 sich in Figuren hineinversetzen; NW E IF2 Figuren untersuchen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: figuren-untersuchen
+        iCan: "Ich kann beschreiben, wie eine Figur ist, was sie fühlt und warum sie so handelt."
+        gradeBand: "5-6"
+        requires: [handlung-erschliessen]
+      # KMK 4.4 Literatur: Handlungsmotive vergleichen und werten (S. 35); HE KC 7.1 zu Aussagen eines Textes Stellung beziehen (Ende Jg 6); BY D6 2.2 sich in eine Figur hineinversetzen, Handlungen überprüfen; NW E IF2 persönliche Stellungnahme zum Verhalten von Figuren | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: figurenverhalten-bewerten
+        iCan: "Ich kann das Verhalten einer Figur bewerten und meine Meinung mit dem Text begründen."
+        gradeBand: "5-6"
+        requires: [figuren-untersuchen]
+      # KMK 4.4 Literatur: handlungs- und produktionsorientierte Verfahren (S. 35); HE 5.2 einen Text weiter denken, Leerstellen füllen (Jg 5); BY D5 2.2 Fortsetzungen, Umschreibungen, Füllen von Leerstellen; NW E IF2 Ausgestaltung, Fortsetzung, Paralleltexte | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: fortsetzen-und-umschreiben
+        iCan: "Ich kann eine Geschichte fortsetzen, Leerstellen füllen oder sie aus der Sicht einer anderen Figur neu schreiben."
+        gradeBand: "5-6"
+        requires: [figuren-untersuchen]
+      # KMK 4.4 Textwissen: epische Kleinformen (S. 32); HE 5.2 Märchen (Jg 5); BY D5 2.2 Märchen; NW E IF2 Märchen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: maerchen
+        iCan: "Ich kann typische Merkmale von Märchen nennen und an einem Märchen zeigen."
+        gradeBand: "5-6"
+        requires: [handlung-erschliessen]
+      # KMK 4.4 Textwissen: epische Kleinformen (Fabel) (S. 32); HE 6.2 Fabeln (Jg 6); BY D5 2.2 Fabeln; NW E IF2 Fabeln | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: fabel
+        iCan: "Ich kann Merkmale einer Fabel nennen und ihre Lehre formulieren."
+        gradeBand: "5-6"
+        requires: [handlung-erschliessen]
+      # KMK 4.4 Textwissen: epische Kleinformen (S. 32); HE 5.2 Lokalsage (Jg 5); 6.2 Sagen (Jg 6); BY D6 2.2 Sagen; NW – | Stimmen HE/BY/NW 5-6/5-6/– → 5-6 (Mehrheit)
+      - id: sage
+        iCan: "Ich kann Merkmale einer Sage nennen und sie von einem Märchen unterscheiden."
+        gradeBand: "5-6"
+        requires: [maerchen]
+      # KMK 4.4 Textwissen: Jugendroman (S. 32); HE 5.2 Kinderbuch (Jg 5); BY D5 2.2 mindestens eine Ganzschrift; NW E IF2 Jugendroman | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: jugendbuch-lesen
+        iCan: "Ich kann ein Kinder- oder Jugendbuch als Ganzschrift lesen und Handlung und Figuren im Überblick darstellen."
+        gradeBand: "5-6"
+        requires: [handlung-erschliessen, figuren-untersuchen]
+      # KMK 4.4 Fachbegriffe: Autor, Erzähler (S. 34); HE 7.2 zwischen Autorin/Autor und Erzählerin/Erzähler unterscheiden (Jg 7); BY D8 2.2 Darstellungsweise (Erzählerbericht, Figurenrede); NW E IF2 erzählerische Vermittlung (Erzählerfigur) | Stimmen HE/BY/NW 7-8/7-8/5-6 → 7-8 (Mehrheit)
+      - id: erzaehler-und-autor
+        iCan: "Ich kann zwischen der Autorin oder dem Autor und der Erzählerin oder dem Erzähler eines Textes unterscheiden."
+        gradeBand: "7-8"
+        requires: [fiktion-und-wirklichkeit]
+      # KMK 4.4 Fachbegriffe: Erzählperspektive (S. 34); HE 7.2 Erzählperspektiven erkennen (Jg 7); BY D8 2.2 Darstellungsweise; NW S1 IF2 Erzähltechniken der Perspektivierung | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: erzaehlform
+        iCan: "Ich kann bestimmen, ob ein Ich-Erzähler oder ein Er- bzw. Sie-Erzähler erzählt, und die Wirkung beschreiben."
+        gradeBand: "7-8"
+        requires: [erzaehler-und-autor]
+      # KMK 4.4 Fachbegriffe: Erzählperspektive (S. 34); HE 9.2 Erzählperspektive, Erzählhaltung (Jg 9); BY D9 2.2 Stellung des Erzählers zur erzählten Welt; NW S1 IF2 Erzähltechniken der Perspektivierung | Stimmen HE/BY/NW 9-10/9-10/7-8 → 9-10 (Mehrheit)
+      - id: erzaehlverhalten
+        iCan: "Ich kann auktoriales, personales und neutrales Erzählverhalten unterscheiden."
+        gradeBand: "9-10"
+        requires: [erzaehlform]
+      # KMK 4.4 Fachbegriffe: Erzählzeit/erzählte Zeit (S. 34); HE –; BY D10 2.2 zeitliche Ordnung; NW – | Stimmen HE/BY/NW –/9-10/– → 9-10 (eine Stimme) | SCHWACH BELEGT: nur KMK und BY; aufgenommen, weil die KMK den Begriff nennt
+      - id: erzaehlzeit-und-erzaehlte-zeit
+        iCan: "Ich kann Erzählzeit und erzählte Zeit unterscheiden und Zeitraffung, Zeitdehnung und Rückblende erkennen."
+        gradeBand: "9-10"
+        requires: [erzaehlform]
+      # KMK 4.4 produktionsorientierte Verfahren: innerer Monolog (S. 35); HE 5.2 in der Rolle einer literarischen Figur schreiben (Jg 5); BY D9 2.2 innerer Monolog; NW S1 IF2 Leerstellen füllen | Stimmen HE/BY/NW 5-6/9-10/7-8 → 7-8 (Mitte)
+      - id: innerer-monolog
+        iCan: "Ich kann zu einer Figur einen inneren Monolog schreiben, der ihre Gedanken und Gefühle zeigt."
+        gradeBand: "7-8"
+        requires: [figuren-untersuchen, fortsetzen-und-umschreiben]
+      # KMK 4.4 Literatur: Figurenkonstellationen (S. 34); HE 9.2 Figurenkonstellation (Jg 9); KC 7.2 Beziehungen zwischen Figuren; BY D8 2.2 Konstellation und Interaktion der Figuren; NW E IF2 Figurenbeziehungen erläutern | Stimmen HE/BY/NW 9-10/7-8/5-6 → 7-8 (Mitte)
+      - id: figurenkonstellation
+        iCan: "Ich kann die Beziehungen zwischen den Figuren eines Textes in einem Schaubild darstellen und erklären."
+        gradeBand: "7-8"
+        requires: [figuren-untersuchen]
+      # KMK 4.4 Literatur: Figuren (S. 34); HE 8.2 Personengestaltung (Jg 8); KC 7.2 Figuren charakterisieren; BY D10 3.2 Figuren charakterisieren; NW S1 IF2 zentrale Figurenmerkmale erläutern | Stimmen HE/BY/NW 7-8/9-10/7-8 → 7-8 (Mehrheit)
+      - id: figur-charakterisieren
+        iCan: "Ich kann eine literarische Figur mit Belegen aus dem Text charakterisieren."
+        gradeBand: "7-8"
+        requires: [figuren-untersuchen, textbelege-angeben]
+      # KMK 4.4 Literatur: Deutungen belegen (S. 34); HE 7.2 Hauptaussagen mit Zitaten belegen (Jg 7); BY D8 4.3 Zeichensetzung beim Zitieren; NW S1 IF2 Textverständnis mit Textstellen belegen | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: textbelege-angeben
+        iCan: "Ich kann eine Aussage über einen Text mit einer Textstelle und Zeilenangabe belegen."
+        gradeBand: "7-8"
+        requires: [kernaussagen-wiedergeben]
+      # KMK 4.4 Textwissen: Kurzgeschichte (S. 32); HE 7.2 Kurzgeschichten (Jg 7); BY D8 2.2 moderne Kurzprosa; NW S1 IF2 Formen kurzer Prosa | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: kurzgeschichte
+        iCan: "Ich kann typische Merkmale einer Kurzgeschichte nennen, zum Beispiel unvermittelten Anfang, Wendepunkt und offenes Ende."
+        gradeBand: "7-8"
+        requires: [handlung-erschliessen, epik-lyrik-dramatik]
+      # KMK 4.4 Textwissen: Novelle (S. 32); HE 7.2 Novelle (Jg 7); BY D10 2.2 Novellen, Rahmen- und Binnenerzählung; NW – | Stimmen HE/BY/NW 7-8/9-10/– → 9-10 (Gleichstand, requires) | Gleichstand; die Voraussetzung kurzgeschichte liegt in 7-8, daher 9-10
+      - id: novelle
+        iCan: "Ich kann Merkmale einer Novelle nennen, zum Beispiel unerhörte Begebenheit, Wendepunkt und Rahmenhandlung."
+        gradeBand: "9-10"
+        requires: [kurzgeschichte]
+      # KMK 4.4 Literatur: Motive (S. 35); HE 7.2 Geschehens-, Motiv- und Problemstrukturen (Jg 7); BY D7 2.2 typische Themen und Motive; NW S2 IF2 Motiv- und Themenverwandtschaft | Stimmen HE/BY/NW 7-8/7-8/9-10 → 7-8 (Mehrheit)
+      - id: motiv-erkennen
+        iCan: "Ich kann ein Motiv wie Freundschaft oder Reise in literarischen Texten erkennen."
+        gradeBand: "7-8"
+        requires: [handlung-erschliessen]
+      # KMK 4.4 Textwissen: Wirklichkeitsbezug, Wirklichkeit und Fiktion (S. 33); HE 8.2 Wirklichkeitsbezug (Jg 8); BY D8 2.2 Fiktionalitätssignale; NW S2 IF2 Fiktionalität, Literarizität | Stimmen HE/BY/NW 7-8/7-8/9-10 → 7-8 (Mehrheit)
+      - id: fiktionalitaetssignale
+        iCan: "Ich kann Signale im Text erkennen, die zeigen, dass erzählt und erfunden wird."
+        gradeBand: "7-8"
+        requires: [fiktion-und-wirklichkeit, erzaehler-und-autor]
+      # KMK 4.4 Literatur: Deutungen formulieren, Deutungshypothesen überprüfen (S. 34 f.); HE KC Kap. 6 Interpretieren; KC Schwerpunkt 9/10; BY D9 3.2 erste Deutungshypothesen; D10 2.1; NW S2 IF2 schlüssige Deutungen entwickeln | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: deutungshypothese
+        iCan: "Ich kann zu einem literarischen Text eine Deutungshypothese formulieren und am Text überprüfen."
+        gradeBand: "9-10"
+        requires: [textbelege-angeben, figur-charakterisieren]
+      # KMK 4.4 Textwissen: Text und Kontext (Entstehungszeit, Epoche, Leben) (S. 32); HE 9.2 Zusammenhang zwischen Werk und Autor (Jg 9); 10.2 historisch-soziale Situation; BY D9 2.2 Zeitbezug und biografische Informationen; NW S2 IF2 Epochenbezug, biografischer Bezug | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: text-und-kontext
+        iCan: "Ich kann einen literarischen Text mit seiner Entstehungszeit und dem Leben der Autorin oder des Autors in Beziehung setzen."
+        gradeBand: "9-10"
+        requires: [deutungshypothese]
+      # KMK 4.4 Fachbegriffe: Reim, Vers (S. 34); Fachausdrücke II: Strophe (S. 43); HE 5.2 Gedichte: Strophe, Vers (Jg 5); BY D5 2.2 Form- und Gattungselemente; NW E IF2 Reim, strophische Gliederung | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: vers-strophe-reim
+        iCan: "Ich kann in einem Gedicht Verse, Strophen und Reime bestimmen."
+        gradeBand: "5-6"
+        requires: [epik-lyrik-dramatik]
+      # KMK 4.4 Fachbegriffe: Reim (S. 34); HE 6.2 Reimformen (Jg 6); BY D5 2.2 Form- und Gattungselemente; NW E IF2 Reim | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: reimformen
+        iCan: "Ich kann Paarreim, Kreuzreim und umarmenden Reim unterscheiden."
+        gradeBand: "5-6"
+        requires: [vers-strophe-reim]
+      # KMK 4.4 Fachbegriffe: Vers (S. 34); HE 9.2 Metrik (Jg 9); BY D10 2.2 Vers- und Gedichtformen; NW E IF2 Metrum | Stimmen HE/BY/NW 9-10/9-10/5-6 → 9-10 (Mehrheit)
+      - id: metrum
+        iCan: "Ich kann das Versmaß eines Gedichts bestimmen: Jambus, Trochäus, Daktylus und Anapäst."
+        gradeBand: "9-10"
+        requires: [vers-strophe-reim]
+      # KMK 4.4 sprachliche Gestaltungsmittel: Vergleich, Metapher (S. 33); HE 6.2 Formen der Bildrede; 6.3 einfache Metaphern (Jg 6); BY D7 3.1 Metaphern; NW E IF1 Metapher, Vergleich | Stimmen HE/BY/NW 5-6/7-8/5-6 → 5-6 (Mehrheit)
+      - id: vergleich-und-metapher
+        iCan: "Ich kann Vergleich und Metapher in einem Text erkennen und ihre Wirkung beschreiben."
+        gradeBand: "5-6"
+      # KMK 4.4 sprachliche Bilder (S. 33); HE 6.2 Formen der Bildrede (Jg 6); BY D6 3.1 Personifikation; NW E IF1 Personifikation | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: personifikation
+        iCan: "Ich kann Personifikationen erkennen und erklären, was sie bewirken."
+        gradeBand: "5-6"
+        requires: [vergleich-und-metapher]
+      # KMK 4.4 Fachbegriffe: Sprecher/lyrischer Sprecher (S. 34); HE –; BY D8 2.2 Ausgestaltung der Sprechsituation; NW – | Stimmen HE/BY/NW –/7-8/– → 7-8 (eine Stimme) | SCHWACH BELEGT: nur KMK und BY; aufgenommen, weil die KMK den Begriff nennt
+      - id: lyrisches-ich
+        iCan: "Ich kann das lyrische Ich vom Autor unterscheiden und die Sprechsituation eines Gedichts beschreiben."
+        gradeBand: "7-8"
+        requires: [vers-strophe-reim, erzaehler-und-autor]
+      # KMK 4.4 Textwissen: Gedichte (S. 32); HE 7.2 Balladen (Jg 7); BY D7 2.2 Balladen; NW S1 IF2 Balladen | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: ballade
+        iCan: "Ich kann Merkmale einer Ballade nennen und zeigen, wie sie Erzählung, Gedicht und Drama verbindet."
+        gradeBand: "7-8"
+        requires: [vers-strophe-reim, epik-lyrik-dramatik]
+      # KMK 4.4 sprachliche Gestaltungsmittel: Symbol (S. 33); HE 9.2 sprachliche Bilder (Vergleich, Metapher, Symbol) (Jg 9); BY –; NW – | Stimmen HE/BY/NW 9-10/–/– → 9-10 (eine Stimme) | SCHWACH BELEGT: nur KMK und HE; aufgenommen, weil die KMK das Symbol nennt
+      - id: symbol
+        iCan: "Ich kann ein Symbol in einem Text erkennen und erklären, wofür es steht."
+        gradeBand: "9-10"
+        requires: [vergleich-und-metapher]
+      # KMK 4.4 Wort-, Satz- und Gedankenfiguren (S. 33); HE 9.2 Klang- und Stilfiguren (Jg 9); BY D9 3.1 Übertreibung, rhetorische Frage; NW S2 IF1 rhetorische Figuren | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: rhetorische-figuren
+        iCan: "Ich kann rhetorische Figuren wie Anapher, Alliteration, Klimax, Antithese und rhetorische Frage erkennen und ihre Wirkung erklären."
+        gradeBand: "9-10"
+        requires: [vergleich-und-metapher]
+      # KMK 4.4 Gestaltungsmittel und ihre Wirkung im Text (S. 33); HE 9.2 Zusammenhang zwischen Aussage, Form und Sprachgestalt (Jg 9); BY D9 2.2 Zusammenwirken sprachlicher und formaler Gestaltungsmittel; NW S2 IF2 Form und Inhalt bei lyrischen Texten | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: gedicht-form-und-inhalt
+        iCan: "Ich kann erklären, wie Form und Sprache eines Gedichts seine Aussage unterstützen."
+        gradeBand: "9-10"
+        requires: [metrum, rhetorische-figuren, lyrisches-ich]
+      # KMK 4.4 Bezüge zwischen Texten und Motiven, Vergleiche (S. 35); HE 9.2 themen- oder motivgleiche Gedichte aus verschiedenen Epochen (Jg 9); BY D10 2.2 motivgeschichtliche Zusammenhänge; NW S1 IF2 Gedichte vergleichen | Stimmen HE/BY/NW 9-10/9-10/7-8 → 9-10 (Mehrheit)
+      - id: gedichte-vergleichen
+        iCan: "Ich kann zwei Gedichte mit gleichem Motiv aus verschiedenen Zeiten vergleichen."
+        gradeBand: "9-10"
+        requires: [gedicht-form-und-inhalt, motiv-erkennen]
+      # KMK 4.4 Fachbegriffe: Dialog, Szene (S. 34); HE KC Schwerpunkt 5/6: szenisches Spiel, Kinder- und Jugendtheater; BY D5 2.2 Spielszenen; NW E IF2 dialogische Texte, Absichten und Verhaltensweisen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: spielszene-untersuchen
+        iCan: "Ich kann in einer Spielszene herausarbeiten, was die Figuren im Dialog wollen und wie sie sich verhalten."
+        gradeBand: "5-6"
+        requires: [figuren-untersuchen]
+      # KMK 4.4 Texte szenisch gestalten (S. 35); HE KC 7.1 aus vorgegebenen oder eigenen Ideen Szenen verfassen (Ende Jg 6); BY D5 2.2 Umschreibungen in andere Textsorten; NW E IF4 Texte medial umformen (szenisches Spiel) | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: szene-schreiben
+        iCan: "Ich kann aus einer Erzählung eine Spielszene mit Dialogen und Regieanweisungen machen."
+        gradeBand: "5-6"
+        requires: [spielszene-untersuchen]
+      # KMK 4.4 Fachbegriffe: Monolog, Dialog, Szene, Regieanweisung (S. 34); HE 8.2 dramatische Literatur: Grundfunktionen des Dramatischen (Jg 8); BY D8 2.2 dramatische Texte: Aufbau (Akt/Szene); NW S1 IF2 Dramenauszüge | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: drama-aufbau
+        iCan: "Ich kann in einem Drama Akt, Szene, Dialog, Monolog und Regieanweisung unterscheiden."
+        gradeBand: "7-8"
+        requires: [spielszene-untersuchen, epik-lyrik-dramatik]
+      # KMK 4.4 Textwissen: Drama (Komödie, Tragödie) (S. 32); HE 9.2 äußere und innere Struktur der aristotelischen Form des Dramas (Jg 9); BY D10 2.2 Drama rezipieren; NW S2 IF2 Handlungsführung und Textaufbau: Drama | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: geschlossenes-drama
+        iCan: "Ich kann den Aufbau eines klassischen Dramas in fünf Akten beschreiben: Exposition, steigende Handlung, Höhepunkt, retardierendes Moment, Katastrophe."
+        gradeBand: "9-10"
+        requires: [drama-aufbau]
+      # KMK 4.4 Literatur: Figurenkonstellation, Konfliktverlauf (S. 34); HE KC Kap. 6 Beziehungen zwischen literarischen Figuren untersuchen; Schwerpunkt 9/10: Drama in Auszügen; BY D9 2.2 Konflikt, Konstellation und Interaktion; D10 Dialogführung; NW S2 IF2 Konflikte, Figurenkonstellationen | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: dialog-analysieren
+        iCan: "Ich kann einen Dramendialog untersuchen: Gesprächsverlauf, Absichten und Beziehung der Figuren."
+        gradeBand: "9-10"
+        requires: [drama-aufbau, figurenkonstellation]
+      # KMK 4.4 Sachtexte: relevante Informationen erschließen (S. 36); HE 5.2 informierende Texte: Informationen entnehmen, thematische Abschnitte (Jg 5); BY D5 2.3 pragmatische Texte; NW E IF2 Aufbau und Funktion von Sachtexten | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: sachtext-aufbau
+        iCan: "Ich kann einem Sachtext Informationen entnehmen und seinen Aufbau mit Überschrift, Absätzen und Abbildungen beschreiben."
+        gradeBand: "5-6"
+        requires: [markieren-und-gliedern]
+      # KMK 4.4 Sachtexte: nicht-lineare Texte auswerten (S. 36); HE 5.2 Informationen aus Texten und Bildern entnehmen (Jg 5); BY D5 2.3 Balkendiagramme, Tabellen; NW E IF2 diskontinuierliche Sachtexte | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: diagramme-lesen
+        iCan: "Ich kann Tabellen sowie Balken- und Kreisdiagramme lesen und ihnen Informationen entnehmen."
+        gradeBand: "5-6"
+      # KMK 4.4 Sachtexte: komplexere nicht-lineare und multimodale Texte (MSA, S. 36); HE 7.2 Informationen entnehmen und ordnen (Jg 7); BY D7 2.3 Diagramme, Grafiken, Abbildungen; NW S1 IF2 diskontinuierliche Sachtexte erläutern | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: infografiken-auswerten
+        iCan: "Ich kann eine Infografik mit Text, Bild und Zahlen auswerten und ihre Aussage zusammenfassen."
+        gradeBand: "7-8"
+        requires: [diagramme-lesen]
+      # KMK 4.4 Sachtexte: Information und Wertung unterscheiden; Textsorten (S. 33, 36); HE 8.2 Nachricht als informierender Text, Kommentar, Abgrenzung (Jg 8); BY D8 2.3 journalistische Textsorten (Nachricht, Kommentar, Glosse); NW S1 IF2 journalistische Textformen, Textfunktionen | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: nachricht-und-kommentar
+        iCan: "Ich kann Nachricht und Kommentar unterscheiden und erkennen, wo ein Text informiert und wo er wertet."
+        gradeBand: "7-8"
+        requires: [textfunktionen]
+      # KMK 4.4 pragmatische Textsorten: Feature, Reportage (S. 33); HE 6.2 Berichte, Reportagen (Jg 6); BY –; NW S1 IF2 journalistische Textformen | Stimmen HE/BY/NW 5-6/–/7-8 → 7-8 (Gleichstand, requires) | SCHWACH BELEGT: BY nennt die Reportage nicht | Gleichstand; die Voraussetzung liegt in 7-8, daher 7-8
+      - id: reportage
+        iCan: "Ich kann eine Reportage an ihren Merkmalen erkennen und von einer Nachricht unterscheiden."
+        gradeBand: "7-8"
+        requires: [nachricht-und-kommentar]
+      # KMK 4.4 Medienangebot: Zeitungen (S. 34); HE 8.2 Aufbau und Gliederung einer Tageszeitung, Ressorts (Jg 8); BY D8 2.4 Zeitungsprojekt; NW S1 IF4 Aufbau von Zeitung und Online-Zeitung | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: zeitung-aufbau
+        iCan: "Ich kann den Aufbau einer gedruckten und einer Online-Zeitung beschreiben: Ressorts, Schlagzeile, Aufmachung."
+        gradeBand: "7-8"
+        requires: [nachricht-und-kommentar]
+      # KMK 4.4 Sachtexte: Wirkungsabsichten ermitteln und beurteilen (S. 36); HE 10.2 Absicht, Wirkung, gedanklicher Aufbau (Jg 10); BY D9 2.3 Argumentationsweise, Intention; NW S2 IF2 Sachtexte analysieren | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: argumentation-untersuchen
+        iCan: "Ich kann in einem argumentierenden Sachtext These, Argumente und Absicht der Verfasserin oder des Verfassers herausarbeiten."
+        gradeBand: "9-10"
+        requires: [argument-aufbauen, nachricht-und-kommentar]
+      # KMK 4.2 Appellieren: Werbeanzeige (S. 26); 4.5 Textfunktion Appellieren (S. 40); HE 10.3 Werbesprache: Werbeanzeigen, Werbespots analysieren (Jg 10); BY –; NW S1 IF4 Werbung in unterschiedlichen Medien | Stimmen HE/BY/NW 9-10/–/7-8 → 7-8 (Gleichstand, frühere Stufe) | Gleichstand; die Voraussetzungen liegen in 5-6, daher die frühere Stufe 7-8
+      - id: werbung-untersuchen
+        iCan: "Ich kann Werbeanzeigen und Werbespots auf ihre Mittel und ihre Wirkung untersuchen."
+        gradeBand: "7-8"
+        requires: [textfunktionen, vergleich-und-metapher]
+      # KMK 4.4 Medienangebot: Recherchemöglichkeiten (S. 33 f.); HE 5.1 Informationsquellen nutzen (Lexikonarbeit) (Jg 5); BY D5 2.4 Schulbibliothek, Suchmaschinen; NW E IF4 Recherchestrategien | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: recherchieren
+        iCan: "Ich kann mit Suchmaschinen und in der Bibliothek gezielt Informationen zu einem Thema finden."
+        gradeBand: "5-6"
+      # KMK 4.4 Medienangebot: Rechercheergebnisse bewerten, Quellenqualität prüfen (S. 34); HE 10.1 kritisch wertender Umgang mit Informationen aus dem Internet (Jg 10); BY D6 2.4 Seriosität von Angeboten (Impressum); NW E IF4 Qualität altersgemäßer Quellen prüfen | Stimmen HE/BY/NW 9-10/5-6/5-6 → 5-6 (Mehrheit)
+      - id: quellen-pruefen
+        iCan: "Ich kann prüfen, ob eine Internetseite verlässlich ist, zum Beispiel am Impressum, an der Autorin oder dem Autor und an Belegen."
+        gradeBand: "5-6"
+        requires: [recherchieren]
+      # KMK 4.4 Medienangebot: Verlässlichkeit (S. 34); HE 10.1 kritisch wertender Umgang mit Internetinformationen (Jg 10); BY D9 2.1 vertrauenswürdige und problematische Informationen unterscheiden; NW S2 IF4 Fake News | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: falschmeldungen-erkennen
+        iCan: "Ich kann Falschmeldungen erkennen und prüfen, ob eine Nachricht vertrauenswürdig ist."
+        gradeBand: "9-10"
+        requires: [quellen-pruefen, nachricht-und-kommentar]
+      # KMK 4.4 eigene Mediennutzung reflektieren (S. 31 f.); HE –; BY D5 2.4 eigene Mediennutzung (Dauer, Wirkung, Ziel); NW E IF4 Internet-Kommunikation als öffentlich, Konsequenzen | Stimmen HE/BY/NW –/5-6/5-6 → 5-6 (Mehrheit)
+      - id: eigene-mediennutzung
+        iCan: "Ich kann beschreiben, wie lange und wozu ich Medien nutze, und darüber nachdenken, was mir guttut."
+        gradeBand: "5-6"
+      # KMK 4.4 Digitale Formate und Umgebungen (S. 36 f.); HE –; BY D7 2.4 verantwortungsvoller Umgang in sozialen Netzwerken; NW S1 IF4 Persönlichkeitsrechte, Datenschutz | Stimmen HE/BY/NW –/7-8/7-8 → 7-8 (Mehrheit)
+      - id: privatsphaere-im-netz
+        iCan: "Ich kann erklären, was in sozialen Netzwerken öffentlich ist, und meine Daten und die Rechte anderer schützen."
+        gradeBand: "7-8"
+        requires: [eigene-mediennutzung]
+      # KMK 4.4 digitale Nutzerprofile, Algorithmen (S. 37); HE –; BY D8 2.4 Art der Informationsvermittlung sozialer Medien; NW S2 IF4 Funktionsweisen von Suchmaschinen und sozialen Medien | Stimmen HE/BY/NW –/7-8/9-10 → 9-10 (Gleichstand, requires) | Gleichstand; die Voraussetzung liegt in 7-8, daher 9-10
+      - id: algorithmen-und-soziale-medien
+        iCan: "Ich kann erklären, wie Suchmaschinen und soziale Medien mit Nutzerprofilen und Algorithmen auswählen, was ich sehe."
+        gradeBand: "9-10"
+        requires: [privatsphaere-im-netz]
+      # KMK 4.4 Textwissen: mediale Gestaltung (Musik, Geräusche); Hörspiel (S. 32 f.); HE 5.2 Hörspiele (Jg 5); BY D5 2.4 Hörtexte, Musik und Geräusche; NW E IF4 Hörfassungen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: hoerspiel
+        iCan: "Ich kann beschreiben, wie ein Hörspiel mit Stimmen, Geräuschen und Musik eine Stimmung erzeugt."
+        gradeBand: "5-6"
+      # KMK 4.4 multimodale Texte: Text-Bild-Bezüge (S. 36); HE –; BY D8 2.4 grafische Literatur; NW E IF4 Gestaltungsmittel u. a. bei Graphic Novels | Stimmen HE/BY/NW –/7-8/5-6 → 5-6 (Gleichstand, frühere Stufe)
+      - id: comic-und-graphic-novel
+        iCan: "Ich kann beschreiben, wie in einem Comic oder einer Graphic Novel Bild und Text zusammen erzählen."
+        gradeBand: "5-6"
+      # KMK 4.4 Fachbegriffe: Kameraperspektive, Einstellungsgröße (S. 34); HE 10.2 filmtechnische Mittel: Perspektive (Jg 10); BY D6 2.4 Kameraeinstellung, -perspektive, -bewegung; NW S1 IF4 Kameratechnik | Stimmen HE/BY/NW 9-10/5-6/7-8 → 7-8 (Mitte)
+      - id: einstellungsgroessen-und-perspektive
+        iCan: "Ich kann in einem Film Einstellungsgrößen und Kameraperspektiven bestimmen und ihre Wirkung beschreiben."
+        gradeBand: "7-8"
+      # KMK 4.4 Fachbegriffe: Montage, Kamerabewegung, Schnitt (MSA, S. 34); HE 10.2 Montage, Beleuchtung, Verhältnis Text-Bild (Jg 10); BY D7 2.4 Ton- und Bildeffekte, Schnitttechniken; NW S1 IF4 Bildgestaltung, Tongestaltung | Stimmen HE/BY/NW 9-10/7-8/7-8 → 7-8 (Mehrheit)
+      - id: schnitt-montage-ton
+        iCan: "Ich kann beschreiben, wie Schnitt, Montage, Musik und Geräusche in einem Film wirken."
+        gradeBand: "7-8"
+        requires: [einstellungsgroessen-und-perspektive]
+      # KMK 4.4 intermediale Vergleiche, z. B. Buch und Film (S. 35); HE 10.2 Literaturverfilmungen (Jg 10); BY D8 2.4 mediale Gestaltungsmittel deuten Textvorlagen; NW E IF4 Präsentationsformen literarischer Texte | Stimmen HE/BY/NW 9-10/7-8/5-6 → 7-8 (Mitte)
+      - id: buch-und-film-vergleichen
+        iCan: "Ich kann ein Buch mit seiner Verfilmung vergleichen und Unterschiede begründet bewerten."
+        gradeBand: "7-8"
+        requires: [einstellungsgroessen-und-perspektive, jugendbuch-lesen]
+  - id: sprache
+    name: { de: "Sprache und Sprachgebrauch untersuchen", en: "Examining language and language use" }
+    competencies:
+      # KMK 4.5 Wortarten (S. 41); Fachausdrücke I: Nomen, Artikel (S. 42); HE 5.3 Substantive und Artikel (Jg 5); BY D5 4.2 Nomen, Artikel; NW E IF1 Nomen, Artikel | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: nomen-und-artikel
+        iCan: "Ich kann Nomen und Artikel erkennen und bestimmte und unbestimmte Artikel unterscheiden."
+        gradeBand: "5-6"
+      # KMK 4.5 grammatische Mittel: Genus, Numerus (S. 41); HE 5.3 Genus, Numerus (Jg 5); BY D5 4.2 Deklination; NW E IF1 Deklination – Genus, Numerus | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: genus-und-numerus
+        iCan: "Ich kann bei Nomen das grammatische Geschlecht (Genus) und die Zahl (Numerus) bestimmen."
+        gradeBand: "5-6"
+        requires: [nomen-und-artikel]
+      # KMK 4.5 grammatische Mittel: Kasus (S. 41); HE 5.3 Deklination, Kasus (Jg 5); BY D5 4.2 Deklination; NW E IF1 Deklination – Kasus | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: kasus
+        iCan: "Ich kann die vier Fälle mit der Frageprobe bestimmen und Nomen richtig deklinieren."
+        gradeBand: "5-6"
+        requires: [genus-und-numerus]
+      # KMK Fachausdrücke I: Grundform, gebeugte Form/finites Verb (S. 42); HE 5.3 Personal- und Infinitformen (Jg 5); BY D5 4.2 Konjugation; NW E IF1 Konjugation | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: verb-konjugieren
+        iCan: "Ich kann Verben konjugieren und Grundform (Infinitiv) und Personalform unterscheiden."
+        gradeBand: "5-6"
+      # KMK 4.5 grammatische Mittel: Tempus (S. 41); HE 5.3 starke und schwache Verben (Jg 5); BY D6 4.2 Verben in Tempusformen richtig verwenden; NW – | Stimmen HE/BY/NW 5-6/5-6/– → 5-6 (Mehrheit) | SCHWACH BELEGT: ausdrücklich nur HE; aufgenommen als direkte Voraussetzung der Vergangenheitsformen
+      - id: starke-und-schwache-verben
+        iCan: "Ich kann starke und schwache Verben unterscheiden und ihre Vergangenheitsformen richtig bilden."
+        gradeBand: "5-6"
+        requires: [verb-konjugieren]
+      # KMK 4.5 grammatische Mittel: Tempus (S. 41); HE 5.3 Tempora: Präsens, Präteritum (Jg 5); BY D5 4.2 Tempora; NW E IF1 Konjugation – Tempus | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: tempus-praesens-praeteritum
+        iCan: "Ich kann Präsens und Präteritum bilden und weiß, wofür man sie verwendet."
+        gradeBand: "5-6"
+        requires: [starke-und-schwache-verben]
+      # KMK 4.5 grammatische Mittel: Tempus (S. 41); HE 5.3 Perfekt, Plusquamperfekt (Jg 5); BY D5 4.2 Tempora; NW E IF1 Tempus | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: tempus-perfekt-plusquamperfekt
+        iCan: "Ich kann Perfekt und Plusquamperfekt mit haben oder sein bilden und richtig verwenden."
+        gradeBand: "5-6"
+        requires: [tempus-praesens-praeteritum]
+      # KMK 4.5 grammatische Mittel: Tempus (S. 41); HE 6.3 Futur I und II (Jg 6); BY D5 4.2 Tempora; NW E IF1 Tempus | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: tempus-futur
+        iCan: "Ich kann Futur I und Futur II bilden und erklären, was sie ausdrücken."
+        gradeBand: "5-6"
+        requires: [verb-konjugieren]
+      # KMK 4.5 Tempus im sprachlichen Handeln (S. 41); HE 6.3 ein Zeitverhältnis ausdrücken, Tempus durchhalten (Jg 6); BY D5 4.2 Tempusformen, um zeitliche Strukturen darzustellen; NW – | Stimmen HE/BY/NW 5-6/5-6/– → 5-6 (Mehrheit)
+      - id: zeitverhaeltnisse
+        iCan: "Ich kann mit den Zeitformen ausdrücken, was vorher und was gleichzeitig geschieht, und ein Tempus im Text durchhalten."
+        gradeBand: "5-6"
+        requires: [tempus-perfekt-plusquamperfekt]
+      # KMK 4.5 grammatische Mittel: Komparation (S. 41); HE 5.3 Adjektive: Steigerungsformen (Jg 5); BY D5 4.2 Adjektiv, Komparation; NW E IF1 Adjektiv, Komparation | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: adjektiv-und-steigerung
+        iCan: "Ich kann Adjektive erkennen und mit Positiv, Komparativ und Superlativ steigern."
+        gradeBand: "5-6"
+      # KMK 4.5 Wortarten (S. 41); HE 6.3 Personal-, Demonstrativ-, Relativpronomen (Jg 6); BY D5 4.2 Pronomen; NW E IF1 Pronomen | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: pronomen
+        iCan: "Ich kann Personal-, Possessiv-, Demonstrativ- und Relativpronomen unterscheiden."
+        gradeBand: "5-6"
+        requires: [nomen-und-artikel]
+      # KMK 4.5 Wortarten (S. 41); HE 5.3 Präpositionen und ihre Fälle (Jg 5); BY D5 4.2 Präposition; NW S1 IF1 Präposition | Stimmen HE/BY/NW 5-6/5-6/7-8 → 5-6 (Mehrheit)
+      - id: praepositionen
+        iCan: "Ich kann Präpositionen erkennen und den Fall bestimmen, den sie verlangen."
+        gradeBand: "5-6"
+        requires: [kasus]
+      # KMK 4.5 Wortarten (S. 41); HE 6.3 Adverbien (Jg 6); BY D5 4.2 Adverb; NW E IF1 Adverb | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: adverb
+        iCan: "Ich kann Adverbien erkennen und von Adjektiven unterscheiden."
+        gradeBand: "5-6"
+        requires: [adjektiv-und-steigerung]
+      # KMK 4.5 Wortarten (S. 41); HE 6.3 beiordnende und unterordnende Konjunktionen (Jg 6); BY D5 4.2 Konjunktion und Subjunktion; NW E IF1 Konjunktion | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: konjunktionen
+        iCan: "Ich kann nebenordnende und unterordnende Konjunktionen unterscheiden und Sätze damit verbinden."
+        gradeBand: "5-6"
+      # KMK 4.5 grammatische Mittel: Genus verbi (S. 41); HE 7.3 Aktiv und Passiv (Jg 7); BY D6 4.2 Aktiv und Passiv; NW S1 IF1 Aktiv/Passiv | Stimmen HE/BY/NW 7-8/5-6/7-8 → 7-8 (Mehrheit)
+      - id: aktiv-und-passiv
+        iCan: "Ich kann Aktiv- und Passivsätze bilden und erklären, wann man das Passiv verwendet."
+        gradeBand: "7-8"
+        requires: [tempus-perfekt-plusquamperfekt, subjekt-und-praedikat]
+      # KMK 4.5 grammatische Mittel: Modus (S. 41); HE 8.3 Modalverben (Jg 8); BY D8 3.1 Modalverben in der Redewiedergabe; NW – | Stimmen HE/BY/NW 7-8/7-8/– → 7-8 (Mehrheit)
+      - id: modalverben
+        iCan: "Ich kann mit Modalverben wie können, müssen und sollen ausdrücken, wie sicher oder notwendig etwas ist."
+        gradeBand: "7-8"
+        requires: [verb-konjugieren]
+      # KMK 4.5 grammatische Mittel: Modus (S. 41); HE 7.3 Konjunktiv I und II (Jg 7); BY D7 4.2 Modi, Graduierung von Modalität; NW S1 IF1 Modi | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: konjunktiv-zwei
+        iCan: "Ich kann den Konjunktiv II bilden und für Wünsche, Bedingungen und höfliche Bitten verwenden."
+        gradeBand: "7-8"
+        requires: [tempus-praesens-praeteritum]
+      # KMK 4.5 grammatische Mittel: Modus (S. 41); Fachausdrücke I: wörtliche Rede (S. 42); HE 7.3 Indirekte Rede, Konjunktiv I und II (Jg 7); BY D7 4.2 Konjunktiv als Mittel der Redewiedergabe; NW S1 IF1 direkte und indirekte Rede | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: indirekte-rede
+        iCan: "Ich kann wörtliche Rede mit dem Konjunktiv I in indirekte Rede umwandeln."
+        gradeBand: "7-8"
+        requires: [konjunktiv-zwei, woertliche-rede-zeichensetzen]
+      # KMK Fachausdrücke I: Aussage-, Frage-, Ausrufesatz (S. 42); HE 5.3 Satzarten (Jg 5); BY D5 4.2 Arten des einfachen Satzes; NW E IF1 Satzarten | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: satzarten
+        iCan: "Ich kann Aussage-, Frage- und Aufforderungssätze unterscheiden."
+        gradeBand: "5-6"
+      # KMK 4.5 grammatische Operationen (S. 41); HE 5.3 Umstell- und Ersatzprobe (Jg 5); BY D5 4.2 Satzglieder; NW E IF1 Ersatz-, Umstell-, Erweiterungs-, Weglassprobe | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: grammatische-proben
+        iCan: "Ich kann mit Umstell-, Ersatz-, Weglass- und Erweiterungsprobe Sätze untersuchen."
+        gradeBand: "5-6"
+      # KMK 4.5 Satzstrukturen: Prädikat, Satzglieder (S. 41); HE 5.3 Satzglieder: Subjekt, Prädikat (Jg 5); BY D5 4.2 Prädikat, Subjekt; NW E IF1 Prädikat, Subjekt | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: subjekt-und-praedikat
+        iCan: "Ich kann in einem Satz Subjekt und Prädikat bestimmen."
+        gradeBand: "5-6"
+        requires: [grammatische-proben, verb-konjugieren]
+      # KMK 4.5 Satzstrukturen: Satzglieder (S. 41); HE 5.3 Objekte (Akkusativ-, Dativobjekt) (Jg 5); BY D5 4.2 Dativ- und Akkusativobjekt; NW E IF1 Objekt | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: objekte
+        iCan: "Ich kann Akkusativ-, Dativ- und Genitivobjekt bestimmen."
+        gradeBand: "5-6"
+        requires: [subjekt-und-praedikat, kasus]
+      # KMK 4.5 Satzstrukturen: Satzglieder (S. 41); HE 6.3 adverbiale Bestimmungen (Jg 6); BY D5 4.2 Lokal-, Temporal-, Modal- und Kausaladverbiale; NW E IF1 Adverbial | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: adverbiale
+        iCan: "Ich kann adverbiale Bestimmungen der Zeit, des Ortes, der Art und Weise und des Grundes bestimmen."
+        gradeBand: "5-6"
+        requires: [subjekt-und-praedikat]
+      # KMK 4.5 Satzstrukturen: Attribute (S. 41); HE 6.3 Adjektiv-, Genitiv-, Präpositionalattribut (Jg 6); BY D6 4.2 Attribute; NW E IF1 Satzgliedteil Attribut | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: attribut
+        iCan: "Ich kann Attribute als Teil eines Satzglieds erkennen, zum Beispiel Adjektiv-, Genitiv- und Präpositionalattribut."
+        gradeBand: "5-6"
+        requires: [objekte, adjektiv-und-steigerung]
+      # KMK 4.5 Satzstrukturen: Satz- und Nebensatztypen (S. 41); HE 6.3 Haupt- und Gliedsatz (Jg 6); BY D5 4.2 Haupt- und Nebensatz; NW E IF1 Hauptsatz, Nebensatz | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: hauptsatz-und-nebensatz
+        iCan: "Ich kann Hauptsätze und Nebensätze an der Stellung des Verbs unterscheiden."
+        gradeBand: "5-6"
+        requires: [subjekt-und-praedikat, konjunktionen]
+      # KMK 4.5 Satzstrukturen: Satztypen (S. 41); HE KC Schwerpunkt 5/6: Satzreihe, Satzgefüge; 6.3 Haupt- und Gliedsatz (Jg 6); BY D6 4.2 Satzreihen und Satzgefüge; NW E IF1 Satzreihe, Satzgefüge | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: satzreihe-und-satzgefuege
+        iCan: "Ich kann Satzreihen und Satzgefüge unterscheiden und selbst bilden."
+        gradeBand: "5-6"
+        requires: [hauptsatz-und-nebensatz]
+      # KMK 4.5 Satzstrukturen: Attribute, Nebensatztypen (S. 41); HE 6.3 Attributsatz (Relativsatz) (Jg 6); BY D6 4.2 Attribute, auch Relativsatz; NW S1 IF1 Attributsatz | Stimmen HE/BY/NW 5-6/5-6/7-8 → 5-6 (Mehrheit)
+      - id: relativsatz
+        iCan: "Ich kann Relativsätze erkennen und mit ihnen ein Nomen genauer beschreiben."
+        gradeBand: "5-6"
+        requires: [attribut, pronomen, hauptsatz-und-nebensatz]
+      # KMK 4.5 Satzstrukturen: Nebensatztypen (S. 41); HE 7.3 Lokal-, Temporal-, Kausalsatz (Jg 7); BY D6 4.2 temporale, kausale, finale, modale Adverbialsätze; D7 konditionale, konzessive; NW S1 IF1 Adverbialsatz | Stimmen HE/BY/NW 7-8/5-6/7-8 → 7-8 (Mehrheit)
+      - id: adverbialsaetze
+        iCan: "Ich kann Adverbialsätze nach ihrer Bedeutung unterscheiden, zum Beispiel temporal, kausal, final, konditional und konzessiv."
+        gradeBand: "7-8"
+        requires: [adverbiale, satzreihe-und-satzgefuege]
+      # KMK 4.5 Satzstrukturen: Nebensatztypen (S. 41); HE 7.3 Satzglieder in Gliedsätze umformen (Jg 7); BY D6 4.2 Subjekt- und Objektsatz; NW S1 IF1 Subjektsatz, Objektsatz | Stimmen HE/BY/NW 7-8/5-6/7-8 → 7-8 (Mehrheit)
+      - id: subjektsatz-und-objektsatz
+        iCan: "Ich kann Subjekt- und Objektsätze erkennen und Satzglieder in Gliedsätze umformen."
+        gradeBand: "7-8"
+        requires: [objekte, satzreihe-und-satzgefuege]
+      # KMK 4.5 Satzstrukturen (S. 41); HE –; BY D8 4.2 Infinitiv- und Partizipialkonstruktionen; NW S1 IF1 Infinitivgruppe | Stimmen HE/BY/NW –/7-8/7-8 → 7-8 (Mehrheit)
+      - id: infinitiv-und-partizipgruppen
+        iCan: "Ich kann Infinitiv- und Partizipgruppen erkennen und in Sätzen verwenden."
+        gradeBand: "7-8"
+        requires: [satzreihe-und-satzgefuege]
+      # KMK 4.5 Satzstrukturen: Satzklammer, Felderstruktur (MSA, S. 41); HE –; BY –; NW S1 IF1 Satzbaupläne | Stimmen HE/BY/NW –/–/7-8 → 7-8 (eine Stimme) | SCHWACH BELEGT: nur KMK (MSA) und NW allgemein; aufgenommen, weil die KMK das Feldermodell nennt
+      - id: feldermodell
+        iCan: "Ich kann mit dem Feldermodell (Vorfeld, Satzklammer, Mittelfeld, Nachfeld) die Wortstellung im Satz beschreiben."
+        gradeBand: "7-8"
+        requires: [hauptsatz-und-nebensatz]
+      # KMK 4.5 Wörter und Sätze: Formulierungsmuster funktional nutzen (S. 41); HE 7.3 Nominalisierung und Entnominalisierung (Jg 7); BY D10 4.2 Nominalisierungen; D10 3.1 Nominalstil; NW – | Stimmen HE/BY/NW 7-8/9-10/– → 9-10 (Gleichstand, requires) | Gleichstand; die Voraussetzung liegt in 7-8, daher 9-10
+      - id: nominalstil-und-verbalstil
+        iCan: "Ich kann Nominalstil und Verbalstil unterscheiden und Sätze in den jeweils anderen Stil umformen."
+        gradeBand: "9-10"
+        requires: [nominalisierung-grossschreiben]
+      # KMK 4.5 Wortstruktur; Komposition (S. 41, 44); HE 6.3 Grund- und Bestimmungswort (Jg 6); BY D5 4.2 Zusammensetzung; NW E IF1 Komposition | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: zusammensetzung
+        iCan: "Ich kann zusammengesetzte Wörter in Grund- und Bestimmungswort zerlegen."
+        gradeBand: "5-6"
+        requires: [nomen-und-artikel]
+      # KMK 4.5 Wortstruktur; Derivation (S. 41, 44); HE 5.3 Ableitung; 6.3 Suffix und Präfix (Jg 5/6); BY D5 4.2 Präfix, Suffix, Ableitung; NW E IF1 Derivation | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: ableitung
+        iCan: "Ich kann mit Präfixen und Suffixen neue Wörter bilden und erkennen, zu welcher Wortart sie gehören."
+        gradeBand: "5-6"
+        requires: [silben-und-wortbausteine]
+      # KMK Fachausdrücke I: Wortfamilie, Wortstamm (S. 42); HE 5.3 Wortfamilie (Jg 5); BY D5 4.2 Wortfamilien; NW E IF1 Wortfamilien | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: wortfamilie
+        iCan: "Ich kann Wörter mit demselben Wortstamm zu einer Wortfamilie ordnen."
+        gradeBand: "5-6"
+        requires: [silben-und-wortbausteine]
+      # KMK 4.5 Wörter in ihren Beziehungen zu anderen Wörtern (S. 41); HE 5.3 Wortfelder (Jg 5); BY D5 4.2 Wortfelder, Synonyme, Antonyme; NW E IF1 Wortfelder | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: wortfeld-und-synonyme
+        iCan: "Ich kann Wörter mit ähnlicher Bedeutung zu einem Wortfeld ordnen und Synonyme und Gegenwörter passend einsetzen."
+        gradeBand: "5-6"
+      # KMK 4.5 Wörter: Bedeutung (S. 41); HE 5.3 Mehrdeutigkeit von Wörtern (Jg 5); BY D5 4.2 Homonyme; NW S1 IF1 Homonyme und Polyseme | Stimmen HE/BY/NW 5-6/5-6/7-8 → 5-6 (Mehrheit)
+      - id: mehrdeutige-woerter
+        iCan: "Ich kann erkennen, dass ein Wort mehrere Bedeutungen haben kann, und die passende aus dem Zusammenhang bestimmen."
+        gradeBand: "5-6"
+        requires: [wortfeld-und-synonyme]
+      # KMK 4.5 Wörter und Wendungen (S. 41); HE 6.3 übertragene Bedeutung in Redensarten und Sprichwörtern (Jg 6); BY D6 4.1 Redewendungen; D6 4.2 bildhafte Redeweise; NW – | Stimmen HE/BY/NW 5-6/5-6/– → 5-6 (Mehrheit)
+      - id: redewendungen
+        iCan: "Ich kann Redewendungen und Sprichwörter erklären und ihre übertragene Bedeutung nennen."
+        gradeBand: "5-6"
+        requires: [mehrdeutige-woerter]
+      # KMK 4.5 Sprachwandel: Entlehnungen aus anderen Sprachen (S. 40); HE 7.3 Herkunft von Wörtern: Lehnwort, Fremdwort, Anglizismen (Jg 7); BY D8 4.2 Fremdwörter erklären; NW S1 IF1 Lehnwörter, Fremdwörter | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: erbwort-lehnwort-fremdwort
+        iCan: "Ich kann Erbwörter, Lehnwörter und Fremdwörter unterscheiden und Wörter aus anderen Sprachen erkennen."
+        gradeBand: "7-8"
+        requires: [ableitung]
+      # KMK 4.5 Sprachwandel: Bedeutungswandel (S. 40); HE 8.3 Entstehung und Veränderung; Nuancen in der Wortbedeutung (Jg 8); BY D7 4.1 Bedeutungswandel; NW S2 IF1 Bedeutungsveränderungen | Stimmen HE/BY/NW 7-8/7-8/9-10 → 7-8 (Mehrheit)
+      - id: bedeutungswandel
+        iCan: "Ich kann an Beispielen zeigen, wie sich die Bedeutung von Wörtern im Lauf der Zeit verändert hat."
+        gradeBand: "7-8"
+        requires: [mehrdeutige-woerter]
+      # KMK 4.5 Sprachwandel, auch durch digitale Kommunikation (S. 40); HE 9.3 Entstehung und Veränderung schriftsprachlicher Normen (Jg 9); BY D10 4.1 Sprachwandel in Vergangenheit und Gegenwart; NW S2 IF1 Sprachwandel | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: sprachwandel
+        iCan: "Ich kann Gründe für Sprachwandel nennen, etwa Kontakt mit anderen Sprachen oder digitale Kommunikation, und an Beispielen erklären."
+        gradeBand: "9-10"
+        requires: [bedeutungswandel, erbwort-lehnwort-fremdwort]
+      # KMK 4.5 Unterschiede zwischen Mündlichkeit und Schriftlichkeit (S. 38 f.); HE KC 7.1 gesprochene und geschriebene Sprache unterscheiden (Ende Jg 6); BY D5 4.1 mündlicher und schriftlicher Sprachgebrauch; NW E IF3 Merkmale gesprochener und geschriebener Sprache | Stimmen HE/BY/NW 5-6/5-6/5-6 → 5-6 (Mehrheit)
+      - id: muendlich-und-schriftlich
+        iCan: "Ich kann Merkmale gesprochener und geschriebener Sprache unterscheiden."
+        gradeBand: "5-6"
+      # KMK 4.5 informelle und elaborierte Mündlichkeit/Schriftlichkeit (S. 40); HE KC Schwerpunkt 7/8: E-Mail, SMS; BY D8 4.1 konzeptionell bzw. medial mündliche und schriftliche Kommunikation; NW S1 IF4 Elemente konzeptioneller Mündlichkeit bzw. Schriftlichkeit | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: naehe-und-distanzsprache
+        iCan: "Ich kann erklären, warum ein Chat oft wie gesprochen wirkt und ein Brief wie geschrieben (konzeptionelle Mündlichkeit und Schriftlichkeit)."
+        gradeBand: "7-8"
+        requires: [muendlich-und-schriftlich]
+      # KMK 4.5 Standardsprache – Alltagssprache (S. 40); 4.1 Register (S. 16); HE 9.3 Standardsprache, Umgangssprache (Jg 9); BY D6 4.1 Standardsprache; NW E IF1 Alltagssprache und Bildungssprache | Stimmen HE/BY/NW 9-10/5-6/5-6 → 5-6 (Mehrheit)
+      - id: standard-und-bildungssprache
+        iCan: "Ich kann Alltagssprache, Standardsprache und Bildungssprache unterscheiden."
+        gradeBand: "5-6"
+        requires: [muendlich-und-schriftlich]
+      # KMK 4.1 bewusst das Register wechseln (S. 16); HE –; BY D9 1.3 angemessenes Sprachregister; NW S1 IF3 Kommunikationskonventionen, Sprachregister | Stimmen HE/BY/NW –/9-10/7-8 → 7-8 (Gleichstand, frühere Stufe) | Gleichstand; die Voraussetzung liegt in 5-6, daher die frühere Stufe 7-8
+      - id: sprachregister-waehlen
+        iCan: "Ich kann je nach Gesprächspartner und Situation die passende Sprache wählen."
+        gradeBand: "7-8"
+        requires: [standard-und-bildungssprache]
+      # KMK 4.5 Ausprägungen von Sprache und Sprachvariation (S. 40); HE 9.3 Gruppensprachen: Sprache von Jugendlichen (Jg 9); BY D8 4.1 Jugendsprache; NW S1 IF1 Jugendsprache | Stimmen HE/BY/NW 9-10/7-8/7-8 → 7-8 (Mehrheit)
+      - id: jugendsprache
+        iCan: "Ich kann Merkmale von Jugendsprache beschreiben und sie mit der Standardsprache vergleichen."
+        gradeBand: "7-8"
+        requires: [standard-und-bildungssprache]
+      # KMK 4.5 Dialekt, Regionalsprache (S. 40); HE 9.3 Dialekte (Jg 9); BY D6 4.1 Dialekt und Standardsprache; NW S2 IF1 Regionalsprachen wie Niederdeutsch | Stimmen HE/BY/NW 9-10/5-6/9-10 → 9-10 (Mehrheit)
+      - id: dialekt
+        iCan: "Ich kann Merkmale eines Dialekts beschreiben und mit der Standardsprache vergleichen."
+        gradeBand: "9-10"
+        requires: [standard-und-bildungssprache]
+      # KMK 4.5 Fachsprache (S. 40); HE 9.3 Fachsprachen (Jg 9); BY D10 4.1 Fachsprache; NW S2 IF1 fachsprachliche Begriffsbildung | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: fachsprache
+        iCan: "Ich kann Merkmale einer Fachsprache in Wortschatz und Satzbau beschreiben."
+        gradeBand: "9-10"
+        requires: [standard-und-bildungssprache, nominalstil-und-verbalstil]
+      # KMK 4.5 sprachliche Phänomene in verschiedenen Sprachen vergleichen (S. 40); HE 8.3 Verknüpfung mit bekannten Fremdsprachen (Jg 8); BY D5 4.2 andere Sprachen aus dem eigenen Umfeld nutzen; NW E IF1 verschiedene Sprachen der Lerngruppe untersuchen | Stimmen HE/BY/NW 7-8/5-6/5-6 → 5-6 (Mehrheit)
+      - id: sprachen-vergleichen
+        iCan: "Ich kann Wörter und Sätze im Deutschen mit anderen Sprachen vergleichen, die ich kenne."
+        gradeBand: "5-6"
+      # KMK 4.5 gelingende vs. misslingende Kommunikation (S. 39); HE 9.3 Gelingen und Misslingen mit Hilfe eines Kommunikationsmodells erklären (Jg 9); BY D8 1.3 einfaches Kommunikationsmodell; NW E IF3 gelingende und misslingende Kommunikation; Produzent/in und Rezipient/in | Stimmen HE/BY/NW 9-10/7-8/5-6 → 7-8 (Mitte)
+      - id: kommunikationsmodell
+        iCan: "Ich kann mit einem einfachen Kommunikationsmodell (Sender, Nachricht, Empfänger) erklären, wie Missverständnisse entstehen."
+        gradeBand: "7-8"
+        requires: [gespraechsregeln]
+      # KMK 4.5 Handlungs-, Inhalts- und Beziehungsebene (S. 39); HE 9.3 Kommunikationssituationen (Jg 9); KC 7.2 Inhalts- und Beziehungsebene; BY D10 1.3 Sach- und Beziehungsebene; NW S2 IF3 Sach- und Beziehungsebene | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: sach-und-beziehungsebene
+        iCan: "Ich kann in einem Gespräch Sach- und Beziehungsebene unterscheiden und Störungen damit erklären."
+        gradeBand: "9-10"
+        requires: [kommunikationsmodell]
+      # KMK 4.5 sprachliche Höflichkeit in digitalen Umgebungen (S. 39); HE KC Schwerpunkt 7/8: E-Mail, SMS; BY D7 2.4 verantwortungsvoller Umgang in sozialen Netzwerken; NW E IF4 Regeln für die digitale Kommunikation; S1 IF4 Netiquette | Stimmen HE/BY/NW 7-8/7-8/5-6 → 7-8 (Mehrheit)
+      - id: netiquette
+        iCan: "Ich kann in digitalen Nachrichten und Foren höflich und angemessen schreiben (Netiquette)."
+        gradeBand: "7-8"
+        requires: [muendlich-und-schriftlich]
+      # KMK 4.3 sprachliche Mittel zur Sicherung des Textzusammenhangs (S. 30); 4.2 kohärenzstiftend (S. 26); HE 7.3 Konjunktionen: Sätze zu flüssigem Text verbinden (Jg 7); BY D8 4.1 Pro-Formen, Textkohärenz; NW S1 IF1 Kohäsionsmittel | Stimmen HE/BY/NW 7-8/7-8/7-8 → 7-8 (Mehrheit)
+      - id: textzusammenhang
+        iCan: "Ich kann Sätze mit Verweiswörtern und Verknüpfungswörtern zu einem zusammenhängenden Text verbinden."
+        gradeBand: "7-8"
+        requires: [pronomen, konjunktionen]
+      # KMK 4.5 Sprachhandeln, öffentliche Kommunikation (S. 39); HE 8.3 Merkmale manipulatorischer Aussagen (Jg 8); 10.3 Strategien sprachlicher Beeinflussung; BY D9 4.1 Manipulation durch Sprache; NW S2 IF1 sprachliche Signale von Beeinflussung | Stimmen HE/BY/NW 7-8/9-10/9-10 → 9-10 (Mehrheit)
+      - id: manipulation-durch-sprache
+        iCan: "Ich kann sprachliche Mittel der Beeinflussung erkennen, etwa Schlagwörter, beschönigende Wörter und suggestive Fragen."
+        gradeBand: "9-10"
+        requires: [rhetorische-figuren, nachricht-und-kommentar]
+      # KMK 4.5 Normen demokratischer Kommunikationskultur (S. 39); HE 10.3 Diffamierungen erkennen und vermeiden (Jg 10); BY D9 4.1 sprachliche Klischees und diskriminierender Sprachgebrauch; NW S2 IF1 sprachliche Zuschreibungen und Diskriminierungen | Stimmen HE/BY/NW 9-10/9-10/9-10 → 9-10 (Mehrheit)
+      - id: diskriminierende-sprache
+        iCan: "Ich kann diskriminierenden Sprachgebrauch und Klischees erkennen und vermeiden."
+        gradeBand: "9-10"
+        requires: [manipulation-durch-sprache]
