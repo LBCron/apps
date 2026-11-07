@@ -1,0 +1,895 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# Vorschlag. Keine KMK-Bildungsstandards für das Fach; Stränge = die Inhaltsbereiche, die die drei Länder teilen.
+# Quellenkürzel in den Kommentaren:
+#   HE = Lehrplan Politik und Wirtschaft, Gymnasialer Bildungsgang, Jahrgangsstufen 7 bis 13, Hessen (G9); Unterrichtsthema
+#        7.1 bis 10.3 = Jahrgang (7, 8 -> "7-8"; 9, 10 -> "9-10"); "fak." = fakultativ, zählt nicht.
+#   KC = Kerncurriculum Hessen Sek I Gymnasium Politik und Wirtschaft (2011), Inhaltsfelder (IF), nur Ende 9/10:
+#        zählt als Stimme "7-10", wenn der Lehrplan den Inhalt nicht nennt (Politik und Wirtschaft ab Jg 7).
+#   BY = LehrplanPLUS Bayern Gymnasium, Fächer für alle Ausbildungsrichtungen: PuG10 = Politik und Gesellschaft 10
+#        (HG, SG, NTG, MuG, WWG), WR10 = Wirtschaft und Recht 10 (HG, SG, NTG, MuG, SWG), Geo7/Geo10 = Geographie,
+#        G10 = Geschichte 10 (Lernbereich LB). "nur SWG"/"nur WWG" = PuG 8/9 bzw. WR 8/9 nur in einer Ausbildungsrichtung,
+#        zählt nicht.
+#   NW = Kernlehrplan Wirtschaft-Politik Sek I Gymnasium NRW (2019, Heft 3429); St1 = bis Ende Erprobungsstufe ("5-6"),
+#        St2 = bis Ende Sek I (zählt für "7-8" und "9-10"); SiLP = Umsetzungsbeispiel, nur Hinweis.
+# Abstimmung: eine Stimme je Land (HE/BY/NW); zwei von drei entscheiden; drei verschiedene: die mittlere;
+# Gleichstand: requires, sonst die früheste Stufe. Genaue Titel, Ausgaben und URLs: .vibe/research-politik-wirtschaft.md.
+name: { de: Politik und Wirtschaft, en: Politics and economics }  # the file name is the subject's id: politik-wirtschaft
+source:
+  title: Kerncurriculum Hessen, Sekundarstufe I - Gymnasium, Politik und Wirtschaft (Hessisches Kultusministerium), mit Lehrplan Politik und Wirtschaft G9 Hessen
+  url: https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-07/kerncurriculum_politik_und_wirtschaft_gymnasium.pdf
+strands:
+  - id: gesellschaft
+    name: { de: "Individuum und Gesellschaft", en: "Individual and society" }
+    competencies:
+      # HE 7.1 (Bedeutung der Familie, Schutz der Familie im GG); NW IF4 St1 (Bedürfnisse und Rollen von Familienmitgliedern; Bedeutung von Lebensformen für die Gesellschaft); BY nur SWG: PuG8 LB2 (Sozialisationsinstanz Familie).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: familie-aufgaben
+        iCan: { de: "Ich kann beschreiben, welche Aufgaben eine Familie für ihre Mitglieder und für die Gesellschaft erfüllt." }
+        gradeBand: "5-6"
+      # HE 7.1 (Familie im Wandel und in unterschiedlichen Kulturen; alternative Familienformen); NW IF4 St1 (Wandel von Lebensformen: familiäre und nicht-familiäre Strukturen).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: familie-im-wandel
+        iCan: { de: "Ich kann verschiedene Familien- und Lebensformen beschreiben und erklären, wie sie sich gewandelt haben." }
+        gradeBand: "5-6"
+        requires: [familie-aufgaben]
+      # HE 7.1 (Erziehungs- und Sozialisationsformen); KC IF Individuum und Gesellschaft (Sozialisation); NW IF4 St1 (Identität und Rollen: Familie, Schule und Peergroup); BY nur SWG: PuG8 LB2 (Bezugspersonen, Sozialisationsinstanzen).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: sozialisation
+        iCan: { de: "Ich kann erklären, wie Familie, Schule, Freunde und Medien mich prägen." }
+        gradeBand: "5-6"
+      # HE 7.1 (Rollenerwartungen); NW IF4 St1 (Identität und Rollen; Folgen von Rollenerwartungen in der Familie); IF4 St2 (Einfluss sozialer Erwartungen auf die Identitätsbildung); BY nur SWG: PuG8 LB1.
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: rollen-und-erwartungen
+        iCan: { de: "Ich kann erklären, was eine soziale Rolle ist und wie Erwartungen anderer mein Verhalten beeinflussen." }
+        gradeBand: "5-6"
+        requires: [sozialisation]
+      # KC IF Individuum und Gesellschaft (Genderproblematik); HE 7.1 fak. (Geschlechterrollen, Gleichberechtigung); NW IF4 St1 (Wandel von Geschlechterrollen; Herausforderungen im Zusammenleben ... Geschlechterrollen).
+      # Stimmen HE/BY/NW 7-10/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: geschlechterrollen
+        iCan: { de: "Ich kann beschreiben, wie sich die Rollen von Frauen und Männern gewandelt haben, und begründen, warum Gleichberechtigung wichtig ist." }
+        gradeBand: "5-6"
+        requires: [rollen-und-erwartungen]
+      # HE 7.1 (Gruppendruck und Selbstbestimmung, Normen, Sanktionen); NW IF4 St2 (Werte, Normen und Gesetze; soziale Erwartungen); BY nur SWG: PuG8 LB2 (primäre soziale Gruppe: Normen, Sanktionen, Strukturen).
+      # Stimmen HE/BY/NW 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: gruppen-normen-sanktionen
+        iCan: { de: "Ich kann an Beispielen erklären, wie eine Gruppe mit Normen und Sanktionen das Verhalten ihrer Mitglieder lenkt, und mit Gruppendruck umgehen." }
+        gradeBand: "7-8"
+        requires: [rollen-und-erwartungen]
+      # HE 7.1 (Normen; Menschenrechte als Maxime des Handelns); BY PuG10 LB1 (Notwendigkeit gemeinsamer Werte und Normen für das Zusammenleben); NW IF4 St2 (Gemeinsamkeiten und Unterschiede von Werten, Normen und Gesetzen).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: werte-normen-gesetze
+        iCan: { de: "Ich kann Werte, Normen und Gesetze unterscheiden und an Beispielen zeigen, wie sie zusammenhängen." }
+        gradeBand: "7-8"
+        requires: [gruppen-normen-sanktionen]
+      # HE 7.1 (Kindheit und Jugend in der modernen Gesellschaft; Ich-Identität); NW IF4 St2 (individuelle Lebensgestaltung: Selbstverwirklichung, soziale Erwartungen und soziale Verantwortung); BY nur SWG: PuG8 LB1 (Jugend als Lebensphase, Identitätssuche, Rolle der Peergroups).
+      # Stimmen HE/BY/NW 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: jugend-als-lebensphase
+        iCan: { de: "Ich kann beschreiben, was die Lebensphase Jugend ausmacht und welche Fragen der eigenen Identität sie mit sich bringt." }
+        gradeBand: "7-8"
+        requires: [rollen-und-erwartungen]
+      # KC IF Individuum und Gesellschaft (sozialer Wandel; individuelle Lebensgestaltung und gesellschaftliche Erwartungen); NW IF4 St2 (Wandel der Wertorientierungen von Jugendlichen); BY nur SWG: PuG8 LB1 (Einstellungen, Werte und Zukunftserwartungen Jugendlicher).
+      # Stimmen HE/BY/NW 7-10/–/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: wertewandel-jugend
+        iCan: { de: "Ich kann beschreiben, welche Werte Jugendlichen heute wichtig sind und wie sich das verändert hat." }
+        gradeBand: "7-8"
+        requires: [jugend-als-lebensphase, werte-normen-gesetze]
+      # HE 7.1 (Familie in unterschiedlichen Kulturen; Subkulturen); KC IF Individuum und Gesellschaft (interkulturelle Differenz); BY Geo7 LB2 (Kultur und Lebensweisen in Europa; Bereitschaft, sich für Integration einzusetzen); NW IF4 St1 (Zusammenleben von Menschen mit unterschiedlichen kulturellen Hintergründen).
+      # Stimmen HE/BY/NW 7-8/7-8/5-6 -> 7-8 (Mehrheit)
+      - id: zusammenleben-in-vielfalt
+        iCan: { de: "Ich kann Chancen und Schwierigkeiten beschreiben, wenn Menschen mit unterschiedlicher Herkunft und Kultur zusammenleben." }
+        gradeBand: "7-8"
+      # HE 7.1 (Umgang mit Minderheiten und Randgruppen, Fremdenfeindlichkeit; Menschenwürde); NW IF4 St1 (Herausforderungen im Zusammenleben); BY nur SWG: PuG8 LB4 (Minderheitenschutz).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 7-8 (Gleichstand, requires entscheidet)
+      - id: vorurteile-und-minderheiten
+        iCan: { de: "Ich kann erklären, wie Vorurteile entstehen, und begründen, warum Minderheiten geschützt werden müssen." }
+        gradeBand: "7-8"
+        requires: [zusammenleben-in-vielfalt]
+      # KC IF Demokratie (Elemente gesellschaftspolitischer Partizipation); HE Übergangsprofil (Verantwortungsbereitschaft); NW IF4 St2 (Möglichkeiten des sozialen Engagements; Bedeutung für Identität und Gesellschaft); BY nur SWG: PuG8 6.1 (Vereine, Ehrenamt). SCHWACH BELEGT: HE nennt Engagement nur allgemein.
+      # Stimmen HE/BY/NW 7-10/–/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: soziales-engagement
+        iCan: { de: "Ich kann Möglichkeiten nennen, mich für andere zu engagieren, zum Beispiel im Ehrenamt, und begründen, was das mir und der Gesellschaft bringt." }
+        gradeBand: "7-8"
+  - id: teilhabe
+    name: { de: "Demokratie und Teilhabe", en: "Democracy and participation" }
+    competencies:
+      # HE 7.2 (Demokratie und politische Beteiligung; Verantwortung für das Gemeinwesen); BY PuG10 LB1 (das Politische in vielen Lebensbereichen erkennen); NW IF2 St1 (Verknüpfung von Politik und Lebenswelt im Erfahrungsbereich von Kindern und Jugendlichen).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: politik-begriff
+        iCan: { de: "Ich kann erklären, was Politik ist: das gemeinsame Regeln von Fragen, die alle betreffen." }
+        gradeBand: "7-8"
+      # HE 7.2 (Schule gestalten: Mitbestimmung in schulischen Gremien; SV, Schulkonferenz); NW IF2 St1 (Grundprinzipien, Aufbau und Aufgaben der Schülervertretung; Wahlen auf schulischer Ebene).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: mitbestimmung-schule
+        iCan: { de: "Ich kann erklären, wie ich in der Klasse und in der Schule mitbestimmen kann, zum Beispiel über Klassensprecher, Schülervertretung und Schulkonferenz." }
+        gradeBand: "5-6"
+      # HE 7.2 (Kommunale Selbstverwaltung: Aufgaben und Struktur; Einnahmen und Ausgaben); NW IF2 St1 (Aufbau und Aufgaben von Städten/Gemeinden); BY nur SWG: PuG9 LB3 (Politik in der Kommune).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: gemeinde-aufgaben
+        iCan: { de: "Ich kann Aufgaben einer Gemeinde nennen und zeigen, wo sie meinen Alltag betreffen." }
+        gradeBand: "5-6"
+      # HE 7.2 (Struktur der Kommune; Wahlen, Parteien); NW IF2 St1 (Institutionen, Akteure und Prozesse; Wahlen auf kommunaler Ebene).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: gemeinderat-buergermeister
+        iCan: { de: "Ich kann erklären, wie Gemeinderat und Bürgermeisterin oder Bürgermeister gewählt werden und wie sie entscheiden." }
+        gradeBand: "5-6"
+        requires: [gemeinde-aufgaben]
+      # HE 7.2 (Bürgerbeteiligung; Jugendparlament, Jugendforum); NW IF2 St1 (Formen demokratischer Beteiligung in Stadt/Gemeinde); BY nur SWG: PuG8 LB4 (Mitwirkungsmöglichkeiten Jugendlicher auf kommunaler Ebene).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: beteiligung-kommune
+        iCan: { de: "Ich kann Wege beschreiben, wie Kinder und Jugendliche in ihrer Gemeinde mitwirken können, zum Beispiel in einem Jugendparlament." }
+        gradeBand: "5-6"
+        requires: [gemeinderat-buergermeister]
+      # HE 7.2 (Politische Ordnung und Entscheidung im kommunalen Bereich; kontroverse Interessen, z. B. Verkehrsplanung); NW IF2 St1 (unterschiedliche Positionen, Interessengebundenheit und Kontroversität in kommunalen Entscheidungsprozessen).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: kommunaler-streitfall
+        iCan: { de: "Ich kann an einem Streitfall in meiner Gemeinde zeigen, welche Interessen aufeinandertreffen und wie entschieden wird." }
+        gradeBand: "5-6"
+        requires: [gemeinderat-buergermeister]
+      # HE 7.2 (Demokratie und politische Beteiligung); BY PuG10 LB1 (grundlegende Werte der freiheitlichen Demokratie); NW IF2 St1 (Leben in der Demokratie).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: demokratie-merkmale
+        iCan: { de: "Ich kann Merkmale einer Demokratie nennen, zum Beispiel freie Wahlen, Meinungsfreiheit, Mehrheitsentscheidung und Schutz von Minderheiten." }
+        gradeBand: "7-8"
+        requires: [politik-begriff]
+      # HE 7.2 (Wahlen); BY PuG10 LB2 (Funktionen demokratischer Wahlen; Bedeutung der Wahlteilnahme); NW IF2 St1 (Funktion und Bedeutung von Wahlen auf schulischer und kommunaler Ebene).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: wahlen-funktion
+        iCan: { de: "Ich kann erklären, wozu Wahlen in einer Demokratie dienen und warum es wichtig ist, wählen zu gehen." }
+        gradeBand: "7-8"
+        requires: [demokratie-merkmale]
+      # HE 10.1 (Mehrheitsbildung; Kompromiss als Voraussetzung für die Akzeptanz von Mehrheitsentscheidungen); BY PuG10 LB3 (Lösungen erarbeiten und Mehrheiten organisieren); PuG10 LB2 (Minderheitenschutz); NW IF2 St2 (Prinzipien demokratischer Institutionen); BY nur SWG: PuG8 LB4 (Kompromissfindung, Minderheitenschutz).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: kompromiss-und-mehrheit
+        iCan: { de: "Ich kann erklären, warum in einer Demokratie die Mehrheit entscheidet, Kompromisse nötig sind und die Minderheit geschützt bleibt." }
+        gradeBand: "9-10"
+        requires: [demokratie-merkmale]
+      # HE 10.1 (Aufgaben, Stellung und innere Struktur der Parteien); BY PuG10 LB2 (Aufgaben von politischen Parteien); NW IF2 St2 (Aufgaben und Funktionen von Parteien im politischen System).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: parteien-aufgaben
+        iCan: { de: "Ich kann die Aufgaben von Parteien in der Demokratie erklären." }
+        gradeBand: "9-10"
+        requires: [wahlen-funktion]
+      # HE 10.1 (Parteien und Verbände; pluralistische Demokratie); KC IF Demokratie (Pluralismus); BY PuG10 LB2 (Kennzeichen der pluralistischen Demokratie: Interessengruppen); NW IF2 St2 (Partizipation in der Zivilgesellschaft).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: interessenverbaende
+        iCan: { de: "Ich kann erklären, wie Verbände und andere Gruppen ihre Interessen in die Politik einbringen, und warum das zu einer pluralistischen Demokratie gehört." }
+        gradeBand: "9-10"
+        requires: [parteien-aufgaben]
+      # HE 10.1 (Bürgerbeteiligung; Handlungsmöglichkeiten des Einzelnen); BY PuG10 LB2 (politische Mitwirkungsmöglichkeiten; Chancen und Grenzen der Durchsetzung eigener Interessen); NW IF2 St2 (Formen, Chancen und Grenzen zivilgesellschaftlicher Partizipation).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: politische-beteiligung
+        iCan: { de: "Ich kann Formen politischer Beteiligung neben Wahlen nennen, zum Beispiel Petition, Demonstration oder Bürgerinitiative, und ihre Chancen und Grenzen beurteilen." }
+        gradeBand: "9-10"
+        requires: [wahlen-funktion, beteiligung-kommune]
+  - id: politisches-system
+    name: { de: "Grundgesetz und politisches System", en: "Basic Law and political system" }
+    competencies:
+      # HE 7.1 (Konflikt und Konsens in der sozialen Gruppe und Menschenwürde); HE 8.1 (Menschenwürde, Grundrechte); BY PuG10 LB1 (Menschenwürde Art. 1 GG); NW IF2 St2 (Grundrechtsbindung).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: menschenwuerde
+        iCan: { de: "Ich kann erklären, was Menschenwürde bedeutet und warum sie nach Artikel 1 des Grundgesetzes unantastbar ist." }
+        gradeBand: "7-8"
+        requires: [werte-normen-gesetze]
+      # HE 10.1 (Grundwerte der Verfassung); KC IF Demokratie (Grundrechtsbindung); BY PuG10 LB1 (das Grundgesetz als Grundlage für das Zusammenleben); NW IF2 St2 (Verfassungsstaatlichkeit).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: grundgesetz-bedeutung
+        iCan: { de: "Ich kann erklären, warum das Grundgesetz die Grundlage unseres Zusammenlebens ist und was es regelt." }
+        gradeBand: "9-10"
+        requires: [menschenwuerde, demokratie-merkmale]
+      # HE 8.1 (Menschenwürde, Grundrechte); HE 10.1 (Grund- und Menschenrechte); BY PuG10 LB1 (ausgewählte Menschen- und Bürgerrechte, Art. 2–19 GG); NW IF2 St2 (Grundrechtsbindung).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 9-10 (Gleichstand, requires entscheidet)
+      - id: grundrechte
+        iCan: { de: "Ich kann wichtige Grundrechte des Grundgesetzes nennen und Freiheitsrechte von Gleichheitsrechten unterscheiden." }
+        gradeBand: "9-10"
+        requires: [grundgesetz-bedeutung]
+      # BY PuG10 LB1 (Spannungsverhältnis zwischen Grundrechten an einem Beispiel, z. B. Grenzen der Meinungsfreiheit); NW IF2 St2 (Spannungsfeld zwischen innerer Sicherheit und Freiheitsrechten); HE 10.1 nur in der Begründung (Grundrechte im Rahmen der sozialen Einbindung).
+      # Stimmen HE/BY/NW –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: grundrechte-im-konflikt
+        iCan: { de: "Ich kann an einem Beispiel zeigen, wie Grundrechte miteinander in Konflikt geraten, zum Beispiel Meinungsfreiheit und Schutz der Persönlichkeit, und wo ihre Grenzen liegen." }
+        gradeBand: "9-10"
+        requires: [grundrechte]
+      # HE 10.1 (Volkssouveränität); KC IF Demokratie; BY PuG10 LB1 (Bundesrepublik als demokratischer Staat, Art. 20 GG); NW IF2 St2 (Prinzipien demokratischer Institutionen).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: volkssouveraenitaet
+        iCan: { de: "Ich kann erklären, was es heißt, dass alle Staatsgewalt vom Volk ausgeht." }
+        gradeBand: "9-10"
+        requires: [grundgesetz-bedeutung, wahlen-funktion]
+      # HE 10.1 (parlamentarische Demokratie); KC IF Demokratie (parlamentarisch-repräsentatives System); BY PuG10 LB3 (Arbeitsweise des Bundestags und Stellung der Abgeordneten); NW IF2 St2 (Wahlen und Parlamentarismus).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: repraesentative-demokratie
+        iCan: { de: "Ich kann erklären, wie in einer repräsentativen Demokratie gewählte Abgeordnete für das Volk entscheiden, und das mit direkter Demokratie vergleichen." }
+        gradeBand: "9-10"
+        requires: [volkssouveraenitaet]
+      # HE 10.1 (Gewaltenteilung); KC IF Demokratie; BY PuG10 LB3 (wechselseitige Abhängigkeiten der Verfassungsorgane); NW IF2 St2 (Grundlagen des Rechtsstaats: Gewaltenteilung).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: gewaltenteilung
+        iCan: { de: "Ich kann die Gewaltenteilung in Gesetzgebung, Regierung und Verwaltung sowie Rechtsprechung erklären und begründen, warum sie Macht begrenzt." }
+        gradeBand: "9-10"
+        requires: [grundgesetz-bedeutung]
+      # HE 7.2 (Länderhoheit, Funktionsweise politischer Institutionen auf Länderebene); NW IF2 St2 (demokratische Institutionen auf Landes- und Bundesebene; SiLP UV IX, Jg 7/8: Landesebene); BY nur SWG: PuG9 LB3 (Politik im Freistaat Bayern).
+      # Stimmen HE/BY/NW 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: landespolitik
+        iCan: { de: "Ich kann erklären, wie mein Bundesland regiert wird: Landtag, Landesregierung und Ministerpräsidentin oder Ministerpräsident." }
+        gradeBand: "7-8"
+        requires: [gemeinderat-buergermeister, wahlen-funktion]
+      # HE 7.2 (Länderhoheit); KC IF Demokratie (Föderalismus, Ebenen der Verwaltung und Entscheidung); HE 10.1 fak. (Föderalismus); BY PuG10 LB3 (Bundesrat; Zusammenwirken der Verfassungsorgane); NW IF2 St2 (föderales System der Bundesrepublik).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: foederalismus
+        iCan: { de: "Ich kann erklären, wie die Aufgaben zwischen Bund, Ländern und Gemeinden verteilt sind und warum Deutschland ein Bundesstaat ist." }
+        gradeBand: "7-8"
+        requires: [landespolitik]
+      # HE 10.1 (Bundestag); BY PuG10 LB3 (Aufbau, Aufgaben und Zusammenwirken von Bundesregierung, Bundestag und Bundesrat); NW IF2 St2 (Parlamentarismus; Organe).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: bundestag
+        iCan: { de: "Ich kann die Aufgaben des Bundestags erklären: Gesetze beschließen, die Bundeskanzlerin oder den Bundeskanzler wählen und die Regierung kontrollieren." }
+        gradeBand: "9-10"
+        requires: [repraesentative-demokratie, gewaltenteilung]
+      # HE 10.1 (Mehrheitsbildung: Fraktionen); BY PuG10 LB3 (Stellung des Abgeordneten, Art. 38 GG); NW IF2 St2 (Parlamentarismus).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: abgeordnete
+        iCan: { de: "Ich kann die Stellung von Abgeordneten erklären, zum Beispiel das freie Mandat nach Artikel 38 GG und die Arbeit in Fraktionen." }
+        gradeBand: "9-10"
+        requires: [bundestag]
+      # HE 10.1 (Wahlsystem); BY PuG10 LB2 (Wahlrechtsgrundsätze); NW IF2 St2 (Wahlen).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: wahlrechtsgrundsaetze
+        iCan: { de: "Ich kann die Wahlrechtsgrundsätze allgemein, unmittelbar, frei, gleich und geheim an Beispielen erklären." }
+        gradeBand: "9-10"
+        requires: [wahlen-funktion]
+      # HE 10.1 (Wahlkampf, Wahlsystem); BY PuG10 LB2 (Wahlsystem der Bundesrepublik Deutschland); NW IF2 St2 (Wahlen und Parlamentarismus).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: bundestagswahl
+        iCan: { de: "Ich kann erklären, wie die Bundestagswahl mit Erst- und Zweitstimme funktioniert und wie aus den Stimmen die Sitze im Bundestag werden." }
+        gradeBand: "9-10"
+        requires: [wahlrechtsgrundsaetze, bundestag]
+      # HE 10.1 (Mehrheitsbildung: Fraktionen, Koalitionen, Regierungsbildung); BY PuG10 LB3 (Abhängigkeit zwischen Regierung und Parlamentsmehrheit); NW IF2 St2 (Organe und ihr Zusammenwirken).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: regierungsbildung
+        iCan: { de: "Ich kann erklären, wie nach einer Bundestagswahl eine Regierung entsteht: Koalition, Wahl der Kanzlerin oder des Kanzlers und Ernennung der Ministerinnen und Minister." }
+        gradeBand: "9-10"
+        requires: [bundestagswahl, parteien-aufgaben]
+      # HE 10.1 (Bundesregierung); BY PuG10 LB3 (Stellung und Handlungsspielraum des Bundeskanzlers); NW IF2 St2 (Organe des Verfassungsstaates).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: bundesregierung
+        iCan: { de: "Ich kann Stellung und Spielraum der Bundeskanzlerin oder des Bundeskanzlers und der Bundesregierung beschreiben." }
+        gradeBand: "9-10"
+        requires: [regierungsbildung]
+      # HE 10.1 (Bundesrat); BY PuG10 LB3 (Bundesrat); NW IF2 St2 (föderales System; Zusammenwirken der Institutionen).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: bundesrat
+        iCan: { de: "Ich kann erklären, wie die Länder über den Bundesrat an der Politik des Bundes mitwirken." }
+        gradeBand: "9-10"
+        requires: [foederalismus, bundestag]
+      # HE 10.1 (Wahl und Rolle des Bundespräsidenten); BY PuG10 LB3 (wesentliche Aufgaben und Funktionen zentraler Verfassungsorgane); NW IF2 St2 (Organe des Verfassungsstaates).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: bundespraesident
+        iCan: { de: "Ich kann beschreiben, wie die Bundespräsidentin oder der Bundespräsident gewählt wird und welche Aufgaben das Amt hat." }
+        gradeBand: "9-10"
+        requires: [bundestag, bundesrat]
+      # HE 10.1 (Begründung: starker Schutz der Grundrechte durch das Bundesverfassungsgericht); BY PuG10 LB3 (zentrale Verfassungsorgane); NW IF2 St2 (Verfassungsstaatlichkeit; Organe). SCHWACH BELEGT: kein Land nennt das Gericht im verbindlichen Inhalt ausdrücklich.
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: bundesverfassungsgericht
+        iCan: { de: "Ich kann erklären, wie das Bundesverfassungsgericht das Grundgesetz schützt und wann man sich an es wenden kann." }
+        gradeBand: "9-10"
+        requires: [grundrechte, gewaltenteilung]
+      # HE 10.1 (Gesetzgebungsverfahren); BY PuG10 LB3 (Grundzüge des Gesetzgebungsverfahrens auf Bundesebene); NW IF2 St2 (Zusammenwirken der Institutionen).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: gesetzgebung
+        iCan: { de: "Ich kann den Weg eines Bundesgesetzes vom Entwurf über Bundestag und Bundesrat bis zur Verkündung beschreiben." }
+        gradeBand: "9-10"
+        requires: [bundestag, bundesrat]
+      # HE 10.1 (Meinungsbildung, Entscheidungsfindung); BY PuG10 LB3 (Politikzyklus); NW IF2 St2 (Prinzipien, Formen und Zusammenwirken); BY nur SWG: PuG8 LB4 (einfache Darstellung des Politikkreislaufs).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: politikzyklus
+        iCan: { de: "Ich kann mit dem Politikzyklus an einem aktuellen Beispiel zeigen, wie aus einem Problem eine politische Entscheidung wird." }
+        gradeBand: "9-10"
+        requires: [gesetzgebung, interessenverbaende]
+      # HE 10.1 (Begründung: Auseinandersetzung mit rechtsradikalen Positionen); KC IF Demokratie (demokratiefeindliche Verhaltensweisen); NW IF2 St2 (Ursachen, Merkmale und Erscheinungsformen von Extremismus; Gefährdung durch Rechts- und Linksextremismus).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: extremismus
+        iCan: { de: "Ich kann Merkmale und Ursachen von Extremismus beschreiben und erklären, warum Extremisten die Demokratie gefährden." }
+        gradeBand: "9-10"
+        requires: [demokratie-merkmale]
+      # HE 7.1 (Fremdenfeindlichkeit; gegen menschenverachtende Haltungen Position beziehen); KC IF Individuum und Gesellschaft (Grenzen der Toleranz); NW IF2 St2 (Antisemitismus und gruppenbezogene Menschenfeindlichkeit).
+      # Stimmen HE/BY/NW 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: menschenfeindlichkeit
+        iCan: { de: "Ich kann Antisemitismus, Rassismus und andere Formen gruppenbezogener Menschenfeindlichkeit erkennen und ihnen begründet widersprechen." }
+        gradeBand: "7-8"
+        requires: [vorurteile-und-minderheiten, menschenwuerde]
+      # HE 10.1 („wehrhafte Demokratie“); BY PuG10 LB1 (Schutz des unveränderlichen Verfassungskerns, Art. 79 Abs. 3 GG, als Teil der wehrhaften Demokratie); NW IF2 St2 (Gefährdungen der Demokratie; Gefährdung der freiheitlich-demokratischen Grundordnung).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: wehrhafte-demokratie
+        iCan: { de: "Ich kann erklären, wie sich die Demokratie gegen ihre Feinde schützt, zum Beispiel durch die Ewigkeitsklausel, Partei- und Vereinsverbote." }
+        gradeBand: "9-10"
+        requires: [extremismus, grundgesetz-bedeutung]
+  - id: recht
+    name: { de: "Recht und Rechtsprechung", en: "Law and justice" }
+    competencies:
+      # HE 8.1 (Rechte und Pflichten von Jugendlichen); BY WR10 LB2 (Minderjährigenrecht); NW IF2 St1 (Rechte und Pflichten von Kindern und Jugendlichen in Familie und Schule: Schulordnung, Schulgesetz).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: rechte-und-pflichten-jugendlicher
+        iCan: { de: "Ich kann Rechte und Pflichten von Kindern und Jugendlichen in Familie und Schule nennen." }
+        gradeBand: "7-8"
+      # HE 8.1 (Jugendrecht; Begründung: Jugendschutz); NW IF2 St1 (Jugendschutzgesetz).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: jugendschutz
+        iCan: { de: "Ich kann wichtige Regeln des Jugendschutzgesetzes nennen und erklären, wovor sie schützen sollen." }
+        gradeBand: "5-6"
+      # HE 8.1 (Rechtsordnung regelt das friedliche Zusammenleben); KC IF Recht und Rechtsprechung (Schutz- und Ordnungsfunktion); BY WR10 LB2 (Funktionen des Rechts); NW IF2 St1 (Bedeutung von Regeln und Rechten in Familie, Schule und Gemeinde).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: funktionen-des-rechts
+        iCan: { de: "Ich kann erklären, wozu wir Recht brauchen: Es sichert Frieden, schützt die Freiheit und schafft Ordnung." }
+        gradeBand: "7-8"
+      # HE 8.1 (Strafrecht, Zivilrecht, Öffentliches Recht); BY WR10 LB2 (widerrechtliches Handeln: unerlaubte Handlung, Straftat).
+      # Stimmen HE/BY/NW 7-8/9-10/– -> 7-8 (Gleichstand, früheste Stufe)
+      - id: rechtsgebiete
+        iCan: { de: "Ich kann öffentliches Recht, Zivilrecht und Strafrecht an Beispielen unterscheiden." }
+        gradeBand: "7-8"
+        requires: [funktionen-des-rechts]
+      # HE 8.1 (Fallanalyse; Einführung in den Umgang mit Gesetzes- und Rechtstexten); BY WR10 LB2 (Rechtsnormen: Tatbestandsmerkmale und Rechtsfolgen). SCHWACH BELEGT: HE nennt es nur als Methode.
+      # Stimmen HE/BY/NW 7-8/9-10/– -> 7-8 (Gleichstand, früheste Stufe)
+      - id: rechtsnormen-anwenden
+        iCan: { de: "Ich kann einen Paragrafen in Tatbestand und Rechtsfolge zerlegen und auf einen einfachen Fall anwenden." }
+        gradeBand: "7-8"
+        requires: [rechtsgebiete]
+      # HE 8.1 (Geschäftsfähigkeit); BY WR10 LB2 (Stufen der Geschäftsfähigkeit; Handlungsmöglichkeiten des beschränkt Geschäftsfähigen); NW IF1 St1 (Rechte und Pflichten minderjähriger Verbraucherinnen und Verbraucher); IF8 St2 (Geschäftsfähigkeit).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: geschaeftsfaehigkeit
+        iCan: { de: "Ich kann die Stufen der Geschäftsfähigkeit erklären und mit dem Taschengeldparagrafen entscheiden, ob ein Kauf gültig ist." }
+        gradeBand: "7-8"
+        requires: [rechte-und-pflichten-jugendlicher]
+      # HE 8.2 (Verkaufen und Kaufen; Rechte und Pflichten beim Kaufvertrag); BY WR10 LB2 (Zustandekommen von Verträgen; Rechte und Pflichten aus dem Kaufvertrag); NW IF8 St2 (Verbraucherrechte und -pflichten im Alltag: Kauf- und Mietverträge).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: kaufvertrag
+        iCan: { de: "Ich kann erklären, wie ein Kaufvertrag zustande kommt und welche Pflichten Käufer und Verkäufer haben." }
+        gradeBand: "7-8"
+        requires: [geschaeftsfaehigkeit]
+      # HE 7.3 (Verbraucherschutz); BY WR10 LB2 (Rechte des Käufers bei einem Sachmangel; Beweislastumkehr); NW IF8 St2 (Möglichkeiten zur Durchsetzung von Verbraucherrechten).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: maengelrechte
+        iCan: { de: "Ich kann sagen, welche Rechte ich habe, wenn eine gekaufte Sache einen Mangel hat." }
+        gradeBand: "7-8"
+        requires: [kaufvertrag]
+      # BY WR10 LB2 (Verbraucherschutzregelungen: Widerrufsrecht); NW IF8 St2 (Chancen und Risiken im Onlinehandel).
+      # Stimmen HE/BY/NW –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: widerruf-online-kauf
+        iCan: { de: "Ich kann Chancen und Risiken beim Einkaufen im Internet nennen und erklären, wann ich einen Kauf widerrufen kann." }
+        gradeBand: "9-10"
+        requires: [kaufvertrag]
+      # HE 8.1 (zivilrechtliche Verantwortlichkeit); BY WR10 LB2 (unerlaubte Handlung; Deliktsfähigkeit); NW IF4 St2 (Deliktfähigkeit).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: deliktsfaehigkeit
+        iCan: { de: "Ich kann erklären, ab welchem Alter und wann ich für einen Schaden haften muss, den ich anderen zufüge." }
+        gradeBand: "7-8"
+        requires: [rechtsgebiete]
+      # HE 8.1 (strafrechtliche Verantwortlichkeit); BY WR10 LB2 (Strafmündigkeit; Rechtsfolgen von Sachbeschädigung, Diebstahl, Körperverletzung); NW IF4 St2 (Jugendstrafrecht: Deliktfähigkeit).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: strafmuendigkeit
+        iCan: { de: "Ich kann erklären, ab welchem Alter man strafmündig ist und welche Folgen eine Straftat wie Diebstahl oder Sachbeschädigung haben kann." }
+        gradeBand: "7-8"
+        requires: [rechtsgebiete]
+      # HE 8.1 (Jugendrecht; Begründung: Jugendstrafrecht); NW IF4 St2 (Prinzipien, Ziele und Aufgaben des Jugendstrafrechts); HE 8.1 fak. (Jugendstrafrecht; Resozialisierung).
+      # Stimmen HE/BY/NW 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: jugendstrafrecht
+        iCan: { de: "Ich kann erklären, warum das Jugendstrafrecht vor allem erziehen will, und seine Maßnahmen unterscheiden." }
+        gradeBand: "7-8"
+        requires: [strafmuendigkeit]
+      # BY WR10 LB2 (Rechtsfolgen von Straftaten); NW IF4 St2 (Jugendkriminalität: Ursachen, präventive und repressive Maßnahmen; Cybergewalt und -kriminalität); HE nur fakultativ: 8.1 fak. (Jugendkriminalität).
+      # Stimmen HE/BY/NW –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: jugendkriminalitaet
+        iCan: { de: "Ich kann Ursachen von Jugendkriminalität beschreiben und Maßnahmen zur Vorbeugung und Strafe beurteilen, auch bei Gewalt im Internet." }
+        gradeBand: "9-10"
+        requires: [jugendstrafrecht]
+      # BY WR10 LB2 (Rechtsfolgen von Urheberrechtsverletzungen, z. B. im Internet); NW IF5 St1 (rechtliche Grundlagen für die Mediennutzung in Schule und privatem Umfeld); IF8 St2 (Persönlichkeits-, Urheber- und Nutzungsrechte).
+      # Stimmen HE/BY/NW –/9-10/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: urheberrecht
+        iCan: { de: "Ich kann erklären, was ich mit fremden Bildern, Texten und Musik im Internet tun darf und was das Urheberrecht verbietet." }
+        gradeBand: "5-6"
+      # HE 8.1 (Gerichtswesen und Rechtsstaatlichkeit: Unabhängigkeit der Gerichte, Gleichheitsgrundsatz, Schutz vor staatlicher Willkür); BY PuG10 LB1 (Bundesrepublik als demokratischer und sozialer Rechtsstaat, Art. 20 GG); NW IF2 St2 (Grundlagen des Rechtsstaats).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: rechtsstaat
+        iCan: { de: "Ich kann Merkmale eines Rechtsstaats erklären: unabhängige Gerichte, Gleichheit vor dem Gesetz und Schutz vor staatlicher Willkür." }
+        gradeBand: "7-8"
+        requires: [funktionen-des-rechts]
+  - id: wirtschaft
+    name: { de: "Haushalt, Markt und Wirtschaftsordnung", en: "Households, markets and economic order" }
+    competencies:
+      # HE 7.3 (Bedürfnisse); BY WR10 LB1 (Knappheit, Bedürfnisse); NW IF1 St1 (wirtschaftliches Handeln: Bedürfnisse, Bedarf und Güter).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: beduerfnisse-und-gueter
+        iCan: { de: "Ich kann Bedürfnisse, Bedarf und Güter unterscheiden." }
+        gradeBand: "7-8"
+      # HE 8.2 (Güterknappheit und ökonomisches Prinzip); BY WR10 LB1 (Knappheit, Wirtschaftlichkeitsprinzip); NW IF1 St1 (Spannungsfeld zwischen Konsumwünschen und verfügbaren Mitteln).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: knappheit
+        iCan: { de: "Ich kann erklären, warum Güter knapp sind und wie man nach dem ökonomischen Prinzip wirtschaftlich entscheidet." }
+        gradeBand: "7-8"
+        requires: [beduerfnisse-und-gueter]
+      # HE 7.3 (Wirtschaften im privaten Haushalt: Einkommen, Geld); NW IF1 St1 (Taschengeldverwendung).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: taschengeld-planen
+        iCan: { de: "Ich kann mein Taschengeld planen und Einnahmen und Ausgaben gegenüberstellen." }
+        gradeBand: "5-6"
+      # HE 7.3 (Privathaushalt als Wirtschaftssubjekt; Einkommen, Vermögen); NW IF8 St2 (Einnahmen, Ausgaben und Verschuldung); BY nur WWG: WR8 LB1 (ökonomisches Handeln im privaten Haushalt).
+      # Stimmen HE/BY/NW 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: privathaushalt
+        iCan: { de: "Ich kann beschreiben, woher ein privater Haushalt sein Einkommen bekommt und wofür er es ausgibt." }
+        gradeBand: "7-8"
+        requires: [taschengeld-planen]
+      # HE 8.2 (Geldfunktionen); BY WR10 LB1 (Geldwertstabilität, Geldfunktionen); NW IF1 St1 (Funktionen des Geldes als Tausch-, Wertaufbewahrungs- und Rechenmittel).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: geldfunktionen
+        iCan: { de: "Ich kann die Funktionen des Geldes erklären: Tauschmittel, Wertaufbewahrungsmittel und Recheneinheit." }
+        gradeBand: "7-8"
+      # BY WR10 LB1 (Zahlungsarten; digitale Zahlungsverfahren: Möglichkeiten und Risiken); NW IF1 St2 (Geld und seine Funktionen im digitalen Zeitalter; Digitalisierung des Zahlungsverkehrs).
+      # Stimmen HE/BY/NW –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: zahlungsarten
+        iCan: { de: "Ich kann Zahlungsarten wie Bargeld, Karte und digitale Bezahlverfahren nach Sicherheit und Kosten vergleichen." }
+        gradeBand: "9-10"
+        requires: [geldfunktionen]
+      # HE 7.3 (Sparen, Kredit, Schulden); BY WR10 LB1 (Geldanlage; Spar- und Termineinlagen); NW IF8 St2 (Einnahmen, Ausgaben und Verschuldung).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: sparen-und-kredit
+        iCan: { de: "Ich kann erklären, was Sparen und was ein Kredit ist und wie Zinsen dabei wirken." }
+        gradeBand: "7-8"
+        requires: [privathaushalt, geldfunktionen]
+      # HE 7.3 (Schulden); BY WR10 LB1 (Überschuldung); NW IF8 St2 (Ursachen von Verschuldung).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: verschuldung
+        iCan: { de: "Ich kann Ursachen von Verschuldung nennen und Wege beschreiben, Schulden zu vermeiden." }
+        gradeBand: "7-8"
+        requires: [sparen-und-kredit]
+      # HE 7.3 (Werbung; Beeinflussung der Kaufentscheidung); BY WR10 LB1 (Techniken der Werbung, verkaufspsychologische Maßnahmen, verhaltensökonomische Effekte); NW IF1 St1 (Verkaufsstrategien in der Konsumgesellschaft; Einfluss von Werbung und sozialen Medien).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: werbung
+        iCan: { de: "Ich kann Werbetricks und Verkaufsstrategien erkennen, auch im Internet, und erklären, wie sie mein Kaufverhalten beeinflussen." }
+        gradeBand: "7-8"
+        requires: [beduerfnisse-und-gueter]
+      # HE 7.3 (Einflussfaktoren auf das Konsumverhalten); BY WR10 LB1 (reflektierte Verbraucherentscheidungen in Knappheitssituationen); NW IF1 St1 (Konsumwünsche und -entscheidungen nach Nutzen und verfügbaren Mitteln bewerten).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: konsumentscheidung
+        iCan: { de: "Ich kann eine Kaufentscheidung begründet treffen, indem ich Nutzen, Preis und mein verfügbares Geld abwäge." }
+        gradeBand: "7-8"
+        requires: [knappheit, werbung]
+      # HE 9.1 (Kosten-Nutzen-Rechnung); BY WR10 LB1 (Opportunitätskosten, Kosten-Nutzen-Analyse).
+      # Stimmen HE/BY/NW 9-10/9-10/– -> 9-10 (Mehrheit)
+      - id: opportunitaetskosten
+        iCan: { de: "Ich kann bei einer Entscheidung Kosten und Nutzen abwägen und sagen, worauf ich dafür verzichte." }
+        gradeBand: "9-10"
+        requires: [konsumentscheidung]
+      # HE 7.3 (Verbraucherschutz); BY WR10 LB2 (ausgewählte Verbraucherschutzregelungen); NW IF8 St2 (Institutionen des Verbraucherschutzes; Aufgaben von Verbraucherschutzzentralen).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: verbraucherschutz
+        iCan: { de: "Ich kann Einrichtungen des Verbraucherschutzes nennen, zum Beispiel die Verbraucherzentrale, und sagen, wie sie mir helfen." }
+        gradeBand: "7-8"
+        requires: [konsumentscheidung]
+      # HE 8.2 (Markt: Verkaufen und Kaufen); BY WR10 LB1 (Koordinationsfunktion von Märkten); NW IF1 St2 (Markt, Marktprozesse; Digitalisierung von Märkten).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: markt
+        iCan: { de: "Ich kann erklären, was ein Markt ist, und Beispiele für Märkte nennen, auch im Internet." }
+        gradeBand: "7-8"
+        requires: [knappheit]
+      # HE 8.2 (Preis, Angebot, Nachfrage); BY WR10 LB1 (Marktmodell: Angebot, Nachfrage); NW IF1 St2 (Marktprozesse).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: angebot-nachfrage-preis
+        iCan: { de: "Ich kann erklären, wie Angebot und Nachfrage den Preis auf einem Markt bestimmen." }
+        gradeBand: "7-8"
+        requires: [markt]
+      # BY WR10 LB1 (Marktmodell: Gleichgewichtspreis, Prämissen; Modell und Realität); NW IF1 St2 (Markt, Marktprozesse).
+      # Stimmen HE/BY/NW –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: marktmodell
+        iCan: { de: "Ich kann im Marktmodell mit Angebots- und Nachfragekurve den Gleichgewichtspreis bestimmen und die Annahmen des Modells mit der Wirklichkeit vergleichen." }
+        gradeBand: "9-10"
+        requires: [angebot-nachfrage-preis]
+      # HE 8.2 (einfacher Wirtschaftskreislauf); NW IF1 St2 (Rolle von Unternehmen, Staat und Haushalten im Wirtschaftskreislauf).
+      # Stimmen HE/BY/NW 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: wirtschaftskreislauf
+        iCan: { de: "Ich kann im Wirtschaftskreislauf zeigen, wie Haushalte, Unternehmen und Staat über Geld- und Güterströme verbunden sind." }
+        gradeBand: "7-8"
+        requires: [markt, privathaushalt]
+      # HE 9.2 (freie und soziale Marktwirtschaft); NW IF1 St2 (Freie und Soziale Marktwirtschaft).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: freie-marktwirtschaft
+        iCan: { de: "Ich kann die Merkmale der freien Marktwirtschaft beschreiben und erklären, welche Probleme sie haben kann." }
+        gradeBand: "9-10"
+        requires: [angebot-nachfrage-preis, wirtschaftskreislauf]
+      # HE 9.2 (freie und soziale Marktwirtschaft); KC IF Wirtschaft (soziale Marktwirtschaft); NW IF1 St2 (Grundprinzipien der Sozialen Marktwirtschaft; Vergleich mit der freien Marktwirtschaft).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: soziale-marktwirtschaft
+        iCan: { de: "Ich kann die Grundprinzipien der Sozialen Marktwirtschaft erklären und sie mit der freien Marktwirtschaft vergleichen." }
+        gradeBand: "9-10"
+        requires: [freie-marktwirtschaft]
+      # HE 9.1 (Markt- und Wettbewerbssituation); NW IF1 St2 (Bedeutung eines funktionierenden Wettbewerbs).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: wettbewerb
+        iCan: { de: "Ich kann erklären, warum funktionierender Wettbewerb wichtig ist und was passiert, wenn er fehlt." }
+        gradeBand: "9-10"
+        requires: [soziale-marktwirtschaft]
+  - id: arbeitswelt
+    name: { de: "Arbeit, Beruf und Unternehmen", en: "Work, careers and businesses" }
+    competencies:
+      # HE 9.1 (individuelle und gesellschaftliche Bedeutung von Arbeit, Erwerbstätigkeit und Beruf); NW IF7 St2 (Bedeutung unbezahlter Familienarbeit).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: bedeutung-von-arbeit
+        iCan: { de: "Ich kann erklären, welche Bedeutung Arbeit und Beruf für den Einzelnen und für die Gesellschaft haben, auch unbezahlte Arbeit in der Familie." }
+        gradeBand: "9-10"
+      # HE 9.1 (Berufe und Berufswahl: Eignung, Qualifikation; Bildungs- und Berufsplanung); NW IF6 St2 (Berufswahl und Berufswegplanung: Ausbildung, Studium, unternehmerische Selbstständigkeit).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: berufswahl
+        iCan: { de: "Ich kann meine Interessen und Fähigkeiten mit den Anforderungen von Berufen vergleichen und Wege nach der Schule beschreiben, zum Beispiel Ausbildung oder Studium." }
+        gradeBand: "9-10"
+        requires: [bedeutung-von-arbeit]
+      # HE 9.1 (Der Betrieb als System: Ziel; soziale und ökologische Verantwortung); BY WR10 LB3 (Elemente eines erfolgreichen Unternehmens); NW IF6 St2 (Ziele, Grundfunktionen und Strukturen von Betrieben bzw. Unternehmen); BY nur WWG: WR8 LB2 (ökonomisches Handeln im Unternehmen).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: unternehmensziele
+        iCan: { de: "Ich kann wirtschaftliche, soziale und ökologische Ziele eines Unternehmens unterscheiden." }
+        gradeBand: "9-10"
+        requires: [wirtschaftskreislauf]
+      # HE 9.1 (Der Betrieb als System: Aufbau, Ablauf); BY WR10 LB3 (Kernprozess; Organisation der Leistungserstellung); NW IF6 St2 (Wertschöpfungskette; Beschaffung, Produktion und Absatz); BY nur WWG: WR8 2.1 (betriebliche Abläufe und Arbeitsteilung).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: betriebliche-funktionen
+        iCan: { de: "Ich kann an einem Unternehmen Beschaffung, Produktion und Absatz unterscheiden und die Wertschöpfungskette beschreiben." }
+        gradeBand: "9-10"
+        requires: [unternehmensziele]
+      # HE 9.1 (Herstellungskosten, Preiskalkulation); BY WR10 LB3 (Preiskalkulation).
+      # Stimmen HE/BY/NW 9-10/9-10/– -> 9-10 (Mehrheit)
+      - id: preiskalkulation
+        iCan: { de: "Ich kann den Preis eines Produkts aus seinen Kosten und einem Gewinnaufschlag einfach berechnen." }
+        gradeBand: "9-10"
+        requires: [betriebliche-funktionen, angebot-nachfrage-preis]
+      # HE 9.1 (Selbständigkeit, unternehmerisches Handeln und Risiko); BY WR10 LB3 (Elemente eines Geschäftsmodells); NW IF6 St2 (Existenzgründung: Voraussetzungen, Formen und Strategien); BY nur WWG: WR9 2.1 (Entwicklung eines Geschäftsmodells).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: geschaeftsmodell
+        iCan: { de: "Ich kann für eine Geschäftsidee ein einfaches Geschäftsmodell entwickeln: Angebot, Kundschaft, Marketing, Standort und Finanzierung." }
+        gradeBand: "9-10"
+        requires: [betriebliche-funktionen, preiskalkulation]
+      # HE 9.1 (Selbständigkeit, unternehmerisches Handeln und Risiko); NW IF6 St2 (Chancen und Risiken unternehmerischer Selbstständigkeit; Familienunternehmen, Handwerk).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: selbststaendigkeit
+        iCan: { de: "Ich kann Chancen und Risiken beurteilen, wenn sich jemand selbstständig macht." }
+        gradeBand: "9-10"
+        requires: [geschaeftsmodell]
+      # HE 9.1 (unterschiedliche Interessen und Gremien der Konfliktregelung); KC IF Wirtschaft (Gewerkschaften und Unternehmerverbände); NW IF6 St2 (Aufbau und Funktionen von Gewerkschaften und Arbeitgeberverbänden).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: gewerkschaften-und-arbeitgeber
+        iCan: { de: "Ich kann Aufgaben von Gewerkschaften und Arbeitgeberverbänden beschreiben." }
+        gradeBand: "9-10"
+        requires: [interessenverbaende, unternehmensziele]
+      # HE 9.1 (Lohn und Arbeitsbedingungen; tarifpolitische Entscheidungen); NW IF6 St2 (Formen und Auswirkungen von Tarifkonflikten).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: tarifkonflikt
+        iCan: { de: "Ich kann den Ablauf eines Tarifkonflikts von der Verhandlung bis zu Streik oder Schlichtung beschreiben und beurteilen." }
+        gradeBand: "9-10"
+        requires: [gewerkschaften-und-arbeitgeber]
+      # HE 9.1 (innerbetriebliche Entscheidungsstrukturen und Mitbestimmung); NW IF6 St2 (betriebliche Mitbestimmung).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: mitbestimmung-im-betrieb
+        iCan: { de: "Ich kann erklären, wie Beschäftigte über den Betriebsrat im Unternehmen mitbestimmen." }
+        gradeBand: "9-10"
+        requires: [unternehmensziele]
+      # HE 9.1 (technische und ökonomische Entwicklungen; Wandel von Berufs- und Tätigkeitsstrukturen); NW IF6 St2 (Strukturwandel der Arbeitswelt durch Digitalisierung; Einfluss auf den Arbeitsmarkt).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: strukturwandel-arbeit
+        iCan: { de: "Ich kann beschreiben, wie Technik und Digitalisierung Berufe und Arbeitsplätze verändern." }
+        gradeBand: "9-10"
+        requires: [bedeutung-von-arbeit]
+      # HE 9.1 (Arbeitslosigkeit); NW IF7 St2 (veränderte Erwerbsbiographien); IF6 St2 (Einfluss der Digitalisierung auf den Arbeitsmarkt). SCHWACH BELEGT: NW nennt Arbeitslosigkeit nicht ausdrücklich.
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: arbeitslosigkeit
+        iCan: { de: "Ich kann Ursachen und Folgen von Arbeitslosigkeit beschreiben." }
+        gradeBand: "9-10"
+        requires: [strukturwandel-arbeit]
+      # HE 9.1 (soziale und ökologische Verantwortung); KC IF Wirtschaft (gesellschaftlich verantwortliches Handeln); NW IF6 St2 (verantwortungsbewusstes unternehmerisches Handeln in der Sozialen Marktwirtschaft).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: unternehmensverantwortung
+        iCan: { de: "Ich kann beurteilen, wie Unternehmen sozial und ökologisch verantwortlich handeln können." }
+        gradeBand: "9-10"
+        requires: [unternehmensziele, nachhaltigkeit-begriff]
+  - id: sozialstaat
+    name: { de: "Sozialstaat und soziale Ungleichheit", en: "Welfare state and social inequality" }
+    competencies:
+      # HE 9.2 (Sozialstaatlichkeit: Verfassungsgebot); KC IF Demokratie (grundgesetzlicher Auftrag zum Sozialstaat); BY PuG10 LB1 (Bundesrepublik als sozialer Rechtsstaat, Art. 20 GG); NW IF7 St2 (Funktionen des deutschen Sozialstaats).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: sozialstaatsprinzip
+        iCan: { de: "Ich kann erklären, was das Grundgesetz mit dem Sozialstaat verlangt und welche Aufgaben der Sozialstaat hat." }
+        gradeBand: "9-10"
+        requires: [grundgesetz-bedeutung]
+      # HE 9.2 (Solidargemeinschaft und individuelle Verantwortung); NW IF7 St2 (Prinzipien der sozialen Sicherung).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: solidaritaet-und-eigenverantwortung
+        iCan: { de: "Ich kann die Prinzipien Solidarität, Subsidiarität und Eigenverantwortung an Beispielen erklären." }
+        gradeBand: "9-10"
+        requires: [sozialstaatsprinzip]
+      # HE 9.2 (Soziale Sicherung); NW IF7 St2 (Prinzipien der sozialen Sicherung). SCHWACH BELEGT: HE nennt nur die soziale Sicherung allgemein.
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: sicherungsprinzipien
+        iCan: { de: "Ich kann Versicherung, Versorgung und Fürsorge als Formen der sozialen Sicherung unterscheiden." }
+        gradeBand: "9-10"
+        requires: [solidaritaet-und-eigenverantwortung]
+      # HE 9.2 (Soziale Sicherung; Möglichkeiten und Grenzen von sozialen Sicherungssystemen); NW IF7 St2 (Säulen des Sozialversicherungssystems; Ausgestaltung der gesetzlichen Sozialversicherungssysteme).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: sozialversicherung
+        iCan: { de: "Ich kann die fünf Säulen der Sozialversicherung nennen und erklären, wie sie finanziert werden." }
+        gradeBand: "9-10"
+        requires: [sicherungsprinzipien]
+      # HE 9.2 (Generationenvertrag); NW IF7 St2 (Auswirkungen veränderter Erwerbsbiographien und des demografischen Wandels auf die Sozialversicherungssysteme).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: generationenvertrag
+        iCan: { de: "Ich kann den Generationenvertrag der Rentenversicherung erklären und beschreiben, wie der demografische Wandel ihn belastet." }
+        gradeBand: "9-10"
+        requires: [sozialversicherung]
+      # HE 9.2 (individuelle Verantwortung; Begründung: individuelle Vorsorge); NW IF7 St2 (Möglichkeiten betrieblicher und privater Vorsorge).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: vorsorge
+        iCan: { de: "Ich kann gesetzliche, betriebliche und private Vorsorge unterscheiden." }
+        gradeBand: "9-10"
+        requires: [generationenvertrag]
+      # HE 9.2 (Begründung: Armutsdebatte); HE 9.2 fak. (Sozialstruktur: Armut und Reichtum); NW IF7 St2 (soziale Ungleichheit; Ausmaß und Entwicklung von Armut und Reichtum).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: armut-und-reichtum
+        iCan: { de: "Ich kann beschreiben, wie Armut und Reichtum in Deutschland verteilt sind und wie sich das entwickelt." }
+        gradeBand: "9-10"
+        requires: [sozialstaatsprinzip]
+      # HE 9.2 (Begründung: soziale Existenzsicherung); NW IF7 St2 (sozialpolitische Maßnahmen zur Sicherung des Existenzminimums).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: existenzminimum
+        iCan: { de: "Ich kann erklären, wie der Staat das Existenzminimum sichert, und Maßnahmen dazu beurteilen." }
+        gradeBand: "9-10"
+        requires: [armut-und-reichtum, sicherungsprinzipien]
+      # KC IF Individuum und Gesellschaft (Sozialstruktur, Genderproblematik); HE 9.2 fak. (Einkommensverteilung); NW IF7 St2 (Einkommensunterschiede, auch geschlechtsspezifisch; gleiche Bezahlung von Frauen und Männern). SCHWACH BELEGT: HE nur allgemein im KC.
+      # Stimmen HE/BY/NW 7-10/–/7-10 -> 9-10 (Gleichstand, requires entscheidet)
+      - id: einkommensunterschiede
+        iCan: { de: "Ich kann Einkommensunterschiede zwischen Gruppen untersuchen, auch zwischen Frauen und Männern, und Maßnahmen für gleiche Bezahlung beurteilen." }
+        gradeBand: "9-10"
+        requires: [armut-und-reichtum, geschlechterrollen]
+      # HE 9.2 (Begründung: Finanzierbarkeit); KC IF Demokratie (soziale Gerechtigkeit); NW IF7 St2 (Einkommen und soziale Sicherung im Kontext von Gerechtigkeitsprinzipien; Finanzierung des Sozialstaats).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: soziale-gerechtigkeit
+        iCan: { de: "Ich kann verschiedene Vorstellungen von Gerechtigkeit unterscheiden und damit die Finanzierung des Sozialstaats beurteilen." }
+        gradeBand: "9-10"
+        requires: [sozialversicherung, armut-und-reichtum]
+  - id: nachhaltigkeit
+    name: { de: "Nachhaltige Entwicklung", en: "Sustainable development" }
+    competencies:
+      # HE 7.2 (Lokale Agenda 21); KC IF Gesellschaft und Natur (soziale, ökonomische und ökologische Bedürfnisse; Generationenverantwortung); BY WR10 LB1 (Prinzip der Nachhaltigkeit: ökonomische, ökologische und soziale Aspekte); NW IF3 St1 (nachhaltige Entwicklung als Herausforderung im privaten, gesellschaftlichen, wirtschaftlichen und politischen Handeln).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: nachhaltigkeit-begriff
+        iCan: { de: "Ich kann erklären, was nachhaltige Entwicklung bedeutet, und ökologische, wirtschaftliche und soziale Ziele unterscheiden." }
+        gradeBand: "7-8"
+      # HE 7.3 (Vermeidung von Umweltbelastungen; Ressourcenschonung); NW IF3 St1 (Ressourcenschonung, Energieeinsparung; staatliche Maßnahmen und individuelle Handlungsmöglichkeiten); HE 7.2 (Umweltschutz in der Gemeinde: Müll, Wasser, Verkehr).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: ressourcen-schonen
+        iCan: { de: "Ich kann Möglichkeiten nennen, im Alltag Rohstoffe und Energie zu sparen, und staatliche Maßnahmen dazu beurteilen." }
+        gradeBand: "5-6"
+      # HE 7.3 (ökologisches Kauf- und Verbraucherverhalten); BY WR10 LB1 (Verbraucherentscheidungen mit Blick auf das Prinzip der Nachhaltigkeit); NW IF8 St2 (Prinzipien nachhaltigen Handelns: Konsum und Ressourcenbewusstsein).
+      # Stimmen HE/BY/NW 7-8/9-10/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: nachhaltiger-konsum
+        iCan: { de: "Ich kann mein Konsumverhalten nach seinen Folgen für Umwelt und Menschen beurteilen und nachhaltiger einkaufen." }
+        gradeBand: "7-8"
+        requires: [nachhaltigkeit-begriff, konsumentscheidung]
+      # HE 7.2 (Lokale Agenda 21); HE 10.2, 10.3 (Agenda 21); NW IF3 St1 (Sustainable Development Goals: Keine Armut, Hochwertige Bildung). SCHWACH BELEGT: HE nennt die Agenda 21, den Vorläufer der SDGs.
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 7-8 (Gleichstand, requires entscheidet)
+      - id: nachhaltigkeitsziele
+        iCan: { de: "Ich kann die Ziele der Vereinten Nationen für nachhaltige Entwicklung an Beispielen erklären, zum Beispiel keine Armut und hochwertige Bildung." }
+        gradeBand: "7-8"
+        requires: [nachhaltigkeit-begriff]
+      # KC IF Gesellschaft und Natur (Spannungsfeld zwischen Ökonomie und Ökologie); NW IF1 St2 (Wachstum und nachhaltige Entwicklung; quantitatives und qualitatives Wachstum). SCHWACH BELEGT: HE nur allgemein im KC.
+      # Stimmen HE/BY/NW 7-10/–/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: wachstum
+        iCan: { de: "Ich kann quantitatives und qualitatives Wirtschaftswachstum unterscheiden und Grenzen des Wachstums beurteilen." }
+        gradeBand: "7-8"
+        requires: [nachhaltigkeit-begriff, wirtschaftskreislauf]
+      # KC IF Gesellschaft und Natur; KC IF Internationale Beziehungen (ökologische Fortschritte durch internationale Kooperation); BY Geo10 LB4 (Folgen des Klimawandels, Anpassungsstrategien, Klimaschutz im Heimatraum); NW IF10 St2 (nachhaltiges Wirtschaften: Klimaschutz, Sicherung einer nachhaltigen Energieversorgung).
+      # Stimmen HE/BY/NW 7-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: klimaschutz
+        iCan: { de: "Ich kann Maßnahmen für Klimaschutz und eine sichere, nachhaltige Energieversorgung beschreiben und beurteilen." }
+        gradeBand: "9-10"
+        requires: [nachhaltigkeit-begriff, ressourcen-schonen]
+  - id: europa
+    name: { de: "Europäische Union", en: "European Union" }
+    competencies:
+      # HE 10.3 (Lernen und Arbeiten im vereinten Europa); BY Geo7 LB2 (Europa im Alltag; Auswirkungen europäischer Einflüsse auf die Lebenswelt); NW IF9 St2 (Chancen des Binnenmarkts für Verbraucherinnen und Verbraucher).
+      # Stimmen HE/BY/NW 9-10/7-8/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: europa-im-alltag
+        iCan: { de: "Ich kann an Beispielen zeigen, wo die Europäische Union meinen Alltag beeinflusst, zum Beispiel beim Reisen, Bezahlen oder Lernen im Ausland." }
+        gradeBand: "7-8"
+      # HE 10.2 (Europäische Integration: Grundsätze, Ziele); BY Geo7 LB2 (europäische Idee: politische Entwicklung der EU); G10 LB2 (Zielsetzung und Entwicklungsschritte der europäischen Integration); NW IF9 St2 (Motive und Ziele des europäischen Einigungsprozesses).
+      # Stimmen HE/BY/NW 9-10/7-8/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: europaeische-einigung
+        iCan: { de: "Ich kann erklären, warum sich Staaten in Europa nach dem Zweiten Weltkrieg zusammengeschlossen haben, vor allem um Frieden und Wohlstand zu sichern." }
+        gradeBand: "7-8"
+        requires: [europa-im-alltag]
+      # HE 10.2 (nationale und europäische Identität); BY Geo7 LB2 (Europa zwischen Einheit und Vielfalt); NW IF9 St2 (Bedeutung einer europäischen Identität).
+      # Stimmen HE/BY/NW 9-10/7-8/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: europaeische-identitaet
+        iCan: { de: "Ich kann beschreiben, was Europa trotz seiner Vielfalt verbindet, und beurteilen, welche Rolle eine europäische Identität spielt." }
+        gradeBand: "7-8"
+        requires: [europaeische-einigung]
+      # KC IF Internationale Beziehungen (Weiterentwicklung der EU: Chancen und Konflikte); BY Geo7 LB2 (Herausforderungen der EU; die europäische Idee in Gefahr an einem aktuellen Beispiel); NW IF9 St2 (Möglichkeiten der weiteren Entwicklung der EU).
+      # Stimmen HE/BY/NW 7-10/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: eu-herausforderungen
+        iCan: { de: "Ich kann an einem aktuellen Beispiel Herausforderungen der EU beschreiben und Vorschläge für ihre Zukunft beurteilen." }
+        gradeBand: "7-8"
+        requires: [europaeische-einigung]
+      # HE 10.2 (Grundsätze; Menschenrechte und Sicherheit in Europa); NW IF9 St2 (Europa als Wertegemeinschaft).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: eu-werte
+        iCan: { de: "Ich kann die gemeinsamen Werte der EU nennen, zum Beispiel Menschenwürde, Demokratie und Rechtsstaatlichkeit." }
+        gradeBand: "9-10"
+        requires: [europaeische-einigung, menschenwuerde]
+      # HE 10.2 (Entscheidungsstruktur, Gremien in der EU); NW IF9 St2 (Aufgaben der zentralen Institutionen der EU).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: eu-organe
+        iCan: { de: "Ich kann die wichtigsten Organe der EU nennen und ihre Aufgaben beschreiben: Europäisches Parlament, Rat der EU, Europäische Kommission und Europäischer Rat." }
+        gradeBand: "9-10"
+        requires: [europaeische-einigung, gewaltenteilung]
+      # HE 10.2 (Entscheidungsstruktur in der EU); NW IF9 St2 (Weg europäischer Gesetzgebung; Zusammenwirken der EU-Institutionen).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: eu-gesetzgebung
+        iCan: { de: "Ich kann beschreiben, wie ein europäisches Gesetz zwischen Kommission, Parlament und Rat entsteht." }
+        gradeBand: "9-10"
+        requires: [eu-organe]
+      # HE 10.3 (europäischer Binnenmarkt); NW IF9 St2 (Grundfreiheiten des EU-Binnenmarktes).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: binnenmarkt
+        iCan: { de: "Ich kann die vier Grundfreiheiten des Binnenmarkts erklären und Chancen und Probleme für Verbraucher, Unternehmen und Beschäftigte beurteilen." }
+        gradeBand: "9-10"
+        requires: [europa-im-alltag, markt]
+      # HE 10.3 (Wirtschafts- und Währungsunion, z. B. Euro); NW IF9 St2 (Grundzüge der Europäischen Währungsunion).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: euro
+        iCan: { de: "Ich kann erklären, was die Währungsunion ist und welche Aufgabe die Europäische Zentralbank für den Euro hat." }
+        gradeBand: "9-10"
+        requires: [binnenmarkt, geldfunktionen]
+  - id: internationale-politik
+    name: { de: "Internationale Politik und Globalisierung", en: "International politics and globalisation" }
+    competencies:
+      # KC IF Recht und Rechtsprechung (Menschenrechte und internationale Bezüge); NW IF11 St2 (UN-Menschenrechtscharta); HE 10.2 (Menschenrechte und Sicherheit in Europa).
+      # Stimmen HE/BY/NW 7-10/–/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: menschenrechte
+        iCan: { de: "Ich kann erklären, was in der Allgemeinen Erklärung der Menschenrechte steht und warum sie für alle Menschen gilt." }
+        gradeBand: "7-8"
+        requires: [menschenwuerde]
+      # HE 10.2 (internationale Konfliktfelder und Interessen; innergesellschaftliche Konflikte und internationale Friedenssicherung); NW IF11 St2 (Erscheinungsformen und Ursachen internationaler Konflikte, Krisen und Kriege).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: internationale-konflikte
+        iCan: { de: "Ich kann einen internationalen Konflikt nach Ursachen, Beteiligten und Interessen untersuchen." }
+        gradeBand: "9-10"
+      # HE 10.2 (Organisationen zur Friedenssicherung: Ziele, Aufbau, Handlungsmöglichkeiten; UNO); BY PuG10 LB4 (Einbindung Deutschlands in internationale Organisationen); G10 LB2 (UNO); NW IF11 St2 (Friedenssicherung durch die UNO).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: vereinte-nationen
+        iCan: { de: "Ich kann Ziele und Aufbau der Vereinten Nationen beschreiben, zum Beispiel die Aufgaben des Sicherheitsrats." }
+        gradeBand: "9-10"
+        requires: [internationale-konflikte, menschenrechte]
+      # HE 10.2 (Organisationen zur Friedenssicherung: NATO); BY PuG10 LB4 (Einbindung Deutschlands in internationale Organisationen); NW IF11 St2 (Sicherheitspolitik und internationale Friedenssicherung: NATO).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: nato
+        iCan: { de: "Ich kann die Aufgaben der NATO beschreiben und erklären, was gemeinsame Verteidigung bedeutet." }
+        gradeBand: "9-10"
+        requires: [internationale-konflikte]
+      # HE 10.2 (Begründung: Stellung Deutschlands im internationalen Zusammenhang und seine Verantwortung für den Frieden); BY PuG10 LB4 (verfassungsrechtliche Grundlagen und Ziele deutscher Außenpolitik); NW IF11 St2 (sicherheitspolitische Ziele).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: aussenpolitik
+        iCan: { de: "Ich kann Ziele der deutschen Außenpolitik aus dem Grundgesetz ableiten und an einem aktuellen Beispiel zeigen." }
+        gradeBand: "9-10"
+        requires: [grundgesetz-bedeutung, vereinte-nationen, nato]
+      # BY PuG10 LB4 (verfassungsrechtliche Grundlagen deutscher Außenpolitik); NW IF11 St2 (Rollen und Aufgaben der Bundeswehr vor dem Hintergrund sicherheitspolitischer Ziele); HE 10.2 nur in der Begründung (Verantwortung Deutschlands für den Frieden). SCHWACH BELEGT: BY nennt die Bundeswehr nicht ausdrücklich.
+      # Stimmen HE/BY/NW –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: bundeswehr
+        iCan: { de: "Ich kann die Aufgaben der Bundeswehr beschreiben und erklären, warum der Bundestag über ihre Einsätze im Ausland entscheidet." }
+        gradeBand: "9-10"
+        requires: [aussenpolitik, bundestag]
+      # HE 10.2 (Möglichkeiten und Probleme, durch internationale Vereinbarungen den Frieden zu sichern); NW IF11 St2 (Möglichkeiten und Grenzen der Friedenssicherung durch UNO, NATO und zivilgesellschaftliche Akteure).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: friedenssicherung
+        iCan: { de: "Ich kann beurteilen, wie gut internationale Organisationen und Hilfsorganisationen Frieden sichern können." }
+        gradeBand: "9-10"
+        requires: [vereinte-nationen, nato]
+      # HE 10.3 (Wanderungsbewegungen); KC IF Internationale Beziehungen (Ursachen der Migration); BY Geo7 LB2 (Migration in und nach Europa); Geo10 LB2 (Situation von Flüchtlingen); NW IF11 St2 (Formen der Migration; Ursachen).
+      # Stimmen HE/BY/NW 9-10/7-8/7-10 -> 7-8 (Gleichstand, früheste Stufe)
+      - id: migration
+        iCan: { de: "Ich kann Formen von Migration unterscheiden, zum Beispiel Flucht und Arbeitsmigration, und ihre Ursachen beschreiben." }
+        gradeBand: "7-8"
+      # KC IF Internationale Beziehungen (Konflikte, Chancen und Probleme im Integrationsprozess); BY Geo7 LB2 (Bereitschaft, sich für Integration in Deutschland einzusetzen); NW IF11 St2 (Chancen und Herausforderungen von Migration).
+      # Stimmen HE/BY/NW 7-10/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: integration
+        iCan: { de: "Ich kann Chancen und Probleme der Integration von Zugewanderten beschreiben und Maßnahmen dafür beurteilen." }
+        gradeBand: "7-8"
+        requires: [migration, zusammenleben-in-vielfalt]
+      # HE 10.3 (Globalisierung); BY G10 LB2 (Auswirkungen der Globalisierung auf Staat und Gesellschaft); NW IF10 St2 (Merkmale und Ursachen einer zunehmenden Verflechtung des Welthandels).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: globalisierung
+        iCan: { de: "Ich kann Merkmale und Ursachen der Globalisierung beschreiben, zum Beispiel weltweiten Handel, Verkehr und Internet." }
+        gradeBand: "9-10"
+        requires: [markt]
+      # HE 10.3 (Welthandelsstrukturen); KC IF Internationale Beziehungen (internationale Arbeitsteilung); NW IF10 St2 (internationale Arbeitsteilung; Internationalisierung von Unternehmen).
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: internationale-arbeitsteilung
+        iCan: { de: "Ich kann an einem Produkt zeigen, wie es in internationaler Arbeitsteilung entsteht, und Vor- und Nachteile beurteilen." }
+        gradeBand: "9-10"
+        requires: [globalisierung, betriebliche-funktionen]
+      # HE 10.3 (Welthandelsstrukturen; Unterentwicklung); NW IF10 St2 (Merkmale von Freihandel und Protektionismus; Auswirkungen auf Industrie- und Entwicklungsländer). SCHWACH BELEGT: HE nennt nur Welthandelsstrukturen.
+      # Stimmen HE/BY/NW 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: freihandel-protektionismus
+        iCan: { de: "Ich kann Freihandel und Protektionismus unterscheiden und ihre Folgen für Industrie- und Entwicklungsländer beurteilen." }
+        gradeBand: "9-10"
+        requires: [internationale-arbeitsteilung]
+      # HE 10.3 (internationale Wirtschaftsstrukturen); BY PuG10 LB4 (Einbindung in internationale staatliche Organisationen in verschiedenen Bereichen); NW IF10 St2 (Staaten und Organisationen als Akteure der Weltwirtschaft).
+      # Stimmen HE/BY/NW 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: akteure-weltwirtschaft
+        iCan: { de: "Ich kann Ziele von Akteuren der Weltwirtschaft beschreiben, zum Beispiel von Staaten, Konzernen und internationalen Organisationen." }
+        gradeBand: "9-10"
+        requires: [globalisierung]
+      # BY Geo10 LB2 (Lebensrealitäten von Kindern und Jugendlichen in Ländern niedrigen Entwicklungsstandes); NW IF3 St1 (Lebenssituationen von Kindern in unterschiedlich entwickelten Regionen der globalisierten Welt).
+      # Stimmen HE/BY/NW –/9-10/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: kinder-weltweit
+        iCan: { de: "Ich kann vergleichen, wie Kinder in reichen und armen Regionen der Welt leben." }
+        gradeBand: "5-6"
+      # HE 10.3 (Entwicklungsländer, Unterentwicklung); BY Geo10 LB2 (Merkmale von Ländern mit niedrigem Entwicklungsstand; Indikatoren).
+      # Stimmen HE/BY/NW 9-10/9-10/– -> 9-10 (Mehrheit)
+      - id: entwicklungsstand
+        iCan: { de: "Ich kann Merkmale von Ländern mit niedrigem Entwicklungsstand beschreiben und Messgrößen für Entwicklung kritisch prüfen." }
+        gradeBand: "9-10"
+        requires: [kinder-weltweit]
+      # BY Geo10 LB2 (Eine Welt – ungleiche Entwicklung, Entwicklungszusammenarbeit); NW IF3 St1 (Lösungsansätze zur globalen Bekämpfung von Kinderarmut); HE nur fakultativ: 10.3 fak. (Entwicklungspolitik).
+      # Stimmen HE/BY/NW –/9-10/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: entwicklungszusammenarbeit
+        iCan: { de: "Ich kann Wege beschreiben, wie Armut von Kindern auf der Welt bekämpft werden kann, zum Beispiel durch Bildung und Entwicklungszusammenarbeit." }
+        gradeBand: "5-6"
+        requires: [kinder-weltweit]
+  - id: medien
+    name: { de: "Medien und Information", en: "Media and information" }
+    competencies:
+      # HE 7.4 (Freizeit und Medien); NW IF5 St1 (Nutzung digitaler und analoger Medien; kritische Auseinandersetzung mit der eigenen Mediennutzung); BY nur SWG: PuG8 LB1 (Jugend und neue Medien).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: mediennutzung
+        iCan: { de: "Ich kann beschreiben, welche Medien ich wofür nutze, und meine eigene Mediennutzung kritisch prüfen." }
+        gradeBand: "5-6"
+      # HE 7.4 (Medien: Informationsbeschaffung und Unterhaltung); BY PuG10 LB2 (Möglichkeiten und Wege differenzierter Urteils- und Meinungsbildung); NW IF5 St1 (Möglichkeiten der Informationsgewinnung).
+      # Stimmen HE/BY/NW 7-8/9-10/5-6 -> 7-8 (drei verschiedene Stimmen, mittlere)
+      - id: informationsquellen
+        iCan: { de: "Ich kann verschiedene Informationsquellen nutzen und prüfen, wie verlässlich eine Information ist." }
+        gradeBand: "7-8"
+        requires: [mediennutzung]
+      # HE 7.4 (Aufbau einer Zeitung oder Entstehen einer Sendung); NW IF5 St1 (interessengeleitete Setzung und Verbreitung von medial vermittelten Inhalten).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: nachrichten-entstehen
+        iCan: { de: "Ich kann beschreiben, wie eine Zeitung oder eine Nachrichtensendung entsteht und wer auswählt, worüber berichtet wird." }
+        gradeBand: "5-6"
+        requires: [mediennutzung]
+      # HE 7.4 (Analyse medialer Mittel; Präsentationstechniken und ihre Wirkung); NW IF5 St1 (Wirkungen digitaler und analoger Medien).
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: mediale-mittel
+        iCan: { de: "Ich kann untersuchen, wie Bilder, Schlagzeilen und Kameraeinstellungen eine bestimmte Wirkung erzeugen." }
+        gradeBand: "5-6"
+        requires: [nachrichten-entstehen]
+      # HE 7.4 (Neue Medien: Aufbau und Probleme des Internets); NW IF5 St1 (Einfluss sozialer Netzwerke im Alltag); BY PuG10 LB1 nennt soziale Netzwerke nur als Beispiel. SCHWACH BELEGT: HE nennt nur das Internet allgemein.
+      # Stimmen HE/BY/NW 7-8/–/5-6 -> 5-6 (Gleichstand, früheste Stufe)
+      - id: soziale-netzwerke
+        iCan: { de: "Ich kann beschreiben, wie soziale Netzwerke meinen Alltag beeinflussen, und Chancen und Risiken abwägen." }
+        gradeBand: "5-6"
+        requires: [mediennutzung]
+      # HE 7.4 (Begründung: medialer Einfluss auf Freizeitverhalten, Einstellungen und Idole); NW IF4 St2 (Bedeutung digitaler Medien für die Identitätsbildung von Jugendlichen); BY nur SWG: PuG8 LB3 (Vorbilder, Idole und Influencer).
+      # Stimmen HE/BY/NW 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: vorbilder-und-influencer
+        iCan: { de: "Ich kann erklären, wie Vorbilder, Idole und Influencer in den Medien auf mich wirken, und ihren Einfluss beurteilen." }
+        gradeBand: "7-8"
+        requires: [soziale-netzwerke, jugend-als-lebensphase]
+      # KC IF Demokratie (Rolle der Medien zwischen demokratischer Kontrollfunktion und Interessen); HE 10.1 fak. (Presse als 4. Gewalt); BY PuG10 LB2 (Kennzeichen der pluralistischen Demokratie: Massenmedien); NW IF2 St2 (Rolle der Medien im politischen Willensbildungsprozess).
+      # Stimmen HE/BY/NW 7-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: medien-in-der-demokratie
+        iCan: { de: "Ich kann die Aufgaben der Medien in der Demokratie erklären: informieren, an der Meinungsbildung mitwirken und die Mächtigen kontrollieren." }
+        gradeBand: "9-10"
+        requires: [informationsquellen, demokratie-merkmale]
+      # KC IF Demokratie (Medien zwischen Kontrollfunktion und politischen und wirtschaftlichen Interessen); HE 10.1 fak. (Grundgesetz und Pressefreiheit, Pressekonzentration); BY PuG10 LB1 (Grenzen der Meinungsfreiheit); NW IF2 St2 (mediale Einflüsse auf den Willensbildungsprozess).
+      # Stimmen HE/BY/NW 7-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: pressefreiheit
+        iCan: { de: "Ich kann erklären, warum Meinungs- und Pressefreiheit für die Demokratie wichtig sind und wodurch sie gefährdet werden." }
+        gradeBand: "9-10"
+        requires: [medien-in-der-demokratie, grundrechte]
+      # BY PuG10 LB2 (Wirkung von Filterblasen auf die eigene politische Willensbildung); NW IF8 St2 (Algorithmen und Filter); IF2 St2 (Chancen und Risiken digitaler Medien für die politische Willensbildung).
+      # Stimmen HE/BY/NW –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: filterblasen
+        iCan: { de: "Ich kann erklären, wie Algorithmen und Filterblasen bestimmen, was ich im Netz sehe, und wie ich mir trotzdem ein ausgewogenes Urteil bilde." }
+        gradeBand: "9-10"
+        requires: [soziale-netzwerke, informationsquellen]
