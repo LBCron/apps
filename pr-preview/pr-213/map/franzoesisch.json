@@ -19,14 +19,14 @@
         {
           "id": "subjektpronomen",
           "iCan": "Ich kann die Subjektpronomen je, tu, il, elle, on, nous, vous, ils und elles verwenden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "verb-etre",
           "iCan": "Ich kann das Verb être im Präsens konjugieren und damit Personen und Dinge vorstellen (c’est, il est).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjektpronomen"
           ],
@@ -35,7 +35,7 @@
         {
           "id": "verb-avoir",
           "iCan": "Ich kann das Verb avoir im Präsens konjugieren und Wendungen wie il y a und j’ai 13 ans verwenden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjektpronomen"
           ],
@@ -44,14 +44,14 @@
         {
           "id": "bestimmter-artikel",
           "iCan": "Ich kann den bestimmten Artikel le, la, l’ und les richtig vor ein Nomen setzen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "unbestimmter-artikel",
           "iCan": "Ich kann den unbestimmten Artikel un, une und des verwenden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "bestimmter-artikel"
           ],
@@ -60,7 +60,7 @@
         {
           "id": "plural-der-nomen",
           "iCan": "Ich kann den Plural regelmäßiger Nomen bilden und weiß, dass man das Plural-s meist nicht hört.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "bestimmter-artikel"
           ],
@@ -69,7 +69,7 @@
         {
           "id": "plural-besonderheiten",
           "iCan": "Ich kann besondere Pluralformen bilden, zum Beispiel animal – animaux, cadeau – cadeaux, jeu – jeux.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "plural-der-nomen"
           ],
@@ -78,7 +78,7 @@
         {
           "id": "zusammengezogener-artikel",
           "iCan": "Ich kann à und de mit dem bestimmten Artikel zusammenziehen: au, aux, du, des.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "bestimmter-artikel"
           ],
@@ -87,7 +87,7 @@
         {
           "id": "possessivbegleiter",
           "iCan": "Ich kann mit mon, ma, mes, ton, ta, tes, son, sa, ses, notre, votre und leur sagen, wem etwas gehört.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "bestimmter-artikel"
           ],
@@ -96,7 +96,7 @@
         {
           "id": "demonstrativbegleiter",
           "iCan": "Ich kann mit ce, cet, cette und ces auf etwas zeigen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "bestimmter-artikel"
           ],
@@ -105,7 +105,7 @@
         {
           "id": "teilungsartikel",
           "iCan": "Ich kann mit dem Teilungsartikel du, de la und de l’ eine unbestimmte Menge angeben, zum Beispiel du pain.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "zusammengezogener-artikel"
           ],
@@ -114,7 +114,7 @@
         {
           "id": "mengenangaben-mit-de",
           "iCan": "Ich kann Mengen mit de angeben, zum Beispiel beaucoup de, un kilo de, pas de.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "teilungsartikel"
           ],
@@ -123,7 +123,7 @@
         {
           "id": "tout",
           "iCan": "Ich kann tout, toute, tous und toutes richtig angleichen und verwenden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "bestimmter-artikel"
           ],
@@ -132,7 +132,7 @@
         {
           "id": "adjektiv-angleichung",
           "iCan": "Ich kann ein Adjektiv in Geschlecht und Zahl an sein Nomen angleichen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "plural-der-nomen"
           ],
@@ -141,7 +141,7 @@
         {
           "id": "adjektiv-stellung",
           "iCan": "Ich kann Adjektive richtig vor oder hinter das Nomen stellen, zum Beispiel un petit chat noir.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "adjektiv-angleichung"
           ],
@@ -186,7 +186,7 @@
         {
           "id": "adverb-steigerung",
           "iCan": "Ich kann Adverbien steigern und vergleichen, auch mit bien – mieux.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "adverb-bildung",
             "adjektiv-steigerung"
@@ -196,7 +196,7 @@
         {
           "id": "direktes-und-indirektes-objekt",
           "iCan": "Ich kann im Satz das direkte Objekt und das indirekte Objekt mit à erkennen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "aussagesatz-wortstellung"
           ],
@@ -205,7 +205,7 @@
         {
           "id": "direkte-objektpronomen",
           "iCan": "Ich kann ein direktes Objekt durch le, la, les, me, te, nous oder vous ersetzen und richtig stellen, auch vor einem Infinitiv.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "direktes-und-indirektes-objekt",
             "subjektpronomen"
@@ -224,7 +224,7 @@
         {
           "id": "unverbundene-personalpronomen",
           "iCan": "Ich kann die betonten Pronomen moi, toi, lui, elle, nous, vous, eux und elles verwenden, zum Beispiel nach Präpositionen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjektpronomen"
           ],
@@ -261,7 +261,7 @@
         {
           "id": "reflexive-verben",
           "iCan": "Ich kann reflexive Verben wie se lever im Präsens, im futur composé und im Imperativ verwenden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verben-auf-er",
             "direkte-objektpronomen"
@@ -271,7 +271,7 @@
         {
           "id": "aussagesatz-wortstellung",
           "iCan": "Ich kann einfache Aussagesätze in der Reihenfolge Subjekt – Verb – Objekt bilden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjektpronomen"
           ],
@@ -280,7 +280,7 @@
         {
           "id": "verneinung-ne-pas",
           "iCan": "Ich kann einen Satz mit ne … pas verneinen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "aussagesatz-wortstellung"
           ],
@@ -289,7 +289,7 @@
         {
           "id": "verneinung-plus-rien-jamais",
           "iCan": "Ich kann mit ne … plus, ne … rien und ne … jamais verneinen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verneinung-ne-pas"
           ],
@@ -307,7 +307,7 @@
         {
           "id": "intonationsfrage",
           "iCan": "Ich kann eine Frage nur mit der Satzmelodie stellen, zum Beispiel Tu viens ?",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "aussagesatz-wortstellung"
           ],
@@ -316,7 +316,7 @@
         {
           "id": "frage-mit-est-ce-que",
           "iCan": "Ich kann Fragen mit est-ce que bilden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "intonationsfrage"
           ],
@@ -325,7 +325,7 @@
         {
           "id": "fragewoerter",
           "iCan": "Ich kann Fragen mit où, quand, comment, pourquoi und combien stellen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "frage-mit-est-ce-que"
           ],
@@ -334,7 +334,7 @@
         {
           "id": "fragepronomen-qui-que",
           "iCan": "Ich kann mit qui, que und qu’est-ce que nach Personen und Sachen fragen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "frage-mit-est-ce-que"
           ],
@@ -343,7 +343,7 @@
         {
           "id": "fragebegleiter-quel",
           "iCan": "Ich kann mit quel, quelle, quels und quelles fragen, zum Beispiel Quelle heure est-il ?",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "frage-mit-est-ce-que",
             "adjektiv-angleichung"
@@ -353,7 +353,7 @@
         {
           "id": "inversionsfrage",
           "iCan": "Ich kann Fragen durch Umstellung von Verb und Subjekt bilden, zum Beispiel Où vas-tu ?",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "fragewoerter"
           ],
@@ -371,7 +371,7 @@
         {
           "id": "imperativ",
           "iCan": "Ich kann Aufforderungen mit dem Imperativ formulieren, auch mit sois, aie und allons.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verben-auf-er",
             "verb-etre",
@@ -401,7 +401,7 @@
         {
           "id": "relativsatz-qui-que-ou",
           "iCan": "Ich kann Relativsätze mit qui, que und où bilden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "direktes-und-indirektes-objekt"
           ],
@@ -410,7 +410,7 @@
         {
           "id": "nebensatz-quand-parce-que",
           "iCan": "Ich kann Sätze mit et, mais, ou, quand und parce que verbinden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "aussagesatz-wortstellung"
           ],
@@ -428,7 +428,7 @@
         {
           "id": "modalverben-mit-infinitiv",
           "iCan": "Ich kann pouvoir, vouloir, devoir und savoir konjugieren und mit einem Infinitiv verbinden.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verben-auf-er"
           ],
@@ -437,7 +437,7 @@
         {
           "id": "infinitiv-mit-pour",
           "iCan": "Ich kann mit pour und einem Infinitiv einen Zweck ausdrücken.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verben-auf-er"
           ],
@@ -446,7 +446,7 @@
         {
           "id": "infinitivsatz-avant-de-apres-avoir",
           "iCan": "Ich kann Infinitivsätze mit sans, avant de und après avoir bilden.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "infinitiv-mit-pour",
             "passe-compose-avoir"
@@ -466,7 +466,7 @@
         {
           "id": "verben-auf-er",
           "iCan": "Ich kann regelmäßige Verben auf -er im Präsens konjugieren.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjektpronomen"
           ],
@@ -475,7 +475,7 @@
         {
           "id": "verben-auf-er-besonderheiten",
           "iCan": "Ich kann Verben auf -er mit Besonderheiten konjugieren, zum Beispiel acheter, préférer, manger und commencer.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verben-auf-er"
           ],
@@ -484,7 +484,7 @@
         {
           "id": "verben-auf-re",
           "iCan": "Ich kann regelmäßige Verben auf -re wie attendre und vendre im Präsens konjugieren.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verben-auf-er"
           ],
@@ -493,7 +493,7 @@
         {
           "id": "verben-auf-ir-dormir",
           "iCan": "Ich kann Verben wie dormir, partir und sortir im Präsens konjugieren.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verben-auf-er"
           ],
@@ -511,7 +511,7 @@
         {
           "id": "unregelmaessige-verben-aller-faire",
           "iCan": "Ich kann die unregelmäßigen Verben aller, faire, prendre, dire, lire und écrire im Präsens konjugieren.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verben-auf-er"
           ],
@@ -520,7 +520,7 @@
         {
           "id": "unregelmaessige-verben-venir-voir",
           "iCan": "Ich kann die unregelmäßigen Verben venir, voir, mettre, ouvrir, connaître und boire im Präsens konjugieren.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "unregelmaessige-verben-aller-faire"
           ],
@@ -538,7 +538,7 @@
         {
           "id": "unregelmaessige-verben-recevoir-suivre",
           "iCan": "Ich kann die unregelmäßigen Verben recevoir, suivre und s’en aller konjugieren.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "unregelmaessige-verben-croire-rire"
           ],
@@ -547,7 +547,7 @@
         {
           "id": "verben-auf-indre",
           "iCan": "Ich kann Verben auf -indre wie craindre, peindre und se plaindre konjugieren.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "unregelmaessige-verben-recevoir-suivre"
           ],
@@ -556,7 +556,7 @@
         {
           "id": "futur-compose",
           "iCan": "Ich kann mit aller und einem Infinitiv sagen, was bald passiert (futur composé).",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "unregelmaessige-verben-aller-faire"
           ],
@@ -565,7 +565,7 @@
         {
           "id": "passe-compose-avoir",
           "iCan": "Ich kann das passé composé mit avoir bilden, auch mit unregelmäßigen Partizipien wie fait und pris.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verb-avoir",
             "verben-auf-er"
@@ -575,7 +575,7 @@
         {
           "id": "passe-compose-etre",
           "iCan": "Ich kann das passé composé mit être bilden und das Partizip an das Subjekt angleichen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "passe-compose-avoir",
             "verb-etre"
@@ -635,7 +635,7 @@
         {
           "id": "futur-simple",
           "iCan": "Ich kann das futur simple bilden, auch bei unregelmäßigen Verben wie être, avoir, aller und faire.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "futur-compose",
             "unregelmaessige-verben-aller-faire"
@@ -645,7 +645,7 @@
         {
           "id": "conditionnel-present",
           "iCan": "Ich kann das conditionnel présent bilden und damit Wünsche, höfliche Bitten und Vermutungen ausdrücken.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "futur-simple",
             "imparfait"
@@ -655,7 +655,7 @@
         {
           "id": "conditionnel-passe",
           "iCan": "Ich kann das conditionnel passé bilden und damit sagen, was hätte geschehen können.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "conditionnel-present",
             "passe-compose-etre"
@@ -665,7 +665,7 @@
         {
           "id": "bedingungssatz-real",
           "iCan": "Ich kann erfüllbare Bedingungen mit si und Präsens formulieren, zum Beispiel S’il pleut, je reste à la maison.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "futur-simple"
           ],
@@ -674,7 +674,7 @@
         {
           "id": "bedingungssatz-irreal-gegenwart",
           "iCan": "Ich kann nicht erfüllte Bedingungen mit si, imparfait und conditionnel formulieren.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "bedingungssatz-real",
             "conditionnel-present"
@@ -684,7 +684,7 @@
         {
           "id": "bedingungssatz-irreal-vergangenheit",
           "iCan": "Ich kann nicht erfüllte Bedingungen in der Vergangenheit mit si, plus-que-parfait und conditionnel passé formulieren.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "bedingungssatz-irreal-gegenwart",
             "conditionnel-passe",
@@ -733,7 +733,7 @@
         {
           "id": "indirekte-rede-praesens",
           "iCan": "Ich kann wiedergeben, was jemand sagt, zum Beispiel Il dit qu’il est malade.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "subjektpronomen",
             "possessivbegleiter"
@@ -811,7 +811,7 @@
         {
           "id": "praepositionen-des-ortes",
           "iCan": "Ich kann mit Präpositionen wie dans, sur, sous, devant, derrière und à côté de sagen, wo etwas ist.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "bestimmter-artikel"
           ],
@@ -847,7 +847,7 @@
         {
           "id": "begruessen-und-vorstellen",
           "iCan": "Ich kann mich begrüßen, verabschieden, vorstellen und fragen, wie es jemandem geht.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verb-etre"
           ],
@@ -856,7 +856,7 @@
         {
           "id": "familie-und-freunde",
           "iCan": "Ich kann meine Familie und meine Freunde vorstellen und beschreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "possessivbegleiter",
             "adjektiv-angleichung"
@@ -866,7 +866,7 @@
         {
           "id": "freizeit-und-hobbys",
           "iCan": "Ich kann über meine Hobbys, Sportarten und meine Freizeit sprechen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verben-auf-er",
             "zusammengezogener-artikel"
@@ -876,7 +876,7 @@
         {
           "id": "vorlieben-und-abneigungen",
           "iCan": "Ich kann sagen, was ich mag und was nicht, zum Beispiel j’adore, je préfère, ça me plaît.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "verben-auf-er",
             "bestimmter-artikel"
@@ -886,7 +886,7 @@
         {
           "id": "schule-und-schulalltag",
           "iCan": "Ich kann über meine Schule, meinen Stundenplan und meine Schulsachen sprechen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "unbestimmter-artikel",
             "uhrzeit"
@@ -896,14 +896,14 @@
         {
           "id": "zahlen-bis-100",
           "iCan": "Ich kann die Zahlen bis 100 verstehen und sagen, auch soixante-dix, quatre-vingts und quatre-vingt-dix.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "grosse-zahlen",
           "iCan": "Ich kann Zahlen über 100 bis zu einer Million verstehen und sagen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "zahlen-bis-100"
           ],
@@ -930,7 +930,7 @@
         {
           "id": "uhrzeit",
           "iCan": "Ich kann nach der Uhrzeit fragen und sie angeben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "zahlen-bis-100"
           ],
@@ -939,7 +939,7 @@
         {
           "id": "datum-wochentage-monate",
           "iCan": "Ich kann Wochentage, Monate und ein Datum angeben, zum Beispiel mon anniversaire, c’est le 3 mai.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "zahlen-bis-100"
           ],
@@ -948,7 +948,7 @@
         {
           "id": "tagesablauf",
           "iCan": "Ich kann meinen Tagesablauf beschreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "uhrzeit",
             "reflexive-verben"
@@ -967,7 +967,7 @@
         {
           "id": "essen-und-lebensmittel",
           "iCan": "Ich kann Lebensmittel und Mahlzeiten benennen und sagen, was ich gern esse und trinke.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "teilungsartikel"
           ],
@@ -976,7 +976,7 @@
         {
           "id": "einkaufen",
           "iCan": "Ich kann in einem Geschäft einkaufen, nach dem Preis fragen und Mengen angeben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "mengenangaben-mit-de",
             "zahlen-bis-100"
@@ -995,7 +995,7 @@
         {
           "id": "verkehrsmittel",
           "iCan": "Ich kann Verkehrsmittel benennen und sagen, wie ich irgendwohin fahre, zum Beispiel en bus, à vélo.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "unregelmaessige-verben-aller-faire"
           ],
@@ -1004,7 +1004,7 @@
         {
           "id": "nach-dem-weg-fragen",
           "iCan": "Ich kann nach dem Weg fragen und einen Weg beschreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "imperativ",
             "praepositionen-des-ortes"
@@ -1024,7 +1024,7 @@
         {
           "id": "telefon-und-nachrichten",
           "iCan": "Ich kann telefonieren und kurze Nachrichten, E-Mails und Einladungen schreiben.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "begruessen-und-vorstellen"
           ],
@@ -1042,7 +1042,7 @@
         {
           "id": "bilder-beschreiben",
           "iCan": "Ich kann ein Bild beschreiben, zum Beispiel mit au premier plan, à l’arrière-plan, à gauche und à droite.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "praepositionen-des-ortes"
           ],
@@ -1060,7 +1060,7 @@
         {
           "id": "gefuehle-ausdruecken",
           "iCan": "Ich kann Gefühle mit passenden Wörtern ausdrücken, zum Beispiel être content, avoir peur, être déçu.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "adjektiv-angleichung"
           ],
@@ -1115,7 +1115,7 @@
         {
           "id": "beruf-und-praktikum",
           "iCan": "Ich kann über Berufe, meinen Traumberuf und ein Praktikum sprechen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "futur-simple",
             "conditionnel-present"
@@ -1144,7 +1144,7 @@
         {
           "id": "textbesprechung",
           "iCan": "Ich kann mit Wörtern wie le personnage, le narrateur, la scène und le titre über einen Text sprechen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "meinung-aeussern"
           ],
@@ -1153,7 +1153,7 @@
         {
           "id": "sprachregister",
           "iCan": "Ich kann Umgangssprache (français familier) von der Standardsprache unterscheiden und je nach Situation passend wählen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "tu-oder-vous"
           ],
@@ -1172,7 +1172,7 @@
       ]
     },
     {
-      "id": "aussprache-orthografie",
+      "id": "aussprache",
       "name": {
         "de": "Aussprache und Rechtschreibung",
         "en": "Pronunciation and spelling"
@@ -1181,14 +1181,14 @@
         {
           "id": "laut-und-schrift",
           "iCan": "Ich kann häufige Buchstabenverbindungen richtig aussprechen, zum Beispiel ou, oi, au, eau, ch und gn.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [],
           "practisedBy": []
         },
         {
           "id": "stumme-buchstaben",
           "iCan": "Ich kann Wörter mit stummen Buchstaben am Wortende richtig aussprechen, zum Beispiel petit, les und ils parlent.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "laut-und-schrift"
           ],
@@ -1197,7 +1197,7 @@
         {
           "id": "nasale",
           "iCan": "Ich kann die Nasallaute in an, on, in und un unterscheiden und richtig aussprechen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "laut-und-schrift"
           ],
@@ -1206,7 +1206,7 @@
         {
           "id": "e-laute",
           "iCan": "Ich kann das stumme, das offene und das geschlossene e unterscheiden und richtig aussprechen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "laut-und-schrift"
           ],
@@ -1215,7 +1215,7 @@
         {
           "id": "u-und-ou",
           "iCan": "Ich kann die Laute u wie in tu und ou wie in tout unterscheiden und richtig aussprechen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "laut-und-schrift"
           ],
@@ -1252,7 +1252,7 @@
         {
           "id": "betonung-und-satzmelodie",
           "iCan": "Ich kann die Betonung auf der letzten Silbe und die Satzmelodie im Französischen richtig umsetzen, auch bei Fragen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "laut-und-schrift"
           ],
@@ -1261,7 +1261,7 @@
         {
           "id": "lautschrift",
           "iCan": "Ich kann die Zeichen der Lautschrift lesen und damit die Aussprache eines Wortes nachschlagen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "nasale",
             "e-laute"
@@ -1271,7 +1271,7 @@
         {
           "id": "aussprache-unbekannter-woerter",
           "iCan": "Ich kann unbekannte Wörter mit Hilfe der Ausspracheregeln, der Lautschrift oder des Wörterbuchs richtig aussprechen.",
-          "gradeBand": "7-8",
+          "gradeBand": "9-10",
           "requires": [
             "lautschrift"
           ],
@@ -1318,16 +1318,16 @@
       ]
     },
     {
-      "id": "soziokulturelles",
+      "id": "landeskunde",
       "name": {
-        "de": "Soziokulturelles Orientierungswissen",
-        "en": "Sociocultural knowledge"
+        "de": "Länder und Kulturen",
+        "en": "Countries and cultures"
       },
       "competencies": [
         {
           "id": "tu-oder-vous",
           "iCan": "Ich kann entscheiden, wann ich jemanden duze oder sieze, und Menschen mit Madame und Monsieur höflich ansprechen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "begruessen-und-vorstellen"
           ],
@@ -1336,7 +1336,7 @@
         {
           "id": "begruessungsrituale",
           "iCan": "Ich kann beschreiben, wie man sich in Frankreich begrüßt, zum Beispiel mit la bise oder mit Handschlag.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "begruessen-und-vorstellen"
           ],
@@ -1345,7 +1345,7 @@
         {
           "id": "konventionen-im-alltag",
           "iCan": "Ich kann Unterschiede bei Alltagsregeln in Frankreich und Deutschland beschreiben, zum Beispiel bei Pünktlichkeit, Essenszeiten und Einladungen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "tu-oder-vous"
           ],
@@ -1354,7 +1354,7 @@
         {
           "id": "essen-in-frankreich",
           "iCan": "Ich kann Mahlzeiten, Essenszeiten und typische Produkte in Frankreich beschreiben, zum Beispiel la baguette und le bol.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "essen-und-lebensmittel"
           ],
@@ -1363,7 +1363,7 @@
         {
           "id": "feste-im-jahreslauf",
           "iCan": "Ich kann französische Feste und Traditionen beschreiben, zum Beispiel la galette des rois, la Chandeleur und Noël.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "datum-wochentage-monate"
           ],
@@ -1372,7 +1372,7 @@
         {
           "id": "alltag-jugendlicher",
           "iCan": "Ich kann den Alltag von Jugendlichen in Frankreich beschreiben und mit meinem Alltag vergleichen.",
-          "gradeBand": "7-8",
+          "gradeBand": "5-6",
           "requires": [
             "tagesablauf",
             "familie-und-freunde"
@@ -1382,7 +1382,7 @@
         {
           "id": "schulsystem-frankreich",
           "iCan": "Ich kann das französische Schulsystem mit école, collège und lycée beschreiben und mit dem deutschen vergleichen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "schule-und-schulalltag",
             "ordnungszahlen"
@@ -1438,7 +1438,7 @@
         {
           "id": "zentralstaat-und-regionen",
           "iCan": "Ich kann beschreiben, wie Frankreich politisch gegliedert ist, mit Präsident, Paris als Zentrum und régions, und es mit dem deutschen Föderalismus vergleichen.",
-          "gradeBand": "9-10",
+          "gradeBand": "7-8",
           "requires": [
             "eine-region-frankreichs"
           ],
@@ -1504,12 +1504,284 @@
             "paris"
           ],
           "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "texte",
+      "name": {
+        "de": "Texte und Medien",
+        "en": "Texts and media"
+      },
+      "competencies": [
+        {
+          "id": "alltagstexte",
+          "iCan": "Ich kann Anzeigen, Plakate, Flyer und Schilder lesen und ihnen gezielt Angaben wie Datum, Uhrzeit und Preis entnehmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "uhrzeit",
+            "datum-wochentage-monate"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "steckbrief",
+          "iCan": "Ich kann einen Steckbrief über mich oder eine andere Person schreiben, zum Beispiel mit nom, âge, domicile und loisirs.",
+          "gradeBand": "5-6",
+          "requires": [
+            "begruessen-und-vorstellen",
+            "zahlen-bis-100"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "persoenlicher-brief",
+          "iCan": "Ich kann einen persönlichen Brief oder eine E-Mail mit passender Anrede und passendem Gruß schreiben, zum Beispiel Cher Paul, … À bientôt !",
+          "gradeBand": "5-6",
+          "requires": [
+            "telefon-und-nachrichten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dialog-schreiben",
+          "iCan": "Ich kann einen kurzen Dialog schreiben und ihn mit verteilten Rollen vorspielen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "begruessen-und-vorstellen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kurzpraesentation",
+          "iCan": "Ich kann eine kurze Präsentation zu einem vertrauten Thema vorbereiten und mit Wendungen wie Je vais vous parler de … einleiten und abschließen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "begruessen-und-vorstellen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gedicht-und-chanson",
+          "iCan": "Ich kann ein kurzes Gedicht oder ein chanson vortragen und nach einem Muster selbst Verse schreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "betonung-und-satzmelodie"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "figuren-ort-zeit-handlung",
+          "iCan": "Ich kann einer Geschichte entnehmen, wer vorkommt, wo und wann sie spielt und was passiert.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fragewoerter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bildergeschichte",
+          "iCan": "Ich kann zu einer Bildergeschichte eine kurze Geschichte erzählen oder schreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "bilder-beschreiben"
+          ],
+          "practisedBy": []
         },
         {
           "id": "bande-dessinee",
-          "iCan": "Ich kann die Merkmale einer bande dessinée beschreiben und bekannte französische Comics wie Astérix nennen.",
+          "iCan": "Ich kann die Merkmale einer bande dessinée beschreiben, eine kurze BD lesen und bekannte Comics wie Astérix nennen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "figuren-ort-zeit-handlung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nacherzaehlen",
+          "iCan": "Ich kann eine Geschichte in der richtigen Reihenfolge nacherzählen und dabei d’abord, puis, ensuite und enfin verwenden.",
           "gradeBand": "7-8",
-          "requires": [],
+          "requires": [
+            "figuren-ort-zeit-handlung",
+            "zeitadverbien-erzaehlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "text-umformen",
+          "iCan": "Ich kann einen Text umformen, zum Beispiel einen Dialog in eine Erzählung oder eine Geschichte aus der Sicht einer anderen Figur.",
+          "gradeBand": "7-8",
+          "requires": [
+            "dialog-schreiben",
+            "nacherzaehlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "geschichte-fortsetzen",
+          "iCan": "Ich kann eine Geschichte fortsetzen oder einen neuen Schluss dafür erfinden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "nacherzaehlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lektuere",
+          "iCan": "Ich kann eine einfache Lektüre auf Französisch lesen, zum Beispiel Le Petit Nicolas, und ihren Inhalt wiedergeben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "nacherzaehlen",
+            "imparfait"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "charakterisierung",
+          "iCan": "Ich kann eine Figur aus einem Text charakterisieren: ihr Aussehen, ihr Verhalten und ihre Gefühle.",
+          "gradeBand": "7-8",
+          "requires": [
+            "figuren-ort-zeit-handlung",
+            "gefuehle-ausdruecken",
+            "adjektiv-angleichung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "resume",
+          "iCan": "Ich kann den Inhalt eines Textes in einem kurzen résumé im Präsens zusammenfassen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "nacherzaehlen",
+            "textbesprechung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "textsorten-unterscheiden",
+          "iCan": "Ich kann Sachtexte wie einen Zeitungsartikel und literarische Texte wie eine Erzählung unterscheiden und typische Merkmale nennen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "alltagstexte",
+            "figuren-ort-zeit-handlung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "soziale-medien",
+          "iCan": "Ich kann einen Post oder einen Chatbeitrag schreiben und dabei die Regeln der Netiquette beachten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "persoenlicher-brief"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "podcast-videoclip",
+          "iCan": "Ich kann einen kurzen Podcast oder Videoclip auf Französisch planen und aufnehmen, zum Beispiel ein Interview.",
+          "gradeBand": "7-8",
+          "requires": [
+            "dialog-schreiben",
+            "fragewoerter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "diagramm-beschreiben",
+          "iCan": "Ich kann ein einfaches Diagramm oder eine Statistik beschreiben, zum Beispiel mit la moitié, la majorité und augmenter.",
+          "gradeBand": "7-8",
+          "requires": [
+            "brueche-und-mengen",
+            "grosse-zahlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stellungnahme",
+          "iCan": "Ich kann in einem kurzen Text meine Meinung zu einem Thema schreiben und sie mit Gründen und Beispielen stützen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "meinung-aeussern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "pro-und-contra",
+          "iCan": "Ich kann einen Text mit Argumenten dafür und dagegen gliedern und mit d’abord, de plus, par contre und en conclusion verbinden.",
+          "gradeBand": "9-10",
+          "requires": [
+            "stellungnahme",
+            "konjunktionen-erweitert"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zeitungsartikel",
+          "iCan": "Ich kann einen kurzen Artikel über ein Ereignis schreiben, zum Beispiel für eine Schülerzeitung oder einen Blog.",
+          "gradeBand": "9-10",
+          "requires": [
+            "imparfait-oder-passe-compose"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "formeller-brief",
+          "iCan": "Ich kann einen formellen Brief oder eine E-Mail schreiben, zum Beispiel eine Anfrage, mit Madame, Monsieur und einer passenden Schlussformel.",
+          "gradeBand": "9-10",
+          "requires": [
+            "persoenlicher-brief",
+            "tu-oder-vous"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bewerbung-und-lebenslauf",
+          "iCan": "Ich kann einen Lebenslauf und eine kurze Bewerbung schreiben, zum Beispiel für einen Ferienjob.",
+          "gradeBand": "9-10",
+          "requires": [
+            "formeller-brief",
+            "beruf-und-praktikum"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gedicht-untersuchen",
+          "iCan": "Ich kann in einem Gedicht oder chanson Strophe, Vers, Reim und Refrain erkennen und sagen, wie es auf mich wirkt.",
+          "gradeBand": "9-10",
+          "requires": [
+            "gedicht-und-chanson",
+            "textbesprechung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "karikatur-beschreiben",
+          "iCan": "Ich kann eine Karikatur beschreiben, ihre Aussage erklären und kurz kommentieren.",
+          "gradeBand": "9-10",
+          "requires": [
+            "bilder-beschreiben",
+            "meinung-aeussern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "film-untersuchen",
+          "iCan": "Ich kann beschreiben, wie eine Filmszene gemacht ist, zum Beispiel mit le plan, la caméra und la musique, und wie sie wirkt.",
+          "gradeBand": "9-10",
+          "requires": [
+            "bilder-beschreiben",
+            "textbesprechung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rezension",
+          "iCan": "Ich kann ein Buch oder einen Film kurz vorstellen und begründen, ob ich es empfehle.",
+          "gradeBand": "9-10",
+          "requires": [
+            "lektuere",
+            "stellungnahme"
+          ],
           "practisedBy": []
         }
       ]
