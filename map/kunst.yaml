@@ -1,0 +1,714 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# Vorschlag. Für Kunst gibt es keine KMK-Bildungsstandards (Sek I). Wie bei Musik ist die Quelle Hessen (KD-17). Die
+# Stränge sind die Inhaltsbereiche, die Hessen, Bayern und NRW teilen:
+#   - die bildnerischen Mittel Farbe, Form/Fläche und Raum (NW IF1, HE KC „Kunstwerk als Form“, HE G9 farbiges und
+#     zeichnerisches Gestalten, BY LB1),
+#   - die Gestaltungsfelder Zeichnung/Grafik, Plastik, Fotografie/Film/Aktion, Architektur/Design (NW IF3, HE KC
+#     „Medien, Techniken und Verfahren“, BY LB1 bis LB3),
+#   - die Bildstrategien (NW IF2, HE KC „Strategien der Bilderfindung“),
+#   - die Bildbetrachtung (HE KC „Bildbetrachtung“, NW Rezeption, BY Werkanalyse) und
+#   - die Kunstgeschichte (HE KC „Epochen, Schlüsselwerke“, HE G9 je Jahrgang eine Epoche, BY je Jahrgang Epochen).
+# Prozesskompetenzen sind nicht modelliert.
+# Quellenkürzel in den Kommentaren:
+#   HE = Hessen. G9 = Lehrplan Kunst, Gymnasialer Bildungsgang, Jahrgangsstufen 5 bis 13, verbindliche Themen 5.1 bis
+#        9.3 und Übergangsprofil (ÜP); in Jg 8 und 10 hat Kunst keinen Unterricht. Jg 5, 6 -> "5-6", 7 -> "7-8",
+#        9 -> "9-10". KC = Kerncurriculum Hessen Sek I Gymnasium Kunst (2011): Kap. 7.1 (Ende Jg 6) -> "5-6",
+#        Kap. 6 (Ende Jg 9/10) -> "7-10". Hessen stimmt mit G9, wo G9 den Inhalt nennt, sonst mit KC.
+#   BY = LehrplanPLUS Bayern Gymnasium Kunst, Ku5 bis Ku10; LB1 Bildende Kunst, LB2 Architektur und Produktdesign,
+#        LB3 Interaktion, Inszenierung und Kommunikation. „(MuG)“ (nur Musisches Gymnasium) zählt nicht.
+#   NW = Kernlehrplan Kunst Sek I Gymnasium NRW (Heft 3405, 2019): E = bis Ende Erprobungsstufe -> "5-6",
+#        S = bis Ende Sek I -> "7-10"; IF1 Bildgestaltung, IF2 Bildkonzepte, IF3 Gestaltungsfelder.
+# Abstimmung: eine Stimme je Land; "7-10" zählt für 7-8 und 9-10; Gleichstand: requires, sonst die frühere Stufe.
+# Ein Vorschlag (Werkliste) ist nur ein Hinweis, keine Stimme. Titel, Ausgaben und URLs: .vibe/research-kunst.md.
+name: { de: Kunst, en: Art }                       # the file name is the subject's id: kunst
+source:
+  title: Kerncurriculum Hessen, Sekundarstufe I - Gymnasium, Kunst (Hessisches Kultusministerium), mit Lehrplan Kunst G9 Hessen; Stränge nach den gemeinsamen Inhaltsbereichen von Hessen, Bayern und Nordrhein-Westfalen
+  url: https://kultus.hessen.de/sites/kultus.hessen.de/files/2021-07/kerncurriculum_kunst_gymnasium.pdf
+strands:
+  - id: farbe
+    name: { de: "Farbe", en: "Colour" }
+    competencies:
+      # HE G9 5.1 Farbdifferenzierung (Mischen, Aufhellen, Abdunkeln); BY Ku5 LB1 Grundlagen zur Farbsystematik; NW E IF1 Farbe: Farbeigenschaften (Farbton, -helligkeit, -sättigung). Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: farbeigenschaften
+        iCan: { de: "Ich kann Farben nach Farbton, Helligkeit und Sättigung (Leuchtkraft) unterscheiden." }
+        gradeBand: "5-6"
+      # HE G9 5.1 Farbbezeichnung (Normbezeichnungen, eigene Farbbezeichnungen); NW E IF1 Rezeption: bestimmen Farben hinsichtlich ihrer Qualität. Stimmen HE/BY/NW: 5-6 / – / 5-6 -> 5-6 (Mehrheit)
+      - id: farben-benennen
+        iCan: { de: "Ich kann Farben genau benennen, mit üblichen Farbnamen und mit eigenen treffenden Namen." }
+        gradeBand: "5-6"
+        requires: [farbeigenschaften]
+      # HE G9 5.1 Farbbezeichnung (Normbezeichnungen), Farbkontraste; BY Ku5 LB1 Grundlagen zur Farbsystematik; Ku10 LB1 Farbbeziehungen nach Itten oder Küppers; NW E IF1 Farbe: Farbbeziehungen. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: farbkreis
+        iCan: { de: "Ich kann Grundfarben, Mischfarben erster und zweiter Ordnung im Farbkreis zeigen und ihre Lage erklären." }
+        gradeBand: "5-6"
+        requires: [farbeigenschaften]
+      # HE G9 5.1 Farbdifferenzierung: Mischen, Aufhellen, Abdunkeln, Abstimmen; BY Ku5 LB1 Grundlagen zur Farbsystematik; NW E IF1 Farbe: Farbhelligkeit, Farbsättigung. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: farben-mischen
+        iCan: { de: "Ich kann aus wenigen Farben viele Farbtöne mischen und eine Farbe gezielt aufhellen und abdunkeln." }
+        gradeBand: "5-6"
+        requires: [farbkreis]
+      # HE G9 7.1 genaues Mischen von Farbwerten; BY Ku7 LB1 subtraktive Farbmischung; Ku10 LB1 additive und subtraktive Farbmischung. Stimmen HE/BY/NW: 7-8 / 7-8 / – -> 7-8 (Mehrheit)
+      - id: subtraktive-farbmischung
+        iCan: { de: "Ich kann erklären, warum Malfarben beim Mischen dunkler werden, und mit Cyan, Magenta und Gelb gezielt mischen." }
+        gradeBand: "7-8"
+        requires: [farben-mischen]
+      # HE G9 6.1 Farbverwandtschaften: Farbfamilien durch Beimischen von Schwarz und Weiß, Nachbarfarben; BY Ku10 LB1 Farbbeziehungen; NW E IF1 Farbe: Farbverwandtschaften. Stimmen HE/BY/NW: 5-6 / 9-10 / 5-6 -> 5-6 (Mehrheit)
+      - id: farbverwandtschaften
+        iCan: { de: "Ich kann Farbfamilien und Nachbarfarben bilden, auch durch Beimischen von Schwarz und Weiß." }
+        gradeBand: "5-6"
+        requires: [farben-mischen]
+      # HE G9 5.1 Wirkung von Farben: Farbkontraste; BY Ku5 LB1 einfache Farbkontraste; Ku7 LB1 Hell-Dunkel-Kontrast, Farbe-an-sich-Kontrast; NW E IF1 Farbe: Farbkontraste, Farbgegensätze. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: farbkontraste
+        iCan: { de: "Ich kann an Bildern zeigen, was ein Farbkontrast ist, und den Farbe-an-sich-Kontrast und den Hell-Dunkel-Kontrast erkennen." }
+        gradeBand: "5-6"
+        requires: [farbeigenschaften]
+      # HE G9 5.1 Farbkontraste; BY Ku7 LB1 Komplementärkontrast; NW E IF1 Farbe: Farbkontraste. Stimmen HE/BY/NW: 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      - id: komplementaerkontrast
+        iCan: { de: "Ich kann Komplementärfarben im Farbkreis finden und ihre starke Wirkung im Bild beschreiben." }
+        gradeBand: "5-6"
+        requires: [farbkreis, farbkontraste]
+      # HE G9 5.1 Farbkontraste, charakteristische Farbstimmungen; BY Ku7 LB1 Kalt-Warm-Kontrast; NW E IF1 Farbe: Farbkontraste. Stimmen HE/BY/NW: 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      - id: kalt-warm-kontrast
+        iCan: { de: "Ich kann warme und kalte Farben unterscheiden und ihre Wirkung im Bild beschreiben." }
+        gradeBand: "5-6"
+        requires: [farbkontraste]
+      # BY Ku10 LB1 Farbbeziehungen und Farbkontraste nach Itten oder Küppers; NW S IF1 Farbe: Farbbeziehungen (Farbkontraste). Stimmen HE/BY/NW: – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: weitere-farbkontraste
+        iCan: { de: "Ich kann Qualitäts-, Quantitäts- und Simultankontrast an Bildern erkennen und erklären." }
+        gradeBand: "9-10"
+        requires: [komplementaerkontrast, kalt-warm-kontrast]
+      # HE G9 5.1 Farbauftrag und Wirkungsweise: deckendes und lasierendes Malen; BY Ku5 LB1 deckender und lasierender Farbauftrag; NW E IF1 Wirkung des Farbauftrags (deckend, lasierend, pastos). Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: farbauftrag
+        iCan: { de: "Ich kann deckend, lasierend und pastos malen und die Wirkung des Farbauftrags beschreiben." }
+        gradeBand: "5-6"
+      # BY Ku5 LB1 selbsthergestellte Farben, Eigenschaften von Pigmenten und Bindemitteln; NW E IF1 Farbauftrag in Abhängigkeit vom Farbmaterial. Stimmen HE/BY/NW: – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: farbmaterial
+        iCan: { de: "Ich kann erklären, dass Malfarbe aus Pigment und Bindemittel besteht, und eine einfache Farbe selbst herstellen." }
+        gradeBand: "5-6"
+        requires: [farbauftrag]
+      # HE G9 5.1 malerische Spur innerer Bewegung; 6.1 Farbauftrag als Ausdrucksmittel (Spritzen, Schmieren, Tupfen, Gießen, Reiben); NW S IF1 unterschiedliche Möglichkeiten des Farbauftrags im Hinblick auf Ausdrucksqualität. Stimmen HE/BY/NW: 5-6 / – / 7-10 -> 5-6 (Gleichstand 5-6/7-8/9-10; requires lässt alle zu, die frühere)
+      - id: malspuren
+        iCan: { de: "Ich kann Farbe auf verschiedene Weise auftragen, zum Beispiel tupfen, spritzen oder wischen, und die Wirkung der Spuren beschreiben." }
+        gradeBand: "5-6"
+        requires: [farbauftrag]
+      # HE G9 5.1 Wirkung von Farben und Farbkompositionen; 6.1 Farbstimmungen, Farbklänge; BY Ku5 LB1 Farbauftrag sowie einfache Farbkontraste zur Darstellung von Bildmotiven; NW E IF1 Funktion der Farbwahl für eine angestrebte Bildwirkung. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: farbwirkung
+        iCan: { de: "Ich kann beschreiben, welche Stimmung Farben und Farbklänge in einem Bild erzeugen." }
+        gradeBand: "5-6"
+        requires: [farbkontraste]
+      # HE G9 7.1 genaues Bestimmen beobachteter Farben, Farbmodulation, Licht; BY Ku10 LB1 Lokalfarbe, Erscheinungsfarbe; NW S IF1 Farbfunktionen (Lokal-, Erscheinungsfarbe). Stimmen HE/BY/NW: 7-8 / 9-10 / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires lässt beide zu, die frühere)
+      - id: lokalfarbe-erscheinungsfarbe
+        iCan: { de: "Ich kann die eigene Farbe eines Gegenstands (Lokalfarbe) von der Farbe unterscheiden, die er im Licht zeigt (Erscheinungsfarbe)." }
+        gradeBand: "7-8"
+        requires: [farben-mischen]
+      # HE G9 7.1 Farbe, Farbmodulation, Form, Plastizität; BY Ku8 LB1 malerische Mittel zur Darstellung von Form, Materialität und Beleuchtung; NW S IF1 Licht-Schatten-Modellierung. Stimmen HE/BY/NW: 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: farbmodulation
+        iCan: { de: "Ich kann einen Gegenstand durch fein abgestufte Farbtöne plastisch malen." }
+        gradeBand: "7-8"
+        requires: [lokalfarbe-erscheinungsfarbe, licht-und-schatten]
+      # HE G9 9.1 Farbe als Mittel der Verfremdung, Akzentuierung und der Vermittlung von Stimmungswerten; BY Ku10 LB1 Ausdrucksfarbe; Eigenwert von Farbe; NW S IF1 Farbfunktionen (Ausdrucksfarbe). Stimmen HE/BY/NW: 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: ausdrucksfarbe
+        iCan: { de: "Ich kann Farben unabhängig vom Gegenstand einsetzen, um ein Gefühl auszudrücken (Ausdrucksfarbe)." }
+        gradeBand: "9-10"
+        requires: [farbwirkung, lokalfarbe-erscheinungsfarbe]
+      # HE G9 9.1 Sinnbild und Deutung, sinnbildhafte Darstellungen; BY Ku7 LB1 mittelalterliche Ikonografie: Zuordnung von Farben und Attributen zu Figuren; NW S IF1 Farbfunktionen (Symbolfarbe). Stimmen HE/BY/NW: 9-10 / 7-8 / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires lässt beide zu, die frühere)
+      - id: symbolfarbe
+        iCan: { de: "Ich kann erklären, wofür eine Farbe in einem Bild als Zeichen steht, zum Beispiel Blau für Maria (Symbolfarbe)." }
+        gradeBand: "7-8"
+        requires: [farbwirkung]
+  - id: form-flaeche
+    name: { de: "Form und Fläche", en: "Form and surface" }
+    competencies:
+      # HE G9 5.2 Flächen im Wechselspiel: Figur-Grund; BY Ku7 LB3 Klärung von Figur und Grund; NW E IF1 Figur-Grund-Beziehungen. Stimmen HE/BY/NW: 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      - id: figur-grund
+        iCan: { de: "Ich kann Figur und Grund in einem Bild unterscheiden und gezielt gestalten, auch als Positiv- und Negativform." }
+        gradeBand: "5-6"
+      # HE G9 5.2 Ordnungen, Reihungen, Streuung, Ballung; NW E IF1 Flächenorganisation (Streuung, Reihung, Ballung). Stimmen HE/BY/NW: 5-6 / – / 5-6 -> 5-6 (Mehrheit)
+      - id: streuung-reihung-ballung
+        iCan: { de: "Ich kann Formen auf einer Fläche streuen, reihen oder ballen und die Wirkung vergleichen." }
+        gradeBand: "5-6"
+      # HE G9 5.2 Fläche und Umriss, Flächengliederung; BY Ku5 LB1 Platzierung und Größe der Bildgegenstände im Format; Ku6 LB1 Platzierung; NW E IF1 Mittel der Flächenorganisation. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: platzierung-im-format
+        iCan: { de: "Ich kann Bildgegenstände bewusst im Format platzieren und ihre Größe so wählen, dass das Wichtige auffällt." }
+        gradeBand: "5-6"
+        requires: [figur-grund]
+      # BY Ku6 LB1 Ansicht, Platzierung und Bildausschnitt; NW E IF3 Fotografie (Narration). Stimmen HE/BY/NW: – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: bildausschnitt-und-ansicht
+        iCan: { de: "Ich kann einen Bildausschnitt und eine Ansicht wählen, die die Wirkung eines Bildes steigern." }
+        gradeBand: "5-6"
+        requires: [platzierung-im-format]
+      # BY Ku9 LB1 Komposition (Bildaufbau); NW S IF1 Ordnungsprinzipien (Symmetrie, Asymmetrie). Stimmen HE/BY/NW: – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: symmetrie-asymmetrie
+        iCan: { de: "Ich kann symmetrische und asymmetrische Bildordnungen unterscheiden und ihre Wirkung beschreiben." }
+        gradeBand: "9-10"
+        requires: [streuung-reihung-ballung]
+      # HE G9 9.2 Arrangement, Komposition und Kontext; BY Ku9 LB1 Bildaufbau, Blickachsen, Kompositionslinien; NW S IF1 Richtungsbezüge. Stimmen HE/BY/NW: 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: richtungen-im-bild
+        iCan: { de: "Ich kann Richtungen und Kompositionslinien in einem Bild finden und zeigen, wie sie den Blick lenken." }
+        gradeBand: "9-10"
+        requires: [symmetrie-asymmetrie]
+      # HE G9 5.2 Entwicklung eines Formrepertoires; BY Ku9 LB2 geometrische und florale bzw. organische Formen; NW E IF1 Form: tektonische und organische Formen, Formkontraste und Formverwandtschaften. Stimmen HE/BY/NW: 5-6 / 9-10 / 5-6 -> 5-6 (Mehrheit)
+      - id: formeigenschaften
+        iCan: { de: "Ich kann geometrische (tektonische) und organische Formen unterscheiden und Formverwandtschaften und Formkontraste erkennen." }
+        gradeBand: "5-6"
+      # BY Ku6 LB2 Relief, Ornament, Dekor; Ku9 LB2 Muster, Ornament; NW E IF1 Reihung als Mittel der Flächenorganisation. Stimmen HE/BY/NW: – / 5-6 / 5-6 -> 5-6 (Mehrheit). SCHWACH BELEGT: NW nennt nur die Reihung; das Ornament selbst ist nur in BY verbindlich (in HE G9 5.2 fakultativ)
+      - id: ornament-und-muster
+        iCan: { de: "Ich kann ein Ornament oder Muster aus einer Grundform durch Wiederholen und Spiegeln entwickeln." }
+        gradeBand: "5-6"
+        requires: [streuung-reihung-ballung, formeigenschaften]
+      # HE G9 6.2 Bewegungsdarstellung der zeichnerischen Spur, Auflösung der statischen Ordnung; BY Ku9 LB1 menschliche Figur in Posen und in Bewegung; NW E IF1 Linie als Bewegungsspur. Stimmen HE/BY/NW: 5-6 / 9-10 / 5-6 -> 5-6 (Mehrheit)
+      - id: bewegung-darstellen
+        iCan: { de: "Ich kann Bewegung auf einer Fläche darstellen, zum Beispiel durch schräge Richtungen, Wiederholung und Bewegungsspuren." }
+        gradeBand: "5-6"
+        requires: [punkt-und-linie]
+  - id: raum
+    name: { de: "Raum, Körper und Perspektive", en: "Space, body and perspective" }
+    competencies:
+      # HE G9 5.2 Flächen im Wechselspiel: Staffelung; BY Ku5 LB1 Trennung von Vordergrund und Hintergrund; NW E IF1 raumillusionierende Mittel auf der Fläche. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: vordergrund-hintergrund
+        iCan: { de: "Ich kann in einem Bild Vordergrund, Mittelgrund und Hintergrund trennen." }
+        gradeBand: "5-6"
+      # HE G9 5.2 Überlagern und teilweises Verdecken, Staffelung; BY Ku6 LB1 Staffelung, Überschneidung; NW E IF1 Überdeckung. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: ueberdeckung
+        iCan: { de: "Ich kann durch Überdecken (Überschneiden) und Staffeln Raum auf der Fläche darstellen." }
+        gradeBand: "5-6"
+        requires: [vordergrund-hintergrund]
+      # HE G9 6.2 räumliche Strukturen wie Staffelung; BY Ku6 LB1 Größenverhältnisse; NW E IF1 Größenabnahme. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: groessenabnahme
+        iCan: { de: "Ich kann Raum darstellen, indem ich Dinge in der Ferne kleiner zeichne." }
+        gradeBand: "5-6"
+        requires: [vordergrund-hintergrund]
+      # BY Ku5 LB1 Platzierung der Bildgegenstände im Format; NW E IF1 Höhenlage. Stimmen HE/BY/NW: – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: hoehenlage
+        iCan: { de: "Ich kann Raum darstellen, indem ich Dinge in der Ferne höher im Bild anordne (Höhenlage)." }
+        gradeBand: "5-6"
+        requires: [vordergrund-hintergrund]
+      # HE G9 9.2 Parallel- und Fluchtpunktperspektive im Bildzusammenhang; BY Ku6 LB1 Grundlagen der Parallelperspektive; Ku7 LB1 Parallelperspektive differenziert, auch verschachtelte Formen; NW S IF1 Parallelperspektive. Stimmen HE/BY/NW: 9-10 / 5-6 / 7-10 -> 9-10 (Mehrheit)
+      - id: parallelperspektive
+        iCan: { de: "Ich kann Körper wie Würfel und Häuser in Parallelperspektive zeichnen." }
+        gradeBand: "9-10"
+        requires: [ueberdeckung]
+      # HE G9 9.2 Fluchtpunktperspektive; BY Ku8 LB1 Zentralperspektive mit Fluchtpunkt, Fluchtlinien und Horizont, Betrachterstandpunkt; NW S IF1 Ein-Fluchtpunktperspektive. Stimmen HE/BY/NW: 9-10 / 7-8 / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires lässt beide zu, die frühere)
+      - id: horizont-und-fluchtpunkt
+        iCan: { de: "Ich kann Horizont, Augenhöhe, Fluchtpunkt und Fluchtlinien in einem Bild finden und erklären, wo der Betrachter steht." }
+        gradeBand: "7-8"
+        requires: [groessenabnahme]
+      # HE G9 9.2 Fluchtpunktperspektive im Bildzusammenhang; BY Ku8 LB1 Gesetzmäßigkeiten der Zentralperspektive einsetzen; NW S IF1 Ein-Fluchtpunktperspektive. Stimmen HE/BY/NW: 9-10 / 7-8 / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires lässt beide zu, die frühere)
+      - id: zentralperspektive
+        iCan: { de: "Ich kann einen Raum oder eine Straße mit einem Fluchtpunkt zeichnen." }
+        gradeBand: "7-8"
+        requires: [horizont-und-fluchtpunkt]
+      # HE G9 9.2 Fluchtpunktperspektive; NW S IF1 Zwei-Fluchtpunktperspektive. Stimmen HE/BY/NW: 9-10 / – / 7-10 -> 9-10 (Mehrheit)
+      - id: zwei-fluchtpunkte
+        iCan: { de: "Ich kann einen Körper über Eck mit zwei Fluchtpunkten zeichnen." }
+        gradeBand: "9-10"
+        requires: [zentralperspektive]
+      # HE G9 7.1 Räumlichkeit und Plastizität, Licht; 9.2 Licht / Schatten; BY Ku7 LB1 Lichtwirkung; Ku8 LB1 Beleuchtung; NW S IF1 Licht-Schatten-Modellierung. Stimmen HE/BY/NW: 7-8 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: licht-und-schatten
+        iCan: { de: "Ich kann Eigenschatten und Schlagschatten unterscheiden und einen Körper durch Licht und Schatten plastisch wirken lassen." }
+        gradeBand: "7-8"
+      # HE G9 9.1 Farb- und Luftperspektive: Trübung, Unschärfe, Verblauung, Abnahme der Kontrastintensität; BY Ku10 LB1 Luftperspektive, Unschärfe und Verblauen; NW S IF1 Luftperspektive. Stimmen HE/BY/NW: 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: luftperspektive
+        iCan: { de: "Ich kann Ferne darstellen, indem ich Farben und Kontraste nach hinten blasser, bläulicher und unschärfer werden lasse (Luftperspektive)." }
+        gradeBand: "9-10"
+        requires: [vordergrund-hintergrund, farbeigenschaften]
+      # HE G9 9.1 Farb- und Luftperspektive; BY Ku10 LB1 Farbperspektive; NW S IF1 Farbperspektive. Stimmen HE/BY/NW: 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: farbperspektive
+        iCan: { de: "Ich kann mit warmen Farben vorn und kalten Farben hinten Raumtiefe erzeugen (Farbperspektive)." }
+        gradeBand: "9-10"
+        requires: [kalt-warm-kontrast, vordergrund-hintergrund]
+      # HE G9 6.2 zeichnerisches Präzisieren: Proportionen; BY Ku6 LB1 einfache Proportionsschemata für den menschlichen Körper; NW S IF1 Raum: Proportion. Stimmen HE/BY/NW: 5-6 / 5-6 / 7-10 -> 5-6 (Mehrheit)
+      - id: koerperproportionen
+        iCan: { de: "Ich kann einen menschlichen Körper nach einem einfachen Proportionsschema zeichnen, zum Beispiel mit Kopfmaßen." }
+        gradeBand: "5-6"
+      # HE G9 7.2 zeichnerische Untersuchung des menschlichen Kopfes (Grundform, Merkmale, Individualität); BY Ku6 LB1 Proportionsschemata für das Gesicht; NW S IF1 Raum: Proportion. Stimmen HE/BY/NW: 7-8 / 5-6 / 7-10 -> 7-8 (Mehrheit)
+      - id: gesichtsproportionen
+        iCan: { de: "Ich kann einen Kopf von vorn in seinen Proportionen zeichnen, zum Beispiel mit den Augen auf halber Höhe." }
+        gradeBand: "7-8"
+        requires: [koerperproportionen]
+      # HE G9 9.1 Ausdrucksmerkmale wie Pose, Haltung; BY Ku9 LB1 menschliche Figur in Posen und in Bewegung, perspektivische Verkürzungen. Stimmen HE/BY/NW: 9-10 / 9-10 / – -> 9-10 (Mehrheit)
+      - id: figur-in-bewegung
+        iCan: { de: "Ich kann eine menschliche Figur in einer Pose oder Bewegung zeichnen, auch mit Verkürzungen." }
+        gradeBand: "9-10"
+        requires: [koerperproportionen, bewegung-darstellen]
+  - id: zeichnung-druck
+    name: { de: "Zeichnung und Druckgrafik", en: "Drawing and printmaking" }
+    competencies:
+      # HE G9 5.2 Ausdrucksqualitäten zeichnerischer Spuren; BY Ku5 LB1 Zeichenmaterialien und Werkzeuge; Ku7 LB1 Eigenschaften und Ausdrucksqualitäten unterschiedlicher Zeichenmaterialien; NW E IF1 Materialien und zeichnerische Verfahren (korrigierbar und nicht korrigierbar). Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: zeichenmaterial
+        iCan: { de: "Ich kann Zeichenmittel wie Bleistift, Kohle, Kreide und Tusche nach ihrer Wirkung unterscheiden und passend auswählen." }
+        gradeBand: "5-6"
+      # HE G9 5.2 Linie, Zeichnung; NW E IF1 Grundelemente (Punkte, Linien). Stimmen HE/BY/NW: 5-6 / – / 5-6 -> 5-6 (Mehrheit)
+      - id: punkt-und-linie
+        iCan: { de: "Ich kann mit Punkten und Linien verschiedener Art zeichnen und ihre Wirkung beschreiben." }
+        gradeBand: "5-6"
+        requires: [zeichenmaterial]
+      # HE G9 6.2 zeichnerisches Präzisieren: Proportionen, Konturen; BY Ku7 LB1 Einsatz von Konturlinie; NW E IF1 Linie (Kontur, Binnenstruktur und Bewegungsspur). Stimmen HE/BY/NW: 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      - id: kontur-und-binnenstruktur
+        iCan: { de: "Ich kann den Umriss (Kontur) und die Linien im Inneren einer Form (Binnenstruktur) zeichnen." }
+        gradeBand: "5-6"
+        requires: [punkt-und-linie]
+      # HE G9 5.2 Oberflächenstruktur / Texturen; BY Ku7 LB1 Oberflächen zeichnerisch darstellen; NW E IF1 optische und haptische Materialeigenschaften (Oberflächenbeschaffenheiten). Stimmen HE/BY/NW: 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      - id: texturen-zeichnen
+        iCan: { de: "Ich kann Oberflächen wie Holz, Fell oder Stein mit zeichnerischen Strukturen darstellen." }
+        gradeBand: "5-6"
+        requires: [punkt-und-linie]
+      # HE G9 6.2 zeichnerisches Präzisieren von Beobachtungen, sachbezogene Zeichnung; BY Ku7 LB1 die sichtbare Wirklichkeit genau beobachten; NW S IF3 Dokumentation: abbildhafte Wiedergabe von äußerer Wirklichkeit. Stimmen HE/BY/NW: 5-6 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: beobachtend-zeichnen
+        iCan: { de: "Ich kann einen Gegenstand genau beobachten und sachlich richtig zeichnen." }
+        gradeBand: "7-8"
+        requires: [kontur-und-binnenstruktur]
+      # HE G9 9.2 Plastizität mit grafischen Mitteln verdeutlichen; BY Ku7 LB1 grafische Techniken zur abbildhaften Darstellung, z. B. Schraffur; NW S IF1 Formstrukturen (Arten von Liniengefügen). Stimmen HE/BY/NW: 9-10 / 7-8 / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires lässt beide zu, die frühere)
+      - id: schraffur
+        iCan: { de: "Ich kann mit Schraffur und Kreuzschraffur Helligkeit, Volumen und Oberfläche darstellen." }
+        gradeBand: "7-8"
+        requires: [kontur-und-binnenstruktur, licht-und-schatten]
+      # HE G9 5.3 Planen von Gestaltungsvorhaben (Zeichnungen); 7.2 Zeichnen als Form des Planens; BY Ku9 LB1 mithilfe von Skizzen; NW E IF2 Bildstrategien: planvoll-strukturierend. Stimmen HE/BY/NW: 5-6 / 9-10 / 5-6 -> 5-6 (Mehrheit)
+      - id: skizze-und-entwurf
+        iCan: { de: "Ich kann ein Vorhaben mit Skizzen planen und daraus einen Entwurf machen." }
+        gradeBand: "5-6"
+        requires: [punkt-und-linie]
+      # BY Ku10 LB3 erklärende Zeichnung, Gebrauchsanleitung und Explosionszeichnung; NW S IF3 Dokumentation: sachbezogen-wertneutrale Wiedergabe. Stimmen HE/BY/NW: – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: erklaerende-zeichnung
+        iCan: { de: "Ich kann einen Ablauf oder den Aufbau eines Geräts mit einer erklärenden Zeichnung darstellen, zum Beispiel als Explosionszeichnung." }
+        gradeBand: "9-10"
+        requires: [beobachtend-zeichnen]
+      # HE G9 5.2 Erzählbilder, Bildergeschichten; BY Ku6 LB3 Text-Bild-Kombinationen, z. B. Bildergeschichten; NW E IF3 Narration: Darstellung von Handlungsabläufen. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: bildergeschichte
+        iCan: { de: "Ich kann eine Handlung in einer Bildfolge erzählen, zum Beispiel als Bildergeschichte oder Comic." }
+        gradeBand: "5-6"
+        requires: [erzaehlende-bilder]
+      # BY Ku7 LB3 Hoch-, Tief- oder Siebdruck erstellen; NW S IF1 Möglichkeiten des Hochdrucks. Stimmen HE/BY/NW: – / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: hochdruck
+        iCan: { de: "Ich kann das Prinzip des Hochdrucks erklären und einen einfachen Druck herstellen, zum Beispiel mit Stempel oder Moosgummi." }
+        gradeBand: "7-8"
+        requires: [figur-grund]
+      # BY Ku7 LB3 Organisation der Bildfläche, Reduktion von Formen auf Wesentliches, Verhältnis von Linie zu Fläche; NW S IF1 Variationen und Ausdrucksmöglichkeiten des Hochdrucks. Stimmen HE/BY/NW: – / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: linolschnitt
+        iCan: { de: "Ich kann einen Linolschnitt planen und drucken und dabei Formen auf das Wesentliche vereinfachen." }
+        gradeBand: "7-8"
+        requires: [hochdruck]
+      # BY Ku9 LB2 Materialdruck; NW S IF1 unterschiedliche Materialien und Gegenstände als Druckstock. Stimmen HE/BY/NW: – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: materialdruck
+        iCan: { de: "Ich kann Materialien und Gegenstände als Druckstock nutzen und ihre Spuren gestalterisch einsetzen." }
+        gradeBand: "9-10"
+        requires: [hochdruck]
+      # BY Ku7 LB3 elementare Kenntnisse zu Prinzipien unterschiedlicher Drucktechniken; NW S IF1 Ausdrucksqualitäten von druckgrafischen Gestaltungen. Stimmen HE/BY/NW: – / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: druckverfahren
+        iCan: { de: "Ich kann Hochdruck, Tiefdruck und Siebdruck nach ihrem Prinzip unterscheiden." }
+        gradeBand: "7-8"
+        requires: [hochdruck]
+      # HE KC Kap. 6 Distributions- und Präsentationsformen: Vervielfältigung durch Druck, Einstellen ins Internet; BY Ku7 LB3 Buchdruck (Gutenberg) im Vergleich zur Digitalisierung der Bilder; Reproduzierbarkeit. Stimmen HE/BY/NW: 7-10 / 7-8 / – -> 7-8 (Mehrheit)
+      - id: vervielfaeltigung
+        iCan: { de: "Ich kann erklären, wie Druck und Digitalisierung das Verbreiten von Bildern verändert haben." }
+        gradeBand: "7-8"
+        requires: [druckverfahren]
+  - id: plastik
+    name: { de: "Plastik, Objekt und Material", en: "Sculpture, object and material" }
+    competencies:
+      # HE G9 6.3 materialabhängiger Entstehungsprozess und Erscheinungsbild; BY Ku5 LB2 Eigenschaften vorgefundener Gegenstände und Materialien, Eignung für gestalterische Vorhaben; NW E IF1 Material: optische und haptische Materialeigenschaften. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: material-erkunden
+        iCan: { de: "Ich kann Materialien nach Aussehen und Gefühl beim Anfassen beschreiben und für ein Vorhaben das passende auswählen." }
+        gradeBand: "5-6"
+      # HE G9 6.3 Aufbauplastik, additive Techniken; Skulptur, subtraktive Techniken; BY Ku5 LB1 plastische Verfahrensweisen; NW E IF1 Plastiken im additiven Verfahren. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: aufbauen-und-abtragen
+        iCan: { de: "Ich kann aufbauende (additive) und abtragende (subtraktive) Verfahren der Plastik unterscheiden." }
+        gradeBand: "5-6"
+        requires: [material-erkunden]
+      # HE G9 5.3 Modellieren: Wegnehmen, Hinzufügen, Gestalten von Oberflächen; 6.3 Tonarbeit; BY Ku5 LB1 figuratives Modellieren mit Ton; NW E IF1 Plastiken im additiven Verfahren. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: modellieren
+        iCan: { de: "Ich kann eine Figur aus Ton modellieren: Grundform, Hinzufügen, Wegnehmen und Oberfläche gestalten." }
+        gradeBand: "5-6"
+        requires: [aufbauen-und-abtragen]
+      # HE G9 6.3 Aufbauplastik aus Ton; BY Ku6 LB2 Aufbau- und Plattentechnik, Ornament, Dekor, Engobe und Glasur. Stimmen HE/BY/NW: 5-6 / 5-6 / – -> 5-6 (Mehrheit). SCHWACH BELEGT: HE nennt nur die Aufbauplastik; Gefäß, Engobe und Glasur nennt nur BY
+      - id: keramik-techniken
+        iCan: { de: "Ich kann ein Gefäß in Aufbau- oder Plattentechnik bauen und Ton durch Engobe oder Glasur gestalten." }
+        gradeBand: "5-6"
+        requires: [modellieren]
+      # HE G9 6.3 Proportion, Oberfläche, Volumen als formsprachliche Ausdrucksmittel; BY Ku5 LB2 Anmutung, Material, Volumen; NW E IF1 Raum: Masse, Gliederung, Oberfläche. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: plastische-mittel
+        iCan: { de: "Ich kann an einer Plastik Masse, Gliederung und Oberfläche beschreiben und ihre Wirkung erklären." }
+        gradeBand: "5-6"
+        requires: [aufbauen-und-abtragen]
+      # HE G9 6.3 Vollplastik – Kleinplastik; BY Ku5 LB1 Reliefs und Plastiken; Ku6 LB1 Statue, Relief. Stimmen HE/BY/NW: 5-6 / 5-6 / – -> 5-6 (Mehrheit)
+      - id: vollplastik-und-relief
+        iCan: { de: "Ich kann Vollplastik und Relief unterscheiden und erklären, von wo man sie betrachten kann." }
+        gradeBand: "5-6"
+        requires: [plastische-mittel]
+      # HE KC Kap. 6 Körper- und Raumbezüge definieren; BY Ku8 LB1 Volumina; Plastik des Barock: Gerichtetheit und Dynamik; NW S IF1 Raum: Masse, Volumen, Körper-Raum-Bezug, Proportion. Stimmen HE/BY/NW: 7-10 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: koerper-und-raum
+        iCan: { de: "Ich kann beschreiben, wie eine Plastik den Raum um sich herum einnimmt, zum Beispiel offen, geschlossen oder bewegt." }
+        gradeBand: "7-8"
+        requires: [plastische-mittel]
+      # BY Ku9 LB2 Collage- und Zufallsverfahren; Ku10 LB1 Collagieren; NW E IF1 Ausdrucksqualitäten von Materialeigenschaften in Collagen. Stimmen HE/BY/NW: – / 9-10 / 5-6 -> 5-6 (Gleichstand 5-6/9-10; requires lässt beide zu, die frühere)
+      - id: collage
+        iCan: { de: "Ich kann aus ausgeschnittenen Papieren und Bildteilen eine Collage gestalten." }
+        gradeBand: "5-6"
+        requires: [material-erkunden]
+      # BY Ku5 LB2 Montage aus Fundstücken; NW E IF1 neue Form-Inhalts-Gefüge, auch unabhängig von der ursprünglichen Funktion eines Gegenstandes; Assemblagen. Stimmen HE/BY/NW: – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: assemblage
+        iCan: { de: "Ich kann aus gefundenen Gegenständen ein neues Objekt bauen und ihm so eine neue Bedeutung geben." }
+        gradeBand: "5-6"
+        requires: [material-erkunden]
+      # HE G9 5.3 Erstellen eines Spielobjekts: Spielpuppen oder Masken; Typisieren und Übertreiben; BY Ku5 LB3 fantasievolle Figuren für Puppen- oder Schattenspiel. Stimmen HE/BY/NW: 5-6 / 5-6 / – -> 5-6 (Mehrheit)
+      - id: spielfigur
+        iCan: { de: "Ich kann eine Spielfigur oder Maske bauen, deren Ausdruck durch Übertreiben und Typisieren deutlich wird." }
+        gradeBand: "5-6"
+        requires: [modellieren]
+  - id: foto-film
+    name: { de: "Fotografie, Film und Aktion", en: "Photography, film and performance" }
+    competencies:
+      # HE G9 9.1 Fotografie; ÜP digitale Bildbearbeitung; BY Ku6 LB3 elementare fotografische Gestaltungsmittel; Ku9 LB3 Standpunkt, Perspektive; NW E IF3 Fotografie. Stimmen HE/BY/NW: 9-10 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: kamerastandpunkt
+        iCan: { de: "Ich kann Normalsicht, Froschperspektive und Vogelperspektive unterscheiden und ihre Wirkung beschreiben." }
+        gradeBand: "5-6"
+      # BY Ku6 LB3 elementare fotografische bzw. filmische Gestaltungsmittel; Ku9 LB3 Bildausschnitt; NW E IF3 Fotografie. Stimmen HE/BY/NW: – / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: einstellungsgroessen
+        iCan: { de: "Ich kann Einstellungsgrößen wie Totale, Halbnah, Nah und Detail unterscheiden und gezielt wählen." }
+        gradeBand: "5-6"
+        requires: [bildausschnitt-und-ansicht]
+      # HE G9 9.1 Fotografie (sinnbildhafte Darstellung); BY Ku9 LB3 Lichtführung; NW S IF3 Fotografie. Stimmen HE/BY/NW: 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: licht-in-der-fotografie
+        iCan: { de: "Ich kann Licht in einem Foto gezielt führen, zum Beispiel als Gegenlicht oder Seitenlicht, und die Wirkung beschreiben." }
+        gradeBand: "9-10"
+        requires: [kamerastandpunkt, licht-und-schatten]
+      # BY Ku9 LB3 Tiefenschärfe, Blende, Brennweite, Belichtungszeit; NW S IF3 Fotografie. Stimmen HE/BY/NW: – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: schaerfe-und-blende
+        iCan: { de: "Ich kann erklären, wie Blende, Brennweite und Belichtungszeit Schärfe und Bewegung in einem Foto verändern." }
+        gradeBand: "9-10"
+        requires: [einstellungsgroessen]
+      # HE G9 9.1 Ausdrucksmerkmale wie Pose und Attribut (Mimik, Gestik, Haltung, Kleidung); BY Ku6 LB3 Standbilder; Körpersprache, Bewegung, Gestik und Mimik als Ausdrucksmittel. Stimmen HE/BY/NW: 9-10 / 5-6 / – -> 5-6 (Gleichstand 5-6/9-10; requires lässt beide zu, die frühere)
+      - id: koerpersprache
+        iCan: { de: "Ich kann Mimik, Gestik und Körperhaltung in einem Standbild oder Foto gezielt als Ausdrucksmittel einsetzen." }
+        gradeBand: "5-6"
+      # HE G9 9.1 Pose und Attribut, Arrangement und Komposition menschlicher Figuren (auch Fotografie); BY Ku9 LB3 sich selbst inszenieren und fotografieren; Gestaltungsmittel der Inszenierung; NW S IF3 Fotografie: Persuasion. Stimmen HE/BY/NW: 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: inszenierte-fotografie
+        iCan: { de: "Ich kann ein Foto inszenieren und dabei Pose, Kleidung, Requisit und Kulisse gezielt einsetzen." }
+        gradeBand: "9-10"
+        requires: [koerpersprache, licht-in-der-fotografie]
+      # BY Ku10 LB3 Fotografien zwischen Dokumentation und Inszenierung, Wahrheitsgehalt; Presse- und Werbefotografie; NW S IF3 Dokumentation und Persuasion. Stimmen HE/BY/NW: – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: dokumentation-und-inszenierung
+        iCan: { de: "Ich kann dokumentarische und inszenierte Fotos unterscheiden und ihren Wahrheitsgehalt bewerten, zum Beispiel bei Presse- und Werbefotos." }
+        gradeBand: "9-10"
+        requires: [inszenierte-fotografie]
+      # HE G9 9.1, 9.2 Formen digitaler Bildbearbeitung; ÜP digitale Bildbearbeitung; BY Ku10 LB3 Werkzeuge der digitalen oder analogen Bildbearbeitung; NW S Produktion: digitale Werkzeuge zur Erzeugung und Bearbeitung von Bildern; IF1 Flächenorganisation auch mit digitalen Bildbearbeitungsprogrammen. Stimmen HE/BY/NW: 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: digitale-bildbearbeitung
+        iCan: { de: "Ich kann ein Foto mit einem Bildbearbeitungsprogramm verändern, zum Beispiel Ausschnitt, Helligkeit und Farbe, auch mit Ebenen." }
+        gradeBand: "9-10"
+        requires: [einstellungsgroessen]
+      # HE ÜP Auseinandersetzung mit Bildbearbeitung und Bildverarbeitung, Herstellung visueller Nachrichten; BY Ku10 LB3 Wahrheitsgehalt von Fotografien; NW S IF3 Persuasion: offensichtliche bzw. verdeckte Beeinflussung. Stimmen HE/BY/NW: 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: bildmanipulation
+        iCan: { de: "Ich kann erkennen, wie Fotos durch Bearbeitung verändert werden, und bewerten, wann das täuscht." }
+        gradeBand: "9-10"
+        requires: [digitale-bildbearbeitung, dokumentation-und-inszenierung]
+      # BY Ku6 LB3 Spielszenen filmisch dokumentieren, elementare filmische Gestaltungsmittel; NW S IF3 Film. Stimmen HE/BY/NW: – / 5-6 / 7-10 -> 5-6 (Gleichstand 5-6/7-8/9-10; requires lässt alle zu, die frühere)
+      - id: kamerabewegung
+        iCan: { de: "Ich kann Kamerabewegungen wie Schwenk, Fahrt und Zoom im Film erkennen und ihre Wirkung beschreiben." }
+        gradeBand: "5-6"
+        requires: [einstellungsgroessen]
+      # BY Ku5 LB3 szenisches Spiel und Dramaturgie, ggf. elementare filmische Gestaltungsmittel [nur Hinweis, keine Stimme]; NW S IF1 Zeit: Beschleunigung, Verlangsamung, Rhythmisierung; IF3 Film. Stimmen HE/BY/NW: – / – / 7-10 -> 7-8 (festgelegt: nur NW stimmt (Stufe 7-10); requires kamerabewegung (5-6) lässt beide Stufen zu, die frühere). SCHWACH BELEGT: Schnitt und Zeit nennt nur NW verbindlich; BY nennt filmische Mittel in Jg 5 nur als Möglichkeit („ggf.“)
+      - id: filmschnitt
+        iCan: { de: "Ich kann erklären, wie Schnitt, Zeitlupe und Zeitraffer das Tempo und die Wirkung eines Films verändern." }
+        gradeBand: "7-8"
+        requires: [kamerabewegung]
+      # HE KC Kap. 6 Bilderfindung: performative Strategien einer erweiterten künstlerischen Praxis; BY Ku9 LB3 Performance, Aktionskunst oder Videokunst; Interaktion zwischen Akteur und Publikum; NW S IF3 Aktion: performative Ausdrucksmittel. Stimmen HE/BY/NW: 7-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: aktionskunst
+        iCan: { de: "Ich kann an Beispielen erklären, wie Künstlerinnen und Künstler in Performance und Aktionskunst ihren Körper, Zeit und Raum als Material nutzen." }
+        gradeBand: "9-10"
+        requires: [koerpersprache]
+      # BY Ku9 LB3 Recht am eigenen Bild, Recht auf informationelle Selbstbestimmung; NW S IF2 rechtliche Grundlagen des Persönlichkeitsrechts (u. a. Bildrecht). Stimmen HE/BY/NW: – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: recht-am-eigenen-bild
+        iCan: { de: "Ich kann erklären, was das Recht am eigenen Bild bedeutet, und danach entscheiden, welche Fotos ich zeigen darf." }
+        gradeBand: "9-10"
+      # HE KC Kap. 6 visuelle Alltags- und Jugendkultur erkunden; Wirkung des eigenen Auftretens beschreiben und bewerten; BY Ku9 LB3 Selbstinszenierungen in Jugendkulturen; Formen der Selbstdarstellung im Internet; NW S Produktion: Plattformen zur Präsentation, Kommunikation und Interaktion. Stimmen HE/BY/NW: 7-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: selbstdarstellung-online
+        iCan: { de: "Ich kann Selbstdarstellungen im Internet und in Jugendkulturen untersuchen und bewerten, wie sie wirken sollen." }
+        gradeBand: "9-10"
+        requires: [inszenierte-fotografie, recht-am-eigenen-bild]
+  - id: architektur-design
+    name: { de: "Architektur und Design", en: "Architecture and design" }
+    competencies:
+      # HE KC Kap. 6 Gesamtrahmen Architektur / Design (G9 7.3 nur Architekturphantasien im Modellbau); BY Ku6 LB2 einfache Untersuchungskriterien für Architektur: Außen- und Innenraum, Material und Konstruktion, Stilmerkmale; NW S IF3 Architektur. Stimmen HE/BY/NW: 7-10 / 5-6 / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires lässt beide zu, die frühere)
+      - id: bauwerk-untersuchen
+        iCan: { de: "Ich kann ein Bauwerk nach Außenraum und Innenraum, Material, Konstruktion und Funktion beschreiben." }
+        gradeBand: "7-8"
+        requires: [material-erkunden]
+      # BY Ku8 LB2 Grundriss, Schnitt, Ansicht; NW S IF3 architektonische Ausdrucksmittel. Stimmen HE/BY/NW: – / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: grundriss-und-ansicht
+        iCan: { de: "Ich kann Grundriss, Schnitt und Ansicht eines Gebäudes oder Raums lesen und zeichnen." }
+        gradeBand: "7-8"
+        requires: [bauwerk-untersuchen]
+      # HE G9 7.3 Modellbau als Konkretisierung eigener Vorstellungen; BY Ku5 LB2 architektonische Modelle; Ku8 LB2 Modellbautechniken (Zuschnitt, Montage); NW S IF3 plastische bzw. architektonische Ausdrucksmittel. Stimmen HE/BY/NW: 7-8 / 5-6 / 7-10 -> 7-8 (Mehrheit)
+      - id: architekturmodell
+        iCan: { de: "Ich kann ein Modell eines Gebäudes oder Raums aus Pappe, Holz oder anderen Materialien bauen." }
+        gradeBand: "7-8"
+        requires: [material-erkunden]
+      # HE KC Kap. 6 Architektur / Design; BY Ku8 LB2 Innenarchitektur und Raumgestaltung; NW S IF3 Architektur. Stimmen HE/BY/NW: 7-10 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: innenraum-gestalten
+        iCan: { de: "Ich kann einen Innenraum für bestimmte Nutzer entwerfen und dabei Licht, Proportion, Material und Ausstattung bedenken." }
+        gradeBand: "7-8"
+        requires: [grundriss-und-ansicht, architekturmodell]
+      # HE G9 9.3 Form und Funktion: Bedingungsgefüge zwischen ästhetischer, funktionaler und materialer Gestaltung; BY Ku10 LB2 Designobjekte hinsichtlich Ästhetik und Funktionen; ästhetische, praktische, symbolische Funktionen. Stimmen HE/BY/NW: 9-10 / 9-10 / – -> 9-10 (Mehrheit)
+      - id: form-und-funktion
+        iCan: { de: "Ich kann an Gebrauchsgegenständen erklären, wie Form, Funktion und Material zusammenhängen." }
+        gradeBand: "9-10"
+        requires: [material-erkunden]
+      # HE G9 9.3 Idee, Planung, Entwurf und Herstellung eines Designobjektes; BY Ku7 LB2 funktionale oder fantastische Apparate bzw. Objekte entwickeln und bauen; Ku9 LB2 Mode oder Schmuck entwerfen. Stimmen HE/BY/NW: 9-10 / 7-8 / – -> 9-10 (Gleichstand 7-8/9-10; requires entscheidet (form-und-funktion))
+      - id: designobjekt-entwerfen
+        iCan: { de: "Ich kann einen Gebrauchsgegenstand entwerfen: Idee, Skizzen, Modell und Prototyp." }
+        gradeBand: "9-10"
+        requires: [form-und-funktion, skizze-und-entwurf]
+      # HE G9 9.3 technische, gesellschaftliche und ökologische Funktionalität; Objekte vergleichen und beurteilen; BY Ku10 LB2 soziale Fragen und Aspekte von Nachhaltigkeit. Stimmen HE/BY/NW: 9-10 / 9-10 / – -> 9-10 (Mehrheit)
+      - id: design-bewerten
+        iCan: { de: "Ich kann ein Produkt nach Aussehen, Nutzen, sozialen Folgen und Nachhaltigkeit bewerten." }
+        gradeBand: "9-10"
+        requires: [form-und-funktion]
+      # HE G9 9.3 Designobjekte aus verschiedenen Epochen (Jugendstil, Bauhaus, zeitgenössische Beispiele); BY Ku10 LB2 industrielle Produktion versus Unikat; Spannungsfeld zwischen industrieller Produktion und handwerklicher Fertigung. Stimmen HE/BY/NW: 9-10 / 9-10 / – -> 9-10 (Mehrheit)
+      - id: unikat-und-serie
+        iCan: { de: "Ich kann am Beispiel von Jugendstil und Bauhaus erklären, wie sich handwerklich gefertigte Einzelstücke und Industrieprodukte unterscheiden." }
+        gradeBand: "9-10"
+        requires: [form-und-funktion]
+      # HE KC Kap. 6 Zeichencharakter von Design, Kleidung, Gestik und Mimik erkennen und erläutern; BY Ku9 LB2 Bekleidung, Schmuck und Ornament aus verschiedenen Zeiten und Kulturkreisen. Stimmen HE/BY/NW: 7-10 / 9-10 / – -> 9-10 (Mehrheit)
+      - id: kleidung-als-zeichen
+        iCan: { de: "Ich kann erklären, was Kleidung, Schmuck und Mode über Menschen mitteilen, auch in verschiedenen Zeiten und Kulturen." }
+        gradeBand: "9-10"
+      # HE G9 7.2 Bedeutungszusammenhang von Schrift und Bild; BY Ku5 LB3 Schreibschrift, Schmuckschrift, Bilderschrift; Ku6 LB3 Grundbegriffe der Typografie, Versalschrift; NW S IF3 Grafik: Persuasion. Stimmen HE/BY/NW: 7-8 / 5-6 / 7-10 -> 7-8 (Mehrheit)
+      - id: schrift-und-wirkung
+        iCan: { de: "Ich kann Schriften nach Form und Wirkung unterscheiden und eine Schrift wählen, die zur Botschaft passt." }
+        gradeBand: "7-8"
+      # HE G9 7.2 Plakat- und Anzeigengestaltung, Bedeutungszusammenhang von Schrift und Bild; BY Ku6 LB3 Text-Bild-Kombinationen, z. B. Plakate; Ku8 LB3 Schriftzüge, Plakate oder Logos; NW S IF3 Grafik: Persuasion. Stimmen HE/BY/NW: 7-8 / 5-6 / 7-10 -> 7-8 (Mehrheit)
+      - id: plakat-gestalten
+        iCan: { de: "Ich kann ein Plakat gestalten, auf dem Bild und Schrift zusammen eine klare Botschaft geben." }
+        gradeBand: "7-8"
+        requires: [schrift-und-wirkung, platzierung-im-format]
+      # HE KC Kap. 6 Zeichencharakter von Design erkennen und erläutern; BY Ku8 LB3 Logos; Kriterien des Kommunikationsdesigns: Verständlichkeit, Unverwechselbarkeit, Einprägsamkeit. Stimmen HE/BY/NW: 7-10 / 7-8 / – -> 7-8 (Mehrheit)
+      - id: logo-und-marke
+        iCan: { de: "Ich kann ein Logo entwerfen, das einfach, unverwechselbar und gut zu merken ist." }
+        gradeBand: "7-8"
+        requires: [schrift-und-wirkung, formeigenschaften]
+      # HE KC Kap. 6 Wirkungsabsichten und funktionale Gesichtspunkte erkennen, beschreiben und bewerten; BY Ku8 LB3 Form-Inhalt-Relation im Kommunikationsdesign: Botschaft, Medium, Sender, Empfänger; NW S IF3 Persuasion: Beeinflussung von Rezipientinnen und Rezipienten. Stimmen HE/BY/NW: 7-10 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: kommunikationsdesign
+        iCan: { de: "Ich kann an einem Beispiel aus Werbung oder Information Sender, Botschaft, Medium und Empfänger benennen." }
+        gradeBand: "7-8"
+        requires: [plakat-gestalten]
+      # HE KC Kap. 6 Wirkungsabsichten bewerten; BY Ku8 LB3 Beitrag zur Meinungsbildung und Markenkommunikation bewerten; NW S IF3 Persuasion: Potenzial von Gestaltungen zur bewussten Beeinflussung bewerten. Stimmen HE/BY/NW: 7-10 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: werbung-durchschauen
+        iCan: { de: "Ich kann zeigen, mit welchen Bildmitteln Werbung mich beeinflussen will, und das bewerten." }
+        gradeBand: "7-8"
+        requires: [kommunikationsdesign]
+  - id: bildstrategien
+    name: { de: "Bildideen und Bildstrategien", en: "Ideas and strategies for images" }
+    competencies:
+      # HE G9 5.2 Dingphantasien, Fantasiebilder, Fabelwesen; BY Ku5 LB1 Bildmotive aus Fantasie; NW E IF2 imaginierend; IF3 Fiktion/Vision: Fantasiebildung als Neuschöpfung. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: fantasiebild
+        iCan: { de: "Ich kann ein Fantasiebild erfinden, indem ich Bekanntes neu kombiniere, zum Beispiel zu einem Fabelwesen oder einer unmöglichen Maschine." }
+        gradeBand: "5-6"
+      # HE G9 6.2 Szenen: Verfremden; BY Ku10 LB1 Prinzipien des Verzerrens, Kombinierens oder Collagierens; NW E IF2 Bildstrategien: verfremdend. Stimmen HE/BY/NW: 5-6 / 9-10 / 5-6 -> 5-6 (Mehrheit)
+      - id: verfremden
+        iCan: { de: "Ich kann ein Motiv verfremden, zum Beispiel durch Vergrößern, Verzerren, ungewohnte Farben oder einen fremden Ort." }
+        gradeBand: "5-6"
+      # BY Ku9 LB2 Moodboard; NW E IF2 Bildstrategien: sammelnd. Stimmen HE/BY/NW: – / 9-10 / 5-6 -> 5-6 (Gleichstand 5-6/9-10; requires lässt beide zu, die frühere)
+      - id: sammeln
+        iCan: { de: "Ich kann zu einem Thema Bilder, Dinge und Ideen sammeln und ordnen, zum Beispiel in einem Moodboard." }
+        gradeBand: "5-6"
+      # HE G9 6.1 Farbauftrag: Spritzen, Schmieren, Tupfen, Gießen, Reiben; BY Ku9 LB2 Collage- und Zufallsverfahren; NW S IF2 zufallsgelenkt; planvolles Aufgreifen ästhetischer Zufallsergebnisse. Stimmen HE/BY/NW: 5-6 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: zufallsverfahren
+        iCan: { de: "Ich kann mit Zufallsverfahren wie Frottage, Klecksbild oder Abklatsch arbeiten und aus dem Ergebnis ein Bild entwickeln." }
+        gradeBand: "9-10"
+        requires: [malspuren]
+      # BY Ku10 LB1 Kombinieren oder Collagieren; NW S IF2 Collage und Montage als Denk- und Handlungsprinzip. Stimmen HE/BY/NW: – / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: montage
+        iCan: { de: "Ich kann Bildteile so zu einer Montage verbinden, dass eine neue Aussage entsteht, auch als Fotomontage." }
+        gradeBand: "9-10"
+        requires: [collage]
+      # HE KC Kap. 6 Kunstwerke als bildinspirierende Katalysatoren; Bilder zu Bildern in Beziehung setzen; NW S IF2 Bildzitate; Umdeutung und Umgestaltung historischer Motive. Stimmen HE/BY/NW: 7-10 / – / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires lässt beide zu, die frühere). SCHWACH BELEGT: HE nennt das Zitieren nicht wörtlich, nur Kunstwerke als Anregung für eigene Bilder; BY nennt es nicht
+      - id: bildzitat
+        iCan: { de: "Ich kann ein bekanntes Kunstwerk zitieren und in einen neuen Zusammenhang setzen." }
+        gradeBand: "7-8"
+        requires: [werkvergleich]
+      # HE G9 9.2 Dekonstruktion realistischer Erscheinungsformen; BY Ku10 LB1 naturalistische, verfremdende und abstrahierende Ansätze; Ku7 LB3 Reduktion von Formen auf Wesentliches. Stimmen HE/BY/NW: 9-10 / 9-10 / – -> 9-10 (Mehrheit)
+      - id: abstrahieren
+        iCan: { de: "Ich kann einen Gegenstand schrittweise vereinfachen, bis er abstrakt wird, und erklären, was dabei verloren geht oder gewonnen wird." }
+        gradeBand: "9-10"
+        requires: [verfremden]
+      # HE KC 7.1 Präsentationsformen für Bilder; eigene Bilder angemessen präsentieren; BY Ku7 LB2 präsentieren ihre Ergebnisse; NW S IF2 kontext- und adressatenbezogene Präsentationen. Stimmen HE/BY/NW: 5-6 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: praesentieren
+        iCan: { de: "Ich kann meine Arbeiten für ein bestimmtes Publikum präsentieren, zum Beispiel in einer Mappe, Ausstellung oder online." }
+        gradeBand: "7-8"
+  - id: bildanalyse
+    name: { de: "Bilder beschreiben und deuten", en: "Describing and interpreting images" }
+    competencies:
+      # HE KC 7.1 Eindrücke schildern; BY Ku7 LB1 Werkanalyse: Beschreibung des ersten Eindrucks; NW E IF2 Ersteindrücke beschreiben und in Beziehung zu Gestaltungsmerkmalen setzen. Stimmen HE/BY/NW: 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      - id: ersteindruck
+        iCan: { de: "Ich kann meinen ersten Eindruck von einem Bild in Worte fassen und sagen, was ihn auslöst." }
+        gradeBand: "5-6"
+      # HE KC 7.1 Gesehenes beschreiben; BY Ku5 LB1 Erscheinungsbild mit eigenen Worten sinnvoll gegliedert beschreiben; NW E Rezeption: eigene und fremde Bilder sachangemessen beschreiben. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: bild-beschreiben
+        iCan: { de: "Ich kann ein Bild geordnet beschreiben: was dargestellt ist, wo es steht und wie es aussieht." }
+        gradeBand: "5-6"
+        requires: [ersteindruck]
+      # HE KC 7.1 einzelne Fachbegriffe sachangemessen verwenden; BY Ku7 LB1 Benennung des Materials und der Technik; NW E Rezeption: Bilder sachangemessen beschreiben. Stimmen HE/BY/NW: 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      - id: werkangaben
+        iCan: { de: "Ich kann die Angaben zu einem Werk lesen und nennen: Künstlerin oder Künstler, Titel, Jahr, Technik, Material und Maße." }
+        gradeBand: "5-6"
+      # HE KC 7.1 grundsätzliche Strukturen einer Bildordnung erkennen; BY Ku7 LB1 Klärung des Bildaufbaus bzw. der Formgebung; NW E IF1 Mittel der Flächenorganisation in Bildern erläutern. Stimmen HE/BY/NW: 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      - id: bildaufbau
+        iCan: { de: "Ich kann den Aufbau eines Bildes untersuchen: wichtige Formen, Richtungen und wie die Fläche geordnet ist." }
+        gradeBand: "5-6"
+        requires: [bild-beschreiben, streuung-reihung-ballung]
+      # HE KC Kap. 6 Bildordnungen der Kunst erkennen und schlüssig erläutern; BY Ku9 LB1 mithilfe von Skizzen Komposition und Farbe untersuchen (Blickachsen, Kompositionslinien, Farbauszug); NW S IF1 Gesamtstrukturen von Bildern analysieren. Stimmen HE/BY/NW: 7-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: kompositionsskizze
+        iCan: { de: "Ich kann mit einer Skizze die Komposition eines Bildes sichtbar machen, zum Beispiel Achsen, Kompositionslinien oder einen Farbauszug." }
+        gradeBand: "9-10"
+        requires: [bildaufbau, richtungen-im-bild]
+      # HE KC Kap. 6 Kunstwerk als Form: Farbigkeit, Helligkeitswerte; BY Ku9 LB1 Komposition und Farbe in der Bildanalyse; NW S IF1 Farbwahl, Farbbeziehungen und Farbfunktionen analysieren. Stimmen HE/BY/NW: 7-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: farbe-analysieren
+        iCan: { de: "Ich kann die Farbgestaltung eines Werks untersuchen: Farbwahl, Farbbeziehungen und Farbfunktionen." }
+        gradeBand: "9-10"
+        requires: [bildaufbau, ausdrucksfarbe, symbolfarbe]
+      # HE KC Kap. 6 Körper- und Raumbezüge definieren; BY Ku8 LB1 Raumdarstellung der Renaissance im Vergleich mit mittelalterlichen Darstellungen; NW S IF1 Bilder im Hinblick auf Körper- und Raumillusion analysieren. Stimmen HE/BY/NW: 7-10 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: raum-analysieren
+        iCan: { de: "Ich kann untersuchen, mit welchen Mitteln ein Bild Raum darstellt, und Raumdarstellungen verschiedener Zeiten vergleichen." }
+        gradeBand: "7-8"
+        requires: [bildaufbau, zentralperspektive]
+      # HE G9 5.2 Erzählbilder; KC 7.1 Bildmotive und Bildhandlungen; BY Ku6 LB1 bildnerisches Erzählen; NW E IF3 Narration: Zusammenhang von Thema, Handlungsstruktur, Figur und Ort. Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: erzaehlende-bilder
+        iCan: { de: "Ich kann an einem Bild erklären, wie es eine Geschichte erzählt: Thema, Handlung, Figuren und Ort." }
+        gradeBand: "5-6"
+        requires: [bild-beschreiben]
+      # HE KC 7.1 in altersgerechter Form Strategien der Bilddeutung anwenden; BY Ku7 LB1 Wirkung auf den Betrachter deuten; NW E Rezeption: einfache Deutungsansätze begründen. Stimmen HE/BY/NW: 5-6 / 7-8 / 5-6 -> 5-6 (Mehrheit)
+      - id: bild-deuten
+        iCan: { de: "Ich kann eine eigene Deutung eines Bildes vorschlagen und mit dem begründen, was im Bild zu sehen ist." }
+        gradeBand: "5-6"
+        requires: [bild-beschreiben]
+      # HE KC 7.1 Bilder zu Bildern in Beziehung setzen; BY Ku7 LB1 Kunstwerke der Romanik und Gotik vergleichend untersuchen; Ku9 LB1 Werkvergleich. Stimmen HE/BY/NW: 5-6 / 7-8 / – -> 5-6 (Gleichstand 5-6/7-8; requires lässt beide zu, die frühere)
+      - id: werkvergleich
+        iCan: { de: "Ich kann zwei Werke nach festgelegten Gesichtspunkten vergleichen und Gemeinsamkeiten und Unterschiede nennen." }
+        gradeBand: "5-6"
+        requires: [bild-beschreiben]
+      # HE KC 7.1 grundsätzliche Wirkungsabsichten erkennen und formulieren; BY Ku6 LB1 politische, dekorative, magische und religiöse Funktion von Kunst; Ku8 LB1 Funktionen der Kunst; NW E IF3 Funktionszusammenhänge (Narration, Fiktion/Vision). Stimmen HE/BY/NW: 5-6 / 5-6 / 5-6 -> 5-6 (Mehrheit)
+      - id: funktionen-der-kunst
+        iCan: { de: "Ich kann an Beispielen erklären, wozu Kunst gemacht wurde, zum Beispiel für Religion, Macht, Erinnerung oder Schmuck." }
+        gradeBand: "5-6"
+      # HE G9 5.1 malerische Spur innerer Bewegung; 6.1 Stimmung, Ausdruck; BY Ku9 LB1 Darstellung von Innerlichkeit; NW S IF3 Expression: Ausdruck inneren Erlebens und innerer Vorstellung. Stimmen HE/BY/NW: 5-6 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: expressive-bilder
+        iCan: { de: "Ich kann an Bildern erklären, wie sie inneres Erleben ausdrücken, und selbst ein Gefühl bildnerisch ausdrücken." }
+        gradeBand: "9-10"
+        requires: [farbwirkung]
+      # HE KC 7.1 Definieren von Bildmotiven und Bildhandlungen (Ikonografie); BY Ku7 LB1 Aspekte mittelalterlicher Ikonografie; Ku8 LB1 ikonografische Kenntnisse; NW S Rezeption: werkimmanente Untersuchungen mit bildexternen Informationen verknüpfen. Stimmen HE/BY/NW: 5-6 / 7-8 / 7-10 -> 7-8 (Mehrheit)
+      - id: ikonografie
+        iCan: { de: "Ich kann Bildmotive und Attribute erkennen und damit bestimmen, wer oder was dargestellt ist, zum Beispiel bei Heiligen." }
+        gradeBand: "7-8"
+        requires: [bild-beschreiben]
+      # HE G9 9.1 Sinnbild und Deutung; BY Ku8 LB1 Symbolik weltlicher wie liturgischer Objekte und Motive; NW S Rezeption: Form-Inhalts-Bezüge interpretieren. Stimmen HE/BY/NW: 9-10 / 7-8 / 7-10 -> 7-8 (Gleichstand 7-8/9-10; requires lässt beide zu, die frühere)
+      - id: bildsymbole
+        iCan: { de: "Ich kann Symbole in Bildern entschlüsseln, zum Beispiel Zeichen der Vergänglichkeit in einem Stillleben." }
+        gradeBand: "7-8"
+        requires: [ikonografie]
+      # HE KC Kap. 6 Ikonologie: kulturelle und gesellschaftliche Zusammenhänge; Kunst als Korrelat der Persönlichkeit; BY Ku9 LB1 Analyseraster und Werkvergleich: Ikonografie, Form, Funktion, Bedeutung und Rezeption; NW S Rezeption: werkimmanente Untersuchungen und bildexterne Informationen verknüpfen; IF2 soziokulturelle, historische, biografische Einflüsse. Stimmen HE/BY/NW: 7-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: kontext-deuten
+        iCan: { de: "Ich kann ein Werk deuten, indem ich das Bild mit Wissen über die Künstlerin oder den Künstler und die Zeit verbinde." }
+        gradeBand: "9-10"
+        requires: [bild-deuten, ikonografie, werkangaben]
+      # HE G9 7.2 Das Porträt: Selbstbildnis als Gesichtsdarstellung, Brustbild oder Ganzkörperbildnis; BY Ku8 LB1 Malerei: Porträt; Ku9 LB1 Bilder des Menschen (Porträt, Figur). Stimmen HE/BY/NW: 7-8 / 7-8 / – -> 7-8 (Mehrheit)
+      - id: portraet
+        iCan: { de: "Ich kann Formen des Porträts unterscheiden, zum Beispiel Kopfbild, Brustbild, Ganzfigur und Selbstbildnis." }
+        gradeBand: "7-8"
+        requires: [bild-beschreiben]
+      # HE G9 7.1 Stillleben, Das Stillleben als Erzählbild; Stillleben aus verschiedenen Epochen; BY Ku8 LB1 Malerei: Stillleben. Stimmen HE/BY/NW: 7-8 / 7-8 / – -> 7-8 (Mehrheit)
+      - id: stillleben
+        iCan: { de: "Ich kann erklären, was ein Stillleben ist und was die Anordnung der Dinge erzählen kann." }
+        gradeBand: "7-8"
+        requires: [bild-beschreiben]
+      # HE G9 6.1 Stimmungslandschaften; Stimmungs- und Ausdrucksbildung in Landschaftsdarstellungen; BY Ku8 LB1 Malerei: Landschaft; Ku9 LB1 Landschaft. Stimmen HE/BY/NW: 5-6 / 7-8 / – -> 5-6 (Gleichstand 5-6/7-8; requires lässt beide zu, die frühere)
+      - id: landschaftsbild
+        iCan: { de: "Ich kann erklären, wie ein Landschaftsbild eine Stimmung erzeugt." }
+        gradeBand: "5-6"
+        requires: [farbwirkung, vordergrund-hintergrund]
+      # HE G9 7.1 Stillleben, 7.2 Porträt; 6.1 Landschaftsdarstellungen; BY Ku8 LB1 wichtige Begriffe: Porträt, Stillleben, Landschaft; Ku9 LB1 Gattungen Historienbild, Porträt, Landschaft. Stimmen HE/BY/NW: 7-8 / 7-8 / – -> 7-8 (Mehrheit)
+      - id: bildgattungen
+        iCan: { de: "Ich kann die Bildgattungen Porträt, Stillleben, Landschaft und Historienbild unterscheiden und ein Werk zuordnen." }
+        gradeBand: "7-8"
+        requires: [portraet, stillleben, landschaftsbild]
+  - id: kunstgeschichte
+    name: { de: "Kunstgeschichte: Epochen und Werke", en: "Art history: periods and works" }
+    competencies:
+      # BY Ku5 LB1 Mensch und Tier als Motiv in Höhlenmalereien, Reliefs und Plastiken früher Kulturen (Altamira, Lascaux, Schwäbische Alb). Stimmen HE/BY/NW: – / 5-6 / – -> 5-6 (festgelegt: nur BY stimmt (Jg 5)). SCHWACH BELEGT: nur BY; aufgenommen als Voraussetzung von epochen-ueberblick
+      - id: hoehlenmalerei
+        iCan: { de: "Ich kann Höhlenmalereien und Plastiken der Steinzeit beschreiben und erklären, wozu sie vielleicht gemacht wurden." }
+        gradeBand: "5-6"
+        requires: [bild-beschreiben]
+      # HE G9 6.3 Umgang mit Kunst: Ägyptische Tier- und Menschenfiguren; BY Ku5 LB1 Kunst im Alten Ägypten; Ku5 LB2 Pyramide. Stimmen HE/BY/NW: 5-6 / 5-6 / – -> 5-6 (Mehrheit)
+      - id: aegyptische-kunst
+        iCan: { de: "Ich kann an Figuren und Reliefs aus dem Alten Ägypten typische Darstellungsregeln erkennen." }
+        gradeBand: "5-6"
+        requires: [bild-beschreiben, vollplastik-und-relief]
+      # HE G9 6.3 Plastiken und Skulpturen aus verschiedenen Epochen; Querverweis Antike (G 6.4-5); BY Ku6 LB1 Werke der griechischen und römischen Antike: Archaik, Klassik, Hellenismus; Statue, Kontrapost. Stimmen HE/BY/NW: 5-6 / 5-6 / – -> 5-6 (Mehrheit). SCHWACH BELEGT: HE nennt die Antike nur als Querverweis und über Plastiken „aus verschiedenen Epochen“; verbindlich nur BY
+      - id: antike-plastik
+        iCan: { de: "Ich kann griechische und römische Statuen beschreiben und den Kontrapost und das Schönheitsideal der Antike erklären." }
+        gradeBand: "5-6"
+        requires: [vollplastik-und-relief, koerperproportionen]
+      # BY Ku6 LB2 sakrale und profane Gebäude der Antike: Tempel, Basilika, Forum, Villa. Stimmen HE/BY/NW: – / 5-6 / – -> 5-6 (festgelegt: nur BY stimmt (Jg 6)). SCHWACH BELEGT: nur BY; aufgenommen als Voraussetzung von epochen-ueberblick
+      - id: antike-architektur
+        iCan: { de: "Ich kann griechische Tempel und römische Bauten an typischen Merkmalen erkennen, zum Beispiel Säulen, Bogen und Kuppel." }
+        gradeBand: "5-6"
+      # BY Ku7 LB2 Rund- und Spitzbogen, Tonnen- und Kreuzrippengewölbe, Massiv- und Skelettbau. Stimmen HE/BY/NW: – / 7-8 / – -> 7-8 (festgelegt: nur BY stimmt (Jg 7)). SCHWACH BELEGT: nur BY; aufgenommen als Voraussetzung von epochen-ueberblick
+      - id: romanik-und-gotik
+        iCan: { de: "Ich kann romanische und gotische Kirchen an Rundbogen und Spitzbogen, Mauern und Fenstern unterscheiden." }
+        gradeBand: "7-8"
+        requires: [bauwerk-untersuchen]
+      # BY Ku7 LB1 Kunst der Romanik und Gotik; Bildmotive Verkündigung, Geburt, Abendmahl, Kreuzigung, Pietà; Ku5 LB1 Bedeutungsperspektive. Stimmen HE/BY/NW: – / 7-8 / – -> 7-8 (festgelegt: nur BY stimmt (Jg 7)). SCHWACH BELEGT: nur BY; aufgenommen als Voraussetzung von epochen-ueberblick
+      - id: mittelalterliche-bilder
+        iCan: { de: "Ich kann an mittelalterlichen Bildern Goldgrund, Bedeutungsgröße und typische Bildmotive wie Verkündigung oder Kreuzigung erkennen." }
+        gradeBand: "7-8"
+        requires: [ikonografie]
+      # HE G9 9.1 Umgang mit Kunst (Vorschlag): Raffael, Veronese [nur Hinweis, keine Stimme]; BY Ku8 LB1 Werke der Renaissance, Raumdarstellung im Vergleich mit dem Mittelalter; Humanismus, das Bild als Fenster zur Welt. Stimmen HE/BY/NW: – / 7-8 / – -> 7-8 (festgelegt: nur BY stimmt). SCHWACH BELEGT: verbindlich nur BY; HE nennt Werke der Renaissance nur als Vorschlag
+      - id: renaissance
+        iCan: { de: "Ich kann erklären, wie sich mit der Renaissance das Bild vom Menschen und die Raumdarstellung verändert haben." }
+        gradeBand: "7-8"
+        requires: [mittelalterliche-bilder, zentralperspektive]
+      # HE G9 9.1 Umgang mit Kunst (Vorschlag): Rembrandt, Velázquez [nur Hinweis, keine Stimme]; BY Ku8 LB1 Werke des Barock im Vergleich zur Renaissance: Komposition, Farbgebung, Dynamik. Stimmen HE/BY/NW: – / 7-8 / – -> 7-8 (festgelegt: nur BY stimmt). SCHWACH BELEGT: verbindlich nur BY; HE nennt Werke des Barock nur als Vorschlag
+      - id: barock
+        iCan: { de: "Ich kann typische Merkmale des Barock beschreiben, zum Beispiel Bewegung, Licht und Prunk, und sie mit der Renaissance vergleichen." }
+        gradeBand: "7-8"
+        requires: [renaissance]
+      # BY Ku9 LB1 Klassizismus, Romantik und Realismus: Sichtweisen des Individuums auf die Welt. Stimmen HE/BY/NW: – / 9-10 / – -> 9-10 (festgelegt: nur BY stimmt (Jg 9)). SCHWACH BELEGT: nur BY; aufgenommen als Voraussetzung von epochen-ueberblick
+      - id: klassizismus-und-romantik
+        iCan: { de: "Ich kann Werke des Klassizismus und der Romantik an ihrer Sicht auf den Menschen und die Natur unterscheiden." }
+        gradeBand: "9-10"
+        requires: [werkvergleich]
+      # BY Ku9 LB1 Realismus; Darstellung sozialer Wirklichkeit. Stimmen HE/BY/NW: – / 9-10 / – -> 9-10 (festgelegt: nur BY stimmt (Jg 9)). SCHWACH BELEGT: nur BY; aufgenommen als Voraussetzung von epochen-ueberblick
+      - id: realismus
+        iCan: { de: "Ich kann erklären, wie der Realismus im 19. Jahrhundert die soziale Wirklichkeit darstellt." }
+        gradeBand: "9-10"
+        requires: [klassizismus-und-romantik]
+      # HE G9 9.1 Umgang mit Kunst (Vorschlag): Monet, Manet [nur Hinweis, keine Stimme]; BY Ku10 LB1 Impressionismus und Manet; Pleinairmalerei, Flüchtigkeit; Einfluss der frühen Fotografie. Stimmen HE/BY/NW: – / 9-10 / – -> 9-10 (festgelegt: nur BY stimmt). SCHWACH BELEGT: verbindlich nur BY; HE nennt Werke nur als Vorschlag
+      - id: impressionismus
+        iCan: { de: "Ich kann typische Merkmale des Impressionismus beschreiben, zum Beispiel Licht, Freilichtmalerei und flüchtiger Pinselstrich." }
+        gradeBand: "9-10"
+        requires: [lokalfarbe-erscheinungsfarbe, realismus]
+      # HE G9 7.1, 7.2 Umgang mit Kunst (Vorschlag): van Gogh, Cézanne [nur Hinweis, keine Stimme]; BY Ku10 LB1 Wegbereiter der Moderne van Gogh, Cézanne, Gauguin; Vorbereitung der Abstraktion. Stimmen HE/BY/NW: – / 9-10 / – -> 9-10 (festgelegt: nur BY verbindlich (Jg 10); requires impressionismus (9-10)). SCHWACH BELEGT: verbindlich nur BY; HE nennt die Werke nur als Vorschlag
+      - id: wegbereiter-der-moderne
+        iCan: { de: "Ich kann an Werken von van Gogh, Cézanne und Gauguin zeigen, wie sie den Weg zur modernen Kunst bereitet haben." }
+        gradeBand: "9-10"
+        requires: [impressionismus, ausdrucksfarbe]
+      # HE KC Kap. 6 Zugänge zu ungewohnten oder fremden Bildwelten; Toleranz und Distanz; G9 5.3 Masken aus verschiedenen Kulturkreisen; BY Ku10 LB1 Einflüsse außereuropäischer Kunst und Kultur auf die Kunst der frühen Moderne; Exotismus. Stimmen HE/BY/NW: 7-10 / 9-10 / – -> 9-10 (Mehrheit)
+      - id: aussereuropaeische-einfluesse
+        iCan: { de: "Ich kann erklären, wie Kunst aus Afrika, Asien und Ozeanien die Kunst der frühen Moderne beeinflusst hat, und diesen Blick kritisch bewerten." }
+        gradeBand: "9-10"
+        requires: [wegbereiter-der-moderne]
+      # HE G9 9.3 Umgang mit Kunst: Designobjekte des Jugendstils; BY Ku10 LB2 Jugendstil, Idee des Gesamtkunstwerks. Stimmen HE/BY/NW: 9-10 / 9-10 / – -> 9-10 (Mehrheit)
+      - id: jugendstil
+        iCan: { de: "Ich kann typische Formen des Jugendstils erkennen und erklären, was ein Gesamtkunstwerk ist." }
+        gradeBand: "9-10"
+        requires: [ornament-und-muster, form-und-funktion]
+      # HE KC Kap. 6 visuelle Hoch-, Alltags- und Jugendkultur erkunden; BY Ku9 LB3 visuelle Medien von Jugendkulturen, Street-Art, Graffiti. Stimmen HE/BY/NW: 7-10 / 9-10 / – -> 9-10 (Mehrheit)
+      - id: street-art
+        iCan: { de: "Ich kann Formen von Street-Art und Graffiti beschreiben und ihre Wirkung im öffentlichen Raum bewerten." }
+        gradeBand: "9-10"
+        requires: [funktionen-der-kunst]
+      # HE G9 ÜP Erarbeitung von kunstgeschichtlichen Zusammenhängen: Kunstepochen und Stile einordnen und charakterisieren; je Jahrgang eine Kunstepoche (S. 9); BY Ku10 LB1 kunstgeschichtlicher Längsschnitt; Ku5-Ku10 je Jahrgang Epochen; NW S IF2 historische Einflüsse auf Gestaltungen. Stimmen HE/BY/NW: 9-10 / 9-10 / 7-10 -> 9-10 (Mehrheit)
+      - id: epochen-ueberblick
+        iCan: { de: "Ich kann die großen Epochen der Kunst von der Steinzeit bis zur Moderne in die richtige Reihenfolge bringen und ein Werk an Merkmalen einer Epoche zuordnen." }
+        gradeBand: "9-10"
+        requires: [hoehlenmalerei, aegyptische-kunst, antike-plastik, antike-architektur, romanik-und-gotik, mittelalterliche-bilder, renaissance, barock, klassizismus-und-romantik, realismus, impressionismus, wegbereiter-der-moderne, jugendstil]
