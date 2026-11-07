@@ -26,7 +26,7 @@ keywords:
   - { de: Spiel, en: game }
 creator: { name: Oliver, url: "https://github.com/mrsimpson" }
 source: https://github.com/mrsimpson/typonaut
-commit: 020743c0bb42b5dccb8cca4f7d441d13057468fe
+commit: 38fd97634843d9c3318e64e2a0226e7fc3c9c881
 limits:
   de: >-
     Nicht mit Screenreader bedienbar und nicht für das Handy gedacht: Die App braucht eine richtige Tastatur, und die
