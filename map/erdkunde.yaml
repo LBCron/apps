@@ -1,0 +1,800 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/subject.v1.schema.json
+# Vorschlag. Erdkunde (Geographie), Gymnasium Sek I, Jg 5-10. KMK-Bildungsstandards gibt es für das Fach nicht.
+# Quellenkürzel in den Kommentaren:
+#   DG = DGfG, Bildungsstandards im Fach Geographie für den Mittleren Schulabschluss, 10. Auflage 2020
+#        (F1-F5 Fachwissen S. 13-16, O1-O5 Räumliche Orientierung S. 17-18; S = Standard). Gemeinsamer Bezug,
+#        kein verbindlicher Inhalt: die Standards nennen Inhalte nur als Beispiele ("z. B.").
+#   HE = Hessen: KC = Kerncurriculum Erdkunde Sek I Gymnasium (nur "Ende 9/10"; Stimme "5-10" zählt für alle Stufen);
+#        LP = Lehrplan Erdkunde, gymnasialer Bildungsgang (G9), Jahrgangsstufen 5, 6.1, 6.2, 8, 9.
+#   BY = LehrplanPLUS Gymnasium Bayern, Geographie Geo5, Geo7, Geo10 (Lernbereiche LB); Geo11 liegt nach Jg 10.
+#   NW = Kernlehrplan Erdkunde Sek I Gymnasium NRW (2019): Stufe 1 = bis Ende Erprobungsstufe (IF1-IF3, 5-6),
+#        Stufe 2 = bis Ende Sek I (IF4-IF10, Stimme "7-10"). Das NRW-Umsetzungsbeispiel (SiLP) stimmt nicht mit.
+# Stimmen HE/BY/NW -> Richtstufe. Gleichstand: die frühere Stufe, außer requires erzwingt die spätere; liegen die
+# Stimmen 5-6 und 9-10 auseinander oder sind alle drei verschieden, die mittlere.
+# Genaue Titel, Ausgaben und URLs: .vibe/research-erdkunde.md.
+name: { de: Erdkunde, en: Geography }              # the file name is the subject's id: erdkunde
+source:
+  title: Deutsche Gesellschaft für Geographie (DGfG), Bildungsstandards im Fach Geographie für den Mittleren Schulabschluss, 10. Auflage 2020
+  url: https://fachportal.lernnetz.de/files/Inhalte%20der%20Unterrichtsf%C3%A4cher/Geographie/Download%20Center/Bildungsstandards%20SI%20Geographie%202020%20Web.pdf
+strands:
+  - id: orientierung
+    name: { de: "Orientierung und Karten", en: "Spatial orientation and maps" }
+    competencies:
+      # DG O4 S11, S13; HE LP 5 (Windrose, Kompass); BY Geo5 LB1, LB2 (Himmelsrichtungen); NW Stufe 1 MK1 (orientieren sich vor Ort und mit Karten).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: himmelsrichtungen
+        iCan: "Ich kann die Himmelsrichtungen bestimmen, auch mit einem Kompass und mit dem Stand der Sonne."
+        gradeBand: "5-6"
+      # DG O3 S5; HE LP 5 (Globus, Karte/Atlas); BY Geo5 LB2 (Orientierung mit Globus und Karten); NW Stufe 1 MK1 (mit Karten).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: globus-und-karte
+        iCan: "Ich kann erklären, wie eine Karte die Erde verkleinert, vereinfacht und von oben zeigt, und Globus und Karte vergleichen."
+        gradeBand: "5-6"
+      # DG O3 S5, S6; HE LP 5 (Maßstab und Legende); BY Geo5 LB1 (Einzelzeichen); NW Stufe 1 MK4 (einfache diskontinuierliche Texte auswerten).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: legende
+        iCan: "Ich kann eine Karte mit Hilfe der Legende lesen und die Kartenzeichen deuten."
+        gradeBand: "5-6"
+        requires: [globus-und-karte]
+      # DG O3 S5; HE LP 5 (Messen und Zeichnen, Maßstab); BY Geo5 LB1, LB2 (Maßstab und Distanzen); NW –.
+      # Stimmen 5-6/5-6/– -> 5-6 (Mehrheit)
+      - id: massstab
+        iCan: "Ich kann mit dem Maßstab einer Karte Entfernungen messen und berechnen."
+        gradeBand: "5-6"
+        requires: [globus-und-karte]
+      # DG O3 S5 (Verebnung des Reliefs); HE LP 5 (Höhenprofil); BY Geo5 LB1 (Landhöhen), LB2 (Höhendarstellungen); NW –.
+      # Stimmen 5-6/5-6/– -> 5-6 (Mehrheit)
+      - id: hoehendarstellung
+        iCan: "Ich kann Höhen auf einer Karte an Höhenlinien und Höhenschichtfarben ablesen."
+        gradeBand: "5-6"
+        requires: [legende]
+      # DG O3 S8; HE LP 5 (Profilzeichnung Alpen, Höhenprofil); BY Geo5 LB1 (Profilzeichnungen), LB3 (Profile); NW –.
+      # Stimmen 5-6/5-6/– -> 5-6 (Mehrheit)
+      - id: hoehenprofil
+        iCan: "Ich kann aus einer Karte ein einfaches Höhenprofil zeichnen."
+        gradeBand: "5-6"
+        requires: [hoehendarstellung, massstab]
+      # DG O3 S6; HE KC Kap. 6 (topographische, physische, thematische Karten auswerten); BY Geo5 LB1, LB2 (unterscheiden topografische, physische und thematische Karten); NW –.
+      # Stimmen 5-10/5-6/– -> 5-6 (Mehrheit)
+      - id: kartenarten
+        iCan: "Ich kann physische, thematische und topografische Karten unterscheiden und für eine Frage die passende Karte wählen."
+        gradeBand: "5-6"
+        requires: [legende]
+      # DG O3 S6; HE LP 5 (Globus, Karte/Atlas); BY Geo5 LB2 (Einführung in die Atlasarbeit); NW Stufe 1 MK3 (Inhaltsverzeichnis, Register, Planquadrate).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: atlas
+        iCan: "Ich kann mit Inhaltsverzeichnis, Register und Planquadraten im Atlas einen Ort finden."
+        gradeBand: "5-6"
+        requires: [kartenarten]
+      # DG O3 S8; HE LP 5 (Schulwegeskizze, Handskizzen); BY Geo5 LB1, LB2 (Kartenskizze); NW Stufe 1 MK6 (Skizzen).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: kartenskizze
+        iCan: "Ich kann eine einfache Kartenskizze zeichnen, zum Beispiel von meinem Schulweg."
+        gradeBand: "5-6"
+        requires: [legende, himmelsrichtungen]
+      # DG O3 S9; HE LP 5 (Feldbeobachtungen und -kartierungen); BY Geo5 LB1 (Nutzungskartierungen), LB5 (einfache Formen der Kartierung); NW –.
+      # Stimmen 5-6/5-6/– -> 5-6 (Mehrheit)
+      - id: kartierung
+        iCan: "Ich kann bei einem Gang durch den Ort kartieren, wie Gebäude und Flächen genutzt werden."
+        gradeBand: "5-6"
+        requires: [kartenskizze, stadtviertel]
+      # DG O4 S11–S13; HE KC Kap. 6 (Standort bestimmen, zielgerichtet bewegen); BY Geo5 LB1 (digitale Geomedien), LB5 (orientieren sich mit Karten in städtischen Räumen); NW Stufe 1 MK1 (vor Ort, GPS-basierte Anwendungen).
+      # Stimmen 5-10/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: standort-und-weg
+        iCan: "Ich kann mit einer Karte, Landmarken und einem Smartphone (GPS) meinen Standort bestimmen und einen Weg finden."
+        gradeBand: "5-6"
+        requires: [himmelsrichtungen, legende]
+      # DG O1 S1; HE LP 5 (Kontinente/Ozeane); KC Räumliches Orientierungswissen; BY Geo5 LB2 (Ozeane und Kontinente); NW Stufe 1 SK4 (Orientierungsraster).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: kontinente-und-ozeane
+        iCan: "Ich kann die Kontinente und Ozeane benennen und auf dem Globus und der Weltkarte zeigen."
+        gradeBand: "5-6"
+        requires: [globus-und-karte]
+      # DG O1 S1; HE LP 5 (Bundesländer, Hauptstädte); BY Geo5 LB5 (administrative Gliederung); NW –.
+      # Stimmen 5-6/5-6/– -> 5-6 (Mehrheit)
+      - id: bundeslaender
+        iCan: "Ich kann die Bundesländer und ihre Hauptstädte auf einer Karte zeigen."
+        gradeBand: "5-6"
+        requires: [atlas]
+      # DG O1 S1; HE LP 5 (Flüsse, Gebirge, Tiefländer, Becken); BY Geo5 LB3 (naturräumliche Gliederung); NW IF2 (Großlandschaften Deutschlands).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: grosslandschaften-deutschland
+        iCan: "Ich kann Deutschland in Norddeutsches Tiefland, Mittelgebirge, Alpenvorland und Alpen gliedern und die großen Flüsse zeigen."
+        gradeBand: "5-6"
+        requires: [hoehendarstellung]
+      # DG O1 S1; HE LP 6.1 (Großräume Europas, Grundkenntnisse über Europa); BY Geo7 LB2, LB3 (Staaten, Teilräume, Großlandschaften); NW IF2 (Großlandschaften Europas).
+      # Stimmen 5-6/7-8/5-6 -> 5-6 (Mehrheit)
+      # Siehe auch: franzoesisch/frankreich-auf-der-karte
+      - id: topographie-europa
+        iCan: "Ich kann Europa in Teilräume gliedern und seine Staaten, Hauptstädte, Gebirge, Flüsse und Meere auf einer Karte zeigen."
+        gradeBand: "5-6"
+        requires: [kontinente-und-ozeane]
+      # DG O1 S1; HE LP 9 (weltweites Orientierungsraster, Übergangsprofil); LP 6.2, 8 je ein Kontinent; BY Geo10 LB5–LB7 (topografischer Überblick); NW Stufe 2 Orientierungsraster der IF.
+      # Stimmen 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: topographie-welt
+        iCan: "Ich kann wichtige Staaten, Gebirge, Flüsse und Wüsten der anderen Kontinente auf einer Karte zeigen."
+        gradeBand: "9-10"
+        requires: [topographie-europa]
+      # DG O1 S2; HE LP 6.2 (Pole, Äquator, 0- und 180-Meridian); BY Geo5 LB1, LB2 (Gradnetz); NW Stufe 2 MK1 (Gradnetzangaben).
+      # Stimmen 5-6/5-6/7-10 -> 5-6 (Mehrheit)
+      - id: gradnetz
+        iCan: "Ich kann das Gradnetz der Erde mit Äquator, Nullmeridian, Breitenkreisen und Längenkreisen beschreiben."
+        gradeBand: "5-6"
+        requires: [globus-und-karte]
+      # DG O2 S4; HE LP 6.2 (Bestimmung von Standortkoordinaten); BY Geo5 LB1 (bestimmen Lage im Gradnetz); NW Stufe 2 MK1 (Gradnetzangaben).
+      # Stimmen 5-6/5-6/7-10 -> 5-6 (Mehrheit)
+      - id: koordinaten
+        iCan: "Ich kann die Lage eines Ortes mit geographischer Breite und Länge angeben und einen Ort zu gegebenen Koordinaten finden."
+        gradeBand: "5-6"
+        requires: [gradnetz, atlas]
+      # DG O2 S3, S4; HE KC Kap. 6 (Lage zu Bezugseinheiten und Orientierungsrastern in Beziehung setzen); BY Geo7 LB3 (Lage im Gradnetz Europas); NW Stufe 2 SK5 (in Orientierungsraster einordnen).
+      # Stimmen 5-10/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: lage-beschreiben
+        iCan: "Ich kann die Lage eines Ortes genau beschreiben: im Gradnetz, auf dem Kontinent und zu Flüssen, Gebirgen und Nachbarländern."
+        gradeBand: "7-8"
+        requires: [koordinaten, topographie-europa]
+      # DG O3 S6; HE KC Kap. 6 (thematische Karten auswerten); BY Geo7 LB1 (werten physische und thematische Karten aus); NW Stufe 2 MK4 (diskontinuierliche Texte auswerten).
+      # Stimmen 5-10/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: thematische-karte
+        iCan: "Ich kann eine thematische Karte zu einer Frage auswerten, zum Beispiel zur Bevölkerungsdichte."
+        gradeBand: "7-8"
+        requires: [kartenarten]
+      # DG O3 S6; HE KC Kap. 6 (Karten konventionell oder Web-GIS); BY Geo7 LB1 (Satellitenbilder, digitale Geomedien); NW Stufe 1 MK3 (digitale Kartenanwendungen); Stufe 2 MK12 (GIS).
+      # Stimmen 5-10/7-8/5-6 -> 5-6 (Gleichstand 5-6/7-8, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: digitale-karten
+        iCan: "Ich kann digitale Karten und Satellitenbilder nutzen, um Orte zu finden und Informationen abzulesen."
+        gradeBand: "5-6"
+        requires: [kartenarten]
+      # DG O3 S7; O5 S16; HE KC Kap. 6 (Raumdarstellungen stets konstruiert; Manipulationsmöglichkeiten); BY Geo7 LB1 (kritisch mit Darstellungen auseinandersetzen); NW Stufe 2 UK4, UK5 (Wirkungsabsicht von Quellen, Raumwahrnehmungen in Medien).
+      # Stimmen 5-10/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: karten-sind-gemacht
+        iCan: "Ich kann an Beispielen zeigen, dass Karten die Welt immer aus einem Blickwinkel darstellen, etwa durch Kartennetz, Ausschnitt oder Farbwahl."
+        gradeBand: "7-8"
+        requires: [thematische-karte]
+      # SCHWACH BELEGT. DG O5 S15; HE KC Kap. 6 (kognitive Karten/mental maps); BY –; NW Stufe 2 UK5 (von Raumwahrnehmungen geleitete Setzung von Themen). Hinweis: NW nennt die Wahrnehmung, nicht die Kopfkarte.
+      # Stimmen 5-10/–/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: mental-maps
+        iCan: "Ich kann an Kopfkarten (Mental Maps) zeigen, dass Menschen denselben Raum verschieden wahrnehmen."
+        gradeBand: "7-8"
+        requires: [kartenskizze]
+  - id: erde
+    name: { de: "Planet Erde und Relief", en: "Planet Earth and its landforms" }
+    competencies:
+      # DG F1 S1, S2; HE LP 5 (Planetennatur der Erde); KC Erde als Planet; BY Geo5 LB2 (Sonnensystem, Einzigartigkeit der Erde); NW IF5 (Himmelskörper Erde).
+      # Stimmen 5-6/5-6/7-10 -> 5-6 (Mehrheit)
+      - id: sonnensystem
+        iCan: "Ich kann die Planeten unseres Sonnensystems ordnen und erklären, warum es Leben nur auf der Erde gibt."
+        gradeBand: "5-6"
+      # DG F1 S1; HE LP 5 (Planetennatur, Globus); BY Geo5 LB2 (Aufbau und Gestalt der Erde); NW –.
+      # Stimmen 5-6/5-6/– -> 5-6 (Mehrheit)
+      - id: gestalt-der-erde
+        iCan: "Ich kann Form und Größe der Erde beschreiben und sagen, wie viel ihrer Oberfläche Land und wie viel Meer ist."
+        gradeBand: "5-6"
+        requires: [sonnensystem]
+      # DG F1 S2 (Tag und Nacht); HE LP 8 (Rotation, Tellurium); KC Erde als Planet (Rotation); BY –; NW IF5 (Himmelskörper Erde).
+      # Stimmen 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: tag-und-nacht
+        iCan: "Ich kann mit der Drehung der Erde um ihre Achse erklären, wie Tag und Nacht entstehen."
+        gradeBand: "7-8"
+        requires: [gestalt-der-erde]
+      # DG F1 S2 (Jahreszeiten); HE LP 8 (Erdachse, Umlaufbahn, Jahreszeiten); KC Erde als Planet; BY –; NW IF5 (Schrägstellung der Erdachse, Jahreszeiten). Hinweis: BY Geo10 LB3 nennt nur das Jahreszeitenklima der Tropen.
+      # Stimmen 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: jahreszeiten
+        iCan: "Ich kann mit der Neigung der Erdachse und dem Umlauf der Erde um die Sonne erklären, wie die Jahreszeiten entstehen."
+        gradeBand: "7-8"
+        requires: [tag-und-nacht]
+      # DG F1 S2; HE LP 8 (Zenit, Polarkreise, Wendekreise); BY Geo10 LB3 (globale Strahlungsverhältnisse, Sonneneinstrahlung); NW IF5 (Beleuchtungszonen, Temperaturzonen).
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: beleuchtungszonen
+        iCan: "Ich kann Wendekreise und Polarkreise erklären und die Beleuchtungszonen der Erde unterscheiden."
+        gradeBand: "7-8"
+        requires: [jahreszeiten, gradnetz]
+      # DG F1 S1 (Aufbau); HE KC Erde als Planet (Aufbau der Erde); BY Geo5 LB2 (Schalenbau); NW IF4 (Schalenbau der Erde).
+      # Stimmen 5-10/5-6/7-10 -> 5-6 (Gleichstand 5-6/7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: schalenbau
+        iCan: "Ich kann den Schalenbau der Erde mit Kruste, Mantel und Kern beschreiben."
+        gradeBand: "5-6"
+        requires: [gestalt-der-erde]
+      # DG F2 S5 (Lageveränderung der Platten); HE LP 8 (Plattentektonik); BY Geo7 LB3 (Plattengrenzen); NW IF4 (Plattentektonik).
+      # Stimmen 7-8/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: plattentektonik
+        iCan: "Ich kann erklären, dass die Erdkruste aus Platten besteht, die sich langsam bewegen, und warum sich die Lage der Kontinente verändert hat."
+        gradeBand: "7-8"
+        requires: [schalenbau]
+      # DG F2 S5, S7; HE LP 8 (Plattentektonik); BY Geo7 LB3 (Zusammenhang zwischen Plattengrenzen, Vulkanismus und Erdbeben); NW IF4 (Konvergenz, Divergenz, Subduktion).
+      # Stimmen 7-8/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: plattengrenzen
+        iCan: "Ich kann an Plattengrenzen unterscheiden, ob Platten auseinanderdriften, aufeinander zustoßen und abtauchen (Subduktion) oder aneinander vorbeigleiten."
+        gradeBand: "7-8"
+        requires: [plattentektonik]
+      # DG F2 S4 (Vulkane); HE LP 8 (Vulkanismus); BY Geo7 LB3 (Vulkanismus: Vorkommen und Ursachen); NW IF4 (Vulkanismus).
+      # Stimmen 7-8/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: vulkanismus
+        iCan: "Ich kann den Aufbau eines Vulkans beschreiben und erklären, warum es vor allem an Plattengrenzen Vulkane gibt."
+        gradeBand: "7-8"
+        requires: [plattengrenzen]
+      # DG F2 S4 (Erdbeben); HE LP 8 (Erdbeben); BY Geo7 LB3 (Erdbeben: Vorkommen und Ursachen); NW IF4 (Erd- und Seebeben). Hinweis: Tsunami nur NW (Seebeben).
+      # Stimmen 7-8/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: erdbeben
+        iCan: "Ich kann erklären, wie Erdbeben und Seebeben entstehen, wie man ihre Stärke misst und wie ein Tsunami entsteht."
+        gradeBand: "7-8"
+        requires: [plattengrenzen]
+      # DG F2 S7 (Gebirgsbildung); HE LP 8 (Gebirgsbildung); BY Geo5 LB3 (Alpen: Entstehung); NW –.
+      # Stimmen 7-8/5-6/– -> 7-8 (Gleichstand 5-6/7-8; requires plattengrenzen (7-8) schließt 5-6 aus)
+      - id: gebirgsbildung
+        iCan: "Ich kann erklären, wie Faltengebirge wie die Alpen entstehen, wenn Platten zusammenstoßen."
+        gradeBand: "7-8"
+        requires: [plattengrenzen]
+      # DG F4 S18 (Naturrisiken); HE KC Umwelt-Gesellschaft (naturgeographische Prozesse als Gefahr); BY Geo7 LB3 (Vor- und Nachteile des Lebens in bedrohten Siedlungsräumen); NW IF4 (Leben und Wirtschaften in Risikoräumen).
+      # Stimmen 5-10/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: leben-in-risikoraeumen
+        iCan: "Ich kann erklären, warum Menschen trotz der Gefahr an Vulkanen und in Erdbebengebieten leben, zum Beispiel wegen fruchtbarer Böden, Rohstoffen, Energie und Tourismus."
+        gradeBand: "7-8"
+        requires: [vulkanismus, erdbeben]
+      # DG F4 S20; HE –; BY Geo7 LB3 (Monitoring aktueller Erdbeben und Vulkanaktivitäten); NW IF4 UK (Katastrophenvorsorge, Eindämmung von Naturrisiken).
+      # Stimmen –/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: katastrophenvorsorge
+        iCan: "Ich kann Maßnahmen beschreiben, mit denen sich Menschen vor Erdbeben und Vulkanausbrüchen schützen, zum Beispiel Frühwarnung, Überwachung und erdbebensicheres Bauen."
+        gradeBand: "7-8"
+        requires: [leben-in-risikoraeumen]
+      # DG F2 S7 (Verwitterung); HE LP 8 (Verwitterung, Erosion, Sedimentation); BY Geo5 LB3 (endogene und exogene Prozesse bei der Entstehung von Oberflächenformen); NW –.
+      # Stimmen 7-8/5-6/– -> 5-6 (Gleichstand 5-6/7-8; requires: Grundlage von kuestenformen und boden (beide 5-6))
+      - id: exogene-kraefte
+        iCan: "Ich kann erklären, wie Verwitterung, Abtragung und Ablagerung durch Wasser, Wind und Eis die Erdoberfläche formen."
+        gradeBand: "5-6"
+      # DG F2 S6 (Bedeutung des Gesteins für den Boden); HE KC Natur/Umwelt (Faktor Boden); BY Geo5 LB1 (Bodenbestimmung), LB4 (Bodeneigenschaft); NW IF3 (Standortfaktor Boden).
+      # Stimmen 5-10/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: boden
+        iCan: "Ich kann erklären, wie aus Gestein durch Verwitterung Boden entsteht und woran man einen fruchtbaren Boden erkennt."
+        gradeBand: "5-6"
+        requires: [exogene-kraefte]
+      # DG F2 S4; HE LP 5 (Gezeiten, Watt, Marsch); BY Geo5 LB3 (Gefährdung des Ökosystems Wattenmeer); NW –.
+      # Stimmen 5-6/5-6/– -> 5-6 (Mehrheit)
+      - id: gezeiten-und-watt
+        iCan: "Ich kann Ebbe und Flut erklären und beschreiben, wie das Wattenmeer entsteht und warum es geschützt wird."
+        gradeBand: "5-6"
+        requires: [grosslandschaften-deutschland]
+      # SCHWACH BELEGT. DG F2 S4, S7; HE LP 5 (Küste am Meer); BY Geo5 LB3 (Küste: Entstehung, Küstenformen); Geo7 LB6 (natürliche Küstenformung); NW –. Hinweis: HE nennt die Küste, nicht die Küstenformen.
+      # Stimmen 5-6/5-6/– -> 5-6 (Mehrheit)
+      - id: kuestenformen
+        iCan: "Ich kann Steilküste und Flachküste unterscheiden und erklären, wie Meer und Wind die Küste formen."
+        gradeBand: "5-6"
+        requires: [exogene-kraefte]
+      # DG F4 S20; HE LP 5 (Küstenschutz, Landgewinnung); BY Geo5 LB3 (Maßnahmen zum Küstenschutz); Geo7 LB6 (anthropogene Küstenformung); NW –.
+      # Stimmen 5-6/5-6/– -> 5-6 (Mehrheit)
+      - id: kuestenschutz
+        iCan: "Ich kann Maßnahmen des Küstenschutzes wie Deiche und Landgewinnung beschreiben."
+        gradeBand: "5-6"
+        requires: [kuestenformen, gezeiten-und-watt]
+      # DG F4 S18; HE LP 5 (Lawine, Bannwald); BY Geo5 LB3 (Alpen: Naturgefahren, Schutzmaßnahmen); NW –.
+      # Stimmen 5-6/5-6/– -> 5-6 (Mehrheit)
+      - id: naturgefahren-alpen
+        iCan: "Ich kann Naturgefahren in den Alpen wie Lawinen, Muren und Hochwasser beschreiben und Schutzmaßnahmen wie den Bannwald nennen."
+        gradeBand: "5-6"
+        requires: [grosslandschaften-deutschland]
+  - id: klima
+    name: { de: "Wetter, Klima und Landschaftszonen", en: "Weather, climate and natural zones" }
+    competencies:
+      # DG F2 S7 (Wettergeschehen); HE LP 6.1, 6.2 (Klimazonen Europas; einfache Messwerterfassung Klimadaten); BY Geo5 LB1, LB4 (Messungen zu Wetterelementen); NW IF2 (Temperatur und Niederschlag); IF5 (Klimaelemente).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: wetter-und-klima
+        iCan: "Ich kann Wetter und Klima unterscheiden und die Wetterelemente Temperatur, Niederschlag, Luftdruck und Wind nennen."
+        gradeBand: "5-6"
+      # DG –; HE LP 6.2 (einfache Messwerterfassung); BY Geo5 LB1 (Messungen zu Temperatur und Niederschlag, Säulendiagramme), LB4; NW –.
+      # Stimmen 5-6/5-6/– -> 5-6 (Mehrheit)
+      - id: wetter-messen
+        iCan: "Ich kann Temperatur und Niederschlag messen, die Werte in eine Tabelle eintragen und als Diagramm darstellen."
+        gradeBand: "5-6"
+        requires: [wetter-und-klima]
+      # DG –; HE LP 6.1 (Klimadiagramme bestimmen, lesen und erläutern); BY Geo7 LB1, LB3 (Klimadiagramme analysieren und versprachlichen); NW IF5 (Klimaelemente). Hinweis: NW nennt das Klimadiagramm nicht ausdrücklich.
+      # Stimmen 5-6/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: klimadiagramm-lesen
+        iCan: "Ich kann ein Klimadiagramm lesen und damit das Klima eines Ortes beschreiben."
+        gradeBand: "7-8"
+        requires: [wetter-messen]
+      # DG –; HE LP 8 (Klimadiagramm zeichnen); BY Geo7 LB1, LB3 (setzen Messdaten aus Klimatabellen in Klimadiagramme um); NW –.
+      # Stimmen 7-8/7-8/– -> 7-8 (Mehrheit)
+      - id: klimadiagramm-zeichnen
+        iCan: "Ich kann aus einer Klimatabelle ein Klimadiagramm zeichnen."
+        gradeBand: "7-8"
+        requires: [klimadiagramm-lesen]
+      # DG F2 S8 (Wasserkreislauf); HE LP 8 (Gesteins- und Wasserkreislauf); BY –; NW IF5 (Wasserkreislauf).
+      # Stimmen 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: wasserkreislauf
+        iCan: "Ich kann den Wasserkreislauf mit Verdunstung, Kondensation, Niederschlag und Abfluss beschreiben."
+        gradeBand: "7-8"
+        requires: [wetter-und-klima]
+      # DG F2 S7 (Wettergeschehen); HE LP 8 (atmosphärische Zirkulation); BY Geo10 LB3 (thermische Entstehung von Hoch- und Tiefdruckgebieten); NW IF5 (Luftbewegungen).
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10; requires: Grundlage von steigungsregen-und-foehn (7-8))
+      - id: luftdruck-und-wind
+        iCan: "Ich kann erklären, wie durch Erwärmung Hoch- und Tiefdruckgebiete entstehen und warum der Wind vom Hoch zum Tief weht."
+        gradeBand: "7-8"
+        requires: [wetter-und-klima]
+      # DG F2 S7; HE –; BY Geo7 LB3 (Steigungsregen und Föhn); NW IF5 (klimatologische Prozesse und Wetterphänomene).
+      # Stimmen –/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: steigungsregen-und-foehn
+        iCan: "Ich kann erklären, warum es auf der dem Wind zugewandten Seite eines Gebirges viel regnet und auf der anderen Seite ein warmer, trockener Fallwind (Föhn) weht."
+        gradeBand: "7-8"
+        requires: [luftdruck-und-wind, wasserkreislauf]
+      # DG F2 S8 (Meeresströmungen und Klima); HE LP 6.1 (Klimazonen Europas); BY Geo7 LB3 (Maritimität und Kontinentalität, Einfluss des Golfstroms); NW –.
+      # Stimmen 5-6/7-8/– -> 7-8 (Gleichstand 5-6/7-8; requires klimadiagramm-lesen (7-8) schließt 5-6 aus)
+      - id: seeklima-landklima
+        iCan: "Ich kann erklären, warum es in Westeuropa milde Winter und kühle Sommer gibt und im Osten kalte Winter und heiße Sommer, auch mit dem Golfstrom."
+        gradeBand: "7-8"
+        requires: [klimadiagramm-lesen]
+      # DG O1 S2; HE LP 6.1 (Klimazonen Europas); BY Geo7 LB3 (Grundzüge des Klimas, Vegetationszonen Europas); NW –.
+      # Stimmen 5-6/7-8/– -> 7-8 (Gleichstand 5-6/7-8; requires seeklima-landklima (7-8) schließt 5-6 aus)
+      - id: klimazonen-europas
+        iCan: "Ich kann die Klima- und Vegetationszonen Europas nennen und auf einer Karte zeigen."
+        gradeBand: "7-8"
+        requires: [seeklima-landklima, topographie-europa]
+      # DG O1 S2; F2 S6; HE LP 8 (Klima- und Vegetationszonen, zonale Anordnung); BY Geo10 LB3 (Klima- und Vegetationszonen der Erde im Überblick); NW IF5 (Zusammenhang solare Einstrahlung und Klimazonen).
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: klimazonen-der-erde
+        iCan: "Ich kann die Klimazonen der Erde von den Tropen bis zu den Polen nennen und mit der Sonneneinstrahlung erklären."
+        gradeBand: "7-8"
+        requires: [beleuchtungszonen, klimazonen-europas]
+      # DG F2 S6, S8; HE KC Natur/Umwelt (Klima, Boden und Oberflächenformen beeinflussen die Vegetation); BY Geo7 LB3 (Zusammenschau Klima, Boden, Vegetation in einer Landschaftszone); NW IF6 (Landschaftszonen als Zusammenwirken von Geofaktoren).
+      # Stimmen 5-10/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: klima-boden-vegetation
+        iCan: "Ich kann an einer Landschaftszone zeigen, wie Klima, Boden und Vegetation zusammenwirken."
+        gradeBand: "7-8"
+        requires: [klimazonen-europas, boden]
+      # DG O1 S2; HE LP 8 (Klima- und Vegetationszonen und ihre Abweichungen); BY Geo10 LB3, LB6, LB7 (Verlauf der Klima- und Vegetationszonen); NW IF6 (Landschaftszonen der Erde).
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: landschaftszonen-der-erde
+        iCan: "Ich kann die Landschaftszonen der Erde auf einer Karte zeigen und ihre Vegetation beschreiben, auch wo sie von der zonalen Anordnung abweichen."
+        gradeBand: "7-8"
+        requires: [klimazonen-der-erde, klima-boden-vegetation]
+      # DG F2 S8; HE LP 8 (Passatkreislauf); BY Geo10 LB3 (Modell der Passatzirkulation); NW IF5 (planetarische Zirkulation).
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: passatkreislauf
+        iCan: "Ich kann mit dem Passatkreislauf erklären, warum es am Äquator fast täglich regnet und an den Wendekreisen große Wüsten liegen."
+        gradeBand: "7-8"
+        requires: [luftdruck-und-wind, beleuchtungszonen]
+      # SCHWACH BELEGT. DG F2 S8; HE LP 8 (Passatkreislauf, Klima- und Vegetationszonen); BY Geo10 LB3 (Zenitalregen, jahreszeitliche Verlagerung, hygrische Jahreszeiten); NW IF6 (naturräumliche Bedingungen in den Tropen). Hinweis: die Verlagerung der Passatzirkulation nennt nur BY ausdrücklich.
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: regenzeit-trockenzeit
+        iCan: "Ich kann erklären, warum es in den wechselfeuchten Tropen eine Regenzeit und eine Trockenzeit gibt."
+        gradeBand: "7-8"
+        requires: [passatkreislauf]
+      # DG F2 S8 (Ökosystem tropischer Regenwald); HE LP 8 (Problembereich tropischer Regenwald); BY Geo10 LB3 (Merkmale tropischer Ökosysteme: Regenwald); NW IF6 (Tropen).
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: tropischer-regenwald
+        iCan: "Ich kann das Ökosystem tropischer Regenwald mit seinem Stockwerkbau und seinem kurzen Nährstoffkreislauf beschreiben."
+        gradeBand: "7-8"
+        requires: [landschaftszonen-der-erde]
+      # DG F2 S8; HE LP 8 (Klima- und Vegetationszonen; Raumbeispiel Sahelzone); BY Geo10 LB3 (Merkmale der Savannen); NW IF6 (Tropen).
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: savanne
+        iCan: "Ich kann Feucht-, Trocken- und Dornsavanne unterscheiden und mit der Länge der Regenzeit erklären."
+        gradeBand: "7-8"
+        requires: [regenzeit-trockenzeit]
+      # DG F2 S8; HE LP 8 (Klima- und Vegetationszonen); BY Geo10 LB3 (Merkmale der Wüsten); NW IF6 (Subtropen).
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: wueste
+        iCan: "Ich kann erklären, wie Wüsten an den Wendekreisen entstehen und wie Pflanzen und Tiere an die Trockenheit angepasst sind."
+        gradeBand: "7-8"
+        requires: [passatkreislauf]
+      # DG F2 S8 (Höhenstufen der Vegetation); HE LP 5 (Höhenstufen); BY Geo10 LB7 (horizontale und vertikale Verbreitung der Vegetation in Südamerika); NW –.
+      # Stimmen 5-6/9-10/– -> 7-8 (keine Mehrheit (5-6/9-10), requires entscheidet nicht; die mittlere Stufe)
+      - id: hoehenstufen
+        iCan: "Ich kann die Höhenstufen der Vegetation im Hochgebirge beschreiben und erklären, warum es mit zunehmender Höhe kälter wird."
+        gradeBand: "7-8"
+        requires: [grosslandschaften-deutschland, wetter-und-klima]
+      # DG F4 S18 (Klimawandel); HE –; BY Geo10 LB4 (Ursachen des anthropogenen Treibhauseffekts); NW IF5 (Treibhauseffekt).
+      # Stimmen –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: treibhauseffekt
+        iCan: "Ich kann den natürlichen Treibhauseffekt erklären und wie der Mensch ihn durch Treibhausgase verstärkt."
+        gradeBand: "9-10"
+        requires: [klimazonen-der-erde]
+      # Siehe auch: biologie/klimawandel (Biologie: Treibhauseffekt und Folgen für Lebewesen).
+      # DG F4 S18; HE –; BY Geo10 LB4 (extraterrestrische und terrestrische Antriebskräfte, wissenschaftliche Erkenntnisse); NW IF5 (natürliche und anthropogen bedingte Klimaveränderungen).
+      # Stimmen –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: klimawandel-ursachen
+        iCan: "Ich kann natürliche und vom Menschen verursachte Gründe für Klimaänderungen unterscheiden und mit Messdaten belegen."
+        gradeBand: "9-10"
+        requires: [treibhauseffekt]
+      # Siehe auch: biologie/klimawandel (Biologie: Treibhauseffekt und Folgen für Lebewesen).
+      # DG F4 S18, S21; HE –; BY Geo10 LB4 (Folgen, regionale Unterschiede); Geo7 LB3 (Folgen in Europa); NW IF5 (Meeresspiegelanstieg, Wetterextreme; regionale Auswirkungen). Hinweis: BY nennt Folgen in Europa schon in Geo7; die Stimme zählt für Geo10, wo die Ursachen behandelt werden.
+      # Stimmen –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: klimawandel-folgen
+        iCan: "Ich kann Folgen des Klimawandels wie Meeresspiegelanstieg, Dürren und Wetterextreme beschreiben und erklären, warum sie Regionen verschieden treffen."
+        gradeBand: "9-10"
+        requires: [klimawandel-ursachen]
+      # DG F4 S18 (Naturrisiken); HE –; BY Geo10 LB7 (Vulnerabilität am Beispiel eines Hurrikans); NW IF5 (Wetterphänomene, Wetterextreme).
+      # Stimmen –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: tropischer-wirbelsturm
+        iCan: "Ich kann erklären, wie ein tropischer Wirbelsturm entsteht und warum manche Regionen besonders verwundbar sind."
+        gradeBand: "9-10"
+        requires: [luftdruck-und-wind, klimazonen-der-erde]
+      # DG F4 S20; HE –; BY Geo10 LB4 (Klimaschutz, Fachprofil); NW IF5 UK (Maßnahmen zur Verlangsamung der Erwärmung, Energieversorgung).
+      # Stimmen –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: klimaschutz
+        iCan: "Ich kann Maßnahmen zum Klimaschutz wie erneuerbare Energien beurteilen und begründen, was ich selbst beitragen kann."
+        gradeBand: "9-10"
+        requires: [klimawandel-ursachen, energietraeger]
+      # DG F4 S20; HE –; BY Geo10 LB4 (Anpassungsstrategien); NW IF5 UK (Anpassung an Extremwetterereignisse).
+      # Stimmen –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: klimaanpassung
+        iCan: "Ich kann Maßnahmen zur Anpassung an den Klimawandel beschreiben, zum Beispiel höhere Deiche oder mehr Grün gegen Hitze in der Stadt."
+        gradeBand: "9-10"
+        requires: [klimawandel-folgen]
+  - id: landwirtschaft
+    name: { de: "Landwirtschaft und Ernährung", en: "Agriculture and food" }
+    competencies:
+      # DG F4 S17 (Landwirtschaft); HE LP 5 (Abhängigkeiten von der Natur); BY Geo5 LB4 (Temperatur, Niederschlag, Bodeneigenschaft); NW IF3 (Standortfaktoren des primären Sektors: Boden, Klima).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: naturfaktoren-landwirtschaft
+        iCan: "Ich kann erklären, wie Boden, Temperatur, Niederschlag und Relief bestimmen, was auf einem Feld wachsen kann."
+        gradeBand: "5-6"
+        requires: [boden, wetter-und-klima]
+      # DG F4 S17; HE LP 5 (landwirtschaftlicher Betrieb: Nutzungs- und Betriebsformen); BY Geo5 LB4 (Landnutzung in einem Agrarraum); NW IF3 (Spezialisierung).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: bauernhof
+        iCan: "Ich kann an einem Bauernhof Betriebsformen wie Ackerbau, Viehhaltung und Sonderkulturen unterscheiden."
+        gradeBand: "5-6"
+        requires: [naturfaktoren-landwirtschaft]
+      # DG O1 S1; HE –; BY Geo5 LB4 (verorten Räume unterschiedlicher landwirtschaftlicher Nutzung); NW IF3 (Orientierungsraster Wirtschaftsräume in Deutschland).
+      # Stimmen –/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: agrarraeume-deutschland
+        iCan: "Ich kann Räume unterschiedlicher landwirtschaftlicher Nutzung in Deutschland auf einer Karte zeigen, zum Beispiel Börden, Grünland und Weinbau."
+        gradeBand: "5-6"
+        requires: [bauernhof, grosslandschaften-deutschland]
+      # DG F3 S12 (Strukturwandel); HE LP 5 (Massentierhaltung); BY Geo5 LB4 (Merkmale und Wandel des ländlichen Raums); NW IF3 (Intensivierung, Spezialisierung).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: wandel-der-landwirtschaft
+        iCan: "Ich kann erklären, wie sich die Landwirtschaft durch Maschinen, Spezialisierung und Massentierhaltung verändert hat."
+        gradeBand: "5-6"
+        requires: [bauernhof]
+      # DG F4 S20; HE LP 5 (ökologische und traditionelle Landwirtschaft); BY Geo5 LB4 (konventionelle und ökologische Landwirtschaft); NW IF3 (nachhaltiges Wirtschaften in der Landwirtschaft).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: oekologische-landwirtschaft
+        iCan: "Ich kann konventionelle und ökologische Landwirtschaft vergleichen."
+        gradeBand: "5-6"
+        requires: [wandel-der-landwirtschaft]
+      # DG F4 S17; HE –; BY Geo7 LB4 (Nachhaltigkeit von Lebensmitteln: Produktion, Transport, Konsum); Geo5 LB4 (Beispiel); NW IF3 (Produktionskette von Nahrungsmitteln).
+      # Stimmen –/7-8/5-6 -> 5-6 (Gleichstand 5-6/7-8, requires entscheidet nicht; nach der Regel die frühere Stufe (BY nennt das Beispiel schon in Geo5))
+      - id: weg-der-lebensmittel
+        iCan: "Ich kann den Weg eines Lebensmittels vom Feld über Verarbeitung, Transport und Handel bis in den Supermarkt beschreiben."
+        gradeBand: "5-6"
+        requires: [bauernhof]
+      # DG F4 S20; HE –; BY Geo7 LB4 (Vor- und Nachteile regionaler und importierter Produkte); NW IF3 UK (eigenes Konsumverhalten).
+      # Stimmen –/7-8/5-6 -> 5-6 (Gleichstand 5-6/7-8, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: regionale-lebensmittel
+        iCan: "Ich kann regionale und importierte Lebensmittel nach Transportweg, Umweltwirkung und Preis vergleichen und begründet einkaufen."
+        gradeBand: "5-6"
+        requires: [weg-der-lebensmittel, nachhaltigkeit]
+      # DG F4 S17, S18; HE LP 6.2 (klimatische Abhängigkeiten der Landwirtschaft, Aralsee); BY Geo7 LB4 (Bewässerungslandwirtschaft, Glashauskulturen); NW IF6 (Bewässerung, Treibhauskulturen).
+      # Stimmen 5-6/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: bewaesserung-und-gewaechshaus
+        iCan: "Ich kann am Beispiel von Bewässerung und Gewächshäusern erklären, wie Menschen natürliche Grenzen der Landwirtschaft überwinden und welche Probleme dabei entstehen."
+        gradeBand: "7-8"
+        requires: [naturfaktoren-landwirtschaft, klimazonen-europas]
+      # DG F4 S18 (Bodenversalzung); HE LP 8 (Versalzung, Grundwasserabsenkung); BY Geo10 LB5 (Degradation von Nutzflächen); NW IF6 (Bodenversalzung).
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: bodenversalzung
+        iCan: "Ich kann erklären, wie falsche Bewässerung zur Versalzung von Böden führt."
+        gradeBand: "7-8"
+        requires: [bewaesserung-und-gewaechshaus]
+      # DG F4 S18 (Wassermangel); F4 S19 (Ressourcenkonflikte); HE LP 8 (Grundwasserabsenkung); LP 6.2 (Wassernotstand); BY Geo10 LB5 (Wassermangel und -konflikte); NW –.
+      # Stimmen 7-8/9-10/– -> 7-8 (keine Mehrheit (7-8/9-10), requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: wassermangel
+        iCan: "Ich kann Ursachen von Wassermangel in Trockenräumen erklären und Konflikte um Wasser beschreiben."
+        gradeBand: "7-8"
+        requires: [bewaesserung-und-gewaechshaus, wueste]
+      # DG F4 S17; HE –; BY Geo7 LB4 (Naturfaktoren und wirtschaftliche Rahmenbedingungen); NW IF6 (Subsistenzwirtschaft, marktorientierte Produktion).
+      # Stimmen –/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: subsistenz-und-markt
+        iCan: "Ich kann Landwirtschaft für die eigene Versorgung (Subsistenz) und Landwirtschaft für den Markt unterscheiden."
+        gradeBand: "7-8"
+        requires: [bauernhof]
+      # DG F4 S17; HE LP 8 (Überweidung); BY Geo7 LB4 (extensive Weidewirtschaft); Geo10 LB5 (Nomadismus und Oasenwirtschaft im Wandel); NW IF6 (Viehwirtschaft).
+      # Stimmen 7-8/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: weidewirtschaft
+        iCan: "Ich kann extensive Weidewirtschaft und Nomadismus in Trockenräumen beschreiben und erklären, warum sie sich verändern."
+        gradeBand: "7-8"
+        requires: [subsistenz-und-markt]
+      # DG F4 S17; HE LP 8 (Brandrodungswanderfeldbau); BY Geo10 LB3 (landwirtschaftliche Nutzungsformen im Regenwald); NW IF6 (Subsistenzwirtschaft).
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: wanderfeldbau
+        iCan: "Ich kann den Brandrodungswanderfeldbau beschreiben und erklären, warum er nur mit wenigen Menschen nachhaltig ist."
+        gradeBand: "7-8"
+        requires: [tropischer-regenwald, subsistenz-und-markt]
+      # DG F4 S17; HE –; BY Geo10 LB7 (Plantagenwirtschaft als Entwicklungsimpuls); NW IF6 (Plantagenwirtschaft).
+      # Stimmen –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: plantagenwirtschaft
+        iCan: "Ich kann die Plantagenwirtschaft beschreiben und ihre Chancen und Probleme für ein tropisches Land beurteilen."
+        gradeBand: "9-10"
+        requires: [tropischer-regenwald, subsistenz-und-markt]
+      # DG F4 S18 (Rodung); HE LP 8 (Raubbau, Bevölkerungsdruck); BY Geo10 LB7 (Amazonien: Ursachen und Folgen der Abholzung); NW IF6 (Regenwaldzerstörung).
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: regenwaldzerstoerung
+        iCan: "Ich kann Ursachen und Folgen der Abholzung des tropischen Regenwaldes erklären."
+        gradeBand: "7-8"
+        requires: [tropischer-regenwald]
+      # DG F4 S20; HE –; BY Geo10 LB7 (ein Beispiel nachhaltiger Nutzung); NW IF6 (Agroforstwirtschaft, nachhaltiges Wirtschaften).
+      # Stimmen –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: regenwald-nachhaltig-nutzen
+        iCan: "Ich kann Beispiele beschreiben, wie man den Regenwald nachhaltig nutzen kann, etwa durch Agroforstwirtschaft."
+        gradeBand: "9-10"
+        requires: [regenwaldzerstoerung, wanderfeldbau]
+      # DG F4 S18 (Bodenerosion); HE LP 8 (Bodenerosion); BY –; NW IF6 (Erosion).
+      # Stimmen 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: bodenerosion
+        iCan: "Ich kann erklären, wie Bodenerosion durch Wind und Wasser entsteht und wie man sie verhindern kann."
+        gradeBand: "7-8"
+        requires: [exogene-kraefte, boden]
+      # DG F4 S19 (Desertifikation); HE LP 8 (Desertifikation, Raumbeispiel Sahelzone); BY Geo10 LB6 (Desertifikation in der Sahelzone); NW IF6 (Desertifikation).
+      # Stimmen 7-8/9-10/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: desertifikation
+        iCan: "Ich kann am Beispiel der Sahelzone erklären, wie Überweidung, Abholzung und Dürren zur Desertifikation führen, und Gegenmaßnahmen nennen."
+        gradeBand: "7-8"
+        requires: [savanne, weidewirtschaft, bodenerosion]
+  - id: wirtschaft
+    name: { de: "Wirtschaft, Verkehr und Tourismus", en: "Economy, transport and tourism" }
+    competencies:
+      # DG F3 S10 (wirtschaftliche Raumstrukturen); HE LP 9 (Wirtschaftsstruktur); BY Geo7 LB5 (Standortfaktoren unterschiedlicher Branchen); NW IF3 (primärer, sekundärer, tertiärer Sektor).
+      # Stimmen 9-10/7-8/5-6 -> 7-8 (drei verschiedene Stimmen: die mittlere)
+      - id: wirtschaftssektoren
+        iCan: "Ich kann Betriebe und Berufe dem primären, sekundären und tertiären Wirtschaftssektor zuordnen."
+        gradeBand: "7-8"
+      # DG F4 S17 (Standortwahl von Betrieben); HE LP 9 (Standortfaktoren); BY Geo7 LB5 (erklären und vergleichen die Bedeutung von Standortfaktoren); NW IF3 (Standortfaktoren des sekundären Sektors).
+      # Stimmen 9-10/7-8/5-6 -> 7-8 (drei verschiedene Stimmen: die mittlere)
+      - id: standortfaktoren
+        iCan: "Ich kann erklären, warum sich ein Betrieb an einem bestimmten Ort ansiedelt, zum Beispiel wegen Rohstoffen, Arbeitskräften, Verkehrswegen oder Kunden."
+        gradeBand: "7-8"
+        requires: [wirtschaftssektoren]
+      # DG F3 S12 (Strukturwandel); HE LP 9 (Region im Wandel; alte und neue Industriegebiete der USA); BY –; NW IF3 (Strukturwandel industriell geprägter Räume).
+      # Stimmen 9-10/–/5-6 -> 7-8 (keine Mehrheit (5-6/9-10); requires standortfaktoren (7-8) schließt 5-6 aus; die mittlere Stufe)
+      - id: strukturwandel
+        iCan: "Ich kann am Beispiel eines alten Industriegebiets wie dem Ruhrgebiet erklären, warum Industrien schrumpfen und was an ihre Stelle tritt."
+        gradeBand: "7-8"
+        requires: [standortfaktoren]
+      # DG F3 S10; HE LP 9 (Rhein-Main-Gebiet: Arbeitsplatzangebot); LP 6.1 (London als Finanzzentrum); BY Geo7 LB5 (Metropolen als Wirtschaftsstandorte, Wachstumsbranchen); NW IF3 (Standorte und Branchen des tertiären Sektors).
+      # Stimmen 9-10/7-8/5-6 -> 7-8 (drei verschiedene Stimmen: die mittlere)
+      - id: dienstleistungen
+        iCan: "Ich kann Standorte des Dienstleistungssektors beschreiben, zum Beispiel Banken und Handel in der Innenstadt oder einen Flughafen."
+        gradeBand: "7-8"
+        requires: [standortfaktoren]
+      # DG F4 S17 (Bergbau, Energiegewinnung); HE LP 6.1 (Rohstoffe und Energiequellen: fossile und regenerative Energien); BY Geo7 LB6 (Erdöl und Erdgas aus dem Meer), LB5 (Energieverbund); NW IF4 (Rohstoffe, Energie); IF5 (Energieversorgung).
+      # Stimmen 5-6/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: energietraeger
+        iCan: "Ich kann fossile und erneuerbare Energieträger unterscheiden und erklären, warum fossile Rohstoffe begrenzt sind."
+        gradeBand: "7-8"
+      # DG F3 S11 (Erschließung durch Verkehrswege); O4 S14; HE LP 6.1 (Verkehrsströme und Verkehrsnetze); LP 5 (Verkehr); BY Geo5 LB5 (Verkehr); Geo7 LB5 (Infrastrukturprojekte); NW IF1 (Verkehrswege, Mobilität).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: verkehr
+        iCan: "Ich kann Verkehrsmittel und Verkehrsnetze vergleichen und beschreiben, wie sie Räume verbinden und die Umwelt belasten."
+        gradeBand: "5-6"
+      # DG F3 S11; HE LP 5 (Hafen); LP 6.1 (Flug- und Seehäfen); BY Geo7 LB6 (Seehäfen als Verkehrs- und Handelsdrehscheiben); NW –.
+      # Stimmen 5-6/7-8/– -> 5-6 (keine Mehrheit (5-6/7-8), requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: seehafen
+        iCan: "Ich kann erklären, warum ein Seehafen eine Drehscheibe für Handel und Verkehr ist."
+        gradeBand: "5-6"
+        requires: [verkehr]
+      # DG F4 S17; HE LP 5 (Fischereiwirtschaft); BY Geo7 LB6 (Fischereiwirtschaft und Aquakulturen); NW –.
+      # Stimmen 5-6/7-8/– -> 5-6 (keine Mehrheit (5-6/7-8), requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: fischerei
+        iCan: "Ich kann beschreiben, wie Fischerei und Aquakultur das Meer nutzen, und erklären, warum Überfischung ein Problem ist."
+        gradeBand: "5-6"
+      # DG F4 S19 (Meeresverschmutzung); HE LP 5 (Meeresverschmutzung); BY Geo7 LB6 (ökologische Belastungen, Schutz der Meere); NW –.
+      # Stimmen 5-6/7-8/– -> 5-6 (keine Mehrheit (5-6/7-8), requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: meeresschutz
+        iCan: "Ich kann Ursachen der Meeresverschmutzung wie Plastikmüll nennen und Maßnahmen zum Schutz der Meere vorschlagen."
+        gradeBand: "5-6"
+        requires: [fischerei]
+      # DG F4 S17 (Tourismus); HE LP 5 (Nutzungswandel Freizeitverhalten am Meer und im Hochgebirge); LP 6.1 (Fremdenverkehr Südeuropa); BY Geo5 LB3 (Naturpotenzial und touristische Nutzung der Alpen); NW IF2 (touristisches Potenzial).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: tourismus-voraussetzungen
+        iCan: "Ich kann erklären, welche Natur und welche Einrichtungen einen Ort an der Küste oder im Gebirge für Urlauber anziehend machen."
+        gradeBand: "5-6"
+        requires: [grosslandschaften-deutschland]
+      # SCHWACH BELEGT. DG F4 S17; HE LP 6.1 (Fremdenverkehr); BY Geo7 LB6 (Tourismus an Europas Küsten: Formen); NW IF2 (Formen des Tourismus). Hinweis: HE nennt nur den Fremdenverkehr.
+      # Stimmen 5-6/7-8/5-6 -> 5-6 (Mehrheit)
+      - id: tourismusformen
+        iCan: "Ich kann Formen des Tourismus wie Erholungs-, Städte- und Ökotourismus unterscheiden."
+        gradeBand: "5-6"
+        requires: [tourismus-voraussetzungen]
+      # DG F4 S18; HE LP 5 (Nutzungswandel); BY Geo5 LB3 (Problematik menschlicher Eingriffe); Geo7 LB6 (Auswirkungen); NW IF2 (Veränderungen eines Ortes durch den Tourismus).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: tourismus-folgen
+        iCan: "Ich kann beschreiben, wie der Tourismus einen Ort wirtschaftlich, sozial und für die Umwelt verändert."
+        gradeBand: "5-6"
+        requires: [tourismus-voraussetzungen]
+      # DG F4 S20, S21 (nachhaltige Entwicklung); HE KC Umwelt-Gesellschaft (Prinzipien der Nachhaltigkeit); BY Geo7 LB4 (ökonomische, soziale und ökologische Folgewirkungen); Fachprofil (Nachhaltigkeitsviereck); NW IF2 UK (ökonomisches Wachstum und nachhaltige Entwicklung); IF3 (nachhaltiges Wirtschaften).
+      # Stimmen 5-10/7-8/5-6 -> 5-6 (Gleichstand 5-6/7-8, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: nachhaltigkeit
+        iCan: "Ich kann an einem Beispiel erklären, was nachhaltig heißt: Umwelt, Wirtschaft und Gesellschaft werden zugleich berücksichtigt."
+        gradeBand: "5-6"
+      # DG F4 S20 (Tourismusförderung); HE –; BY Geo10 LB7 (Handlungsrichtlinien für eigene Reisen); NW IF2 (Merkmale des sanften Tourismus).
+      # Stimmen –/9-10/5-6 -> 7-8 (keine Mehrheit (5-6/9-10), requires entscheidet nicht; die mittlere Stufe)
+      - id: sanfter-tourismus
+        iCan: "Ich kann Merkmale des sanften Tourismus nennen und begründen, warum er Natur und Menschen eines Ortes schont."
+        gradeBand: "7-8"
+        requires: [tourismus-folgen, nachhaltigkeit]
+      # SCHWACH BELEGT. DG F3 S12; HE –; BY Geo7 LB5 (Vernetzung durch Datennetze); NW IF10 (Raumwirksamkeit von Digitalisierung); IF3 (Digitalisierung). Hinweis: BY nennt nur Datennetze als Infrastruktur.
+      # Stimmen –/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: digitalisierung
+        iCan: "Ich kann erklären, wie Onlinehandel und schnelles Internet Standorte, Arbeitsplätze und Verkehr verändern."
+        gradeBand: "7-8"
+        requires: [standortfaktoren]
+  - id: siedlung
+    name: { de: "Siedlungen und Städte", en: "Settlements and cities" }
+    competencies:
+      # DG F3 S15 (Stadt – Land); HE LP 5 (Leben und Arbeiten im ländlichen und städtischen Raum); BY Geo5 LB4, LB5 (Merkmale ländlicher und städtischer Räume); NW IF1 (physiognomische Merkmale; städtische und ländliche Siedlungen vergleichen).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: stadt-und-land
+        iCan: "Ich kann Stadt und Dorf an Bebauung, Größe und Einrichtungen unterscheiden."
+        gradeBand: "5-6"
+      # DG F3 S11; HE LP 5 (Heimatgemeinde: Wohnviertel, Gewerbe, Verkehr); BY Geo5 LB5 (Funktionen innerhalb einer Stadt); NW IF1 (Daseinsgrundfunktionen).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: daseinsgrundfunktionen
+        iCan: "Ich kann an meinem Wohnort zeigen, wo Menschen wohnen, arbeiten, einkaufen, lernen, sich erholen und unterwegs sind."
+        gradeBand: "5-6"
+        requires: [stadt-und-land]
+      # DG F3 S10; HE LP 5 (Wohnviertel, Gewerbe- und Industriegebiete); BY Geo5 LB5 (Merkmale und funktionale Gliederung); NW IF1 (funktionsräumliche Gliederung städtischer Teilräume).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: stadtviertel
+        iCan: "Ich kann eine Stadt in Viertel wie Innenstadt (City), Wohngebiete, Gewerbegebiete und Naherholungsgebiete gliedern."
+        gradeBand: "5-6"
+        requires: [daseinsgrundfunktionen]
+      # SCHWACH BELEGT. DG F3 S15 (Stadt – Land); HE LP 5 (Verkehr: öffentliche und individuelle Verkehrsmittel); BY Geo5 LB5 (Stadt-Umland-Beziehungen, Pendlerströme); NW IF1 (Stadt-Umlandbeziehungen: Pendler). Hinweis: HE nennt nur den Verkehr.
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: stadt-umland
+        iCan: "Ich kann erklären, warum Menschen zwischen Stadt und Umland pendeln, etwa zur Arbeit, zum Einkaufen oder in der Freizeit."
+        gradeBand: "5-6"
+        requires: [stadtviertel]
+      # DG F3 S10 (vergangene und gegenwärtige Strukturen); HE LP 5 (Stadtentwicklung); BY Geo5 LB5 (Stadtentwicklung: historische Grundlagen); NW IF9 (genetische Merkmale, Wandel von Städten).
+      # Stimmen 5-6/5-6/7-10 -> 5-6 (Mehrheit)
+      - id: stadtentwicklung
+        iCan: "Ich kann an einem Beispiel beschreiben, wie eine Stadt von ihrem alten Kern aus gewachsen ist."
+        gradeBand: "5-6"
+        requires: [stadtviertel]
+      # DG F3 S12; HE –; BY Geo5 LB5 (Suburbanisierung); NW IF1 (suburbane Siedlungen, Veränderung).
+      # Stimmen –/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: suburbanisierung
+        iCan: "Ich kann erklären, warum Menschen und Betriebe aus der Stadt ins Umland ziehen und welche Folgen das hat."
+        gradeBand: "5-6"
+        requires: [stadt-umland]
+      # DG F3 S12; HE LP 5 (Leben und Arbeiten im ländlichen Raum); BY Geo5 LB4 (Merkmale und Wandel des ländlichen Raums); NW IF1 (Veränderung ländlicher Siedlungen).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: laendlicher-raum
+        iCan: "Ich kann beschreiben, wie sich Dörfer verändern, zum Beispiel durch Zuzug, Abwanderung oder weniger Bauernhöfe."
+        gradeBand: "5-6"
+        requires: [stadt-und-land, wandel-der-landwirtschaft]
+      # DG F5 S25 (Verdichtungs- und Peripherräume); HE LP 5 (Ballungsräume); BY Geo5 LB5 (verorten Verdichtungsräume); Geo7 LB5; NW IF1 (Orientierungsraster: Verdichtungsräume und ländliche Regionen).
+      # Stimmen 5-6/5-6/5-6 -> 5-6 (Mehrheit)
+      - id: verdichtungsraeume
+        iCan: "Ich kann Verdichtungsräume und ländliche Räume in Deutschland und Europa auf einer Karte zeigen."
+        gradeBand: "5-6"
+        requires: [stadt-und-land, bundeslaender]
+      # DG F3 S13 (Megastädte); HE LP 6.1 (London, Paris: Übergewicht der Metropole); BY Geo7 LB5 (Leben in Metropolen: Kennzeichen, Herausforderungen); NW IF9 (Metropolisierung; Mobilität, Wohnraumverfügbarkeit).
+      # Stimmen 5-6/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: metropolen
+        iCan: "Ich kann Merkmale einer Metropole nennen und Herausforderungen wie Verkehr und Wohnungsmangel beschreiben."
+        gradeBand: "7-8"
+        requires: [verdichtungsraeume]
+      # DG F4 S17 (Stadtökologie), S20; HE –; BY Geo5 LB5 (Umbau der Städte als Beitrag zur nachhaltigen Entwicklung); Geo10 LB7; NW IF9 UK (Stadtumbaumaßnahmen).
+      # Stimmen –/5-6/7-10 -> 7-8 (keine Mehrheit (je eine Stimme 5-6, 7-8, 9-10): die mittlere Stufe)
+      - id: nachhaltige-stadt
+        iCan: "Ich kann Maßnahmen für eine nachhaltige Stadt beurteilen, zum Beispiel beim Verkehr, beim Wohnen und bei Grünflächen."
+        gradeBand: "7-8"
+        requires: [stadtentwicklung, nachhaltigkeit]
+      # DG F3 S12 (Verstädterung); HE KC Mensch/Gesellschaft (Metropolisierung, städtisches Wachstum); BY Geo10 LB7 (Metropolisierung); NW IF9 (Urbanisierung).
+      # Stimmen 5-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: verstaedterung
+        iCan: "Ich kann erklären, warum weltweit immer mehr Menschen in Städten leben (Verstädterung, Landflucht)."
+        gradeBand: "9-10"
+        requires: [metropolen]
+      # DG F3 S13 (Megastädte); HE KC Mensch/Gesellschaft (Metropolisierung); BY Geo10 LB7 (lateinamerikanische Megastädte); NW IF9 (Herausbildung von Megacities).
+      # Stimmen 5-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: megastaedte
+        iCan: "Ich kann Merkmale und Probleme von Megastädten in Entwicklungs- und Schwellenländern beschreiben."
+        gradeBand: "9-10"
+        requires: [verstaedterung, laendergruppen]
+      # DG F3 S13; HE –; BY Geo10 LB7 (Marginalsiedlungen und Gated Communities, informeller Sektor); NW IF9 (Segregation).
+      # Stimmen –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: marginalsiedlungen
+        iCan: "Ich kann erklären, wie in großen Städten arme und reiche Viertel getrennt entstehen, etwa Marginalsiedlungen und bewachte Wohnanlagen."
+        gradeBand: "9-10"
+        requires: [megastaedte]
+  - id: entwicklung
+    name: { de: "Bevölkerung, Entwicklung und globale Verflechtung", en: "Population, development and global links" }
+    competencies:
+      # DG O1 S2 (Regionen unterschiedlichen Entwicklungsstandes); F5 S25; HE KC Umwelt-Gesellschaft (globale Disparitäten); BY Geo10 LB2 (Indikatoren zur Klassifizierung nach dem Entwicklungsstand); NW IF7 (Entwicklungsindikatoren, HDI).
+      # Stimmen 5-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: entwicklungsindikatoren
+        iCan: "Ich kann den Entwicklungsstand eines Landes mit Merkmalen wie Einkommen, Lebenserwartung und Bildung beschreiben, auch mit dem HDI."
+        gradeBand: "9-10"
+        requires: [thematische-karte]
+      # DG F5 S25 (Entwicklungsländer – Industrieländer); HE LP 9 (asiatische Schwellenländer); KC (globale Disparitäten); BY Geo10 LB2 (Regionen unterschiedlichen Entwicklungsstandes); NW IF7 (Entwicklungs-, Schwellen- und Industrieländer).
+      # Stimmen 9-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: laendergruppen
+        iCan: "Ich kann Entwicklungs-, Schwellen- und Industrieländer unterscheiden und Beispiele auf einer Karte zeigen."
+        gradeBand: "9-10"
+        requires: [entwicklungsindikatoren]
+      # DG O5 S16; HE –; BY Geo10 LB2 (kritisch Stellung zu gängigen Indikatoren); NW IF7 (Problematisierung gängiger Begriffe und Einteilungen).
+      # Stimmen –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: begriffe-pruefen
+        iCan: "Ich kann begründen, warum Begriffe wie „Entwicklungsland“ und einzelne Indikatoren die Wirklichkeit nur zum Teil beschreiben."
+        gradeBand: "9-10"
+        requires: [laendergruppen]
+      # DG F3 S15 (Entwicklungsländer – Industrieländer); HE KC Umwelt-Gesellschaft (globale Disparitäten); BY Geo10 LB6 (endogene Faktoren als Entwicklungshemmnis); NW IF7 (Disparitäten vor dem Hintergrund von Ressourcen, Infrastruktur, Austauschbeziehungen).
+      # Stimmen 5-10/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: ursachen-ungleicher-entwicklung
+        iCan: "Ich kann Ursachen dafür erklären, dass sich Länder unterschiedlich entwickeln, zum Beispiel Naturraum, Rohstoffe, Infrastruktur, Bildung und Handel."
+        gradeBand: "9-10"
+        requires: [laendergruppen]
+      # DG F3 S13 (Welthandel); HE –; BY Geo10 LB6 (globalisierte Weltwirtschaft, Direktinvestitionen); LB7 (Integration in den globalen Markt); NW IF7 (Austausch von Rohstoffen und Industriewaren, Handelsabkommen, WTO).
+      # Stimmen –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: welthandel
+        iCan: "Ich kann erklären, warum der Tausch von Rohstoffen gegen Industriewaren für viele ärmere Länder ungünstig ist, und fairen Handel beurteilen."
+        gradeBand: "9-10"
+        requires: [ursachen-ungleicher-entwicklung]
+      # DG F4 S20; HE LP 8 (Hilfe zur Selbsthilfe); BY Geo10 LB2, LB6 (Entwicklungszusammenarbeit, Entwicklungsprojekt); NW IF7 (Projekte der Entwicklungszusammenarbeit).
+      # Stimmen 7-8/9-10/7-10 -> 9-10 (Gleichstand 7-8/9-10; requires ursachen-ungleicher-entwicklung (9-10) schließt 7-8 aus)
+      - id: entwicklungszusammenarbeit
+        iCan: "Ich kann ein Projekt der Entwicklungszusammenarbeit beschreiben und beurteilen, ob es den Menschen dauerhaft hilft."
+        gradeBand: "9-10"
+        requires: [ursachen-ungleicher-entwicklung, nachhaltigkeit]
+      # DG F4 S20 (Tourismusförderung); HE –; BY Geo10 LB7 (Ferntourismus als Entwicklungsimpuls, Folgen des Massentourismus); NW IF7 (Ausbau von Tourismus; UK Chancen und Risiken des Tourismus).
+      # Stimmen –/9-10/7-10 -> 9-10 (Mehrheit)
+      - id: ferntourismus
+        iCan: "Ich kann Chancen und Risiken des Ferntourismus für ein Entwicklungsland beurteilen."
+        gradeBand: "9-10"
+        requires: [tourismus-folgen, laendergruppen]
+      # DG F5 S25 (Verdichtungs- und Peripherräume in Europa); HE LP 9 (Aktiv- und Passivraum); BY Geo7 LB4 (periphere ländliche Räume: regionale Disparitäten und ihr Abbau); NW IF7 (strukturstarke und strukturschwache Räume in Europa).
+      # Stimmen 9-10/7-8/7-10 -> 7-8 (Gleichstand 7-8/9-10; requires: Grundlage von migration-ursachen (7-8))
+      - id: disparitaeten-europa
+        iCan: "Ich kann wirtschaftlich starke und schwache Räume in Europa unterscheiden und Maßnahmen nennen, die die Unterschiede verringern."
+        gradeBand: "7-8"
+        requires: [standortfaktoren, verdichtungsraeume]
+      # DG F3 S10 (Bevölkerungsverteilungen); HE LP 8 (Problembeispiel Bevölkerungsdichte); KC (demographische Entwicklung); BY –; NW IF8 (räumliche Verteilung, Bevölkerungsdichte).
+      # Stimmen 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: bevoelkerungsverteilung
+        iCan: "Ich kann die Verteilung der Bevölkerung auf der Erde beschreiben und erklären, warum manche Räume dicht und andere dünn besiedelt sind."
+        gradeBand: "7-8"
+        requires: [thematische-karte, klimazonen-der-erde]
+      # DG F3 S10 (Vorhersagen zu Bevölkerungsverteilungen); HE KC Mensch/Gesellschaft (demographische Entwicklung); BY –; NW IF8 (Bevölkerungswachstum, Geburten-, Sterbe-, Wachstumsrate, Prognose).
+      # Stimmen 5-10/–/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: bevoelkerungswachstum
+        iCan: "Ich kann beschreiben, wie die Weltbevölkerung wächst, und das Wachstum mit Geburtenrate und Sterberate erklären."
+        gradeBand: "7-8"
+        requires: [bevoelkerungsverteilung]
+      # SCHWACH BELEGT. DG F3 S10; HE KC Mensch/Gesellschaft (demographische Entwicklung); BY –; NW IF8 (Altersstruktur). Hinweis: HE nennt nur allgemein die demographische Entwicklung; BY erst Geo11 (Pyramidendiagramme).
+      # Stimmen 5-10/–/7-10 -> 7-8 (Gleichstand 7-8/9-10, requires entscheidet nicht; nach der Regel die frühere Stufe)
+      - id: altersstruktur
+        iCan: "Ich kann eine Bevölkerungspyramide lesen und daraus Schlüsse für die Zukunft eines Landes ziehen."
+        gradeBand: "7-8"
+        requires: [bevoelkerungswachstum]
+      # DG F4 S21 (Tragfähigkeit der Erde); HE LP 8 (Bevölkerungsdruck; Überbevölkerung?); BY –; NW IF7, IF8 (Tragfähigkeit, Ernährungssicherung).
+      # Stimmen 7-8/–/7-10 -> 7-8 (Mehrheit)
+      - id: tragfaehigkeit
+        iCan: "Ich kann erklären, was Tragfähigkeit eines Raumes bedeutet und warum Hunger oft andere Ursachen hat als zu wenig Nahrung."
+        gradeBand: "7-8"
+        requires: [bevoelkerungswachstum, naturfaktoren-landwirtschaft]
+      # DG F3 S14 (Migration); HE KC Mensch/Gesellschaft (Migration); BY Geo7 LB4, LB5 (Arbeitsmigration in und nach Europa); Geo10 LB5 (Ursachen von Migration); NW IF8 (Migration: Ursachen, Push- und Pull-Faktoren).
+      # Stimmen 5-10/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: migration-ursachen
+        iCan: "Ich kann Ursachen von Migration mit Push- und Pull-Faktoren erklären."
+        gradeBand: "7-8"
+        requires: [disparitaeten-europa]
+      # DG F3 S14; F4 S19 (Migration); HE KC Umwelt-Gesellschaft (Migration); BY Geo7 LB4, LB5 (Folgen für Herkunfts- und Zielgebiete); NW IF8 (Folgen in Herkunfts- und Zielgebieten).
+      # Stimmen 5-10/7-8/7-10 -> 7-8 (Mehrheit)
+      - id: migration-folgen
+        iCan: "Ich kann Folgen von Migration für die Herkunftsgebiete und die Zielgebiete beschreiben."
+        gradeBand: "7-8"
+        requires: [migration-ursachen]
+      # DG F3 S12 (wirtschaftliche Globalisierung); F4 S21; HE LP 9 (regionale Auswirkung von Globalisierung); KC (wirtschaftliche Globalisierung); BY – (erst Geo11 LB2); NW IF10 (Merkmale von Globalisierung).
+      # Stimmen 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: globalisierung
+        iCan: "Ich kann an Beispielen aus meinem Alltag erklären, was Globalisierung bedeutet."
+        gradeBand: "9-10"
+        requires: [welthandel]
+      # DG F5 S23 (Globalisierung der Industrie); HE LP 9 (verlängerte Werkbank); BY – (erst Geo11 LB2); NW IF10 (Produktionskette, multinationale Konzerne, veränderte Standortgefüge).
+      # Stimmen 9-10/–/7-10 -> 9-10 (Mehrheit)
+      - id: weltweite-produktion
+        iCan: "Ich kann am Beispiel eines Produkts und eines weltweit tätigen Konzerns zeigen, wie die Herstellung auf viele Länder verteilt ist."
+        gradeBand: "9-10"
+        requires: [globalisierung, standortfaktoren]
