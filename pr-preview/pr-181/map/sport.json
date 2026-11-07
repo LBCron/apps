@@ -1,0 +1,1462 @@
+{
+  "id": "sport",
+  "name": {
+    "de": "Sport",
+    "en": "Physical education"
+  },
+  "source": {
+    "title": "Bewegungs- und Inhaltsfelder der Länder (keine KMK-Bildungsstandards), Leitquelle Kernlehrplan Sport Gymnasium Sek I NRW (2019), verglichen mit dem Kerncurriculum Hessen und dem LehrplanPLUS Bayern",
+    "url": "https://lehrplannavigator.nrw.de/system/files/media/document/file/g9_sp_klp_3426_2019_06_23.pdf"
+  },
+  "strands": [
+    {
+      "id": "fitness",
+      "name": {
+        "de": "Den Körper trainieren, die Fitness verbessern",
+        "en": "Fitness and training"
+      },
+      "competencies": [
+        {
+          "id": "motorische-grundfaehigkeiten",
+          "iCan": "Ich kann die motorischen Grundfähigkeiten Ausdauer, Kraft, Schnelligkeit und Beweglichkeit unterscheiden und zu jeder ein Beispiel aus dem Sport nennen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "koordinative-faehigkeiten",
+          "iCan": "Ich kann koordinative Fähigkeiten wie Gleichgewicht, Orientierung, Reaktion, Rhythmus und Differenzierung an Beispielen erklären.",
+          "gradeBand": "5-6",
+          "requires": [
+            "motorische-grundfaehigkeiten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "koordination-trainieren",
+          "iCan": "Ich kann erklären, wie man Koordination gezielt übt: unter Zeitdruck, mit hoher Genauigkeit und unter wechselnden Bedingungen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "koordinative-faehigkeiten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "belastung-und-koerper",
+          "iCan": "Ich kann beschreiben, wie Atmung, Puls, Körpertemperatur und Schwitzen sich vor, während und nach einer Belastung verändern.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "puls-messen",
+          "iCan": "Ich kann meinen Puls am Handgelenk oder am Hals messen und die Schläge pro Minute ausrechnen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "belastung-und-koerper"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aerobe-ausdauer",
+          "iCan": "Ich kann erklären, was aerobe Ausdauer ist und woran ich merke, dass ich in einem Tempo laufe, das ich lange durchhalten kann.",
+          "gradeBand": "5-6",
+          "requires": [
+            "belastung-und-koerper"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ausdauer-15-minuten",
+          "iCan": "Ich kann 15 Minuten ohne Pause in einem gleichmäßigen Tempo laufen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "aerobe-ausdauer"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ausdauer-30-minuten",
+          "iCan": "Ich kann 30 Minuten ohne Pause in einem selbst gewählten, gleichmäßigen Tempo laufen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "ausdauer-15-minuten",
+            "dauermethode"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dauermethode",
+          "iCan": "Ich kann die Dauermethode beschreiben: lange, gleichmäßige Belastung ohne Pause mit mittlerer Intensität.",
+          "gradeBand": "7-8",
+          "requires": [
+            "aerobe-ausdauer"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fahrtspiel",
+          "iCan": "Ich kann das Fahrtspiel als Trainingsmethode mit Tempowechseln beschreiben und einen Lauf danach gestalten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "dauermethode"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "intervallmethode",
+          "iCan": "Ich kann die extensive Intervallmethode mit Belastung und lohnender Pause beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "dauermethode"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "belastung-ueber-puls",
+          "iCan": "Ich kann die Belastung in einem Ausdauertraining über meinen Puls steuern.",
+          "gradeBand": "7-8",
+          "requires": [
+            "puls-messen",
+            "aerobe-ausdauer"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ausdauer-und-gesundheit",
+          "iCan": "Ich kann erklären, wie Ausdauertraining Herz, Kreislauf, Immunsystem und Wohlbefinden stärkt.",
+          "gradeBand": "7-8",
+          "requires": [
+            "aerobe-ausdauer"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rumpfmuskulatur",
+          "iCan": "Ich kann erklären, warum eine kräftige Bauch- und Rückenmuskulatur die Wirbelsäule schützt und für eine gute Haltung wichtig ist.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "kraeftigungsuebungen",
+          "iCan": "Ich kann Kräftigungsübungen für Bauch und Rücken richtig ausführen und dabei auf Haltung und Atmung achten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "rumpfmuskulatur"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zirkeltraining",
+          "iCan": "Ich kann ein Zirkeltraining mit Stationen für verschiedene Muskelgruppen aufbauen und Belastungs- und Pausenzeiten festlegen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kraeftigungsuebungen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dehnen-und-mobilisieren",
+          "iCan": "Ich kann Dehn- und Mobilisationsübungen für die wichtigsten Muskelgruppen richtig ausführen und erklären, wozu sie dienen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "motorische-grundfaehigkeiten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "belastungsgroessen",
+          "iCan": "Ich kann die Belastungsgrößen Intensität, Umfang, Dauer und Dichte erklären.",
+          "gradeBand": "9-10",
+          "requires": [
+            "intervallmethode"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "trainingsprinzipien",
+          "iCan": "Ich kann erklären, warum Training regelmäßig sein muss, die Belastung allmählich steigen soll und Erholung dazugehört.",
+          "gradeBand": "9-10",
+          "requires": [
+            "belastungsgroessen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "krafttraining-und-gesundheit",
+          "iCan": "Ich kann erklären, wie gesundheitsorientiertes Krafttraining wirkt und worauf Jugendliche dabei achten müssen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "zirkeltraining",
+            "trainingsprinzipien"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "trainingsplan",
+          "iCan": "Ich kann aus vorgegebenen Übungen einen eigenen Trainingsplan zusammenstellen, um meine Ausdauer oder Kraft zu verbessern.",
+          "gradeBand": "9-10",
+          "requires": [
+            "trainingsprinzipien"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "gesundheit",
+      "name": {
+        "de": "Gesundheit, Sicherheit und Wagnis",
+        "en": "Health, safety and risk"
+      },
+      "competencies": [
+        {
+          "id": "aufwaermen-warum",
+          "iCan": "Ich kann erklären, warum ich mich vor dem Sport aufwärme und was dabei in meinem Körper passiert.",
+          "gradeBand": "5-6",
+          "requires": [
+            "belastung-und-koerper"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aufwaermprogramm",
+          "iCan": "Ich kann ein allgemeines Aufwärmprogramm aus lockerem Einlaufen, Mobilisieren und steigernden Übungen zusammenstellen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "aufwaermen-warum"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sportartspezifisch-aufwaermen",
+          "iCan": "Ich kann ein Aufwärmen planen, das auf eine bestimmte Sportart vorbereitet.",
+          "gradeBand": "9-10",
+          "requires": [
+            "aufwaermprogramm"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sportkleidung-und-hygiene",
+          "iCan": "Ich kann passende Sportkleidung wählen und erklären, warum ich Schmuck ablege und mich nach dem Sport wasche.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "sicher-in-der-sporthalle",
+          "iCan": "Ich kann Regeln für sicheres Verhalten in der Sporthalle nennen, zum Beispiel beim Umgang mit Geräten und bei Signalen der Lehrkraft.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "geraete-auf-und-abbauen",
+          "iCan": "Ich kann Geräte und Matten nach einem Aufbauplan gemeinsam mit anderen sicher auf- und abbauen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "sicher-in-der-sporthalle"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "erste-hilfe-sportverletzung",
+          "iCan": "Ich kann bei typischen Sportverletzungen wie Prellung, Zerrung oder Verstauchung Erste Hilfe nach der PECH-Regel leisten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "sicher-in-der-sporthalle"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gesunde-ernaehrung",
+          "iCan": "Ich kann erklären, was zu einer gesunden Ernährung gehört, zum Beispiel genug Wasser, wenig Zucker und viel Obst und Gemüse.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "ernaehrung-und-sport",
+          "iCan": "Ich kann erklären, was ich vor, während und nach dem Sport essen und trinken sollte und warum Flüssigkeit wichtig ist.",
+          "gradeBand": "7-8",
+          "requires": [
+            "gesunde-ernaehrung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bewegungsmangel",
+          "iCan": "Ich kann erklären, welche Folgen Bewegungsmangel hat und wie ich mehr Bewegung in meinen Alltag bringe.",
+          "gradeBand": "9-10",
+          "requires": [
+            "ausdauer-und-gesundheit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "anspannung-entspannung",
+          "iCan": "Ich kann den Unterschied zwischen Anspannung und Entspannung in meinem Körper wahrnehmen und beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "entspannungsmethode",
+          "iCan": "Ich kann eine Entspannungsmethode wie die Progressive Muskelentspannung durchführen und erklären, wie sie wirkt.",
+          "gradeBand": "9-10",
+          "requires": [
+            "anspannung-entspannung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "koerperbilder-und-trends",
+          "iCan": "Ich kann Fitnesstrends und Körperideale aus Medien und Werbung kritisch beurteilen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "bewegungsmangel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "doping",
+          "iCan": "Ich kann erklären, was Doping ist, welche gesundheitlichen Folgen es hat und warum es im Sport verboten ist.",
+          "gradeBand": "9-10",
+          "requires": [
+            "fair-play"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wagnis-einschaetzen",
+          "iCan": "Ich kann in einer Wagnissituation einschätzen, was verlangt wird, was ich schon kann und welche Gefahren es gibt.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "wagnis-und-risiko",
+          "iCan": "Ich kann ein Wagnis von einem Risiko unterscheiden und Gründe nennen, warum Menschen Wagnisse suchen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "wagnis-einschaetzen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "mit-angst-umgehen",
+          "iCan": "Ich kann Strategien nutzen, um in einer Wagnissituation mit Angst umzugehen, und begründet auch Nein sagen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "wagnis-einschaetzen"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "leichtathletik",
+      "name": {
+        "de": "Laufen, Springen, Werfen – Leichtathletik",
+        "en": "Running, jumping, throwing – athletics"
+      },
+      "competencies": [
+        {
+          "id": "schnell-starten",
+          "iCan": "Ich kann aus verschiedenen Startpositionen und aus dem Hochstart auf ein Signal hin schnell losrennen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "sprinttechnik",
+          "iCan": "Ich kann die Merkmale eines schnellen Laufs nennen: Laufen auf dem Fußballen, Knie hoch, kräftiger Armeinsatz.",
+          "gradeBand": "5-6",
+          "requires": [
+            "schnell-starten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "tiefstart",
+          "iCan": "Ich kann einen Tiefstart nach den Kommandos „Auf die Plätze – Fertig – Los“ regelgerecht ausführen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "schnell-starten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sprint-phasen",
+          "iCan": "Ich kann die Phasen eines Sprints beschreiben: Reaktion, Beschleunigung, Höchstgeschwindigkeit und Zieleinlauf.",
+          "gradeBand": "7-8",
+          "requires": [
+            "sprinttechnik",
+            "tiefstart"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "staffelwechsel",
+          "iCan": "Ich kann einen Staffelstab im Wechselraum regelgerecht übergeben und annehmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "schnell-starten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "huerden-ueberlaufen",
+          "iCan": "Ich kann Hindernisse oder niedrige Hürden in einem gleichmäßigen Rhythmus flüssig überlaufen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "sprinttechnik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "weitsprung",
+          "iCan": "Ich kann einen Weitsprung mit Schrittsprung aus einer Absprungzone ausführen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "sprinttechnik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "weitsprung-phasen",
+          "iCan": "Ich kann die Phasen des Weitsprungs – Anlauf, Absprung, Flug und Landung – mit ihren wichtigsten Merkmalen beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "weitsprung",
+            "bewegungsmerkmale"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schersprung",
+          "iCan": "Ich kann einen Schersprung über eine Latte oder Schnur mit kurzem Anlauf ausführen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "flop",
+          "iCan": "Ich kann den Fosbury-Flop mit Bogenanlauf, Absprung und Lattenüberquerung in Rückenlage beschreiben und in der Grobform springen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "schersprung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schlagwurf",
+          "iCan": "Ich kann einen Schlagwurf mit Anlauf im Dreierrhythmus ausführen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "schlagwurf-technik",
+          "iCan": "Ich kann erklären, wie Impulsschritt, Bogenspannung und Abwurfwinkel einen Wurf weiter machen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "schlagwurf",
+            "bewegungsmerkmale"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kugelstossen",
+          "iCan": "Ich kann eine Kugel aus dem Stand regelgerecht stoßen und erklären, warum sie gestoßen und nicht geworfen wird.",
+          "gradeBand": "9-10",
+          "requires": [
+            "schlagwurf-technik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kugelstossen-angleiten",
+          "iCan": "Ich kann beim Kugelstoßen die Kugel mit Angleiten oder Nachstellschritt vorbeschleunigen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kugelstossen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "leichtathletik-regeln",
+          "iCan": "Ich kann wichtige Wettkampfregeln der Leichtathletik nennen, zum Beispiel Fehlstart, Übertreten und Zahl der Versuche.",
+          "gradeBand": "5-6",
+          "requires": [
+            "regeln-im-sport"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "messen-und-kampfrichten",
+          "iCan": "Ich kann Weiten und Zeiten richtig messen und als Kampfrichter einfache Aufgaben wie das Startsignal übernehmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "leichtathletik-regeln"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "schwimmen",
+      "name": {
+        "de": "Bewegen im Wasser – Schwimmen",
+        "en": "Moving in water – swimming"
+      },
+      "competencies": [
+        {
+          "id": "auftrieb-und-gleiten",
+          "iCan": "Ich kann beschreiben, wie mein Körper im Wasser auftreibt, absinkt und gleitet, und erklären, wie ich Vortrieb erzeuge.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "atmen-im-wasser",
+          "iCan": "Ich kann über Wasser einatmen und unter Wasser ausatmen und meine Atmung an die Schwimmbewegung anpassen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "tauchen",
+          "iCan": "Ich kann bis zu zwei Meter tief tauchen, einen Gegenstand heraufholen und mich unter Wasser orientieren.",
+          "gradeBand": "5-6",
+          "requires": [
+            "atmen-im-wasser"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ins-wasser-springen",
+          "iCan": "Ich kann fußwärts und kopfwärts vom Beckenrand und vom Startblock ins Wasser springen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "baderegeln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "baderegeln",
+          "iCan": "Ich kann die Baderegeln nennen und erklären, wie sie mich und andere schützen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "gleichzugtechnik",
+          "iCan": "Ich kann Brustschwimmen mit Armzug, Beinschlag, Atmung und Gleitphase koordiniert schwimmen und seine Technikmerkmale beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "auftrieb-und-gleiten",
+            "atmen-im-wasser"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wechselzugtechnik",
+          "iCan": "Ich kann Kraulschwimmen oder Rückenkraulschwimmen mit wechselseitigem Armzug, Beinschlag und Atmung schwimmen und seine Technikmerkmale beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "auftrieb-und-gleiten",
+            "atmen-im-wasser"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "start-und-wende",
+          "iCan": "Ich kann in meiner Schwimmart einen Startsprung und eine Wende nach den Wettkampfregeln ausführen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "ins-wasser-springen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ausdauernd-schwimmen",
+          "iCan": "Ich kann 15 Minuten ohne Pause schwimmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "aerobe-ausdauer"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "selbstrettung",
+          "iCan": "Ich kann mich in Notsituationen im Wasser, zum Beispiel bei einem Krampf oder bei Erschöpfung, richtig verhalten und mich selbst retten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "baderegeln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fremdrettung",
+          "iCan": "Ich kann einer Person in Not mit Rettungsstange, Rettungsring oder Rettungsball helfen, ohne mich selbst in Gefahr zu bringen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "selbstrettung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rettungsschwimmen",
+          "iCan": "Ich kann Techniken des Rettungsschwimmens wie Transportschwimmen, Kleiderschwimmen und An-Land-Bringen beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "fremdrettung"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "turnen",
+      "name": {
+        "de": "Bewegen an Geräten – Turnen",
+        "en": "Moving on apparatus – gymnastics"
+      },
+      "competencies": [
+        {
+          "id": "turnerische-grundformen",
+          "iCan": "Ich kann die turnerischen Grundformen Rollen, Stützen, Springen, Schwingen, Hangeln, Balancieren und Klettern unterscheiden und an Geräten zeigen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "koerperspannung",
+          "iCan": "Ich kann erklären, warum Körperspannung beim Turnen wichtig ist, und sie in Übungen aufbauen und halten.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "helfergriffe",
+          "iCan": "Ich kann einfache Helfergriffe wie den Klammergriff und die Drehhilfe anwenden und erklären, wann sie gebraucht werden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "sicher-in-der-sporthalle"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rolle-vorwaerts",
+          "iCan": "Ich kann eine Rolle vorwärts turnen und ihre Technikmerkmale nennen, zum Beispiel Kinn auf die Brust und runder Rücken.",
+          "gradeBand": "5-6",
+          "requires": [
+            "turnerische-grundformen",
+            "koerperspannung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rolle-rueckwaerts",
+          "iCan": "Ich kann eine Rolle rückwärts turnen und ihre Technikmerkmale nennen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "rolle-vorwaerts"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "handstand",
+          "iCan": "Ich kann in den Handstand aufschwingen, ihn kurz halten und abrollen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "rolle-vorwaerts",
+            "koerperspannung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rad",
+          "iCan": "Ich kann ein Rad turnen und die Reihenfolge von Händen und Füßen beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "koerperspannung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "uebungsverbindung",
+          "iCan": "Ich kann mehrere Turnelemente zu einer flüssigen Übungsverbindung an einem Gerät oder am Boden verbinden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "rolle-vorwaerts",
+            "rad"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "hueftaufschwung",
+          "iCan": "Ich kann am Reck einen Hüftaufschwung turnen und beschreiben, wie ich den Körper nah an der Stange halte.",
+          "gradeBand": "5-6",
+          "requires": [
+            "turnerische-grundformen",
+            "helfergriffe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "felgunterschwung",
+          "iCan": "Ich kann am Reck einen Felgunterschwung turnen und sicher landen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "hueftaufschwung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "graetsche-ueber-den-bock",
+          "iCan": "Ich kann mit Anlauf und Absprung vom Brett eine Grätsche über den Bock springen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "turnerische-grundformen",
+            "helfergriffe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "hocke-ueber-den-kasten",
+          "iCan": "Ich kann eine Hocke über den Kasten springen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "graetsche-ueber-den-bock"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stuetzsprung-phasen",
+          "iCan": "Ich kann die Phasen eines Stützsprungs beschreiben: Anlauf, Brettabsprung, erste Flugphase, Stütz, zweite Flugphase und Landung.",
+          "gradeBand": "7-8",
+          "requires": [
+            "graetsche-ueber-den-bock",
+            "bewegungsphasen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schwebebalken",
+          "iCan": "Ich kann auf dem Schwebebalken aufgehen, vorwärts und rückwärts gehen, mich drehen und sicher abgehen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "turnerische-grundformen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "barren",
+          "iCan": "Ich kann am Barren schwingen, in den Grätschsitz aufgrätschen und sicher abgehen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "turnerische-grundformen",
+            "helfergriffe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "minitrampolin",
+          "iCan": "Ich kann vom Minitrampolin einen Streck-, Hock- und Grätschsprung springen und sicher landen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "koerperspannung",
+            "helfergriffe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "klettern",
+          "iCan": "Ich kann an Kletterwand, Tau oder Sprossenwand sicher klettern und die Sicherheitsregeln beim Bouldern nennen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "turnerische-grundformen",
+            "wagnis-einschaetzen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sicherheitsstellung",
+          "iCan": "Ich kann bei schwierigen Turnelementen Sicherheitsstellung geben und anderen Hinweise zur Verbesserung geben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "helfergriffe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "akrobatik",
+          "iCan": "Ich kann mit anderen eine akrobatische Figur oder Pyramide sicher bauen und dabei die Aufgaben von Unterleuten und Obermann beachten.",
+          "gradeBand": "7-8",
+          "requires": [
+            "koerperspannung",
+            "helfergriffe"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "gestalten-tanzen",
+      "name": {
+        "de": "Gestalten, Tanzen, Darstellen",
+        "en": "Movement design and dance"
+      },
+      "competencies": [
+        {
+          "id": "im-rhythmus-bewegen",
+          "iCan": "Ich kann mich im Takt einer Musik bewegen und dabei in Achterblöcken mitzählen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "handgeraete",
+          "iCan": "Ich kann mit einem Handgerät wie Seil, Ball oder Reifen Grundtechniken ausführen und zu einer kurzen Folge verbinden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "im-rhythmus-bewegen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "tanzschritte",
+          "iCan": "Ich kann eine vorgegebene Tanzschrittkombination aus Gehen, Hüpfen, Federn und Drehen zur Musik tanzen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "im-rhythmus-bewegen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "tanzarten",
+          "iCan": "Ich kann Tanzarten wie Volkstanz, Gesellschaftstanz und Hip-Hop an ihren Merkmalen unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "tanzschritte"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aerobic-grundschritte",
+          "iCan": "Ich kann Aerobic-Grundschritte wie Step-Touch, March und Grapevine ausführen und mit Armbewegungen kombinieren.",
+          "gradeBand": "5-6",
+          "requires": [
+            "im-rhythmus-bewegen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "formationen",
+          "iCan": "Ich kann Aufstellungsformen wie Reihe, Kreis und Block benennen und in einer Gruppengestaltung wechseln.",
+          "gradeBand": "5-6",
+          "requires": [
+            "tanzschritte"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gestaltungskriterien",
+          "iCan": "Ich kann die Gestaltungskriterien Raum, Zeit und Dynamik erklären und in einer eigenen Gestaltung nutzen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "formationen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ausdruck-koerpersprache",
+          "iCan": "Ich kann mit Mimik, Gestik und Körperhaltung Stimmungen ausdrücken und erklären, wie das auf Zuschauer wirkt.",
+          "gradeBand": "7-8",
+          "requires": [
+            "tanzschritte"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "choreografie-aufbauen",
+          "iCan": "Ich kann eine Choreografie mit Anfang, Hauptteil und Schluss aufbauen und mit einer Gruppe einüben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "gestaltungskriterien",
+            "ausdruck-koerpersprache"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gestaltung-beurteilen",
+          "iCan": "Ich kann eine Präsentation nach Kriterien wie Synchronität, Ausdruck, Schwierigkeit und Nutzung des Raums beurteilen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "formationen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "jonglieren",
+          "iCan": "Ich kann mit Tüchern oder Bällen die Kaskade jonglieren.",
+          "gradeBand": "5-6",
+          "requires": [
+            "im-rhythmus-bewegen"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "spielen",
+      "name": {
+        "de": "Spielen – Kleine Spiele und Sportspiele",
+        "en": "Games and team sports"
+      },
+      "competencies": [
+        {
+          "id": "spielidee",
+          "iCan": "Ich kann die Spielidee eines Spiels beschreiben: wer mit wem gegen wen spielt und welches Ziel es gibt.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "spiele-veraendern",
+          "iCan": "Ich kann ein Spiel verändern, indem ich Regeln, Spielfeld, Spielerzahl oder Spielgerät anpasse.",
+          "gradeBand": "5-6",
+          "requires": [
+            "spielidee",
+            "regeln-im-sport"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "spiel-erfinden",
+          "iCan": "Ich kann ein eigenes Spiel erfinden und seine Regeln so aufschreiben, dass andere es spielen können.",
+          "gradeBand": "7-8",
+          "requires": [
+            "spiele-veraendern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ball-zuspielen-annehmen",
+          "iCan": "Ich kann einen Ball mit Hand, Fuß oder Schläger kontrolliert zuspielen und annehmen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "freilaufen-anbieten",
+          "iCan": "Ich kann mich im Spiel freilaufen und anbieten, damit ich angespielt werden kann.",
+          "gradeBand": "5-6",
+          "requires": [
+            "spielidee"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "angriff-und-abwehr",
+          "iCan": "Ich kann im Spiel zwischen Angriff und Abwehr umschalten und weiß, was jeweils meine Aufgabe ist.",
+          "gradeBand": "5-6",
+          "requires": [
+            "freilaufen-anbieten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "spielfamilien",
+          "iCan": "Ich kann Sportspiele in Zielschussspiele, Rückschlagspiele und Endzonenspiele einteilen und ihre Spielideen vergleichen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "spielidee"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "taktik-ebenen",
+          "iCan": "Ich kann Individualtaktik, Gruppentaktik und Mannschaftstaktik an Beispielen aus einem Sportspiel unterscheiden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "angriff-und-abwehr"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ueberzahl-doppelpass",
+          "iCan": "Ich kann eine Überzahl im Angriff erkennen und mit Doppelpass oder „Give and Go“ ausnutzen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "taktik-ebenen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "deckungsarten",
+          "iCan": "Ich kann Manndeckung und Raumdeckung unterscheiden und erklären, wann welche Deckung sinnvoll ist.",
+          "gradeBand": "7-8",
+          "requires": [
+            "taktik-ebenen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "finten",
+          "iCan": "Ich kann eine einfache Finte einsetzen, um einen Gegner zu täuschen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "angriff-und-abwehr"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "basketball-regeln",
+          "iCan": "Ich kann die wichtigsten Basketballregeln erklären, zum Beispiel Schrittregel, Doppeldribbling und Foul.",
+          "gradeBand": "5-6",
+          "requires": [
+            "spielfamilien",
+            "regeln-im-sport"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "basketball-dribbeln-passen",
+          "iCan": "Ich kann im Basketball regelgerecht dribbeln, passen, fangen und mit Stopp und Sternschritt anhalten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "basketball-regeln",
+            "ball-zuspielen-annehmen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "basketball-korbleger",
+          "iCan": "Ich kann einen Korbleger im Zweierrhythmus ausführen und seine Technikmerkmale beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "basketball-dribbeln-passen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fussball-regeln",
+          "iCan": "Ich kann die wichtigsten Fußballregeln erklären, zum Beispiel Einwurf, Eckstoß, Foul und Freistoß.",
+          "gradeBand": "5-6",
+          "requires": [
+            "spielfamilien",
+            "regeln-im-sport"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fussball-passen-annehmen",
+          "iCan": "Ich kann im Fußball mit der Innenseite passen, den Ball annehmen und mitnehmen und aufs Tor schießen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fussball-regeln",
+            "ball-zuspielen-annehmen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "handball-regeln",
+          "iCan": "Ich kann die wichtigsten Handballregeln erklären, zum Beispiel Schrittregel, Torraum und Siebenmeter.",
+          "gradeBand": "5-6",
+          "requires": [
+            "spielfamilien",
+            "regeln-im-sport"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "handball-werfen-fangen",
+          "iCan": "Ich kann im Handball in der Bewegung werfen und fangen, prellen und mit Schlagwurf aufs Tor werfen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "handball-regeln",
+            "ball-zuspielen-annehmen",
+            "schlagwurf"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "volleyball-regeln",
+          "iCan": "Ich kann die wichtigsten Volleyballregeln erklären, zum Beispiel drei Ballkontakte, Rotation und Zählweise.",
+          "gradeBand": "5-6",
+          "requires": [
+            "spielfamilien",
+            "regeln-im-sport"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "pritschen-baggern",
+          "iCan": "Ich kann im Volleyball den Ball oberes Zuspiel (Pritschen) und unteres Zuspiel (Baggern) kontrolliert spielen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "volleyball-regeln",
+            "ball-zuspielen-annehmen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "volleyball-aufschlag",
+          "iCan": "Ich kann im Volleyball einen Aufschlag von unten regelgerecht ins gegnerische Feld spielen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "pritschen-baggern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rueckschlagspiel-regeln",
+          "iCan": "Ich kann die Regeln eines Rückschlagspiels wie Badminton oder Tischtennis erklären: Aufschlag, Feldgrenzen und Zählweise.",
+          "gradeBand": "5-6",
+          "requires": [
+            "spielfamilien",
+            "regeln-im-sport"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gegner-ausspielen",
+          "iCan": "Ich kann in einem Rückschlagspiel mit Grundschlägen lange und kurze Bälle so platzieren, dass ich den Gegner ausspiele.",
+          "gradeBand": "7-8",
+          "requires": [
+            "rueckschlagspiel-regeln",
+            "ball-zuspielen-annehmen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "endzonenspiel",
+          "iCan": "Ich kann die Spielidee und die wichtigsten Regeln eines Endzonenspiels wie Ultimate Frisbee oder Flag-Football erklären.",
+          "gradeBand": "7-8",
+          "requires": [
+            "spielfamilien",
+            "regeln-im-sport"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "fairness",
+      "name": {
+        "de": "Fairness, Regeln und Zusammenarbeit",
+        "en": "Fair play, rules and teamwork"
+      },
+      "competencies": [
+        {
+          "id": "regeln-im-sport",
+          "iCan": "Ich kann erklären, wozu Regeln im Sport da sind und was ohne sie passieren würde.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "fair-play",
+          "iCan": "Ich kann Merkmale für faires Verhalten im Sport nennen und erklären, was Fairplay bedeutet.",
+          "gradeBand": "5-6",
+          "requires": [
+            "regeln-im-sport"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sieg-und-niederlage",
+          "iCan": "Ich kann fair mit Sieg und Niederlage umgehen und erklären, warum das zum Sport gehört.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fair-play"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "regelverstoesse",
+          "iCan": "Ich kann Regelverstöße nach ihren Ursachen unterscheiden – Versehen, Unvermögen oder Absicht – und ihre Folgen bewerten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fair-play"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schiedsrichter",
+          "iCan": "Ich kann in einem Spiel als Schiedsrichterin oder Schiedsrichter mit den vereinbarten Zeichen und Signalen pfeifen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "regelverstoesse"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "konflikte-loesen",
+          "iCan": "Ich kann einen Streit beim Sport mit einer vereinbarten Strategie lösen, zum Beispiel mit einem Gespräch nach festen Schritten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fair-play"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "alle-einbinden",
+          "iCan": "Ich kann Mannschaften fair bilden und Unterschiede in der Leistung so ausgleichen, dass alle mitspielen können.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fair-play"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rollen-im-team",
+          "iCan": "Ich kann in einer Mannschaft verschiedene Rollen übernehmen und erklären, warum jede Rolle für das Team wichtig ist.",
+          "gradeBand": "7-8",
+          "requires": [
+            "fair-play"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wettbewerb-organisieren",
+          "iCan": "Ich kann einen kleinen Wettbewerb oder ein Turnier mit Spielplan, Regeln und Ergebnisliste selbst organisieren.",
+          "gradeBand": "5-6",
+          "requires": [
+            "regeln-im-sport",
+            "messen-und-kampfrichten"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "bewegungslernen",
+      "name": {
+        "de": "Bewegungen lernen und Leistung beurteilen",
+        "en": "Learning movements and judging performance"
+      },
+      "competencies": [
+        {
+          "id": "bewegungsmerkmale",
+          "iCan": "Ich kann wichtige Merkmale einer einfachen Bewegung mit Fachbegriffen benennen, zum Beispiel beim Werfen oder Springen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "bewegungsphasen",
+          "iCan": "Ich kann eine Bewegung in Vorbereitungs-, Haupt- und Endphase gliedern und erklären, was jede Phase bewirkt.",
+          "gradeBand": "7-8",
+          "requires": [
+            "bewegungsmerkmale"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bewegung-beobachten",
+          "iCan": "Ich kann eine Bewegung mit einem Beobachtungsbogen oder einem Video nach vorgegebenen Merkmalen beobachten und eine Rückmeldung geben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "bewegungsmerkmale"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lernhilfen",
+          "iCan": "Ich kann Hilfen beim Lernen einer Bewegung nennen und nutzen, zum Beispiel Geländehilfen, Bilder, akustische Signale und Feedback.",
+          "gradeBand": "5-6",
+          "requires": [
+            "bewegungsmerkmale"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "methodische-grundsaetze",
+          "iCan": "Ich kann beim Üben einer neuen Bewegung Grundsätze wie „vom Leichten zum Schweren“ und „vom Teil zum Ganzen“ anwenden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "lernhilfen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "leistungsfaktoren",
+          "iCan": "Ich kann erklären, dass neben Kraft und Ausdauer auch Konzentration, Motivation und Anstrengungsbereitschaft eine sportliche Leistung bestimmen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "motorische-grundfaehigkeiten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bezugsnormen",
+          "iCan": "Ich kann eine sportliche Leistung auf drei Arten beurteilen: im Vergleich mit mir selbst, mit anderen und mit einer festen Norm.",
+          "gradeBand": "5-6",
+          "requires": [
+            "leistungsfaktoren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "leistung-dokumentieren",
+          "iCan": "Ich kann meine Leistungen messen, in einer Tabelle oder einem Diagramm darstellen und meine Entwicklung beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "bezugsnormen",
+            "messen-und-kampfrichten"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "fahren-natur",
+      "name": {
+        "de": "Fahren, Rollen, Gleiten und Sport in der Natur",
+        "en": "Wheels, skis, boats and outdoor sport"
+      },
+      "competencies": [
+        {
+          "id": "fahren-und-lenken",
+          "iCan": "Ich kann mich mit einem Roll- oder Gleitgerät wie Inlinern, Rad oder Skiern kontrolliert fortbewegen, beschleunigen und die Richtung ändern.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "bremsen-und-anhalten",
+          "iCan": "Ich kann für mein Roll- oder Gleitgerät passende Bremstechniken erklären und sicher anhalten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fahren-und-lenken"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schutzausruestung",
+          "iCan": "Ich kann die passende Schutzausrüstung für eine Roll- oder Gleitsportart nennen und erklären, wovor sie schützt.",
+          "gradeBand": "5-6",
+          "requires": [
+            "sportkleidung-und-hygiene"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "verhaltensregeln-unterwegs",
+          "iCan": "Ich kann Verhaltensregeln im Straßenverkehr oder auf der Piste wie die FIS-Regeln nennen und begründen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "bremsen-und-anhalten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "wetter-und-umwelt",
+          "iCan": "Ich kann erklären, wie Wetter, UV-Strahlung, Ozon und Temperatur den Sport im Freien beeinflussen, und mich passend ausrüsten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "sportkleidung-und-hygiene"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "natur-schuetzen",
+          "iCan": "Ich kann Regeln für umweltschonenden Sport in der Natur nennen und begründen, warum Natur und Tiere Schutz brauchen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "wetter-und-umwelt"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "orientierungslauf",
+          "iCan": "Ich kann mich mit einer Karte im Gelände orientieren und einen Orientierungslauf bewältigen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "ausdauer-15-minuten"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "kaempfen",
+      "name": {
+        "de": "Ringen und Kämpfen",
+        "en": "Wrestling and fighting games"
+      },
+      "competencies": [
+        {
+          "id": "kampfregeln",
+          "iCan": "Ich kann Regeln für faires Kämpfen nennen, zum Beispiel ein Stoppsignal, keine Schläge und Rücksicht auf den Partner.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fair-play"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kaempfen-um-raum",
+          "iCan": "Ich kann mit einer Partnerin oder einem Partner in Zieh- und Schiebekämpfen fair um Raum und Gegenstände kämpfen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "kampfregeln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fallen",
+          "iCan": "Ich kann sicher rückwärts und seitwärts fallen, ohne mich zu verletzen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "gleichgewicht-brechen",
+          "iCan": "Ich kann erklären, wie ich das Gleichgewicht eines Gegners erspüre und breche, und es im Kampf kontrolliert anwenden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "kaempfen-um-raum",
+            "fallen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "haltegriff-und-befreien",
+          "iCan": "Ich kann am Boden einen Haltegriff ansetzen und mich aus einem Haltegriff befreien.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kampfregeln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kampftaktik",
+          "iCan": "Ich kann einfache Taktiken im Zweikampf wie Kontern, Kombinieren und Täuschen erklären und anwenden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "haltegriff-und-befreien",
+            "gleichgewicht-brechen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "aggression-kontrollieren",
+          "iCan": "Ich kann Strategien nennen und nutzen, mit denen ich im Zweikampf Wut und Aggression kontrolliere.",
+          "gradeBand": "7-8",
+          "requires": [
+            "kampfregeln"
+          ],
+          "practisedBy": []
+        }
+      ]
+    }
+  ],
+  "curricula": []
+}
