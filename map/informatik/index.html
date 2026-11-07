@@ -1,0 +1,2690 @@
+<!doctype html>
+<html lang="de" data-la-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Lernlandkarte Informatik · lernapps.net</title>
+  <meta name="description" content="Was es in Informatik zu lernen gibt, wann es dran ist und welche App es schon übt.">
+  <link rel="canonical" href="https://lernapps.net/apps/map/informatik/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/apps/lernapps-tokens.css">
+<link rel="stylesheet" href="/apps/lernapps-frame.css">
+<link rel="alternate" hreflang="de" href="/apps/map/informatik/">
+<link rel="alternate" hreflang="en" href="/apps/en/map/informatik/">
+<script>(() => {
+  const key = "lernapps-lang", here = "de", pages = {"en":"/apps/en/map/informatik/"};
+  const known = ["de","en"];
+  const browser = (navigator.languages || [navigator.language]).map((l) => String(l).slice(0, 2).toLowerCase()).find((l) => known.includes(l));
+  let chosen = null;
+  try { chosen = localStorage.getItem(key); } catch {}
+  const wanted = known.includes(chosen) ? chosen : browser;
+  if (wanted && wanted !== here && pages[wanted] && !/bot|crawl|spider|slurp/i.test(navigator.userAgent)) {
+    location.replace(pages[wanted] + location.search + location.hash);
+    return;
+  }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest("a[data-la-lang]");
+    if (!a) return;
+    try { a.dataset.laLang === browser ? localStorage.removeItem(key) : localStorage.setItem(key, a.dataset.laLang); } catch {}
+  });
+})();</script>
+  <script src="/lernapps-count.js" defer></script>
+  <link rel="stylesheet" href="/apps/uno.css">
+  <link rel="stylesheet" href="/apps/assets/apps.css">
+  <script src="/apps/assets/map.js" defer></script>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col" style="font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;">
+  <a class="la-skip" href="#main-content" lang="de">Zum Inhalt springen</a>
+<header class="la-header" lang="de">
+  <div class="la-header__inner">
+    <a class="la-brand" href="/" aria-label="lernapps.net – Startseite"><img src="/brand/mark-plain.svg" alt=""><span>lernapps<span class="la-brand__tld">.net</span></span></a>
+    <nav class="la-nav la-nav--bar" aria-label="Hauptnavigation"><ul><li><a href="/apps/" aria-current="page">Katalog</a></li><li><a href="/practice/">Üben</a></li><li><a href="/apps/build/">App bauen</a></li><li><a href="/tooling/">Tooling</a></li><li><a href="/tutor/">Tutor</a></li><li><a href="/features/">Features</a></li><li><a href="/docs/">Plattform</a></li><li><a href="/join/">Mitmachen</a></li><li class="la-lang"><a href="/apps/en/map/informatik/" hreflang="en" lang="en" data-la-lang="en" aria-label="Language: English">English</a></li></ul></nav>
+    <details class="la-menu"><summary>Menü</summary><nav class="la-nav la-nav--menu" aria-label="Hauptnavigation"><div class="la-menu__group"><p class="la-menu__title" id="la-menu-0">Für Lernende</p><ul aria-labelledby="la-menu-0"><li><a href="/apps/" aria-current="page">App Katalog</a></li><li><a href="/practice/">Üben für eine Prüfung</a></li></ul></div><div class="la-menu__group"><p class="la-menu__title" id="la-menu-1">Für Macher</p><ul aria-labelledby="la-menu-1"><li><a href="/apps/build/">App bauen</a></li><li><a href="/tooling/">Tooling</a></li></ul></div><div class="la-menu__group"><p class="la-menu__title" id="la-menu-2">Verstehen und mitmachen</p><ul aria-labelledby="la-menu-2"><li><a href="/tutor/">Tutor</a></li><li><a href="/features/">Features</a></li><li><a href="/docs/">Plattform</a></li><li><a href="/join/">Mitmachen</a></li></ul></div><ul class="la-menu__lang"><li class="la-lang"><a href="/apps/en/map/informatik/" hreflang="en" lang="en" data-la-lang="en" aria-label="Language: English">English</a></li></ul></nav></details>
+  </div>
+</header>
+
+  <main id="main-content" tabindex="-1" class="flex-1 outline-none">
+    
+
+<div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 flex flex-col gap-4">
+  
+<nav aria-label="Brotkrumen" class="text-sm text-slate-600">
+  <ol class="list-none p-0 m-0 flex flex-wrap gap-x-2 gap-y-1">
+    <li class="flex gap-2"><a href="/apps/map/" class="text-blue-700 underline underline-offset-2">Lernlandkarte</a><span aria-hidden="true">›</span>
+    </li>
+    <li class="flex gap-2"><span aria-current="page">Informatik</span>
+    </li>
+  </ol>
+</nav>
+
+  <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+    <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">Lernlandkarte Informatik</h1>
+    <a href="#hilfe" class="map-help-link" data-opens="hilfe"><span aria-hidden="true" class="map-help-icon">?</span>So liest du die Karte</a>
+  </div>
+  <div class="map-toolbar">
+    <div data-map-when hidden>
+      <label for="lehrplan" class="sr-only">Wann ist was dran?</label>
+      <select id="lehrplan" class="field map-when" aria-describedby="modus" data-current="/apps/map/informatik/">
+        <option value="/apps/map/informatik/" selected>Richtstufe (ohne Lehrplan)</option>
+        <option disabled>Lehrplan Baden-Württemberg – noch nicht erfasst</option>
+        <option disabled>Lehrplan Bayern – noch nicht erfasst</option>
+        <option disabled>Lehrplan Berlin – noch nicht erfasst</option>
+        <option disabled>Lehrplan Brandenburg – noch nicht erfasst</option>
+        <option disabled>Lehrplan Bremen – noch nicht erfasst</option>
+        <option disabled>Lehrplan Hamburg – noch nicht erfasst</option>
+        <option disabled>Lehrplan Hessen – noch nicht erfasst</option>
+        <option disabled>Lehrplan Mecklenburg-Vorpommern – noch nicht erfasst</option>
+        <option disabled>Lehrplan Niedersachsen – noch nicht erfasst</option>
+        <option disabled>Lehrplan Nordrhein-Westfalen – noch nicht erfasst</option>
+        <option disabled>Lehrplan Rheinland-Pfalz – noch nicht erfasst</option>
+        <option disabled>Lehrplan Saarland – noch nicht erfasst</option>
+        <option disabled>Lehrplan Sachsen – noch nicht erfasst</option>
+        <option disabled>Lehrplan Sachsen-Anhalt – noch nicht erfasst</option>
+        <option disabled>Lehrplan Schleswig-Holstein – noch nicht erfasst</option>
+        <option disabled>Lehrplan Thüringen – noch nicht erfasst</option>
+      </select>
+    </div>
+    <nav aria-labelledby="lehrplan-links" data-map-when-links>
+      <h2 id="lehrplan-links" class="sr-only">Wann ist was dran?</h2>
+      <ul class="list-none p-0 m-0 flex flex-wrap gap-2">
+        <li><a href="/apps/map/informatik/" class="btn btn-primary" aria-current="page">Richtstufe (ohne Lehrplan)</a></li>
+      </ul>
+    </nav>
+    <div class="map-legend" data-map-legend>
+      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-covered"></span>Abgedeckt</p>
+      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-gap"></span>Lücke</p>
+    </div>
+    <div class="map-legend" role="group" aria-label="Bausteine zeigen" data-map-filter hidden>
+      <button type="button" class="map-filter" data-show="covered" aria-pressed="false" disabled><span aria-hidden="true" class="map-swatch map-chip-covered"></span>Abgedeckt <span class="map-filter-count">0</span></button>
+      <button type="button" class="map-filter" data-show="gap" aria-pressed="false"><span aria-hidden="true" class="map-swatch map-chip-gap"></span>Lücke <span class="map-filter-count">96</span></button>
+    </div>
+  </div>
+  <div class="map-scroll" role="region" aria-label="Lernlandkarte Informatik: Bausteine nach Strang und Klasse" tabindex="0">
+    <table class="map-grid" style="min-width: 67rem;">
+      <colgroup><col style="width: 7rem;"><col><col><col><col><col></colgroup>
+      <thead>
+        <tr>
+          <td class="text-sm text-slate-600 align-bottom">Klasse ↓ · Strang →</td>
+          <th scope="col">
+            <a href="/apps/map/informatik/daten/" class="text-lg font-bold text-slate-900 underline underline-offset-2">Information und Daten</a>
+            <span class="block mt-1 text-sm text-slate-600">0 von 36 Bausteinen geübt</span>
+            <span aria-hidden="true" class="map-bar mt-2"><span style="width: 0%;"></span></span>
+          </th>
+          <th scope="col">
+            <a href="/apps/map/informatik/algorithmen/" class="text-lg font-bold text-slate-900 underline underline-offset-2">Algorithmen</a>
+            <span class="block mt-1 text-sm text-slate-600">0 von 18 Bausteinen geübt</span>
+            <span aria-hidden="true" class="map-bar mt-2"><span style="width: 0%;"></span></span>
+          </th>
+          <th scope="col">
+            <a href="/apps/map/informatik/sprachen-automaten/" class="text-lg font-bold text-slate-900 underline underline-offset-2">Sprachen und Automaten</a>
+            <span class="block mt-1 text-sm text-slate-600">0 von 8 Bausteinen geübt</span>
+            <span aria-hidden="true" class="map-bar mt-2"><span style="width: 0%;"></span></span>
+          </th>
+          <th scope="col">
+            <a href="/apps/map/informatik/informatiksysteme/" class="text-lg font-bold text-slate-900 underline underline-offset-2">Informatiksysteme</a>
+            <span class="block mt-1 text-sm text-slate-600">0 von 19 Bausteinen geübt</span>
+            <span aria-hidden="true" class="map-bar mt-2"><span style="width: 0%;"></span></span>
+          </th>
+          <th scope="col">
+            <a href="/apps/map/informatik/gesellschaft/" class="text-lg font-bold text-slate-900 underline underline-offset-2">Informatik, Mensch und Gesellschaft</a>
+            <span class="block mt-1 text-sm text-slate-600">0 von 15 Bausteinen geübt</span>
+            <span aria-hidden="true" class="map-bar mt-2"><span style="width: 0%;"></span></span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Klasse 5/6</th>
+          <td>
+            <ul class="map-cell">
+              
+<li>
+  <a href="/apps/map/informatik/c/information-und-daten/" class="map-chip map-chip-gap" data-opens="detail-information-und-daten">
+    <span>Information und Daten unterscheiden und erklären, dass Daten erst durch ihre Deutung zu Information werden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/daten-interpretieren/" class="map-chip map-chip-gap" data-opens="detail-daten-interpretieren">
+    <span>Daten in ihrem Zusammenhang deuten, zum Beispiel erkennen, ob die Zahl 21 ein Alter, eine Temperatur oder eine Uhrzeit ist</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/darstellungsformen-von-information/" class="map-chip map-chip-gap" data-opens="detail-darstellungsformen-von-information">
+    <span>Eine Information in verschiedenen Formen darstellen, zum Beispiel als Text, Tabelle, Bild oder Diagramm, und eine passende Form wählen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/codierung-im-alltag/" class="map-chip map-chip-gap" data-opens="detail-codierung-im-alltag">
+    <span>Beispiele für Codierungen aus dem Alltag nennen und eine Nachricht mit einer vorgegebenen Codierung codieren und decodieren</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/binaersystem/" class="map-chip map-chip-gap" data-opens="detail-binaersystem">
+    <span>Erklären, wie das Binärsystem als Stellenwertsystem mit den Ziffern 0 und 1 funktioniert, und eine Binärzahl in eine Dezimalzahl umrechnen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/dezimal-in-binaer/" class="map-chip map-chip-gap" data-opens="detail-dezimal-in-binaer">
+    <span>Eine Dezimalzahl in eine Binärzahl umrechnen, zum Beispiel durch fortgesetztes Teilen durch 2</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/bit-und-byte/" class="map-chip map-chip-gap" data-opens="detail-bit-und-byte">
+    <span>Die Einheiten Bit, Byte, Kilobyte, Megabyte und Gigabyte erklären und Datenmengen damit vergleichen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/pixelgrafik/" class="map-chip map-chip-gap" data-opens="detail-pixelgrafik">
+    <span>Erklären, wie ein Bild als Raster aus Pixeln mit Farbwerten gespeichert wird</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/pixel-und-vektorgrafik/" class="map-chip map-chip-gap" data-opens="detail-pixel-und-vektorgrafik">
+    <span>Pixel- und Vektorgrafiken unterscheiden und begründen, welche Grafikart für einen Zweck besser passt</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/baum/" class="map-chip map-chip-gap" data-opens="detail-baum">
+    <span>Hierarchische Informationen als Baum mit Wurzel, Knoten, Kanten und Blättern darstellen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/verschluesselung-grundidee/" class="map-chip map-chip-gap" data-opens="detail-verschluesselung-grundidee">
+    <span>An einem einfachen Verfahren, zum Beispiel einer Skytale, erklären, wie man einen Text mit einem Schlüssel ver- und entschlüsselt</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/verschluesselung-bewerten/" class="map-chip map-chip-gap" data-opens="detail-verschluesselung-bewerten">
+    <span>Verschlüsselungsverfahren vergleichen und beurteilen, wie sicher sie sind, zum Beispiel wie viele Schlüssel ein Angreifer ausprobieren müsste</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/ki-im-alltag/" class="map-chip map-chip-gap" data-opens="detail-ki-im-alltag">
+    <span>Beispiele für künstliche Intelligenz aus meinem Alltag nennen, zum Beispiel Empfehlungen, Sprach- oder Bilderkennung</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/maschinelles-lernen/" class="map-chip map-chip-gap" data-opens="detail-maschinelles-lernen">
+    <span>An einem Beispiel erklären, dass ein KI-System aus Beispieldaten Muster lernt, statt dass jemand jede Regel programmiert</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+            </ul>
+          </td>
+          <td>
+          </td>
+          <td>
+            <ul class="map-cell">
+              
+<li>
+  <a href="/apps/map/informatik/c/automaten-im-alltag/" class="map-chip map-chip-gap" data-opens="detail-automaten-im-alltag">
+    <span>An einem Automaten aus dem Alltag, zum Beispiel einem Getränkeautomaten, erklären, wie er abhängig von Eingabe und Zustand reagiert</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/zustandsdiagramm/" class="map-chip map-chip-gap" data-opens="detail-zustandsdiagramm">
+    <span>Das Verhalten eines Automaten mit Zuständen und Übergängen in einem Zustandsdiagramm darstellen und ein solches Diagramm lesen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+            </ul>
+          </td>
+          <td>
+            <ul class="map-cell">
+              
+<li>
+  <a href="/apps/map/informatik/c/informatiksysteme-im-alltag/" class="map-chip map-chip-gap" data-opens="detail-informatiksysteme-im-alltag">
+    <span>Informatiksysteme in meinem Alltag erkennen, zum Beispiel Smartphone, Spielkonsole oder Kasse</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/hardware-und-software/" class="map-chip map-chip-gap" data-opens="detail-hardware-und-software">
+    <span>Hardware und Software unterscheiden und erklären, wie sie in einem Informatiksystem zusammenwirken</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/computer-bestandteile/" class="map-chip map-chip-gap" data-opens="detail-computer-bestandteile">
+    <span>Die wichtigsten Bestandteile eines Computers wie Prozessor, Arbeitsspeicher, Festspeicher sowie Ein- und Ausgabegeräte benennen und ihre Aufgaben beschreiben</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/eva-prinzip/" class="map-chip map-chip-gap" data-opens="detail-eva-prinzip">
+    <span>Das EVA-Prinzip (Eingabe, Verarbeitung, Ausgabe) erklären und Geräte und Vorgänge den drei Phasen zuordnen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/informatiksystem-auswaehlen/" class="map-chip map-chip-gap" data-opens="detail-informatiksystem-auswaehlen">
+    <span>Für eine Aufgabe ein passendes Gerät oder Programm auswählen und meine Wahl begründen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/programme-bedienen/" class="map-chip map-chip-gap" data-opens="detail-programme-bedienen">
+    <span>Grundfunktionen von Programmen wie Öffnen, Speichern, Kopieren und Einfügen sicher nutzen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/ordner-und-dateien/" class="map-chip map-chip-gap" data-opens="detail-ordner-und-dateien">
+    <span>Dateien in einer sinnvollen Ordnerstruktur ablegen und wiederfinden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/dateipfad/" class="map-chip map-chip-gap" data-opens="detail-dateipfad">
+    <span>Den Ort einer Datei als Pfad angeben und einen Pfad lesen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/speicherorte-vergleichen/" class="map-chip map-chip-gap" data-opens="detail-speicherorte-vergleichen">
+    <span>Speicherorte wie Gerät, USB-Stick und Cloud nach Kapazität, Erreichbarkeit und Sicherheit vergleichen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+            </ul>
+          </td>
+          <td>
+            <ul class="map-cell">
+              
+<li>
+  <a href="/apps/map/informatik/c/informatik-in-alltag-und-beruf/" class="map-chip map-chip-gap" data-opens="detail-informatik-in-alltag-und-beruf">
+    <span>An Beispielen beschreiben, wie Informatiksysteme mein Leben und die Arbeitswelt verändern</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/urheberrecht/" class="map-chip map-chip-gap" data-opens="detail-urheberrecht">
+    <span>Erklären, was das Urheberrecht schützt, und fremde Texte, Bilder und Musik nur mit Erlaubnis und Quellenangabe verwenden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/ki-chancen-und-risiken/" class="map-chip map-chip-gap" data-opens="detail-ki-chancen-und-risiken">
+    <span>An Beispielen Chancen und Risiken künstlicher Intelligenz für mich und die Gesellschaft beschreiben</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Klasse 7/8</th>
+          <td>
+            <ul class="map-cell">
+              
+<li>
+  <a href="/apps/map/informatik/c/zeichencodierung/" class="map-chip map-chip-gap" data-opens="detail-zeichencodierung">
+    <span>Erklären, wie Buchstaben und Zeichen mit einem Code wie ASCII oder Unicode als Binärzahlen gespeichert werden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/analog-und-digital/" class="map-chip map-chip-gap" data-opens="detail-analog-und-digital">
+    <span>Den Unterschied zwischen analoger und digitaler Darstellung erklären und Beispiele für das Digitalisieren nennen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/graph/" class="map-chip map-chip-gap" data-opens="detail-graph">
+    <span>Vernetzte Informationen, zum Beispiel verlinkte Webseiten, als Graph aus Knoten und Kanten darstellen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/hypertext/" class="map-chip map-chip-gap" data-opens="detail-hypertext">
+    <span>Den Aufbau eines Hypertexts aus Seiten und Verweisen beschreiben und einen einfachen Hypertext erstellen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+            </ul>
+          </td>
+          <td>
+            <ul class="map-cell">
+              
+<li>
+  <a href="/apps/map/informatik/c/algorithmus-begriff/" class="map-chip map-chip-gap" data-opens="detail-algorithmus-begriff">
+    <span>Erklären, was ein Algorithmus ist, und für einen Ablauf aus dem Alltag eine eindeutige Handlungsvorschrift aufschreiben</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/algorithmische-eigenschaften/" class="map-chip map-chip-gap" data-opens="detail-algorithmische-eigenschaften">
+    <span>Prüfen, ob eine Handlungsvorschrift ein Algorithmus ist: endlich beschrieben, eindeutig und nach endlich vielen Schritten fertig</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/sequenz/" class="map-chip map-chip-gap" data-opens="detail-sequenz">
+    <span>Anweisungen in der richtigen Reihenfolge zu einer Sequenz anordnen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/verzweigung/" class="map-chip map-chip-gap" data-opens="detail-verzweigung">
+    <span>Mit einer Verzweigung (wenn – dann – sonst) festlegen, dass ein Algorithmus abhängig von einer Bedingung verschiedene Anweisungen ausführt</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/wiederholung-feste-anzahl/" class="map-chip map-chip-gap" data-opens="detail-wiederholung-feste-anzahl">
+    <span>Mit einer Wiederholung mit fester Anzahl Anweisungen mehrmals ausführen lassen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/wiederholung-mit-bedingung/" class="map-chip map-chip-gap" data-opens="detail-wiederholung-mit-bedingung">
+    <span>Mit einer Wiederholung mit Bedingung Anweisungen so lange ausführen lassen, bis eine Bedingung erfüllt ist</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/visuelle-programmierung/" class="map-chip map-chip-gap" data-opens="detail-visuelle-programmierung">
+    <span>Einen Algorithmus in einer blockbasierten (visuellen) Programmiersprache als Programm umsetzen und ausführen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+            </ul>
+          </td>
+          <td>
+          </td>
+          <td>
+            <ul class="map-cell">
+              
+<li>
+  <a href="/apps/map/informatik/c/internet-aufbau/" class="map-chip map-chip-gap" data-opens="detail-internet-aufbau">
+    <span>Erklären, dass das Internet ein Netz aus vielen Netzen ist, in dem Router Daten weiterleiten, und lokale und globale Netze unterscheiden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/client-und-server/" class="map-chip map-chip-gap" data-opens="detail-client-und-server">
+    <span>Die Rollen von Client und Server beschreiben und Beispiele dafür nennen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/ip-adresse-und-dns/" class="map-chip map-chip-gap" data-opens="detail-ip-adresse-und-dns">
+    <span>Erklären, dass jeder Rechner im Internet eine IP-Adresse hat und das DNS Namen wie schule.de in IP-Adressen übersetzt</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/url-aufbau/" class="map-chip map-chip-gap" data-opens="detail-url-aufbau">
+    <span>Die Bestandteile einer URL wie Protokoll, Domain und Pfad benennen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/internetdienste/" class="map-chip map-chip-gap" data-opens="detail-internetdienste">
+    <span>Dienste des Internets wie das World Wide Web und E-Mail unterscheiden und erklären, dass sie nach festen Regeln (Protokollen) kommunizieren</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/webseite-abrufen/" class="map-chip map-chip-gap" data-opens="detail-webseite-abrufen">
+    <span>Beschreiben, was passiert, wenn ein Browser eine Webseite von einem Webserver abruft</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/sicheres-passwort/" class="map-chip map-chip-gap" data-opens="detail-sicheres-passwort">
+    <span>Ein sicheres Passwort bilden und erklären, wie ich meine Zugänge schütze</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/schadsoftware/" class="map-chip map-chip-gap" data-opens="detail-schadsoftware">
+    <span>Arten von Schadsoftware wie Viren und Trojaner beschreiben und erklären, wie sie auf ein Gerät gelangen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/schutzsoftware/" class="map-chip map-chip-gap" data-opens="detail-schutzsoftware">
+    <span>Erklären, wie Firewall, Virenschutz und Updates ein Gerät schützen, und Sicherheitseinstellungen nutzen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/datensicherung/" class="map-chip map-chip-gap" data-opens="detail-datensicherung">
+    <span>Meine Daten durch Sicherungskopien und gespeicherte Zwischenstände vor Verlust schützen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+            </ul>
+          </td>
+          <td>
+            <ul class="map-cell">
+              
+<li>
+  <a href="/apps/map/informatik/c/personenbezogene-daten/" class="map-chip map-chip-gap" data-opens="detail-personenbezogene-daten">
+    <span>Erklären, was personenbezogene Daten sind, und an Beispielen beschreiben, wo sie gesammelt und genutzt werden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/eigene-daten-schuetzen/" class="map-chip map-chip-gap" data-opens="detail-eigene-daten-schuetzen">
+    <span>Sparsam mit meinen Daten umgehen und Einstellungen wählen, die meine Privatsphäre schützen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/datenschutz-und-datensicherheit/" class="map-chip map-chip-gap" data-opens="detail-datenschutz-und-datensicherheit">
+    <span>Datenschutz (Schutz von Personen) und Datensicherheit (Schutz der Daten vor Verlust und Zugriff) unterscheiden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/recht-am-eigenen-bild/" class="map-chip map-chip-gap" data-opens="detail-recht-am-eigenen-bild">
+    <span>Erklären, was das Recht am eigenen Bild bedeutet, und beachten, wann ich Fotos anderer veröffentlichen darf</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/digitale-kommunikation/" class="map-chip map-chip-gap" data-opens="detail-digitale-kommunikation">
+    <span>Möglichkeiten der digitalen Kommunikation wie E-Mail, Messenger und soziale Netzwerke nach Chancen und Risiken vergleichen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/gefahren-im-netz/" class="map-chip map-chip-gap" data-opens="detail-gefahren-im-netz">
+    <span>Gefahren im Netz wie Phishing, Abofallen, gefälschte Identitäten und Cybermobbing erkennen und weiß, wie ich mich verhalte</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/informationen-bewerten/" class="map-chip map-chip-gap" data-opens="detail-informationen-bewerten">
+    <span>Im Internet gezielt suchen und die Glaubwürdigkeit von Quellen und Suchergebnissen prüfen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/umweltbilanz-digitaler-geraete/" class="map-chip map-chip-gap" data-opens="detail-umweltbilanz-digitaler-geraete">
+    <span>Beschreiben, wie Herstellung, Nutzung und Entsorgung digitaler Geräte die Umwelt belasten, und das mit Papier vergleichen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Klasse 9/10</th>
+          <td>
+            <ul class="map-cell">
+              
+<li>
+  <a href="/apps/map/informatik/c/datentypen/" class="map-chip map-chip-gap" data-opens="detail-datentypen">
+    <span>Die Datentypen ganze Zahl, Kommazahl, Text und Wahrheitswert unterscheiden und für eine Angabe den passenden Datentyp wählen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/rechnen-und-vergleichen/" class="map-chip map-chip-gap" data-opens="detail-rechnen-und-vergleichen">
+    <span>Mit Daten in einem Programm rechnen und Werte vergleichen, zum Beispiel mit +, -, *, /, &lt; und =</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/logische-verknuepfungen/" class="map-chip map-chip-gap" data-opens="detail-logische-verknuepfungen">
+    <span>Bedingungen mit und, oder und nicht verknüpfen und den Wahrheitswert des Ergebnisses bestimmen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/feld-array/" class="map-chip map-chip-gap" data-opens="detail-feld-array">
+    <span>Gleichartige Daten in einem Feld (Array) speichern und über den Index auf einzelne Elemente zugreifen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/tabellenkalkulation-formeln/" class="map-chip map-chip-gap" data-opens="detail-tabellenkalkulation-formeln">
+    <span>In einer Tabellenkalkulation Formeln mit Zellbezügen schreiben, damit Ergebnisse automatisch neu berechnet werden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/relative-und-absolute-bezuege/" class="map-chip map-chip-gap" data-opens="detail-relative-und-absolute-bezuege">
+    <span>Relative und absolute Zellbezüge unterscheiden und beim Kopieren einer Formel richtig einsetzen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/datenflussdiagramm/" class="map-chip map-chip-gap" data-opens="detail-datenflussdiagramm">
+    <span>Darstellen, wie Daten durch Funktionen fließen, und dazu ein Datenflussdiagramm zeichnen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/funktionen-verketten/" class="map-chip map-chip-gap" data-opens="detail-funktionen-verketten">
+    <span>Vordefinierte Funktionen einer Tabellenkalkulation, auch die WENN-Funktion, nutzen und mehrere Funktionen verketten</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/datenbanken-im-alltag/" class="map-chip map-chip-gap" data-opens="detail-datenbanken-im-alltag">
+    <span>Beispiele nennen, wo im Alltag Datenbanken große Datenbestände verwalten, und erklären, wozu man sie braucht</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/datenmodell/" class="map-chip map-chip-gap" data-opens="detail-datenmodell">
+    <span>Einen Ausschnitt der Wirklichkeit mit Objekttypen (Entitäten oder Klassen) und ihren Attributen modellieren und als Diagramm darstellen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/tabellenschema/" class="map-chip map-chip-gap" data-opens="detail-tabellenschema">
+    <span>Ein Datenmodell in ein Tabellenschema mit Datenfeldern und Datentypen überführen und Datensatz und Datenfeld unterscheiden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/primaerschluessel/" class="map-chip map-chip-gap" data-opens="detail-primaerschluessel">
+    <span>Erklären, wozu ein Primärschlüssel dient, und für eine Tabelle einen geeigneten Schlüssel wählen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/datenbank-anlegen/" class="map-chip map-chip-gap" data-opens="detail-datenbank-anlegen">
+    <span>Eine Datenbanktabelle in einem Datenbanksystem anlegen und Datensätze eingeben, ändern und löschen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/sql-abfrage/" class="map-chip map-chip-gap" data-opens="detail-sql-abfrage">
+    <span>Mit SQL (SELECT, FROM, WHERE) gezielt Spalten und Datensätze aus einer Tabelle abfragen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/beziehungen-und-fremdschluessel/" class="map-chip map-chip-gap" data-opens="detail-beziehungen-und-fremdschluessel">
+    <span>Beziehungen zwischen Objekttypen modellieren und sie in verknüpften Tabellen mit Fremdschlüsseln umsetzen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/redundanz-und-konsistenz/" class="map-chip map-chip-gap" data-opens="detail-redundanz-und-konsistenz">
+    <span>An einem Beispiel erklären, warum doppelt gespeicherte Daten (Redundanz) zu Widersprüchen führen und wie verknüpfte Tabellen das vermeiden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/caesar-verschluesselung/" class="map-chip map-chip-gap" data-opens="detail-caesar-verschluesselung">
+    <span>Einen Text mit einem Ersetzungsverfahren wie der Caesar-Verschlüsselung ver- und entschlüsseln</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/trainingsdaten/" class="map-chip map-chip-gap" data-opens="detail-trainingsdaten">
+    <span>An einem Beispiel zeigen, wie die Auswahl der Trainingsdaten die Ergebnisse eines lernenden Systems beeinflusst, auch durch Verzerrungen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+            </ul>
+          </td>
+          <td>
+            <ul class="map-cell">
+              
+<li>
+  <a href="/apps/map/informatik/c/algorithmus-ausfuehren/" class="map-chip map-chip-gap" data-opens="detail-algorithmus-ausfuehren">
+    <span>Einen Algorithmus Schritt für Schritt von Hand ausführen und so sein Ergebnis ermitteln</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/struktogramm/" class="map-chip map-chip-gap" data-opens="detail-struktogramm">
+    <span>Einen Algorithmus als Struktogramm darstellen und ein Struktogramm lesen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/programmablaufplan/" class="map-chip map-chip-gap" data-opens="detail-programmablaufplan">
+    <span>Einen Algorithmus als Programmablaufplan (PAP) darstellen und einen PAP lesen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/pseudocode/" class="map-chip map-chip-gap" data-opens="detail-pseudocode">
+    <span>Einen Algorithmus in Pseudocode aufschreiben</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/darstellungen-ueberfuehren/" class="map-chip map-chip-gap" data-opens="detail-darstellungen-ueberfuehren">
+    <span>Einen Algorithmus von einer Darstellungsform in eine andere übertragen, zum Beispiel vom Struktogramm in Programmcode</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/textbasierte-programmierung/" class="map-chip map-chip-gap" data-opens="detail-textbasierte-programmierung">
+    <span>Einen Algorithmus in einer textbasierten Programmiersprache als Programm schreiben und ausführen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/variable/" class="map-chip map-chip-gap" data-opens="detail-variable">
+    <span>In einem Programm Variablen anlegen, ihnen mit einer Wertzuweisung Werte geben und diese Werte ändern</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/unterprogramme/" class="map-chip map-chip-gap" data-opens="detail-unterprogramme">
+    <span>Ein Programm in Teile zerlegen und wiederkehrende Abläufe als Unterprogramm (Methode, Funktion) definieren und aufrufen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/parameter/" class="map-chip map-chip-gap" data-opens="detail-parameter">
+    <span>Einem Unterprogramm über Parameter Werte übergeben</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/quelltext-aendern/" class="map-chip map-chip-gap" data-opens="detail-quelltext-aendern">
+    <span>Fremden Quelltext lesen, kommentieren, verändern und ergänzen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/programm-testen/" class="map-chip map-chip-gap" data-opens="detail-programm-testen">
+    <span>Mit gezielt gewählten Testfällen prüfen, ob ein Programm eine Aufgabe richtig löst</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+            </ul>
+          </td>
+          <td>
+            <ul class="map-cell">
+              
+<li>
+  <a href="/apps/map/informatik/c/syntax-und-semantik/" class="map-chip map-chip-gap" data-opens="detail-syntax-und-semantik">
+    <span>An Beispielen erklären, was Syntax (die Schreibregeln) und Semantik (die Bedeutung) einer formalen Sprache sind</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/syntaxfehler-finden/" class="map-chip map-chip-gap" data-opens="detail-syntaxfehler-finden">
+    <span>Syntaxfehler in einem Quelltext finden, Fehlermeldungen deuten und die Fehler beheben</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/html-grundgeruest/" class="map-chip map-chip-gap" data-opens="detail-html-grundgeruest">
+    <span>Eine einfache Webseite in HTML schreiben und dabei Elemente mit Start- und End-Tags richtig verschachteln</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/html-attribute-und-links/" class="map-chip map-chip-gap" data-opens="detail-html-attribute-und-links">
+    <span>HTML-Elemente mit Attributen ergänzen, zum Beispiel einen Verweis mit href oder ein Bild mit src einbinden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/css/" class="map-chip map-chip-gap" data-opens="detail-css">
+    <span>Das Aussehen einer Webseite mit CSS festlegen und erklären, warum man Inhalt und Darstellung trennt</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/automat-entwerfen/" class="map-chip map-chip-gap" data-opens="detail-automat-entwerfen">
+    <span>Für eine konkrete Aufgabe, zum Beispiel eine Ampelsteuerung, einen Automaten mit Zuständen und Übergängen entwerfen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+            </ul>
+          </td>
+          <td>
+          </td>
+          <td>
+            <ul class="map-cell">
+              
+<li>
+  <a href="/apps/map/informatik/c/datenschutzrecht/" class="map-chip map-chip-gap" data-opens="detail-datenschutzrecht">
+    <span>Grundsätze des Datenschutzrechts nennen und beurteilen, ob personenbezogene Daten in einem Fall erhoben und genutzt werden dürfen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/daten-in-datenbanken/" class="map-chip map-chip-gap" data-opens="detail-daten-in-datenbanken">
+    <span>Nutzen und Risiken beurteilen, wenn personenbezogene Daten in Datenbanken gespeichert und ausgewertet werden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/big-data/" class="map-chip map-chip-gap" data-opens="detail-big-data">
+    <span>Chancen und Gefahren beurteilen, wenn sehr große Datenmengen gesammelt, verknüpft und automatisch ausgewertet werden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+              
+<li>
+  <a href="/apps/map/informatik/c/lizenzmodelle/" class="map-chip map-chip-gap" data-opens="detail-lizenzmodelle">
+    <span>Lizenzmodelle wie proprietäre Software, freie Software und Creative-Commons-Lizenzen vergleichen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="m-0 text-slate-600">Klicke auf einen Baustein. Dann siehst du, worauf er aufbaut, wann er dran ist und welche App ihn übt.</p>
+
+  <p class="m-0 text-sm text-slate-600">Stränge und Bausteine stammen aus:
+    <a href="https://www.mnu.de/images/fachbereiche/Informatik/Bildungsstandards_Sek_I_2025__pdf-A_.pdf" class="text-blue-700 underline underline-offset-2" lang="de">Gesellschaft für Informatik: Bildungsstandards Informatik für die Sekundarstufe I, Empfehlungen (Januar 2025), doi:10.18420/rec2025_052</a>
+    · <a href="/apps/map/informatik.json" class="text-blue-700 underline underline-offset-2">Die Karte als Daten (JSON)</a></p>
+  <section id="hilfe" class="panel scroll-mt-4" aria-labelledby="hilfe-titel" data-kind="Informatik" data-map-help>
+    <h2 id="hilfe-titel" class="m-0 text-xl font-bold text-slate-900" data-dialog-title>So liest du die Karte</h2>
+    <div class="mt-3" data-dialog-body>
+      <dl class="m-0 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+        <div><dt class="font-bold"><a href="/apps/map/#strang" class="text-blue-700 underline underline-offset-2">Strang</a> · eine Spalte</dt><dd class="m-0 mt-1 text-slate-600">Ein Teilgebiet des Fachs, das sich über mehrere Schuljahre zieht.</dd></div>
+        <div><dt class="font-bold"><a href="/apps/map/#baustein" class="text-blue-700 underline underline-offset-2">Baustein</a> · ein Kästchen</dt><dd class="m-0 mt-1 text-slate-600">Eine Sache, die ein Kind lernen kann: „Ich kann …“.</dd></div>
+        <div><dt class="font-bold"><a href="/apps/map/#richtstufe" class="text-blue-700 underline underline-offset-2">Richtstufe</a> · eine Zeile</dt><dd class="m-0 mt-1 text-slate-600">Ungefähr wann ein Baustein dran ist. Wählst du einen Lehrplan, siehst du dessen Klassen.</dd></div>
+        <div><dt class="font-bold"><a href="/apps/map/#app" class="text-blue-700 underline underline-offset-2">App</a> · die Farbe</dt><dd class="m-0 mt-1 text-slate-600">Blau heißt abgedeckt: Eine App übt den Baustein. Gestrichelt heißt Lücke: Noch keine App übt ihn.</dd></div>
+      </dl>
+      <p id="modus" class="m-0 mt-4 text-slate-600">Du siehst die Richtstufe: ungefähr, in welchen zwei Schuljahren ein Baustein dran ist. Jedes Land legt das etwas anders fest. Wählst du einen Lehrplan, ordnet die Karte die Bausteine nach dessen Klassen.</p>
+      <p class="m-0 mt-2 text-slate-600">Noch nicht erfasst: Baden-Württemberg, Bayern, Berlin, Brandenburg, Bremen, Hamburg, Hessen, Mecklenburg-Vorpommern, Niedersachsen, Nordrhein-Westfalen, Rheinland-Pfalz, Saarland, Sachsen, Sachsen-Anhalt, Schleswig-Holstein, Thüringen</p>
+      <p class="m-0 mt-3"><a href="/apps/map/#begriffe" class="text-blue-700 underline underline-offset-2">Alle Begriffe und wie sie zusammenhängen</a> · <a href="/apps/map/#methode" class="text-blue-700 underline underline-offset-2">Warum diese Methode?</a></p>
+    </div>
+  </section>
+</div>
+
+<template id="detail-information-und-daten" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Information und Daten unterscheiden und erklären, dass Daten erst durch ihre Deutung zu Information werden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Information und Daten unterscheiden und erklären, dass Daten erst durch ihre Deutung zu Information werden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd>auf keinem anderen Baustein</dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/information-und-daten/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-daten-interpretieren" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Daten in ihrem Zusammenhang deuten, zum Beispiel erkennen, ob die Zahl 21 ein Alter, eine Temperatur oder eine Uhrzeit ist</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Daten in ihrem Zusammenhang deuten, zum Beispiel erkennen, ob die Zahl 21 ein Alter, eine Temperatur oder eine Uhrzeit ist.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/information-und-daten/" class="text-blue-700 underline underline-offset-2"><span>Information und Daten unterscheiden und erklären, dass Daten erst durch ihre Deutung zu Information werden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/daten-interpretieren/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-darstellungsformen-von-information" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Eine Information in verschiedenen Formen darstellen, zum Beispiel als Text, Tabelle, Bild oder Diagramm, und eine passende Form wählen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann eine Information in verschiedenen Formen darstellen, zum Beispiel als Text, Tabelle, Bild oder Diagramm, und eine passende Form wählen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/information-und-daten/" class="text-blue-700 underline underline-offset-2"><span>Information und Daten unterscheiden und erklären, dass Daten erst durch ihre Deutung zu Information werden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/darstellungsformen-von-information/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-codierung-im-alltag" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Beispiele für Codierungen aus dem Alltag nennen und eine Nachricht mit einer vorgegebenen Codierung codieren und decodieren</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Beispiele für Codierungen aus dem Alltag nennen und eine Nachricht mit einer vorgegebenen Codierung codieren und decodieren.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/information-und-daten/" class="text-blue-700 underline underline-offset-2"><span>Information und Daten unterscheiden und erklären, dass Daten erst durch ihre Deutung zu Information werden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/codierung-im-alltag/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-binaersystem" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Erklären, wie das Binärsystem als Stellenwertsystem mit den Ziffern 0 und 1 funktioniert, und eine Binärzahl in eine Dezimalzahl umrechnen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann erklären, wie das Binärsystem als Stellenwertsystem mit den Ziffern 0 und 1 funktioniert, und eine Binärzahl in eine Dezimalzahl umrechnen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/codierung-im-alltag/" class="text-blue-700 underline underline-offset-2"><span>Beispiele für Codierungen aus dem Alltag nennen und eine Nachricht mit einer vorgegebenen Codierung codieren und decodieren</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/binaersystem/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-dezimal-in-binaer" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Eine Dezimalzahl in eine Binärzahl umrechnen, zum Beispiel durch fortgesetztes Teilen durch 2</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann eine Dezimalzahl in eine Binärzahl umrechnen, zum Beispiel durch fortgesetztes Teilen durch 2.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/binaersystem/" class="text-blue-700 underline underline-offset-2"><span>Erklären, wie das Binärsystem als Stellenwertsystem mit den Ziffern 0 und 1 funktioniert, und eine Binärzahl in eine Dezimalzahl umrechnen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/dezimal-in-binaer/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-bit-und-byte" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Die Einheiten Bit, Byte, Kilobyte, Megabyte und Gigabyte erklären und Datenmengen damit vergleichen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann die Einheiten Bit, Byte, Kilobyte, Megabyte und Gigabyte erklären und Datenmengen damit vergleichen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/binaersystem/" class="text-blue-700 underline underline-offset-2"><span>Erklären, wie das Binärsystem als Stellenwertsystem mit den Ziffern 0 und 1 funktioniert, und eine Binärzahl in eine Dezimalzahl umrechnen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/bit-und-byte/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-zeichencodierung" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Erklären, wie Buchstaben und Zeichen mit einem Code wie ASCII oder Unicode als Binärzahlen gespeichert werden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann erklären, wie Buchstaben und Zeichen mit einem Code wie ASCII oder Unicode als Binärzahlen gespeichert werden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/bit-und-byte/" class="text-blue-700 underline underline-offset-2"><span>Die Einheiten Bit, Byte, Kilobyte, Megabyte und Gigabyte erklären und Datenmengen damit vergleichen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/binaersystem/" class="text-blue-700 underline underline-offset-2"><span>Erklären, wie das Binärsystem als Stellenwertsystem mit den Ziffern 0 und 1 funktioniert, und eine Binärzahl in eine Dezimalzahl umrechnen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/zeichencodierung/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-pixelgrafik" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Erklären, wie ein Bild als Raster aus Pixeln mit Farbwerten gespeichert wird</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann erklären, wie ein Bild als Raster aus Pixeln mit Farbwerten gespeichert wird.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/codierung-im-alltag/" class="text-blue-700 underline underline-offset-2"><span>Beispiele für Codierungen aus dem Alltag nennen und eine Nachricht mit einer vorgegebenen Codierung codieren und decodieren</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/pixelgrafik/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-pixel-und-vektorgrafik" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Pixel- und Vektorgrafiken unterscheiden und begründen, welche Grafikart für einen Zweck besser passt</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Pixel- und Vektorgrafiken unterscheiden und begründen, welche Grafikart für einen Zweck besser passt.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/pixelgrafik/" class="text-blue-700 underline underline-offset-2"><span>Erklären, wie ein Bild als Raster aus Pixeln mit Farbwerten gespeichert wird</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/pixel-und-vektorgrafik/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-analog-und-digital" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Den Unterschied zwischen analoger und digitaler Darstellung erklären und Beispiele für das Digitalisieren nennen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann den Unterschied zwischen analoger und digitaler Darstellung erklären und Beispiele für das Digitalisieren nennen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/binaersystem/" class="text-blue-700 underline underline-offset-2"><span>Erklären, wie das Binärsystem als Stellenwertsystem mit den Ziffern 0 und 1 funktioniert, und eine Binärzahl in eine Dezimalzahl umrechnen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/analog-und-digital/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-datentypen" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Die Datentypen ganze Zahl, Kommazahl, Text und Wahrheitswert unterscheiden und für eine Angabe den passenden Datentyp wählen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann die Datentypen ganze Zahl, Kommazahl, Text und Wahrheitswert unterscheiden und für eine Angabe den passenden Datentyp wählen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/daten-interpretieren/" class="text-blue-700 underline underline-offset-2"><span>Daten in ihrem Zusammenhang deuten, zum Beispiel erkennen, ob die Zahl 21 ein Alter, eine Temperatur oder eine Uhrzeit ist</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/datentypen/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-rechnen-und-vergleichen" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Mit Daten in einem Programm rechnen und Werte vergleichen, zum Beispiel mit +, -, *, /, &lt; und =</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann mit Daten in einem Programm rechnen und Werte vergleichen, zum Beispiel mit +, -, *, /, &lt; und =.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/datentypen/" class="text-blue-700 underline underline-offset-2"><span>Die Datentypen ganze Zahl, Kommazahl, Text und Wahrheitswert unterscheiden und für eine Angabe den passenden Datentyp wählen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/rechnen-und-vergleichen/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-logische-verknuepfungen" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Bedingungen mit und, oder und nicht verknüpfen und den Wahrheitswert des Ergebnisses bestimmen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Bedingungen mit und, oder und nicht verknüpfen und den Wahrheitswert des Ergebnisses bestimmen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/rechnen-und-vergleichen/" class="text-blue-700 underline underline-offset-2"><span>Mit Daten in einem Programm rechnen und Werte vergleichen, zum Beispiel mit +, -, *, /, &lt; und =</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/logische-verknuepfungen/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-feld-array" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Gleichartige Daten in einem Feld (Array) speichern und über den Index auf einzelne Elemente zugreifen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann gleichartige Daten in einem Feld (Array) speichern und über den Index auf einzelne Elemente zugreifen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/datentypen/" class="text-blue-700 underline underline-offset-2"><span>Die Datentypen ganze Zahl, Kommazahl, Text und Wahrheitswert unterscheiden und für eine Angabe den passenden Datentyp wählen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/variable/" class="text-blue-700 underline underline-offset-2"><span>In einem Programm Variablen anlegen, ihnen mit einer Wertzuweisung Werte geben und diese Werte ändern</span></a> <span class="text-slate-600">· Strang Algorithmen</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/feld-array/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-baum" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Hierarchische Informationen als Baum mit Wurzel, Knoten, Kanten und Blättern darstellen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann hierarchische Informationen als Baum mit Wurzel, Knoten, Kanten und Blättern darstellen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/darstellungsformen-von-information/" class="text-blue-700 underline underline-offset-2"><span>Eine Information in verschiedenen Formen darstellen, zum Beispiel als Text, Tabelle, Bild oder Diagramm, und eine passende Form wählen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/baum/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-graph" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Vernetzte Informationen, zum Beispiel verlinkte Webseiten, als Graph aus Knoten und Kanten darstellen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann vernetzte Informationen, zum Beispiel verlinkte Webseiten, als Graph aus Knoten und Kanten darstellen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/baum/" class="text-blue-700 underline underline-offset-2"><span>Hierarchische Informationen als Baum mit Wurzel, Knoten, Kanten und Blättern darstellen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/graph/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-hypertext" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Den Aufbau eines Hypertexts aus Seiten und Verweisen beschreiben und einen einfachen Hypertext erstellen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann den Aufbau eines Hypertexts aus Seiten und Verweisen beschreiben und einen einfachen Hypertext erstellen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/graph/" class="text-blue-700 underline underline-offset-2"><span>Vernetzte Informationen, zum Beispiel verlinkte Webseiten, als Graph aus Knoten und Kanten darstellen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/hypertext/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-tabellenkalkulation-formeln" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>In einer Tabellenkalkulation Formeln mit Zellbezügen schreiben, damit Ergebnisse automatisch neu berechnet werden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann in einer Tabellenkalkulation Formeln mit Zellbezügen schreiben, damit Ergebnisse automatisch neu berechnet werden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/rechnen-und-vergleichen/" class="text-blue-700 underline underline-offset-2"><span>Mit Daten in einem Programm rechnen und Werte vergleichen, zum Beispiel mit +, -, *, /, &lt; und =</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/tabellenkalkulation-formeln/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-relative-und-absolute-bezuege" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Relative und absolute Zellbezüge unterscheiden und beim Kopieren einer Formel richtig einsetzen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann relative und absolute Zellbezüge unterscheiden und beim Kopieren einer Formel richtig einsetzen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/tabellenkalkulation-formeln/" class="text-blue-700 underline underline-offset-2"><span>In einer Tabellenkalkulation Formeln mit Zellbezügen schreiben, damit Ergebnisse automatisch neu berechnet werden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/relative-und-absolute-bezuege/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-datenflussdiagramm" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Darstellen, wie Daten durch Funktionen fließen, und dazu ein Datenflussdiagramm zeichnen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann darstellen, wie Daten durch Funktionen fließen, und dazu ein Datenflussdiagramm zeichnen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/tabellenkalkulation-formeln/" class="text-blue-700 underline underline-offset-2"><span>In einer Tabellenkalkulation Formeln mit Zellbezügen schreiben, damit Ergebnisse automatisch neu berechnet werden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/datenflussdiagramm/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-funktionen-verketten" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Vordefinierte Funktionen einer Tabellenkalkulation, auch die WENN-Funktion, nutzen und mehrere Funktionen verketten</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann vordefinierte Funktionen einer Tabellenkalkulation, auch die WENN-Funktion, nutzen und mehrere Funktionen verketten.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/datenflussdiagramm/" class="text-blue-700 underline underline-offset-2"><span>Darstellen, wie Daten durch Funktionen fließen, und dazu ein Datenflussdiagramm zeichnen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/logische-verknuepfungen/" class="text-blue-700 underline underline-offset-2"><span>Bedingungen mit und, oder und nicht verknüpfen und den Wahrheitswert des Ergebnisses bestimmen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/funktionen-verketten/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-datenbanken-im-alltag" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Beispiele nennen, wo im Alltag Datenbanken große Datenbestände verwalten, und erklären, wozu man sie braucht</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Beispiele nennen, wo im Alltag Datenbanken große Datenbestände verwalten, und erklären, wozu man sie braucht.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/darstellungsformen-von-information/" class="text-blue-700 underline underline-offset-2"><span>Eine Information in verschiedenen Formen darstellen, zum Beispiel als Text, Tabelle, Bild oder Diagramm, und eine passende Form wählen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/datenbanken-im-alltag/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-datenmodell" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Einen Ausschnitt der Wirklichkeit mit Objekttypen (Entitäten oder Klassen) und ihren Attributen modellieren und als Diagramm darstellen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann einen Ausschnitt der Wirklichkeit mit Objekttypen (Entitäten oder Klassen) und ihren Attributen modellieren und als Diagramm darstellen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/datenbanken-im-alltag/" class="text-blue-700 underline underline-offset-2"><span>Beispiele nennen, wo im Alltag Datenbanken große Datenbestände verwalten, und erklären, wozu man sie braucht</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/datenmodell/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-tabellenschema" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Ein Datenmodell in ein Tabellenschema mit Datenfeldern und Datentypen überführen und Datensatz und Datenfeld unterscheiden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann ein Datenmodell in ein Tabellenschema mit Datenfeldern und Datentypen überführen und Datensatz und Datenfeld unterscheiden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/datenmodell/" class="text-blue-700 underline underline-offset-2"><span>Einen Ausschnitt der Wirklichkeit mit Objekttypen (Entitäten oder Klassen) und ihren Attributen modellieren und als Diagramm darstellen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/datentypen/" class="text-blue-700 underline underline-offset-2"><span>Die Datentypen ganze Zahl, Kommazahl, Text und Wahrheitswert unterscheiden und für eine Angabe den passenden Datentyp wählen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/tabellenschema/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-primaerschluessel" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Erklären, wozu ein Primärschlüssel dient, und für eine Tabelle einen geeigneten Schlüssel wählen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann erklären, wozu ein Primärschlüssel dient, und für eine Tabelle einen geeigneten Schlüssel wählen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/tabellenschema/" class="text-blue-700 underline underline-offset-2"><span>Ein Datenmodell in ein Tabellenschema mit Datenfeldern und Datentypen überführen und Datensatz und Datenfeld unterscheiden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/primaerschluessel/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-datenbank-anlegen" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Eine Datenbanktabelle in einem Datenbanksystem anlegen und Datensätze eingeben, ändern und löschen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann eine Datenbanktabelle in einem Datenbanksystem anlegen und Datensätze eingeben, ändern und löschen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/primaerschluessel/" class="text-blue-700 underline underline-offset-2"><span>Erklären, wozu ein Primärschlüssel dient, und für eine Tabelle einen geeigneten Schlüssel wählen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/datenbank-anlegen/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-sql-abfrage" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Mit SQL (SELECT, FROM, WHERE) gezielt Spalten und Datensätze aus einer Tabelle abfragen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann mit SQL (SELECT, FROM, WHERE) gezielt Spalten und Datensätze aus einer Tabelle abfragen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/datenbank-anlegen/" class="text-blue-700 underline underline-offset-2"><span>Eine Datenbanktabelle in einem Datenbanksystem anlegen und Datensätze eingeben, ändern und löschen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/logische-verknuepfungen/" class="text-blue-700 underline underline-offset-2"><span>Bedingungen mit und, oder und nicht verknüpfen und den Wahrheitswert des Ergebnisses bestimmen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/sql-abfrage/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-beziehungen-und-fremdschluessel" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Beziehungen zwischen Objekttypen modellieren und sie in verknüpften Tabellen mit Fremdschlüsseln umsetzen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Beziehungen zwischen Objekttypen modellieren und sie in verknüpften Tabellen mit Fremdschlüsseln umsetzen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/primaerschluessel/" class="text-blue-700 underline underline-offset-2"><span>Erklären, wozu ein Primärschlüssel dient, und für eine Tabelle einen geeigneten Schlüssel wählen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/beziehungen-und-fremdschluessel/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-redundanz-und-konsistenz" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>An einem Beispiel erklären, warum doppelt gespeicherte Daten (Redundanz) zu Widersprüchen führen und wie verknüpfte Tabellen das vermeiden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann an einem Beispiel erklären, warum doppelt gespeicherte Daten (Redundanz) zu Widersprüchen führen und wie verknüpfte Tabellen das vermeiden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/beziehungen-und-fremdschluessel/" class="text-blue-700 underline underline-offset-2"><span>Beziehungen zwischen Objekttypen modellieren und sie in verknüpften Tabellen mit Fremdschlüsseln umsetzen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/redundanz-und-konsistenz/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-verschluesselung-grundidee" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>An einem einfachen Verfahren, zum Beispiel einer Skytale, erklären, wie man einen Text mit einem Schlüssel ver- und entschlüsselt</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann an einem einfachen Verfahren, zum Beispiel einer Skytale, erklären, wie man einen Text mit einem Schlüssel ver- und entschlüsselt.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/codierung-im-alltag/" class="text-blue-700 underline underline-offset-2"><span>Beispiele für Codierungen aus dem Alltag nennen und eine Nachricht mit einer vorgegebenen Codierung codieren und decodieren</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/verschluesselung-grundidee/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-verschluesselung-bewerten" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Verschlüsselungsverfahren vergleichen und beurteilen, wie sicher sie sind, zum Beispiel wie viele Schlüssel ein Angreifer ausprobieren müsste</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Verschlüsselungsverfahren vergleichen und beurteilen, wie sicher sie sind, zum Beispiel wie viele Schlüssel ein Angreifer ausprobieren müsste.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/verschluesselung-grundidee/" class="text-blue-700 underline underline-offset-2"><span>An einem einfachen Verfahren, zum Beispiel einer Skytale, erklären, wie man einen Text mit einem Schlüssel ver- und entschlüsselt</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/verschluesselung-bewerten/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-caesar-verschluesselung" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Einen Text mit einem Ersetzungsverfahren wie der Caesar-Verschlüsselung ver- und entschlüsseln</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann einen Text mit einem Ersetzungsverfahren wie der Caesar-Verschlüsselung ver- und entschlüsseln.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/verschluesselung-grundidee/" class="text-blue-700 underline underline-offset-2"><span>An einem einfachen Verfahren, zum Beispiel einer Skytale, erklären, wie man einen Text mit einem Schlüssel ver- und entschlüsselt</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/caesar-verschluesselung/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-ki-im-alltag" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>Beispiele für künstliche Intelligenz aus meinem Alltag nennen, zum Beispiel Empfehlungen, Sprach- oder Bilderkennung</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Beispiele für künstliche Intelligenz aus meinem Alltag nennen, zum Beispiel Empfehlungen, Sprach- oder Bilderkennung.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/informatiksysteme-im-alltag/" class="text-blue-700 underline underline-offset-2"><span>Informatiksysteme in meinem Alltag erkennen, zum Beispiel Smartphone, Spielkonsole oder Kasse</span></a> <span class="text-slate-600">· Strang Informatiksysteme</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/ki-im-alltag/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-maschinelles-lernen" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>An einem Beispiel erklären, dass ein KI-System aus Beispieldaten Muster lernt, statt dass jemand jede Regel programmiert</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann an einem Beispiel erklären, dass ein KI-System aus Beispieldaten Muster lernt, statt dass jemand jede Regel programmiert.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/ki-im-alltag/" class="text-blue-700 underline underline-offset-2"><span>Beispiele für künstliche Intelligenz aus meinem Alltag nennen, zum Beispiel Empfehlungen, Sprach- oder Bilderkennung</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/daten-interpretieren/" class="text-blue-700 underline underline-offset-2"><span>Daten in ihrem Zusammenhang deuten, zum Beispiel erkennen, ob die Zahl 21 ein Alter, eine Temperatur oder eine Uhrzeit ist</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/maschinelles-lernen/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-trainingsdaten" data-kind="Baustein · Information und Daten">
+  <p data-dialog-title>An einem Beispiel zeigen, wie die Auswahl der Trainingsdaten die Ergebnisse eines lernenden Systems beeinflusst, auch durch Verzerrungen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann an einem Beispiel zeigen, wie die Auswahl der Trainingsdaten die Ergebnisse eines lernenden Systems beeinflusst, auch durch Verzerrungen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/maschinelles-lernen/" class="text-blue-700 underline underline-offset-2"><span>An einem Beispiel erklären, dass ein KI-System aus Beispieldaten Muster lernt, statt dass jemand jede Regel programmiert</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/trainingsdaten/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-algorithmus-begriff" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Erklären, was ein Algorithmus ist, und für einen Ablauf aus dem Alltag eine eindeutige Handlungsvorschrift aufschreiben</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann erklären, was ein Algorithmus ist, und für einen Ablauf aus dem Alltag eine eindeutige Handlungsvorschrift aufschreiben.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd>auf keinem anderen Baustein</dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/algorithmus-begriff/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-algorithmische-eigenschaften" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Prüfen, ob eine Handlungsvorschrift ein Algorithmus ist: endlich beschrieben, eindeutig und nach endlich vielen Schritten fertig</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann prüfen, ob eine Handlungsvorschrift ein Algorithmus ist: endlich beschrieben, eindeutig und nach endlich vielen Schritten fertig.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/algorithmus-begriff/" class="text-blue-700 underline underline-offset-2"><span>Erklären, was ein Algorithmus ist, und für einen Ablauf aus dem Alltag eine eindeutige Handlungsvorschrift aufschreiben</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/algorithmische-eigenschaften/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-sequenz" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Anweisungen in der richtigen Reihenfolge zu einer Sequenz anordnen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Anweisungen in der richtigen Reihenfolge zu einer Sequenz anordnen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/algorithmus-begriff/" class="text-blue-700 underline underline-offset-2"><span>Erklären, was ein Algorithmus ist, und für einen Ablauf aus dem Alltag eine eindeutige Handlungsvorschrift aufschreiben</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/sequenz/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-verzweigung" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Mit einer Verzweigung (wenn – dann – sonst) festlegen, dass ein Algorithmus abhängig von einer Bedingung verschiedene Anweisungen ausführt</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann mit einer Verzweigung (wenn – dann – sonst) festlegen, dass ein Algorithmus abhängig von einer Bedingung verschiedene Anweisungen ausführt.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/sequenz/" class="text-blue-700 underline underline-offset-2"><span>Anweisungen in der richtigen Reihenfolge zu einer Sequenz anordnen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/verzweigung/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-wiederholung-feste-anzahl" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Mit einer Wiederholung mit fester Anzahl Anweisungen mehrmals ausführen lassen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann mit einer Wiederholung mit fester Anzahl Anweisungen mehrmals ausführen lassen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/sequenz/" class="text-blue-700 underline underline-offset-2"><span>Anweisungen in der richtigen Reihenfolge zu einer Sequenz anordnen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/wiederholung-feste-anzahl/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-wiederholung-mit-bedingung" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Mit einer Wiederholung mit Bedingung Anweisungen so lange ausführen lassen, bis eine Bedingung erfüllt ist</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann mit einer Wiederholung mit Bedingung Anweisungen so lange ausführen lassen, bis eine Bedingung erfüllt ist.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/wiederholung-feste-anzahl/" class="text-blue-700 underline underline-offset-2"><span>Mit einer Wiederholung mit fester Anzahl Anweisungen mehrmals ausführen lassen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/verzweigung/" class="text-blue-700 underline underline-offset-2"><span>Mit einer Verzweigung (wenn – dann – sonst) festlegen, dass ein Algorithmus abhängig von einer Bedingung verschiedene Anweisungen ausführt</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/wiederholung-mit-bedingung/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-visuelle-programmierung" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Einen Algorithmus in einer blockbasierten (visuellen) Programmiersprache als Programm umsetzen und ausführen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann einen Algorithmus in einer blockbasierten (visuellen) Programmiersprache als Programm umsetzen und ausführen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/sequenz/" class="text-blue-700 underline underline-offset-2"><span>Anweisungen in der richtigen Reihenfolge zu einer Sequenz anordnen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/visuelle-programmierung/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-algorithmus-ausfuehren" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Einen Algorithmus Schritt für Schritt von Hand ausführen und so sein Ergebnis ermitteln</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann einen Algorithmus Schritt für Schritt von Hand ausführen und so sein Ergebnis ermitteln.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/verzweigung/" class="text-blue-700 underline underline-offset-2"><span>Mit einer Verzweigung (wenn – dann – sonst) festlegen, dass ein Algorithmus abhängig von einer Bedingung verschiedene Anweisungen ausführt</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/wiederholung-mit-bedingung/" class="text-blue-700 underline underline-offset-2"><span>Mit einer Wiederholung mit Bedingung Anweisungen so lange ausführen lassen, bis eine Bedingung erfüllt ist</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/algorithmus-ausfuehren/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-struktogramm" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Einen Algorithmus als Struktogramm darstellen und ein Struktogramm lesen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann einen Algorithmus als Struktogramm darstellen und ein Struktogramm lesen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/verzweigung/" class="text-blue-700 underline underline-offset-2"><span>Mit einer Verzweigung (wenn – dann – sonst) festlegen, dass ein Algorithmus abhängig von einer Bedingung verschiedene Anweisungen ausführt</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/wiederholung-mit-bedingung/" class="text-blue-700 underline underline-offset-2"><span>Mit einer Wiederholung mit Bedingung Anweisungen so lange ausführen lassen, bis eine Bedingung erfüllt ist</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/struktogramm/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-programmablaufplan" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Einen Algorithmus als Programmablaufplan (PAP) darstellen und einen PAP lesen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann einen Algorithmus als Programmablaufplan (PAP) darstellen und einen PAP lesen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/verzweigung/" class="text-blue-700 underline underline-offset-2"><span>Mit einer Verzweigung (wenn – dann – sonst) festlegen, dass ein Algorithmus abhängig von einer Bedingung verschiedene Anweisungen ausführt</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/wiederholung-mit-bedingung/" class="text-blue-700 underline underline-offset-2"><span>Mit einer Wiederholung mit Bedingung Anweisungen so lange ausführen lassen, bis eine Bedingung erfüllt ist</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/programmablaufplan/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-pseudocode" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Einen Algorithmus in Pseudocode aufschreiben</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann einen Algorithmus in Pseudocode aufschreiben.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/verzweigung/" class="text-blue-700 underline underline-offset-2"><span>Mit einer Verzweigung (wenn – dann – sonst) festlegen, dass ein Algorithmus abhängig von einer Bedingung verschiedene Anweisungen ausführt</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/wiederholung-mit-bedingung/" class="text-blue-700 underline underline-offset-2"><span>Mit einer Wiederholung mit Bedingung Anweisungen so lange ausführen lassen, bis eine Bedingung erfüllt ist</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/pseudocode/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-darstellungen-ueberfuehren" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Einen Algorithmus von einer Darstellungsform in eine andere übertragen, zum Beispiel vom Struktogramm in Programmcode</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann einen Algorithmus von einer Darstellungsform in eine andere übertragen, zum Beispiel vom Struktogramm in Programmcode.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/struktogramm/" class="text-blue-700 underline underline-offset-2"><span>Einen Algorithmus als Struktogramm darstellen und ein Struktogramm lesen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/programmablaufplan/" class="text-blue-700 underline underline-offset-2"><span>Einen Algorithmus als Programmablaufplan (PAP) darstellen und einen PAP lesen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/pseudocode/" class="text-blue-700 underline underline-offset-2"><span>Einen Algorithmus in Pseudocode aufschreiben</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/darstellungen-ueberfuehren/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-textbasierte-programmierung" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Einen Algorithmus in einer textbasierten Programmiersprache als Programm schreiben und ausführen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann einen Algorithmus in einer textbasierten Programmiersprache als Programm schreiben und ausführen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/visuelle-programmierung/" class="text-blue-700 underline underline-offset-2"><span>Einen Algorithmus in einer blockbasierten (visuellen) Programmiersprache als Programm umsetzen und ausführen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/textbasierte-programmierung/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-variable" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>In einem Programm Variablen anlegen, ihnen mit einer Wertzuweisung Werte geben und diese Werte ändern</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann in einem Programm Variablen anlegen, ihnen mit einer Wertzuweisung Werte geben und diese Werte ändern.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/sequenz/" class="text-blue-700 underline underline-offset-2"><span>Anweisungen in der richtigen Reihenfolge zu einer Sequenz anordnen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/datentypen/" class="text-blue-700 underline underline-offset-2"><span>Die Datentypen ganze Zahl, Kommazahl, Text und Wahrheitswert unterscheiden und für eine Angabe den passenden Datentyp wählen</span></a> <span class="text-slate-600">· Strang Information und Daten</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/variable/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-unterprogramme" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Ein Programm in Teile zerlegen und wiederkehrende Abläufe als Unterprogramm (Methode, Funktion) definieren und aufrufen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann ein Programm in Teile zerlegen und wiederkehrende Abläufe als Unterprogramm (Methode, Funktion) definieren und aufrufen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/visuelle-programmierung/" class="text-blue-700 underline underline-offset-2"><span>Einen Algorithmus in einer blockbasierten (visuellen) Programmiersprache als Programm umsetzen und ausführen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/unterprogramme/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-parameter" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Einem Unterprogramm über Parameter Werte übergeben</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann einem Unterprogramm über Parameter Werte übergeben.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/unterprogramme/" class="text-blue-700 underline underline-offset-2"><span>Ein Programm in Teile zerlegen und wiederkehrende Abläufe als Unterprogramm (Methode, Funktion) definieren und aufrufen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/variable/" class="text-blue-700 underline underline-offset-2"><span>In einem Programm Variablen anlegen, ihnen mit einer Wertzuweisung Werte geben und diese Werte ändern</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/parameter/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-quelltext-aendern" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Fremden Quelltext lesen, kommentieren, verändern und ergänzen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann fremden Quelltext lesen, kommentieren, verändern und ergänzen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/textbasierte-programmierung/" class="text-blue-700 underline underline-offset-2"><span>Einen Algorithmus in einer textbasierten Programmiersprache als Programm schreiben und ausführen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/algorithmus-ausfuehren/" class="text-blue-700 underline underline-offset-2"><span>Einen Algorithmus Schritt für Schritt von Hand ausführen und so sein Ergebnis ermitteln</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/quelltext-aendern/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-programm-testen" data-kind="Baustein · Algorithmen">
+  <p data-dialog-title>Mit gezielt gewählten Testfällen prüfen, ob ein Programm eine Aufgabe richtig löst</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann mit gezielt gewählten Testfällen prüfen, ob ein Programm eine Aufgabe richtig löst.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/visuelle-programmierung/" class="text-blue-700 underline underline-offset-2"><span>Einen Algorithmus in einer blockbasierten (visuellen) Programmiersprache als Programm umsetzen und ausführen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/algorithmus-ausfuehren/" class="text-blue-700 underline underline-offset-2"><span>Einen Algorithmus Schritt für Schritt von Hand ausführen und so sein Ergebnis ermitteln</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/programm-testen/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-syntax-und-semantik" data-kind="Baustein · Sprachen und Automaten">
+  <p data-dialog-title>An Beispielen erklären, was Syntax (die Schreibregeln) und Semantik (die Bedeutung) einer formalen Sprache sind</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann an Beispielen erklären, was Syntax (die Schreibregeln) und Semantik (die Bedeutung) einer formalen Sprache sind.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/textbasierte-programmierung/" class="text-blue-700 underline underline-offset-2"><span>Einen Algorithmus in einer textbasierten Programmiersprache als Programm schreiben und ausführen</span></a> <span class="text-slate-600">· Strang Algorithmen</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/syntax-und-semantik/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-syntaxfehler-finden" data-kind="Baustein · Sprachen und Automaten">
+  <p data-dialog-title>Syntaxfehler in einem Quelltext finden, Fehlermeldungen deuten und die Fehler beheben</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Syntaxfehler in einem Quelltext finden, Fehlermeldungen deuten und die Fehler beheben.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/syntax-und-semantik/" class="text-blue-700 underline underline-offset-2"><span>An Beispielen erklären, was Syntax (die Schreibregeln) und Semantik (die Bedeutung) einer formalen Sprache sind</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/syntaxfehler-finden/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-html-grundgeruest" data-kind="Baustein · Sprachen und Automaten">
+  <p data-dialog-title>Eine einfache Webseite in HTML schreiben und dabei Elemente mit Start- und End-Tags richtig verschachteln</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann eine einfache Webseite in HTML schreiben und dabei Elemente mit Start- und End-Tags richtig verschachteln.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/hypertext/" class="text-blue-700 underline underline-offset-2"><span>Den Aufbau eines Hypertexts aus Seiten und Verweisen beschreiben und einen einfachen Hypertext erstellen</span></a> <span class="text-slate-600">· Strang Information und Daten</span>
+</li><li>
+<a href="/apps/map/informatik/c/syntax-und-semantik/" class="text-blue-700 underline underline-offset-2"><span>An Beispielen erklären, was Syntax (die Schreibregeln) und Semantik (die Bedeutung) einer formalen Sprache sind</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/html-grundgeruest/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-html-attribute-und-links" data-kind="Baustein · Sprachen und Automaten">
+  <p data-dialog-title>HTML-Elemente mit Attributen ergänzen, zum Beispiel einen Verweis mit href oder ein Bild mit src einbinden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann HTML-Elemente mit Attributen ergänzen, zum Beispiel einen Verweis mit href oder ein Bild mit src einbinden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/html-grundgeruest/" class="text-blue-700 underline underline-offset-2"><span>Eine einfache Webseite in HTML schreiben und dabei Elemente mit Start- und End-Tags richtig verschachteln</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/html-attribute-und-links/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-css" data-kind="Baustein · Sprachen und Automaten">
+  <p data-dialog-title>Das Aussehen einer Webseite mit CSS festlegen und erklären, warum man Inhalt und Darstellung trennt</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann das Aussehen einer Webseite mit CSS festlegen und erklären, warum man Inhalt und Darstellung trennt.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/html-attribute-und-links/" class="text-blue-700 underline underline-offset-2"><span>HTML-Elemente mit Attributen ergänzen, zum Beispiel einen Verweis mit href oder ein Bild mit src einbinden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/css/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-automaten-im-alltag" data-kind="Baustein · Sprachen und Automaten">
+  <p data-dialog-title>An einem Automaten aus dem Alltag, zum Beispiel einem Getränkeautomaten, erklären, wie er abhängig von Eingabe und Zustand reagiert</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann an einem Automaten aus dem Alltag, zum Beispiel einem Getränkeautomaten, erklären, wie er abhängig von Eingabe und Zustand reagiert.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/eva-prinzip/" class="text-blue-700 underline underline-offset-2"><span>Das EVA-Prinzip (Eingabe, Verarbeitung, Ausgabe) erklären und Geräte und Vorgänge den drei Phasen zuordnen</span></a> <span class="text-slate-600">· Strang Informatiksysteme</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/automaten-im-alltag/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-zustandsdiagramm" data-kind="Baustein · Sprachen und Automaten">
+  <p data-dialog-title>Das Verhalten eines Automaten mit Zuständen und Übergängen in einem Zustandsdiagramm darstellen und ein solches Diagramm lesen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann das Verhalten eines Automaten mit Zuständen und Übergängen in einem Zustandsdiagramm darstellen und ein solches Diagramm lesen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/automaten-im-alltag/" class="text-blue-700 underline underline-offset-2"><span>An einem Automaten aus dem Alltag, zum Beispiel einem Getränkeautomaten, erklären, wie er abhängig von Eingabe und Zustand reagiert</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/zustandsdiagramm/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-automat-entwerfen" data-kind="Baustein · Sprachen und Automaten">
+  <p data-dialog-title>Für eine konkrete Aufgabe, zum Beispiel eine Ampelsteuerung, einen Automaten mit Zuständen und Übergängen entwerfen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann für eine konkrete Aufgabe, zum Beispiel eine Ampelsteuerung, einen Automaten mit Zuständen und Übergängen entwerfen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/zustandsdiagramm/" class="text-blue-700 underline underline-offset-2"><span>Das Verhalten eines Automaten mit Zuständen und Übergängen in einem Zustandsdiagramm darstellen und ein solches Diagramm lesen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/automat-entwerfen/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-informatiksysteme-im-alltag" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Informatiksysteme in meinem Alltag erkennen, zum Beispiel Smartphone, Spielkonsole oder Kasse</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Informatiksysteme in meinem Alltag erkennen, zum Beispiel Smartphone, Spielkonsole oder Kasse.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd>auf keinem anderen Baustein</dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/informatiksysteme-im-alltag/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-hardware-und-software" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Hardware und Software unterscheiden und erklären, wie sie in einem Informatiksystem zusammenwirken</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Hardware und Software unterscheiden und erklären, wie sie in einem Informatiksystem zusammenwirken.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/informatiksysteme-im-alltag/" class="text-blue-700 underline underline-offset-2"><span>Informatiksysteme in meinem Alltag erkennen, zum Beispiel Smartphone, Spielkonsole oder Kasse</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/hardware-und-software/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-computer-bestandteile" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Die wichtigsten Bestandteile eines Computers wie Prozessor, Arbeitsspeicher, Festspeicher sowie Ein- und Ausgabegeräte benennen und ihre Aufgaben beschreiben</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann die wichtigsten Bestandteile eines Computers wie Prozessor, Arbeitsspeicher, Festspeicher sowie Ein- und Ausgabegeräte benennen und ihre Aufgaben beschreiben.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/hardware-und-software/" class="text-blue-700 underline underline-offset-2"><span>Hardware und Software unterscheiden und erklären, wie sie in einem Informatiksystem zusammenwirken</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/computer-bestandteile/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-eva-prinzip" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Das EVA-Prinzip (Eingabe, Verarbeitung, Ausgabe) erklären und Geräte und Vorgänge den drei Phasen zuordnen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann das EVA-Prinzip (Eingabe, Verarbeitung, Ausgabe) erklären und Geräte und Vorgänge den drei Phasen zuordnen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/computer-bestandteile/" class="text-blue-700 underline underline-offset-2"><span>Die wichtigsten Bestandteile eines Computers wie Prozessor, Arbeitsspeicher, Festspeicher sowie Ein- und Ausgabegeräte benennen und ihre Aufgaben beschreiben</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/eva-prinzip/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-informatiksystem-auswaehlen" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Für eine Aufgabe ein passendes Gerät oder Programm auswählen und meine Wahl begründen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann für eine Aufgabe ein passendes Gerät oder Programm auswählen und meine Wahl begründen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/computer-bestandteile/" class="text-blue-700 underline underline-offset-2"><span>Die wichtigsten Bestandteile eines Computers wie Prozessor, Arbeitsspeicher, Festspeicher sowie Ein- und Ausgabegeräte benennen und ihre Aufgaben beschreiben</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/informatiksystem-auswaehlen/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-programme-bedienen" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Grundfunktionen von Programmen wie Öffnen, Speichern, Kopieren und Einfügen sicher nutzen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Grundfunktionen von Programmen wie Öffnen, Speichern, Kopieren und Einfügen sicher nutzen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/hardware-und-software/" class="text-blue-700 underline underline-offset-2"><span>Hardware und Software unterscheiden und erklären, wie sie in einem Informatiksystem zusammenwirken</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/programme-bedienen/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-ordner-und-dateien" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Dateien in einer sinnvollen Ordnerstruktur ablegen und wiederfinden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Dateien in einer sinnvollen Ordnerstruktur ablegen und wiederfinden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/programme-bedienen/" class="text-blue-700 underline underline-offset-2"><span>Grundfunktionen von Programmen wie Öffnen, Speichern, Kopieren und Einfügen sicher nutzen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/baum/" class="text-blue-700 underline underline-offset-2"><span>Hierarchische Informationen als Baum mit Wurzel, Knoten, Kanten und Blättern darstellen</span></a> <span class="text-slate-600">· Strang Information und Daten</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/ordner-und-dateien/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-dateipfad" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Den Ort einer Datei als Pfad angeben und einen Pfad lesen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann den Ort einer Datei als Pfad angeben und einen Pfad lesen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/ordner-und-dateien/" class="text-blue-700 underline underline-offset-2"><span>Dateien in einer sinnvollen Ordnerstruktur ablegen und wiederfinden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/dateipfad/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-speicherorte-vergleichen" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Speicherorte wie Gerät, USB-Stick und Cloud nach Kapazität, Erreichbarkeit und Sicherheit vergleichen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Speicherorte wie Gerät, USB-Stick und Cloud nach Kapazität, Erreichbarkeit und Sicherheit vergleichen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/ordner-und-dateien/" class="text-blue-700 underline underline-offset-2"><span>Dateien in einer sinnvollen Ordnerstruktur ablegen und wiederfinden</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/bit-und-byte/" class="text-blue-700 underline underline-offset-2"><span>Die Einheiten Bit, Byte, Kilobyte, Megabyte und Gigabyte erklären und Datenmengen damit vergleichen</span></a> <span class="text-slate-600">· Strang Information und Daten</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/speicherorte-vergleichen/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-internet-aufbau" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Erklären, dass das Internet ein Netz aus vielen Netzen ist, in dem Router Daten weiterleiten, und lokale und globale Netze unterscheiden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann erklären, dass das Internet ein Netz aus vielen Netzen ist, in dem Router Daten weiterleiten, und lokale und globale Netze unterscheiden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/hardware-und-software/" class="text-blue-700 underline underline-offset-2"><span>Hardware und Software unterscheiden und erklären, wie sie in einem Informatiksystem zusammenwirken</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/internet-aufbau/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-client-und-server" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Die Rollen von Client und Server beschreiben und Beispiele dafür nennen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann die Rollen von Client und Server beschreiben und Beispiele dafür nennen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/internet-aufbau/" class="text-blue-700 underline underline-offset-2"><span>Erklären, dass das Internet ein Netz aus vielen Netzen ist, in dem Router Daten weiterleiten, und lokale und globale Netze unterscheiden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/client-und-server/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-ip-adresse-und-dns" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Erklären, dass jeder Rechner im Internet eine IP-Adresse hat und das DNS Namen wie schule.de in IP-Adressen übersetzt</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann erklären, dass jeder Rechner im Internet eine IP-Adresse hat und das DNS Namen wie schule.de in IP-Adressen übersetzt.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/internet-aufbau/" class="text-blue-700 underline underline-offset-2"><span>Erklären, dass das Internet ein Netz aus vielen Netzen ist, in dem Router Daten weiterleiten, und lokale und globale Netze unterscheiden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/ip-adresse-und-dns/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-url-aufbau" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Die Bestandteile einer URL wie Protokoll, Domain und Pfad benennen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann die Bestandteile einer URL wie Protokoll, Domain und Pfad benennen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/ip-adresse-und-dns/" class="text-blue-700 underline underline-offset-2"><span>Erklären, dass jeder Rechner im Internet eine IP-Adresse hat und das DNS Namen wie schule.de in IP-Adressen übersetzt</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/dateipfad/" class="text-blue-700 underline underline-offset-2"><span>Den Ort einer Datei als Pfad angeben und einen Pfad lesen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/url-aufbau/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-internetdienste" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Dienste des Internets wie das World Wide Web und E-Mail unterscheiden und erklären, dass sie nach festen Regeln (Protokollen) kommunizieren</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Dienste des Internets wie das World Wide Web und E-Mail unterscheiden und erklären, dass sie nach festen Regeln (Protokollen) kommunizieren.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/client-und-server/" class="text-blue-700 underline underline-offset-2"><span>Die Rollen von Client und Server beschreiben und Beispiele dafür nennen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/internetdienste/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-webseite-abrufen" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Beschreiben, was passiert, wenn ein Browser eine Webseite von einem Webserver abruft</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann beschreiben, was passiert, wenn ein Browser eine Webseite von einem Webserver abruft.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/url-aufbau/" class="text-blue-700 underline underline-offset-2"><span>Die Bestandteile einer URL wie Protokoll, Domain und Pfad benennen</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/internetdienste/" class="text-blue-700 underline underline-offset-2"><span>Dienste des Internets wie das World Wide Web und E-Mail unterscheiden und erklären, dass sie nach festen Regeln (Protokollen) kommunizieren</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/webseite-abrufen/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-sicheres-passwort" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Ein sicheres Passwort bilden und erklären, wie ich meine Zugänge schütze</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann ein sicheres Passwort bilden und erklären, wie ich meine Zugänge schütze.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/informatiksysteme-im-alltag/" class="text-blue-700 underline underline-offset-2"><span>Informatiksysteme in meinem Alltag erkennen, zum Beispiel Smartphone, Spielkonsole oder Kasse</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/sicheres-passwort/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-schadsoftware" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Arten von Schadsoftware wie Viren und Trojaner beschreiben und erklären, wie sie auf ein Gerät gelangen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Arten von Schadsoftware wie Viren und Trojaner beschreiben und erklären, wie sie auf ein Gerät gelangen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/hardware-und-software/" class="text-blue-700 underline underline-offset-2"><span>Hardware und Software unterscheiden und erklären, wie sie in einem Informatiksystem zusammenwirken</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/schadsoftware/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-schutzsoftware" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Erklären, wie Firewall, Virenschutz und Updates ein Gerät schützen, und Sicherheitseinstellungen nutzen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann erklären, wie Firewall, Virenschutz und Updates ein Gerät schützen, und Sicherheitseinstellungen nutzen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/schadsoftware/" class="text-blue-700 underline underline-offset-2"><span>Arten von Schadsoftware wie Viren und Trojaner beschreiben und erklären, wie sie auf ein Gerät gelangen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/schutzsoftware/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-datensicherung" data-kind="Baustein · Informatiksysteme">
+  <p data-dialog-title>Meine Daten durch Sicherungskopien und gespeicherte Zwischenstände vor Verlust schützen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann meine Daten durch Sicherungskopien und gespeicherte Zwischenstände vor Verlust schützen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/speicherorte-vergleichen/" class="text-blue-700 underline underline-offset-2"><span>Speicherorte wie Gerät, USB-Stick und Cloud nach Kapazität, Erreichbarkeit und Sicherheit vergleichen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/datensicherung/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-informatik-in-alltag-und-beruf" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>An Beispielen beschreiben, wie Informatiksysteme mein Leben und die Arbeitswelt verändern</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann an Beispielen beschreiben, wie Informatiksysteme mein Leben und die Arbeitswelt verändern.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/informatiksysteme-im-alltag/" class="text-blue-700 underline underline-offset-2"><span>Informatiksysteme in meinem Alltag erkennen, zum Beispiel Smartphone, Spielkonsole oder Kasse</span></a> <span class="text-slate-600">· Strang Informatiksysteme</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/informatik-in-alltag-und-beruf/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-personenbezogene-daten" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Erklären, was personenbezogene Daten sind, und an Beispielen beschreiben, wo sie gesammelt und genutzt werden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann erklären, was personenbezogene Daten sind, und an Beispielen beschreiben, wo sie gesammelt und genutzt werden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/information-und-daten/" class="text-blue-700 underline underline-offset-2"><span>Information und Daten unterscheiden und erklären, dass Daten erst durch ihre Deutung zu Information werden</span></a> <span class="text-slate-600">· Strang Information und Daten</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/personenbezogene-daten/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-eigene-daten-schuetzen" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Sparsam mit meinen Daten umgehen und Einstellungen wählen, die meine Privatsphäre schützen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann sparsam mit meinen Daten umgehen und Einstellungen wählen, die meine Privatsphäre schützen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/personenbezogene-daten/" class="text-blue-700 underline underline-offset-2"><span>Erklären, was personenbezogene Daten sind, und an Beispielen beschreiben, wo sie gesammelt und genutzt werden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/eigene-daten-schuetzen/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-datenschutz-und-datensicherheit" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Datenschutz (Schutz von Personen) und Datensicherheit (Schutz der Daten vor Verlust und Zugriff) unterscheiden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Datenschutz (Schutz von Personen) und Datensicherheit (Schutz der Daten vor Verlust und Zugriff) unterscheiden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/personenbezogene-daten/" class="text-blue-700 underline underline-offset-2"><span>Erklären, was personenbezogene Daten sind, und an Beispielen beschreiben, wo sie gesammelt und genutzt werden</span></a>
+</li><li>
+<a href="/apps/map/informatik/c/datensicherung/" class="text-blue-700 underline underline-offset-2"><span>Meine Daten durch Sicherungskopien und gespeicherte Zwischenstände vor Verlust schützen</span></a> <span class="text-slate-600">· Strang Informatiksysteme</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/datenschutz-und-datensicherheit/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-datenschutzrecht" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Grundsätze des Datenschutzrechts nennen und beurteilen, ob personenbezogene Daten in einem Fall erhoben und genutzt werden dürfen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Grundsätze des Datenschutzrechts nennen und beurteilen, ob personenbezogene Daten in einem Fall erhoben und genutzt werden dürfen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/eigene-daten-schuetzen/" class="text-blue-700 underline underline-offset-2"><span>Sparsam mit meinen Daten umgehen und Einstellungen wählen, die meine Privatsphäre schützen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/datenschutzrecht/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-daten-in-datenbanken" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Nutzen und Risiken beurteilen, wenn personenbezogene Daten in Datenbanken gespeichert und ausgewertet werden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Nutzen und Risiken beurteilen, wenn personenbezogene Daten in Datenbanken gespeichert und ausgewertet werden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/datenbanken-im-alltag/" class="text-blue-700 underline underline-offset-2"><span>Beispiele nennen, wo im Alltag Datenbanken große Datenbestände verwalten, und erklären, wozu man sie braucht</span></a> <span class="text-slate-600">· Strang Information und Daten</span>
+</li><li>
+<a href="/apps/map/informatik/c/datenschutzrecht/" class="text-blue-700 underline underline-offset-2"><span>Grundsätze des Datenschutzrechts nennen und beurteilen, ob personenbezogene Daten in einem Fall erhoben und genutzt werden dürfen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/daten-in-datenbanken/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-big-data" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Chancen und Gefahren beurteilen, wenn sehr große Datenmengen gesammelt, verknüpft und automatisch ausgewertet werden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Chancen und Gefahren beurteilen, wenn sehr große Datenmengen gesammelt, verknüpft und automatisch ausgewertet werden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/daten-in-datenbanken/" class="text-blue-700 underline underline-offset-2"><span>Nutzen und Risiken beurteilen, wenn personenbezogene Daten in Datenbanken gespeichert und ausgewertet werden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/big-data/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-recht-am-eigenen-bild" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Erklären, was das Recht am eigenen Bild bedeutet, und beachten, wann ich Fotos anderer veröffentlichen darf</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann erklären, was das Recht am eigenen Bild bedeutet, und beachten, wann ich Fotos anderer veröffentlichen darf.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/personenbezogene-daten/" class="text-blue-700 underline underline-offset-2"><span>Erklären, was personenbezogene Daten sind, und an Beispielen beschreiben, wo sie gesammelt und genutzt werden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/recht-am-eigenen-bild/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-urheberrecht" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Erklären, was das Urheberrecht schützt, und fremde Texte, Bilder und Musik nur mit Erlaubnis und Quellenangabe verwenden</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann erklären, was das Urheberrecht schützt, und fremde Texte, Bilder und Musik nur mit Erlaubnis und Quellenangabe verwenden.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd>auf keinem anderen Baustein</dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/urheberrecht/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-lizenzmodelle" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Lizenzmodelle wie proprietäre Software, freie Software und Creative-Commons-Lizenzen vergleichen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Lizenzmodelle wie proprietäre Software, freie Software und Creative-Commons-Lizenzen vergleichen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 9/10</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/urheberrecht/" class="text-blue-700 underline underline-offset-2"><span>Erklären, was das Urheberrecht schützt, und fremde Texte, Bilder und Musik nur mit Erlaubnis und Quellenangabe verwenden</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/lizenzmodelle/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-digitale-kommunikation" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Möglichkeiten der digitalen Kommunikation wie E-Mail, Messenger und soziale Netzwerke nach Chancen und Risiken vergleichen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Möglichkeiten der digitalen Kommunikation wie E-Mail, Messenger und soziale Netzwerke nach Chancen und Risiken vergleichen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/internetdienste/" class="text-blue-700 underline underline-offset-2"><span>Dienste des Internets wie das World Wide Web und E-Mail unterscheiden und erklären, dass sie nach festen Regeln (Protokollen) kommunizieren</span></a> <span class="text-slate-600">· Strang Informatiksysteme</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/digitale-kommunikation/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-gefahren-im-netz" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Gefahren im Netz wie Phishing, Abofallen, gefälschte Identitäten und Cybermobbing erkennen und weiß, wie ich mich verhalte</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann Gefahren im Netz wie Phishing, Abofallen, gefälschte Identitäten und Cybermobbing erkennen und weiß, wie ich mich verhalte.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/digitale-kommunikation/" class="text-blue-700 underline underline-offset-2"><span>Möglichkeiten der digitalen Kommunikation wie E-Mail, Messenger und soziale Netzwerke nach Chancen und Risiken vergleichen</span></a>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/gefahren-im-netz/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-informationen-bewerten" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Im Internet gezielt suchen und die Glaubwürdigkeit von Quellen und Suchergebnissen prüfen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann im Internet gezielt suchen und die Glaubwürdigkeit von Quellen und Suchergebnissen prüfen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/webseite-abrufen/" class="text-blue-700 underline underline-offset-2"><span>Beschreiben, was passiert, wenn ein Browser eine Webseite von einem Webserver abruft</span></a> <span class="text-slate-600">· Strang Informatiksysteme</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/informationen-bewerten/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-umweltbilanz-digitaler-geraete" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>Beschreiben, wie Herstellung, Nutzung und Entsorgung digitaler Geräte die Umwelt belasten, und das mit Papier vergleichen</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann beschreiben, wie Herstellung, Nutzung und Entsorgung digitaler Geräte die Umwelt belasten, und das mit Papier vergleichen.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 7/8</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/computer-bestandteile/" class="text-blue-700 underline underline-offset-2"><span>Die wichtigsten Bestandteile eines Computers wie Prozessor, Arbeitsspeicher, Festspeicher sowie Ein- und Ausgabegeräte benennen und ihre Aufgaben beschreiben</span></a> <span class="text-slate-600">· Strang Informatiksysteme</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/umweltbilanz-digitaler-geraete/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<template id="detail-ki-chancen-und-risiken" data-kind="Baustein · Informatik, Mensch und Gesellschaft">
+  <p data-dialog-title>An Beispielen Chancen und Risiken künstlicher Intelligenz für mich und die Gesellschaft beschreiben</p>
+  <div data-dialog-body>
+    <p class="m-0">Ich kann an Beispielen Chancen und Risiken künstlicher Intelligenz für mich und die Gesellschaft beschreiben.</p>
+    <dl class="map-facts">
+      <div><dt>Richtstufe</dt><dd>Klasse 5/6</dd></div>
+      <div><dt>Baut auf</dt><dd><ul class="list-none p-0 m-0 flex flex-col gap-1"><li>
+<a href="/apps/map/informatik/c/ki-im-alltag/" class="text-blue-700 underline underline-offset-2"><span>Beispiele für künstliche Intelligenz aus meinem Alltag nennen, zum Beispiel Empfehlungen, Sprach- oder Bilderkennung</span></a> <span class="text-slate-600">· Strang Information und Daten</span>
+</li></ul></dd></div>
+      <div><dt>Geübt in</dt><dd>noch keine App – Lücke
+</dd></div>
+    </dl>
+    <p class="m-0"><a href="/apps/map/informatik/c/ki-chancen-und-risiken/" class="btn btn-primary">Alle Angaben zum Baustein</a></p>
+  </div>
+</template>
+
+
+<dialog class="map-dialog" data-map-dialog aria-labelledby="map-dialog-title">
+  <div class="map-dialog-inner">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex flex-col gap-2 items-start">
+        <p class="map-badge m-0" data-dialog-kind></p>
+        <h2 id="map-dialog-title" class="m-0 text-xl font-bold leading-tight text-slate-900" data-dialog-heading></h2>
+      </div>
+      <button type="button" class="btn btn-secondary map-close" data-dialog-close aria-label="Schließen"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="mt-4 flex flex-col gap-4" data-dialog-content></div>
+  </div>
+</dialog>
+
+
+  </main>
+
+  <footer class="la-footer" lang="de">
+  <div class="la-footer__inner">
+    <p>lernapps.net ist kostenlos und ohne Werbung. Es lebt von deinem Danke.</p>
+    <nav aria-label="Fußzeile"><ul><li><a href="/privacy/">Datenschutz</a></li><li><a href="/imprint/">Impressum</a></li><li><a href="/docs/platform-design/">Plattform-Design</a></li><li><a href="https://github.com/lernapps/apps">Quellcode</a></li></ul></nav>
+  </div>
+</footer>
+</body>
+</html>

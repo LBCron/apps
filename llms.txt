@@ -24,9 +24,23 @@ Für dich als Daten, eine Datei je Fach (Fach, Quelle, Stränge, Bausteine mit `
 mit ihren Einordnungen):
 - [biologie.json](https://lernapps.net/apps/map/biologie.json)
 - [chemie.json](https://lernapps.net/apps/map/chemie.json)
+- [deutsch.json](https://lernapps.net/apps/map/deutsch.json)
+- [englisch.json](https://lernapps.net/apps/map/englisch.json)
+- [erdkunde.json](https://lernapps.net/apps/map/erdkunde.json)
+- [ethik.json](https://lernapps.net/apps/map/ethik.json)
+- [evangelische-religion.json](https://lernapps.net/apps/map/evangelische-religion.json)
+- [franzoesisch.json](https://lernapps.net/apps/map/franzoesisch.json)
+- [geschichte.json](https://lernapps.net/apps/map/geschichte.json)
+- [informatik.json](https://lernapps.net/apps/map/informatik.json)
+- [katholische-religion.json](https://lernapps.net/apps/map/katholische-religion.json)
+- [kunst.json](https://lernapps.net/apps/map/kunst.json)
+- [latein.json](https://lernapps.net/apps/map/latein.json)
 - [mathematik.json](https://lernapps.net/apps/map/mathematik.json)
 - [musik.json](https://lernapps.net/apps/map/musik.json)
 - [physik.json](https://lernapps.net/apps/map/physik.json)
+- [politik-wirtschaft.json](https://lernapps.net/apps/map/politik-wirtschaft.json)
+- [spanisch.json](https://lernapps.net/apps/map/spanisch.json)
+- [sport.json](https://lernapps.net/apps/map/sport.json)
 
 Plant jemand mit dir eine App, wähle einen Strang und Bausteine daraus; eine App bleibt in einem Strang.
 Das Format beschreibt der [Vertrag der Lernlandkarte](https://github.com/lernapps/apps/blob/main/docs/learning-map-contract.md).

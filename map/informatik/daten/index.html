@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="de" data-la-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Information und Daten · Lernlandkarte Informatik · lernapps.net</title>
+  <meta name="description" content="Der Strang Information und Daten im Fach Informatik: seine Bausteine nach Klasse und die Apps, die sie üben.">
+  <link rel="canonical" href="https://lernapps.net/apps/map/informatik/daten/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/apps/lernapps-tokens.css">
+<link rel="stylesheet" href="/apps/lernapps-frame.css">
+<link rel="alternate" hreflang="de" href="/apps/map/informatik/daten/">
+<link rel="alternate" hreflang="en" href="/apps/en/map/informatik/daten/">
+<script>(() => {
+  const key = "lernapps-lang", here = "de", pages = {"en":"/apps/en/map/informatik/daten/"};
+  const known = ["de","en"];
+  const browser = (navigator.languages || [navigator.language]).map((l) => String(l).slice(0, 2).toLowerCase()).find((l) => known.includes(l));
+  let chosen = null;
+  try { chosen = localStorage.getItem(key); } catch {}
+  const wanted = known.includes(chosen) ? chosen : browser;
+  if (wanted && wanted !== here && pages[wanted] && !/bot|crawl|spider|slurp/i.test(navigator.userAgent)) {
+    location.replace(pages[wanted] + location.search + location.hash);
+    return;
+  }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest("a[data-la-lang]");
+    if (!a) return;
+    try { a.dataset.laLang === browser ? localStorage.removeItem(key) : localStorage.setItem(key, a.dataset.laLang); } catch {}
+  });
+})();</script>
+  <script src="/lernapps-count.js" defer></script>
+  <link rel="stylesheet" href="/apps/uno.css">
+  <link rel="stylesheet" href="/apps/assets/apps.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col" style="font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;">
+  <a class="la-skip" href="#main-content" lang="de">Zum Inhalt springen</a>
+<header class="la-header" lang="de">
+  <div class="la-header__inner">
+    <a class="la-brand" href="/" aria-label="lernapps.net – Startseite"><img src="/brand/mark-plain.svg" alt=""><span>lernapps<span class="la-brand__tld">.net</span></span></a>
+    <nav class="la-nav la-nav--bar" aria-label="Hauptnavigation"><ul><li><a href="/apps/" aria-current="page">Katalog</a></li><li><a href="/practice/">Üben</a></li><li><a href="/apps/build/">App bauen</a></li><li><a href="/tooling/">Tooling</a></li><li><a href="/tutor/">Tutor</a></li><li><a href="/features/">Features</a></li><li><a href="/docs/">Plattform</a></li><li><a href="/join/">Mitmachen</a></li><li class="la-lang"><a href="/apps/en/map/informatik/daten/" hreflang="en" lang="en" data-la-lang="en" aria-label="Language: English">English</a></li></ul></nav>
+    <details class="la-menu"><summary>Menü</summary><nav class="la-nav la-nav--menu" aria-label="Hauptnavigation"><div class="la-menu__group"><p class="la-menu__title" id="la-menu-0">Für Lernende</p><ul aria-labelledby="la-menu-0"><li><a href="/apps/" aria-current="page">App Katalog</a></li><li><a href="/practice/">Üben für eine Prüfung</a></li></ul></div><div class="la-menu__group"><p class="la-menu__title" id="la-menu-1">Für Macher</p><ul aria-labelledby="la-menu-1"><li><a href="/apps/build/">App bauen</a></li><li><a href="/tooling/">Tooling</a></li></ul></div><div class="la-menu__group"><p class="la-menu__title" id="la-menu-2">Verstehen und mitmachen</p><ul aria-labelledby="la-menu-2"><li><a href="/tutor/">Tutor</a></li><li><a href="/features/">Features</a></li><li><a href="/docs/">Plattform</a></li><li><a href="/join/">Mitmachen</a></li></ul></div><ul class="la-menu__lang"><li class="la-lang"><a href="/apps/en/map/informatik/daten/" hreflang="en" lang="en" data-la-lang="en" aria-label="Language: English">English</a></li></ul></nav></details>
+  </div>
+</header>
+
+  <main id="main-content" tabindex="-1" class="flex-1 outline-none">
+    
+
+<div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-12 flex flex-col gap-6">
+  
+<nav aria-label="Brotkrumen" class="text-sm text-slate-600">
+  <ol class="list-none p-0 m-0 flex flex-wrap gap-x-2 gap-y-1">
+    <li class="flex gap-2"><a href="/apps/map/" class="text-blue-700 underline underline-offset-2">Lernlandkarte</a><span aria-hidden="true">›</span>
+    </li>
+    <li class="flex gap-2"><a href="/apps/map/informatik/" class="text-blue-700 underline underline-offset-2">Informatik</a><span aria-hidden="true">›</span>
+    </li>
+    <li class="flex gap-2"><span aria-current="page">Information und Daten</span>
+    </li>
+  </ol>
+</nav>
+
+
+  <div class="flex flex-col gap-2 items-start">
+    <a href="/apps/map/#strang" class="text-sm text-blue-700 underline underline-offset-2">Strang · was ist das?</a>
+    <h1 class="m-0 font-extrabold leading-tight tracking-tight text-slate-900" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">Information und Daten</h1>
+    <p class="m-0 max-w-3xl text-lg text-slate-600">Die Bausteine sind nach Richtstufe geordnet. Worauf ein Baustein aufbaut, steht auf seiner Seite.</p>
+    <p class="m-0 text-slate-700">0 von 36 Bausteinen geübt</p>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-covered"></span>Abgedeckt</p>
+      <p class="m-0 flex items-center gap-2 text-sm text-slate-600"><span aria-hidden="true" class="map-swatch map-chip-gap"></span>Lücke</p>
+    </div>
+  </div>
+
+  <div class="map-scroll" role="region" aria-label="Bausteine und Apps im Strang Information und Daten, nach Richtstufe" tabindex="0">
+    <div class="map-strand">
+      <section aria-labelledby="stufe-5-6" style="grid-column: 1; grid-row: 1;" class="flex flex-col">
+        <h2 id="stufe-5-6" class="map-strand-head m-0 text-base text-slate-900">Klasse 5/6</h2>
+        <ul class="map-cell">
+          
+<li>
+  <a href="/apps/map/informatik/c/information-und-daten/" class="map-chip map-chip-gap">
+    <span>Information und Daten unterscheiden und erklären, dass Daten erst durch ihre Deutung zu Information werden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/daten-interpretieren/" class="map-chip map-chip-gap">
+    <span>Daten in ihrem Zusammenhang deuten, zum Beispiel erkennen, ob die Zahl 21 ein Alter, eine Temperatur oder eine Uhrzeit ist</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/darstellungsformen-von-information/" class="map-chip map-chip-gap">
+    <span>Eine Information in verschiedenen Formen darstellen, zum Beispiel als Text, Tabelle, Bild oder Diagramm, und eine passende Form wählen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/codierung-im-alltag/" class="map-chip map-chip-gap">
+    <span>Beispiele für Codierungen aus dem Alltag nennen und eine Nachricht mit einer vorgegebenen Codierung codieren und decodieren</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/binaersystem/" class="map-chip map-chip-gap">
+    <span>Erklären, wie das Binärsystem als Stellenwertsystem mit den Ziffern 0 und 1 funktioniert, und eine Binärzahl in eine Dezimalzahl umrechnen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/dezimal-in-binaer/" class="map-chip map-chip-gap">
+    <span>Eine Dezimalzahl in eine Binärzahl umrechnen, zum Beispiel durch fortgesetztes Teilen durch 2</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/bit-und-byte/" class="map-chip map-chip-gap">
+    <span>Die Einheiten Bit, Byte, Kilobyte, Megabyte und Gigabyte erklären und Datenmengen damit vergleichen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/pixelgrafik/" class="map-chip map-chip-gap">
+    <span>Erklären, wie ein Bild als Raster aus Pixeln mit Farbwerten gespeichert wird</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/pixel-und-vektorgrafik/" class="map-chip map-chip-gap">
+    <span>Pixel- und Vektorgrafiken unterscheiden und begründen, welche Grafikart für einen Zweck besser passt</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/baum/" class="map-chip map-chip-gap">
+    <span>Hierarchische Informationen als Baum mit Wurzel, Knoten, Kanten und Blättern darstellen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/verschluesselung-grundidee/" class="map-chip map-chip-gap">
+    <span>An einem einfachen Verfahren, zum Beispiel einer Skytale, erklären, wie man einen Text mit einem Schlüssel ver- und entschlüsselt</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/verschluesselung-bewerten/" class="map-chip map-chip-gap">
+    <span>Verschlüsselungsverfahren vergleichen und beurteilen, wie sicher sie sind, zum Beispiel wie viele Schlüssel ein Angreifer ausprobieren müsste</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/ki-im-alltag/" class="map-chip map-chip-gap">
+    <span>Beispiele für künstliche Intelligenz aus meinem Alltag nennen, zum Beispiel Empfehlungen, Sprach- oder Bilderkennung</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/maschinelles-lernen/" class="map-chip map-chip-gap">
+    <span>An einem Beispiel erklären, dass ein KI-System aus Beispieldaten Muster lernt, statt dass jemand jede Regel programmiert</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+        </ul>
+      </section>
+      <section aria-labelledby="stufe-7-8" style="grid-column: 2; grid-row: 1;" class="flex flex-col">
+        <h2 id="stufe-7-8" class="map-strand-head m-0 text-base text-slate-900">Klasse 7/8</h2>
+        <ul class="map-cell">
+          
+<li>
+  <a href="/apps/map/informatik/c/zeichencodierung/" class="map-chip map-chip-gap">
+    <span>Erklären, wie Buchstaben und Zeichen mit einem Code wie ASCII oder Unicode als Binärzahlen gespeichert werden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/analog-und-digital/" class="map-chip map-chip-gap">
+    <span>Den Unterschied zwischen analoger und digitaler Darstellung erklären und Beispiele für das Digitalisieren nennen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/graph/" class="map-chip map-chip-gap">
+    <span>Vernetzte Informationen, zum Beispiel verlinkte Webseiten, als Graph aus Knoten und Kanten darstellen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/hypertext/" class="map-chip map-chip-gap">
+    <span>Den Aufbau eines Hypertexts aus Seiten und Verweisen beschreiben und einen einfachen Hypertext erstellen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+        </ul>
+      </section>
+      <section aria-labelledby="stufe-9-10" style="grid-column: 3; grid-row: 1;" class="flex flex-col">
+        <h2 id="stufe-9-10" class="map-strand-head m-0 text-base text-slate-900">Klasse 9/10</h2>
+        <ul class="map-cell">
+          
+<li>
+  <a href="/apps/map/informatik/c/datentypen/" class="map-chip map-chip-gap">
+    <span>Die Datentypen ganze Zahl, Kommazahl, Text und Wahrheitswert unterscheiden und für eine Angabe den passenden Datentyp wählen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/rechnen-und-vergleichen/" class="map-chip map-chip-gap">
+    <span>Mit Daten in einem Programm rechnen und Werte vergleichen, zum Beispiel mit +, -, *, /, &lt; und =</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/logische-verknuepfungen/" class="map-chip map-chip-gap">
+    <span>Bedingungen mit und, oder und nicht verknüpfen und den Wahrheitswert des Ergebnisses bestimmen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/feld-array/" class="map-chip map-chip-gap">
+    <span>Gleichartige Daten in einem Feld (Array) speichern und über den Index auf einzelne Elemente zugreifen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/tabellenkalkulation-formeln/" class="map-chip map-chip-gap">
+    <span>In einer Tabellenkalkulation Formeln mit Zellbezügen schreiben, damit Ergebnisse automatisch neu berechnet werden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/relative-und-absolute-bezuege/" class="map-chip map-chip-gap">
+    <span>Relative und absolute Zellbezüge unterscheiden und beim Kopieren einer Formel richtig einsetzen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/datenflussdiagramm/" class="map-chip map-chip-gap">
+    <span>Darstellen, wie Daten durch Funktionen fließen, und dazu ein Datenflussdiagramm zeichnen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/funktionen-verketten/" class="map-chip map-chip-gap">
+    <span>Vordefinierte Funktionen einer Tabellenkalkulation, auch die WENN-Funktion, nutzen und mehrere Funktionen verketten</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/datenbanken-im-alltag/" class="map-chip map-chip-gap">
+    <span>Beispiele nennen, wo im Alltag Datenbanken große Datenbestände verwalten, und erklären, wozu man sie braucht</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/datenmodell/" class="map-chip map-chip-gap">
+    <span>Einen Ausschnitt der Wirklichkeit mit Objekttypen (Entitäten oder Klassen) und ihren Attributen modellieren und als Diagramm darstellen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/tabellenschema/" class="map-chip map-chip-gap">
+    <span>Ein Datenmodell in ein Tabellenschema mit Datenfeldern und Datentypen überführen und Datensatz und Datenfeld unterscheiden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/primaerschluessel/" class="map-chip map-chip-gap">
+    <span>Erklären, wozu ein Primärschlüssel dient, und für eine Tabelle einen geeigneten Schlüssel wählen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/datenbank-anlegen/" class="map-chip map-chip-gap">
+    <span>Eine Datenbanktabelle in einem Datenbanksystem anlegen und Datensätze eingeben, ändern und löschen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/sql-abfrage/" class="map-chip map-chip-gap">
+    <span>Mit SQL (SELECT, FROM, WHERE) gezielt Spalten und Datensätze aus einer Tabelle abfragen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/beziehungen-und-fremdschluessel/" class="map-chip map-chip-gap">
+    <span>Beziehungen zwischen Objekttypen modellieren und sie in verknüpften Tabellen mit Fremdschlüsseln umsetzen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/redundanz-und-konsistenz/" class="map-chip map-chip-gap">
+    <span>An einem Beispiel erklären, warum doppelt gespeicherte Daten (Redundanz) zu Widersprüchen führen und wie verknüpfte Tabellen das vermeiden</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/caesar-verschluesselung/" class="map-chip map-chip-gap">
+    <span>Einen Text mit einem Ersetzungsverfahren wie der Caesar-Verschlüsselung ver- und entschlüsseln</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+          
+<li>
+  <a href="/apps/map/informatik/c/trainingsdaten/" class="map-chip map-chip-gap">
+    <span>An einem Beispiel zeigen, wie die Auswahl der Trainingsdaten die Ergebnisse eines lernenden Systems beeinflusst, auch durch Verzerrungen</span>
+    <span class="sr-only">(Lücke, noch keine App)</span>
+  </a>
+</li>
+
+        </ul>
+      </section>
+
+      <h2 class="map-strand-apps m-0" style="grid-row: 2;">Apps in diesem Strang</h2>
+      <p class="map-gapbar m-0" style="grid-column: 1; grid-row: 3;">Lücke · noch keine App <span class="sr-only">(Klasse 5/6)</span></p>
+      <p class="map-gapbar m-0" style="grid-column: 2; grid-row: 3;">Lücke · noch keine App <span class="sr-only">(Klasse 7/8)</span></p>
+      <p class="map-gapbar m-0" style="grid-column: 3; grid-row: 3;">Lücke · noch keine App <span class="sr-only">(Klasse 9/10)</span></p>
+    </div>
+  </div>
+
+  <section class="panel flex flex-wrap items-center justify-between gap-4" aria-labelledby="bauen">
+    <div class="max-w-3xl">
+      <h2 id="bauen" class="panel-title">Eine App für diesen Strang bauen</h2>
+      <p class="m-0 text-slate-600">Eine App bleibt in einem Strang. Sie beginnt bei einem Baustein und wächst mit jeder neuen Version entlang des Lernwegs, zum Beispiel von Klasse 5 bis 10.</p>
+    </div>
+    <a href="/apps/build/" class="btn btn-primary">Mit KI-Assistent bauen</a>
+  </section>
+</div>
+
+  </main>
+
+  <footer class="la-footer" lang="de">
+  <div class="la-footer__inner">
+    <p>lernapps.net ist kostenlos und ohne Werbung. Es lebt von deinem Danke.</p>
+    <nav aria-label="Fußzeile"><ul><li><a href="/privacy/">Datenschutz</a></li><li><a href="/imprint/">Impressum</a></li><li><a href="/docs/platform-design/">Plattform-Design</a></li><li><a href="https://github.com/lernapps/apps">Quellcode</a></li></ul></nav>
+  </div>
+</footer>
+</body>
+</html>
