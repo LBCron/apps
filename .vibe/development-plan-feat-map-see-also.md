@@ -25,8 +25,17 @@ Kommentar `# Siehe auch: <fach>/<id>`. Geprüft von `lib/map.js`, angezeigt in d
 - Seiten: `src/map-competency.njk` (Abschnitt „Lernweg“), `src/_data/map.js` (Ansicht, JSON), Texte in `src/_data/de.js`/`en.js`.
 - Schema: `schemas/map.js` (zod) → `schemas/subject.v1.schema.json` per `npm run schema`.
 
+- (Nutzer/in, 2026-11-07) Zwei getrennte Begriffe, getrennt modelliert: **Querverweis** (verwandter Inhalt, eigener
+  Aspekt je Fach, z. B. Biologie ↔ Erdkunde) und **Wiederverwendung** (derselbe Baustein in zwei Fächern, Annahme:
+  Evangelische ↔ Katholische Religion). Issue #220 deckt nur den Querverweis ab.
+- Auswertung gleicher ids in mehreren Fächern (ohne Religion): meist fachgebunden, keine Doppelung (Grammatik und
+  Themen der Sprachen, Textsorten Deutsch/Fremdsprachen). Kandidaten für echte Doppelung: `sucht`, `pubertaet`
+  (Biologie/Ethik), `nachhaltigkeit` (Biologie/Erdkunde/Ethik), `energieerhaltung` (Chemie/Physik),
+  `eigene-mediennutzung` (Deutsch/Ethik). Keiner davon hat heute einen Kommentar.
+
 ## Explore
 ### Tasks
+- [ ] Mit Nutzer/in klären: Religion = Wiederverwendung? Kandidaten oben = Doppelung oder Querverweis?
 - [ ] Offene Fragen mit Nutzer/in klären (Ziel in fehlendem Fach; Apps; Seite je Paar; JSON)
 
 ### Completed
