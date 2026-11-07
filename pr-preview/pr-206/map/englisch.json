@@ -1,0 +1,2008 @@
+{
+  "id": "englisch",
+  "name": {
+    "de": "Englisch",
+    "en": "English"
+  },
+  "source": {
+    "title": "KMK, Bildungsstandards für die erste Fremdsprache (Englisch/Französisch) für den Ersten Schulabschluss und den Mittleren Schulabschluss, Beschluss vom 15.10.2004 und vom 04.12.2003 i.d.F. vom 22.06.2023",
+    "url": "https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2023/2023_06_22-Bista-ESA-MSA-ErsteFremdsprache.pdf"
+  },
+  "strands": [
+    {
+      "id": "grammatik",
+      "name": {
+        "de": "Grammatik",
+        "en": "Grammar"
+      },
+      "competencies": [
+        {
+          "id": "to-be",
+          "iCan": "Ich kann die Formen von „to be“ (am, is, are) in Aussagen, Verneinungen und Fragen verwenden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "have-got",
+          "iCan": "Ich kann mit „have got“ und „has got“ sagen, was jemand hat, und danach fragen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "personalpronomen",
+          "iCan": "Ich kann die Personalpronomen als Subjekt (I, he, they) und als Objekt (me, him, them) richtig verwenden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "possessivbegleiter",
+          "iCan": "Ich kann mit my, your, his, her, its, our und their sagen, wem etwas gehört.",
+          "gradeBand": "5-6",
+          "requires": [
+            "personalpronomen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "artikel",
+          "iCan": "Ich kann die Artikel a, an und the richtig verwenden und „the“ vor Vokalen richtig aussprechen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "plural",
+          "iCan": "Ich kann den Plural von Nomen bilden, auch die unregelmäßigen Formen wie children, men und feet.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "genitiv",
+          "iCan": "Ich kann mit dem s-Genitiv (Tom’s bike, the girls’ room) und mit „of“ ausdrücken, wem etwas gehört.",
+          "gradeBand": "5-6",
+          "requires": [
+            "plural"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "demonstrativ",
+          "iCan": "Ich kann this, that, these und those richtig verwenden, um auf Nahes und Fernes zu zeigen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "plural"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "there-is-are",
+          "iCan": "Ich kann mit „there is“ und „there are“ sagen, was es an einem Ort gibt.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "imperativ",
+          "iCan": "Ich kann Aufforderungen und Verbote mit dem Imperativ formulieren (Open the door. Don’t run.).",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "wortstellung",
+          "iCan": "Ich kann Aussagesätze in der Reihenfolge Subjekt – Verb – Objekt bilden und Ortsangaben vor Zeitangaben stellen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "simple-present",
+          "iCan": "Ich kann im simple present über Gewohnheiten und Tatsachen sprechen und das -s bei he, she, it anhängen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "personalpronomen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "simple-present-fragen",
+          "iCan": "Ich kann im simple present mit do und does Fragen stellen und mit don’t und doesn’t verneinen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-present"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fragewoerter",
+          "iCan": "Ich kann Fragen mit who, what, where, when, why, how und whose stellen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-present-fragen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "subjektfragen",
+          "iCan": "Ich kann Fragen nach dem Subjekt ohne do bilden (Who lives here?) und von Fragen nach dem Objekt unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "fragewoerter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kurzantworten",
+          "iCan": "Ich kann auf Ja-Nein-Fragen mit Kurzantworten wie „Yes, I do.“ oder „No, she isn’t.“ antworten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-present-fragen",
+            "to-be"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "adverbien-haeufigkeit",
+          "iCan": "Ich kann Häufigkeitsadverbien wie always, often und never verwenden und an die richtige Stelle im Satz setzen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-present"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "present-progressive",
+          "iCan": "Ich kann im present progressive sagen, was gerade passiert (She is reading.).",
+          "gradeBand": "5-6",
+          "requires": [
+            "to-be"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "simple-oder-progressive",
+          "iCan": "Ich kann entscheiden, ob ich simple present oder present progressive brauche, und Signalwörter dafür nutzen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-present",
+            "present-progressive",
+            "adverbien-haeufigkeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "can-must",
+          "iCan": "Ich kann mit can, can’t, must, mustn’t und needn’t Fähigkeit, Erlaubnis, Pflicht und Verbot ausdrücken.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "would-like",
+          "iCan": "Ich kann mit „I’d like …“ und „I’d like you to …“ höflich sagen, was ich möchte.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "much-many",
+          "iCan": "Ich kann Mengen mit much, many, a lot of, a few und a little angeben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "plural"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "mengen-mit-of",
+          "iCan": "Ich kann Mengen mit Ausdrücken wie a cup of, a bottle of und a pair of angeben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "plural"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "some-any",
+          "iCan": "Ich kann some, any und no in Aussagen, Verneinungen und Fragen richtig verwenden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "somebody-anything",
+          "iCan": "Ich kann Wörter wie somebody, anything, nobody und everywhere richtig verwenden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "some-any"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "praepositionen-zeit",
+          "iCan": "Ich kann die Präpositionen in, on und at bei Zeitangaben richtig verwenden (on Monday, at 6 o’clock, in July).",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "praepositionen-ort",
+          "iCan": "Ich kann mit Präpositionen wie in, on, under, next to und behind sagen, wo etwas ist.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "adjektive",
+          "iCan": "Ich kann Adjektive vor ein Nomen (a big house) und nach „be“ (The house is big.) stellen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "konjunktionen",
+          "iCan": "Ich kann Sätze mit and, but, or, because, when und so verbinden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "that-saetze",
+          "iCan": "Ich kann Gedanken und Aussagen mit einem that-Satz anschließen (I think that …).",
+          "gradeBand": "5-6",
+          "requires": [
+            "konjunktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "simple-past",
+          "iCan": "Ich kann im simple past mit regelmäßigen Verben (-ed) von abgeschlossenen Ereignissen erzählen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-present"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "unregelmaessige-verben",
+          "iCan": "Ich kann die wichtigsten unregelmäßigen Verben im simple past und als dritte Form (go – went – gone) verwenden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-past"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "simple-past-fragen",
+          "iCan": "Ich kann im simple past mit did Fragen stellen und mit didn’t verneinen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-past",
+            "simple-present-fragen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "past-progressive",
+          "iCan": "Ich kann im past progressive sagen, was gerade im Gang war, als etwas anderes passierte (I was reading when …).",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-past",
+            "present-progressive"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "going-to",
+          "iCan": "Ich kann mit „going to“ über Pläne und sichere Vorhersagen sprechen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "present-progressive"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "will-future",
+          "iCan": "Ich kann mit dem will-future Vermutungen, Vorhersagen und spontane Entschlüsse ausdrücken.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "will-oder-going-to",
+          "iCan": "Ich kann in eindeutigen Fällen entscheiden, ob ich „will“ oder „going to“ brauche.",
+          "gradeBand": "5-6",
+          "requires": [
+            "will-future",
+            "going-to"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "present-perfect",
+          "iCan": "Ich kann im present perfect sagen, was schon passiert ist, auch mit ever, never, already und yet.",
+          "gradeBand": "5-6",
+          "requires": [
+            "unregelmaessige-verben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "present-perfect-oder-simple-past",
+          "iCan": "Ich kann entscheiden, ob ich present perfect oder simple past brauche, und Signalwörter dafür nutzen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "present-perfect",
+            "simple-past"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "since-for",
+          "iCan": "Ich kann mit dem present perfect und since oder for ausdrücken, wie lange etwas schon dauert.",
+          "gradeBand": "7-8",
+          "requires": [
+            "present-perfect"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "present-perfect-progressive",
+          "iCan": "Ich kann im present perfect progressive sagen, dass eine Handlung bis jetzt andauert (I have been waiting for an hour.).",
+          "gradeBand": "7-8",
+          "requires": [
+            "since-for",
+            "present-progressive"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "past-perfect",
+          "iCan": "Ich kann im past perfect ausdrücken, dass etwas vor einem anderen Ereignis in der Vergangenheit geschah.",
+          "gradeBand": "7-8",
+          "requires": [
+            "simple-past",
+            "present-perfect"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zeitenfolge-temporalsaetze",
+          "iCan": "Ich kann in Sätzen mit when, after, before und as soon as die Zeiten richtig aufeinander abstimmen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "past-perfect",
+            "will-future"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "present-fuer-zukunft",
+          "iCan": "Ich kann mit present progressive und simple present über feste Verabredungen und Fahrpläne in der Zukunft sprechen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "will-oder-going-to"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "future-progressive-perfect",
+          "iCan": "Ich kann mit „will be doing“ und „will have done“ über Abläufe und Ergebnisse in der Zukunft sprechen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "will-future",
+            "present-perfect"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "past-perfect-progressive",
+          "iCan": "Ich kann im past perfect progressive ausdrücken, wie lange etwas vor einem Zeitpunkt in der Vergangenheit schon andauerte.",
+          "gradeBand": "9-10",
+          "requires": [
+            "past-perfect",
+            "present-perfect-progressive"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dynamic-stative",
+          "iCan": "Ich kann Zustandsverben wie know, like und belong erkennen, die man meist nicht in der Verlaufsform verwendet.",
+          "gradeBand": "9-10",
+          "requires": [
+            "simple-oder-progressive"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zeiten-ueberblick",
+          "iCan": "Ich kann in einem Text für jede Handlung die passende Zeitform wählen und meine Wahl begründen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "zeitenfolge-temporalsaetze",
+            "present-perfect-progressive",
+            "present-fuer-zukunft"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "modalverben-could-might-should",
+          "iCan": "Ich kann mit could, may, might und should Möglichkeiten, Vermutungen und Ratschläge ausdrücken.",
+          "gradeBand": "5-6",
+          "requires": [
+            "can-must"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "modale-ersatzformen",
+          "iCan": "Ich kann die Ersatzformen have to, be able to und be allowed to verwenden, auch in anderen Zeiten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "can-must",
+            "will-future"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "used-to",
+          "iCan": "Ich kann mit „used to“ und „would“ über frühere Gewohnheiten sprechen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "simple-past"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "question-tags",
+          "iCan": "Ich kann an eine Aussage ein question tag anhängen (It’s cold, isn’t it?), auch mit do und did.",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-present-fragen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "fragen-praeposition-ende",
+          "iCan": "Ich kann Fragen mit einer Präposition am Satzende bilden (Who are you talking to?).",
+          "gradeBand": "5-6",
+          "requires": [
+            "fragewoerter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "adjektive-steigern",
+          "iCan": "Ich kann Adjektive steigern, mit -er/-est, mit more/most und unregelmäßig (good – better – best).",
+          "gradeBand": "5-6",
+          "requires": [
+            "adjektive"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "vergleiche",
+          "iCan": "Ich kann mit than, as … as und not as … as vergleichen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "adjektive-steigern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "adverbien-art-und-weise",
+          "iCan": "Ich kann Adverbien der Art und Weise bilden (quick – quickly) und die Sonderformen well, fast und hard verwenden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "adjektive"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "adjektiv-oder-adverb",
+          "iCan": "Ich kann entscheiden, ob ich ein Adjektiv oder ein Adverb brauche (a careful driver – she drives carefully).",
+          "gradeBand": "5-6",
+          "requires": [
+            "adverbien-art-und-weise"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "adjektive-nach-sinnesverben",
+          "iCan": "Ich kann nach Verben wie look, sound, feel und taste ein Adjektiv verwenden (It tastes good.).",
+          "gradeBand": "7-8",
+          "requires": [
+            "adjektiv-oder-adverb"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "adverbien-steigern",
+          "iCan": "Ich kann Adverbien steigern und damit Handlungen vergleichen (She runs faster than I do.).",
+          "gradeBand": "7-8",
+          "requires": [
+            "adverbien-art-und-weise",
+            "adjektive-steigern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "adverbien-stellung",
+          "iCan": "Ich kann Adverbien an die richtige Stelle im Satz setzen, zum Beispiel nach dem ersten Hilfsverb.",
+          "gradeBand": "7-8",
+          "requires": [
+            "adverbien-art-und-weise",
+            "wortstellung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gradadverbien",
+          "iCan": "Ich kann Adjektive und Adverbien mit Wörtern wie very, quite, rather, extremely und too genauer abstufen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "adverbien-art-und-weise"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "reflexivpronomen",
+          "iCan": "Ich kann Reflexivpronomen wie myself und themselves verwenden und weiß, dass manche deutschen reflexiven Verben im Englischen keines haben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "personalpronomen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "each-other",
+          "iCan": "Ich kann „each other“ von Reflexivpronomen unterscheiden (They help each other. – They help themselves.).",
+          "gradeBand": "7-8",
+          "requires": [
+            "reflexivpronomen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "possessivpronomen",
+          "iCan": "Ich kann die Possessivpronomen mine, yours, his, hers, ours und theirs verwenden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "possessivbegleiter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stuetzwort-one",
+          "iCan": "Ich kann mit one und ones ein Nomen ersetzen, um Wiederholungen zu vermeiden (the red one).",
+          "gradeBand": "7-8",
+          "requires": [
+            "adjektive"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "if-satz-1",
+          "iCan": "Ich kann mit if-Sätzen Typ 1 sagen, was unter einer Bedingung wahrscheinlich passiert (If it rains, we will stay at home.).",
+          "gradeBand": "5-6",
+          "requires": [
+            "will-future",
+            "simple-present"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "if-satz-2",
+          "iCan": "Ich kann mit if-Sätzen Typ 2 über gedachte oder unwahrscheinliche Situationen sprechen (If I had more time, I would …).",
+          "gradeBand": "7-8",
+          "requires": [
+            "if-satz-1",
+            "simple-past"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "if-satz-3",
+          "iCan": "Ich kann mit if-Sätzen Typ 3 sagen, was in der Vergangenheit anders gekommen wäre (If you had asked me, I would have helped.).",
+          "gradeBand": "7-8",
+          "requires": [
+            "if-satz-2",
+            "past-perfect"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "i-wish",
+          "iCan": "Ich kann mit „I wish …“ und „If only …“ Wünsche und Bedauern ausdrücken.",
+          "gradeBand": "7-8",
+          "requires": [
+            "if-satz-2"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "relativsaetze",
+          "iCan": "Ich kann notwendige Relativsätze mit who, which, that und whose bilden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "contact-clauses",
+          "iCan": "Ich kann Relativsätze ohne Relativpronomen bilden, wenn das Pronomen Objekt ist (the book I read).",
+          "gradeBand": "5-6",
+          "requires": [
+            "relativsaetze"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "relativsaetze-nicht-notwendig",
+          "iCan": "Ich kann nicht notwendige Relativsätze mit Kommas bilden und von notwendigen unterscheiden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "relativsaetze"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "which-satzbezug",
+          "iCan": "Ich kann mit „which“ einen Relativsatz an einen ganzen Satz anschließen (He was late, which annoyed me.).",
+          "gradeBand": "9-10",
+          "requires": [
+            "relativsaetze-nicht-notwendig"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "konjunktionen-although",
+          "iCan": "Ich kann Gegensätze und Absichten mit although, while, whereas und so that ausdrücken.",
+          "gradeBand": "5-6",
+          "requires": [
+            "konjunktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "reported-speech",
+          "iCan": "Ich kann Aussagen in der indirekten Rede ohne Zeitverschiebung wiedergeben (She says that she likes it.).",
+          "gradeBand": "7-8",
+          "requires": [
+            "that-saetze",
+            "personalpronomen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "backshift",
+          "iCan": "Ich kann Aussagen in der indirekten Rede mit Zeitverschiebung wiedergeben (He said that he had seen it.).",
+          "gradeBand": "7-8",
+          "requires": [
+            "reported-speech",
+            "past-perfect"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "indirekte-aufforderungen",
+          "iCan": "Ich kann Bitten und Aufforderungen indirekt wiedergeben (She told me to wait.).",
+          "gradeBand": "7-8",
+          "requires": [
+            "reported-speech"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "indirekte-fragen",
+          "iCan": "Ich kann Fragen indirekt wiedergeben und höflich indirekt fragen (He asked where I lived. Can you tell me where …?).",
+          "gradeBand": "9-10",
+          "requires": [
+            "backshift",
+            "fragewoerter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "passiv",
+          "iCan": "Ich kann Sätze im Passiv im simple present und simple past bilden und sagen, wer etwas getan hat (by …).",
+          "gradeBand": "7-8",
+          "requires": [
+            "unregelmaessige-verben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "passiv-zeiten",
+          "iCan": "Ich kann das Passiv auch im present perfect, im will-future und mit Modalverben bilden (It has been sold. It can be done.).",
+          "gradeBand": "7-8",
+          "requires": [
+            "passiv",
+            "present-perfect",
+            "will-future"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "passiv-zwei-objekte",
+          "iCan": "Ich kann bei Verben mit zwei Objekten das persönliche Passiv bilden (I was given a book.).",
+          "gradeBand": "9-10",
+          "requires": [
+            "passiv-zeiten"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gerund",
+          "iCan": "Ich kann das Gerundium als Subjekt und nach Verben wie like, enjoy und avoid verwenden (Swimming is fun.).",
+          "gradeBand": "7-8",
+          "requires": [
+            "present-progressive"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gerund-nach-praepositionen",
+          "iCan": "Ich kann nach Präpositionen und Ausdrücken wie interested in oder look forward to das Gerundium verwenden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "gerund"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "infinitivkonstruktionen",
+          "iCan": "Ich kann Infinitive mit to verwenden, zum Beispiel nach in order, nach Fragewörtern und in „It’s easy for me to …“.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "gerund-oder-infinitiv",
+          "iCan": "Ich kann bei Verben wie stop, remember und try zwischen Gerundium und Infinitiv wählen und den Unterschied in der Bedeutung erklären.",
+          "gradeBand": "7-8",
+          "requires": [
+            "gerund",
+            "infinitivkonstruktionen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "partizip-statt-relativsatz",
+          "iCan": "Ich kann einen Relativsatz durch ein Partizip verkürzen (the boy sitting next to me, a book written in 1990).",
+          "gradeBand": "9-10",
+          "requires": [
+            "relativsaetze",
+            "passiv"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "partizip-satzverknuepfung",
+          "iCan": "Ich kann Sätze mit Partizipien verknüpfen (Walking home, I met Tom.).",
+          "gradeBand": "9-10",
+          "requires": [
+            "partizip-statt-relativsatz",
+            "konjunktionen-although"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "ing-formen",
+          "iCan": "Ich kann erkennen, ob eine -ing-Form Verlaufsform, Gerundium oder Partizip ist, und sie von Infinitivkonstruktionen abgrenzen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "gerund-oder-infinitiv",
+            "partizip-statt-relativsatz"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "emphase-do",
+          "iCan": "Ich kann eine Aussage mit do, does oder did verstärken (I do like it!).",
+          "gradeBand": "9-10",
+          "requires": [
+            "simple-present-fragen",
+            "simple-past-fragen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "cleft-sentences",
+          "iCan": "Ich kann einen Satzteil mit „It is … who/that …“ oder „What … is …“ hervorheben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "relativsaetze"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "inversion",
+          "iCan": "Ich kann nach Wörtern wie never, hardly und not only die Wortstellung umkehren, um etwas zu betonen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "wortstellung",
+            "simple-present-fragen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "artikel-gebrauch",
+          "iCan": "Ich kann entscheiden, wann ich „the“ weglasse, zum Beispiel bei allgemeinen Aussagen (Life is short.) und bei school, church oder bed.",
+          "gradeBand": "7-8",
+          "requires": [
+            "artikel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nomen-kongruenz",
+          "iCan": "Ich kann bei Nomen wie news, information, advice und police das Verb richtig anpassen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "simple-present",
+            "much-many"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "substantivierte-adjektive",
+          "iCan": "Ich kann Adjektive als Nomen für Gruppen von Menschen verwenden (the rich, the elderly).",
+          "gradeBand": "9-10",
+          "requires": [
+            "adjektive",
+            "artikel"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "wortschatz",
+      "name": {
+        "de": "Wortschatz",
+        "en": "Vocabulary"
+      },
+      "competencies": [
+        {
+          "id": "zahlen",
+          "iCan": "Ich kann Grund- und Ordnungszahlen sagen und schreiben, auch große Zahlen und Preise.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "uhrzeit",
+          "iCan": "Ich kann die Uhrzeit sagen und nach ihr fragen (half past seven, a quarter to eight).",
+          "gradeBand": "5-6",
+          "requires": [
+            "zahlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "datum",
+          "iCan": "Ich kann Wochentage, Monate, Datum und Jahreszahlen sagen und schreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "zahlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "classroom-phrases",
+          "iCan": "Ich kann im Unterricht auf Englisch um Hilfe bitten, nachfragen und Anweisungen verstehen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "grammatik-fachbegriffe",
+          "iCan": "Ich kann grundlegende Fachbegriffe wie noun, verb, adjective, tense und sentence verstehen und verwenden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "familie-personen",
+          "iCan": "Ich kann Familienmitglieder benennen und Menschen mit einfachen Wörtern nach Aussehen und Charakter beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "have-got"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schule",
+          "iCan": "Ich kann über meine Schule sprechen: Fächer, Stundenplan, Klassenzimmer und Schultag.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "wohnen",
+          "iCan": "Ich kann mein Zuhause beschreiben: Räume, Möbel und Garten.",
+          "gradeBand": "5-6",
+          "requires": [
+            "there-is-are"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "essen-trinken",
+          "iCan": "Ich kann Lebensmittel und Mahlzeiten benennen und über Essgewohnheiten sprechen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "kleidung-einkaufen",
+          "iCan": "Ich kann Kleidung benennen und beim Einkaufen nach Größe und Preis fragen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "zahlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "freizeit-hobbys",
+          "iCan": "Ich kann über meine Hobbys, Haustiere und meine Freizeit sprechen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "sport-musik",
+          "iCan": "Ich kann über Sportarten, Musik und Fernsehen sprechen und sagen, was ich mag.",
+          "gradeBand": "5-6",
+          "requires": [
+            "freizeit-hobbys"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "tagesablauf",
+          "iCan": "Ich kann meinen Tagesablauf beschreiben (I get up at seven …).",
+          "gradeBand": "5-6",
+          "requires": [
+            "uhrzeit",
+            "simple-present"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stadt-wegbeschreibung",
+          "iCan": "Ich kann Orte in der Stadt benennen und einen einfachen Weg beschreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "praepositionen-ort",
+            "imperativ"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "reisen-verkehr",
+          "iCan": "Ich kann Verkehrsmittel benennen und mich am Bahnhof oder Flughafen verständigen, zum Beispiel eine Fahrkarte kaufen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "gesundheit",
+          "iCan": "Ich kann Körperteile und Beschwerden benennen und beim Arzt oder in der Apotheke sagen, was mir fehlt.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "gefuehle-freundschaft",
+          "iCan": "Ich kann über Gefühle, Freundschaft und Streit sprechen, auch über Mobbing.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "medien",
+          "iCan": "Ich kann über Medien und soziale Netzwerke sprechen, auch über ihre Chancen und Gefahren.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "umwelt",
+          "iCan": "Ich kann über Umweltschutz sprechen, zum Beispiel über Müll, Recycling und Nachhaltigkeit.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "technik-fortschritt",
+          "iCan": "Ich kann über Erfindungen und technischen Fortschritt sprechen.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "berufswelt",
+          "iCan": "Ich kann Berufe benennen und über Praktikum, Ferienjob und meine Berufswünsche sprechen.",
+          "gradeBand": "9-10",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "konsum-werbung",
+          "iCan": "Ich kann über Konsum, Werbung und meine Rechte als Verbraucherin oder Verbraucher sprechen.",
+          "gradeBand": "9-10",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "gesellschaft-politik",
+          "iCan": "Ich kann über Demokratie, Menschenrechte und gesellschaftliches Engagement sprechen.",
+          "gradeBand": "9-10",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "verbindungswoerter-erzaehlen",
+          "iCan": "Ich kann Sätze in einer Erzählung mit first, then, after that und finally ordnen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "verbindungswoerter-argumentieren",
+          "iCan": "Ich kann Gedanken mit however, therefore, moreover und on the one hand … on the other hand verknüpfen.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "meinung-redemittel",
+          "iCan": "Ich kann meine Meinung sagen, zustimmen und widersprechen (In my opinion …, I agree because …).",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "umschreiben",
+          "iCan": "Ich kann ein Wort, das mir fehlt, mit anderen Wörtern, Synonymen oder Gegenteilen umschreiben.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "wortfamilien",
+          "iCan": "Ich kann Wörter einer Wortfamilie erkennen und mit Vor- und Nachsilben neue Wörter erschließen (help, helpful, helpless).",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "phrasal-verbs",
+          "iCan": "Ich kann häufige phrasal verbs wie give up, look after und find out verstehen und verwenden.",
+          "gradeBand": "9-10",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "false-friends",
+          "iCan": "Ich kann typische false friends wie become, chef und sensible richtig verwenden.",
+          "gradeBand": "9-10",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "be-ae-wortschatz",
+          "iCan": "Ich kann wichtige Unterschiede zwischen britischem und amerikanischem Wortschatz nennen (flat – apartment).",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "formell-informell",
+          "iCan": "Ich kann formelle und informelle Wörter und Wendungen unterscheiden und passend zur Situation wählen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kurzformen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "text-fachbegriffe",
+          "iCan": "Ich kann Fachbegriffe zum Sprechen über Texte verwenden, zum Beispiel narrator, character, setting, plot und stanza.",
+          "gradeBand": "9-10",
+          "requires": [],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "aussprache",
+      "name": {
+        "de": "Aussprache und Rechtschreibung",
+        "en": "Pronunciation and spelling"
+      },
+      "competencies": [
+        {
+          "id": "lautschrift",
+          "iCan": "Ich kann die wichtigsten Zeichen der Lautschrift lesen und so die Aussprache neuer Wörter herausfinden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "vokale",
+          "iCan": "Ich kann ähnliche englische Vokale unterscheiden und aussprechen, zum Beispiel in ship – sheep und cat – cut.",
+          "gradeBand": "5-6",
+          "requires": [
+            "lautschrift"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "konsonanten-th-w",
+          "iCan": "Ich kann die Laute th, w und v sowie das englische r richtig aussprechen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "lautschrift"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stimmhafte-auslaute",
+          "iCan": "Ich kann Wörter wie bed und bet, dog und dock am Ende stimmhaft oder stimmlos richtig aussprechen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "konsonanten-th-w"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "endungen-s-ed",
+          "iCan": "Ich kann die Endungen -s und -ed richtig aussprechen (/s/, /z/, /ɪz/ und /t/, /d/, /ɪd/).",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-present",
+            "simple-past"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "silent-letters",
+          "iCan": "Ich kann stumme Buchstaben wie in knife, write und listen erkennen und die Wörter richtig sprechen und schreiben.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "laut-buchstabe",
+          "iCan": "Ich kann typische Buchstabenverbindungen wie ee, ea und igh lesen und gleich klingende Wörter wie see und sea unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [
+            "vokale"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "intonation-fragen",
+          "iCan": "Ich kann Aussagen, Fragen und Aufforderungen mit der passenden Satzmelodie sprechen (steigend oder fallend).",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "intonation-question-tags",
+          "iCan": "Ich kann an der Satzmelodie eines question tags erkennen und zeigen, ob ich wirklich frage oder nur Zustimmung erwarte.",
+          "gradeBand": "5-6",
+          "requires": [
+            "question-tags",
+            "intonation-fragen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kurzformen",
+          "iCan": "Ich kann Kurzformen wie I’m, don’t und she’s richtig sprechen und mit Apostroph schreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "to-be"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "rechtschreibung-endungen",
+          "iCan": "Ich kann die Schreibung vor Endungen richtig ändern (stop – stopped, cry – cries, make – making).",
+          "gradeBand": "5-6",
+          "requires": [
+            "plural",
+            "simple-past"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "grossschreibung",
+          "iCan": "Ich kann die englischen Regeln der Großschreibung anwenden (I, Monday, English, Nomen klein).",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "wortbetonung",
+          "iCan": "Ich kann die Betonung eines Wortes erkennen und richtig setzen, auch bei Paaren wie ˈpresent – preˈsent.",
+          "gradeBand": "7-8",
+          "requires": [
+            "lautschrift"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schwache-formen",
+          "iCan": "Ich kann unbetonte Silben und Wörter wie and, to und of abgeschwächt sprechen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "wortbetonung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bindungen",
+          "iCan": "Ich kann Wörter beim Sprechen verbinden, auch mit dem linking r (far away).",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "satzbetonung",
+          "iCan": "Ich kann in einem Satz die wichtigen Wörter betonen und im englischen Rhythmus sprechen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "wortbetonung",
+            "schwache-formen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "be-ae-aussprache",
+          "iCan": "Ich kann typische Unterschiede in der Aussprache von britischem und amerikanischem Englisch erkennen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "vokale"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "be-ae-schreibung",
+          "iCan": "Ich kann typische Unterschiede in der Schreibung von britischem und amerikanischem Englisch beachten (colour – color).",
+          "gradeBand": "7-8",
+          "requires": [
+            "laut-buchstabe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kommasetzung",
+          "iCan": "Ich kann Kommas nach englischen Regeln setzen, zum Beispiel bei Relativsätzen und einleitenden Adverbialen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "relativsaetze-nicht-notwendig"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "intonation-haltung",
+          "iCan": "Ich kann mit der Satzmelodie Zweifel, Überraschung oder Ironie ausdrücken und bei anderen erkennen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "satzbetonung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "weitere-varietaet",
+          "iCan": "Ich kann typische Merkmale einer weiteren Varietät des Englischen erkennen, zum Beispiel des australischen oder schottischen Englisch.",
+          "gradeBand": "9-10",
+          "requires": [
+            "be-ae-aussprache"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "landeskunde",
+      "name": {
+        "de": "Länder und Kulturen",
+        "en": "Countries and cultures"
+      },
+      "competencies": [
+        {
+          "id": "britische-inseln",
+          "iCan": "Ich kann die Teile des Vereinigten Königreichs und ihre Hauptstädte auf der Karte zeigen und UK, Great Britain und Ireland unterscheiden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "alltag-uk",
+          "iCan": "Ich kann das Familienleben, das Wohnen und das Essen in Großbritannien beschreiben und mit meinem Alltag vergleichen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "familie-personen",
+            "wohnen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schule-uk",
+          "iCan": "Ich kann den Schulalltag in Großbritannien beschreiben, zum Beispiel Schuluniform und Schultag, und mit meiner Schule vergleichen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "schule"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "feste-uk",
+          "iCan": "Ich kann wichtige Feste und Bräuche in Großbritannien beschreiben, zum Beispiel Christmas, Bonfire Night und Halloween.",
+          "gradeBand": "5-6",
+          "requires": [
+            "datum"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gruss-hoeflichkeit",
+          "iCan": "Ich kann Menschen auf Englisch angemessen begrüßen, anreden und mich höflich bedanken und entschuldigen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "vielfalt-gb",
+          "iCan": "Ich kann beschreiben, dass in Großbritannien Menschen mit vielen verschiedenen Herkünften zusammenleben.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "stadt-land-uk",
+          "iCan": "Ich kann das Leben in einer britischen Großstadt und auf dem Land vergleichen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "britische-inseln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "region-uk",
+          "iCan": "Ich kann eine Region Großbritanniens wie Cornwall, den Lake District oder Wales vorstellen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "britische-inseln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "roemer-in-britannien",
+          "iCan": "Ich kann erzählen, was die Römer in Britannien hinterlassen haben, zum Beispiel Hadrian’s Wall und Bath.",
+          "gradeBand": "5-6",
+          "requires": [
+            "britische-inseln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "normannen-1066",
+          "iCan": "Ich kann erklären, was 1066 geschah und wie die Normannen die englische Sprache verändert haben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "roemer-in-britannien"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "tudors",
+          "iCan": "Ich kann die Bedeutung von Henry VIII und Elizabeth I für England beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "normannen-1066"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "london-sehenswuerdigkeiten",
+          "iCan": "Ich kann wichtige Sehenswürdigkeiten Londons nennen und beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "britische-inseln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "london-heute",
+          "iCan": "Ich kann London als vielfältige Großstadt und als Zentrum von Wirtschaft und Kultur beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "london-sehenswuerdigkeiten",
+            "vielfalt-gb"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "politik-uk",
+          "iCan": "Ich kann die konstitutionelle Monarchie in Großbritannien beschreiben: König, Parlament und Premierminister.",
+          "gradeBand": "7-8",
+          "requires": [
+            "britische-inseln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "usa-ueberblick",
+          "iCan": "Ich kann die USA auf der Karte beschreiben: Staaten, große Regionen, Alaska und Hawaii.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "usa-staedte",
+          "iCan": "Ich kann New York und Washington D.C. mit ihren wichtigsten Sehenswürdigkeiten vorstellen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "usa-ueberblick"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "schule-usa",
+          "iCan": "Ich kann den Alltag an einer amerikanischen High School beschreiben und mit meiner Schule vergleichen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "schule-uk"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "jugend-usa",
+          "iCan": "Ich kann beschreiben, wie Jugendliche in den USA ihre Freizeit verbringen, welchen Sport sie treiben und was sie essen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "usa-ueberblick"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "feste-usa",
+          "iCan": "Ich kann amerikanische Feste wie Thanksgiving und Independence Day beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "feste-uk"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "mayflower",
+          "iCan": "Ich kann von den Pilgervätern und der Mayflower erzählen und erklären, wie die ersten Kolonien in Nordamerika entstanden.",
+          "gradeBand": "7-8",
+          "requires": [
+            "usa-ueberblick"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "unabhaengigkeit-usa",
+          "iCan": "Ich kann erklären, wie die USA unabhängig wurden (Boston Tea Party, Declaration of Independence).",
+          "gradeBand": "7-8",
+          "requires": [
+            "mayflower"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "westen-native-americans",
+          "iCan": "Ich kann die Besiedlung des amerikanischen Westens beschreiben und was sie für die Native Americans bedeutete.",
+          "gradeBand": "7-8",
+          "requires": [
+            "unabhaengigkeit-usa"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "einwanderung-usa",
+          "iCan": "Ich kann erklären, warum Menschen aus Europa in die USA ausgewandert sind, und von Ellis Island erzählen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "usa-ueberblick"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "politik-usa",
+          "iCan": "Ich kann das politische System der USA beschreiben: Präsident, Kongress und Verfassung.",
+          "gradeBand": "7-8",
+          "requires": [
+            "unabhaengigkeit-usa"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stereotype",
+          "iCan": "Ich kann Klischees und Vorurteile über Länder und Menschen erkennen und hinterfragen.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "kanada",
+          "iCan": "Ich kann Kanada vorstellen: Geographie, zwei Amtssprachen und die First Nations und Inuit.",
+          "gradeBand": "9-10",
+          "requires": [
+            "usa-ueberblick"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "australien",
+          "iCan": "Ich kann Australien vorstellen: Geographie, Geschichte als Kolonie und die Rolle der Aborigines.",
+          "gradeBand": "9-10",
+          "requires": [
+            "britische-inseln"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bildungssystem",
+          "iCan": "Ich kann die Schulsysteme in Großbritannien und den USA mit ihren Abschlüssen beschreiben und mit Deutschland vergleichen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "schule-uk",
+            "schule-usa"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sklaverei-buergerkrieg",
+          "iCan": "Ich kann die Geschichte der Sklaverei in den USA und den Amerikanischen Bürgerkrieg in Grundzügen erklären.",
+          "gradeBand": "9-10",
+          "requires": [
+            "unabhaengigkeit-usa"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "buergerrechtsbewegung",
+          "iCan": "Ich kann die Bürgerrechtsbewegung mit Rosa Parks und Martin Luther King beschreiben und die heutige Lage einschätzen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "sklaverei-buergerkrieg"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "migration-heute",
+          "iCan": "Ich kann über Migration und Minderheiten in Großbritannien und den USA heute sprechen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "vielfalt-gb",
+            "einwanderung-usa"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "jugendkultur",
+          "iCan": "Ich kann Jugendkulturen früher und heute beschreiben, auch ihre Musik.",
+          "gradeBand": "9-10",
+          "requires": [
+            "sport-musik"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kulturelle-konventionen",
+          "iCan": "Ich kann Unterschiede bei Körpersprache, Abstand, Small Talk und höflicher Kritik erkennen und mich angemessen verhalten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "gruss-hoeflichkeit"
+          ],
+          "practisedBy": []
+        }
+      ]
+    },
+    {
+      "id": "texte",
+      "name": {
+        "de": "Texte und Medien",
+        "en": "Texts and media"
+      },
+      "competencies": [
+        {
+          "id": "email-postkarte",
+          "iCan": "Ich kann eine persönliche E-Mail, einen Brief oder eine Postkarte mit passender Anrede und passendem Schluss schreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "gruss-hoeflichkeit"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kurznachricht",
+          "iCan": "Ich kann eine kurze Nachricht, eine Notiz oder eine Einladung schreiben.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "tagebucheintrag",
+          "iCan": "Ich kann einen Tagebucheintrag über meinen Tag oder ein Erlebnis schreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-past"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "dialog-schreiben",
+          "iCan": "Ich kann einen kurzen Dialog oder eine Spielszene schreiben.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "bild-beschreiben",
+          "iCan": "Ich kann ein Bild beschreiben und dabei sagen, wo sich etwas befindet (in the foreground, on the left).",
+          "gradeBand": "5-6",
+          "requires": [
+            "there-is-are",
+            "present-progressive",
+            "praepositionen-ort"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bildergeschichte",
+          "iCan": "Ich kann zu einer Bildergeschichte einen zusammenhängenden Text schreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "bild-beschreiben",
+            "simple-past",
+            "verbindungswoerter-erzaehlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "geschichte-erzaehlen",
+          "iCan": "Ich kann eine kurze Geschichte mit Anfang, Mitte und Ende schreiben.",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-past",
+            "verbindungswoerter-erzaehlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "nacherzaehlen",
+          "iCan": "Ich kann den Inhalt einer Geschichte in eigenen Worten nacherzählen.",
+          "gradeBand": "5-6",
+          "requires": [
+            "simple-past"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zusammenfassung",
+          "iCan": "Ich kann das Wichtigste eines kurzen Textes in wenigen Sätzen zusammenfassen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "figuren-ort-handlung",
+          "iCan": "Ich kann in einer Geschichte oder einem Film herausfinden, wer vorkommt, wo und wann sie spielt und was passiert.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "gedichte-reime",
+          "iCan": "Ich kann Reime, Lieder und kurze Gedichte vortragen und Reimwörter finden.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "alltagstexte",
+          "iCan": "Ich kann Alltagstexte wie Fahrpläne, Speisekarten, Flyer und Schilder erkennen und ihnen gezielt Informationen entnehmen.",
+          "gradeBand": "5-6",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "text-gliedern",
+          "iCan": "Ich kann einen Text in Einleitung, Hauptteil und Schluss gliedern und Absätze bilden.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "personen-orte-beschreiben",
+          "iCan": "Ich kann in einem Text eine Person oder einen Ort anschaulich beschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "familie-personen",
+            "adjektive"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bericht-artikel",
+          "iCan": "Ich kann einen Bericht oder einen Artikel für eine Schülerzeitung über ein Ereignis schreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "simple-past",
+            "text-gliedern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "interview",
+          "iCan": "Ich kann Fragen für ein Interview vorbereiten und ein Interview als Text aufschreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "fragewoerter"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "blog-post",
+          "iCan": "Ich kann einen Blogbeitrag oder einen Kommentar in einem Online-Forum schreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "text-gliedern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "perspektive-wechseln",
+          "iCan": "Ich kann eine Geschichte aus der Sicht einer anderen Figur neu erzählen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "figuren-ort-handlung",
+            "nacherzaehlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "geschichte-fortsetzen",
+          "iCan": "Ich kann eine Geschichte fortsetzen oder ein anderes Ende dafür schreiben.",
+          "gradeBand": "7-8",
+          "requires": [
+            "geschichte-erzaehlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "meinung-begruenden",
+          "iCan": "Ich kann in einem kurzen Text meine Meinung zu einem Thema sagen und mit Gründen und Beispielen stützen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "meinung-redemittel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "sachtext-fiktion",
+          "iCan": "Ich kann Sachtexte und erfundene Texte unterscheiden und typische Merkmale nennen.",
+          "gradeBand": "7-8",
+          "requires": [],
+          "practisedBy": []
+        },
+        {
+          "id": "praesentation",
+          "iCan": "Ich kann einen kurzen Vortrag gliedern und mit passenden Redemitteln einleiten, überleiten und abschließen.",
+          "gradeBand": "7-8",
+          "requires": [
+            "text-gliedern"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "diagramm-beschreiben",
+          "iCan": "Ich kann ein Diagramm oder eine Statistik beschreiben und die wichtigste Entwicklung benennen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "vergleiche",
+            "zahlen"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "formelle-email",
+          "iCan": "Ich kann eine formelle E-Mail oder einen formellen Brief schreiben, zum Beispiel um Informationen zu erfragen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "email-postkarte",
+            "formell-informell"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "lebenslauf",
+          "iCan": "Ich kann einen englischen Lebenslauf (CV) schreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "berufswelt",
+            "datum"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "bewerbung",
+          "iCan": "Ich kann eine Bewerbung für ein Praktikum oder einen Ferienjob schreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "formelle-email",
+            "lebenslauf"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "vorstellungsgespraech",
+          "iCan": "Ich kann mich auf ein Vorstellungsgespräch vorbereiten und typische Fragen beantworten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "bewerbung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "leserbrief",
+          "iCan": "Ich kann einen Leserbrief schreiben, der sich auf einen Artikel bezieht.",
+          "gradeBand": "9-10",
+          "requires": [
+            "meinung-begruenden"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kommentar",
+          "iCan": "Ich kann einen argumentativen Text mit Pro und Contra, klarer Gliederung und Schlussfolgerung schreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "meinung-begruenden",
+            "verbindungswoerter-argumentieren"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "inhaltsangabe",
+          "iCan": "Ich kann eine Inhaltsangabe schreiben: mit Einleitungssatz, im present tense, ohne Zitate und ohne eigene Meinung.",
+          "gradeBand": "9-10",
+          "requires": [
+            "zusammenfassung",
+            "simple-present"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "zeitungsartikel",
+          "iCan": "Ich kann den Aufbau eines Zeitungsartikels beschreiben (headline, lead, body) und Bericht und Kommentar unterscheiden.",
+          "gradeBand": "9-10",
+          "requires": [
+            "sachtext-fiktion"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "information-meinung",
+          "iCan": "Ich kann in Texten und Medien Information und Meinung unterscheiden und seriöse Nachrichten erkennen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "zeitungsartikel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "werbung",
+          "iCan": "Ich kann untersuchen, mit welchen sprachlichen und bildlichen Mitteln eine Werbung wirken will.",
+          "gradeBand": "9-10",
+          "requires": [
+            "konsum-werbung",
+            "stilmittel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "stilmittel",
+          "iCan": "Ich kann häufige Stilmittel wie Wiederholung, rhetorische Frage, Vergleich und Metapher erkennen und ihre Wirkung beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "text-fachbegriffe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "kurzgeschichte",
+          "iCan": "Ich kann typische Merkmale einer Kurzgeschichte nennen und an einem Beispiel zeigen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "figuren-ort-handlung",
+            "text-fachbegriffe"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "erzaehlperspektive",
+          "iCan": "Ich kann Ich-Erzähler und Er/Sie-Erzähler unterscheiden und Autor und Erzähler auseinanderhalten.",
+          "gradeBand": "9-10",
+          "requires": [
+            "kurzgeschichte"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "charakterisierung",
+          "iCan": "Ich kann eine Figur charakterisieren und meine Aussagen mit Textstellen belegen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "personen-orte-beschreiben",
+            "figuren-ort-handlung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "setting-atmosphaere",
+          "iCan": "Ich kann beschreiben, wo und wann eine Geschichte spielt und wie die Sprache eine Stimmung erzeugt.",
+          "gradeBand": "9-10",
+          "requires": [
+            "figuren-ort-handlung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "gedicht-analysieren",
+          "iCan": "Ich kann ein Gedicht oder einen Songtext untersuchen: Strophen, Reimschema, Bilder und Wirkung.",
+          "gradeBand": "9-10",
+          "requires": [
+            "gedichte-reime",
+            "stilmittel"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "drama-szene",
+          "iCan": "Ich kann eine Dramenszene lesen, Regieanweisungen verstehen und die Szene vorspielen.",
+          "gradeBand": "9-10",
+          "requires": [
+            "dialog-schreiben"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "film-analysieren",
+          "iCan": "Ich kann filmische Mittel wie Kameraeinstellung, Schnitt und Musik erkennen und ihre Wirkung beschreiben.",
+          "gradeBand": "9-10",
+          "requires": [
+            "figuren-ort-handlung"
+          ],
+          "practisedBy": []
+        },
+        {
+          "id": "textsorte-umwandeln",
+          "iCan": "Ich kann einen Text in eine andere Textsorte umschreiben, zum Beispiel eine Geschichte in einen Zeitungsbericht.",
+          "gradeBand": "9-10",
+          "requires": [
+            "perspektive-wechseln",
+            "bericht-artikel"
+          ],
+          "practisedBy": []
+        }
+      ]
+    }
+  ],
+  "curricula": []
+}
